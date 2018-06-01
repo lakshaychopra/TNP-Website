@@ -23,9 +23,21 @@ const router = new VueRouter({
             ]
         },
         {
-            path: '/login',
-            name: 'login',
-            component: Vue.component('Layout', require('./components/login.vue')),
+            path: '/auth',
+            name: 'auth',
+            component: Vue.component('Layout', require('./pages/auth_layout.vue')),
+            children: [
+                {
+                    path: 'login',
+                    name: 'login',
+                    component: Vue.component('Home', require('./components/login.vue'))
+                },
+                {
+                    path: 'reg',
+                    name: 'reg',
+                    component: Vue.component('dashboard', require('./components/register.vue')),
+                },
+            ]
         },
         
     ],

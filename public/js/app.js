@@ -47024,9 +47024,18 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Home', __webpack_require__(50))
         }]
     }, {
-        path: '/login',
-        name: 'login',
-        component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Layout', __webpack_require__(53))
+        path: '/auth',
+        name: 'auth',
+        component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Layout', __webpack_require__(69)),
+        children: [{
+            path: 'login',
+            name: 'login',
+            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Home', __webpack_require__(53))
+        }, {
+            path: 'reg',
+            name: 'reg',
+            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard', __webpack_require__(74))
+        }]
     }]
 });
 
@@ -51915,7 +51924,7 @@ exports = module.exports = __webpack_require__(56)(false);
 
 
 // module
-exports.push([module.i, "\n.form {\r\n  position: relative;\r\n  z-index: 1;\r\n  background: #FFFFFF;\r\n  max-width: 300px;\r\n  margin: 75px auto;\r\n  padding: 30px;\r\n  text-align: center;\n}\n.form .thumbnail {\r\n  background: #4797ea;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: 0 auto 30px;\r\n  padding: 50px 30px;\r\n  border-top-left-radius: 100%;\r\n  border-top-right-radius: 100%;\r\n  border-bottom-left-radius: 100%;\r\n  border-bottom-right-radius: 100%;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\n}\n.form .thumbnail img {\r\n  display: block;\r\n  width: 100%;\n}\n.form input {\r\n  outline: 0;\r\n  background: #f2f2f2;\r\n  width: 100%;\r\n  border: 0;\r\n  margin: 0 0 15px;\r\n  padding: 15px;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  font-size: 14px;\n}\n.form button {\r\n  outline: 0;\r\n  background: #4797ea;\r\n  width: 100%;\r\n  border: 0;\r\n  padding: 15px;\r\n  color: #FFFFFF;\r\n  font-size: 14px;\r\n  -webkit-transition: all 0.3 ease;\r\n  transition: all 0.3 ease;\r\n  cursor: pointer;\n}\n.form .message {\r\n  margin: 15px 0 0;\r\n  color: #b3b3b3;\r\n  font-size: 12px;\n}\n.form .message a {\r\n  color: #4797ea;\r\n  text-decoration: none;\n}\n.form .register-form {\r\n  display: none;\n}\n.container {\r\n  position: relative;\r\n  z-index: 1;\r\n  max-width: 300px;\r\n  margin: 0 auto;\n}\n.container:before, .container:after {\r\n  content: \"\";\r\n  display: block;\r\n  clear: both;\n}\n.container .info {\r\n  margin-top:75px;\r\n  background-color: #4797ea;\r\n  text-align: center;\r\n  padding: 15px 0;\n}\n.container .info h3 {\r\n  margin: 0 ;\r\n  padding: 0;\r\n  /* font-size: 36px; */\r\n  font-weight: 300;\r\n  color: #fff;\n}\n.container .info span {\r\n  color: #4d4d4d;\r\n  font-size: 12px;\n}\n.container .info span a {\r\n  color: #000000;\r\n  text-decoration: none;\n}\n.container .info span .fa {\r\n  color: #4797ea;\n}\r\n\r\n/* END Form */\r\n/* Demo Purposes */\nbody {\r\n  background: rgba(52, 58, 64, 0.1);\r\n  font-family: \"Roboto\", sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52291,118 +52300,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -52443,8 +52340,6 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "form" }, [
       _vm._m(0),
-      _vm._v(" "),
-      _vm._m(1),
       _vm._v(" "),
       _c(
         "form",
@@ -52502,7 +52397,7 @@ var render = function() {
           _vm._v(" "),
           _c("button", [_vm._v("Login")]),
           _vm._v(" "),
-          _vm._m(2)
+          _vm._m(1)
         ]
       )
     ])
@@ -52519,25 +52414,6 @@ var staticRenderFns = [
           src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"
         }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("form", { staticClass: "register-form" }, [
-      _c("input", { attrs: { type: "text", placeholder: "name" } }),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "password", placeholder: "password" } }),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "text", placeholder: "email address" } }),
-      _vm._v(" "),
-      _c("button", [_vm._v("create")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "message" }, [
-        _vm._v("Already registered? "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("Sign In")])
-      ])
     ])
   },
   function() {
@@ -52577,6 +52453,448 @@ if (false) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loginURL; });
 var apiDomain = 'http://localhost:8000';
 var loginURL = apiDomain + 'oauth/token';
+
+/***/ }),
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(70)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(72)
+/* template */
+var __vue_template__ = __webpack_require__(73)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\pages\\auth_layout.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e3ad02cc", Component.options)
+  } else {
+    hotAPI.reload("data-v-e3ad02cc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(71);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(57)("257ccb6a", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e3ad02cc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./auth_layout.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e3ad02cc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./auth_layout.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(56)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.form {\r\n  position: relative;\r\n  z-index: 1;\r\n  background: #FFFFFF;\r\n  max-width: 300px;\r\n  margin: 75px auto;\r\n  padding: 30px;\r\n  text-align: center;\n}\n.form .thumbnail {\r\n  background: #4797ea;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: 0 auto 30px;\r\n  padding: 50px 30px;\r\n  border-top-left-radius: 100%;\r\n  border-top-right-radius: 100%;\r\n  border-bottom-left-radius: 100%;\r\n  border-bottom-right-radius: 100%;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\n}\n.form .thumbnail img {\r\n  display: block;\r\n  width: 100%;\n}\n.form input {\r\n  outline: 0;\r\n  background: #f2f2f2;\r\n  width: 100%;\r\n  border: 0;\r\n  margin: 0 0 15px;\r\n  padding: 15px;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  font-size: 14px;\n}\n.form button {\r\n  outline: 0;\r\n  background: #4797ea;\r\n  width: 100%;\r\n  border: 0;\r\n  padding: 15px;\r\n  color: #FFFFFF;\r\n  font-size: 14px;\r\n  -webkit-transition: all 0.3 ease;\r\n  transition: all 0.3 ease;\r\n  cursor: pointer;\n}\n.form .message {\r\n  margin: 15px 0 0;\r\n  color: #b3b3b3;\r\n  font-size: 12px;\n}\n.form .message a {\r\n  color: #4797ea;\r\n  text-decoration: none;\n}\n.container {\r\n  position: relative;\r\n  z-index: 1;\r\n  max-width: 300px;\r\n  margin: 0 auto;\n}\n.container:before, .container:after {\r\n  content: \"\";\r\n  display: block;\r\n  clear: both;\n}\n.container .info {\r\n  margin-top:75px;\r\n  background-color: #4797ea;\r\n  text-align: center;\r\n  padding: 15px 0;\n}\n.container .info h3 {\r\n  margin: 0 ;\r\n  padding: 0;\r\n  /* font-size: 36px; */\r\n  font-weight: 300;\r\n  color: #fff;\n}\n.container .info span {\r\n  color: #4d4d4d;\r\n  font-size: 12px;\n}\n.container .info span a {\r\n  color: #000000;\r\n  text-decoration: none;\n}\n.container .info span .fa {\r\n  color: #4797ea;\n}\r\n\r\n/* END Form */\r\n/* Demo Purposes */\nbody {\r\n  background: rgba(52, 58, 64, 0.1);\r\n  font-family: \"Roboto\", sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ExampleComponent_vue__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_ExampleComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_ExampleComponent_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        Navigation: __WEBPACK_IMPORTED_MODULE_0__components_ExampleComponent_vue___default.a
+    }
+});
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "app-layout" }, [_c("router-view")], 1)
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e3ad02cc", module.exports)
+  }
+}
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(75)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(77)
+/* template */
+var __vue_template__ = __webpack_require__(78)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\register.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f5da110c", Component.options)
+  } else {
+    hotAPI.reload("data-v-f5da110c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(76);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(57)("2746f25c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f5da110c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./register.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f5da110c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./register.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(56)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(65);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      login: {
+        username: '',
+        password: ''
+      }
+    };
+  },
+
+  methods: {
+    handleLoginFormSubmit: function handleLoginFormSubmit() {
+      var postData = {
+        grant_type: 'password',
+        client_id: '',
+        client_secret: '',
+        username: this.login.username,
+        password: this.login.password,
+        scope: ''
+      };
+      this.$http.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* loginURL */], postData).then(function (Response) {
+        console.log(Response);
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "form" }, [
+        _c("div", { staticClass: "thumbnail" }, [
+          _c("img", {
+            attrs: {
+              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("form", { staticClass: "register-form" }, [
+          _c("input", { attrs: { type: "text", placeholder: "name" } }),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "password", placeholder: "password" } }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", placeholder: "email address" }
+          }),
+          _vm._v(" "),
+          _c("button", [_vm._v("create")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "message" }, [
+            _vm._v("Already registered? "),
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Sign In")])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-f5da110c", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
