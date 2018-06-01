@@ -14,7 +14,7 @@
             <button>create</button>
             <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
-        <form class="login-form" v-on:submit.prevent="handleLoginFormSubmit()">
+        <form class="login-form" action="{{route('users.post.login')}}" method="post" v-on:submit.prevent="handleLoginFormSubmit()" >
             <input type="text" placeholder="Username" v-model="login.username" required/>
             <input type="password" placeholder="Password" v-model="login.password" required/>
             <button>Login</button>
