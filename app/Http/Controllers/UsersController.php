@@ -14,6 +14,15 @@ class UsersController extends Controller
      * @return authentication and login view
      */
     public function postLogin(Request $request){
-        $input = $request->only('username','password','usertype');
+        $inputs = $request->only('user_id','password');
+        
+        if(!Auth::attempt($inputs)) {
+            return redirect()->back();
+        }
+        else {
+            $user = Auth::user();
+            $userType = $request->only('type');
+            return view('{{user}}.dashboard',['user' => $user,'type' => $userType]);
+        }
     }
 }
