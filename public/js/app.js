@@ -51924,7 +51924,7 @@ exports = module.exports = __webpack_require__(56)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52300,17 +52300,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -52344,7 +52333,101 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function(){},staticRenderFns:[]}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "form" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          staticClass: "login-form",
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              _vm.handleLoginFormSubmit()
+            }
+          }
+        },
+        [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.login.username,
+                expression: "login.username"
+              }
+            ],
+            attrs: { type: "text", placeholder: "Username", required: "" },
+            domProps: { value: _vm.login.username },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.login, "username", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.login.password,
+                expression: "login.password"
+              }
+            ],
+            attrs: { type: "password", placeholder: "Password", required: "" },
+            domProps: { value: _vm.login.password },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.login, "password", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("button", [_vm._v("Login")]),
+          _vm._v(" "),
+          _vm._m(1)
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "thumbnail" }, [
+      _c("img", {
+        attrs: {
+          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "message" }, [
+      _vm._v("Not registered? "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Create an account")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
