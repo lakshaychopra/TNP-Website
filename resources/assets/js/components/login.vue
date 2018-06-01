@@ -25,24 +25,21 @@
       data(){
         return{
           login:{
-            username:'',
-            password:''
+            username:'ABCD',
+            password:'123456'
           }
         }
       },
       methods:{
           handleLoginFormSubmit(){
             const postData = {
-                grant_type : 'password',
-                client_id :'',
-                client_secret :'',
+                usertype : 'EXECUTIVE_MEMBER',
                 username:this.login.username,
                 password:this.login.password,
-                scope:''
             }
-            this.$http.post(loginURL,postData).then(Response=>{
+            axios.post(loginURL,postData).then(Response=>{
               console.log(Response)
-            })
+            }).catch((error)=>console.log(error))
           }
       }
     }
