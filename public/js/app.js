@@ -52397,7 +52397,19 @@ var render = function() {
           _vm._v(" "),
           _c("button", [_vm._v("Login")]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("p", { staticClass: "message" }, [
+            _vm._v("Not registered? "),
+            _c(
+              "a",
+              { attrs: { href: "#" } },
+              [
+                _c("router-link", { attrs: { to: "reg" } }, [
+                  _vm._v("Create an account")
+                ])
+              ],
+              1
+            )
+          ])
         ]
       )
     ])
@@ -52414,15 +52426,6 @@ var staticRenderFns = [
           src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"
         }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "message" }, [
-      _vm._v("Not registered? "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Create an account")])
     ])
   }
 ]
@@ -52850,40 +52853,45 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "form" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("form", { staticClass: "register-form" }, [
+        _c("input", { attrs: { type: "text", placeholder: "name" } }),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "password", placeholder: "password" } }),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "text", placeholder: "email address" } }),
+        _vm._v(" "),
+        _c("button", [_vm._v("create")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "message" }, [
+          _vm._v("Already registered? "),
+          _c(
+            "a",
+            { attrs: { href: "#" } },
+            [
+              _c("router-link", { attrs: { to: "login" } }, [_vm._v("Sign In")])
+            ],
+            1
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "form" }, [
-        _c("div", { staticClass: "thumbnail" }, [
-          _c("img", {
-            attrs: {
-              src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("form", { staticClass: "register-form" }, [
-          _c("input", { attrs: { type: "text", placeholder: "name" } }),
-          _vm._v(" "),
-          _c("input", { attrs: { type: "password", placeholder: "password" } }),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", placeholder: "email address" }
-          }),
-          _vm._v(" "),
-          _c("button", [_vm._v("create")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "message" }, [
-            _vm._v("Already registered? "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Sign In")])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "thumbnail" }, [
+      _c("img", {
+        attrs: {
+          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"
+        }
+      })
     ])
   }
 ]

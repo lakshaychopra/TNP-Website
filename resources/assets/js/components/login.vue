@@ -11,7 +11,7 @@
             <input type="text" placeholder="Username" v-model="login.username" required/>
             <input type="password" placeholder="Password" v-model="login.password" required/>
             <button>Login</button>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <p class="message">Not registered? <a href="#"><router-link :to="'reg'">Create an account</router-link></a></p>
         </form>
         </div>
     </div>

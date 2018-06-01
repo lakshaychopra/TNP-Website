@@ -12,7 +12,7 @@
             <input type="password" placeholder="password"/>
             <input type="text" placeholder="email address"/>
             <button>create</button>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
+            <p class="message">Already registered? <a href="#"><router-link :to="'login'">Sign In</router-link></a></p>
         </form>
         </div>
     </div>
