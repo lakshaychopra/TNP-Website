@@ -7,7 +7,7 @@
         <div class="thumbnail">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
         </div>
-        <form class="login-form" v-on:submit.prevent="handleLoginFormSubmit()" method="POST">
+        <form class="login-form" method="POST" action="auth/login">
             <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
             <input type="password" placeholder="Password" v-model="login.password" name="password" required/>
             <button type="submit">Login</button>
@@ -37,7 +37,7 @@
                 username:this.login.username,
                 password:this.login.password,
             }
-            axios.post('/auth/login', {
+            axios.post('#/auth/login', {
                 'username':this.login.username,
                 'password':this.login.password
             }).then(function (response) {

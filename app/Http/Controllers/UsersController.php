@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\User;
 use Illuminate\Http\Request;
-use Auth;
+use Auth,Log;
 class UsersController extends Controller
 {
 
@@ -15,19 +16,25 @@ class UsersController extends Controller
     * @return authentication and login view
     */
     public function postLogin(Request $request){
-        $inputs = $request->only('username','password');
+        $inputs = array(
+        'username' => 'ABCD',
+        'password' => '123456'
+    );
         // $userType = $request->get('type');
         $data = $request->all();
+    
         // return $inputs;
-        
+        // Log::debug((Auth::attempt($data)));
         if (Auth::attempt($inputs)) {
-            // return request()->json($data,200);   
-            return 1;
+            // return redirect()->back();
+
+            //  dd($inputs);
         } 
         
-        // else {
-        //     // return redirect()->back();
-        //     return 0;
-        // }
+        else {
+            return view('dashboard');  
+            // return dd($data);
+            // return 0;
+        }
     }
 }

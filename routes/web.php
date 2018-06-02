@@ -22,7 +22,12 @@ Route::get('/', function () {
 Route::group(['prefix' => 'auth'], function () {
     
     Route::post('/login', [
-        'uses' => 'usersController@postLogin',
+        'uses' => 'UsersController@postLogin',
         'as'  => 'users.post.login',
+        ]);
+
+        Route::post('/dashboard', [
+        'uses' => 'UsersController@showDash',
+        'as'  => 'dashboard',
         ]);
     });

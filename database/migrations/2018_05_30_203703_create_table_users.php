@@ -15,7 +15,7 @@ class CreateTableUsers extends Migration
     {
         Schema::create('users', function (Blueprint $collection) {
             $collection->increments('id');
-            $collection->string('user_id');
+            $collection->string('username');
             $collection->string('password');
             $collection->enum('type', ['STUDENT', 'COMPANY', 'EXECUTIVE_MEMBER', 'MASTER_ADMIN'])->default('STUDENT');
             $collection->boolean('is_active')->default(false);
