@@ -27,14 +27,14 @@ class UsersController extends Controller
         // Log::debug((Auth::attempt($data)));
         if (Auth::attempt($inputs)) {
             // return redirect()->back();
-
+            return "1";
             //  dd($inputs);
         } 
         
         else {
-            return view('dashboard');  
+            // return view('dashboard');  
             // return dd($data);
-            // return 0;
+            return "0";
         }
     }
 }
