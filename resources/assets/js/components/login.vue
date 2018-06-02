@@ -8,8 +8,8 @@
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
         </div>
         <form class="login-form" v-on:submit.prevent="handleLoginFormSubmit()" method="POST">
-            <input type="text" placeholder="Username" v-model="login.username" required/>
-            <input type="password" placeholder="Password" v-model="login.password" required/>
+            <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
+            <input type="password" placeholder="Password" v-model="login.password" name="password" required/>
             <button type="submit">Login</button>
             <p class="message">Not registered? <a href="#"><router-link :to="'reg'">Create an account</router-link></a></p>
         </form>
@@ -33,13 +33,13 @@
       methods:{
           handleLoginFormSubmit(){
             const postData = {
-                usertype : 'EXECUTIVE_MEMBER',
+                // usertype : 'EXECUTIVE_MEMBER',
                 username:this.login.username,
                 password:this.login.password,
             }
             axios.post('/auth/login', {
-                 username:this.login.username,
-                password:this.login.password
+                'username':this.login.username,
+                'password':this.login.password
             }).then(function (response) {
             console.log(response);
             })

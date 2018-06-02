@@ -50984,13 +50984,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     handleLoginFormSubmit: function handleLoginFormSubmit() {
       var postData = {
-        usertype: 'EXECUTIVE_MEMBER',
+        // usertype : 'EXECUTIVE_MEMBER',
         username: this.login.username,
         password: this.login.password
       };
       axios.post('/auth/login', {
-        username: this.login.username,
-        password: this.login.password
+        'username': this.login.username,
+        'password': this.login.password
       }).then(function (response) {
         console.log(response);
       }).catch(function (error) {
@@ -51034,7 +51034,12 @@ var render = function() {
                 expression: "login.username"
               }
             ],
-            attrs: { type: "text", placeholder: "Username", required: "" },
+            attrs: {
+              type: "text",
+              placeholder: "Username",
+              name: "username",
+              required: ""
+            },
             domProps: { value: _vm.login.username },
             on: {
               input: function($event) {
@@ -51055,7 +51060,12 @@ var render = function() {
                 expression: "login.password"
               }
             ],
-            attrs: { type: "password", placeholder: "Password", required: "" },
+            attrs: {
+              type: "password",
+              placeholder: "Password",
+              name: "password",
+              required: ""
+            },
             domProps: { value: _vm.login.password },
             on: {
               input: function($event) {

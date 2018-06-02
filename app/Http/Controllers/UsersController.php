@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 class UsersController extends Controller
 {
-    
-    public function getLogin(){
-        return view('');
-    } 
-    
+
     /**
     * Post Login request 
     *
@@ -19,15 +15,19 @@ class UsersController extends Controller
     * @return authentication and login view
     */
     public function postLogin(Request $request){
-        $inputs = $request->only('user_id','password');
-        $userType = $request->get('type');
+        $inputs = $request->only('username','password');
+        // $userType = $request->get('type');
+        $data = $request->all();
+        // return $inputs;
         
         if (Auth::attempt($inputs)) {
-            return ('$userType');   
+            // return request()->json($data,200);   
+            return 1;
         } 
         
-        else {
-            return redirect()->back();
-        }
+        // else {
+        //     // return redirect()->back();
+        //     return 0;
+        // }
     }
 }

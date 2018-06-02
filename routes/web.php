@@ -14,14 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/{vue?}', function() {
-    return view('welcome');
-})->where('vue', '[\/\w\.-]*');
+
+// Route::get('/{vue?}', function() {
+//     return view('welcome');
+// })->where('vue', '[\/\w\.-]*');
 
 Route::group(['prefix' => 'auth'], function () {
     
-        Route::post('/login', [
-            'uses' => 'usersController@postLogin',
-            'as'  => 'users.post.login',
-            ]);
-        });
+    Route::post('/login', [
+        'uses' => 'usersController@postLogin',
+        'as'  => 'users.post.login',
+        ]);
+    });
