@@ -8,26 +8,33 @@ use Auth;
 class UsersController extends Controller
 {
     /**
-     * Login request 
-     *
-     * @param Request $request
-     * @return authentication and login view
-     */
+    * Login request 
+    *
+    * @param Request $request
+    * @return authentication and login view
+    */
     
     public function getLogin(){
         return view('');
     } 
-
-     public function postLogin(Request $request){
+    
+    public function postLogin(Request $request){
         $inputs = $request->only('user_id','password');
+        $userType = $request->get('type');
         
-        if(!Auth::attempt($inputs)) {
-            return redirect()->back();
-        }
-        else {
+        if (Auth::attempt($inputs)) {
             $user = Auth::user();
-            $userType = $request->only('type');
-            return view('{{user}}.dashboard',['user' => $user,'type' => $userType]);
+            
+            if ($userType == 'STUDENT') {
+                return view('student.index');
+            }
+            elseif ($userType == 'EXECUTIVE_MEMBER') {
+                return view('user.index');
+            }          
+        } 
+        
+        else {
+            return redirect()->back();
         }
     }
 }
