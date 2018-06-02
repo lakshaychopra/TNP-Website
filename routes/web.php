@@ -18,7 +18,15 @@ Route::get('/{vue?}', function() {
     return view('welcome');
 })->where('vue', '[\/\w\.-]*');
 
-Route::post('/user/login', [
-    'uses' => 'usersController@postLogin',
-    'as'  => 'users.post.login',
-]);
+Route::group(['prefix' => 'auth'], function () {
+    
+    Route::get('/login', [
+        'uses' => 'usersController@getLogin',
+        'as' => 'users.get.login',
+        ]);
+        
+        Route::post('/login', [
+            'uses' => 'usersController@postLogin',
+            'as'  => 'users.post.login',
+            ]);
+        });

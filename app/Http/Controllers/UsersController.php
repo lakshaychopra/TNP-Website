@@ -13,7 +13,12 @@ class UsersController extends Controller
      * @param Request $request
      * @return authentication and login view
      */
-    public function postLogin(Request $request){
+    
+    public function getLogin(){
+        return view('');
+    } 
+
+     public function postLogin(Request $request){
         $inputs = $request->only('user_id','password');
         
         if(!Auth::attempt($inputs)) {
