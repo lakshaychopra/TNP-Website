@@ -11,23 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 // Route::get('/{vue?}', function() {
-//     return view('welcome');
-// })->where('vue', '[\/\w\.-]*');
-
-Route::group(['prefix' => 'auth'], function () {
+    //         return view('welcome');
+    //     })->where('vue', '[\/\w\.-]*');
     
-    Route::post('/login', [
-        'uses' => 'UsersController@store',
-        'as'  => 'users.post.login',
-        ]);
-
-        Route::post('/dashboard', [
-        'uses' => 'UsersController@showDash',
-        'as'  => 'dashboard',
-        ]);
-    });
+    Route::group(['prefix' => 'auth'], function () {
+        
+        Route::post('/login', [
+            'uses' => 'UsersController@store',
+            'as'  => 'users.post.login',
+            ]);
+            
+            Route::post('/dashboard', [
+                'uses' => 'UsersController@showDash',
+                'as'  => 'dashboard',
+                ]);
+                
+                Route::get('logout', array('uses' => 'UsersController@doLogout'))->name('logout');
+            });
