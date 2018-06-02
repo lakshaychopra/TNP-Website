@@ -47334,9 +47334,9 @@ module.exports = function spread(callback) {
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 // Vue.use(VueResource)
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-    // base: '/',
-    // mode: 'history',
-    // history: true,
+    base: '/',
+    mode: 'history',
+    history: true,
     routes: [{
         path: '/',
         name: 'layout',
@@ -50987,7 +50987,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         username: this.login.username,
         password: this.login.password
       };
-      axios.post('#/auth/login', {
+      axios.post('/user/login', {
         'username': this.login.username,
         'password': this.login.password
       }).then(function (response) {
@@ -51015,7 +51015,13 @@ var render = function() {
         "form",
         {
           staticClass: "login-form",
-          attrs: { method: "POST", action: "auth/login" }
+          attrs: { method: "POST" },
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.handleLoginFormSubmit($event)
+            }
+          }
         },
         [
           _c("input", {

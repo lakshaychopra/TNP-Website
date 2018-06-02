@@ -4,9 +4,9 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 // Vue.use(VueResource)
 const router = new VueRouter({ 
-    // base: '/',
-    // mode: 'history',
-    // history: true,
+    base: '/',
+    mode: 'history',
+    history: true,
     routes:[
         {   
             path: '/',

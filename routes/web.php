@@ -13,11 +13,11 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-// Route::get('/{vue?}', function() {
-    //         return view('welcome');
-    //     })->where('vue', '[\/\w\.-]*');
+Route::get('/{vue?}', function() {
+            return view('welcome');
+        })->where('vue', '[\/\w\.-]*');
     
-    Route::group(['prefix' => 'auth'], function () {
+    Route::group(['prefix' => 'user'], function () {
         
         Route::post('/login', [
             'uses' => 'UsersController@store',
