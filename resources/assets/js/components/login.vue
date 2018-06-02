@@ -7,7 +7,7 @@
         <div class="thumbnail">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
         </div>
-        <form class="login-form" v-on:submit.prevent="handleLoginFormSubmit()">
+        <form class="login-form" action="{{ route('users.post.login') }}">
             <input type="text" placeholder="Username" v-model="login.username" required/>
             <input type="password" placeholder="Password" v-model="login.password" required/>
             <button>Login</button>
