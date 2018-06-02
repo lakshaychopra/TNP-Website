@@ -50988,10 +50988,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         username: this.login.username,
         password: this.login.password
       };
-      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* loginURL */], postData).then(function (Response) {
-        console.log(Response);
+      axios.post('/auth/login', {
+        username: this.login.username,
+        password: this.login.password
+      }).then(function (response) {
+        console.log(response);
       }).catch(function (error) {
-        return console.log(error);
+        console.log(error);
       });
     }
   }
@@ -51013,6 +51016,7 @@ var render = function() {
         "form",
         {
           staticClass: "login-form",
+          attrs: { method: "POST" },
           on: {
             submit: function($event) {
               $event.preventDefault()
@@ -51063,7 +51067,7 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("button", [_vm._v("Login")]),
+          _c("button", { attrs: { type: "submit" } }, [_vm._v("Login")]),
           _vm._v(" "),
           _c("p", { staticClass: "message" }, [
             _vm._v("Not registered? "),
