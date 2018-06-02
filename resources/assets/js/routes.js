@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
+// import VueResource from 'vue-resource'
 Vue.use(VueRouter)
-Vue.use(VueResource)
+// Vue.use(VueResource)
 const router = new VueRouter({ 
+    mode:'history',
     routes:[
         {   
             path: '/',
@@ -25,22 +26,22 @@ const router = new VueRouter({
         {
             path: '/auth',
             name: 'auth',
-            component: Vue.component('Layout', require('./pages/auth_layout.vue')),
+            component: Vue.component('authLayout', require('./pages/auth_layout.vue')),
             children: [
                 {
                     path: 'login',
                     name: 'login',
-                    component: Vue.component('Home', require('./components/login.vue'))
+                    component: Vue.component('login', require('./components/login.vue'))
                 },
                 {
                     path: 'reg',
                     name: 'reg',
-                    component: Vue.component('dashboard', require('./components/register.vue')),
+                    component: Vue.component('register', require('./components/register.vue')),
                 },
             ]
         },
         
     ],
-})
+});
 
 export default router

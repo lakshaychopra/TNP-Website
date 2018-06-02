@@ -6,7 +6,7 @@
  */
 
 require('./bootstrap');
-import Router from './routes.js'
+import router from './routes.js'
 window.Vue = require('vue');
 
 /**
@@ -18,6 +18,7 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
-    el: '#app',
-    router:Router,
-});
+    el:'#app',
+    router:router,
+    // render: h => h(app)
+})

@@ -107,11 +107,6 @@ body {
 </style>
 
 <script>
-  import Navigation from '../components/ExampleComponent.vue';
-
     export default {
-        components:{
-            Navigation,
-        }
     }
 </script>
