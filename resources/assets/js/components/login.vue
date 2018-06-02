@@ -37,9 +37,16 @@
                 username:this.login.username,
                 password:this.login.password,
             }
-            axios.post(loginURL,postData).then(Response=>{
-              console.log(Response)
-            }).catch((error)=>console.log(error))
+            axios.post('/user/login', {
+                 username:this.login.username,
+                password:this.login.password
+            }).then(function (response) {
+            console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+            
           }
       }
     }

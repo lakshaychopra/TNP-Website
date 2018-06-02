@@ -25255,7 +25255,7 @@ module.exports = Vue;
 /* unused harmony export apiDomain */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loginURL; });
 var apiDomain = 'http://localhost:8000';
-var loginURL = apiDomain + '/user/login';
+var loginURL = '/user/login';
 
 /***/ }),
 /* 16 */
@@ -47334,7 +47334,9 @@ module.exports = function spread(callback) {
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 // Vue.use(VueResource)
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+    base: '/',
     mode: 'history',
+    history: true,
     routes: [{
         path: '/',
         name: 'layout',
