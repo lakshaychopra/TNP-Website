@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'auth'], function () {
     
     Route::post('/login', [
-        'uses' => 'UsersController@postLogin',
+        'uses' => 'UsersController@store',
         'as'  => 'users.post.login',
         ]);
 
