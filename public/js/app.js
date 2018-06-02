@@ -47345,6 +47345,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             path: 'home',
             name: 'home',
             component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Home', __webpack_require__(51))
+        }, {
+            path: 'dashboard',
+            name: 'dashboard',
+            component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard', __webpack_require__(74))
         }]
     }, {
         path: '/auth',
@@ -50948,6 +50952,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__(41);
 //
 //
 //
@@ -50967,36 +50972,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-      login: {
-        username: 'ABCD',
-        password: '123456'
-      }
-    };
-  },
+    data: function data() {
+        return {
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            login: {
+                username: '',
+                password: ''
+            }
+        };
+    },
 
-  methods: {
-    handleLoginFormSubmit: function handleLoginFormSubmit() {
-      var postData = {
-        // usertype : 'EXECUTIVE_MEMBER',
-        username: this.login.username,
-        password: this.login.password
-      };
-      axios.post('/user/login', {
-        'username': this.login.username,
-        'password': this.login.password
-      }).then(function (response) {
-        console.log(response);
-      }).catch(function (error) {
-        console.log(error);
-      });
+    methods: {
+        handleLoginFormSubmit: function handleLoginFormSubmit() {
+            var postData = {
+                // usertype : 'EXECUTIVE_MEMBER',
+                username: this.login.username,
+                password: this.login.password
+            };
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* loginURL */], {
+                'username': this.login.username,
+                'password': this.login.password
+            }).then(function (response) {
+                if (response.data == "2") {
+                    __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].push("/dashboard");
+                }
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
     }
-  }
 });
 
 /***/ }),
@@ -51337,6 +51345,126 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(75)
+/* template */
+var __vue_template__ = __webpack_require__(76)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\dashboard.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-49180b4d", Component.options)
+  } else {
+    hotAPI.reload("data-v-49180b4d", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "card card-primary" }, [
+            _c("div", { staticClass: "card-header" }, [_vm._v("Dashboard")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _vm._v(
+                "\n                    I'm an Dashboard component.\n                "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-49180b4d", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

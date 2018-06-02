@@ -19,13 +19,14 @@
 
 <script>
     import { loginURL } from '../config.js';
+    import router from '../routes.js'
     export default {
       data(){
         return{
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
           login:{
-            username:'ABCD',
-            password:'123456'
+            username:'',
+            password:''
           }
         }
       },
@@ -36,11 +37,13 @@
                 username:this.login.username,
                 password:this.login.password,
             }
-            axios.post('/user/login', {
+            axios.post(loginURL, {
                 'username':this.login.username,
                 'password':this.login.password
             }).then(function (response) {
-            console.log(response);
+                if (response.data=="2") {
+                     router.push("/dashboard");
+                }
             })
             .catch(function (error) {
                 console.log(error);
