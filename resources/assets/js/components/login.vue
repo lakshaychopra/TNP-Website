@@ -1,13 +1,11 @@
 <template>
     <div class="container">
-        <!-- <div class="info">
-            <h3>LOGIN</h3>
-        </div> -->
         <div class="form">
         <div class="thumbnail">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
         </div>
         <form class="login-form" method="POST" action="auth/login">
+            <input type="hidden" name="_token" :value="csrf">
             <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
             <input type="password" placeholder="Password" v-model="login.password" name="password" required/>
             <button type="submit">Login</button>
@@ -24,6 +22,7 @@
     export default {
       data(){
         return{
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
           login:{
             username:'ABCD',
             password:'123456'
