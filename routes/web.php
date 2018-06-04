@@ -9,25 +9,31 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/{vue?}', function() {
-            return view('welcome');
-        })->where('vue', '[\/\w\.-]*');
+Route::get('/{vue?}', function () {
+    return view('welcome');
+})->where('vue', '[\/\w\.-]*');
+
+Route::group(['prefix' => 'user'], function () {
     
-    Route::group(['prefix' => 'user'], function () {
-        
-        Route::post('/login', [
-            'uses' => 'UsersController@store',
-            'as'  => 'users.post.login',
-            ]);
-            
-            Route::post('/dashboard', [
-                'uses' => 'UsersController@showDash',
-                'as'  => 'dashboard',
-                ]);
-                
-                Route::get('logout', array('uses' => 'UsersController@doLogout'))->name('logout');
-            });
+    Route::get('/login', [
+        'uses' => 'UsersController@index',
+        'as' => 'users.get.login',
+    ]);
+    
+    Route::post('/login', [
+        'uses' => 'UsersController@store',
+        'as' => 'users.post.login',
+    ]);
+
+    
+    Route::post('/dashboard', [
+        'uses' => 'UsersController@showDash',
+        'as' => 'dashboard',
+    ]);
+
+    Route::get('logout', array('uses' => 'UsersController@doLogout'))->name('logout');
+});
