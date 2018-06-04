@@ -13,15 +13,15 @@ class CreateTableUsers extends Migration
     */
     public function up()
     {
-        Schema::create('users', function (Blueprint $collection) {
-            $collection->increments('id');
-            $collection->string('username');
-            $collection->string('password');
-            $collection->enum('type', ['STUDENT', 'COMPANY', 'EXECUTIVE_MEMBER', 'MASTER_ADMIN'])->default('STUDENT');
-            $collection->boolean('is_active')->default(false);
-            $collection->boolean('is_verified')->default(false);
-            $collection->rememberToken();
-            $collection->timestamps();
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('username');
+            $table->string('password');
+            $table->enum('type', ['STUDENT', 'COMPANY', 'EXECUTIVE_MEMBER', 'MASTER_ADMIN'])->default('STUDENT');
+            $table->boolean('is_active')->default(false);
+            $table->boolean('is_verified')->default(false);
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
     
