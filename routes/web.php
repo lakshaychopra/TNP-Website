@@ -13,27 +13,17 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/{vue?}', function () {
-    return view('welcome');
-})->where('vue', '[\/\w\.-]*');
-
 Route::group(['prefix' => 'user'], function () {
-    
-    Route::get('/login', [
-        'uses' => 'UsersController@index',
-        'as' => 'users.get.login',
-    ]);
-    
-    Route::post('/login', [
-        'uses' => 'UsersController@store',
-        'as' => 'users.post.login',
-    ]);
 
-    
-    Route::post('/dashboard', [
-        'uses' => 'UsersController@showDash',
-        'as' => 'dashboard',
-    ]);
+    Route::get('/login', array('uses' => 'UsersController@index'))->name('users.get.login');
+
+    Route::post('/login', array('uses' => 'UsersController@store'))->name('users.post.login');
+
+    Route::post('/dashboard', array('uses' => 'UsersController@showDash'))->name('dashboard');
 
     Route::get('logout', array('uses' => 'UsersController@doLogout'))->name('logout');
 });
+
+Route::get('/{vue?}', function () {
+    return view('welcome');
+})->where('vue', '[\/\w\.-]*');
