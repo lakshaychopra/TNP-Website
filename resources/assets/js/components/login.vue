@@ -15,41 +15,46 @@
     </div>
 </template>
 <style>
+
 </style>
 
 <script>
-    import { loginURL } from '../config.js';
-    import router from '../routes.js'
-    export default {
-      data(){
-        return{
-            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-          login:{
-            username:'',
-            password:''
-          }
-        }
-      },
-      methods:{
-          handleLoginFormSubmit(){
-            const postData = {
-                // usertype : 'EXECUTIVE_MEMBER',
-                username:this.login.username,
-                password:this.login.password,
-            }
-            axios.post(loginURL, {
-                'username':this.login.username,
-                'password':this.login.password
-            }).then(function (response) {
-                if (response.data=="2") {
-                     router.push("/dashboard");
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-            
-          }
+import { loginURL } from "../config.js";
+import router from "../routes.js";
+export default {
+
+  data() {
+    return {
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
+      login: {
+        username: "",
+        password: ""
       }
+    };
+  },
+  methods: {
+    handleLoginFormSubmit() {
+      const postData = {
+        // usertype : 'EXECUTIVE_MEMBER',
+        username: this.login.username,
+        password: this.login.password
+      };
+      axios
+        .post(loginURL, {
+          username: this.login.username,
+          password: this.login.password
+        })
+        .then(function(response) {
+          if (response.data == "2") {
+            router.push("/dashboard");
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
+  }
+};
 </script>

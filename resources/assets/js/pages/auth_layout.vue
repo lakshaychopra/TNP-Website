@@ -1,5 +1,5 @@
 <template>
-    <div class="app-layout">
+    <div class="app-layout" id= "bg">
         <router-view></router-view>
     </div>
 </template>
@@ -95,18 +95,38 @@
 .container .info span .fa {
   color: #4797ea;
 }
-
 /* END Form */
 /* Demo Purposes */
 body {
   background: rgba(52, 58, 64, 0.1);
+  /* background-image: url('../../img/1.jpg'); */
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;  
 }
 </style>
 
 <script>
     export default {
+      mounted() {
+    var random = Math.floor(Math.random() * 3) + 0;
+    var bigSize = [
+      'url(../images/1.jpg)',
+      'url(../images/2.jpg)',
+      'url(../images/3.jpg)'
+      // 'url(http://placehold.it/300&text=banner2)',
+      // 'url(http://placehold.it/300&text=banner3)',
+      // 'url(http://placehold.it/300&text=banner4)',
+      // 'url(http://placehold.it/300&text=banner5)',
+      // 'url(http://placehold.it/300&text=banner6)'
+    ];
+    document.body.style.backgroundImage= bigSize[random];
+
+    // document.getElementById('bg').style.backgroundImage = 'url(http://placehold.it/300&text=banner6)';
+    // console.log(bigSize[random]);
+},
     }
 </script>
