@@ -27,14 +27,10 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        // validate the info, create rules for the inputs
-        $rules = array(
-            'username' => 'required|min:3', // make sure the username
-            'password' => 'required|min:3', // password has to be greater than 3 characters
-        );
-
+        //log the user in
+        $credentials = $request->only('username', 'password');
         // run the validation rules on the inputs from the form
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($credentials, User::createLoginRule(), User::postLoginMessages());
 
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
@@ -42,8 +38,6 @@ class UsersController extends Controller
                 ->withErrors($validator) // send back all errors to the login form
                 ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
         } else {
-            //log the user in
-            $credentials = $request->only(['username', 'password']);
             /*
              * Attempting Authentication
              * Else Redirect Back

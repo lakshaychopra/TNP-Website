@@ -9,6 +9,11 @@ use Validator;
 
 class PostsController extends Controller
 {
+    public function __construct(Post $post)
+    {
+        $this->post = $post;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,14 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        //data fetched from database in $post
+        $lists = $this->post->get();
+
+        // data to be sent
+        $data = [
+            'list' => $lists,
+        ];
+
     }
 
     /**
@@ -26,8 +38,6 @@ class PostsController extends Controller
      */
     public function create()
     {
-        $post = new Post;
-
         //request inputs
         $inputs = $request->only('title', 'body', 'author', 'author_id', 'tag', 'category');
 
@@ -43,7 +53,7 @@ class PostsController extends Controller
             try {
 
                 DB::beginTransaction();
-                $post->create();
+                $post = $this->post->create($inputs);
                 DB::commit();
 
             } catch (Exception $e) {
@@ -72,7 +82,15 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        //data fetched from database in $post with where id clause
+        $post = $this->post->where('id', $id)->first();
+
+        // data to be sent
+        $data = [
+            'post' => $post,
+        ];
+        //response in the form of JSON
+        return response()->json($data);
     }
 
     /**
