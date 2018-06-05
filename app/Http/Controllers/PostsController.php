@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use DB;
 use Illuminate\Http\Request;
+use Validator;
 
 class PostsController extends Controller
 {
@@ -24,7 +26,31 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        $post = new Post;
+
+        //request inputs
+        $inputs = $request->only('title', 'body', 'author', 'author_id', 'tag', 'category');
+
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make($inputs, Post::createPostRule(), Post::postRulesMessages());
+
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator) // send back all errors to the login form
+                ->withInput(); // send back the input (not the password) so that we can repopulate the form
+        } else {
+            try {
+
+                DB::beginTransaction();
+                $post->create();
+                DB::commit();
+
+            } catch (Exception $e) {
+                DB::rollback();
+
+            }
+        }
     }
 
     /**
