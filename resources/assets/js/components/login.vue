@@ -1,9 +1,10 @@
 <template>
     <div class="container">
         <div class="form">
-        <div class="thumbnail">
+          <h4 class="text-left">Sign in</h4>
+        <!-- <div class="thumbnail">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
-        </div>
+        </div> -->
         <form class="login-form" method="POST"  v-on:submit.prevent="handleLoginFormSubmit">
             <input type="hidden" name="_token" :value="csrf">
             <!-- <input type="text" placeholder="Username" v-model="login.username" name="username" required/>

@@ -41,7 +41,8 @@
 } */
 .group {
     position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
+    margin-top: 35px;
 }
 .group input {
     font-size: 18px;
@@ -230,7 +231,7 @@ input:valid ~ label {
 body {
   background: rgba(52, 58, 64, 0.1);
   /* background-image: url('../../img/1.jpg'); */
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-position: center center;
