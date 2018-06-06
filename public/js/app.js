@@ -51351,6 +51351,35 @@ var render = function() {
             _vm._m(0)
           ]),
           _vm._v(" "),
+          _c("div", { staticClass: "group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.login.password,
+                  expression: "login.password"
+                }
+              ],
+              attrs: { type: "password", name: "password", required: "" },
+              domProps: { value: _vm.login.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.login, "password", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "highlight" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "bar" }),
+            _vm._v(" "),
+            _vm._m(1)
+          ]),
+          _vm._v(" "),
           _c("button", { attrs: { type: "submit" } }, [_vm._v("Login")]),
           _vm._v(" "),
           _c("p", { staticClass: "message" }, [
@@ -51379,6 +51408,15 @@ var staticRenderFns = [
     return _c("label", [
       _c("i", { staticClass: "fas fa-user" }),
       _c("span", { staticClass: "span-input" }, [_vm._v("Username")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", { staticClass: "fas fa-key" }),
+      _c("span", { staticClass: "span-input" }, [_vm._v("Password")])
     ])
   }
 ]
