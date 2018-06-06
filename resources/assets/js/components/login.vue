@@ -6,8 +6,21 @@
         </div>
         <form class="login-form" method="POST"  v-on:submit.prevent="handleLoginFormSubmit">
             <input type="hidden" name="_token" :value="csrf">
-            <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
-            <input type="password" placeholder="Password" v-model="login.password" name="password" required/>
+            <!-- <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
+            <input type="password" placeholder="Password" v-model="login.password" name="password" required/> -->
+                <div class="group">
+                <input type="text"  v-model="login.username" name="username" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label><i class="fas fa-user"></i><span class="span-input">Username</span></label>
+                </div>
+
+                <div class="group">
+                    <input type="password" v-model="login.password" name="password" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label><i class="fas fa-key"></i><span class="span-input">Password</span></label>
+                </div>
             <button type="submit">Login</button>
             <p class="message">Not registered? <a href="#"><router-link :to="'reg'">Create an account</router-link></a></p>
         </form>
@@ -15,14 +28,12 @@
     </div>
 </template>
 <style>
-
 </style>
 
 <script>
 import { loginURL } from "../config.js";
 import router from "../routes.js";
 export default {
-
   data() {
     return {
       csrf: document

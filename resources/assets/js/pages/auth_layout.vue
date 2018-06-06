@@ -29,15 +29,145 @@
   display: block;
   width: 100%;
 }
-.form input {
+/* .form input {
   outline: 0;
-  background: #f2f2f2;
+  background: #ecebeb;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
+} */
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+.group input {
+    font-size: 18px;
+    /* padding: 10px 10px 10px 10px; */
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    background: none;
+    color: #757575;
+}
+.group input:focus {
+    outline: none;
+}
+/* LABEL ======================================= */
+
+.group label {
+    color: #757575;
+    font-size: 17px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+/* active durum */
+
+.group input:focus ~ label,
+input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #4797ea;
+}
+/* BOTTOM BARS ================================= */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #4797ea;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 50%;
+}
+/* active durum bar */
+
+.group input:focus ~ .bar:before,
+.group input:focus ~ .bar:after {
+    width: 50%;
+}
+/* HIGHLIGHTER ================================== */
+
+.highlight {
+    position: absolute;
+    height: 0%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+/* active durum */
+
+.group input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+/* form animasyon ================ */
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #4797ea;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #4797ea;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+@keyframes inputHighlighter {
+    from {
+        background: #4797ea;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+.input-ikon {
+    font-size: 25px!important;
+    position: relative;
+}
+.input-sifre-ikon {
+    font-size: 22px!important;
+    position: relative;
+}
+.span-input {
+    margin-left: 10px;
+    position: relative;
+    /* top: -5px; */
 }
 .form button {
   outline: 0;
