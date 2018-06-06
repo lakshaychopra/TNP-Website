@@ -65,7 +65,7 @@
     position: absolute;
     pointer-events: none;
     left: 5px;
-    top: 5px;
+    top: 0px;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;

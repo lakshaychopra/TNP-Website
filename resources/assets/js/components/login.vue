@@ -15,12 +15,12 @@
                 <label><i class="fas fa-user"></i><span class="span-input">Username</span></label>
                 </div>
 
-                <div class="group">
+                <!-- <div class="group">
                     <input type="password" v-model="login.password" name="password" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label><i class="fas fa-key"></i><span class="span-input">Password</span></label>
-                </div>
+                </div> -->
             <button type="submit">Login</button>
             <p class="message">Not registered? <a href="#"><router-link :to="'reg'">Create an account</router-link></a></p>
         </form>
