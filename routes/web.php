@@ -24,7 +24,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('logout', array('uses' => 'UsersController@doLogout'))->name('logout');
 });
 
-Route::post('2fa', 'TwoFactorController@verifyTwoFactor');
+Route::post('/2fa', 'TwoFactorController@verifyTwoFactor');
 
 Route::get('/{vue?}', function () {
     return view('welcome');

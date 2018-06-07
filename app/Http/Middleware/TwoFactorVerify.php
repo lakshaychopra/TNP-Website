@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 // use Twilio;
 use Closure;
 use Auth;
+use Mail;
 
 class TwoFactorVerify
 {
@@ -28,9 +29,16 @@ class TwoFactorVerify
         // This is the twilio way
         // Twilio::message($user->phone_number, 'Two Factor Code: ' . $user->token_2fa);
        
-        // If you want to use email instead just 
         // send an email to the user here ..
-        
+        $params = [
+            'user' => $user,
+        ];
+
+        Mail::send('emails.2fa', $params, function ($message) {
+            $message->to("sanjam531@gmail.com","Sanjam");
+            $message->subject('OTP');
+        });
+
         return redirect('/2fa');  
     }
 }
