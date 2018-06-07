@@ -13,12 +13,4 @@ class Post extends Moloquent
         'title', 'body', 'author', 'author_id', 'tag', 'category',
     ];
     
-    public function insertPost($data)
-    {
-        $this->title = $data['title'];
-        $this->body = $data['body'];
-        $this->save();
-        return 1;
-        
-    }
 }

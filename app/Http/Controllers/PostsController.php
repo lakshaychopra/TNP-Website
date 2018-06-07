@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use DB;
 use Illuminate\Http\Request;
+use App\Repositories\PostRepository;
 
 class PostsController extends Controller
 {
-    public function __construct(Post $post)
+    public function __construct(PostRepository $repository)
     {
-        $this->post = $post;
+        $this->repository = $repository;
     }
     
     /**
@@ -44,7 +45,7 @@ class PostsController extends Controller
         try {
             
             DB::beginTransaction();
-            $post = $this->post->create($inputs);
+            $posts = $this->repository->create($inputs);
             DB::commit();
             
         } catch (Exception $e) {
