@@ -25310,7 +25310,7 @@ var loginURL = '/user/login';
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(18);
-module.exports = __webpack_require__(73);
+module.exports = __webpack_require__(74);
 
 
 /***/ }),
@@ -25320,7 +25320,7 @@ module.exports = __webpack_require__(73);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__routes_js__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate__ = __webpack_require__(73);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -50799,7 +50799,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.form {\r\n  position: relative;\r\n  z-index: 1;\r\n  background: #FFFFFF;\r\n  max-width: 300px;\r\n  margin: 75px auto;\r\n  padding: 30px;\r\n  text-align: center;\n}\n.form .thumbnail {\r\n  background: #4797ea;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: 0 auto 30px;\r\n  padding: 50px 30px;\r\n  border-top-left-radius: 100%;\r\n  border-top-right-radius: 100%;\r\n  border-bottom-left-radius: 100%;\r\n  border-bottom-right-radius: 100%;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\n}\n.form .thumbnail img {\r\n  display: block;\r\n  width: 100%;\n}\r\n/* .form input {\r\n  outline: 0;\r\n  background: #ecebeb;\r\n  width: 100%;\r\n  border: 0;\r\n  margin: 0 0 15px;\r\n  padding: 15px;\r\n  box-sizing: border-box;\r\n  font-size: 14px;\r\n} */\n.group {\r\n    position: relative;\r\n    margin-bottom: 25px;\r\n    margin-top: 35px;\n}\n.group input {\r\n    font-size: 18px;\r\n    /* padding: 10px 10px 10px 10px; */\r\n    display: block;\r\n    width: 100%;\r\n    border: none;\r\n    border-bottom: 1px solid rgba(0,0,0,0.12);\r\n    background: none;\r\n    color: #757575;\n}\n.group input:focus {\r\n    outline: none;\n}\r\n/* LABEL ======================================= */\n.group label {\r\n    color: #757575;\r\n    font-size: 17px;\r\n    font-weight: normal;\r\n    position: absolute;\r\n    pointer-events: none;\r\n    left: 5px;\r\n    top: 0px;\r\n    transition: 0.2s ease all;\r\n    -moz-transition: 0.2s ease all;\r\n    -webkit-transition: 0.2s ease all;\n}\r\n/* active durum */\n.group input:focus ~ label,\r\ninput:valid ~ label {\r\n    top: -20px;\r\n    font-size: 14px;\r\n    color: #4797ea;\n}\r\n/* BOTTOM BARS ================================= */\n.bar {\r\n    position: relative;\r\n    display: block;\r\n    width: 100%;\n}\n.bar:before,\r\n.bar:after {\r\n    content: '';\r\n    height: 2px;\r\n    width: 0;\r\n    bottom: 1px;\r\n    position: absolute;\r\n    background: #4797ea;\r\n    transition: 0.2s ease all;\r\n    -moz-transition: 0.2s ease all;\r\n    -webkit-transition: 0.2s ease all;\n}\n.bar:before {\r\n    left: 50%;\n}\n.bar:after {\r\n    right: 50%;\n}\r\n/* active durum bar */\n.group input:focus ~ .bar:before,\r\n.group input:focus ~ .bar:after {\r\n    width: 50%;\n}\r\n/* HIGHLIGHTER ================================== */\n.highlight {\r\n    position: absolute;\r\n    height: 0%;\r\n    width: 100px;\r\n    top: 25%;\r\n    left: 0;\r\n    pointer-events: none;\r\n    opacity: 0.5;\n}\r\n/* active durum */\n.group input:focus ~ .highlight {\r\n    -webkit-animation: inputHighlighter 0.3s ease;\r\n    animation: inputHighlighter 0.3s ease;\n}\r\n/* form animasyon ================ */\n@-webkit-keyframes inputHighlighter {\nfrom {\r\n        background: #4797ea;\n}\nto {\r\n        width: 0;\r\n        background: transparent;\n}\n}\n@keyframes inputHighlighter {\nfrom {\r\n        background: #4797ea;\n}\nto {\r\n        width: 0;\r\n        background: transparent;\n}\n}\n.input-ikon {\r\n    font-size: 25px!important;\r\n    position: relative;\n}\n.input-sifre-ikon {\r\n    font-size: 22px!important;\r\n    position: relative;\n}\n.span-input {\r\n    margin-left: 10px;\r\n    position: relative;\r\n    /* top: -5px; */\n}\n.form button {\r\n  outline: 0;\r\n  background: #4797ea;\r\n  width: 100%;\r\n  border: 0;\r\n  padding: 15px;\r\n  color: #FFFFFF;\r\n  font-size: 14px;\r\n  -webkit-transition: all 0.3 ease;\r\n  transition: all 0.3 ease;\r\n  cursor: pointer;\n}\n.form .message {\r\n  margin: 15px 0 0;\r\n  color: #b3b3b3;\r\n  font-size: 12px;\n}\n.form .message a {\r\n  color: #4797ea;\r\n  text-decoration: none;\n}\n.container {\r\n  position: relative;\r\n  z-index: 1;\r\n  max-width: 300px;\r\n  margin: 0 auto;\n}\n.container:before, .container:after {\r\n  content: \"\";\r\n  display: block;\r\n  clear: both;\n}\n.container .info {\r\n  margin-top:75px;\r\n  background-color: #4797ea;\r\n  text-align: center;\r\n  padding: 15px 0;\n}\n.container .info h3 {\r\n  margin: 0 ;\r\n  padding: 0;\r\n  /* font-size: 36px; */\r\n  font-weight: 300;\r\n  color: #fff;\n}\n.container .info span {\r\n  color: #4d4d4d;\r\n  font-size: 12px;\n}\n.container .info span a {\r\n  color: #000000;\r\n  text-decoration: none;\n}\n.container .info span .fa {\r\n  color: #4797ea;\n}\n.help-block{\r\n    /* margin-left: -70px; */\r\n    color: #ff2c2c;\r\n    font-size: 12px;\n}\r\n/* END Form */\r\n/* Demo Purposes */\nbody {\r\n  background: rgba(52, 58, 64, 0.1);\r\n  /* background-image: url('../../img/1.jpg'); */\r\n  font-family: \"Open Sans\", sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  background-position: center center;\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\n}\r\n", ""]);
+exports.push([module.i, "\n.form {\r\n  position: relative;\r\n  z-index: 1;\r\n  background: #FFFFFF;\r\n  max-width: 300px;\r\n  margin: 75px auto;\r\n  padding: 30px;\r\n  text-align: center;\n}\n.form .thumbnail {\r\n  background: #4797ea;\r\n  width: 150px;\r\n  height: 150px;\r\n  margin: 0 auto 30px;\r\n  padding: 50px 30px;\r\n  border-top-left-radius: 100%;\r\n  border-top-right-radius: 100%;\r\n  border-bottom-left-radius: 100%;\r\n  border-bottom-right-radius: 100%;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\n}\n.form .thumbnail img {\r\n  display: block;\r\n  width: 100%;\n}\r\n/* .form input {\r\n  outline: 0;\r\n  background: #ecebeb;\r\n  width: 100%;\r\n  border: 0;\r\n  margin: 0 0 15px;\r\n  padding: 15px;\r\n  box-sizing: border-box;\r\n  font-size: 14px;\r\n} */\n.group {\r\n    position: relative;\r\n    margin-bottom: 25px;\r\n    margin-top: 35px;\n}\n.group input {\r\n    font-size: 18px;\r\n    /* padding: 10px 10px 10px 10px; */\r\n    display: block;\r\n    width: 100%;\r\n    border: none;\r\n    border-bottom: 1px solid rgba(0,0,0,0.12);\r\n    background: none;\r\n    color: #757575;\n}\n.group input:focus {\r\n    outline: none;\n}\r\n/* LABEL ======================================= */\n.group label {\r\n    color: #757575;\r\n    font-size: 17px;\r\n    font-weight: normal;\r\n    position: absolute;\r\n    pointer-events: none;\r\n    left: 5px;\r\n    top: 0px;\r\n    transition: 0.2s ease all;\r\n    -moz-transition: 0.2s ease all;\r\n    -webkit-transition: 0.2s ease all;\n}\r\n/* active durum */\n.group input:focus ~ label,\r\ninput:valid ~ label {\r\n    top: -20px;\r\n    font-size: 14px;\r\n    color: #4797ea;\n}\r\n/* BOTTOM BARS ================================= */\n.bar {\r\n    position: relative;\r\n    display: block;\r\n    width: 100%;\n}\n.bar:before,\r\n.bar:after {\r\n    content: '';\r\n    height: 2px;\r\n    width: 0;\r\n    bottom: 1px;\r\n    position: absolute;\r\n    background: #4797ea;\r\n    transition: 0.2s ease all;\r\n    -moz-transition: 0.2s ease all;\r\n    -webkit-transition: 0.2s ease all;\n}\n.bar:before {\r\n    left: 50%;\n}\n.bar:after {\r\n    right: 50%;\n}\r\n/* active durum bar */\n.group input:focus ~ .bar:before,\r\n.group input:focus ~ .bar:after {\r\n    width: 50%;\n}\r\n/* HIGHLIGHTER ================================== */\n.highlight {\r\n    position: absolute;\r\n    height: 0%;\r\n    width: 100px;\r\n    top: 25%;\r\n    left: 0;\r\n    pointer-events: none;\r\n    opacity: 0.5;\n}\r\n/* active durum */\n.group input:focus ~ .highlight {\r\n    -webkit-animation: inputHighlighter 0.3s ease;\r\n    animation: inputHighlighter 0.3s ease;\n}\r\n/* form animasyon ================ */\n@-webkit-keyframes inputHighlighter {\nfrom {\r\n        background: #4797ea;\n}\nto {\r\n        width: 0;\r\n        background: transparent;\n}\n}\n@keyframes inputHighlighter {\nfrom {\r\n        background: #4797ea;\n}\nto {\r\n        width: 0;\r\n        background: transparent;\n}\n}\n.input-ikon {\r\n    font-size: 25px!important;\r\n    position: relative;\n}\n.input-sifre-ikon {\r\n    font-size: 22px!important;\r\n    position: relative;\n}\n.span-input {\r\n    margin-left: 10px;\r\n    position: relative;\r\n    /* top: -5px; */\n}\n.form button {\r\n  outline: 0;\r\n  background: #4797ea;\r\n  width: 100%;\r\n  border: 0;\r\n  padding: 15px;\r\n  color: #FFFFFF;\r\n  font-size: 14px;\r\n  -webkit-transition: all 0.3 ease;\r\n  transition: all 0.3 ease;\r\n  cursor: pointer;\n}\n.form .message {\r\n  margin: 15px 0 0;\r\n  color: #b3b3b3;\r\n  font-size: 12px;\n}\n.form .message a {\r\n  color: #4797ea;\r\n  text-decoration: none;\n}\n.container {\r\n  position: relative;\r\n  z-index: 1;\r\n  max-width: 300px;\r\n  margin: 0 auto;\n}\n.container:before, .container:after {\r\n  content: \"\";\r\n  display: block;\r\n  clear: both;\n}\n.container .info {\r\n  margin-top:75px;\r\n  background-color: #4797ea;\r\n  text-align: center;\r\n  padding: 15px 0;\n}\n.container .info h3 {\r\n  margin: 0 ;\r\n  padding: 0;\r\n  /* font-size: 36px; */\r\n  font-weight: 300;\r\n  color: #fff;\n}\n.container .info span {\r\n  color: #4d4d4d;\r\n  font-size: 12px;\n}\n.container .info span a {\r\n  color: #000000;\r\n  text-decoration: none;\n}\n.container .info span .fa {\r\n  color: #4797ea;\n}\n.help-block{\r\n    /* margin-left: -70px; */\r\n    color: #ff2c2c;\r\n    font-size: 12px;\n}\r\n/* END Form */\r\n/* Demo Purposes */\nbody {\r\n  /* background: rgba(52, 58, 64, 0.1); */\r\n  /* background-image: url('../../img/1.jpg'); */\r\n  font-family: \"Open Sans\", sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  background-position: center center;\r\n  /* background-size: cover; */\r\n  background-repeat: no-repeat;\n}\r\n", ""]);
 
 // exports
 
@@ -51359,7 +51359,7 @@ var render = function() {
                 ],
                 attrs: {
                   type: "text",
-                  "data-vv-rules": "required|email",
+                  "data-vv-rules": "required",
                   name: "email",
                   required: ""
                 },
@@ -51698,15 +51698,6 @@ if (false) {
 
 /***/ }),
 /* 73 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58963,6 +58954,12 @@ var index_esm = {
 /* harmony default export */ __webpack_exports__["a"] = (index_esm);
 
 
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
