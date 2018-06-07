@@ -226,16 +226,21 @@ input:valid ~ label {
 .container .info span .fa {
   color: #4797ea;
 }
+.help-block{
+    /* margin-left: -70px; */
+    color: #ff2c2c;
+    font-size: 12px;
+}
 /* END Form */
 /* Demo Purposes */
 body {
-  background: rgba(52, 58, 64, 0.1);
+  /* background: rgba(52, 58, 64, 0.1); */
   /* background-image: url('../../img/1.jpg'); */
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-position: center center;
-  background-size: cover;
+  /* background-size: cover; */
   background-repeat: no-repeat;  
 }
 </style>

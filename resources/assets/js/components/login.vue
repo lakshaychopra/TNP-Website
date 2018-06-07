@@ -9,18 +9,24 @@
             <input type="hidden" name="_token" :value="csrf">
             <!-- <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
             <input type="password" placeholder="Password" v-model="login.password" name="password" required/> -->
-                <div class="group">
-                <input type="text"  v-model="login.username" name="username" required>
+               <div class="group" :class="{ 'has-error': errors.has('email'), 'form-group': true } ">
+                <input type="text" v-validate data-vv-rules="required" v-model="login.username" name="email" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label><i class="fas fa-user"></i><span class="span-input">Username</span></label>
+                <span v-if="errors.has('email')" class="help-block">
+                                    <strong>{{ errors.first('email') }}</strong>
+                </span>
                 </div>
 
-                <div class="group">
-                    <input type="password" v-model="login.password" name="password" required>
+                <div class="group" :class="{ 'has-error': errors.has('password'), 'form-group': true } ">
+                    <input type="password" v-validate data-vv-rules="required" v-model="login.password" name="password" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label><i class="fas fa-key"></i><span class="span-input">Password</span></label>
+                    <span v-if="errors.has('password')" class="help-block">
+                                        <strong>{{ errors.first('password') }}</strong>
+                    </span>
                 </div>
             <button type="submit">Login</button>
             <p class="message">Not registered? <a href="#"><router-link :to="'reg'">Create an account</router-link></a></p>
