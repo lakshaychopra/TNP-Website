@@ -16,19 +16,5 @@ class User extends Authenticatable
      * @var string
      */
     protected $table = "users";
-    public static function createLoginRule()
-    {
-        // validate the info, create rules for the inputs
-        return [
-            'username' => 'bail|required|min:3', // make sure the username
-            'password' => 'required|min:3', // password has to be greater than 3 characters
-        ];
-    }
-
-    public static function postLoginMessages()
-    {
-        return [
-            // 'email.required' => trans( 'flash.validation.required',  ['attribute' => 'email'] ),
-        ];
-    }
+    
 }

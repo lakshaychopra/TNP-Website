@@ -1,50 +1,60 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
-use Session;
-// use Validator;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\UserLoginRequest;
-
+use Session;
+use Validator;
 
 class UsersController extends Controller
 {
     public $successStatus = 200;
-    
+
     /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        // return view('welcome');
+        //
     }
-    
+
     /**
-    * Post Login request
-    * @param Request $request
-    * @return authentication and login view
-    */
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(UserLoginRequest $request)
     {
         //log the user in
         $credentials = $request->only('username', 'password');
         // run the validation rules on the inputs from the form
-        // $validator = Validator::make($credentials, User::rules(), User::messages());
+        $validator = Validator::make($credentials, User::createLoginRule(), User::postLoginMessages());
         
         // if the validator fails, redirect back to the form
-        // if ($validator->fails()) {
-            // return this->respondValidationError()
-            // return response()->json(['errors'=>$validator->errors()->all()], 422); // JSON response with 422 error and validations
+        if ($validator->fails()) {
+            return response()->json(['errors'=>$validator->errors()->all()], 422); // JSON response with 422 error and validations
             
             // return Redirect::to('/auth/login')
             //     ->withErrors($validator) // send back all errors to the login form
             //     ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
-        // } else {
+        } else {
             /*
             * Attempting Authentication
             * Else Redirect Back
@@ -115,10 +125,50 @@ class UsersController extends Controller
                 // return redirect()->back();
                 return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
             }
-        // }
+        }
     }
-    // app/controllers/HomeController.php
-    public function doLogout()
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
     {
         Auth::logout(); // log the user out of our application
         return Redirect::to('auth/login'); // redirect the user to the login screen
