@@ -17,7 +17,7 @@ class Post extends Moloquent
     {
         // validate the info, create rules for the inputs
         return [
-            'title' => 'required|min:5|max:30',
+            'title' => 'bail|required|min:5|max:30',
             'body' => 'required|min:5',
             'author' => 'required',
             'author_id' => 'required',
