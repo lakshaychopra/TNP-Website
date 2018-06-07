@@ -54,7 +54,7 @@ class UsersController extends Controller
                         case 'MASTER_ADMIN':
                         Session::flash('msg', 'You have been logged in');
                         // return "1";
-                        $success['token'] = $user->createToken('GNDEC')->accessToken;
+                        $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                         return response()
                         ->json([
                             'success'=>$success,
@@ -63,9 +63,9 @@ class UsersController extends Controller
                         $this->successStatus);
                         break;
                         case 'EXECUTIVE_MEMBER':
-                        Session::flash('msg', 'You have been logged in');
+                        // Session::flash('msg', 'You have been logged in');
                         // return "2";
-                        $success['token'] = $user->createToken('GNDEC')->accessToken;
+                        $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                         return response()
                         ->json([
                             'success'=>$success,
@@ -76,7 +76,7 @@ class UsersController extends Controller
                         case 'STUDENT':
                         Session::flash('msg', 'You have been logged in');
                         // return "3";
-                        $success['token'] = $user->createToken('GNDEC')->accessToken;
+                        $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                         return response()
                         ->json([
                             'success'=>$success,
@@ -87,7 +87,7 @@ class UsersController extends Controller
                         case 'COMPANY':
                         Session::flash('msg', 'You have been logged in');
                         // return "4";
-                        $success['token'] = $user->createToken('GNDEC')->accessToken;
+                        $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                         return response()->json([
                             'success'=>$success,
                             'type'=>$user,

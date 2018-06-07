@@ -59,9 +59,10 @@ export default {
           password: this.login.password
         })
         .then(function(response) {
-          if (response.data == "2") {
-            router.push("/dashboard");
-          }
+          // if (response.data == "2") {
+          //   router.push("/dashboard");
+          // }
+          console.log(response)
         })
         .catch(function(error) {
           console.log(error);

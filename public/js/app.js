@@ -51282,9 +51282,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         username: this.login.username,
         password: this.login.password
       }).then(function (response) {
-        if (response.data == "2") {
-          __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].push("/dashboard");
-        }
+        // if (response.data == "2") {
+        //   router.push("/dashboard");
+        // }
+        console.log(response);
       }).catch(function (error) {
         console.log(error);
       });
