@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use Twilio;
+// use Twilio;
 use Closure;
 use Auth;
 
@@ -24,10 +24,13 @@ class TwoFactorVerify
         
         $user->token_2fa = mt_rand(10000,99999);
         $user->save();        
+       
         // This is the twilio way
-        Twilio::message($user->phone_number, 'Two Factor Code: ' . $user->token_2fa);
+        // Twilio::message($user->phone_number, 'Two Factor Code: ' . $user->token_2fa);
+       
         // If you want to use email instead just 
         // send an email to the user here ..
+        
         return redirect('/2fa');  
     }
 }
