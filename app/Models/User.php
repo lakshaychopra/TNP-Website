@@ -16,7 +16,6 @@ class User extends Authenticatable
      * @var string
      */
     protected $table = "users";
-    public $successStatus = 200;
     public static function createLoginRule()
     {
         // validate the info, create rules for the inputs
