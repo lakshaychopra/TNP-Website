@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Session;
 use App\Http\Requests\UserLoginRequest;
 
-
 class UsersController extends Controller
 {
     public $successStatus = 200;
