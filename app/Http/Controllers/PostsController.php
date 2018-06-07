@@ -46,9 +46,11 @@ class PostsController extends Controller
 
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator) // send back all errors to the login form
-                ->withInput(); // send back the input (not the password) so that we can repopulate the form
+            return response()->json(['errors'=>$validator->errors()->all()->withInput()], 422);
+
+            // return redirect()->back()
+            //     ->withErrors($validator) // send back all errors to the login form
+            //     ->withInput(); // send back the input (not the password) so that we can repopulate the form
         } else {
             try {
 
