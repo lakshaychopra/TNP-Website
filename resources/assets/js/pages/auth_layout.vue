@@ -226,6 +226,11 @@ input:valid ~ label {
 .container .info span .fa {
   color: #4797ea;
 }
+.help-block{
+    /* margin-left: -70px; */
+    color: #ff2c2c;
+    font-size: 12px;
+}
 /* END Form */
 /* Demo Purposes */
 body {
