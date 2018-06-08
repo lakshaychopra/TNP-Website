@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Post;
 
-class UsersRepository
+class PostRepository
 {
     /**
      * create new instance

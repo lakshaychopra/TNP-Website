@@ -42,7 +42,7 @@ class Kernel extends HttpKernel
             'bindings',
         ],
         
-        'admin' => [
+        'users' => [
             \App\Http\Middleware\TwoFactorVerify::class,
         ],
         

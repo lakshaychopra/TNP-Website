@@ -7,11 +7,17 @@ use Auth;
 use Illuminate\Http\Request;
 use Session;
 use App\Http\Requests\UserLoginRequest;
+use App\Repositories\UserRepository;
+
 
 class UsersController extends Controller
 {
     public $successStatus = 200;
     
+    public function __construct(UserRepository $repository)
+    {
+        $this->repository = $repository;
+    }
     /**
     * Display a listing of the resource.
     *
@@ -19,7 +25,7 @@ class UsersController extends Controller
     */
     public function index()
     {
-    //
+        //
     }
     
     /**
@@ -47,40 +53,48 @@ class UsersController extends Controller
                     case 'MASTER_ADMIN':
                     // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
+                    $this->repository->authenticated();
                     return response() //Json response with status 200 and token and user type
                     ->json([
-                        'success' => $success,
+                        // 'success' => $success,
                         'type' => $user,
+                        'response'=>'Authorized',
                     ],
                     $this->successStatus);
                     break;
                     case 'EXECUTIVE_MEMBER':
                     // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
+                    $this->repository->authenticated();
                     return response() //Json response with status 200 and token and user type
                     ->json([
                         // 'success' => $success,
                         'type' => $user,
+                        'response'=>'Authorized',
                     ],
                     $this->successStatus);
                     break;
                     case 'STUDENT':
                     // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
+                    $this->repository->authenticated();
                     return response() //Json response with status 200 and token and user type
                     ->json([
-                        'success' => $success,
+                        // 'success' => $success,
                         'type' => $user,
+                        'response'=>'Authorized',
                     ],
                     $this->successStatus);
                     break;
                     case 'COMPANY':
                     // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
+                    $this->repository->authenticated();
                     return response() //Json response with status 200 and token and user type
                     ->json([  
-                        'success' => $success,
+                        // 'success' => $success,
                         'type' => $user,
+                        'response'=>'Authorized',
                     ],
                     $this->successStatus);
                     break;
@@ -101,4 +115,19 @@ class UsersController extends Controller
         Auth::logout(); // log the user out of our application
         return Redirect::to('auth/login'); // redirect the user to the login screen
     }
-}
+    
+    public function verifyTwoFactor(Request $request)
+    {
+        $request->validate([
+            '2fa' => 'required',
+            ]);
+            
+            if($request->input('2fa') == Auth::user()->token_2fa){            
+                $user = Auth::user();
+                $user->token_2fa_expiry = \Carbon\Carbon::now()->addMinutes(config('session.lifetime'));
+                $user->save();       
+                return redirect('/admin');
+            } else {
+                return redirect('/ark-2fa')->with('message', 'Incorrect code.');
+            }
+        }}

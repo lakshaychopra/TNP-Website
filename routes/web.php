@@ -22,9 +22,10 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('/dashboard', array('uses' => 'UsersController@showDash'))->name('dashboard');
 
     Route::get('logout', array('uses' => 'UsersController@doLogout'))->name('logout');
+    
+    Route::post('/2fa', 'UsersController@verifyTwoFactor');
 });
 
-Route::post('/2fa', 'TwoFactorController@verifyTwoFactor');
 
 Route::get('/{vue?}', function () {
     return view('welcome');

@@ -3,8 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use Auth;
 
-class UsersRepository
+class UserRepository
 {
     /**
      * create new instance
@@ -16,5 +17,10 @@ class UsersRepository
         $this->model = $model;         
     }
     
-    
+    public function authenticated()
+    {
+        $token = Auth::user();
+        $token->token_2fa_expiry = \Carbon\Carbon::now();
+        $token->save();
+    }
 }

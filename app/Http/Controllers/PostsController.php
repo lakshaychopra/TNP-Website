@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use DB;
 use Illuminate\Http\Request;
-use App\Repositories\PostRepository;
+use App\Repositories\PostsRepository;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
     public function __construct(PostRepository $repository)
     {
