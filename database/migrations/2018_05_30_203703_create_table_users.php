@@ -17,6 +17,10 @@ class CreateTableUsers extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('password');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->string('token_2fa')->nullable();
+            $table->datetime('token_2fa_expiry')->nullable();
             $table->enum('type', ['STUDENT', 'COMPANY', 'EXECUTIVE_MEMBER', 'MASTER_ADMIN'])->default('STUDENT');
             $table->boolean('is_active')->default(false);
             $table->boolean('is_verified')->default(false);
