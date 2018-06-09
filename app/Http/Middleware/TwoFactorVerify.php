@@ -33,6 +33,7 @@ class TwoFactorVerify
         
         // send an email to the user here ..
         event(new TwoFactorEvent($user));
+        return response()->json(['Response' => 'Mail Sent'], 200);
        
     }
 }

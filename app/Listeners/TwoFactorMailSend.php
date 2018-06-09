@@ -37,6 +37,5 @@ class TwoFactorMailSend
             $message->to($user->email, $user->name);
             $message->subject('OTP');
         });
-        return response()->json(['Response' => 'Mail Sent'], 200);
     }
 }
