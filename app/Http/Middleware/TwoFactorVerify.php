@@ -5,8 +5,8 @@ namespace App\Http\Middleware;
 // use Twilio;
 use Closure;
 use Auth;
-use Mail;
 use Illuminate\Http\Request;
+use App\Events\TwoFactorEvent;
 
 class TwoFactorVerify
 {
@@ -36,12 +36,7 @@ class TwoFactorVerify
             'user' => $user,
         ];
         
-        Mail::send('emails.2fa', $params, function ($message) use($user) {
-            $message->to($user->email, $user->name);
-            $message->subject('OTP');
-        });
-        
-        // return redirect('/2fa');  
-        return response()->json(['Response' => 'Mail Sent'], 200);
+        event(new TwoFactorEvent($user));
+       
     }
 }
