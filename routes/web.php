@@ -11,8 +11,6 @@
 |
  */
 
-// Route::get('/', 'HomeController@index')->name('home');
-
 Route::group(['prefix' => 'user'], function () {
 
     Route::post('/login', array('uses' => 'UsersController@store'))->name('users.post.login');
@@ -24,9 +22,6 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('/security', 'UsersController@verifyTwoFactor'); 
 });
 
-
 Route::get('/{vue?}', function () {
     return view('welcome');
 })->where('vue', '[\/\w\.-]*');
-
-// ->middleware('two_factor')
