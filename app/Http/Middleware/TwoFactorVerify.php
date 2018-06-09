@@ -32,10 +32,6 @@ class TwoFactorVerify
         // Twilio::message($user->phone_number, 'Two Factor Code: ' . $user->token_2fa);
         
         // send an email to the user here ..
-        $params = [
-            'user' => $user,
-        ];
-        
         event(new TwoFactorEvent($user));
        
     }
