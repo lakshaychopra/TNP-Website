@@ -6,6 +6,7 @@ use App\Events\TwoFactorEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
+use App\Mail\TwoFactorEmail;
 
 class TwoFactorMailSend
 {
@@ -29,13 +30,14 @@ class TwoFactorMailSend
     {
         $token = $event->user;
        
-        $params = [
-            'user' => $token,
-        ];
+        // $params = [
+        //     'user' => $token,
+        // ];
         
-        Mail::send('emails.2fa', $params, function ($message) use($token) {
-            $message->to($token->email, $token->name);
-            $message->subject('OTP');
-        });
+        // Mail::send('emails.2fa', $params, function ($message) use($token) {
+        //     $message->to($token->email, $token->name);
+        //     $message->subject('OTP');
+      
+        Mail::to($token->email)->send(new TwoFactorEmail);
     }
 }
