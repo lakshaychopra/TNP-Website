@@ -11,7 +11,7 @@
             <!-- <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
             <input type="password" placeholder="Password" v-model="login.password" name="password" required/> -->
                <div class="group" :class="{ 'has-error': errors.has('token_2fa'), 'form-group': true } ">
-                <input type="password" v-validate data-vv-rules="required" name="token_2fa" required>
+                <input type="password" v-validate data-vv-rules="required"  v-model="login.token_2fa" name="token_2fa" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label><i class="fas fa-user"></i><span class="span-input">Enter Code</span></label>
@@ -51,7 +51,7 @@ export default {
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
       login: {
-        security: "",
+        token_2fa: "",
       }
     };
   },
@@ -59,11 +59,10 @@ export default {
     handleLoginFormSubmit() {
       const postData = {
         // usertype : 'EXECUTIVE_MEMBER',
-        security : this.login.security,
+        token_2fa : this.login.token_2fa,
       };
-      axios
-        .post(securityURL, {
-          security: this.login.security,
+      axios.post(securityURL, {
+          token_2fa: this.login.token_2fa,
         })
         .then(function(response) {
           // if (response.status == "200") {

@@ -119,9 +119,9 @@ class UsersController extends Controller
     
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        $credentials = $request->only('token_2fa');
+        // $credentials = $request->only('token_2fa');
 
-            if(Auth::attempt($credentials)){    
+            if($request->input('token_2fa') == Auth::user()->token_2fa){    
                 Auth::user();        
                 return response() //Json response with status 200 and token and user type
                     ->json([  

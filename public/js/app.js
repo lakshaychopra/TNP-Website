@@ -51887,7 +51887,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
       login: {
-        security: ""
+        token_2fa: ""
       }
     };
   },
@@ -51896,10 +51896,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     handleLoginFormSubmit: function handleLoginFormSubmit() {
       var postData = {
         // usertype : 'EXECUTIVE_MEMBER',
-        security: this.login.security
+        token_2fa: this.login.token_2fa
       };
       axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["b" /* securityURL */], {
-        security: this.login.security
+        token_2fa: this.login.token_2fa
       }).then(function (response) {
         // if (response.status == "200") {
         //   window.location = "/dashboard";
@@ -51968,12 +51968,29 @@ var render = function() {
             },
             [
               _c("input", {
-                directives: [{ name: "validate", rawName: "v-validate" }],
+                directives: [
+                  { name: "validate", rawName: "v-validate" },
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.login.token_2fa,
+                    expression: "login.token_2fa"
+                  }
+                ],
                 attrs: {
                   type: "password",
                   "data-vv-rules": "required",
                   name: "token_2fa",
                   required: ""
+                },
+                domProps: { value: _vm.login.token_2fa },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.login, "token_2fa", $event.target.value)
+                  }
                 }
               }),
               _vm._v(" "),
