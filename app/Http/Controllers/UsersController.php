@@ -122,10 +122,10 @@ class UsersController extends Controller
             '2fa' => 'required',
             ]);
             
-            if($request->input('2fa') == Auth::user()->token_2fa){            
+            
+
+            if($request->only('token_2fa') == Auth::user()->token_2fa){            
                 $user = Auth::user();
-                $user->token_2fa_expiry = \Carbon\Carbon::now()->addMinutes(config('session.lifetime'));
-                $user->save();       
                 return response() //Json response with status 200 and token and user type
                     ->json([  
                         'response'=>'Authorized',

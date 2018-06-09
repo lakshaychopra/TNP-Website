@@ -33,7 +33,7 @@ class TwoFactorVerify
         
         // send an email to the user here ..
         $params = [
-            'user' => $user->token_2fa,
+            'user' => $user,
         ];
         
         Mail::send('emails.2fa', $params, function ($message) {

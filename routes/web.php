@@ -15,15 +15,13 @@
 
 Route::group(['prefix' => 'user'], function () {
 
-    Route::get('/login', array('uses' => 'UsersController@index'))->name('users.get.login');
-
-    Route::post('/login', array('uses' => 'UsersController@store'))->name('users.post.login');
+    Route::post('/login', array('uses' => 'UsersController@store'))->name('users.post.login')->middleware('two_factor');
 
     Route::post('/dashboard', array('uses' => 'UsersController@showDash'))->name('dashboard');
 
     Route::get('logout', array('uses' => 'UsersController@doLogout'))->name('logout');
     
-    Route::post('/2fa', 'UsersController@verifyTwoFactor');
+    Route::post('/security', 'UsersController@verifyTwoFactor'); 
 });
 
 
