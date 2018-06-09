@@ -51327,12 +51327,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //   }
         console.log(response);
       }).catch(function (error) {
-        console.log(error.response.request.responseText['@errors']);
-        Vue.toasted.show(error.response, {
-          icon: 'exclamation-circle',
-          position: "bottom-center",
-          duration: 5000
-        });
+        var obj = JSON.parse(error.response.request.responseText);
+
+        // console.log(error.response);
+        if (error.response.status == "401") {
+          // console.log(obj['error']);
+          Vue.toasted.show(obj['error'], {
+            icon: 'exclamation-circle',
+            position: "bottom-center",
+            duration: 10000
+          });
+        }
+
+        if (error.response.status == "422") {
+          // console.log(obj['errors']['username']);
+          if (obj['errors'].hasOwnProperty('username')) {
+            Vue.toasted.show(obj['errors']['username'], {
+              icon: 'exclamation-circle',
+              position: "bottom-center",
+              duration: 10000
+            });
+          }
+          if (obj['errors'].hasOwnProperty('password')) {
+            Vue.toasted.show(obj['errors']['password'], {
+              icon: 'exclamation-circle',
+              position: "bottom-center",
+              duration: 10000
+            });
+          }
+        }
       });
     }
   }
