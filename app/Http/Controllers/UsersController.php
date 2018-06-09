@@ -126,8 +126,12 @@ class UsersController extends Controller
                 $user = Auth::user();
                 $user->token_2fa_expiry = \Carbon\Carbon::now()->addMinutes(config('session.lifetime'));
                 $user->save();       
-                return redirect('/admin');
+                return response() //Json response with status 200 and token and user type
+                    ->json([  
+                        'response'=>'Authorized',
+                    ],
+                    $this->successStatus);
             } else {
-                return redirect('/ark-2fa')->with('message', 'Incorrect code.');
+            return response()->json(['error' => 'Incorrect code'], 401); //Json response with status 401 and error
             }
         }}
