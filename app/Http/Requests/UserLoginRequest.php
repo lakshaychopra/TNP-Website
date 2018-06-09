@@ -37,7 +37,7 @@ class UserLoginRequest extends FormRequest
     public function messages()
     {
         return [
-            // 'email.required' => trans( 'flash.validation.required',  ['attribute' => 'email'] ),
+            'username.exists' => 'Username not valid!',
         ];
     }
 }
