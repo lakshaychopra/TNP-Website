@@ -79,8 +79,8 @@ export default {
 
         })
         .catch(function(error) {
-          // console.log(error.response.statusText);
-          Vue.toasted.show(error.response.statusText,{
+          console.log(error.response.request.responseText['@errors']);
+          Vue.toasted.show(error.response,{
                 icon : 'exclamation-circle',
                 position: "bottom-center", 
                 duration : 5000

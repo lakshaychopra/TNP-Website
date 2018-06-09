@@ -15,7 +15,7 @@
 
 Route::group(['prefix' => 'user'], function () {
 
-    Route::post('/login', array('uses' => 'UsersController@store'))->name('users.post.login')->middleware('two_factor');
+    Route::post('/login', array('uses' => 'UsersController@store'))->name('users.post.login');
 
     Route::post('/dashboard', array('uses' => 'UsersController@showDash'))->name('dashboard');
 
@@ -29,3 +29,4 @@ Route::get('/{vue?}', function () {
     return view('welcome');
 })->where('vue', '[\/\w\.-]*');
 
+// ->middleware('two_factor')
