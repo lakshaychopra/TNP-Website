@@ -10,7 +10,7 @@ use Exception;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
 use App\Repositories\UserRepository;
-use DB;
+
 
 class UsersController extends Controller
 {
