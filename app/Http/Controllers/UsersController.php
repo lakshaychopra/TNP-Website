@@ -7,6 +7,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Session;
 use App\Http\Requests\UserLoginRequest;
+use App\Http\Requests\TwoFactorRequest;
 use App\Repositories\UserRepository;
 
 
@@ -116,16 +117,12 @@ class UsersController extends Controller
         return Redirect::to('auth/login'); // redirect the user to the login screen
     }
     
-    public function verifyTwoFactor(Request $request)
+    public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        $request->validate([
-            '2fa' => 'required',
-            ]);
-            
-            
+        $credentials = $request->only('token_2fa');
 
-            if($request->only('token_2fa') == Auth::user()->token_2fa){            
-                $user = Auth::user();
+            if(Auth::attempt($credentials)){    
+                Auth::user();        
                 return response() //Json response with status 200 and token and user type
                     ->json([  
                         'response'=>'Authorized',

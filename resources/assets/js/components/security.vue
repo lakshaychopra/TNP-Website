@@ -10,13 +10,13 @@
             <input type="hidden" name="_token" :value="csrf">
             <!-- <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
             <input type="password" placeholder="Password" v-model="login.password" name="password" required/> -->
-               <div class="group" :class="{ 'has-error': errors.has('2fa'), 'form-group': true } ">
-                <input type="text" v-validate data-vv-rules="required" name="2fa" required>
+               <div class="group" :class="{ 'has-error': errors.has('token_2fa'), 'form-group': true } ">
+                <input type="password" v-validate data-vv-rules="required" name="token_2fa" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label><i class="fas fa-user"></i><span class="span-input">Enter Code</span></label>
-                <span v-if="errors.has('2fa')" class="help-block">
-                                    <strong>{{ errors.first('2fa') }}</strong>
+                <span v-if="errors.has('token_2fa')" class="help-block">
+                                    <strong>{{ errors.first('token_2fa') }}</strong>
                 </span>
                 </div>
 

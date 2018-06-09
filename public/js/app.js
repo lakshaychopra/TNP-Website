@@ -51961,15 +51961,18 @@ var render = function() {
             "div",
             {
               staticClass: "group",
-              class: { "has-error": _vm.errors.has("2fa"), "form-group": true }
+              class: {
+                "has-error": _vm.errors.has("token_2fa"),
+                "form-group": true
+              }
             },
             [
               _c("input", {
                 directives: [{ name: "validate", rawName: "v-validate" }],
                 attrs: {
-                  type: "text",
+                  type: "password",
                   "data-vv-rules": "required",
-                  name: "2fa",
+                  name: "token_2fa",
                   required: ""
                 }
               }),
@@ -51980,9 +51983,11 @@ var render = function() {
               _vm._v(" "),
               _vm._m(0),
               _vm._v(" "),
-              _vm.errors.has("2fa")
+              _vm.errors.has("token_2fa")
                 ? _c("span", { staticClass: "help-block" }, [
-                    _c("strong", [_vm._v(_vm._s(_vm.errors.first("2fa")))])
+                    _c("strong", [
+                      _vm._v(_vm._s(_vm.errors.first("token_2fa")))
+                    ])
                   ])
                 : _vm._e()
             ]
