@@ -40,17 +40,13 @@ class PostController extends Controller
     {
         //request inputs
         $inputs = $request->all();
-        
-        
         try {
-            
             DB::beginTransaction();
             $posts = $this->repository->create($inputs);
             DB::commit();
-            
         } catch (Exception $e) {
             DB::rollback();
-            
+            return $this->respondException($e);
         }
     }
     

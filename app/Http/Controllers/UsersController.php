@@ -6,6 +6,7 @@ use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Session;
+use Exception;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
 use App\Repositories\UserRepository;
@@ -66,15 +67,21 @@ class UsersController extends Controller
                     case 'EXECUTIVE_MEMBER':
                     // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
-                    
-                    $this->repository->authenticated();
-                    return response() //Json response with status 200 and token and user type
-                    ->json([
-                        // 'success' => $success,
-                        'type' => $user,
-                        'response'=>'Authorized',
-                    ],
-                    $this->successStatus);
+                    try{
+                        $this->repository->authenticated();
+                        return response() //Json response with status 200 and token and user type
+                        ->json([
+                            // 'success' => $success,
+                            'type' => $user,
+                            'response'=>'Authorized',
+                        ],
+                        $this->successStatus);
+                    } 
+                    catch(Exception $e)
+                    {
+                        DB::rollback();
+                        return $this->respondException($e);
+                    }
                     break;
                     case 'STUDENT':
                     // Session::flash('msg', 'You have been logged in');
