@@ -40,8 +40,18 @@ const router = new VueRouter({
                     name: 'reg',
                     component: Vue.component('register', require('./components/register.vue')),
                 },
+                {
+                    path: 'security',
+                    name: 'security',
+                    component: Vue.component('security', require('./components/security.vue')),
+                },
             ]
         },
+        // {
+        //     path: '/dashboard',
+        //     name: 'dashboard',
+        //     component: Vue.component('dashboard', require('./components/dashboard.vue')),
+        // },
         
     ],
 });

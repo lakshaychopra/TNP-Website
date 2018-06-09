@@ -11,6 +11,17 @@ window.Vue = require('vue');
 
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
+
+import Toasted from 'vue-toasted';
+
+Vue.use(Toasted, {
+    iconPack: 'fontawesome' // set your iconPack, defaults to material. material|fontawesome
+});
+
+
+import Auth from './packages/auth/auth.js';
+Vue.use(Auth)
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

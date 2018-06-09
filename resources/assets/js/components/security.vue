@@ -2,24 +2,25 @@
     <div class="container">
         <div class="form">
           <h4 class="text-center">Sign in</h4>
-        <div class="thumbnail">
+        <!-- <div class="thumbnail">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/>
-        </div>
+        </div> -->
+        <small>Enter the code recieved in your email.Please check the spam box also.</small>
         <form class="login-form" method="POST"  v-on:submit.prevent="handleLoginFormSubmit">
             <input type="hidden" name="_token" :value="csrf">
             <!-- <input type="text" placeholder="Username" v-model="login.username" name="username" required/>
             <input type="password" placeholder="Password" v-model="login.password" name="password" required/> -->
-               <div class="group" :class="{ 'has-error': errors.has('username'), 'form-group': true } ">
-                <input type="text" v-validate data-vv-rules="required" v-model="login.username" name="username" required>
+               <div class="group" :class="{ 'has-error': errors.has('2fa'), 'form-group': true } ">
+                <input type="text" v-validate data-vv-rules="required" name="2fa" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label><i class="fas fa-user"></i><span class="span-input">Username</span></label>
-                <span v-if="errors.has('username')" class="help-block">
-                                    <strong>{{ errors.first('username') }}</strong>
+                <label><i class="fas fa-user"></i><span class="span-input">Enter Code</span></label>
+                <span v-if="errors.has('2fa')" class="help-block">
+                                    <strong>{{ errors.first('2fa') }}</strong>
                 </span>
                 </div>
 
-                <div class="group" :class="{ 'has-error': errors.has('password'), 'form-group': true } ">
+                <!-- <div class="group" :class="{ 'has-error': errors.has('password'), 'form-group': true } ">
                     <input type="password" v-validate data-vv-rules="required" v-model="login.password" name="password" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
@@ -27,9 +28,9 @@
                     <span v-if="errors.has('password')" class="help-block">
                                         <strong>{{ errors.first('password') }}</strong>
                     </span>
-                </div>
-            <button type="submit">Next</button>
-            <p class="message"><a href="#">Forgot password?</a></p>
+                </div> -->
+            <button type="submit">Login</button>
+            <p class="message">Not registered? <a href="#"><router-link :to="'reg'">Create an account</router-link></a></p>
         </form>
         </div>
 
@@ -40,7 +41,7 @@
 </style>
 
 <script>
-import { loginURL } from "../config.js";
+import { securityURL } from "../config.js";
 import router from "../routes.js";
 // import dashboardVue from './dashboard.vue.js';
 export default {
@@ -50,8 +51,7 @@ export default {
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
       login: {
-        username: "",
-        password: ""
+        security: "",
       }
     };
   },
@@ -59,24 +59,21 @@ export default {
     handleLoginFormSubmit() {
       const postData = {
         // usertype : 'EXECUTIVE_MEMBER',
-        username: this.login.username,
-        password: this.login.password
+        security : this.login.security,
       };
       axios
-        .post(loginURL, {
-          username: this.login.username,
-          password: this.login.password
+        .post(securityURL, {
+          security: this.login.security,
         })
         .then(function(response) {
-          if (response.status == "200") {
-            // window.location = "/dashboard";
-              router.push({name:'security'});
-
-          }
+          // if (response.status == "200") {
+          //   window.location = "/dashboard";
+          // }
           // if (response.status == "401") {
           //   }
-          console.log(response)
+          // console.log(response)
 
+          router.push({name:'dashboard'});
         })
         .catch(function(error) {
           // console.log(error.response.statusText);

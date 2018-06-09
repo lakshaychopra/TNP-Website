@@ -10,7 +10,7 @@
   background: #FFFFFF;
   max-width: 300px;
   margin: 75px auto;
-  padding: 30px;
+  padding: 27px;
   text-align: center;
 }
 .form .thumbnail {
@@ -243,6 +243,7 @@ body {
   /* background-size: cover; */
   background-repeat: no-repeat;  
 }
+
 </style>
 
 <script>
