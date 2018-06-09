@@ -36,8 +36,8 @@ class TwoFactorVerify
             'user' => $user,
         ];
         
-        Mail::send('emails.2fa', $params, function ($message) {
-            $message->to("sanjam531@gmail.com","Sanjam");
+        Mail::send('emails.2fa', $params, function ($message) use($user) {
+            $message->to($user->email, $user->name);
             $message->subject('OTP');
         });
         

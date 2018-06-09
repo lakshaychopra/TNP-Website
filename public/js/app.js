@@ -985,7 +985,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return securityURL; });
 var apiDomain = 'http://localhost:8000';
 var loginURL = '/user/login';
-var securityURL = '/user/2fa';
+var securityURL = '/user/security';
 
 /***/ }),
 /* 8 */
