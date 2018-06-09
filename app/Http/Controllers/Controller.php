@@ -13,6 +13,21 @@ class Controller extends BaseController
 
     protected function respondValidationError($messages = null)
     {
-        return response()->json($messages, 422, []);
+ 
+        $data = [
+            'message' => '',
+            'errors' => $messages,
+        ];
+        return response()->json($data, 422, []);
     }
+    protected function respondException($exception)
+    {
+ 
+        $data = [
+            'message' => 'Exception',
+            'error' => $exception->getMessage(),
+        ];
+        return response()->json($data, $exception->getCode(), []);
+    }
+    
 }

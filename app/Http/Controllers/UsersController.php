@@ -66,6 +66,7 @@ class UsersController extends Controller
                     case 'EXECUTIVE_MEMBER':
                     // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
+                    
                     $this->repository->authenticated();
                     return response() //Json response with status 200 and token and user type
                     ->json([
@@ -120,15 +121,15 @@ class UsersController extends Controller
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
         // $credentials = $request->only('token_2fa');
-
-            if($request->input('token_2fa') == Auth::user()->token_2fa){    
-                Auth::user();        
-                return response() //Json response with status 200 and token and user type
-                    ->json([  
-                        'response'=>'Authorized',
-                    ],
-                    $this->successStatus);
-            } else {
+        
+        if($request->input('token_2fa') == Auth::user()->token_2fa){    
+            Auth::user();        
+            return response() //Json response with status 200 and token and user type
+            ->json([  
+                'response'=>'Authorized',
+            ],
+            $this->successStatus);
+        } else {
             return response()->json(['error' => 'Incorrect code'], 401); //Json response with status 401 and error
-            }
-        }}
+        }
+    }}
