@@ -9,9 +9,7 @@ use Session;
 use Exception;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
-// use App\Repositories\LoginRepository;
 use App\Services\LoginService;
-
 use DB;
 
 class LoginController extends Controller
