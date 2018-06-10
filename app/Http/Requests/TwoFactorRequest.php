@@ -27,4 +27,17 @@ class TwoFactorRequest extends FormRequest
            'token_2fa' => 'bail|required|min:5|exists:users,token_2fa',
         ];
     }
+
+    
+     /**
+     * Get the validation messages that apply to the request.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'token_2fa.exists' => 'OTP not valid!',
+        ];
+    }
 }
