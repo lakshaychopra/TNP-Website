@@ -10,7 +10,7 @@ use Exception;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
 use App\Repositories\UserRepository;
-
+use DB;
 
 class UsersController extends Controller
 {
@@ -53,7 +53,6 @@ class UsersController extends Controller
                 */
                 switch ($user = Auth::user()->type) {
                     case 'MASTER_ADMIN':
-                    // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     $this->repository->authenticated();
                     return response() //Json response with status 200 and token and user type
@@ -65,7 +64,6 @@ class UsersController extends Controller
                     $this->successStatus);
                     break;
                     case 'EXECUTIVE_MEMBER':
-                    // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     try{
                         $this->repository->authenticated();
@@ -84,7 +82,6 @@ class UsersController extends Controller
                     }
                     break;
                     case 'STUDENT':
-                    // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     $this->repository->authenticated();
                     return response() //Json response with status 200 and token and user type
@@ -96,7 +93,6 @@ class UsersController extends Controller
                     $this->successStatus);
                     break;
                     case 'COMPANY':
-                    // Session::flash('msg', 'You have been logged in');
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     $this->repository->authenticated();
                     return response() //Json response with status 200 and token and user type
@@ -130,7 +126,8 @@ class UsersController extends Controller
         // $credentials = $request->only('token_2fa');
         
         if($request->input('token_2fa') == Auth::user()->token_2fa){    
-            Auth::user();        
+            Auth::user();
+            Session::flash('msg', 'You have been logged in');
             return response() //Json response with status 200 and token and user type
             ->json([  
                 'response'=>'Authorized',
