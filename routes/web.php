@@ -13,13 +13,13 @@
 
 Route::group(['prefix' => 'user'], function () {
 
-    Route::post('/login', array('uses' => 'UsersController@store'))->name('users.post.login');
+    Route::post('/login', array('uses' => 'LoginController@store'))->name('users.post.login');
 
-    Route::post('/dashboard', array('uses' => 'UsersController@showDash'))->name('dashboard');
+    Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
 
-    Route::get('logout', array('uses' => 'UsersController@doLogout'))->name('logout');
+    Route::get('/logout', array('uses' => 'LoginController@doLogout'))->name('logout');
     
-    Route::post('/security', 'UsersController@verifyTwoFactor'); 
+    Route::post('/security', 'LoginController@verifyTwoFactor'); 
 });
 
 Route::get('/{vue?}', function () {
