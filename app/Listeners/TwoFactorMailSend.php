@@ -28,18 +28,6 @@ class TwoFactorMailSend
     public function handle(TwoFactorEvent $event)
     {
         $token = $event->user;
-<<<<<<< HEAD
-        
-        $params = [
-            'user' => $token,
-        ];
-        
-        Mail::send('emails.users.twofactor', $params, function ($message) use($token) {
-            $message->to($token->email, $token->name);
-            $message->subject('OTP');
-            
-            // Mail::to($token->email)->send(new TwoFactorEmail);
-=======
        
         $params = [
             'user' => $token,
@@ -48,7 +36,6 @@ class TwoFactorMailSend
         Mail::send('emails.2fa', $params, function ($message) use($token) {
             $message->to($token->email, $token->name);
             $message->subject('OTP');
->>>>>>> parent of fe7b2f1... added mail class
         });
     }
 }
