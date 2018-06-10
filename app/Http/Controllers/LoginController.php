@@ -52,80 +52,30 @@ class LoginController extends Controller
             * Checking status of user
             */
             if (Auth::user()->is_verified == 1 && Auth::user()->is_active == 1) {
-                /*
-                * Switch Case for USER Type
-                */
-                switch ($user = Auth::user()->type) {
-                    
-                    case 'MASTER_ADMIN':
-                    // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
+                
+                try{
                     $this->service->authenticateUser();
                     return response() //Json response with status 200 and token and user type
                     ->json([
-                        // 'success' => $success,
-                        'type' => $user,
                         'response'=>'Authorized',
                     ],
                     $this->successStatus);
-                    break;
-                    
-                    case 'EXECUTIVE_MEMBER':
-                    // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
-                    try{
-                        $this->service->authenticateUser();
-                        return response() //Json response with status 200 and token and user type
-                        ->json([
-                            // 'success' => $success,
-                            'type' => $user,
-                            'response'=>'Authorized',
-                        ],
-                        $this->successStatus);
-                    } 
-                    catch(Exception $e)
-                    {
-                        DB::rollback();
-                        return $this->respondException($e);
-                    }
-                    break;
-                    
-                    case 'STUDENT':
-                    // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
-                    $this->service->authenticateUser();
-                    return response() //Json response with status 200 and token and user type
-                    ->json([
-                        // 'success' => $success,
-                        'type' => $user,
-                        'response'=>'Authorized',
-                    ],
-                    $this->successStatus);
-                    break;
-                    
-                    case 'COMPANY':
-                    // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
-                    $this->service->authenticateUser();
-                    return response() //Json response with status 200 and token and user type
-                    ->json([  
-                        // 'success' => $success,
-                        'type' => $user,
-                        'response'=>'Authorized',
-                    ],
-                    $this->successStatus);
-                    break;
-                    
-                    default:
-                    return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
-                    break;
+                } 
+                catch(Exception $e)
+                {
+                    DB::rollback();
+                    return $this->respondException($e);
                 }
-            } 
-            else {
+                
+            }else {
                 return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
             }
-        } 
-        else {
+        }else {
             return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
         }
     }
     
+
     public function doLogout()
     {
         Auth::logout(); // log the user out of our application
@@ -133,14 +83,17 @@ class LoginController extends Controller
     }
     
     
+    
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
         if($request->input('token_2fa') == Auth::user()->token_2fa){    
-            Auth::user();
+            $user = Auth::user();
             return response() //Json response with status 200 and token and user type
             ->json([  
                 'response'=>'Authorized',
-                'message' => 'You have been logged in'
+                'message' => 'You have been logged in',
+                'id' => $user->id,
+                'type' => $user->type,
             ],
             $this->successStatus);
         }
