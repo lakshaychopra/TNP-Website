@@ -27,4 +27,9 @@ class UserRepository
         event(new TwoFactorEvent($token));
         return response()->json(['Response' => 'Mail Sent'], 200);
     }
+
+    public function login(array $data){
+        
+    
+    }
 }
