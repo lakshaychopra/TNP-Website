@@ -11,8 +11,4 @@ class UserService
 	{
 		$this->respository = $respository;
     }
-    
-    public function authenticateUser(){
-        return $this->repository->authenticated();
-    }
 }

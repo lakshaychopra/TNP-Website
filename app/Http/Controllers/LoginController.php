@@ -35,7 +35,7 @@ class LoginController extends Controller
     * Store a newly created resource in storage.
     *
     * @param  App\Http\Requests\UserLoginRequest  $request
-    * @return \Illuminate\Http\Response
+    * @return \Illuminate\Http\Response JSON
     */
     public function store(UserLoginRequest $request)
     {
@@ -54,6 +54,7 @@ class LoginController extends Controller
                 * Switch Case for USER Type
                 */
                 switch ($user = Auth::user()->type) {
+                    
                     case 'MASTER_ADMIN':
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     $this->repository->authenticated();
@@ -65,6 +66,7 @@ class LoginController extends Controller
                     ],
                     $this->successStatus);
                     break;
+                    
                     case 'EXECUTIVE_MEMBER':
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     try{
@@ -83,6 +85,7 @@ class LoginController extends Controller
                         return $this->respondException($e);
                     }
                     break;
+                    
                     case 'STUDENT':
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     $this->repository->authenticated();
@@ -94,6 +97,7 @@ class LoginController extends Controller
                     ],
                     $this->successStatus);
                     break;
+                    
                     case 'COMPANY':
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     $this->repository->authenticated();
@@ -105,14 +109,17 @@ class LoginController extends Controller
                     ],
                     $this->successStatus);
                     break;
+                    
                     default:
                     return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
                     break;
                 }
-            } else {
+            } 
+            else {
                 return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
             }
-        } else {
+        } 
+        else {
             return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
         }
     }
@@ -120,14 +127,12 @@ class LoginController extends Controller
     public function doLogout()
     {
         Auth::logout(); // log the user out of our application
-        return Redirect::to('auth/login'); // redirect the user to the login screen
+        return response()->json(); 
     }
     
     
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        // $credentials = $request->only('token_2fa');
-        
         if($request->input('token_2fa') == Auth::user()->token_2fa){    
             Auth::user();
             return response() //Json response with status 200 and token and user type
@@ -136,7 +141,8 @@ class LoginController extends Controller
                 'message' => 'You have been logged in'
             ],
             $this->successStatus);
-        } else {
+        }
+        else {
             return response()->json(['error' => 'Incorrect code'], 401); //Json response with status 401 and error
         }
     }
