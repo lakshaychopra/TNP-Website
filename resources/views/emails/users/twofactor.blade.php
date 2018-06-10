@@ -1,7 +1,7 @@
 @component('mail::message')
 # Introduction
 
-The body of your message.
+Your OTP is {{$user->token_2fa}}.
 
 @component('mail::button', ['url' => ''])
 Button Text
