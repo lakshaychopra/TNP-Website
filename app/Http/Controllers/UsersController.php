@@ -127,10 +127,10 @@ class UsersController extends Controller
         
         if($request->input('token_2fa') == Auth::user()->token_2fa){    
             Auth::user();
-            Session::flash('msg', 'You have been logged in');
             return response() //Json response with status 200 and token and user type
             ->json([  
                 'response'=>'Authorized',
+                'message' => 'You have been logged in'
             ],
             $this->successStatus);
         } else {
