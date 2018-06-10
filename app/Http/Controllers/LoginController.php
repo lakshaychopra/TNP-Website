@@ -9,7 +9,9 @@ use Session;
 use Exception;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
-use App\Repositories\LoginRepository;
+// use App\Repositories\LoginRepository;
+use App\Services\LoginService;
+
 use DB;
 
 class LoginController extends Controller
@@ -17,9 +19,9 @@ class LoginController extends Controller
     
     public $successStatus = 200;
     
-    public function __construct(LoginRepository $repository)
+    public function __construct(LoginService $service)
     {
-        $this->repository = $repository;
+        $this->service = $service;
     }
     /**
     * Display a listing of the resource.
@@ -57,7 +59,7 @@ class LoginController extends Controller
                     
                     case 'MASTER_ADMIN':
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
-                    $this->repository->authenticated();
+                    $this->service->authenticateUser();
                     return response() //Json response with status 200 and token and user type
                     ->json([
                         // 'success' => $success,
@@ -70,7 +72,7 @@ class LoginController extends Controller
                     case 'EXECUTIVE_MEMBER':
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
                     try{
-                        $this->repository->authenticated();
+                        $this->service->authenticateUser();
                         return response() //Json response with status 200 and token and user type
                         ->json([
                             // 'success' => $success,
@@ -88,7 +90,7 @@ class LoginController extends Controller
                     
                     case 'STUDENT':
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
-                    $this->repository->authenticated();
+                    $this->service->authenticateUser();
                     return response() //Json response with status 200 and token and user type
                     ->json([
                         // 'success' => $success,
@@ -100,7 +102,7 @@ class LoginController extends Controller
                     
                     case 'COMPANY':
                     // $success['token'] = $userToken->createToken('GNDEC')->accessToken;
-                    $this->repository->authenticated();
+                    $this->service->authenticateUser();
                     return response() //Json response with status 200 and token and user type
                     ->json([  
                         // 'success' => $success,

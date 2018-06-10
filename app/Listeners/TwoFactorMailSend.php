@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
 use App\Mail\TwoFactorEmail;
 
-class TwoFactorMailSend implements ShouldQueue
+class TwoFactorMailSend 
 {
     /**
     * Create the event listener.
