@@ -32,6 +32,7 @@ class TwoFactorEmail extends Mailable
         $params = [
             'user' => $this->token
         ];
-        return $this->markdown('emails.users.twofactor',$params);
+        return $this->markdown('emails.users.twofactor',$params)
+            ->subject(trans('messages.email.TwoFactorMailSendSubject'));
     }
 }

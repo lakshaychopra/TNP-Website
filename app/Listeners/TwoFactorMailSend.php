@@ -30,10 +30,5 @@ class TwoFactorMailSend
     {
         $token = $event->user;
         Mail::to($token->email)->send(new TwoFactorEmail($token));
-
-        // Mail::queue('emails.2fa', $params, function ($message) use($token) {
-        //     $message->to($token->email, $token->name);
-        //     $message->subject('OTP');
-        // });
     }
 }
