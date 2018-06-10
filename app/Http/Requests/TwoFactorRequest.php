@@ -24,7 +24,7 @@ class TwoFactorRequest extends FormRequest
     public function rules()
     {
         return [
-           'token_2fa' => 'required',
+           'token_2fa' => 'bail|required|min:5|exists:users,token_2fa',
         ];
     }
 }
