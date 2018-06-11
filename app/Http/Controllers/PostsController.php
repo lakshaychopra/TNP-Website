@@ -9,6 +9,8 @@ use App\Repositories\PostsRepository;
 
 class PostController extends Controller
 {
+    public $successStatus = 200;
+    
     public function __construct(PostService $service)
     {
         $this->service = $service;
@@ -37,32 +39,42 @@ class PostController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function create(CreatePostRequest $request)
+    public function create()
     {
-        if($request->isMethod('post')){
-            //request inputs
-            $inputs = $request->all();
-            try {
-                DB::beginTransaction();
-                $posts = $this->repository->create($inputs);
-                DB::commit();
-            } catch (Exception $e) {
-                DB::rollback();
-                return $this->respondException($e);
-            }
-        }
+        //
     }
     
     
     /**
     * Store a newly created resource in storage.
     *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
+    * @param  \App\Http\CreatePostRequest  $request
+    * @return \Illuminate\Http\Response  JSON
     */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request)
     {
-        //
+        if($request->isMethod('post')){
+            try {
+                DB::beginTransaction();
+                $post = $this->service->create($request->all());
+                DB::commit();
+                if($post){
+                    return response() //Json response with status 200 and token and user type
+                    ->json([
+                        'response'=>'Inserted',
+                        $post,
+                    ],
+                    $this->successStatus);
+                }
+                else 
+                {
+                    return response()->json(['error' => 'Failed'], 401); //Json response with status 401 and error message
+                }
+            } catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
+            }
+        }
     }
     
     /**
