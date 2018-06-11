@@ -39,64 +39,70 @@ class LoginController extends Controller
     */
     public function store(UserLoginRequest $request)
     {
-        //log the user in
-        $credentials = $request->only('username', 'password');
-        /*
-        * Attempting Authentication
-        * Else Redirect Back
-        */
-        if (Auth::attempt($credentials)) {
+        if($request->isMethod('post'))
+        {
+            //log the user in
+            $credentials = $request->only('username', 'password');
             /*
-            * Checking status of user
+            * Attempting Authentication
+            * Else Redirect Back
             */
-            if (Auth::user()->is_verified == 1 && Auth::user()->is_active == 1) {
-                
-                try{
-                    $this->service->authenticateUser();
-                    return response() //Json response with status 200 and token and user type
-                    ->json([
-                        'response'=>'Authorized',
-                    ],
-                    $this->successStatus);
-                } 
-                catch(Exception $e)
-                {
-                    DB::rollback();
-                    return $this->respondException($e);
+            if (Auth::attempt($credentials)) {
+                /*
+                * Checking status of user
+                */
+                if (Auth::user()->is_verified == 1 && Auth::user()->is_active == 1) {
+                    
+                    try{
+                        $this->service->authenticateUser();
+                        return response() //Json response with status 200 and token and user type
+                        ->json([
+                            'response'=>'Authorized',
+                        ],
+                        $this->successStatus);
+                    }   
+                    catch(Exception $e)
+                    {
+                        DB::rollback();
+                        return $this->respondException($e);
+                    }
+                    
+                }else {
+                    return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
                 }
-                
             }else {
                 return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
             }
-        }else {
-            return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
         }
     }
     
-
+    
     public function doLogout()
     {
         Auth::logout(); // log the user out of our application
-        return response()->json(); 
+        Session::flush();
     }
     
     
     
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        if($request->input('token_2fa') == Auth::user()->token_2fa){    
-            $user = Auth::user();
-            return response() //Json response with status 200 and token and user type
-            ->json([  
-                'response'=>'Authorized',
-                'message' => 'You have been logged in',
-                'id' => $user->id,
-                'type' => $user->type,
-            ],
-            $this->successStatus);
-        }
-        else {
-            return response()->json(['error' => 'Incorrect code'], 401); //Json response with status 401 and error
+        if($request->isMethod('post')){
+            if($request->input('token_2fa') == Auth::user()->token_2fa){    
+                $user = Auth::user();
+                return response() //Json response with status 200 and token and user type
+                ->json([  
+                    'response'=>'Authorized',
+                    'message' => 'You have been logged in',
+                    'id' => $user->id,
+                    'type' => $user->type,
+                ],
+                $this->successStatus);
+            }
+            else {
+                return response()->json(['error' => 'Incorrect code'], 401); //Json response with status 401 and error
+            }
         }
     }
+    
 }

@@ -11,7 +11,7 @@
 |
  */
 
-Route::group(['prefix' => 'user'], function () {
+Route::group(['prefix' => 'admin'], function () {
 
     Route::post('/login', array('uses' => 'LoginController@store'))->name('users.post.login');
 
