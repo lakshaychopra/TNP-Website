@@ -152,7 +152,7 @@ return [
          */
           
         Jenssegers\Mongodb\MongodbServiceProvider::class,
-
+        Barryvdh\Cors\ServiceProvider::class,
          
         /*
          * Application Service Providers...
