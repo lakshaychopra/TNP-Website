@@ -42,6 +42,7 @@
 
 <script>
 import { securityURL } from "../config.js";
+import { oauthURL } from "../config.js";
 import router from "../routes.js";
 // import dashboardVue from './dashboard.vue.js';
 export default {
@@ -72,7 +73,27 @@ export default {
           //   }
           // console.log(response)
 
-          router.push({name:'dashboard'});
+                  axios.post(oauthURL, {
+                  token_2fa: this.login.token_2fa,
+                })
+                .then(function(response) {
+                  // if (response.status == "200") {
+                  //   window.location = "/dashboard";
+                  // }
+                  // if (response.status == "401") {
+                  //   }
+                  // console.log(response)
+
+                  router.push({name:'dashboard'});
+                })
+                .catch(function(error) {
+                  // console.log(error.response.statusText);
+                  Vue.toasted.show(error.response.statusText,{
+                        icon : 'exclamation-circle',
+                        position: "bottom-center", 
+                        duration : 5000
+                      })
+                });
         })
         .catch(function(error) {
           // console.log(error.response.statusText);

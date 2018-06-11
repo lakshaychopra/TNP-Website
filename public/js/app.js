@@ -982,10 +982,12 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 "use strict";
 /* unused harmony export apiDomain */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loginURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return securityURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return securityURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return oauthURL; });
 var apiDomain = 'http://localhost:8000';
 var loginURL = '/admin/login';
 var securityURL = '/admin/security';
+var oauthURL = '/admin/security';
 
 /***/ }),
 /* 8 */
@@ -51904,6 +51906,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
 // import dashboardVue from './dashboard.vue.js';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -51921,7 +51924,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // usertype : 'EXECUTIVE_MEMBER',
         token_2fa: this.login.token_2fa
       };
-      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["b" /* securityURL */], {
+      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["c" /* securityURL */], {
         token_2fa: this.login.token_2fa
       }).then(function (response) {
         // if (response.status == "200") {
@@ -51931,7 +51934,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //   }
         // console.log(response)
 
-        __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].push({ name: 'dashboard' });
+        axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["b" /* oauthURL */], {
+          token_2fa: this.login.token_2fa
+        }).then(function (response) {
+          // if (response.status == "200") {
+          //   window.location = "/dashboard";
+          // }
+          // if (response.status == "401") {
+          //   }
+          // console.log(response)
+
+          __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].push({ name: 'dashboard' });
+        }).catch(function (error) {
+          // console.log(error.response.statusText);
+          Vue.toasted.show(error.response.statusText, {
+            icon: 'exclamation-circle',
+            position: "bottom-center",
+            duration: 5000
+          });
+        });
       }).catch(function (error) {
         // console.log(error.response.statusText);
         Vue.toasted.show(error.response.statusText, {
