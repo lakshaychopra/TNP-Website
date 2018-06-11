@@ -42,7 +42,6 @@
 
 <script>
 import { securityURL } from "../config.js";
-import { oauthURL } from "../config.js";
 import router from "../routes.js";
 // import dashboardVue from './dashboard.vue.js';
 export default {
@@ -66,26 +65,10 @@ export default {
           token_2fa: this.login.token_2fa,
         })
         .then(function(response) {
-                const data = {
-                  client_id:2,
-                  client_server:'pDrteuP158hklXiAqRrRraXnxuFGT6WD4kXz1WU4',
-                  grant:'password'
-                }
-                  axios.post(oauthURL,data)
-                .then(function(response) {
-                  // router.push({name:'dashboard'});
-                })
-                .catch(function(error) {
-                  // console.log(error.response.statusText);
-                  Vue.toasted.show(error.response.statusText,{
-                        icon : 'exclamation-circle',
-                        position: "bottom-center", 
-                        duration : 5000
-                      })
-                });
+        console.log(response)
         })
         .catch(function(error) {
-          // console.log(error.response.statusText);
+          console.log(error.response.statusText);
           Vue.toasted.show(error.response.statusText,{
                 icon : 'exclamation-circle',
                 position: "bottom-center", 

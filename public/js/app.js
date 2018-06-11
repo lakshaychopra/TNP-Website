@@ -826,12 +826,12 @@ function applyToTag (styleElement, obj) {
 "use strict";
 /* unused harmony export apiDomain */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loginURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return securityURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return oauthURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return securityURL; });
+/* unused harmony export oauthURL */
 var apiDomain = 'http://localhost:8000';
 var loginURL = '/admin/login';
 var securityURL = '/admin/security';
-var oauthURL = 'oauth/token';
+var oauthURL = '/oauth/token';
 
 /***/ }),
 /* 6 */
@@ -51255,6 +51255,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__env_js__ = __webpack_require__(87);
 //
 //
 //
@@ -51296,6 +51297,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
+
 
 
 
@@ -51322,13 +51326,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         username: this.login.username,
         password: this.login.password
       }).then(function (response) {
+
         if (response.status == "200") {
           // window.location = "/dashboard";
           __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].push({ name: 'security' });
         }
-        // if (response.status == "401") {
-        //   }
-        console.log(response);
+        if (response.status == "401") {}
       }).catch(function (error) {
         var obj = JSON.parse(error.response.request.responseText);
 
@@ -51907,7 +51910,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
 // import dashboardVue from './dashboard.vue.js';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -51925,26 +51927,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // usertype : 'EXECUTIVE_MEMBER',
         token_2fa: this.login.token_2fa
       };
-      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["c" /* securityURL */], {
+      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["b" /* securityURL */], {
         token_2fa: this.login.token_2fa
       }).then(function (response) {
-        var data = {
-          client_id: 2,
-          client_server: 'pDrteuP158hklXiAqRrRraXnxuFGT6WD4kXz1WU4',
-          grant: 'password'
-        };
-        axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["b" /* oauthURL */], data).then(function (response) {
-          // router.push({name:'dashboard'});
-        }).catch(function (error) {
-          // console.log(error.response.statusText);
-          Vue.toasted.show(error.response.statusText, {
-            icon: 'exclamation-circle',
-            position: "bottom-center",
-            duration: 5000
-          });
-        });
+        console.log(response);
       }).catch(function (error) {
-        // console.log(error.response.statusText);
+        console.log(error.response.statusText);
         Vue.toasted.show(error.response.statusText, {
           icon: 'exclamation-circle',
           position: "bottom-center",
@@ -60975,6 +60963,16 @@ if (typeof window !== 'undefined' && window.Vue) {
 /***/ (function(module, exports) {
 
 /* (ignored) */
+
+/***/ }),
+/* 87 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export clientId */
+/* unused harmony export clientSecret */
+var clientId = 2;
+var clientSecret = 'pDrteuP158hklXiAqRrRraXnxuFGT6WD4kXz1WU4';
 
 /***/ })
 /******/ ]);

@@ -42,6 +42,9 @@
 <script>
 import { loginURL } from "../config.js";
 import router from "../routes.js";
+import { oauthURL } from "../config.js";
+import { clientId,clientSecret } from "../env.js";
+
 // import dashboardVue from './dashboard.vue.js';
 export default {
   data() {
@@ -60,7 +63,7 @@ export default {
       const postData = {
         // usertype : 'EXECUTIVE_MEMBER',
         username: this.login.username,
-        password: this.login.password
+        password: this.login.password,
       };
       axios
         .post(loginURL, {
@@ -68,14 +71,15 @@ export default {
           password: this.login.password
         })
         .then(function(response) {
+  
           if (response.status == "200") {
             // window.location = "/dashboard";
               router.push({name:'security'});
 
           }
-          // if (response.status == "401") {
-          //   }
-          console.log(response)
+          if (response.status == "401") {
+            }
+          
 
         })
         .catch(function(error) {
