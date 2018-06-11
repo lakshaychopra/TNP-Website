@@ -87,8 +87,10 @@ class LoginController extends Controller
     
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        if($request->isMethod('post')){
-            if($request->input('token_2fa') == Auth::user()->token_2fa){    
+        if($request->isMethod('post'))
+        {
+            if($request->input('token_2fa') == Auth::user()->token_2fa)
+            {    
                 $user = Auth::user();
                 return response() //Json response with status 200 and token and user type
                 ->json([  
@@ -99,10 +101,10 @@ class LoginController extends Controller
                 ],
                 $this->successStatus);
             }
-            else {
+            else 
+            {
                 return response()->json(['error' => 'Incorrect code'], 401); //Json response with status 401 and error
             }
         }
     }
-    
 }
