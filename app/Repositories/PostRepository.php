@@ -23,6 +23,8 @@ class PostRepository
      * @return App\Post
      */
     public function create(array $payload){
+
         return $this->model->create($payload);
+    
     }
 }

@@ -8,7 +8,9 @@ use Moloquent;
 class Post extends Moloquent
 {
     protected $connection = 'mongodb';
+    
     protected $collection = 'posts';
+
     protected $fillable = [
         'title', 'body', 'author', 'author_id', 'tag', 'category',
     ];

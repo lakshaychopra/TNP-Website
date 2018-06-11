@@ -9,10 +9,11 @@ use App\Repositories\PostsRepository;
 
 class PostController extends Controller
 {
-    public function __construct(PostRepository $repository)
+    public function __construct(PostService $service)
     {
-        $this->repository = $repository;
+        $this->service = $service;
     }
+    /**
     
     /**
     * Display a listing of the resource.
@@ -38,15 +39,17 @@ class PostController extends Controller
     */
     public function create(CreatePostRequest $request)
     {
-        //request inputs
-        $inputs = $request->all();
-        try {
-            DB::beginTransaction();
-            $posts = $this->repository->create($inputs);
-            DB::commit();
-        } catch (Exception $e) {
-            DB::rollback();
-            return $this->respondException($e);
+        if($request->isMethod('post')){
+            //request inputs
+            $inputs = $request->all();
+            try {
+                DB::beginTransaction();
+                $posts = $this->repository->create($inputs);
+                DB::commit();
+            } catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
+            }
         }
     }
     
