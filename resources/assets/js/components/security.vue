@@ -66,25 +66,14 @@ export default {
           token_2fa: this.login.token_2fa,
         })
         .then(function(response) {
-          // if (response.status == "200") {
-          //   window.location = "/dashboard";
-          // }
-          // if (response.status == "401") {
-          //   }
-          // console.log(response)
-
-                  axios.post(oauthURL, {
-                  token_2fa: this.login.token_2fa,
-                })
+                const data = {
+                  client_id:2,
+                  client_server:'pDrteuP158hklXiAqRrRraXnxuFGT6WD4kXz1WU4',
+                  grant:'password'
+                }
+                  axios.post(oauthURL,data)
                 .then(function(response) {
-                  // if (response.status == "200") {
-                  //   window.location = "/dashboard";
-                  // }
-                  // if (response.status == "401") {
-                  //   }
-                  // console.log(response)
-
-                  router.push({name:'dashboard'});
+                  // router.push({name:'dashboard'});
                 })
                 .catch(function(error) {
                   // console.log(error.response.statusText);
