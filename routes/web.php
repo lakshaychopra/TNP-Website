@@ -20,6 +20,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/logout', array('uses' => 'LoginController@doLogout'))->name('logout');
     
     Route::post('/security', 'LoginController@verifyTwoFactor'); 
+
+    Route::resource('/post', 'PostController');
 });
 
 Route::get('/{vue?}', function () {

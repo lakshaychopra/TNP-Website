@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use DB;
+use App\Http\Requests\CreatePostRequest;
+use App\Services\PostService;
 use Illuminate\Http\Request;
-use App\Repositories\PostsRepository;
+use Exception;
 
 class PostController extends Controller
 {
