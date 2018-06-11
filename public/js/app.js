@@ -954,8 +954,8 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard', __webpack_require__(54))
         }]
     }, {
-        path: '/auth',
-        name: 'auth',
+        path: '/admin',
+        name: 'admin',
         component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('authLayout', __webpack_require__(57)),
         children: [{
             path: 'login',
@@ -984,8 +984,8 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return securityURL; });
 var apiDomain = 'http://localhost:8000';
-var loginURL = '/user/login';
-var securityURL = '/user/security';
+var loginURL = '/admin/login';
+var securityURL = '/admin/security';
 
 /***/ }),
 /* 8 */

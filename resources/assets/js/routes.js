@@ -26,8 +26,8 @@ const router = new VueRouter({
             ]
         },
         {
-            path: '/auth',
-            name: 'auth',
+            path: '/admin',
+            name: 'admin',
             component: Vue.component('authLayout', require('./pages/auth_layout.vue')),
             children: [
                 {
@@ -47,11 +47,8 @@ const router = new VueRouter({
                 },
             ]
         },
-        // {
-        //     path: '/dashboard',
-        //     name: 'dashboard',
-        //     component: Vue.component('dashboard', require('./components/dashboard.vue')),
-        // },
+       
+        
         
     ],
 });
