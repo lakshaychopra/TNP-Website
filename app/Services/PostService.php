@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Models\Post;
 use App\Repositories\PostRepository;
-use Auth;
 
 class PostService
 {	

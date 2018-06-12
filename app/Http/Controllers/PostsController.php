@@ -114,7 +114,7 @@ class PostController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(CreatePostRequest $request, $id)
+    public function update(CreatePostRequest $request,Post $post)
     {
         //
     }

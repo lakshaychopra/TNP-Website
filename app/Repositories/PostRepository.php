@@ -7,33 +7,46 @@ use App\Models\Post;
 class PostRepository
 {
     /**
-     * create new instance
-     *
-     * @param User $model
-     */
+    * create new instance
+    *
+    * @param User $model
+    */
     public function __construct(Post $model)
     {
         $this->model = $model;         
     }
     
-
-    public function list(){
+    // Get all instances of model
+    public function all()
+    {
+        return $this->model->all();
+    }
+    
+    public function list()
+    {
         $lists = POST::orderBy('created_at', 'decs')->paginate(6);
         return $lists;
     }
-
-    /**
-     * create new record
-     *
-     * @param array $payload
-     * @return App\Post
-     */
+    
+    // create new record
     public function create(array $data)
     {
         $data = $this->setPayload($data);
 		return $this->model->create($data);
     }
-
+    
+    // update record in the database
+    public function update(array $data, $id){
+        $record = $this->find($id);
+        return $record->update($data);
+    }
+    
+    // remove record from the database
+    public function delete($id)
+    {
+        return $this->model->destroy($id);
+    }
+    
     private function setPayload(array $payload)
 	{
 		return [
