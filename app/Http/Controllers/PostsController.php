@@ -93,7 +93,7 @@ class PostController extends Controller
             'post' => $post,
         ];
         //response in the form of JSON
-        return response()->json($data);
+        return response()->json($data, $this->successStatus);
     }
     
     /**
@@ -102,9 +102,9 @@ class PostController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        return $request->json(200,$task);
+        return request()->json($post , $this->successStatus);
     }
     
     /**

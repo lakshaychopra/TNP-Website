@@ -18,7 +18,7 @@ class PostRepository
     
 
     public function list(){
-        $lists = POST::all();
+        $lists = POST::orderBy('created_at', 'decs')->paginate(6);
         return $lists;
     }
 
