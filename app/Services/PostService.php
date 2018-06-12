@@ -13,6 +13,10 @@ class PostService
 		$this->respository = $respository;
     }
 	
+	public function listPost(){
+		return $this->repository->list();
+	}
+
 	public function createPost(array $payload)
 	{
 		return $this->repository->create($payload);

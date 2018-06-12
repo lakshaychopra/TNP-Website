@@ -16,6 +16,12 @@ class PostRepository
         $this->model = $model;         
     }
     
+
+    public function list(){
+        $lists = POST::all();
+        return $lists;
+    }
+
     /**
      * create new record
      *

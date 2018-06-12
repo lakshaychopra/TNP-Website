@@ -17,35 +17,34 @@ class PostController extends Controller
     {
         $this->service = $service;
     }
-
+    
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function index()
     {
         //data fetched from database in $post
-        $lists = $this->post->get();
-        
-        // data to be sent
-        $data = [
+        $this->service->listPost();
+        return $request->json([
             'list' => $lists,
-        ];
+        ],
+        $this->successStatus);
         
     }
-
+    
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function create()
     {
         //
     }
-
-     /**
+    
+    /**
     * Store a newly created resource in storage.
     *
     * @param  \App\Http\CreatePostRequest  $request
@@ -77,17 +76,17 @@ class PostController extends Controller
         }
     }
     
-
+    
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    * Display the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function show($post)
     {
         //data fetched from database in $post with where id clause
-        $post = $this->post->where('id', $id)->first();
+        $post = $this->post->where('id', $post)->first();
         
         // data to be sent
         $data = [
@@ -96,36 +95,36 @@ class PostController extends Controller
         //response in the form of JSON
         return response()->json($data);
     }
-
+    
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for editing the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function edit($id)
     {
-        //
+        return $request->json(200,$task);
     }
-
+    
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function update(CreatePostRequest $request, $id)
     {
         //
     }
-
+    
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function destroy($id)
     {
         //
