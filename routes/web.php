@@ -17,7 +17,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
 
-    Route::get('/logout', array('uses' => 'LoginController@doLogout'))->name('logout');
+    Route::post('/logout', array('uses' => 'LoginController@doLogout'))->name('logout');
     
     Route::post('/security', 'LoginController@verifyTwoFactor'); 
 
