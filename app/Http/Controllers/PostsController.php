@@ -116,7 +116,28 @@ class PostController extends Controller
     */
     public function update(CreatePostRequest $request,Post $post)
     {
-        //
+        if($request->isMethod('post')){
+            try {
+                DB::beginTransaction();
+                $post = $this->service->updatePost($request->all(),$post->id);
+                DB::commit();
+                if($post){
+                    return response() //Json response with status 200 and token and user type
+                    ->json([
+                        'response'=>'Updated',
+                        $post,
+                    ],
+                    $this->successStatus);
+                }
+                else 
+                {
+                    return response()->json(['error' => 'Failed'], 401); //Json response with status 401 and error message
+                }
+            } catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
+            }
+        }
     }
     
     /**

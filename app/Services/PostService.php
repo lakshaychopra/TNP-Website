@@ -20,4 +20,9 @@ class PostService
 	{
 		return $this->repository->create($payload);
 	}
+
+	public function updatePost(array $payload, $id)
+	{
+		return $this->repository->update($payload);
+	}
 }
