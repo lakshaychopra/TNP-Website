@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Models\Post;
 use App\Repositories\PostRepository;
-use Auth;
 
 class PostService
 {	
@@ -20,5 +19,10 @@ class PostService
 	public function createPost(array $payload)
 	{
 		return $this->repository->create($payload);
+	}
+
+	public function updatePost(array $payload, $id)
+	{
+		return $this->repository->update($payload);
 	}
 }
