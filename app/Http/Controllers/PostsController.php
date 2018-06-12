@@ -56,7 +56,7 @@ class PostController extends Controller
         if($request->isMethod('post')){
             try {
                 DB::beginTransaction();
-                $post = $this->service->create($request->all());
+                $post = $this->service->createPost($request->all());
                 DB::commit();
                 if($post){
                     return response() //Json response with status 200 and token and user type

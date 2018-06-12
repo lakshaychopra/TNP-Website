@@ -12,5 +12,9 @@ class PostService
 	{
 		$this->respository = $respository;
     }
-    
+	
+	public function createPost(array $payload)
+	{
+		return $this->repository->create($payload);
+	}
 }
