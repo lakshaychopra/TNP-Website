@@ -65,7 +65,7 @@ export default {
           token_2fa: this.login.token_2fa,
         })
         .then(function(response) {
-        console.log(response)
+            window.location = '/dashboard'
         })
         .catch(function(error) {
           console.log(error.response.statusText);

@@ -18,11 +18,6 @@ const router = new VueRouter({
                     name: 'home',
                     component: Vue.component('Home', require('./pages/index.vue'))
                 },
-                {
-                    path: 'dashboard',
-                    name: 'dashboard',
-                    component: Vue.component('dashboard', require('./components/dashboard.vue')),
-                },
             ]
         },
         {
@@ -48,7 +43,11 @@ const router = new VueRouter({
             ]
         },
        
-        
+        {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: Vue.component('dashboard', require('./components/dashboard/complete.vue')),
+        },
         
     ],
 });
