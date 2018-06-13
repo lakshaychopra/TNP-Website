@@ -5,22 +5,21 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+require('./bootstrap');
 import router from './routes.js'
-window.Vue = require('vue')
+window.Vue = require('vue');
 
-// import "./custom.js";
-import VeeValidate from 'vee-validate'
+import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 
-import Toasted from 'vue-toasted'
+import Toasted from 'vue-toasted';
 
 Vue.use(Toasted, {
     iconPack: 'fontawesome' // set your iconPack, defaults to material. material|fontawesome
 });
 
-window.axios = require('axios');
 
-import Auth from './packages/auth/auth.js'
+import Auth from './packages/auth/auth.js';
 Vue.use(Auth)
 
 /**

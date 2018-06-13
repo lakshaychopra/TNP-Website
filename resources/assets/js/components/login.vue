@@ -65,7 +65,8 @@ export default {
         username: this.login.username,
         password: this.login.password,
       };
-      axios.post(loginURL, {
+      axios
+        .post(loginURL, {
           username: this.login.username,
           password: this.login.password
         })
