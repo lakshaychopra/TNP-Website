@@ -59912,8 +59912,6 @@ var render = function() {
         "div",
         { staticClass: "right-menu" },
         [
-          _c("error-log", { staticClass: "errLog-container right-menu-item" }),
-          _vm._v(" "),
           _c(
             "el-dropdown",
             {
