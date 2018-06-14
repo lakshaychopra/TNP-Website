@@ -12519,18 +12519,15 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_app__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_errorLog__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_permission__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_permission___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__modules_permission__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_tagsView__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modules_user__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__getters__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_tagsView__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__getters__ = __webpack_require__(197);
 
 
 
 
+// import permission from './modules/permission'
 
-
-
+// import user from './modules/user'
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
@@ -12539,11 +12536,11 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
   modules: {
     app: __WEBPACK_IMPORTED_MODULE_2__modules_app__["a" /* default */],
     errorLog: __WEBPACK_IMPORTED_MODULE_3__modules_errorLog__["a" /* default */],
-    permission: __WEBPACK_IMPORTED_MODULE_4__modules_permission___default.a,
-    tagsView: __WEBPACK_IMPORTED_MODULE_5__modules_tagsView__["a" /* default */],
-    user: __WEBPACK_IMPORTED_MODULE_6__modules_user__["a" /* default */]
+    // permission,
+    tagsView: __WEBPACK_IMPORTED_MODULE_4__modules_tagsView__["a" /* default */]
+    // user
   },
-  getters: __WEBPACK_IMPORTED_MODULE_7__getters__["a" /* default */]
+  getters: __WEBPACK_IMPORTED_MODULE_5__getters__["a" /* default */]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (store);
@@ -61166,8 +61163,8 @@ var app = {
       opened: !+__WEBPACK_IMPORTED_MODULE_0_js_cookie___default.a.get('sidebarStatus'),
       withoutAnimation: false
     },
-    device: 'desktop',
-    language: __WEBPACK_IMPORTED_MODULE_0_js_cookie___default.a.get('language') || 'en'
+    device: 'desktop'
+    // language: Cookies.get('language') || 'en'
   },
   mutations: {
     TOGGLE_SIDEBAR: function TOGGLE_SIDEBAR(state) {
@@ -61186,11 +61183,11 @@ var app = {
     },
     TOGGLE_DEVICE: function TOGGLE_DEVICE(state, device) {
       state.device = device;
-    },
-    SET_LANGUAGE: function SET_LANGUAGE(state, language) {
-      state.language = language;
-      __WEBPACK_IMPORTED_MODULE_0_js_cookie___default.a.set('language', language);
     }
+    // SET_LANGUAGE: (state, language) => {
+    //   state.language = language
+    //   Cookies.set('language', language)
+    // }
   },
   actions: {
     toggleSideBar: function toggleSideBar(_ref) {
@@ -61208,11 +61205,6 @@ var app = {
       var commit = _ref4.commit;
 
       commit('TOGGLE_DEVICE', device);
-    },
-    setLanguage: function setLanguage(_ref5, language) {
-      var commit = _ref5.commit;
-
-      commit('SET_LANGUAGE', language);
     }
   }
 };
@@ -61245,73 +61237,7 @@ var errorLog = {
 /* harmony default export */ __webpack_exports__["a"] = (errorLog);
 
 /***/ }),
-/* 194 */
-/***/ (function(module, exports) {
-
-// import { asyncRouterMap, constantRouterMap } from '@/router'
-
-// /**
-//  * 通过meta.role判断是否与当前用户权限匹配
-//  * @param roles
-//  * @param route
-//  */
-// function hasPermission(roles, route) {
-//   if (route.meta && route.meta.roles) {
-//     return roles.some(role => route.meta.roles.indexOf(role) >= 0)
-//   } else {
-//     return true
-//   }
-// }
-
-// /**
-//  * 递归过滤异步路由表，返回符合用户角色权限的路由表
-//  * @param asyncRouterMap
-//  * @param roles
-//  */
-// function filterAsyncRouter(asyncRouterMap, roles) {
-//   const accessedRouters = asyncRouterMap.filter(route => {
-//     if (hasPermission(roles, route)) {
-//       if (route.children && route.children.length) {
-//         route.children = filterAsyncRouter(route.children, roles)
-//       }
-//       return true
-//     }
-//     return false
-//   })
-//   return accessedRouters
-// }
-
-// const permission = {
-//   state: {
-//     routers: constantRouterMap,
-//     addRouters: []
-//   },
-//   mutations: {
-//     SET_ROUTERS: (state, routers) => {
-//       state.addRouters = routers
-//       state.routers = constantRouterMap.concat(routers)
-//     }
-//   },
-//   actions: {
-//     GenerateRoutes({ commit }, data) {
-//       return new Promise(resolve => {
-//         const { roles } = data
-//         let accessedRouters
-//         if (roles.indexOf('admin') >= 0) {
-//           accessedRouters = asyncRouterMap
-//         } else {
-//           accessedRouters = filterAsyncRouter(asyncRouterMap, roles)
-//         }
-//         commit('SET_ROUTERS', accessedRouters)
-//         resolve()
-//       })
-//     }
-//   }
-// }
-
-// export default permission
-
-/***/ }),
+/* 194 */,
 /* 195 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -61507,172 +61433,7 @@ var tagsView = {
 /* harmony default export */ __webpack_exports__["a"] = (tagsView);
 
 /***/ }),
-/* 196 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// import { loginByUsername, logout, getUserInfo } from '@/api/login'
-// import { getToken, setToken, removeToken } from '@/utils/auth'
-
-var user = {
-  state: {
-    user: '',
-    status: '',
-    code: '',
-    // token: getToken(),
-    name: '',
-    avatar: '',
-    introduction: '',
-    roles: [],
-    setting: {
-      articlePlatform: []
-    }
-  },
-
-  mutations: {
-    SET_CODE: function SET_CODE(state, code) {
-      state.code = code;
-    },
-    // SET_TOKEN: (state, token) => {
-    //   state.token = token
-    // },
-    SET_INTRODUCTION: function SET_INTRODUCTION(state, introduction) {
-      state.introduction = introduction;
-    },
-    SET_SETTING: function SET_SETTING(state, setting) {
-      state.setting = setting;
-    },
-    SET_STATUS: function SET_STATUS(state, status) {
-      state.status = status;
-    },
-    SET_NAME: function SET_NAME(state, name) {
-      state.name = name;
-    },
-    SET_AVATAR: function SET_AVATAR(state, avatar) {
-      state.avatar = avatar;
-    },
-    SET_ROLES: function SET_ROLES(state, roles) {
-      state.roles = roles;
-    }
-  },
-
-  actions: {
-    // 用户名登录
-    LoginByUsername: function LoginByUsername(_ref, userInfo) {
-      var commit = _ref.commit;
-
-      var username = userInfo.username.trim();
-      return new Promise(function (resolve, reject) {
-        loginByUsername(username, userInfo.password).then(function (response) {
-          var data = response.data;
-          commit('SET_TOKEN', data.token);
-          // setToken(response.data.token)
-          resolve();
-        }).catch(function (error) {
-          reject(error);
-        });
-      });
-    },
-
-
-    // 获取用户信息
-    GetUserInfo: function GetUserInfo(_ref2) {
-      var commit = _ref2.commit,
-          state = _ref2.state;
-
-      return new Promise(function (resolve, reject) {
-        getUserInfo(state.token).then(function (response) {
-          if (!response.data) {
-            // 由于mockjs 不支持自定义状态码只能这样hack
-            reject('error');
-          }
-          var data = response.data;
-
-          if (data.roles && data.roles.length > 0) {
-            // 验证返回的roles是否是一个非空数组
-            commit('SET_ROLES', data.roles);
-          } else {
-            reject('getInfo: roles must be a non-null array !');
-          }
-
-          commit('SET_NAME', data.name);
-          commit('SET_AVATAR', data.avatar);
-          commit('SET_INTRODUCTION', data.introduction);
-          resolve(response);
-        }).catch(function (error) {
-          reject(error);
-        });
-      });
-    },
-
-
-    // 第三方验证登录
-    // LoginByThirdparty({ commit, state }, code) {
-    //   return new Promise((resolve, reject) => {
-    //     commit('SET_CODE', code)
-    //     loginByThirdparty(state.status, state.email, state.code).then(response => {
-    //       commit('SET_TOKEN', response.data.token)
-    //       setToken(response.data.token)
-    //       resolve()
-    //     }).catch(error => {
-    //       reject(error)
-    //     })
-    //   })
-    // },
-
-    // 登出
-    LogOut: function LogOut(_ref3) {
-      var commit = _ref3.commit,
-          state = _ref3.state;
-
-      return new Promise(function (resolve, reject) {
-        logout(state.token).then(function () {
-          commit('SET_TOKEN', '');
-          commit('SET_ROLES', []);
-          removeToken();
-          resolve();
-        }).catch(function (error) {
-          reject(error);
-        });
-      });
-    },
-
-
-    // 前端 登出
-    FedLogOut: function FedLogOut(_ref4) {
-      var commit = _ref4.commit;
-
-      return new Promise(function (resolve) {
-        commit('SET_TOKEN', '');
-        removeToken();
-        resolve();
-      });
-    },
-
-
-    // 动态修改权限
-    ChangeRoles: function ChangeRoles(_ref5, role) {
-      var commit = _ref5.commit;
-
-      return new Promise(function (resolve) {
-        commit('SET_TOKEN', role);
-        setToken(role);
-        getUserInfo(role).then(function (response) {
-          var data = response.data;
-          commit('SET_ROLES', data.roles);
-          commit('SET_NAME', data.name);
-          commit('SET_AVATAR', data.avatar);
-          commit('SET_INTRODUCTION', data.introduction);
-          resolve();
-        });
-      });
-    }
-  }
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (user);
-
-/***/ }),
+/* 196 */,
 /* 197 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
