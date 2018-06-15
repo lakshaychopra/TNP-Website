@@ -13,18 +13,20 @@ import 'normalize.css/normalize.css'// A modern alternative to CSS resets
 
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+
 
 import './styles/index.scss' // global css
 
 
-import i18n from './lang' // Internationalization
+// import i18n from './lang' // Internationalization
 import './icons' // icon
 
-import './errorLog'// error log
+// import './errorLog'// error log
 
 Vue.use(Element, {
     size: 'medium', // set element-ui default size
-    i18n: (key, value) => i18n.t(key, value)
+    // i18n: (key, value) => i18n.t(key, value)
 })
 
 import VeeValidate from 'vee-validate'
@@ -53,6 +55,6 @@ const app = new Vue({
     el:'#app',
     router:router,
     store:store,
-    i18n,
+    // i18n,
     // render: h => h(app)
 })

@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
+
+
+import Layout from './pages/layout/Layout'
+
 const router = new VueRouter({ 
     base: '/',
     mode: 'history',
