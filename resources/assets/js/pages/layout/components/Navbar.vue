@@ -55,18 +55,20 @@ export default {
   height: 50px;
   line-height: 50px;
   border-radius: 0px !important;
+  position: relative;
   .hamburger-container {
     line-height: 58px;
     height: 50px;
     float: left;
     padding: 0 10px;
-  }
-  .screenfull {
     position: absolute;
-    right: 90px;
-    top: 16px;
-    color: red;
   }
+  // .screenfull {
+  //   position: absolute;
+  //   right: 90px;
+  //   top: 16px;
+  //   color: red;
+  // }
   .avatar-container {
     height: 50px;
     display: inline-block;

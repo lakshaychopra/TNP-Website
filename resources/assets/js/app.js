@@ -5,29 +5,18 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import './bootstrap';
 import router from './routes.js'
 window.Vue = require('vue')
 
 import 'normalize.css/normalize.css'// A modern alternative to CSS resets
 
-import Element from 'element-ui'
+import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
-
-import './styles/index.scss' // global css
-
-
-// import i18n from './lang' // Internationalization
 import './icons' // icon
 
-// import './errorLog'// error log
-
-Vue.use(Element, {
-    size: 'medium', // set element-ui default size
-    // i18n: (key, value) => i18n.t(key, value)
-})
+Vue.use(ElementUI)
 
 import VeeValidate from 'vee-validate'
 Vue.use(VeeValidate);
@@ -39,8 +28,8 @@ Vue.use(Toasted, {
 });
 
 
-import Auth from './packages/auth/auth.js'
-Vue.use(Auth)
+// import Auth from './packages/auth/auth.js'
+// Vue.use(Auth)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
