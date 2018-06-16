@@ -32,7 +32,6 @@
             <p class="message"><a href="#">Forgot password?</a></p>
         </form>
         </div>
-
     </div>
 </template>
 <style>

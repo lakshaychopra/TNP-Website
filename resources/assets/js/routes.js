@@ -27,11 +27,18 @@
             name: 'admin',
             hidden: true,
             component: Vue.component('authLayout', require('./pages/auth_layout.vue')),
-            children: [{
+            children: [
+                {
                 path: 'login',
                 name: 'login',
                 component: Vue.component('login', require('./components/login.vue')),
-            }],
+            },
+            {
+                path: 'security',
+                name: 'security',
+                component: Vue.component('security', require('./components/security.vue')),
+            },
+        ],
         },
         // {
         //     path: '/404',

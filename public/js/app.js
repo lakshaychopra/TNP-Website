@@ -28500,6 +28500,10 @@ var constantRouterMap = [{
         path: 'login',
         name: 'login',
         component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login', __webpack_require__(151))
+    }, {
+        path: 'security',
+        name: 'security',
+        component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('security', __webpack_require__(279))
     }]
 },
 // {
@@ -28606,7 +28610,7 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 "use strict";
 /* unused harmony export apiDomain */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return loginURL; });
-/* unused harmony export securityURL */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return securityURL; });
 /* unused harmony export oauthURL */
 var apiDomain = 'http://localhost:8000';
 var loginURL = '/admin/login';
@@ -57773,7 +57777,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57787,7 +57791,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__env_js__ = __webpack_require__(155);
-//
 //
 //
 //
@@ -108390,6 +108393,313 @@ var index_esm = {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 278 */,
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(280)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(282)
+/* template */
+var __vue_template__ = __webpack_require__(283)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\security.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1b09a997", Component.options)
+  } else {
+    hotAPI.reload("data-v-1b09a997", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(281);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("50a93730", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b09a997\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./security.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b09a997\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./security.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 282 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__(58);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+// import dashboardVue from './dashboard.vue.js';
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+      login: {
+        token_2fa: ""
+      }
+    };
+  },
+
+  methods: {
+    handleLoginFormSubmit: function handleLoginFormSubmit() {
+      var postData = {
+        // usertype : 'EXECUTIVE_MEMBER',
+        token_2fa: this.login.token_2fa
+      };
+      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["b" /* securityURL */], {
+        token_2fa: this.login.token_2fa
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error.response.statusText);
+        Vue.toasted.show(error.response.statusText, {
+          icon: 'exclamation-circle',
+          position: "bottom-center",
+          duration: 5000
+        });
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "form" }, [
+      _c("h4", { staticClass: "text-center" }, [_vm._v("Sign in")]),
+      _vm._v(" "),
+      _c("small", [
+        _vm._v(
+          "Enter the code recieved in your email.Please check the spam box also."
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          staticClass: "login-form",
+          attrs: { method: "POST" },
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.handleLoginFormSubmit($event)
+            }
+          }
+        },
+        [
+          _c("input", {
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm.csrf }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "group",
+              class: {
+                "has-error": _vm.errors.has("token_2fa"),
+                "form-group": true
+              }
+            },
+            [
+              _c("input", {
+                directives: [
+                  { name: "validate", rawName: "v-validate" },
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.login.token_2fa,
+                    expression: "login.token_2fa"
+                  }
+                ],
+                attrs: {
+                  type: "password",
+                  "data-vv-rules": "required",
+                  name: "token_2fa",
+                  required: ""
+                },
+                domProps: { value: _vm.login.token_2fa },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.login, "token_2fa", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "highlight" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "bar" }),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm.errors.has("token_2fa")
+                ? _c("span", { staticClass: "help-block" }, [
+                    _c("strong", [
+                      _vm._v(_vm._s(_vm.errors.first("token_2fa")))
+                    ])
+                  ])
+                : _vm._e()
+            ]
+          ),
+          _vm._v(" "),
+          _c("button", { attrs: { type: "submit" } }, [_vm._v("Login")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "message" }, [
+            _vm._v("Not registered? "),
+            _c(
+              "a",
+              { attrs: { href: "#" } },
+              [
+                _c("router-link", { attrs: { to: "reg" } }, [
+                  _vm._v("Create an account")
+                ])
+              ],
+              1
+            )
+          ])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("i", { staticClass: "fas fa-user" }),
+      _c("span", { staticClass: "span-input" }, [_vm._v("Enter Code")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1b09a997", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
