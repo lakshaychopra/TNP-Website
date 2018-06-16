@@ -25,7 +25,6 @@ export default {
     }
   },
   methods: {
-    // generateTitle,
     getBreadcrumb() {
       let matched = this.$route.matched.filter(item => item.name)
       const first = matched[0]
