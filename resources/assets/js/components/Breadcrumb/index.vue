@@ -10,8 +10,6 @@
 </template>
 
 <script>
-// import { generateTitle } from '@/utils/i18n'
-
 export default {
   created() {
     this.getBreadcrumb()
@@ -50,5 +48,10 @@ export default {
       color: #97a8be;
       cursor: text;
     }
+  }
+  .el-breadcrumb__item{
+    position: absolute;
+    left: 51px;
+    top: -3px;
   }
 </style>

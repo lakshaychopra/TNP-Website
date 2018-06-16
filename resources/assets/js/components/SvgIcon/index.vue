@@ -1,7 +1,8 @@
 <template>
-  <svg :class="svgClass" aria-hidden="true">
+  <!-- <svg :class="svgClass" aria-hidden="true">
     <use :xlink:href="iconName"></use>
-  </svg>
+  </svg> -->
+  <i v-bind:class="iconName"></i>
 </template>
 
 <script>
@@ -18,15 +19,15 @@ export default {
   },
   computed: {
     iconName() {
-      return `#icon-${this.iconClass}`
+      return `svg-icon fa fa-${this.iconClass}`
     },
-    svgClass() {
-      if (this.className) {
-        return 'svg-icon ' + this.className
-      } else {
-        return 'svg-icon'
-      }
-    }
+    // svgClass() {
+    //   if (this.className) {
+    //     return 'svg-icon ' + this.className
+    //   } else {
+    //     return 'svg-icon'
+    //   }
+    // }
   }
 }
 </script>
@@ -35,8 +36,10 @@ export default {
 .svg-icon {
   width: 1em;
   height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
+  vertical-align:-0.3em !important;
+  /* fill: currentColor; */
+  color: #fff;
   overflow: hidden;
+
 }
 </style>

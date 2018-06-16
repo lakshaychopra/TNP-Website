@@ -34,7 +34,7 @@ export default {
   computed: {
     ...mapGetters([
       'sidebar',
-      'avatar'
+      // 'avatar'
     ])
   },
   methods: {
@@ -43,7 +43,7 @@ export default {
     },
     logout() {
       this.$store.dispatch('LogOut').then(() => {
-        location.reload() // 为了重新实例化vue-router对象 避免bug
+        location.reload() 
       })
     }
   }
@@ -55,7 +55,7 @@ export default {
   height: 50px;
   line-height: 50px;
   border-radius: 0px !important;
-  position: relative;
+  // position: relative;
   .hamburger-container {
     line-height: 58px;
     height: 50px;

@@ -10523,8 +10523,9 @@ a.text-dark:focus {
   overflow: hidden;
 }
 
-#app .sidebar-container .svg-icon {
+#app .sidebar-container i.svg-icon {
   margin-right: 16px;
+  color: #ffffff;
 }
 
 #app .sidebar-container .el-menu {
