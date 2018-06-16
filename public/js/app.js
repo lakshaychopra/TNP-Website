@@ -56129,7 +56129,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
       var first = matched[0];
       if (first && first.name !== 'dashboard') {
-        matched = [{ path: '/dashboard', meta: { title: 'dashboard' } }].concat(matched);
+        matched = [{ path: 'admin/dashboard', meta: { title: 'dashboard' } }].concat(matched);
       }
       this.levelList = matched;
     }
@@ -56160,12 +56160,12 @@ var render = function() {
                   item.redirect === "noredirect" ||
                   index == _vm.levelList.length - 1
                     ? _c("span", { staticClass: "no-redirect" }, [
-                        _vm._v("{{}}")
+                        _vm._v(_vm._s(item.meta.title))
                       ])
                     : _c(
                         "router-link",
                         { attrs: { to: item.redirect || item.path } },
-                        [_vm._v("{{}}")]
+                        [_vm._v(_vm._s(item.meta.title))]
                       )
                 ],
                 1
