@@ -21,6 +21,8 @@ class CreatePostsTable extends Migration
             $table->string('author_id');
             $table->string('tag');
             $table->string('category');
+            $table->string('post_link');
+            $table->string('image_path');
             $table->timestamps();
         });
     }

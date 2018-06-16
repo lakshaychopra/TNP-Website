@@ -50,9 +50,9 @@
             path: '/admin',
             component: Layout,
             redirect: '/dashboard',
-            name: 'Dashboard',
             children: [{
                 path: 'dashboard',
+                name: 'Dashboard',
                 component: Vue.component('dashboard',require ('./pages/dashboard/index')),
                  meta: {
                     title: 'Dashboard',

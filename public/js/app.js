@@ -13668,9 +13668,9 @@ var constantRouterMap = [{
     path: '/admin',
     component: __WEBPACK_IMPORTED_MODULE_2__pages_layout_Layout___default.a,
     redirect: '/dashboard',
-    name: 'Dashboard',
     children: [{
         path: 'dashboard',
+        name: 'Dashboard',
         component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard', __webpack_require__(162)),
         meta: {
             title: 'Dashboard',
@@ -56083,7 +56083,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n.app-breadcrumb.el-breadcrumb[data-v-766392a0] {\n  display: inline-block;\n  font-size: 14px;\n  line-height: 50px;\n  margin-left: 10px;\n}\n.app-breadcrumb.el-breadcrumb .no-redirect[data-v-766392a0] {\n    color: #97a8be;\n    cursor: text;\n}\n.el-breadcrumb__item[data-v-766392a0] {\n  position: absolute;\n  left: 51px;\n  top: -3px;\n}\n", ""]);
+exports.push([module.i, "\n.app-breadcrumb.el-breadcrumb[data-v-766392a0] {\n  display: inline-block;\n  font-size: 14px;\n  line-height: 50px;\n  margin-left: 10px;\n}\n.app-breadcrumb.el-breadcrumb .no-redirect[data-v-766392a0] {\n    color: #97a8be;\n    cursor: text;\n}\n.app-breadcrumb.el-breadcrumb .inner-span-el[data-v-766392a0] {\n    margin-left: 80px;\n}\n.el-breadcrumb__item[data-v-766392a0] {\n  position: absolute;\n  left: 51px;\n  top: -3px;\n}\n", ""]);
 
 // exports
 
@@ -56129,7 +56129,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
       var first = matched[0];
       if (first && first.name !== 'dashboard') {
-        matched = [{ path: 'admin/dashboard', meta: { title: 'dashboard' } }].concat(matched);
+        matched = [{ meta: { title: 'Dashboard' } }].concat(matched);
       }
       this.levelList = matched;
     }
@@ -56159,7 +56159,7 @@ var render = function() {
                 [
                   item.redirect === "noredirect" ||
                   index == _vm.levelList.length - 1
-                    ? _c("span", { staticClass: "no-redirect" }, [
+                    ? _c("span", { staticClass: "no-redirect inner-span-el" }, [
                         _vm._v(_vm._s(item.meta.title))
                       ])
                     : _c(
@@ -58787,7 +58787,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n.line[data-v-ab0f8b5e]{\r\n  text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n.line[data-v-ab0f8b5e]{\n  text-align: center;\n}\n", ""]);
 
 // exports
 
