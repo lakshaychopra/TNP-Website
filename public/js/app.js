@@ -28598,21 +28598,23 @@ module.exports = Cancel;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_app__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__getters__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_tagsView__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getters__ = __webpack_require__(144);
 
 
 
-// import user from './modules/user'
+
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 
 var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
   modules: {
-    app: __WEBPACK_IMPORTED_MODULE_2__modules_app__["a" /* default */]
+    app: __WEBPACK_IMPORTED_MODULE_2__modules_app__["a" /* default */],
+    tagsView: __WEBPACK_IMPORTED_MODULE_3__modules_tagsView__["a" /* default */]
     // user
   },
-  getters: __WEBPACK_IMPORTED_MODULE_3__getters__["a" /* default */]
+  getters: __WEBPACK_IMPORTED_MODULE_4__getters__["a" /* default */]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (store);
@@ -109249,6 +109251,201 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7d3d052e", module.exports)
   }
 }
+
+/***/ }),
+/* 293 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var tagsView = {
+  state: {
+    visitedViews: [],
+    cachedViews: []
+  },
+  mutations: {
+    ADD_VISITED_VIEWS: function ADD_VISITED_VIEWS(state, view) {
+      if (state.visitedViews.some(function (v) {
+        return v.path === view.path;
+      })) return;
+      state.visitedViews.push(Object.assign({}, view, {
+        title: view.meta.title || 'no-name'
+      }));
+      if (!view.meta.noCache) {
+        state.cachedViews.push(view.name);
+      }
+    },
+    DEL_VISITED_VIEWS: function DEL_VISITED_VIEWS(state, view) {
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = state.visitedViews.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var _ref = _step.value;
+
+          var _ref2 = _slicedToArray(_ref, 2);
+
+          var i = _ref2[0];
+          var v = _ref2[1];
+
+          if (v.path === view.path) {
+            state.visitedViews.splice(i, 1);
+            break;
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = state.cachedViews[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var _i = _step2.value;
+
+          if (_i === view.name) {
+            var index = state.cachedViews.indexOf(_i);
+            state.cachedViews.splice(index, 1);
+            break;
+          }
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2.return) {
+            _iterator2.return();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+    },
+    DEL_OTHERS_VIEWS: function DEL_OTHERS_VIEWS(state, view) {
+      var _iteratorNormalCompletion3 = true;
+      var _didIteratorError3 = false;
+      var _iteratorError3 = undefined;
+
+      try {
+        for (var _iterator3 = state.visitedViews.entries()[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+          var _ref3 = _step3.value;
+
+          var _ref4 = _slicedToArray(_ref3, 2);
+
+          var i = _ref4[0];
+          var v = _ref4[1];
+
+          if (v.path === view.path) {
+            state.visitedViews = state.visitedViews.slice(i, i + 1);
+            break;
+          }
+        }
+      } catch (err) {
+        _didIteratorError3 = true;
+        _iteratorError3 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion3 && _iterator3.return) {
+            _iterator3.return();
+          }
+        } finally {
+          if (_didIteratorError3) {
+            throw _iteratorError3;
+          }
+        }
+      }
+
+      var _iteratorNormalCompletion4 = true;
+      var _didIteratorError4 = false;
+      var _iteratorError4 = undefined;
+
+      try {
+        for (var _iterator4 = state.cachedViews[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+          var _i2 = _step4.value;
+
+          if (_i2 === view.name) {
+            var index = state.cachedViews.indexOf(_i2);
+            state.cachedViews = state.cachedViews.slice(index, _i2 + 1);
+            break;
+          }
+        }
+      } catch (err) {
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion4 && _iterator4.return) {
+            _iterator4.return();
+          }
+        } finally {
+          if (_didIteratorError4) {
+            throw _iteratorError4;
+          }
+        }
+      }
+    },
+    DEL_ALL_VIEWS: function DEL_ALL_VIEWS(state) {
+      state.visitedViews = [];
+      state.cachedViews = [];
+    }
+  },
+  actions: {
+    addVisitedViews: function addVisitedViews(_ref5, view) {
+      var commit = _ref5.commit;
+
+      commit('ADD_VISITED_VIEWS', view);
+    },
+    delVisitedViews: function delVisitedViews(_ref6, view) {
+      var commit = _ref6.commit,
+          state = _ref6.state;
+
+      return new Promise(function (resolve) {
+        commit('DEL_VISITED_VIEWS', view);
+        resolve([].concat(_toConsumableArray(state.visitedViews)));
+      });
+    },
+    delOthersViews: function delOthersViews(_ref7, view) {
+      var commit = _ref7.commit,
+          state = _ref7.state;
+
+      return new Promise(function (resolve) {
+        commit('DEL_OTHERS_VIEWS', view);
+        resolve([].concat(_toConsumableArray(state.visitedViews)));
+      });
+    },
+    delAllViews: function delAllViews(_ref8) {
+      var commit = _ref8.commit,
+          state = _ref8.state;
+
+      return new Promise(function (resolve) {
+        commit('DEL_ALL_VIEWS');
+        resolve([].concat(_toConsumableArray(state.visitedViews)));
+      });
+    }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (tagsView);
 
 /***/ })
 /******/ ]);
