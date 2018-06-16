@@ -58478,7 +58478,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n.line[data-v-ab0f8b5e]{\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.line[data-v-ab0f8b5e]{\r\n  text-align: center;\n}\r\n", ""]);
 
 // exports
 
