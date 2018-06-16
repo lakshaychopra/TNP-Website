@@ -56,7 +56,7 @@
                 component: Vue.component('dashboard',require ('./pages/dashboard/index')),
                  meta: {
                     title: 'Dashboard',
-                    icon: 'abcs'
+                    icon: 'tachometer'
                  },
             }]
         },
@@ -100,7 +100,7 @@
             component: Vue.component('form',require ('./pages/form/index')),
             meta: {
                 title: 'Form',
-                icon: 'form'
+                icon: 'file-text'
             }
         }]
     },

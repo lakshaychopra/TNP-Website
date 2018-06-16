@@ -13674,7 +13674,7 @@ var constantRouterMap = [{
         component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard', __webpack_require__(162)),
         meta: {
             title: 'Dashboard',
-            icon: 'abcs'
+            icon: 'tachometer'
         }
     }]
 }, {
@@ -13712,7 +13712,7 @@ var constantRouterMap = [{
         component: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('form', __webpack_require__(173)),
         meta: {
             title: 'Form',
-            icon: 'form'
+            icon: 'file-text'
         }
     }]
 }];
