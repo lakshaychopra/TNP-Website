@@ -55937,7 +55937,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n.navbar[data-v-04cb82db] {\n  height: 50px;\n  line-height: 50px;\n  border-radius: 0px !important;\n}\n.navbar .hamburger-container[data-v-04cb82db] {\n    line-height: 58px;\n    height: 50px;\n    float: left;\n    padding: 0 10px;\n    position: absolute;\n}\n.navbar .avatar-container[data-v-04cb82db] {\n    height: 50px;\n    display: inline-block;\n    position: absolute;\n    right: 35px;\n}\n.navbar .avatar-container .avatar-wrapper[data-v-04cb82db] {\n      cursor: pointer;\n      margin-top: 5px;\n      position: relative;\n}\n.navbar .avatar-container .avatar-wrapper .user-avatar[data-v-04cb82db] {\n        width: 40px;\n        height: 40px;\n        border-radius: 10px;\n}\n.navbar .avatar-container .avatar-wrapper .el-icon-caret-bottom[data-v-04cb82db] {\n        position: absolute;\n        right: -20px;\n        top: 25px;\n        font-size: 12px;\n}\n", ""]);
+exports.push([module.i, "\n.navbar[data-v-04cb82db] {\n  height: 50px;\n  line-height: 50px;\n  border-radius: 0px !important;\n}\n.navbar .hamburger-container[data-v-04cb82db] {\n    line-height: 58px;\n    height: 50px;\n    float: left;\n    padding: 0 10px;\n    position: absolute;\n}\n.navbar .avatar-container[data-v-04cb82db] {\n    height: 50px;\n    display: inline-block;\n    position: absolute;\n    right: 35px;\n}\n.navbar .avatar-container .avatar-wrapper[data-v-04cb82db] {\n      cursor: pointer;\n      margin-top: 5px;\n      position: relative;\n}\n.navbar .avatar-container .avatar-wrapper .user-avatar[data-v-04cb82db] {\n        width: 40px;\n        height: 40px;\n        border-radius: 50px;\n        padding-bottom: 50px;\n}\n.navbar .avatar-container .avatar-wrapper .el-icon-caret-bottom[data-v-04cb82db] {\n        position: absolute;\n        right: -20px;\n        top: 25px;\n        font-size: 12px;\n}\n", ""]);
 
 // exports
 
@@ -56925,9 +56925,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'AppMain'
+  name: 'AppMain',
+  computed: {
+    cachedViews: function cachedViews() {
+      return this.$store.state.tagsView.cachedViews;
+    },
+    key: function key() {
+      return this.$route.fullPath;
+    }
+  }
 });
 
 /***/ }),
@@ -56940,12 +56950,19 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "app-main" },
+    { staticClass: "app-main", staticStyle: { "min-height": "100%" } },
     [
       _c(
         "transition",
-        { attrs: { name: "fade", mode: "out-in" } },
-        [_c("router-view")],
+        { attrs: { name: "fade-transform", mode: "out-in" } },
+        [
+          _c(
+            "keep-alive",
+            { attrs: { include: _vm.cachedViews } },
+            [_c("router-view", { key: _vm.key })],
+            1
+          )
+        ],
         1
       )
     ],
