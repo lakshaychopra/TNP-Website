@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 // use Moloquent;
 
-class Post extends Moloquent
+class Post extends Model
 {
     // protected $connection = 'mongodb';
     

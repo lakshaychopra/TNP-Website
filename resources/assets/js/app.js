@@ -14,9 +14,37 @@ import 'normalize.css/normalize.css'// A modern alternative to CSS resets
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+Vue.use(ElementUI)
 import './icons' // icon
 
-Vue.use(ElementUI)
+import Vue from 'vue'
+
+import { VueResource } from "vue-resource";
+import VueHtml5Editor from 'vue-html5-editor'
+Vue.use(VueHtml5Editor,{
+     hiddenModules: [
+        "image",
+        "info",
+        "full-screen",
+     ],
+
+});
+
+//  import VueTrumbowyg from 'vue-trumbowyg';
+//  import 'trumbowyg/dist/ui/trumbowyg.css';
+ 
+//  Vue.use(VueTrumbowyg);
+
+// import wysiwyg from "vue-wysiwyg";
+// Vue.use(wysiwyg, {
+//     maxHeight: "500px",
+//     hideModules: {
+//         "removeFormat": true,
+//         "image": true,
+//         "code":true,        
+//     },
+// }); 
+
 
 import VeeValidate from 'vee-validate'
 Vue.use(VeeValidate);

@@ -13,7 +13,11 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 } 
 @import '~font-awesome/scss/font-awesome';
+// @import "~vue-wysiwyg/dist/vueWysiwyg.css";
 
+// .editr--content{
+//   background-color: #fff;
+// }
 // Bootstrap
 @import './styles/variables.scss';
 @import './styles/mixin.scss';
@@ -91,4 +95,8 @@ a:hover {
 
 .app-container {
   padding: 20px;
+}
+
+.drawer-bg {
+  z-index: 1002 !important;
 }

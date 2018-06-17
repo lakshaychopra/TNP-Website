@@ -104,6 +104,19 @@
             }
         }]
     },
+    {
+        path: '/post',
+        component: Layout,
+        children: [{
+            path: 'index',
+            name: 'Posts',
+            component: Vue.component('Post', require('./pages/post/index')),
+            meta: {
+                title: 'Posts',
+                icon: 'file-text'
+            }
+        }]
+    },
     
     // {
     //     path: '*',
