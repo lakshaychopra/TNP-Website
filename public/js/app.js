@@ -55939,7 +55939,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n.navbar[data-v-04cb82db] {\n  height: 50px;\n  line-height: 50px;\n  border-radius: 0px !important;\n}\n.navbar .hamburger-container[data-v-04cb82db] {\n    line-height: 58px;\n    height: 50px;\n    float: left;\n    padding: 0 10px;\n    position: absolute;\n}\n.navbar .avatar-container[data-v-04cb82db] {\n    height: 50px;\n    display: inline-block;\n    position: absolute;\n    right: 35px;\n}\n.navbar .avatar-container .avatar-wrapper[data-v-04cb82db] {\n      cursor: pointer;\n      margin-top: 5px;\n      position: relative;\n}\n.navbar .avatar-container .avatar-wrapper .user-avatar[data-v-04cb82db] {\n        width: 40px;\n        height: 40px;\n        border-radius: 50px;\n        padding-bottom: 50px;\n}\n.navbar .avatar-container .avatar-wrapper .el-icon-caret-bottom[data-v-04cb82db] {\n        position: absolute;\n        right: -20px;\n        top: 25px;\n        font-size: 12px;\n}\n", ""]);
+exports.push([module.i, "\n.navbar[data-v-04cb82db] {\n  height: 50px;\n  line-height: 50px;\n  border-radius: 0px !important;\n}\n.navbar .hamburger-container[data-v-04cb82db] {\n    line-height: 58px;\n    height: 50px;\n    float: left;\n    padding: 0 10px;\n    position: absolute;\n}\n.navbar .breadcrumb-container[data-v-04cb82db] {\n    float: left;\n}\n.navbar .avatar-container[data-v-04cb82db] {\n    height: 50px;\n    display: inline-block;\n    position: absolute;\n    right: 35px;\n}\n.navbar .avatar-container .avatar-wrapper[data-v-04cb82db] {\n      cursor: pointer;\n      margin-top: 5px;\n      position: relative;\n}\n.navbar .avatar-container .avatar-wrapper .user-avatar[data-v-04cb82db] {\n        width: 40px;\n        height: 40px;\n        border-radius: 50px;\n        padding-bottom: 50px;\n}\n.navbar .avatar-container .avatar-wrapper .el-icon-caret-bottom[data-v-04cb82db] {\n        position: absolute;\n        right: -20px;\n        top: 25px;\n        font-size: 12px;\n}\n", ""]);
 
 // exports
 
@@ -55980,6 +55980,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -55997,7 +55998,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
     logout: function logout() {
       this.$store.dispatch('LogOut').then(function () {
-        location.reload();
+        location.reload(); // In order to re-instantiate the vue-router object to avoid bugs
       });
     }
   }
@@ -56399,7 +56400,7 @@ var render = function() {
         attrs: { toggleClick: _vm.toggleSideBar, isActive: _vm.sidebar.opened }
       }),
       _vm._v(" "),
-      _c("breadcrumb"),
+      _c("breadcrumb", { staticClass: "breadcrumb-container" }),
       _vm._v(" "),
       _c(
         "el-dropdown",
