@@ -56,9 +56,9 @@ class PostController extends Controller
             try {
                 DB::beginTransaction();
                 $post = $request->all();
-                if($post->post_id){
+                if($post){
                     if ($request->hasFile('image_path')) {
-                        $inputs['image_path'] = $this->postService->uploadIdCard($inputs);
+                        $inputs['image_path'] = $this->postService->uploadPostImage($inputs);
                     }
                     else{
                         return response()->json(['error' => 'Image Upload Failed'], 401); //Json response with status 401 and error message

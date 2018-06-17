@@ -28,11 +28,11 @@ class PostService
 	
 	public function uploadPostImage(array $payload)
 	{
-		if ($post->post_id) 
+		if ($post) 
 		{
 			$filePrefix = config('tpoPost.post_image_prefix');
 			$fileExtension = $payload['image_path']->getClientOriginalExtension();
-			$fileName = $filePrefix.$payload['post_id'].$fileExtension;
+			$fileName = $filePrefix.$payload['id'].$fileExtension;
 			$filePath =  storage_path().config('tpoPost.post_image_folder');
 			
 			if($request->hasFile('image_path'))
