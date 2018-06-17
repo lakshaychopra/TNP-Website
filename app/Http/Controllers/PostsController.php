@@ -55,19 +55,26 @@ class PostController extends Controller
         if($request->isMethod('post')){
             try {
                 DB::beginTransaction();
-                $post = $this->service->createPost($request->all());
-                DB::commit();
-                if($post){
+                $post = $request->all();
+                if($post->post_id){
+                    if ($request->hasFile('image_path')) {
+                        $inputs['image_path'] = $this->postService->uploadIdCard($inputs);
+                    }
+                    else{
+                        return response()->json(['error' => 'Image Upload Failed'], 401); //Json response with status 401 and error message
+                    }
+                    $this->service->createPost($request->all());
                     return response() //Json response with status 200 and token and user type
                     ->json([
                         'response'=>'Inserted',
                         $post,
                     ],
                     $this->successStatus);
+                    DB::commit();
                 }
                 else 
                 {
-                    return response()->json(['error' => 'Failed'], 401); //Json response with status 401 and error message
+                    return response()->json(['error' => 'Post Failed'], 401); //Json response with status 401 and error message
                 }
             } catch (Exception $e) {
                 DB::rollback();
@@ -128,6 +135,7 @@ class PostController extends Controller
                         $post,
                     ],
                     $this->successStatus);
+                    
                 }
                 else 
                 {

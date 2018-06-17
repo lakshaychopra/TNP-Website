@@ -24,12 +24,15 @@ class CreatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'bail|required|min:5|max:30',
-            'body' => 'required|min:5',
-            'author' => 'required',
-            'author_id' => 'required',
-            'tag' => 'required',
-            'category' => 'required',
+            'title'                 => 'bail|required|min:5|max:30',
+            'body'                  => 'required|min:5',
+            'author'                => 'required',
+            'author_id'             => 'required',
+            'tag'                   => 'required',
+            'category'              => 'required',
+            'post_link'              => 'required',
+            'image_path'             => 'file|required|image|mimes:png,jpeg,jpg|max:2048',
+
         ];
     }
     
