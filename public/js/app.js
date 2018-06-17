@@ -58721,7 +58721,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         if (response.status == "200") {
           // window.location = "/dashboard";
-          __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].push({ name: 'security' });
+          __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */].push({ path: '/admin/security' });
         }
         if (response.status == "401") {}
       }).catch(function (error) {

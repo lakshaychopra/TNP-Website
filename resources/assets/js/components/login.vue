@@ -72,7 +72,7 @@ export default {
   
           if (response.status == "200") {
             // window.location = "/dashboard";
-              router.push({name:'security'});
+              router.push({path:'/admin/security'});
 
           }
           if (response.status == "401") {
