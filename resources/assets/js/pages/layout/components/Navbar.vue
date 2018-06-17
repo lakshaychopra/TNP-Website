@@ -1,7 +1,8 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
     <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
-    <breadcrumb></breadcrumb>
+    <breadcrumb class="breadcrumb-container"></breadcrumb>
+    
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
         <img class="user-avatar" :src="avatar+'?imageView2/1/w/80/h/80'">
@@ -43,7 +44,7 @@ export default {
     },
     logout() {
       this.$store.dispatch('LogOut').then(() => {
-        location.reload() 
+        location.reload() // In order to re-instantiate the vue-router object to avoid bugs
       })
     }
   }
@@ -62,6 +63,9 @@ export default {
     float: left;
     padding: 0 10px;
     position: absolute;
+  }
+   .breadcrumb-container{
+    float: left;
   }
   // .screenfull {
   //   position: absolute;
