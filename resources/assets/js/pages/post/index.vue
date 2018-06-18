@@ -141,7 +141,7 @@ export default {
         author:'admin',
         author_id: '1',
         tag:this.post.tags.toString(),
-        // post_link:'abc',
+        post_link:'abc',
         category:this.post.category,
         // image_path:this.post.imageUrl
       };

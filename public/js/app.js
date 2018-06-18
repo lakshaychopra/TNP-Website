@@ -60221,7 +60221,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         author: 'admin',
         author_id: '1',
         tag: this.post.tags.toString(),
-        // post_link:'abc',
+        post_link: 'abc',
         category: this.post.category
         // image_path:this.post.imageUrl
       };

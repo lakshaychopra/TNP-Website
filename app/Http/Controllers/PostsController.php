@@ -54,8 +54,8 @@ class PostController extends Controller
     {
         if($request->isMethod('post')){
             $post = $request->all();
-            DB::beginTransaction();
             try {
+                DB::beginTransaction();
                 // if ($post) {
                     // $image = $this->postService->uploadPostImage($post);
                     // }
@@ -64,6 +64,7 @@ class PostController extends Controller
                         // }
                         // if($request){
                             $postCreate = $this->service->createPost($post);
+                            DB::commit();
                             
                             return response() //Json response with status 200 and token and user type
                             ->json([
@@ -71,7 +72,6 @@ class PostController extends Controller
                                 // 'postCreate' => $postCreate,
                             ],
                             $this->successStatus);
-                            DB::commit();
                             // }
                             // else 
                             // {
