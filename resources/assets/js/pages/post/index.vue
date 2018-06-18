@@ -103,7 +103,7 @@ export default {
         content:'',
         tags: [],
         category: '' ,
-        imageUrl: ''
+        // imageUrl: ''
  
       },
       tagsOptions: [{
@@ -143,7 +143,7 @@ export default {
         tag:this.post.tags.toString(),
         // post_link:'abc',
         category:this.post.category,
-        image_path:this.post.imageUrl
+        // image_path:this.post.imageUrl
       };
       axios.post(addPostURL,postData)
         .then(function(response) {

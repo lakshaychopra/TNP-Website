@@ -32,9 +32,7 @@ class PostRepository
     public function create(array $data)
     {
         $data = $this->setPayload($data);
-		return $this->model->create($data+[
-            'image_path'=>$image_path
-        ]);
+		return $this->model->create($data);
     }
     
     // update record in the database
@@ -59,8 +57,8 @@ class PostRepository
 			'author_id'	 	     => $payload['author_id'],
 			'tag'	 	         => $payload['tag'],
 			'category'	 	     => $payload['category'],
-			'post_link'	 	     => $payload['post_link'],
-			'image_path'	 	 => $payload['image_path'],
+			// 'post_link'	 	     => $payload['post_link'],
+			// 'image_path'	 	 => $payload['image_path'],
 		];
 	}
 }
