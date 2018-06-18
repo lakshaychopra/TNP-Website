@@ -32,7 +32,9 @@ class PostRepository
     public function create(array $data)
     {
         $data = $this->setPayload($data);
-		return $this->model->create($data);
+		return $this->model->create($data+[
+            'image_path'=>$image_path
+        ]);
     }
     
     // update record in the database

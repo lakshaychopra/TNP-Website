@@ -60,7 +60,7 @@
         </el-checkbox-group> -->
        <div class="form-group files">
        <!-- <img :src="post.imageUrl" alt="Image"> -->
-       <input type="file" class="form-control" name="postImg" id="postImg" @change="handleChange">
+       <input type="file" class="form-control" name="imageUrl" id="imageUrl" @change="handleChange">
        </div>
       </el-form-item>
 
@@ -103,7 +103,7 @@ export default {
         content:'',
         tags: [],
         category: '' ,
-        imageUrl: null
+        imageUrl: ''
  
       },
       tagsOptions: [{

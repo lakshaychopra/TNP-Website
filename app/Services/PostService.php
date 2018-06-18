@@ -28,28 +28,25 @@ class PostService
 	
 	public function uploadPostImage(array $payload)
 	{
-		if ($post) 
+		if ($imageURL) 
 		{
-			$filePrefix = config('tpoPost.post_image_prefix');
-			$fileExtension = $payload['image_path']->getClientOriginalExtension();
-			$fileName = $filePrefix.$payload['id'].$fileExtension;
-			$filePath =  storage_path().config('tpoPost.post_image_folder');
-			
-			if($request->hasFile('image_path'))
-			 {
-				$image_path = $payload['image_path']->move($filePath, $fileName);
-				return response() //Json response with status 200 and token and user type
-				->json([
-					'response'=>'Post Image Uploaded',
-					$image_path,
-				],200);
+			$exploded = explode(',',$request->image_path);
+			$decoded = base64_decode($explode[1]);
+			if(str_contain($explode[0],'jpeg')){
+				$extention = 'jpg';
 			}else
 			{
-				return response()->json(['error' => 'Image Upload Failed'], 401); //Json response with status 401 and error message
+				$extention = 'png';
 			}
+			$fileName = 'tpoPost'.str_random().$extension;
+			$path =  storage_path().'/images/tpoPost/post_image_folder/'.$fileName;
+			
+			// file_put_contents($path, $decoded);
+			$image_path = $payload['image_path']->move($path, $decoded);
+			return $image_path;
 		}else
 		{
-			return response()->json(['error' => 'Post Failed'], 401); //Json response with status 401 and error message
+			return response()->json(['error' => 'Image Upload Failed'], 401); //Json response with status 401 and error message
 		}
 		
 	}
