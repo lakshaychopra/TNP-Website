@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
+use Excel;
+use DB;
+Use Exception;
 
 class UsersController extends Controller
 {
@@ -41,7 +44,24 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->hasFile('user_file')){
+            $path = $request->file('user_file')->getRealPath();
+            $data = Excel::load($path)->get();
+            if($data->count()){
+                foreach ($data as $key => $value) {
+                    $arr[] = [
+                        'name'    => $value->name, 
+                        'username' => $value->username,
+                        'email' => $value->email,
+                        'phone_number' => $value->phone_number,
+                    ];
+                }
+                if(!empty($arr)){
+                    DB::table('products')->insert($arr);
+                    dd('Insert Record successfully.');
+                }
+            }
+        }
     }
 
     /**

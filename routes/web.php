@@ -22,7 +22,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/security', 'LoginController@verifyTwoFactor'); 
 
     Route::resource('/post', 'PostController');
+ 
+    Route::resource('/user', 'UsersController');
 });
+
+
 
 Route::get('/{vue?}', function () {
     return view('welcome');
