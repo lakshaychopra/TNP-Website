@@ -57,7 +57,7 @@ class PostController extends Controller
                 DB::beginTransaction();
                 $post = $request->all();
                 // if ($post) {
-                    $image = $this->postService->uploadPostImage($post);
+                    // $image = $this->postService->uploadPostImage($post);
                 // }
                 // else{
                     // return response()->json(['error' => 'Image Upload Failed'], 401); //Json response with status 401 and error message
