@@ -58,7 +58,7 @@ class PostRepository
 			'tag'	 	         => $payload['tag'],
 			'category'	 	     => $payload['category'],
 			'post_link'	 	     => $payload['post_link'],
-			// 'image_path'	 	 => $payload['image_path'],
+			'image_path'	 	 => $payload['image_path'],
 		];
 	}
 }

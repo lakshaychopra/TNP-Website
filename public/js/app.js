@@ -57500,17 +57500,21 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(302)
+}
 var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(151)
 /* template */
-var __vue_template__ = __webpack_require__(152)
+var __vue_template__ = __webpack_require__(304)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-4a4bab3f"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -57558,6 +57562,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'AppMain',
@@ -57572,45 +57583,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 152 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "section",
-    { staticClass: "app-main", staticStyle: { "min-height": "100%" } },
-    [
-      _c(
-        "transition",
-        { attrs: { name: "fade-transform", mode: "out-in" } },
-        [
-          _c(
-            "keep-alive",
-            { attrs: { include: _vm.cachedViews } },
-            [_c("router-view", { key: _vm.key })],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4a4bab3f", module.exports)
-  }
-}
-
-/***/ }),
+/* 152 */,
 /* 153 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -59645,7 +59618,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n.line[data-v-ab0f8b5e]{\r\n  text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n.line[data-v-ab0f8b5e]{\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -60179,8 +60152,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         desc: '',
         content: '',
         tags: [],
-        category: ''
-        // imageUrl: ''
+        category: '',
+        imageUrl: ''
 
       },
       tagsOptions: [{
@@ -60203,15 +60176,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.post.content = data;
     },
     handleChange: function handleChange(e) {
-      var _this = this;
-
-      var image = e.target.files[0];
-      var reader = new FileReader();
-      reader.readAsDataURL(image);
-      reader.onload = function (e) {
-        _this.post.imageUrl = e.target.result;
-        // console.log(e)
-      };
+      // let image = e.target.files[0];
+      // let reader = new FileReader();
+      // reader.readAsDataURL(image);
+      // reader.onload = e =>{
+      //   this.post.imageUrl = e.target.result
+      //   // console.log(e)
+      // }
+      this.post.imageUrl = this.$refs.file.files[0];
+      console.log(this.post.imageUrl);
     },
     handleLoginFormSubmit: function handleLoginFormSubmit() {
       var postData = {
@@ -60222,10 +60195,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         author_id: '1',
         tag: this.post.tags.toString(),
         post_link: 'abc',
-        category: this.post.category
-        // image_path:this.post.imageUrl
+        category: this.post.category,
+        image_path: this.post.imageUrl
       };
-      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* addPostURL */], postData).then(function (response) {
+      var formData = new FormData();
+      formData.append('image_path', postData.image_path);
+      formData.append('title', postData.title);
+      formData.append('body', postData.body);
+      formData.append('author', postData.author);
+      formData.append('author_id', postData.author_id);
+      formData.append('tag', postData.tag);
+      formData.append('category', postData.category);
+      formData.append('post_link', postData.post_link);
+      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* addPostURL */], formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
         console.log(response);
         // if (response.status == "200") {
         //   // window.location = "/dashboard";
@@ -60401,8 +60383,9 @@ var render = function() {
           _c("el-form-item", { attrs: { label: "Post Image" } }, [
             _c("div", { staticClass: "form-group files" }, [
               _c("input", {
+                ref: "file",
                 staticClass: "form-control",
-                attrs: { type: "file", name: "imageUrl", id: "imageUrl" },
+                attrs: { type: "file", name: "file", id: "imageUrl" },
                 on: { change: _vm.handleChange }
               })
             ])
@@ -113047,6 +113030,91 @@ var index_esm = {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(303);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("338c596c", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a4bab3f\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AppMain.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a4bab3f\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AppMain.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.app-main[data-v-4a4bab3f]{\r\n  padding: 20px;\r\n    margin: 15px;\r\n    background-color: #fff\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 304 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "section",
+    { staticClass: "app-main", staticStyle: { "min-height": "100%" } },
+    [
+      _c(
+        "transition",
+        { attrs: { name: "fade-transform", mode: "out-in" } },
+        [
+          _c(
+            "keep-alive",
+            { attrs: { include: _vm.cachedViews } },
+            [_c("router-view", { key: _vm.key })],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4a4bab3f", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

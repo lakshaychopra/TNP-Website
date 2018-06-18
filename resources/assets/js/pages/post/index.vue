@@ -60,7 +60,7 @@
         </el-checkbox-group> -->
        <div class="form-group files">
        <!-- <img :src="post.imageUrl" alt="Image"> -->
-       <input type="file" class="form-control" name="imageUrl" id="imageUrl" @change="handleChange">
+       <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
        </div>
       </el-form-item>
 
@@ -103,7 +103,7 @@ export default {
         content:'',
         tags: [],
         category: '' ,
-        // imageUrl: ''
+        imageUrl: ''
  
       },
       tagsOptions: [{
@@ -125,13 +125,15 @@ export default {
         this.post.content = data
     },
     handleChange(e) {
-      let image = e.target.files[0];
-      let reader = new FileReader();
-      reader.readAsDataURL(image);
-      reader.onload = e =>{
-        this.post.imageUrl = e.target.result
-        // console.log(e)
-      }
+      // let image = e.target.files[0];
+      // let reader = new FileReader();
+      // reader.readAsDataURL(image);
+      // reader.onload = e =>{
+      //   this.post.imageUrl = e.target.result
+      //   // console.log(e)
+      // }
+      this.post.imageUrl =this.$refs.file.files[0];
+      console.log(this.post.imageUrl);
 },
     handleLoginFormSubmit() {
       const postData = {
@@ -143,9 +145,18 @@ export default {
         tag:this.post.tags.toString(),
         post_link:'abc',
         category:this.post.category,
-        // image_path:this.post.imageUrl
+        image_path:this.post.imageUrl
       };
-      axios.post(addPostURL,postData)
+      let formData = new FormData();
+      formData.append('image_path', postData.image_path);
+      formData.append('title', postData.title);
+      formData.append('body', postData.body);
+      formData.append('author', postData.author);
+      formData.append('author_id', postData.author_id);
+      formData.append('tag', postData.tag);
+      formData.append('category', postData.category);
+      formData.append('post_link', postData.post_link);
+      axios.post(addPostURL,formData, {headers: {'Content-Type': 'multipart/form-data'}})
         .then(function(response) {
           console.log(response);
           // if (response.status == "200") {

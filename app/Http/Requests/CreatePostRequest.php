@@ -30,8 +30,8 @@ class CreatePostRequest extends FormRequest
             'author_id'             => 'required',
             'tag'                   => 'required',
             'category'              => 'required',
-            // 'post_link'              => 'required',
-            // 'image_path'             => 'file|required|image|mimes:png,jpeg,jpg|max:2048',
+            'post_link'             => 'required',
+            'image_path'            => 'required|image|mimes:png,jpeg,jpg|max:2048',
 
         ];
     }

@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->string('tag');
             $table->string('category');
             $table->string('post_link');
-            // $table->string('image_path');
+            $table->string('image_path');
             $table->timestamps();
         });
     }
