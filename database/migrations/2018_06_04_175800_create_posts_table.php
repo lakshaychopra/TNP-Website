@@ -13,7 +13,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
             $table->string('post_id');
             $table->string('title');
@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->string('tag');
             $table->string('category');
             $table->string('post_link');
-            $table->string('image_path');
+            // $table->string('image_path');
             $table->timestamps();
         });
     }
