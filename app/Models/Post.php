@@ -13,7 +13,8 @@ class Post extends Model
 
     protected $fillable = [
         'title', 'body', 'author', 'author_id', 'tag', 'category',
-        // 'post_link','image_path'
+        // 'post_link',
+        'image_path'
     ];
     
 }
