@@ -31,7 +31,7 @@ class CreatePostRequest extends FormRequest
             'tag'                   => 'required',
             'category'              => 'required',
             'post_link'             => 'required',
-            'image_path'            => 'required|image|mimes:png,jpeg,jpg|max:2048',
+            'image_path'            => 'required|file|image|mimes:png,jpeg,jpg|max:2048',
 
         ];
     }

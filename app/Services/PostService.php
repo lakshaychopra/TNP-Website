@@ -28,28 +28,10 @@ class PostService
 	
 	public function uploadPostImage(array $payload)
 	{
-			$extension = $payload['image_path']->getClientOriginalExtension();
-			$filename = 'tnpPost'.str_random().'.'.$extension;
-			$image_path =  storage_path().config('/images/tpoPost/post_image_folder/');
-			$imageLocation = $payload['image_path']->move($image_path, $filename);
-			return $filename;
-		
-		
-		// $exploded = explode(',',$request->image_path);
-		// $decoded = base64_decode($explode[1]);
-		// if(str_contain($explode[0],'jpeg')){
-			// 	$extention = 'jpg';
-			// }else
-			// {
-				// 	$extention = 'png';
-				// }
-				// $fileName = 'tpoPost'.str_random().$extension;
-				// $path =  storage_path().'/images/tpoPost/post_image_folder/'.$fileName;
-				
-				// // file_put_contents($path, $decoded);
-				// $image_path = $payload['image_path']->move($path, $decoded);
-				// return $path;
-				
-			}
-		}
-		
+		$extension = $payload['image_path']->getClientOriginalExtension();
+		$filename = 'tnpPost'.str_random().'.'.$extension;
+		$image_path =  storage_path().config('.images.tpoPost.post_image_folder');
+		$imageLocation = $payload['image_path']->move($image_path, $filename);
+		return $filename;
+	}
+}
