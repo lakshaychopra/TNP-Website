@@ -151,6 +151,7 @@ return [
          * Package Service Providers...
          */
           
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         // Jenssegers\Mongodb\MongodbServiceProvider::class,
          
         /*
@@ -210,6 +211,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         // 'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
         
     ],
