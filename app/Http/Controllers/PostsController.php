@@ -90,7 +90,7 @@ class PostController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function show($post)
+    public function show(Post $post)
     {
         //data fetched from database in $post with where id clause
         $post = $this->post->where('id', $post)->first();
