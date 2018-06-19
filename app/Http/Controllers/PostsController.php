@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use DB;
+use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
 use App\Services\PostService;
-use Illuminate\Http\Request;
+use DB;
 use Exception;
 
 class PostController extends Controller

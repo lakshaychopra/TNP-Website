@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Services\UserService;
+use App\Http\Requests\CreateUserExcelRequest;
+use Exception;
 use Excel;
 use DB;
-use Exception;
-use App\Services\UserService;
 
 class UsersController extends Controller
 {
@@ -122,7 +123,7 @@ class UsersController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, $id)
+    public function update(CreateUserExcelRequest $request, $id)
     {
         //
     }
