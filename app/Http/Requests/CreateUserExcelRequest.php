@@ -24,7 +24,8 @@ class CreateUserExcelRequest extends FormRequest
     public function rules()
     {
         return [
-            'file_excel' =>'bail|file|required|mimes:xlsx,xls,csv',
+            'file_excel' => 'bail|file|required|mimes:xlsx,xlsm,xls,csv',
+            'type'       => 'required'
         ];
     }
 }
