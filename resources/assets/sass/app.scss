@@ -100,3 +100,9 @@ a:hover {
 .drawer-bg {
   z-index: 1002 !important;
 }
+.el-form-item__content {
+  margin-left: 0 !important;
+}
+.el-form-item__label{
+  width: 0px !important;
+}

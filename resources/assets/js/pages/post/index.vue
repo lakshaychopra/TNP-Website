@@ -1,9 +1,9 @@
 <template>
   <div class="app-container">
-    <el-form ref="form" :model="post" label-width="120px">
+    <el-form :model="post" :rules="rules2" ref="post">
     <input type="hidden" name="_token" :value="csrf">
-      <el-form-item label="Title">
-        <el-input v-model="post.title"></el-input>
+      <el-form-item label="Title" prop="title" >
+        <el-input v-model="post.title" placeholder="Title"></el-input>
       </el-form-item>
       <el-form-item label="Body">
         <!-- <el-select v-model="form.region" placeholder="please select your zone">
@@ -11,13 +11,20 @@
           <el-option label="Zone two" value="beijing"></el-option>
         </el-select> -->
 
-      <vue-html5-editor :content="post.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor>
+      <vue-html5-editor class="form-control" :content="post.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor>
       </el-form-item>
 
        <!-- <trumbowyg v-model="myHTML" class="form-control"></trumbowyg> -->
       <!-- <wysiwyg v-model="myHTML" /> -->
       <el-form-item label="Tags">
-            <el-select class="form-control"
+            <vue-tags-input class="form-control"
+              v-model="post.tag"
+              :tags="post.tags"
+              :validation="validation"
+              @tags-changed="newTags => tags = newTags"
+            />
+      </el-form-item>
+            <!-- <el-select class="form-control"
                 v-model="post.tags"
                 multiple
                 filterable
@@ -30,7 +37,7 @@
                   :label="item.label"
                   :value="item.value">
                 </el-option>
-              </el-select>
+              </el-select> -->
         
         <!-- <el-col :span="11">
           <el-date-picker type="date" placeholder="Pick a date" v-model="post.date1" style="width: 100%;"></el-date-picker>
@@ -39,10 +46,9 @@
         <!-- <el-col :span="11"> -->
           <!-- <el-time-picker type="fixed-time" placeholder="Pick a time" v-model="post.date2" style="width: 100%;"></el-time-picker> -->
         <!-- </el-col> -->
-      </el-form-item>
-      <el-form-item label="Category">
+      <el-form-item label="Category" prop="category">
         <!-- <el-switch v-model="post.delivery"></el-switch> -->
-         <el-select v-model="post.category" clearable placeholder="Select" class="form-control">
+         <el-select v-model="post.category" clearable placeholder="Category" class="form-control">
           <el-option
             v-for="item in categoryOptions"
             :key="item.value"
@@ -51,7 +57,7 @@
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="Post Image">
+      <el-form-item label="Image">
         <!-- <el-checkbox-group v-model="post.type">
           <el-checkbox label="Online activities" name="type"></el-checkbox>
           <el-checkbox label="Promotion activities" name="type"></el-checkbox>
@@ -61,6 +67,7 @@
        <div class="form-group files">
        <!-- <img :src="post.imageUrl" alt="Image"> -->
        <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
+      
        </div>
       </el-form-item>
 
@@ -74,7 +81,7 @@
         <el-input type="textarea" v-model="post.desc"></el-input>
       </el-form-item> -->
       <el-form-item>
-        <el-button type="primary" @click="handleLoginFormSubmit">Add</el-button>
+        <el-button type="primary" @click="handleLoginFormSubmit('post')">Add</el-button>
         <el-button @click="onCancel">Cancel</el-button>
       </el-form-item>
     </el-form>
@@ -83,14 +90,38 @@
 
 <script>
 import { addPostURL } from "../../config.js";
-
+import VueTagsInput from '@johmun/vue-tags-input';
 export default {
+   components: {
+    VueTagsInput,
+  },
   data() {
+      var validateFields = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('Please input the title'));
+        }
+      validation: [{
+      type: 'min-length',
+      rule: /^.{8,}$/,
+    }]
+
+}
     return {
       csrf: document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
-      
+
+        rules2: {
+         title: [
+            {required: true, message: 'Please input title', trigger: 'change' }
+          ],
+        //  tags: [
+        //     {required: true, message: 'Please input tags', trigger: 'change' }
+        //   ],
+          category: [
+            {required: true, message: 'Please select category', trigger: 'change' }
+          ],
+        },
       post: {
         title: '',
         region: '',
@@ -101,7 +132,8 @@ export default {
         resource: '',
         desc: '',
         content:'',
-        tags: [],
+         tag: '',
+        tags: ['gndec','tnp'],
         category: '' ,
         imageUrl: ''
  
@@ -135,8 +167,10 @@ export default {
       this.post.imageUrl =this.$refs.file.files[0];
       console.log(this.post.imageUrl);
 },
-    handleLoginFormSubmit() {
-      const postData = {
+    handleLoginFormSubmit(formName) {
+      this.$refs[formName].validate((valid) => {
+          if (valid) {
+             const postData = {
         // usertype : 'EXECUTIVE_MEMBER',
         title: this.post.title,
         body: this.post.content,
@@ -170,17 +204,47 @@ export default {
 
         })
         .catch(function(error) {
-        //   var obj = JSON.parse(error.response.request.responseText);
-          
+          var obj = JSON.parse(error.response.request.responseText);
+          console.log(obj);
         //     // console.log(error.response);
-        //   if(error.response.status=="401"){
-        //     // console.log(obj['error']);
-        //      Vue.toasted.show(obj['error'],{
-        //         icon : 'exclamation-circle',
-        //         position: "bottom-center", 
-        //         duration : 10000
-        //       })
-        //  }
+          if(error.response.status=="422"){
+            // console.log(obj['error']);
+             if(obj['errors'].hasOwnProperty('image_path')){
+                Vue.toasted.show(obj['errors']['image_path'],{
+                icon : 'exclamation-circle',
+                position: "bottom-center", 
+                duration : 10000
+              })
+              }
+            if(obj['errors'].hasOwnProperty('title')){
+                Vue.toasted.show(obj['errors']['title'],{
+                icon : 'exclamation-circle',
+                position: "bottom-center", 
+                duration : 10000
+              })
+              }
+            if(obj['errors'].hasOwnProperty('tags')){
+                Vue.toasted.show(obj['errors']['tags'],{
+                icon : 'exclamation-circle',
+                position: "bottom-center", 
+                duration : 10000
+              })
+              }
+              if(obj['errors'].hasOwnProperty('category')){
+                Vue.toasted.show(obj['errors']['category'],{
+                icon : 'exclamation-circle',
+                position: "bottom-center", 
+                duration : 10000
+              })
+              }
+               if(obj['errors'].hasOwnProperty('body')){
+                Vue.toasted.show(obj['errors']['body'],{
+                icon : 'exclamation-circle',
+                position: "bottom-center", 
+                duration : 10000
+              })
+              }
+         }
          
         //   if(error.response.status=="422"){
         //     // console.log(obj['errors']['username']);
@@ -203,6 +267,13 @@ export default {
           // }
           console.log(error);
         });
+
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+     
     },
     onSubmit() {
       // this.$message('submit!')
@@ -270,6 +341,9 @@ export default {
     font-weight: 600;
     text-transform: capitalize;
     text-align: center;
+}
+.vue-tags-input[data-v-36b6250a]{
+  max-width: 100%;
 }
 </style>
 

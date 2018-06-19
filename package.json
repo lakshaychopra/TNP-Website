@@ -66,6 +66,7 @@
         "webpack-merge": "4.1.1"
     },
     "dependencies": {
+        "@johmun/vue-tags-input": "^1.5.4",
         "axios": "0.18.0",
         "clipboard": "1.7.1",
         "codemirror": "5.32.0",
