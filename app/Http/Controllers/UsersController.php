@@ -11,6 +11,8 @@ use App\Services\UserService;
 
 class UsersController extends Controller
 {
+    public $successStatus = 200;
+    
     public function __construct(UserService $service)
     {
         $this->service = $service;
@@ -23,7 +25,12 @@ class UsersController extends Controller
     */
     public function index()
     {
-        //
+        //data fetched from database in $User
+        $this->service->listUser();
+        return $request->json([
+            'list' => $lists,
+        ],
+        $this->successStatus);
     }
     
     /**
@@ -44,40 +51,48 @@ class UsersController extends Controller
     */
     public function store(CreateUserExcelRequest $request)
     {
-        if($request->hasFile('user_file')){
+        if($request->isMethod('post')){
             $input = $request->all();
-            try{
-                DB::beginTransaction();
-                $path = $request->file('user_file')->getRealPath();
-                $data = Excel::load($path)->get();
-                if($data->count()){
-                    foreach ($data as $key => $value) {
-                        $password=str_random(6);
-                        $arr[] = [
-                            'name'    => $value->name, 
-                            'username' => $value->username,
-                            'email' => $value->email,
-                            'phone_number' => $value->phone_number,
-                            'password'=>bcrypt($password),
-                            'type'=>$type
-                        ];
+            if($request->hasFile('user_file')){
+                try{
+                    DB::beginTransaction();
+                    $path = $request->file('user_file')->getRealPath();
+                    $data = Excel::load($path)->get();
+                    if($data->count()){
+                        foreach ($data as $key => $value) {
+                            $password=str_random(6);
+                            $user[] = [
+                                'name'    => $value->name, 
+                                'username' => $value->username,
+                                'email' => $value->email,
+                                'phone_number' => $value->phone_number,
+                                'password'=>bcrypt($password),
+                                'type'=>$type
+                            ];
+                        }
+                        if(!empty($user)){
+                            $userCreate = $this->service->createUser($user);
+                            DB::commit();    
+                            //DB::table('users')->insert($arr);
+                            return response() //Json response with status 200 and token and user type
+                            ->json([
+                                'response'=>'Inserted',
+                                'postCreate' => $userCreate,
+                            ],
+                            $this->successStatus);
+                        }
+                        else{
+                            return response()->json(['error' => 'Post Failed'], 401); //Json response with status 401 and error message
+                        }
                     }
-                    if(!empty($arr)){
-                        DB::table('users')->insert($arr);
-                        dd('Insert Record successfully.');
-                    }
-                    DB::commit();    
+                }
+                catch(Exception $e){
+                    DB::rollback();
+                    return $this->respondException($e);
                 }
             }
-            catch(Exception $e)
-            {
-                DB::rollback();
-                return $this->respondException($e);
-            }
         }
-        
     }
-    
     /**
     * Display the specified resource.
     *
@@ -95,9 +110,9 @@ class UsersController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return request()->json($user , $this->successStatus);
     }
     
     /**

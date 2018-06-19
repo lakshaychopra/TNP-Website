@@ -72,7 +72,7 @@ class PostController extends Controller
                     ],
                     $this->successStatus);
                 }
-                else {
+                else{
                     return response()->json(['error' => 'Post Failed'], 401); //Json response with status 401 and error message
                 }
             }
