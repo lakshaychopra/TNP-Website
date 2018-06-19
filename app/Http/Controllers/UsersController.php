@@ -45,13 +45,14 @@ class UsersController extends Controller
     public function store(CreateUserExcelRequest $request)
     {
         if($request->hasFile('user_file')){
+            $input = $request->all();
             try{
                 DB::beginTransaction();
                 $path = $request->file('user_file')->getRealPath();
                 $data = Excel::load($path)->get();
                 if($data->count()){
-                    $password=str_random(6);
                     foreach ($data as $key => $value) {
+                        $password=str_random(6);
                         $arr[] = [
                             'name'    => $value->name, 
                             'username' => $value->username,
