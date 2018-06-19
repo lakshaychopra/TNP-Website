@@ -54,12 +54,14 @@ class LoginController extends Controller
                 if (Auth::user()->is_verified == 1 && Auth::user()->is_active == 1) {
                     
                     try{
+                        DB::beginTransaction();
                         $this->service->authenticateUser();
                         return response() //Json response with status 200 and token and user type
                         ->json([
                             'response'=>'Authorized',
                         ],
                         $this->successStatus);
+                        DB::commit();
                     }   
                     catch(Exception $e)
                     {

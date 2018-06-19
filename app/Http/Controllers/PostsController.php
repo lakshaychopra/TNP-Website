@@ -57,11 +57,11 @@ class PostController extends Controller
             try {
                 DB::beginTransaction();
                 if ($post) {
-		if ($request->hasFile('image_path')) {
-                    $post['image_path'] = $this->service->uploadPostImage($post);
-        } else {
-			return response()->json(['error' => 'Image Upload Failed'], 401); //Json response with status 401 and error message
-		}
+                    if ($request->hasFile('image_path')) {
+                        $post['image_path'] = $this->service->uploadPostImage($post);
+                    } else {
+                        return response()->json(['error' => 'Image Upload Failed'], 401); //Json response with status 401 and error message
+                    }
                     $postCreate = $this->service->createPost($post);
                     DB::commit();
                     
