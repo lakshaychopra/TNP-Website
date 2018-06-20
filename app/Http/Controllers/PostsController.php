@@ -26,7 +26,8 @@ class PostController extends Controller
     public function index()
     {
         //data fetched from database in $post
-        $this->service->listPost();
+        // $this->service->listPost();
+        $lists = Post::orderBy('created_at', 'decs')->paginate(6);
         return response()->json([
             $lists,
         ],
