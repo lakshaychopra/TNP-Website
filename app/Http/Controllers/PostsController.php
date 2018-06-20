@@ -27,7 +27,7 @@ class PostController extends Controller
     {
         //data fetched from database in $post
         $this->service->listPost();
-        return $request->json([
+        return response()->json([
             'list' => $lists,
         ],
         $this->successStatus);
@@ -161,7 +161,6 @@ class PostController extends Controller
             return response() //Json response with status 200 and token and user type
                     ->json([
                         'response'=>'Deleted',
-                        $post,
                     ],
                     $this->successStatus);
         }
