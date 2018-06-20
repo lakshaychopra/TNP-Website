@@ -28,7 +28,7 @@ class PostController extends Controller
         //data fetched from database in $post
         $this->service->listPost();
         return response()->json([
-            'list' => $lists,
+            $lists,
         ],
         $this->successStatus);
         
