@@ -14,9 +14,6 @@ use DB;
 
 class LoginController extends Controller
 {
-    
-    public $successStatus = 200;
-    
     public function __construct(LoginService $service)
     {
         $this->service = $service;
@@ -37,45 +34,33 @@ class LoginController extends Controller
     * @param  App\Http\Requests\UserLoginRequest  $request
     * @return \Illuminate\Http\Response JSON
     */
-    public function store(UserLoginRequest $request)
+    public function loginUser(UserLoginRequest $request)
     {
-        if($request->isMethod('post'))
-        {
-            //log the user in
-            $credentials = $request->only('username', 'password');
-            /*
-            * Attempting Authentication
-            * Else Redirect Back
-            */
-            if (Auth::attempt($credentials)) {
-                /*
-                * Checking status of user
-                */
-                if (Auth::user()->is_verified == 1 && Auth::user()->is_active == 1) {
-                    
-                    try{
-                        DB::beginTransaction();
-                        $this->service->authenticateUser();
-                        return response() //Json response with status 200 and token and user type
-                        ->json([
-                            'response'=>'Authorized',
-                        ],
-                        $this->successStatus);
-                        DB::commit();
-                    }   
-                    catch(Exception $e)
-                    {
-                        DB::rollback();
-                        return $this->respondException($e);
-                    }
-                    
-                }else {
-                    return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
-                }
-            }else {
-                return response()->json(['error' => 'Unauthorized'], 401); //Json response with status 401 and error message
-            }
+        $credentials = $request->only('username', 'password');
+        
+        if (!Auth::attempt($credentials)) {
+            return $this->respondUnauthorized();
         }
+
+        $user = Auth::user();
+
+        if (!$user->is_verified && $user->is_active) {
+            return $this->respondUnauthorized();
+        }
+        
+        
+        try{
+            DB::beginTransaction();
+            $this->service->authenticateUser();
+            DB::commit();
+            return 
+            $this->respondMessage('OTP Sent');
+        }   
+        catch(Exception $e)
+        {
+            DB::rollback();
+            return $this->respondException($e);
+        }   
     }
     
     

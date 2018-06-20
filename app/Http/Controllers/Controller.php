@@ -59,7 +59,7 @@ class Controller extends BaseController
         $response = [
             'message' => $message,
         ];
-        return response()->json($response, 200, []);
+        return response()->json($response);
     }       
     
 }
