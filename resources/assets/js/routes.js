@@ -58,7 +58,9 @@
                     title: 'Dashboard',
                     icon: 'tachometer'
                  },
-            }]
+                 
+            }
+        ]
         },
         
         {
@@ -107,15 +109,29 @@
     {
         path: '/post',
         component: Layout,
+        meta: {
+            title: 'Posts',
+            icon: 'user'
+        },
         children: [{
             path: 'index',
             name: 'Posts',
             component: Vue.component('Post', require('./pages/post/index')),
             meta: {
-                title: 'Posts',
+                title: 'Add Post',
                 icon: 'file-text'
             }
-        }]
+        },
+        {
+                path: 'view',
+                name: 'viewPosts',
+                component: Vue.component('Post', require('./pages/post/viewPosts')),
+                meta: {
+                    title: 'Manage',
+                    icon: 'file-text'
+                }
+            }
+    ]
     },
     
     // {
