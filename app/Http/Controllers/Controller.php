@@ -10,24 +10,56 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
+    
     protected function respondValidationError($messages = null)
     {
- 
-        $data = [
+        $response = [
             'message' => '',
             'errors' => $messages,
         ];
-        return response()->json($data, 422, []);
+        return response()->json($response, 422, []);
     }
+    
     protected function respondException($exception)
     {
- 
-        $data = [
+        $response = [
             'message' => 'Exception',
             'error' => $exception->getMessage(),
         ];
-        return response()->json($data, $exception->getCode(), []);
+        return response()->json($response, $exception->getCode(), []);
     }
+    
+    protected function respondUnauthorized($messages = 'Unauthorized')
+    {
+        $response = [
+            'message' => $message,
+        ];
+        return response()->json($response, 401, []);
+    }
+
+    protected function respondSuccess($message='Success', $data)
+    {
+        $response = [
+            'message' => $message,
+            'data' => $data,
+        ];
+        return response()->json($response, 200, []);
+    }
+    
+    protected function respondData($data)
+    {
+        $response = [
+            'data' => $data,
+        ];
+        return response()->json($response, 200, []);
+    }
+    
+    protected function respondMessage($message)
+    {
+        $response = [
+            'message' => $message,
+        ];
+        return response()->json($response, 200, []);
+    }       
     
 }
