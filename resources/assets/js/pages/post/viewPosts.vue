@@ -10,7 +10,7 @@
 
                     </div>
                     <div class="card-body">
-                      <div><small ><strong>Timings</strong></small><span class="pull-right"><i class="fa fa-share-alt fa-1x" aria-hidden="true"></i>
+                      <div><small ><strong>Timings</strong></small><span class="pull-right"><i id="share" class="fa fa-share-alt fa-2x" aria-hidden="true"></i>
  <i class="fa fa-ellipsis-h fa-1x" aria-hidden="true"></i></span> </div>
                         <!-- <ul class="list-group">
                           <li class="list-group-item"></li>
@@ -59,6 +59,7 @@
 .card-body{
       padding: 1.15rem;
       font-size: 16px;
+      position: relative;
 }
 .card-img-top{
     height: 200px;
@@ -75,6 +76,16 @@
 }
 .sub-head{
   margin-top: 3px;
+}
+#share{
+    position: absolute;
+    top: -37px;
+    padding: 20px;
+    right: 20px;
+    background: #304156;
+    border: 11px solid;
+    border-radius: 50%;
+    color: #fff;
 }
 </style>
 
