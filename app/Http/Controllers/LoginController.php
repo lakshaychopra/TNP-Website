@@ -29,8 +29,6 @@ class LoginController extends Controller
     }
     
     /**
-    * Store a newly created resource in storage.
-    *
     * @param  App\Http\Requests\UserLoginRequest  $request
     * @return \Illuminate\Http\Response JSON
     */
@@ -41,17 +39,16 @@ class LoginController extends Controller
         if (!Auth::attempt($credentials)) {
             return $this->respondUnauthorized();
         }
-
+        
         $user = Auth::user();
-
+        
         if (!$user->is_verified && $user->is_active) {
             return $this->respondUnauthorized();
         }
         
-        
         try{
             DB::beginTransaction();
-            $this->service->authenticateUser();
+            $this->service->otpGenerated();
             DB::commit();
             return 
             $this->respondMessage('OTP Sent');
@@ -63,35 +60,26 @@ class LoginController extends Controller
         }   
     }
     
-    
     public function doLogout()
     {
         Auth::logout(); // log the user out of our application
         Session::flush();
     }
     
-    
-    
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        if($request->isMethod('post'))
-        {
-            if($request->input('token_2fa') == Auth::user()->token_2fa)
-            {    
-                $user = Auth::user();
-                return response() //Json response with status 200 and token and user type
-                ->json([  
-                    'response'=>'Authorized',
-                    'message' => 'You have been logged in',
-                    'id' => $user->id,
-                    'type' => $user->type,
-                ],
-                $this->successStatus);
-            }
-            else 
-            {
-                return response()->json(['error' => 'Incorrect code'], 401); //Json response with status 401 and error
-            }
+        if(!$request->input('token_2fa') == Auth::user()->token_2fa)
+        {    
+            return $this->respondUnauthorized();
         }
+        $user = Auth::user();
+        return response() //Json response with status 200 and token and user type
+        ->json([  
+            'response'=>'Authorized',
+            'message' => 'You have been logged in',
+            'id' => $user->id,
+            'type' => $user->type,
+        ],
+        $this->successStatus);
     }
 }

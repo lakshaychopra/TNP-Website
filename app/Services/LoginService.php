@@ -14,12 +14,11 @@ class LoginService
 		$this->respository = $respository;
     }
     
-    public function authenticateUser(){
-        $token = Auth::user();
-        $token->token_2fa_expiry = \Carbon\Carbon::now();
-        $token->token_2fa = mt_rand(10000,99999);
-        $token->save();
-        event(new TwoFactorEvent($token));
-        return response()->json(['Response' => 'Mail Sent'], 200);
+    public function otpGenerated(){
+        $user = Auth::user();
+        $user->token_2fa_expiry = \Carbon\Carbon::now();
+        $user->token_2fa = mt_rand(10000,99999);
+        $user->save();
+        event(new TwoFactorEvent($user));
     }
 }
