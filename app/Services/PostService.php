@@ -26,6 +26,11 @@ class PostService
 		return $this->repository->update($payload);
 	}
 	
+	public function deletePost(array $payload, $id)
+	{
+		return $this->repository->delete($payload);
+	}
+
 	public function uploadPostImage(array $payload)
 	{
 		$extension = $payload['image_path']->getClientOriginalExtension();

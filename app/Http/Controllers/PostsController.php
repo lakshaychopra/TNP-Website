@@ -154,8 +154,16 @@ class PostController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        if($request->isMethod('post')){
+            $this->service->deletePost($post->id);
+            return response() //Json response with status 200 and token and user type
+                    ->json([
+                        'response'=>'Deleted',
+                        $post,
+                    ],
+                    $this->successStatus);
+        }
     }
 }
