@@ -16,15 +16,15 @@ class TwoFactorEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $token;
+    public $user;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(User $token)
+    public function __construct(User $user)
     {
-        $this->user = $token;
+        $this->user = $user;
     }
 
     /**

@@ -28,7 +28,7 @@ class TwoFactorMailSend
     */
     public function handle(TwoFactorEvent $event)
     {
-        $token = $event->user;
-        Mail::to($token->email)->queue(new TwoFactorEmail($token));
+        $user = $event->user;
+        Mail::to($user->email)->queue(new TwoFactorEmail($user));
     }
 }

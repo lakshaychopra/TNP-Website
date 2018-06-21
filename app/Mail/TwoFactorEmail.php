@@ -11,15 +11,15 @@ use App\Models\User;
 class TwoFactorEmail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $token;
+    public $user;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $token)
+    public function __construct(User $user)
     {
-        $this->token = $token;
+        $this->user = $user;
     }
 
     /**
@@ -30,7 +30,7 @@ class TwoFactorEmail extends Mailable
     public function build()
     {
         $params = [
-            'user' => $this->token
+            'user' => $this->user,
         ];
         return $this->markdown('emails.users.twofactor',$params)
             ->subject(trans('messages.email.TwoFactorMailSendSubject'));
