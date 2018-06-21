@@ -14,6 +14,9 @@ use DB;
 
 class LoginController extends Controller
 {
+    
+    public $successStatus = 200;
+    
     public function __construct(LoginService $service)
     {
         $this->service = $service;
@@ -50,8 +53,7 @@ class LoginController extends Controller
             DB::beginTransaction();
             $this->service->otpGenerated();
             DB::commit();
-            return 
-            $this->respondMessage('OTP Sent');
+            return $this->respondMessage('OTP Sent');
         }   
         catch(Exception $e)
         {

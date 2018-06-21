@@ -53,33 +53,31 @@ class PostController extends Controller
     */
     public function store(CreatePostRequest $request)
     {
-            $post = $request->all();
-            try {
-                DB::beginTransaction();
-                if ($post) {
-                    if ($request->hasFile('image_path')) {
-                        $post['image_path'] = $this->service->uploadPostImage($post);
-                    } else {
-                        return response()->json(['error' => 'Image Upload Failed'], 401); //Json response with status 401 and error message
-                    }
-                    $postCreate = $this->service->createPost($post);
-                    DB::commit();
-                    
-                    return response() //Json response with status 200 and token and user type
-                    ->json([
-                        'response'=>'Inserted',
-                        'postCreate' => $postCreate,
-                    ],
-                    $this->successStatus);
-                }
-                else{
-                    return response()->json(['error' => 'Post Failed'], 401); //Json response with status 401 and error message
-                }
+        $post = $request->all();
+        try {
+            DB::beginTransaction();
+            if (!$post) {
+                return $this->respondUnauthorized('Post Failed');
             }
-            catch (Exception $e) {
-                DB::rollback();
-                return $this->respondException($e);
-            }
+            if (!$request->hasFile('image_path')) {
+                return $this->respondUnauthorized('Image Upload Failed');
+            } 
+            
+            $post['image_path'] = $this->service->uploadPostImage($post);
+            $postCreate = $this->service->createPost($post);
+            DB::commit();
+            
+            return response() //Json response with status 200 and token and user type
+            ->json([
+                'response'=>'Inserted',
+                'postCreate' => $postCreate,
+            ],
+            $this->successStatus);
+        }
+        catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
     
     
@@ -122,27 +120,26 @@ class PostController extends Controller
     */
     public function update(CreatePostRequest $request,Post $post)
     {
-            try {
-                DB::beginTransaction();
-                $post = $this->service->updatePost($request->all(),$post->id);
-                DB::commit();
-                if($post){
-                    return response() //Json response with status 200 and token and user type
-                    ->json([
-                        'response'=>'Updated',
-                        $post,
-                    ],
-                    $this->successStatus);
-                    
-                }
-                else 
-                {
-                    return response()->json(['error' => 'Failed'], 401); //Json response with status 401 and error message
-                }
-            } catch (Exception $e) {
-                DB::rollback();
-                return $this->respondException($e);
+        try {
+            DB::beginTransaction();
+            $post = $this->service->updatePost($request->all(),$post->id);
+            DB::commit();
+            if($post){
+                return response() //Json response with status 200 and token and user type
+                ->json([
+                    'response'=>'Updated',
+                    $post,
+                ],
+                $this->successStatus);
             }
+            else 
+            {
+                return response()->json(['error' => 'Failed'], 401); //Json response with status 401 and error message
+            }
+        } catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
     
     /**
@@ -153,11 +150,11 @@ class PostController extends Controller
     */
     public function destroy(Post $post)
     {
-            $this->service->deletePost($post->id);
-            return response() //Json response with status 200 and token and user type
-                    ->json([
-                        'response'=>'Deleted',
-                    ],
-                    $this->successStatus);
-        }
+        $this->service->deletePost($post->id);
+        return response() //Json response with status 200 and token and user type
+        ->json([
+            'response'=>'Deleted',
+        ],
+        $this->successStatus);
+    }
 }
