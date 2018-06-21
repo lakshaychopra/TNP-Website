@@ -52,7 +52,6 @@ class UsersController extends Controller
     */
     public function store(CreateUserExcelRequest $request)
     {
-        if($request->isMethod('post')){
             $input = $request->all();
             if($request->hasFile('user_file')){
                 try{
@@ -92,7 +91,6 @@ class UsersController extends Controller
                     return $this->respondException($e);
                 }
             }
-        }
     }
     /**
     * Display the specified resource.

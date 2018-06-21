@@ -53,7 +53,6 @@ class PostController extends Controller
     */
     public function store(CreatePostRequest $request)
     {
-        if($request->isMethod('post')){
             $post = $request->all();
             try {
                 DB::beginTransaction();
@@ -81,7 +80,6 @@ class PostController extends Controller
                 DB::rollback();
                 return $this->respondException($e);
             }
-        }
     }
     
     
@@ -124,7 +122,6 @@ class PostController extends Controller
     */
     public function update(CreatePostRequest $request,Post $post)
     {
-        if($request->isMethod('post')){
             try {
                 DB::beginTransaction();
                 $post = $this->service->updatePost($request->all(),$post->id);
@@ -146,7 +143,6 @@ class PostController extends Controller
                 DB::rollback();
                 return $this->respondException($e);
             }
-        }
     }
     
     /**
@@ -157,7 +153,6 @@ class PostController extends Controller
     */
     public function destroy(Post $post)
     {
-        if($request->isMethod('post')){
             $this->service->deletePost($post->id);
             return response() //Json response with status 200 and token and user type
                     ->json([
@@ -165,5 +160,4 @@ class PostController extends Controller
                     ],
                     $this->successStatus);
         }
-    }
 }
