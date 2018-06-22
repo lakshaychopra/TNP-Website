@@ -13,7 +13,7 @@
 
 Route::post('/admin/login', array('uses' => 'LoginController@loginUser'))->name('users.post.login');
 
-Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
+Route::group(['prefix' => 'admin','middleware' => 'api'], function () {
 
     Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
 
