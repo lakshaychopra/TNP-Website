@@ -49,40 +49,40 @@ class UsersController extends Controller
     */
     public function store(CreateUserExcelRequest $request)
     {
-            $input = $request->all();
-            if($request->hasFile('user_file')){
-                try{
-                    DB::beginTransaction();
-                    $path = $request->file('user_file')->getRealPath();
-                    $data = Excel::load($path)->get();
-                    if($data->count()){
-                        foreach ($data as $key => $value) {
-                            $password=str_random(6);
-                            $user = [
-                                'name'    => $value->name, 
-                                'username' => $value->username,
-                                'email' => $value->email,
-                                'phone_number' => $value->phone_number,
-                                'password'=>bcrypt($password),
-                                'type'=>$type
-                            ];
-                        }
-                        if(!empty($user)){
-                            $userCreate = $this->service->createUser($user);
-                            DB::commit();    
-                            //DB::table('users')->insert($arr);
-                            return respondSuccess('Inserted',$userCreate );
-                        }
-                        else{
-                            return respondError('Post Failed', 401);
-                        }
+        $input = $request->all();
+        if($request->hasFile('user_file')){
+            try{
+                DB::beginTransaction();
+                $path = $request->file('user_file')->getRealPath();
+                $data = Excel::load($path)->get();
+                if($data->count()){
+                    foreach ($data as $key => $value) {
+                        $password=str_random(6);
+                        $user = [
+                            'name'    => $value->name, 
+                            'username' => $value->username,
+                            'email' => $value->email,
+                            'phone_number' => $value->phone_number,
+                            'password'=>bcrypt($password),
+                            'type'=>$type
+                        ];
+                    }
+                    if(!empty($user)){
+                        $userCreate = $this->service->createUser($user);
+                        DB::commit();    
+                        //DB::table('users')->insert($arr);
+                        return respondSuccess('Inserted',$userCreate );
+                    }
+                    else{
+                        return respondError('Post Failed', 401);
                     }
                 }
-                catch(Exception $e){
-                    DB::rollback();
-                    return $this->respondException($e);
-                }
             }
+            catch(Exception $e){
+                DB::rollback();
+                return $this->respondException($e);
+            }
+        }
     }
     /**
     * Display the specified resource.
