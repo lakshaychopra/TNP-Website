@@ -26,6 +26,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('/post', 'PostController');
      
         Route::resource('/user', 'UsersController');
+
+        Route::post('/notify', array('uses' => 'PostController@PushNotification'))->name('pushNotify');
+        Route::post('/markasread', array('uses' => 'PostController@MarkAsRead'))->name('markAsRead');
+        Route::post('/markasunread', array('uses' => 'PostController@MarkAsUnRead'))->name('markAsUnRead');
+
     });
 });
 

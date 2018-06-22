@@ -11,6 +11,7 @@ use App\Notifications\PostNotification;
 use DB;
 use Exception;
 use Notification;
+use Auth;
 
 class PostController extends Controller
 {
@@ -141,7 +142,17 @@ class PostController extends Controller
 
     public function PushNotification(User $user,Post $post){
       $user = User::all();
-      $data = Post::only(['title','category']);   
+      $data = Post::find(['title','category']);   
       Notification::send($user, new PostNotification($data));
+    }
+
+    public function MarkAsRead(User $user){
+        Auth::user()->notifications->markAsRead();
+        return respondSuccess();
+    }
+
+    public function MarkAsUnread(User $user){
+        Auth::user()->notifications->markAsUnRead();
+        return respondSuccess();
     }
 }
