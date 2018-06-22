@@ -50,7 +50,7 @@ class LoginController extends Controller
             DB::beginTransaction();
             $this->service->otpGenerated();
             DB::commit();
-
+            
             return $this->respondMessage('OTP Sent');
         }   
         catch(Exception $e)
@@ -72,7 +72,7 @@ class LoginController extends Controller
         return response() //Json response with status 200 and token and user type
         ->json([  
             'response'=>'Authorized!!
-                         You have been logged-in!!',
+            You have been logged-in!!',
             'id' => $user->id,
             'type' => $user->type,
         ],
