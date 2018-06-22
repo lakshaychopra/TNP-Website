@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
 use App\Services\PostService;
+use App\Notifications\PostNotification;
 use DB;
 use Exception;
+use Notification;
 
 class PostController extends Controller
 {
@@ -134,5 +137,11 @@ class PostController extends Controller
     {
         $this->service->deletePost($post->id);
         return respondSuccess('Deleted');
+    }
+
+    public function PushNotification(User $user,Post $post){
+      $user = User::all();
+      $data = Post::only(['title','category']);   
+      Notification::send($user, new PostNotification($data));
     }
 }
