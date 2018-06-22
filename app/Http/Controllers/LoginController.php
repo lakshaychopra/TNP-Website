@@ -15,9 +15,6 @@ use \Carbon\Carbon;
 
 class LoginController extends Controller
 {
-    
-    public $successStatus = 200;
-    
     public function __construct(LoginService $service)
     {
         $this->service = $service;
@@ -43,7 +40,7 @@ class LoginController extends Controller
         $user = Auth::user();
         
         if (!$user->isActiveAndVerified()) {
-            return $this->respondUnauthorized();
+            return $this->respondError();
         }
         
         try{
@@ -67,22 +64,32 @@ class LoginController extends Controller
         {    
             return $this->respondUnauthorized();
         }
-        $user->token_2fa_expiry = Carbon::now()->addMinutes(config('session.lifetime'));
-        $user->save(); 
-        return response() //Json response with status 200 and token and user type
-        ->json([  
-            'response'=>'Authorized!!
-            You have been logged-in!!',
-            'id' => $user->id,
-            'type' => $user->type,
-        ],
-        $this->successStatus);
+        try{
+            DB::beginTransaction();
+            $user->token_2fa_expiry = Carbon::now()->addMinutes(config('session.lifetime'));
+            $user->save();
+            DB::commit();
+            $data=[
+                'id' => $user->id,
+                'name' => $user->name,
+                'username' => $user->username,
+                'type' => $user->type,
+            ];
+            return respondSuccess('Authorized!! You have been logged-in!!', $data);
+        }   
+        catch(Exception $e)
+        {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
     
     public function doLogout()
     {
         Auth::logout(); // log the user out of our application
         Session::flush();
+        return respondSuccess('Success!! You have been logged-out!!');
+
     }
     
 }

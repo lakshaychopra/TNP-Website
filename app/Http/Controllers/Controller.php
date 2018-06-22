@@ -36,6 +36,14 @@ class Controller extends BaseController
         ];
         return response()->json($response, 401, []);
     }
+
+    protected function respondError($message = [], $errorCode = 422)
+    {
+        $response = [
+            'message' => $message,
+        ];
+        return response()->json($response, $errorCode, []);
+    }
     
     protected function respondSuccess($message ='Success', $data=[])
     {
