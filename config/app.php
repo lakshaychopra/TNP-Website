@@ -152,7 +152,7 @@ return [
         */
         
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,        
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,       
         // Jenssegers\Mongodb\MongodbServiceProvider::class,
         
         /*
