@@ -58996,7 +58996,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", [
-      _c("i", { staticClass: "fas fa-user" }),
+      _c("i", { staticClass: "fa fa-user" }),
       _c("span", { staticClass: "span-input" }, [_vm._v("Username")])
     ])
   },
@@ -59005,7 +59005,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", [
-      _c("i", { staticClass: "fas fa-key" }),
+      _c("i", { staticClass: "fa fa-key" }),
       _c("span", { staticClass: "span-input" }, [_vm._v("Password")])
     ])
   },

@@ -31,10 +31,6 @@ class LoginController extends Controller
         //
     }
     
-    /**
-    * @param  App\Http\Requests\UserLoginRequest  $request
-    * @return \Illuminate\Http\Response JSON
-    */
     public function loginUser(UserLoginRequest $request)
     {
         $credentials = $request->only('username', 'password');
@@ -45,7 +41,7 @@ class LoginController extends Controller
         
         $user = Auth::user();
         
-        if (!$user->is_verified && $user->is_active) {
+        if (!$user->isActiveAndVerified()) {
             return $this->respondUnauthorized();
         }
         
@@ -60,21 +56,15 @@ class LoginController extends Controller
             DB::rollback();
             return $this->respondException($e);
         }   
-    }
-    
-    public function doLogout()
-    {
-        Auth::logout(); // log the user out of our application
-        Session::flush();
-    }
+    }  
     
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        if(!$request->input('token_2fa') == Auth::user()->token_2fa)
+        $user = Auth::user();
+        if(!$request->input('token_2fa') == $user->token_2fa)
         {    
             return $this->respondUnauthorized();
         }
-        $user = Auth::user();
         return response() //Json response with status 200 and token and user type
         ->json([  
             'response'=>'Authorized',
@@ -84,4 +74,11 @@ class LoginController extends Controller
         ],
         $this->successStatus);
     }
+    
+    public function doLogout()
+    {
+        Auth::logout(); // log the user out of our application
+        Session::flush();
+    }
+    
 }

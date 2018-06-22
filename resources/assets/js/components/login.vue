@@ -13,7 +13,7 @@
                 <input type="text" v-validate data-vv-rules="required" v-model="login.username" name="username" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label><i class="fas fa-user"></i><span class="span-input">Username</span></label>
+                <label><i class="fa fa-user"></i><span class="span-input">Username</span></label>
                 <span v-if="errors.has('username')" class="help-block">
                                     <strong>{{ errors.first('username') }}</strong>
                 </span>
@@ -23,7 +23,7 @@
                     <input type="password" v-validate data-vv-rules="required" v-model="login.password" name="password" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
-                    <label><i class="fas fa-key"></i><span class="span-input">Password</span></label>
+                    <label><i class="fa fa-key"></i><span class="span-input">Password</span></label>
                     <span v-if="errors.has('password')" class="help-block">
                                         <strong>{{ errors.first('password') }}</strong>
                     </span>

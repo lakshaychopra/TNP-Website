@@ -8,15 +8,19 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use  Notifiable;
-
+    
     /**
-     * Table mentioned users
-     *
-     * @var string
-     */
+    * Table mentioned users
+    *
+    * @var string
+    */
     protected $table = "users";
     
     protected $fillable = [
         'username','name','email','phone_number','type','password'
     ];
+    
+    public function isActiveAndVerified(){
+        return $this->is_active && $this->is_verified;
+    }
 }
