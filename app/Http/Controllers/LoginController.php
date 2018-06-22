@@ -12,6 +12,9 @@ use App\Http\Requests\TwoFactorRequest;
 use App\Services\LoginService;
 use DB;
 use \Carbon\Carbon;
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+
 
 class LoginController extends Controller
 {
@@ -33,11 +36,11 @@ class LoginController extends Controller
     {
         $credentials = $request->only('username', 'password');
         
-        if (!Auth::attempt($credentials)) {
+        if (!$token = JWTAuth::attempt($credentials)) {
             return $this->respondUnauthorized();
         }
         
-        $user = Auth::user();
+        $user = JWTAuth::user();
         
         if (!$user->isActiveAndVerified()) {
             return $this->respondError();
@@ -46,11 +49,17 @@ class LoginController extends Controller
         try{
             DB::beginTransaction();
             $this->service->otpGenerated();
+            // $this->respondWithToken($token);
+            $data = [
+                'access_token' => $token,
+                'token_type' => 'bearer',
+                'expires_in' => auth()->factory()->getTTL() * 60
+            ];
             DB::commit();
             
-            return $this->respondMessage('OTP Sent');
+            return $this->respondSuccess('OTP Sent', $data);
         }   
-        catch(Exception $e)
+        catch(JWTException $e)
         {
             DB::rollback();
             return $this->respondException($e);
@@ -59,7 +68,7 @@ class LoginController extends Controller
     
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        $user = Auth::user();
+        $user = JWTAuth::user();
         if(!$request->input('token_2fa') == $user->token_2fa)
         {    
             return $this->respondUnauthorized();
@@ -77,7 +86,7 @@ class LoginController extends Controller
             ];
             return respondSuccess('Authorized!! You have been logged-in!!', $data);
         }   
-        catch(Exception $e)
+        catch(JWTException $e)
         {
             DB::rollback();
             return $this->respondException($e);
@@ -89,7 +98,17 @@ class LoginController extends Controller
         Auth::logout(); // log the user out of our application
         Session::flush();
         return respondSuccess('Success!! You have been logged-out!!');
-
+        
+    }
+    
+    protected function respondWithToken($token)
+    {
+        $data = [
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => auth()->factory()->getTTL() * 60
+        ];
+        return $data;
     }
     
 }

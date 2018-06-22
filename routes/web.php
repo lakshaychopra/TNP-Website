@@ -11,19 +11,22 @@
 |
  */
 
-Route::post('/admin/login', array('uses' => 'LoginController@loginUser'))->name('users.post.login');
 
-Route::group(['prefix' => 'admin','middleware' => 'api'], function () {
-
-    Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
-
-    Route::post('/logout', array('uses' => 'LoginController@doLogout'))->name('logout');
+Route::group(['prefix' => 'admin'], function () {
+    Route::post('/login', array('uses' => 'LoginController@loginUser'))->name('users.post.login');
     
-    Route::post('/security', 'LoginController@verifyTwoFactor'); 
-
-    Route::resource('/post', 'PostController');
- 
-    Route::resource('/user', 'UsersController');
+    Route::group(['middleware' => 'api'], function() {
+        
+        Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
+    
+        Route::post('/logout', array('uses' => 'LoginController@doLogout'))->name('logout');
+        
+        Route::post('/security', 'LoginController@verifyTwoFactor'); 
+    
+        Route::resource('/post', 'PostController');
+     
+        Route::resource('/user', 'UsersController');
+    });
 });
 
 
