@@ -14,7 +14,7 @@
                 <input type="password" v-validate data-vv-rules="required"  v-model="login.token_2fa" name="token_2fa" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label><i class="fas fa-user"></i><span class="span-input">Enter Code</span></label>
+                <label><i class="fa fa-user"></i><span class="span-input">Enter Code</span></label>
                 <span v-if="errors.has('token_2fa')" class="help-block">
                                     <strong>{{ errors.first('token_2fa') }}</strong>
                 </span>
