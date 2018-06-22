@@ -11,8 +11,6 @@ use Exception;
 
 class PostController extends Controller
 {
-    public $successStatus = 200;
-    
     public function __construct(PostService $service)
     {
         $this->service = $service;
@@ -28,11 +26,7 @@ class PostController extends Controller
         //data fetched from database in $post
         // $this->service->listPost();
         $lists = Post::orderBy('created_at', 'decs')->paginate(6);
-        return response()->json([
-            $lists,
-        ],
-        $this->successStatus);
-        
+        return respondData($lists);
     }
     
     /**
@@ -66,20 +60,16 @@ class PostController extends Controller
             $post['image_path'] = $this->service->uploadPostImage($post);
             $postCreate = $this->service->createPost($post);
             DB::commit();
-            
-            return response() //Json response with status 200 and token and user type
-            ->json([
-                'response'=>'Inserted',
-                'postCreate' => $postCreate,
-            ],
-            $this->successStatus);
+            $data=[
+                'postCreate' => $postCreate
+            ];
+            return respondSuccess('Inserted',$data);
         }
         catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
-    
     
     /**
     * Display the specified resource.
@@ -97,7 +87,7 @@ class PostController extends Controller
             'post' => $post,
         ];
         //response in the form of JSON
-        return response()->json($data, $this->successStatus);
+        return respondData($data);
     }
     
     /**
@@ -108,7 +98,7 @@ class PostController extends Controller
     */
     public function edit(Post $post)
     {
-        return request()->json($post , $this->successStatus);
+        return respondData($post);
     }
     
     /**
@@ -124,18 +114,10 @@ class PostController extends Controller
             DB::beginTransaction();
             $post = $this->service->updatePost($request->all(),$post->id);
             DB::commit();
-            if($post){
-                return response() //Json response with status 200 and token and user type
-                ->json([
-                    'response'=>'Updated',
-                    $post,
-                ],
-                $this->successStatus);
+            if(!$post){
+                return respondError('Failed', 401); 
             }
-            else 
-            {
-                return response()->json(['error' => 'Failed'], 401); //Json response with status 401 and error message
-            }
+            return respondSuccess('Updated',$post);
         } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
@@ -151,10 +133,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $this->service->deletePost($post->id);
-        return response() //Json response with status 200 and token and user type
-        ->json([
-            'response'=>'Deleted',
-        ],
-        $this->successStatus);
+        return respondSuccess('Deleted');
     }
 }

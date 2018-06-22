@@ -12,7 +12,6 @@ use DB;
 
 class UsersController extends Controller
 {
-    public $successStatus = 200;
     
     public function __construct(UserService $service)
     {
@@ -27,11 +26,9 @@ class UsersController extends Controller
     public function index()
     {
         //data fetched from database in $User
-        $this->service->listUser();
-        return $request->json([
-            'list' => $lists,
-        ],
-        $this->successStatus);
+        // $this->service->listUser();
+        $lists = Post::orderBy('created_at', 'decs')->paginate(6);
+        return respondData($list);
     }
     
     /**
@@ -61,7 +58,7 @@ class UsersController extends Controller
                     if($data->count()){
                         foreach ($data as $key => $value) {
                             $password=str_random(6);
-                            $user[] = [
+                            $user = [
                                 'name'    => $value->name, 
                                 'username' => $value->username,
                                 'email' => $value->email,
@@ -74,15 +71,10 @@ class UsersController extends Controller
                             $userCreate = $this->service->createUser($user);
                             DB::commit();    
                             //DB::table('users')->insert($arr);
-                            return response() //Json response with status 200 and token and user type
-                            ->json([
-                                'response'=>'Inserted',
-                                'postCreate' => $userCreate,
-                            ],
-                            $this->successStatus);
+                            return respondSuccess('Inserted',$userCreate );
                         }
                         else{
-                            return response()->json(['error' => 'Post Failed'], 401); //Json response with status 401 and error message
+                            return respondError('Post Failed', 401);
                         }
                     }
                 }
@@ -111,7 +103,7 @@ class UsersController extends Controller
     */
     public function edit(User $user)
     {
-        return request()->json($user , $this->successStatus);
+        return respondData($user);
     }
     
     /**
