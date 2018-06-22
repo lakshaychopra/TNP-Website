@@ -29,15 +29,15 @@ class Controller extends BaseController
         return response()->json($response, $exception->getCode(), []);
     }
     
-    protected function respondUnauthorized($messages = 'Unauthorized')
+    protected function respondUnauthorized($message = 'Unauthorized')
     {
         $response = [
             'message' => $message,
         ];
         return response()->json($response, 401, []);
     }
-
-    protected function respondSuccess($message='Success', $data)
+    
+    protected function respondSuccess($message ='Success', $data=[])
     {
         $response = [
             'message' => $message,
@@ -46,7 +46,7 @@ class Controller extends BaseController
         return response()->json($response, 200, []);
     }
     
-    protected function respondData($data)
+    protected function respondData($data=[])
     {
         $response = [
             'data' => $data,
@@ -59,7 +59,7 @@ class Controller extends BaseController
         $response = [
             'message' => $message,
         ];
-        return response()->json($response);
+        return response()->json($response, 200, []);
     }       
     
 }

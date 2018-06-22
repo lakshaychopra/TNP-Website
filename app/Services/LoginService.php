@@ -20,6 +20,5 @@ class LoginService
         $user->token_2fa_expiry = Carbon::now();
         $user->token_2fa = mt_rand(10000,99999);
         $user->save();
-        event(new TwoFactorEvent($user));
     }
 }

@@ -11,6 +11,7 @@ use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
 use App\Services\LoginService;
 use DB;
+use \Carbon\Carbon;
 
 class LoginController extends Controller
 {
@@ -49,6 +50,7 @@ class LoginController extends Controller
             DB::beginTransaction();
             $this->service->otpGenerated();
             DB::commit();
+
             return $this->respondMessage('OTP Sent');
         }   
         catch(Exception $e)
@@ -65,10 +67,12 @@ class LoginController extends Controller
         {    
             return $this->respondUnauthorized();
         }
+        $user->token_2fa_expiry = Carbon::now()->addMinutes(config('session.lifetime'));
+        $user->save(); 
         return response() //Json response with status 200 and token and user type
         ->json([  
-            'response'=>'Authorized',
-            'message' => 'You have been logged in',
+            'response'=>'Authorized!!
+                         You have been logged-in!!',
             'id' => $user->id,
             'type' => $user->type,
         ],
