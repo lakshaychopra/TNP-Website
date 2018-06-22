@@ -21,6 +21,10 @@ class User extends Authenticatable
         'username','name','email','phone_number','type','password'
     ];
     
+    protected $hidden =[
+        'password','remember_token'
+    ];
+
     public function isActiveAndVerified(){
         return $this->is_active && $this->is_verified;
     }
