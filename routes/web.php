@@ -15,7 +15,7 @@
 Route::group(['prefix' => 'admin'], function () {
     Route::post('/login', array('uses' => 'LoginController@loginUser'))->name('users.post.login');
     
-    Route::group(['middleware' => 'api'], function() {
+    Route::group(['middleware' => 'web'], function() {
         
         Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
     

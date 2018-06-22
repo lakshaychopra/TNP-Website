@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Auth;
+// use Auth;
 use Illuminate\Http\Request;
 use Session;
-use Exception;
+// use Exception;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
 use App\Services\LoginService;
