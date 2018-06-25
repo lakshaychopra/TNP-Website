@@ -112,7 +112,7 @@ class PostController extends Controller
                 return $this->respondError('Failed', 401); 
             }
             if ($request->hasFile('image')) {
-                $post['image'] = $this->service->updatePostImage($post);
+                $post['image'] = $this->service->updatePostImage($post->id);
             } 
             $post = $this->service->updatePost($request->all(),$post->id);
             DB::commit();
@@ -131,10 +131,8 @@ class PostController extends Controller
     */
     public function destroy(Post $post)
     {
+        $this->service->deletePostImage($post->id);
         $this->service->deletePost($post->id);
-        if ($request->hasFile('image')) {
-            $post['image'] = $this->service->deletePostImage($post);
-        }
         return $this->respondSuccess('Deleted');
     }
     
