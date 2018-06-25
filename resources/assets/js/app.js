@@ -20,7 +20,7 @@ import './icons' // icon
 
 import Vue from 'vue'
 
-import { VueResource } from "vue-resource";
+// import { VueResource } from "vue-resource";
 import VueHtml5Editor from 'vue-html5-editor'
 Vue.use(VueHtml5Editor,{
      hiddenModules: [
