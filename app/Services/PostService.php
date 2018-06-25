@@ -4,7 +4,8 @@ namespace App\Services;
 
 use App\Models\Post;
 use App\Repositories\PostRepository;
-use Storage;
+use File;
+use Input;
 
 class PostService
 {	
@@ -44,9 +45,14 @@ class PostService
 	
 	public function updatePostImage(array $payload)
 	{
-		$is_image=Post::get('image');
-		if($is_image!=null)
+		$post=Post::find($id);
+		if(Input::hasFile('image'))
 		{
+			$usersImage = public_path("images/posts/images/{$post->image}"); 
+			if (File::exists($usersImage))
+			{
+				unlink($usersImage);
+			}
 			$extension = $payload['image']->getClientOriginalExtension();
 			$filename = 'post_'.str_random().'.'.$extension;
 			$path =  public_path('images/posts/images/');
