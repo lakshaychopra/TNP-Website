@@ -27,13 +27,9 @@ class PostController extends Controller
     */
     public function index()
     {
-        //data fetched from database in $post
         // $this->service->listPost();
         $post = Post::orderBy('created_at', 'decs')->paginate(6);
-        
         return $this->respondData($post);
-        
-        
     }
     
     /**
@@ -87,13 +83,7 @@ class PostController extends Controller
     {
         //data fetched from database in $post with where id clause
         $post = $this->post->where('id', $post)->first();
-        
-        // data to be sent
-        $data = [
-            'post' => $post,
-        ];
-        //response in the form of JSON
-        return $this->respondData($data);
+        return $this->respondData($$post);
     }
     
     /**
@@ -118,14 +108,14 @@ class PostController extends Controller
     {
         try {
             DB::beginTransaction();
-            $post = $this->service->updatePost($request->all(),$post->id);
-            DB::commit();
-            if ($request->hasFile('image')) {
-                $post['image'] = $this->service->uploadPostImage($post);
-            } 
             if(!$post){
                 return $this->respondError('Failed', 401); 
             }
+            if ($request->hasFile('image')) {
+                $post['image'] = $this->service->updatePostImage($post);
+            } 
+            $post = $this->service->updatePost($request->all(),$post->id);
+            DB::commit();
             return $this->respondSuccess('Updated',$post);
         } catch (Exception $e) {
             DB::rollback();
@@ -142,21 +132,28 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $this->service->deletePost($post->id);
+        if ($request->hasFile('image')) {
+            $post['image'] = $this->service->deletePostImage($post);
+        }
         return $this->respondSuccess('Deleted');
     }
     
-    public function PushNotification(User $user,Post $post){
+    public function pinToTop(Post $post){
+        return $this->respondSuccess();
+    }
+
+    public function pushNotification(User $user,Post $post){
         $user = User::all();
         $data = Post::find(['title','category']);   
         Notification::send($user, new PostNotification($data));
     }
     
-    public function MarkAsRead(User $user){
+    public function markAsRead(User $user){
         Auth::user()->notifications->markAsRead();
         return $this->respondSuccess();
     }
     
-    public function MarkAsUnread(User $user){
+    public function markAsUnread(User $user){
         Auth::user()->notifications->markAsUnRead();
         return $this->respondSuccess();
     }

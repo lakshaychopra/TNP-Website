@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Post;
 use App\Repositories\PostRepository;
+use Storage;
 
 class PostService
 {	
@@ -34,10 +35,25 @@ class PostService
 	public function uploadPostImage(array $payload)
 	{
 		$extension = $payload['image']->getClientOriginalExtension();
-		$filename = 'tnpPost'.str_random().'.'.$extension;
+		$filename = 'post_'.str_random().'.'.$extension;
 		$path =  public_path('images/posts/images/');
 		$imageLocation = $payload['image']->move($path, $filename);
 		// $image_path = $path.$filename;
 		return $filename;
+	}
+	 
+	public function updatePostImage(array $payload)
+	{
+		$extension = $payload['image']->getClientOriginalExtension();
+		$filename = 'post_'.str_random().'.'.$extension;
+		$path =  public_path('images/posts/images/');
+		$imageLocation = $payload['image']->move($path, $filename);
+		// $image_path = $path.$filename;
+		return $filename;
+	}
+
+	public function deletePostImage(array $payload)
+	{
+		// delete
 	}
 }
