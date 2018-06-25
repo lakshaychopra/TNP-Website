@@ -37,7 +37,7 @@ class PostService
 		$filename = 'tnpPost'.str_random().'.'.$extension;
 		$path =  storage_path('app/images/tnpPost/post_images/');
 		$imageLocation = $payload['image_path']->move($path, $filename);
-		$image_path = $path.$filename;
-		return $image_path;
+		// $image_path = $path.$filename;
+		return $filename;
 	}
 }

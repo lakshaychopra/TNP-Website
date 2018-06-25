@@ -30,7 +30,8 @@ class PostController extends Controller
         //data fetched from database in $post
         // $this->service->listPost();
         $lists = Post::orderBy('created_at', 'decs')->paginate(6);
-        return respondData($lists);
+        return response()->json($lists);
+
     }
     
     /**
@@ -67,7 +68,7 @@ class PostController extends Controller
             $data=[
                 'postCreate' => $postCreate
             ];
-            return respondSuccess('Inserted',$data);
+            return $this->respondSuccess('Inserted',$data);
         }
         catch (Exception $e) {
             DB::rollback();
