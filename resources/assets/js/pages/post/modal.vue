@@ -10,7 +10,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                ...
+                <img :src="getImageModal(postImage)" alt="">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -22,7 +22,12 @@
 </template>
 <script>
 export default {
-    
+    props: ['postName', 'postImage'],
+    methods:{
+      getImageModal(index){
+        return "/images/posts/images/" + index;
+      }
+    }
 }
 </script>
 <style scoped>

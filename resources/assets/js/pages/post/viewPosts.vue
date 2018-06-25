@@ -15,8 +15,8 @@
                     </small>
                     </div>
                     <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
-                    <div class="card-img-top" data-toggle="modal" data-target="#exampleModal">
-                        <img src="#" alt="">
+                    <div class="card-img-top" data-toggle="modal" data-target="#exampleModal" :style="getImage(post.image_path)" :postImage="post.image_path" >
+                        <!-- <img :src="getImage(post.image_path)" alt=""> -->
                     </div>
                     <div class="card-body">
                       <div><small ><strong>{{post.updated_at}}</strong></small><span class="pull-right"><i id="share" git class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span> </div>
@@ -42,20 +42,23 @@
       },
       data(){
         return{
+
           posts: {},
           showDropDown:false,
         }
       },
-      methods(){
-        
+      methods:{
+        getImage(index){
+          return "background: url(/images/posts/images/" + index +") center no-repeat;";
+        }
       },
       mounted() {
           axios.get('/admin/post')
           .then((response) => {
             // var obj = JSON.parse(response.data);
             // console.log(response);
-            this.posts = response.data;
-            console.log(response.data);
+            this.posts = response.data.data;
+            console.log(response.data.data);
           
           })
           .catch((error) => console.log(error))
@@ -93,8 +96,8 @@
 }
 .card-img-top{
     height: 200px;
-    /* background: url('/images/1.jpg') center no-repeat;
-    background-size: cover; */
+     /* background: url('/images/1.jpg') center no-repeat; */
+    background-size: cover; 
 }
 .btn-custom{
   background-color: #b3b6b9;
