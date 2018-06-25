@@ -60318,8 +60318,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // usertype : 'EXECUTIVE_MEMBER',
             title: _this.post.title,
             body: _this.post.content,
-            author: 'admin',
-            author_id: '1',
+            username: 'admin',
+            user_id: '1',
             tag: _this.post.tags.toString(),
             post_link: 'abc',
             category: _this.post.category,
@@ -60329,8 +60329,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           formData.append('image', postData.image);
           formData.append('title', postData.title);
           formData.append('body', postData.body);
-          formData.append('author', postData.author);
-          formData.append('author_id', postData.author_id);
+          formData.append('username', postData.username);
+          formData.append('user_id', postData.user_id);
           formData.append('tag', postData.tag);
           formData.append('category', postData.category);
           formData.append('post_link', postData.post_link);
@@ -60727,6 +60727,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -61073,6 +61075,8 @@ var staticRenderFns = [
           _vm._v(" Edit")
         ]),
         _vm._v(" "),
+        _c("div", { staticClass: "dropdown-divider" }),
+        _vm._v(" "),
         _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
           _c("i", {
             staticClass: "fa fa-trash",
@@ -61080,6 +61084,8 @@ var staticRenderFns = [
           }),
           _vm._v(" Delete")
         ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dropdown-divider" }),
         _vm._v(" "),
         _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
           _c("i", {

@@ -174,8 +174,8 @@ export default {
         // usertype : 'EXECUTIVE_MEMBER',
         title: this.post.title,
         body: this.post.content,
-        author:'admin',
-        author_id: '1',
+        username:'admin',
+        user_id: '1',
         tag:this.post.tags.toString(),
         post_link:'abc',
         category:this.post.category,
@@ -185,8 +185,8 @@ export default {
       formData.append('image', postData.image);
       formData.append('title', postData.title);
       formData.append('body', postData.body);
-      formData.append('author', postData.author);
-      formData.append('author_id', postData.author_id);
+      formData.append('username', postData.username);
+      formData.append('user_id', postData.user_id);
       formData.append('tag', postData.tag);
       formData.append('category', postData.category);
       formData.append('post_link', postData.post_link);

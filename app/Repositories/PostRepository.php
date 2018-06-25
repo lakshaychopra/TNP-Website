@@ -53,8 +53,8 @@ class PostRepository
 		return [
 			'title'              => $payload['title'],
 			'body'				 => $payload['body'],
-			'author'	     	 => $payload['author'],
-			'author_id'	 	     => $payload['author_id'],
+			'username'	 	     => $payload['username'],
+			'user_id'	 	     => $payload['user_id'],
 			'tag'	 	         => $payload['tag'],
 			'category'	 	     => $payload['category'],
 			'post_link'	 	     => $payload['post_link'],

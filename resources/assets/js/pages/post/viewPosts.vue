@@ -8,7 +8,9 @@
                           <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
                           </div>
                        </div>
