@@ -63,6 +63,14 @@ class PostService
 	
 	public function deletePostImage(array $payload)
 	{
-		// delete
+		$post=Post::find($id);
+		if(Input::hasFile('image'))
+		{
+			$usersImage = public_path("images/posts/images/{$post->image}"); 
+			if (File::exists($usersImage))
+			{
+				unlink($usersImage);
+			}
+		}
 	}
 }
