@@ -22,7 +22,8 @@ class CreatePostsTable extends Migration
             $table->string('tag');
             $table->string('category');
             $table->string('post_link');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->string('documents')->nullable();
             $table->boolean('is_pinned')->default(false);
             $table->timestamps();
         });

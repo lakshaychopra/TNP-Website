@@ -32,8 +32,8 @@ class PostController extends Controller
         $post = Post::orderBy('created_at', 'decs')->paginate(6);
         
         return $this->respondData($post);
-
-
+        
+        
     }
     
     /**
@@ -60,11 +60,10 @@ class PostController extends Controller
             if (!$post) {
                 return $this->respondUnauthorized('Post Failed');
             }
-            if (!$request->hasFile('image')) {
-                return $this->respondUnauthorized('Image Upload Failed');
+            if ($request->hasFile('image')) {
+                $post['image'] = $this->service->uploadPostImage($post);
             } 
             
-            $post['image'] = $this->service->uploadPostImage($post);
             $postCreate = $this->service->createPost($post);
             DB::commit();
             $data=[
@@ -121,6 +120,9 @@ class PostController extends Controller
             DB::beginTransaction();
             $post = $this->service->updatePost($request->all(),$post->id);
             DB::commit();
+            if ($request->hasFile('image')) {
+                $post['image'] = $this->service->uploadPostImage($post);
+            } 
             if(!$post){
                 return $this->respondError('Failed', 401); 
             }
@@ -142,18 +144,18 @@ class PostController extends Controller
         $this->service->deletePost($post->id);
         return $this->respondSuccess('Deleted');
     }
-
+    
     public function PushNotification(User $user,Post $post){
-      $user = User::all();
-      $data = Post::find(['title','category']);   
-      Notification::send($user, new PostNotification($data));
+        $user = User::all();
+        $data = Post::find(['title','category']);   
+        Notification::send($user, new PostNotification($data));
     }
-
+    
     public function MarkAsRead(User $user){
         Auth::user()->notifications->markAsRead();
         return $this->respondSuccess();
     }
-
+    
     public function MarkAsUnread(User $user){
         Auth::user()->notifications->markAsUnRead();
         return $this->respondSuccess();
