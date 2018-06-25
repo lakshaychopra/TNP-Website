@@ -16,7 +16,7 @@
                     </div>
                     <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
                     <div class="card-img-top" data-toggle="modal" data-target="#exampleModal">
-                        <img src="app/images/tnpPost/post_images/tnpPostxGiNNdWKZN6YuLc0.jpg" alt="">
+                        <img src="#" alt="">
                     </div>
                     <div class="card-body">
                       <div><small ><strong>{{post.updated_at}}</strong></small><span class="pull-right"><i id="share" git class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span> </div>

@@ -124,7 +124,7 @@ class PostController extends Controller
             if(!$post){
                 return $this->respondError('Failed', 401); 
             }
-            return respondSuccess('Updated',$post);
+            return $this->respondSuccess('Updated',$post);
         } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
