@@ -31,7 +31,7 @@ class PostService
 	{
 		return $this->repository->delete($payload);
 	}
-
+	
 	public function uploadPostImage(array $payload)
 	{
 		$extension = $payload['image']->getClientOriginalExtension();
@@ -41,17 +41,20 @@ class PostService
 		// $image_path = $path.$filename;
 		return $filename;
 	}
-	 
+	
 	public function updatePostImage(array $payload)
 	{
-		$extension = $payload['image']->getClientOriginalExtension();
-		$filename = 'post_'.str_random().'.'.$extension;
-		$path =  public_path('images/posts/images/');
-		$imageLocation = $payload['image']->move($path, $filename);
-		// $image_path = $path.$filename;
-		return $filename;
+		$is_image=Post::get('image');
+		if($is_image!=null)
+		{
+			$extension = $payload['image']->getClientOriginalExtension();
+			$filename = 'post_'.str_random().'.'.$extension;
+			$path =  public_path('images/posts/images/');
+			$imageLocation = $payload['image']->move($path, $filename);
+			return $filename;
+		}
 	}
-
+	
 	public function deletePostImage(array $payload)
 	{
 		// delete
