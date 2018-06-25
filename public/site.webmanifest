@@ -8,6 +8,7 @@
     "theme_color": "#fff",
     "description": "The official application of Training and Placemant Cell, GNDEC, Ludhiana.",
     "dir":"ltr",
+    "lang":"en",
     "orientation":"portrait",
     "icons": [{
         "src": "icon.png",
