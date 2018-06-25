@@ -15,7 +15,7 @@
                     </small>
                     </div>
                     <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
-                    <div class="card-img-top" data-toggle="modal" data-target="#exampleModal" :style="getImage(post.image_path)" :postImage="post.image_path" >
+                    <div class="card-img-top" data-toggle="modal" data-target="#exampleModal" :style="getImage(post.image)" :postImage="post.image" >
                         <!-- <img :src="getImage(post.image_path)" alt=""> -->
                     </div>
                     <div class="card-body">

@@ -179,10 +179,10 @@ export default {
         tag:this.post.tags.toString(),
         post_link:'abc',
         category:this.post.category,
-        image_path:this.post.imageUrl
+        image:this.post.imageUrl
       };
       let formData = new FormData();
-      formData.append('image_path', postData.image_path);
+      formData.append('image', postData.image);
       formData.append('title', postData.title);
       formData.append('body', postData.body);
       formData.append('author', postData.author);
@@ -209,8 +209,8 @@ export default {
         //     // console.log(error.response);
           if(error.response.status=="422"){
             // console.log(obj['error']);
-             if(obj['errors'].hasOwnProperty('image_path')){
-                Vue.toasted.show(obj['errors']['image_path'],{
+             if(obj['errors'].hasOwnProperty('image')){
+                Vue.toasted.show(obj['errors']['image'],{
                 icon : 'exclamation-circle',
                 position: "bottom-center", 
                 duration : 10000

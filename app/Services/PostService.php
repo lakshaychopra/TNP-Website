@@ -33,10 +33,10 @@ class PostService
 
 	public function uploadPostImage(array $payload)
 	{
-		$extension = $payload['image_path']->getClientOriginalExtension();
+		$extension = $payload['image']->getClientOriginalExtension();
 		$filename = 'tnpPost'.str_random().'.'.$extension;
 		$path =  public_path('images/posts/images/');
-		$imageLocation = $payload['image_path']->move($path, $filename);
+		$imageLocation = $payload['image']->move($path, $filename);
 		// $image_path = $path.$filename;
 		return $filename;
 	}

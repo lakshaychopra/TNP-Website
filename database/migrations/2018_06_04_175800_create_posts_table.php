@@ -15,7 +15,6 @@ class CreatePostsTable extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('post_id');
             $table->string('title');
             $table->text('body');
             $table->string('author');
@@ -23,7 +22,8 @@ class CreatePostsTable extends Migration
             $table->string('tag');
             $table->string('category');
             $table->string('post_link');
-            $table->string('image_path');
+            $table->string('image');
+            $table->boolean('is_pinned')->default(false);
             $table->timestamps();
         });
     }

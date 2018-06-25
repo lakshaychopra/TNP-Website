@@ -59712,7 +59712,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "\n.line[data-v-ab0f8b5e]{\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.line[data-v-ab0f8b5e]{\r\n  text-align: center;\n}\r\n", ""]);
 
 // exports
 
@@ -60323,10 +60323,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             tag: _this.post.tags.toString(),
             post_link: 'abc',
             category: _this.post.category,
-            image_path: _this.post.imageUrl
+            image: _this.post.imageUrl
           };
           var formData = new FormData();
-          formData.append('image_path', postData.image_path);
+          formData.append('image', postData.image);
           formData.append('title', postData.title);
           formData.append('body', postData.body);
           formData.append('author', postData.author);
@@ -60350,8 +60350,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //     // console.log(error.response);
             if (error.response.status == "422") {
               // console.log(obj['error']);
-              if (obj['errors'].hasOwnProperty('image_path')) {
-                Vue.toasted.show(obj['errors']['image_path'], {
+              if (obj['errors'].hasOwnProperty('image')) {
+                Vue.toasted.show(obj['errors']['image'], {
                   icon: 'exclamation-circle',
                   position: "bottom-center",
                   duration: 10000
@@ -61018,11 +61018,11 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", {
                   staticClass: "card-img-top",
-                  style: _vm.getImage(post.image_path),
+                  style: _vm.getImage(post.image),
                   attrs: {
                     "data-toggle": "modal",
                     "data-target": "#exampleModal",
-                    postImage: post.image_path
+                    postImage: post.image
                   }
                 }),
                 _vm._v(" "),

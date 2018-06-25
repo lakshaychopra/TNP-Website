@@ -60,11 +60,11 @@ class PostController extends Controller
             if (!$post) {
                 return $this->respondUnauthorized('Post Failed');
             }
-            if (!$request->hasFile('image_path')) {
+            if (!$request->hasFile('image')) {
                 return $this->respondUnauthorized('Image Upload Failed');
             } 
             
-            $post['image_path'] = $this->service->uploadPostImage($post);
+            $post['image'] = $this->service->uploadPostImage($post);
             $postCreate = $this->service->createPost($post);
             DB::commit();
             $data=[
