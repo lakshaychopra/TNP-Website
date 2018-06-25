@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-// use Auth;
+use Auth;
 use Illuminate\Http\Request;
 use Session;
-// use Exception;
+use Exception;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
 use App\Services\LoginService;
@@ -84,7 +84,7 @@ class LoginController extends Controller
                 'username' => $user->username,
                 'type' => $user->type,
             ];
-            return respondSuccess('Authorized!! You have been logged-in!!', $data);
+            return $this->respondSuccess('Authorized!! You have been logged-in!!', $data);
         }   
         catch(JWTException $e)
         {
@@ -97,7 +97,7 @@ class LoginController extends Controller
     {
         Auth::logout(); // log the user out of our application
         Session::flush();
-        return respondSuccess('Success!! You have been logged-out!!');
+        return $this->respondSuccess('Success!! You have been logged-out!!');
         
     }
     

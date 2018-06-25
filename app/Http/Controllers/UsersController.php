@@ -27,8 +27,8 @@ class UsersController extends Controller
     {
         //data fetched from database in $User
         // $this->service->listUser();
-        $lists = Post::orderBy('created_at', 'decs')->paginate(6);
-        return respondData($list);
+        $user = Post::orderBy('created_at', 'decs')->paginate(6);
+        return $this->respondData($user);
     }
     
     /**
@@ -71,10 +71,10 @@ class UsersController extends Controller
                         $userCreate = $this->service->createUser($user);
                         DB::commit();    
                         //DB::table('users')->insert($arr);
-                        return respondSuccess('Inserted',$userCreate );
+                        return $this->respondSuccess('Inserted',$userCreate );
                     }
                     else{
-                        return respondError('Post Failed', 401);
+                        return $this->respondError('Post Failed', 401);
                     }
                 }
             }
@@ -103,7 +103,7 @@ class UsersController extends Controller
     */
     public function edit(User $user)
     {
-        return respondData($user);
+        return $this->respondData($user);
     }
     
     /**

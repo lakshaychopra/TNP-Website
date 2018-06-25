@@ -29,8 +29,10 @@ class PostController extends Controller
     {
         //data fetched from database in $post
         // $this->service->listPost();
-        $lists = Post::orderBy('created_at', 'decs')->paginate(6);
-        return response()->json($lists);
+        $post = Post::orderBy('created_at', 'decs')->paginate(6);
+        
+        return $this->respondData($post);
+
 
     }
     
@@ -92,7 +94,7 @@ class PostController extends Controller
             'post' => $post,
         ];
         //response in the form of JSON
-        return respondData($data);
+        return $this->respondData($data);
     }
     
     /**
@@ -103,7 +105,7 @@ class PostController extends Controller
     */
     public function edit(Post $post)
     {
-        return respondData($post);
+        return $this->respondData($post);
     }
     
     /**
@@ -120,7 +122,7 @@ class PostController extends Controller
             $post = $this->service->updatePost($request->all(),$post->id);
             DB::commit();
             if(!$post){
-                return respondError('Failed', 401); 
+                return $this->respondError('Failed', 401); 
             }
             return respondSuccess('Updated',$post);
         } catch (Exception $e) {
@@ -138,7 +140,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $this->service->deletePost($post->id);
-        return respondSuccess('Deleted');
+        return $this->respondSuccess('Deleted');
     }
 
     public function PushNotification(User $user,Post $post){
@@ -149,11 +151,11 @@ class PostController extends Controller
 
     public function MarkAsRead(User $user){
         Auth::user()->notifications->markAsRead();
-        return respondSuccess();
+        return $this->respondSuccess();
     }
 
     public function MarkAsUnread(User $user){
         Auth::user()->notifications->markAsUnRead();
-        return respondSuccess();
+        return $this->respondSuccess();
     }
 }
