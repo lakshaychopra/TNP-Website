@@ -17,7 +17,8 @@
                     </small>
                     </div>
                     <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
-                    <div class="card-img-top" data-toggle="modal" data-target="#exampleModal" :style="getImage(post.image)" :postImage="post.image" >
+                    
+                    <div class="card-img-top" data-toggle="modal"  v-if="post.image != null" data-target="#exampleModal" :style="getImage(post.image)" :postImage="post.image" >
                         <!-- <img :src="getImage(post.image_path)" alt=""> -->
                     </div>
                     <div class="card-body">
@@ -25,9 +26,9 @@
                         <!-- <ul class="list-group">
                           <li class="list-group-item"></li>
                         </ul> -->
-                      {{post.body}}
+                      <span v-html="post.body"></span>
                     </div>
-                    <div class="card-footer"><span class="pull-right"><button class="btn btn-custom shadow-sm">GNDEC</button><button class="btn btn-custom shadow-sm">TNP</button></span></div>
+                    <div class="card-footer"><span class="pull-right"><button class="btn btn-custom shadow-sm" v-for="tag in post.tag.split(',')" :key="tag" >{{ tag.toUpperCase() }}</button></span></div>
                 </div>
             </div>
         </div>
@@ -114,11 +115,11 @@
 }
 #share{
     position: absolute;
-    top: -37px;
-    padding: 20px;
+    top: -22px;
+    padding: 12px;
     right: 20px;
     background: #304156;
-    border: 11px solid;
+    border: 5px solid;
     border-radius: 50%;
     color: #fff;
 }

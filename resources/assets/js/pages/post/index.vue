@@ -21,7 +21,7 @@
               v-model="post.tag"
               :tags="post.tags"
               :validation="validation"
-              @tags-changed="newTags => tags = newTags"
+              @tags-changed="newTags => post.tags = newTags"
             />
       </el-form-item>
             <!-- <el-select class="form-control"
@@ -135,7 +135,8 @@ export default {
          tag: '',
         tags: ['gndec','tnp'],
         category: '' ,
-        imageUrl: ''
+        imageUrl: '',
+        tags_submit:[],
  
       },
       tagsOptions: [{
@@ -170,13 +171,16 @@ export default {
     handleLoginFormSubmit(formName) {
       this.$refs[formName].validate((valid) => {
           if (valid) {
+      for (let i = 0; i < this.post.tags.length; i++){
+      this.post.tags_submit.push(this.post.tags[i].text);
+      }
              const postData = {
         // usertype : 'EXECUTIVE_MEMBER',
         title: this.post.title,
         body: this.post.content,
         username:'admin',
         user_id: '1',
-        tag:this.post.tags.toString(),
+        tag:this.post.tags_submit.toString(),
         post_link:'abc',
         category:this.post.category,
         image:this.post.imageUrl
