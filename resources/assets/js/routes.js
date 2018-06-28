@@ -123,6 +123,17 @@
             }
         },
         {
+            path: 'edit',
+            name: 'edit',
+            component: Vue.component('edit', require('./pages/post/edit')),
+            hidden:true,
+            props: true,
+            meta: {
+                title: 'Edit Post',
+                icon: 'file-text'
+            }
+        },
+        {
                 path: 'view',
                 name: 'viewPosts',
                 component: Vue.component('Post', require('./pages/post/viewPosts')),
