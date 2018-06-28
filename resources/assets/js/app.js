@@ -5,6 +5,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import './service-worker.js';
+
 import './bootstrap';
 import router from './routes.js'
 window.Vue = require('vue')
