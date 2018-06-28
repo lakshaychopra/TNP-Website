@@ -7,7 +7,7 @@
                       <div class="dropdown">
                           <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                            <a class="dropdown-item" href="#" @click="getPost(post.id)"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
                              <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                              <div class="dropdown-divider"></div>
@@ -38,14 +38,14 @@
 
 <script>
   import modal from "./modal";
-  import getPostsURL from "../../config.js";
+  import {addPostURL} from "../../config.js";
     export default {
       components:{
         modal,
       },
       data(){
         return{
-
+          postEdit:{},
           posts: {},
           showDropDown:false,
         }
@@ -53,10 +53,23 @@
       methods:{
         getImage(index){
           return "background: url(/images/posts/images/" + index +") center no-repeat;";
+        },
+        getPost(id){
+          // console.log(id);
+          axios.get('/admin/post/'+ id +'/edit')
+          .then((response) => {
+            // console.log(response.data.data);
+            this.postEdit = response.data.data;
+            this.$router.push({
+              name:'edit',
+              params:{rec: this.postEdit}
+            });
+          })
+          .catch((error) => console.log(error))
         }
       },
       mounted() {
-          axios.get('/admin/post')
+          axios.get(addPostURL)
           .then((response) => {
             // var obj = JSON.parse(response.data);
             // console.log(response);
