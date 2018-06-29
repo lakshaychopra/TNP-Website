@@ -57,7 +57,7 @@ class PostController extends Controller
                 return $this->respondUnauthorized('Post Failed');
             }
             if ($request->hasFile('image')) {
-                $post['image'] = $this->service->uploadPostImage($post);
+                $post['image'] = $this->service->uploadPostImageService($post);
             } 
             
             $postCreate = $this->service->createPost($post);
@@ -137,7 +137,7 @@ class PostController extends Controller
     }
     
     public function pinToTop(Post $post){
-        return $this->respondSuccess();
+        return $this->respondSuccess('pinned');
     }
 
     public function pushNotification(User $user,Post $post){

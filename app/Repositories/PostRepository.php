@@ -39,9 +39,20 @@ class PostRepository
     public function update(array $data, $id){
         $record = $this->find($id);
         $data = $this->setPayload($data);
-        return $record->update($data);
+        return $record->update($data, $id);
     }
     
+    public function uploadPostImage(array $data)
+	{
+        $data = $this->setPayload($data);
+		$extension = $data['image']->getClientOriginalExtension();
+		$filename = 'post_'.str_random().'.'.$extension;
+		$path =  public_path('images/posts/images/');
+		$imageLocation = $data['image']->move($path, $filename);
+		// $image_path = $path.$filename;
+		return $filename;
+	}
+
     // remove record from the database
     public function delete($id)
     {
