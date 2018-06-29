@@ -38,7 +38,7 @@ class PostService
 		return $this->repository->uploadPostImage($payload);
 	}
 	
-	public function updatePostImage(array $payload)
+	public function updatePostImage(array $payload, $id)
 	{
 		$post=Post::find($id);
 		if(Input::hasFile('image'))
@@ -56,7 +56,7 @@ class PostService
 		}
 	}
 	
-	public function deletePostImage(array $payload)
+	public function deletePostImage(array $payload, $id)
 	{
 		$post=Post::find($id);
 		if(Input::hasFile('image'))
