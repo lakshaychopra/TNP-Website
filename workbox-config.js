@@ -1,7 +1,9 @@
 module.exports = {
   "globDirectory": "public/",
   "globPatterns": [
-    "**/*.{css,ico,ttf,woff,eot,svg,woff2,png,jpg,PNG,js,json,webmanifest}"
+    "**/*.{css,js,webmanifest}"
   ],
-  "swDest": "public\\sw.js"
+  "swDest": "public\\sw.js",
+  // Increase the limit to 4mb:
+"maximumFileSizeToCacheInBytes": 4 * 1024 * 1024
 };
