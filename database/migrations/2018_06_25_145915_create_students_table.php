@@ -15,13 +15,13 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('university_roll_no')->unique();
+            $table->string('univ_roll_no')->unique();
             $table->string('class_roll_no')->unique()->comment('6 digit numeric')->nullable();
             $table->string('name');
             $table->string('batch')->comment('Year of Addmission and Year of Passout')->nullable();
             $table->enum('branch_type',['B.Tech.', 'M.B.A.', 'M.C.A.', 'M.Tech.'])->nullable();
             $table->string('stream')->comment('Stream/Course type')->nullable();
-            $table->enum('training_semester',['7','8'])->nullable();
+            $table->enum('training_sem',['7','8'])->nullable();
             $table->enum('shift',['MORNING', 'EVENING'])->nullable();
             $table->string('section')->comment('Class Section')->nullable();
             $table->string('email')->unique()->nullable();
