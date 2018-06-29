@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
     // });
 });
 
-
+Route::resource('/student', 'StudentsController');
 
 Route::get('/{vue?}', function () {
     return view('welcome');
