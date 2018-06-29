@@ -51,10 +51,32 @@ class StudentRepository
     private function setPayload(array $payload)
 	{
 		return [
-			'name'               => $payload['name'],
-			'password'	     	 => $payload['password'],
-			'email'	 	         => $payload['email'],
-			'phone_number'       => $payload['phone_number'],
+            'univ_roll_no'            =>    $payload['univ_roll_no'],
+            'class_roll_no'           =>    $payload['class_roll_no'],
+            'name'                    =>    $payload['name'],
+            'batch'                   =>    $payload['batch'],
+            'branch_type'             =>    $payload['branch_type'],
+            'stream'                  =>    $payload['stream'],
+            'training_sem'            =>    $payload['training_sem'],
+            'shift'                   =>    $payload['shift'],
+            'section'                 =>    $payload['section'],
+            'email'                   =>    $payload['email'],
+            'phone_number'            =>    $payload['phone_number'],
+            'gender'                  =>    $payload['gender'],
+            'category'                =>    $payload['category'],
+            'blood_group'             =>    $payload['blood_group'],
+            'height'                  =>    $payload['height'],
+            'weight'                  =>    $payload['weight'],
+            'father_name'             =>    $payload['father_name'],
+            'father_phone_number'     =>    $payload['father_phone_number'],
+            'mother_name'             =>    $payload['mother_name'],
+            'mother_phone_number'     =>    $payload['mother_phone_number'],
+            'address'                 =>    $payload['address'],
+            'city'                    =>    $payload['city'],
+            'state'                   =>    $payload['state'],
+            'district'                =>    $payload['district'],
+            'pincode'                 =>    $payload['pincode'],
+            'form_status'             =>    $payload['form_status'],
         ];
 	}
 }
