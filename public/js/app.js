@@ -55934,7 +55934,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     Breadcrumb: __WEBPACK_IMPORTED_MODULE_1__components_Breadcrumb___default.a,
     Hamburger: __WEBPACK_IMPORTED_MODULE_2__components_Hamburger___default.a
   },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['sidebar', 'avatar'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['sidebar']
+  // 'avatar'
+  )),
   methods: {
     toggleSideBar: function toggleSideBar() {
       this.$store.dispatch('ToggleSideBar');
@@ -56350,10 +56352,7 @@ var render = function() {
         { staticClass: "avatar-container", attrs: { trigger: "click" } },
         [
           _c("div", { staticClass: "avatar-wrapper" }, [
-            _c("img", {
-              staticClass: "user-avatar",
-              attrs: { src: _vm.avatar + "?imageView2/1/w/80/h/80" }
-            }),
+            _c("img", { staticClass: "user-avatar", attrs: { src: "#" } }),
             _vm._v(" "),
             _c("i", { staticClass: "el-icon-caret-bottom" })
           ]),
