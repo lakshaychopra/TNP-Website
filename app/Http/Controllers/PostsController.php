@@ -83,7 +83,7 @@ class PostController extends Controller
     {
         //data fetched from database in $post with where id clause
         $post = $this->post->where('id', $post)->first();
-        return $this->respondData($$post);
+        return $this->respondData($post);
     }
     
     /**
