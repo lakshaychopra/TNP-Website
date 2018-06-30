@@ -5,7 +5,6 @@ namespace App\Services;
 use App\Models\Post;
 use App\Repositories\PostRepository;
 use File;
-use Input;
 
 class PostService
 {	
@@ -38,10 +37,10 @@ class PostService
 		return $this->repository->uploadPostImage($payload);
 	}
 	
-	public function updatePostImage(array $payload, Post $post)
+	public function updatePostImage(array $payload,Post $post)
 	{
 		Post::find($post);
-		if(Input::hasFile('image'))
+		if(Post::hasFile('image'))
 		{
 			$usersImage = public_path("images/posts/images/{$post->image}"); 
 			if (File::exists($usersImage))

@@ -112,7 +112,7 @@ class PostController extends Controller
                 return $this->respondError('Failed', 401); 
             }
             if ($request->hasFile('image')) {
-                $post['image'] = $this->service->updatePostImage($post);
+                $post['image'] = $this->service->updatePostImage($request->only('image'),$post);
             } 
             $post = $this->service->updatePost($request->all(),$post);
             DB::commit();
