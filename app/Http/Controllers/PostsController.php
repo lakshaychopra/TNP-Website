@@ -131,7 +131,7 @@ class PostController extends Controller
     */
     public function destroy(Post $post)
     {
-        $this->service->deletePostImage($post);
+        // $post['image'] = $this->service->deletePostImage($post);
         $this->service->deletePost($post);
         return $this->respondSuccess('Deleted');
     }
@@ -139,7 +139,7 @@ class PostController extends Controller
     public function pinToTop(Post $post){
         return $this->respondSuccess('pinned');
     }
-
+    
     public function pushNotification(User $user,Post $post){
         $user = User::all();
         $data = Post::find(['title','category']);   

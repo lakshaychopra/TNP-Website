@@ -38,15 +38,15 @@ class PostService
 		return $this->repository->uploadPostImage($payload);
 	}
 	
-	public function updatePostImage(array $payload, $id)
+	public function updatePostImage(array $payload, Post $post)
 	{
-		$post=Post::find($id);
+		Post::find($post);
 		if(Input::hasFile('image'))
 		{
 			$usersImage = public_path("images/posts/images/{$post->image}"); 
 			if (File::exists($usersImage))
 			{
-				unlink($usersImage);
+				File::delete($usersImage);
 			}
 			$extension = $payload['image']->getClientOriginalExtension();
 			$filename = 'post_'.str_random().'.'.$extension;
@@ -64,7 +64,7 @@ class PostService
 			$usersImage = public_path("images/posts/images/{$post->image}"); 
 			if (File::exists($usersImage))
 			{
-				unlink($usersImage);
+				File::delete($usersImage);
 			}
 		}
 	}

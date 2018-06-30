@@ -45,7 +45,7 @@ class PostRepository
     public function uploadPostImage(array $data)
 	{
         $data = $this->setPayload($data);
-		$extension = $data['image']->getClientOriginalExtension();
+		$extension = strtolower($data['image']->getClientOriginalExtension());
 		$filename = 'post_'.str_random().'.'.$extension;
 		$path =  public_path('images/posts/images/');
 		$imageLocation = $data['image']->move($path, $filename);
