@@ -25,25 +25,20 @@ class PostService
 	
 	public function updatePost(array $payload, $id)
 	{
-		return $this->repository->update($payload);
+		return $this->repository->update($payload, $id);
 	}
 	
 	public function deletePost(array $payload, $id)
 	{
-		return $this->repository->delete($payload);
+		return $this->repository->delete($payload, $id);
 	}
 	
-	public function uploadPostImage(array $payload)
+	public function uploadPostImageService(array $payload)
 	{
-		$extension = $payload['image']->getClientOriginalExtension();
-		$filename = 'post_'.str_random().'.'.$extension;
-		$path =  public_path('images/posts/images/');
-		$imageLocation = $payload['image']->move($path, $filename);
-		// $image_path = $path.$filename;
-		return $filename;
+		return $this->repository->uploadPostImage($payload);
 	}
 	
-	public function updatePostImage(array $payload)
+	public function updatePostImage(array $payload, $id)
 	{
 		$post=Post::find($id);
 		if(Input::hasFile('image'))
@@ -61,7 +56,7 @@ class PostService
 		}
 	}
 	
-	public function deletePostImage(array $payload)
+	public function deletePostImage(array $payload, $id)
 	{
 		$post=Post::find($id);
 		if(Input::hasFile('image'))

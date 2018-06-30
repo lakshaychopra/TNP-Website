@@ -50,10 +50,10 @@ class UsersController extends Controller
     public function store(CreateUserExcelRequest $request)
     {
         $input = $request->all();
-        if($request->hasFile('user_file')){
+        if($request->hasFile('excel')){
             try{
                 DB::beginTransaction();
-                $path = $request->file('user_file')->getRealPath();
+                $path = $request->file('excel')->getRealPath();
                 $data = Excel::load($path)->get();
                 if($data->count()){
                     foreach ($data as $key => $value) {

@@ -63,49 +63,49 @@
         ]
         },
         
-        {
-            path: '/example',
-            component: Layout,
-            redirect: '/example/table',
-            name: 'Example',
-            meta: {
-                title: 'Example',
-                icon: 'user'
-            },
-            children: [{
-                path: 'tables',
-                name: 'Tables',
-                component: Vue.component(  'table',require ('./pages/table/index')),
-                meta: {
-                    title: 'Table',
-                    icon: 'table'
-                }
-            },
-            {
-                path: 'tree',
-                name: 'Tree',
-                component: Vue.component(  'tree',require ('./pages/tree/index')),
-                meta: {
-                    title: 'Tree',
-                    icon: 'tree'
-                }
-            }
-        ]
-    },
+    //     {
+    //         path: '/example',
+    //         component: Layout,
+    //         redirect: '/example/table',
+    //         name: 'Example',
+    //         meta: {
+    //             title: 'Example',
+    //             icon: 'user'
+    //         },
+    //         children: [{
+    //             path: 'tables',
+    //             name: 'Tables',
+    //             component: Vue.component(  'table',require ('./pages/table/index')),
+    //             meta: {
+    //                 title: 'Table',
+    //                 icon: 'table'
+    //             }
+    //         },
+    //         {
+    //             path: 'tree',
+    //             name: 'Tree',
+    //             component: Vue.component(  'tree',require ('./pages/tree/index')),
+    //             meta: {
+    //                 title: 'Tree',
+    //                 icon: 'tree'
+    //             }
+    //         }
+    //     ]
+    // },
     
-    {
-        path: '/form',
-        component: Layout,
-        children: [{
-            path: 'index',
-            name: 'Forms',
-            component: Vue.component('form',require ('./pages/form/index')),
-            meta: {
-                title: 'Form',
-                icon: 'file-text'
-            }
-        }]
-    },
+    // {
+    //     path: '/form',
+    //     component: Layout,
+    //     children: [{
+    //         path: 'index',
+    //         name: 'Forms',
+    //         component: Vue.component('form',require ('./pages/form/index')),
+    //         meta: {
+    //             title: 'Form',
+    //             icon: 'file-text'
+    //         }
+    //     }]
+    // },
     {
         path: '/post',
         component: Layout,
@@ -125,7 +125,7 @@
         {
             path: 'edit/:id',
             name: 'edit',
-            component: Vue.component('edit', require('./pages/post/edit')),
+            component: Vue.component('edit', require('./pages/post/editPost')),
             hidden:true,
             // props: true,
             meta: {

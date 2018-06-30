@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
-    <el-form ref="post">
-    <input type="hidden" name="_token">
+    <el-form :model="blog" :rules="rules2" ref="post">
+    <input type="hidden" name="_token" :value="csrf">
       <el-form-item label="Title" prop="title" >
         <el-input v-model="blog.title" placeholder="Title"></el-input>
       </el-form-item>
@@ -11,19 +11,19 @@
           <el-option label="Zone two" value="beijing"></el-option>
         </el-select> -->
 
-      <vue-html5-editor class="form-control" :content="blog.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor>
+      <vue-html5-editor class="form-control" :content="blog.body" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor>
       </el-form-item>
 
        <!-- <trumbowyg v-model="myHTML" class="form-control"></trumbowyg> -->
       <!-- <wysiwyg v-model="myHTML" /> -->
-      <!-- <el-form-item label="Tags">
+      <el-form-item label="Tags">
             <vue-tags-input class="form-control"
-              v-model="post.tag"
-              :tags="post.tags"
+              v-model="blog.tags"
+              :tags="blog.tag"
               :validation="validation"
-              @tags-changed="newTags => post.tags = newTags"
+              @tags-changed="newTags => blog.tag = newTags"
             />
-      </el-form-item> -->
+      </el-form-item>
             <!-- <el-select class="form-control"
                 v-model="post.tags"
                 multiple
@@ -57,20 +57,27 @@
           </el-option>
         </el-select>
       </el-form-item>
-      <!-- <el-form-item label="Image"> -->
+      
+      <el-form-item label="Image">
         <!-- <el-checkbox-group v-model="post.type">
           <el-checkbox label="Online activities" name="type"></el-checkbox>
           <el-checkbox label="Promotion activities" name="type"></el-checkbox>
           <el-checkbox label="Offline activities" name="type"></el-checkbox>
           <el-checkbox label="Simple brand exposure" name="type"></el-checkbox>
         </el-checkbox-group> -->
-       <!-- <div class="form-group files"> -->
+       <div class="form-group files">
+        
        <!-- <img :src="post.imageUrl" alt="Image"> -->
-       <!-- <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
+       <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
       
        </div>
-      </el-form-item> -->
-
+      </el-form-item>
+      <el-form-item>
+         <div v-if="blog.image !=null">
+       <img v-if="image_change == true" class="img-fluid" :src="blog.image" alt="Image">
+       <img v-else class="img-fluid" :src="'/images/posts/images/'+blog.image" alt="Image">
+         </div>
+      </el-form-item>
       <!-- <el-form-item label="Resources">
         <el-radio-group v-model="post.resource">
           <el-radio label="Sponsor"></el-radio>
@@ -81,7 +88,7 @@
         <el-input type="textarea" v-model="post.desc"></el-input>
       </el-form-item> -->
       <el-form-item>
-        <el-button type="primary" @click="handleLoginFormSubmit('post')">Add</el-button>
+        <el-button type="primary" @click="updatePost('post')">Add</el-button>
         <el-button @click="onCancel">Cancel</el-button>
       </el-form-item>
     </el-form>
@@ -107,11 +114,19 @@ export default {
 
 }
     return {
+      image_change:false,
+      id:this.$route.params.id,
+      blog:{
+        tags_submit:[],
+        tags:'',
+      },
+        tag:{},
+
       csrf: document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
 
-        rules2: {
+        rules3: {
          title: [
             {required: true, message: 'Please input title', trigger: 'change' }
           ],
@@ -153,12 +168,39 @@ export default {
         }],
     }
   },
-  methods: {
-    created(){
-      axios.get('/admin/post/'+ this.$route.params.id +'/edit')
+  created: function () {
+      // console.log(this.$router.params.id); 
+      axios.get('/admin/post/'+this.id+'/edit')
           .then((response) => {
             console.log(response.data.data);
             this.blog = response.data.data;
+            this.blog.tag = this.blog.tag.split(',');
+            // this.blog.tag = '';
+          })
+          .catch((error) => console.log(error))
+    },
+  methods: {
+    updatePost:  function (formName) {
+      // for (let i = 0; i < this.blog.tag.length; i++){
+      // this.blog.tags_submit.push(this.blog.tag[i].text);
+      // }
+      // console.log(this.blog.tag['0']);
+      let formData = new FormData();
+      formData.append('image', this.blog.image);
+      formData.append('title', this.blog.title);
+      formData.append('body', this.blog.body);
+      formData.append('username', this.blog.username);
+      formData.append('user_id', this.blog.user_id);
+      formData.append('tag', this.blog.tag.toString());
+      formData.append('category', this.blog.category);
+      formData.append('post_link', this.blog.post_link);
+      formData.append('_method', 'PUT');
+      axios.post('/admin/post/'+this.blog.id,formData, {headers: {'Content-Type': 'multipart/form-data'}})
+          .then((response) => {
+            console.log(response);
+            // this.blog = response.data.data;
+            // this.tag = this.blog.tag.split(',');
+            // this.blog.tag = '';
           })
           .catch((error) => console.log(error))
     },
@@ -175,8 +217,9 @@ export default {
       // }
 
       var file =e.target.files[0];
-      this.post.imageUrl = URL.createObjectURL(file);
-      console.log(this.post.imageUrl);
+      this.blog.image = URL.createObjectURL(file);
+      console.log(this.blog.image);
+      this.image_change = true;
       // this.post.imageUrl =this.$refs.file.files[0];
       // console.log(this.post.imageUrl);
 },
