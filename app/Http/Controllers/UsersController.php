@@ -48,37 +48,42 @@ class UsersController extends Controller
     * @return \Illuminate\Http\Response
     */
     public function store(CreateUserExcelRequest $request)
-    {
-        // $input = $request
+    {  
+        $input = $request->only('type');
+        $type= implode(' ',$input);
+        \Log::info($type);
+        
         if($request->hasFile('excel'))
         {
             try
             {
                 DB::beginTransaction();
+                $type = $request->only('type');
                 $path = $request->file('excel')->getRealPath();
-                Excel::load($path, function ($reader)
+                $user = Excel::load($path)->get();
+                
+                if(!empty($user) && $user->count())
                 {
-                    foreach ($reader->toArray() as $key => $row) 
+                    foreach ($user as $key => $value)
                     {
-                        $type = $request->only('type');
                         $password=str_random(6);
-                        $data['username']     =  $row['username'];
-                        $data['email']        =  $row['email'];
-                        $data['phone_number'] =  $row['phone_number'];
-                        // $data['type']         =  $row['type'];
-                        $data['type']         =  $type;
-                        $data['password']     =  bcrypt($password);
-                        if(empty($data)){
-                            return $this->respondError('Post Failed', 401);
-                        }
-                        // $this->service->createUser($data);
-
+                        $data[] = [
+                            'username'     =>  $value->username,
+                            'email'        =>  $value->email,
+                            'phone_number' =>  $value->phone_number,
+                            'type'         =>  $value->type,
+                            // 'type'         =>  $type,
+                            'password'     =>  bcrypt($password),
+                        ];
+                    }
+                    if(!empty($data)){
                         DB::table('users')->insert($data);
                         DB::commit();    
-                        return $this->respondSuccess('Inserted');
+                        return $this->respondSuccess('Inserted',$data);
                     }
-                });
-            }
+                    return $this->respondError('Post Failed', 401);
+                }
+            }   
             catch(Exception $e){
                 DB::rollback();
                 return $this->respondException($e);
