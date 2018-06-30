@@ -38,19 +38,13 @@
                 name: 'security',
                 component: Vue.component('security', require('./components/security.vue')),
             },
-        ],
-        },
+        
         // {
         //     path: '/404',
         //     component: Vue.'',require(ort ('./pages/404')),
         //     hidden: true
         // },
-        
         {
-            path: '/admin',
-            component: Layout,
-            redirect: '/dashboard',
-            children: [{
                 path: 'dashboard',
                 name: 'Dashboard',
                 component: Vue.component('dashboard',require ('./pages/dashboard/index')),
@@ -60,52 +54,52 @@
                  },
                  
             }
-        ]
-        },
+    ]
         
-    //     {
-    //         path: '/example',
-    //         component: Layout,
-    //         redirect: '/example/table',
-    //         name: 'Example',
-    //         meta: {
-    //             title: 'Example',
-    //             icon: 'user'
-    //         },
-    //         children: [{
-    //             path: 'tables',
-    //             name: 'Tables',
-    //             component: Vue.component(  'table',require ('./pages/table/index')),
-    //             meta: {
-    //                 title: 'Table',
-    //                 icon: 'table'
-    //             }
-    //         },
-    //         {
-    //             path: 'tree',
-    //             name: 'Tree',
-    //             component: Vue.component(  'tree',require ('./pages/tree/index')),
-    //             meta: {
-    //                 title: 'Tree',
-    //                 icon: 'tree'
-    //             }
-    //         }
-    //     ]
-    // },
-    
-    // {
-    //     path: '/form',
-    //     component: Layout,
-    //     children: [{
-    //         path: 'index',
-    //         name: 'Forms',
-    //         component: Vue.component('form',require ('./pages/form/index')),
-    //         meta: {
-    //             title: 'Form',
-    //             icon: 'file-text'
-    //         }
-    //     }]
-    // },
+        //     {
+            //         path: '/example',
+            //         component: Layout,
+            //         redirect: '/example/table',
+            //         name: 'Example',
+            //         meta: {
+                //             title: 'Example',
+                //             icon: 'user'
+                //         },
+                //         children: [{
+                    //             path: 'tables',
+                    //             name: 'Tables',
+                    //             component: Vue.component(  'table',require ('./pages/table/index')),
+                    //             meta: {
+                        //                 title: 'Table',
+                        //                 icon: 'table'
+                        //             }
+                        //         },
+                        //         {
+                            //             path: 'tree',
+                            //             name: 'Tree',
+                            //             component: Vue.component(  'tree',require ('./pages/tree/index')),
+                            //             meta: {
+                                //                 title: 'Tree',
+                                //                 icon: 'tree'
+                                //             }
+                                //         }
+                                //     ]
+                                // },
+                                
+                                // {
+                                    //     path: '/form',
+                                    //     component: Layout,
+                                    //     children: [{
+                                        //         path: 'index',
+                                        //         name: 'Forms',
+                                        //         component: Vue.component('form',require ('./pages/form/index')),
+                                        //         meta: {
+                                            //             title: 'Form',
+                                            //             icon: 'file-text'
+                                            //         }
+                                            //     }]
+                                            // },
+                                        },
     {
         path: '/post',
         component: Layout,
@@ -116,7 +110,7 @@
         children: [{
             path: 'index',
             name: 'Posts',
-            component: Vue.component('Post', require('./pages/post/index')),
+            component: Vue.component('index', require('./pages/post/index')),
             meta: {
                 title: 'Add Post',
                 icon: 'file-text'
@@ -136,7 +130,7 @@
         {
                 path: 'view',
                 name: 'viewPosts',
-                component: Vue.component('Post', require('./pages/post/viewPosts')),
+                component: Vue.component('view', require('./pages/post/viewPosts')),
                 meta: {
                     title: 'Manage',
                     icon: 'file-text'
@@ -144,6 +138,25 @@
             }
     ]
     },
+    {
+        path: '/user',
+        component: Layout,
+        meta: {
+            title: 'User',
+            icon: 'user'
+        },
+        children: [{
+                path: 'add',
+                name: 'Add',
+                component: Vue.component('user', require('./pages/user/addUser')),
+                meta: {
+                    title: 'Add User',
+                    icon: 'user-plus'
+                }
+            },
+        ]
+    },
+    
     
     // {
     //     path: '*',

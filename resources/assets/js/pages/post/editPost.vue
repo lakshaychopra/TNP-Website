@@ -117,9 +117,10 @@ export default {
       image_change:false,
       id:this.$route.params.id,
       blog:{
+        tags_submit:{},
         tags:'',
-      },
         tag:{},
+      },
 
       csrf: document
         .querySelector('meta[name="csrf-token"]')
@@ -173,6 +174,7 @@ export default {
           .then((response) => {
             console.log(response.data.data);
             this.blog = response.data.data;
+            // console.log(this.blog.image);
             this.blog.tag = this.blog.tag.split(',');
             // this.blog.tag = '';
           })
@@ -180,17 +182,19 @@ export default {
     },
   methods: {
     updatePost:  function (formName) {
-      // for (let i = 0; i < this.blog.tag.length; i++){
-      // this.blog.tags_submit.push(this.blog.tag[i].text);
-      // }
-      // console.log(this.blog.tag['0']);
+       this.$refs[formName].validate((valid) => {
+          if (valid) {
+      for (let i = 0; i < this.blog.tag.length; i++){
+      this.blog.tags_submit.push(this.blog.tag[i].text);
+      }
+      console.log(this.blog.tag);
       let formData = new FormData();
       formData.append('image', this.blog.image);
       formData.append('title', this.blog.title);
       formData.append('body', this.blog.body);
       formData.append('username', this.blog.username);
       formData.append('user_id', this.blog.user_id);
-      formData.append('tag', this.blog.tag.toString());
+      formData.append('tag', this.blog.tags_submit.toString());
       formData.append('category', this.blog.category);
       formData.append('post_link', this.blog.post_link);
       formData.append('_method', 'PUT');
@@ -201,8 +205,10 @@ export default {
             // this.tag = this.blog.tag.split(',');
             // this.blog.tag = '';
           })
-          .catch((error) => console.log(error))
-    },
+          .catch((error) => console.log(error));
+      }
+    })
+  },
    updateData: function (data) {
         this.blog.body = data
     },
@@ -216,7 +222,7 @@ export default {
       // }
 
       // var file =e.target.files[0];
-      this.blog.image =e.target.files[0];
+      this.blog.image = e.target.files[0];
       console.log(this.blog.image);
       this.image_change = true;
       // this.post.imageUrl =this.$refs.file.files[0];

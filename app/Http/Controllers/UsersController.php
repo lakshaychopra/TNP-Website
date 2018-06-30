@@ -54,7 +54,7 @@ class UsersController extends Controller
             try{
                 DB::beginTransaction();
                 $path = $request->file('excel')->getRealPath();
-                $data = Excel::load($path)->get();
+                $data = User::load($path)->get();
                 if($data->count()){
                     foreach ($data as $key => $value) {
                         $password=str_random(6);
