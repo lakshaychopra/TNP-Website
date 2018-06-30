@@ -8,9 +8,9 @@
                           <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                           <div class="dropdown-menu">
                             <router-link v-bind:to="{ path:'/post/edit/'+post.id}">
-                            <a class="dropdown-item" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></router-link>
+                            <a class="dropdown-item" href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></router-link>
                              <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                            <a class="dropdown-item" href="" @click.prevent="delPost(post.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                              <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
                           </div>
@@ -52,6 +52,16 @@
         }
       },
       methods:{
+        delPost(id) {
+          console.log(id);
+          axios.post('/admin/post/'+id,{
+            id:id,
+            _method:'DELETE'
+          }) .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => console.log(error))
+        },
         getImage(index){
           return "background: url(/images/posts/images/" + index +") center no-repeat;";
         },
@@ -69,7 +79,7 @@
           // .catch((error) => console.log(error))
         }
       },
-      mounted() {
+      created() {
           axios.get(addPostURL)
           .then((response) => {
             // var obj = JSON.parse(response.data);

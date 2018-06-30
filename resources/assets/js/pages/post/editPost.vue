@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-form :model="blog" :rules="rules2" ref="post">
+    <el-form :model="post" :rules="rules2" ref="post">
     <input type="hidden" name="_token" :value="csrf">
       <el-form-item label="Title" prop="title" >
         <el-input v-model="blog.title" placeholder="Title"></el-input>
@@ -117,7 +117,6 @@ export default {
       image_change:false,
       id:this.$route.params.id,
       blog:{
-        tags_submit:[],
         tags:'',
       },
         tag:{},
@@ -205,7 +204,7 @@ export default {
           .catch((error) => console.log(error))
     },
    updateData: function (data) {
-        this.post.content = data
+        this.blog.body = data
     },
     handleChange(e) {
       // let image = e.target.files[0];
@@ -216,8 +215,8 @@ export default {
       //   // console.log(e)
       // }
 
-      var file =e.target.files[0];
-      this.blog.image = URL.createObjectURL(file);
+      // var file =e.target.files[0];
+      this.blog.image =e.target.files[0];
       console.log(this.blog.image);
       this.image_change = true;
       // this.post.imageUrl =this.$refs.file.files[0];
@@ -241,14 +240,14 @@ export default {
         image:this.post.imageUrl
       };
       let formData = new FormData();
-      formData.append('image', postData.image);
-      formData.append('title', postData.title);
-      formData.append('body', postData.body);
-      formData.append('username', postData.username);
-      formData.append('user_id', postData.user_id);
-      formData.append('tag', postData.tag);
-      formData.append('category', postData.category);
-      formData.append('post_link', postData.post_link);
+      formData.append('image', blog.image);
+      formData.append('title', blog.title);
+      formData.append('body', blog.body);
+      formData.append('username', blog.username);
+      formData.append('user_id', blog.user_id);
+      formData.append('tag', blog.tag.toString());
+      formData.append('category', blog.category);
+      formData.append('post_link', blog.post_link);
       axios.post(addPostURL,formData, {headers: {'Content-Type': 'multipart/form-data'}})
         .then(function(response) {
           console.log(response);

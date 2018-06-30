@@ -37,7 +37,7 @@ class PostRepository
     
     // update record in the database
     public function update(array $data, $id){
-        $record = $this->find($id);
+        $record = Post::find($id);
         $data = $this->setPayload($data);
         return $record->update($data, $id);
     }
