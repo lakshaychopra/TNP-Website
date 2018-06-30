@@ -51,7 +51,6 @@ class UserRepository
     private function setPayload(array $payload)
 	{
 		return [
-			'name'               => $payload['name'],
 			'username'			 => $payload['username'],
 			'password'	     	 => $payload['password'],
 			'email'	 	         => $payload['email'],

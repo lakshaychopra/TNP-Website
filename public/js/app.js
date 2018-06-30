@@ -60520,6 +60520,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           var formData = new FormData();
           formData.append('excel', _this.user.file);
           formData.append('type', _this.user.type);
+          console.log(_this.user.type);
           axios.post('/admin/user', formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
             console.log(response);
             // if (response.status == "200") {

@@ -77,6 +77,7 @@ export default {
       let formData = new FormData();
       formData.append('excel', this.user.file);
       formData.append('type', this.user.type);
+      console.log(this.user.type)
       axios.post('/admin/user',formData, {headers: {'Content-Type': 'multipart/form-data'}})
         .then(function(response) {
           console.log(response);

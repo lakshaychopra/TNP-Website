@@ -55,13 +55,12 @@ class UsersController extends Controller
             try
             {
                 DB::beginTransaction();
-                $type = $request->only('type');
                 $path = $request->file('excel')->getRealPath();
                 Excel::load($path, function ($reader)
                 {
                     foreach ($reader->toArray() as $key => $row) 
                     {
-                        
+                        $type = $request->only('type');
                         $password=str_random(6);
                         $data['username']     =  $row['username'];
                         $data['email']        =  $row['email'];
@@ -73,6 +72,7 @@ class UsersController extends Controller
                             return $this->respondError('Post Failed', 401);
                         }
                         // $this->service->createUser($data);
+
                         DB::table('users')->insert($data);
                         DB::commit();    
                         return $this->respondSuccess('Inserted');
