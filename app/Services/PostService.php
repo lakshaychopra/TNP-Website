@@ -28,9 +28,9 @@ class PostService
 		return $this->repository->update($payload, $id);
 	}
 	
-	public function deletePost($id)
+	public function deletePost(Post $post)
 	{
-		return $this->repository->delete($id);
+		return $this->repository->delete($post);
 	}
 	
 	public function uploadPostImageService(array $payload)

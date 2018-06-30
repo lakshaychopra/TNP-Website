@@ -54,9 +54,9 @@ class PostRepository
 	}
 
     // remove record from the database
-    public function delete($id)
+    public function delete(Post $post)
     {
-        $record = Post::find($id);
+        $record = Post::find($post);
         return $this->model->destroy($record);
     }
     
