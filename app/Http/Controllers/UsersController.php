@@ -50,27 +50,29 @@ class UsersController extends Controller
     public function store(CreateUserExcelRequest $request)
     {
         $input = $request->all();
+         $type = $input['type']; 
+
         if($request->hasFile('excel')){
             try{
                 DB::beginTransaction();
                 $path = $request->file('excel')->getRealPath();
-                $data = User::load($path)->get();
+                $data = \Excel::load($path)->get();
                 if($data->count()){
                     foreach ($data as $key => $value) {
                         $password=str_random(6);
-                        $user = [
-                            'name'    => $value->name, 
+                        $arr[] = [
                             'username' => $value->username,
+                            'name'    => $value->name, 
                             'email' => $value->email,
                             'phone_number' => $value->phone_number,
+                            'type'=>$type,  
                             'password'=>bcrypt($password),
-                            'type'=>$type
                         ];
                     }
-                    if(!empty($user)){
-                        $userCreate = $this->service->createUser($user);
+                    if(!empty($arr)){
+                        // $this->service->createUser($user);
+                        $userCreate = DB::table('users')->insert($arr);
                         DB::commit();    
-                        //DB::table('users')->insert($arr);
                         return $this->respondSuccess('Inserted',$userCreate );
                     }
                     else{
