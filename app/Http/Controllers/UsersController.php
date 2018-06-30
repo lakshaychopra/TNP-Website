@@ -50,9 +50,6 @@ class UsersController extends Controller
     public function store(CreateUserExcelRequest $request)
     {  
         $input = $request->only('type');
-        $type= implode(' ',$input);
-        \Log::info($type);
-        
         if($request->hasFile('excel'))
         {
             try
@@ -66,13 +63,14 @@ class UsersController extends Controller
                 {
                     foreach ($user as $key => $value)
                     {
+                        $type= implode(' ',$input);
                         $password=str_random(6);
                         $data[] = [
                             'username'     =>  $value->username,
                             'email'        =>  $value->email,
                             'phone_number' =>  $value->phone_number,
-                            'type'         =>  $value->type,
-                            // 'type'         =>  $type,
+                            // 'type'         =>  $value->type,
+                            'type'         =>  $type,
                             'password'     =>  bcrypt($password),
                         ];
                     }
