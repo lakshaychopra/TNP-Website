@@ -114,7 +114,7 @@ class PostController extends Controller
             if ($request->hasFile('image')) {
                 $post['image'] = $this->service->updatePostImage($post);
             } 
-            $post = $this->service->updatePost($request->all(),$post->id);
+            $post = $this->service->updatePost($request->all(),$post);
             DB::commit();
             return $this->respondSuccess('Updated',$post);
         } catch (Exception $e) {
@@ -131,8 +131,8 @@ class PostController extends Controller
     */
     public function destroy(Post $post)
     {
-        $this->service->deletePostImage($post->id);
-        $this->service->deletePost($post->id);
+        $this->service->deletePostImage($post);
+        $this->service->deletePost($post);
         return $this->respondSuccess('Deleted');
     }
     

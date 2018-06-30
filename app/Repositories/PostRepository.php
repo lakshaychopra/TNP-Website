@@ -39,7 +39,7 @@ class PostRepository
     public function update(array $data, $id){
         $record = Post::find($id);
         $data = $this->setPayload($data);
-        return $record->update($data, $id);
+        return $record->update($data, $record);
     }
     
     public function uploadPostImage(array $data)
@@ -56,7 +56,8 @@ class PostRepository
     // remove record from the database
     public function delete($id)
     {
-        return $this->model->destroy($id);
+        $record = Post::find($id);
+        return $this->model->destroy($record);
     }
     
     private function setPayload(array $payload)

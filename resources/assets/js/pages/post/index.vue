@@ -166,8 +166,9 @@ export default {
       //   // console.log(e)
       // }
 
-      var file =e.target.files[0];
-      this.post.imageUrl = URL.createObjectURL(file);
+      // var file =e.target.files[0];
+      // this.post.imageUrl = URL.createObjectURL(file);
+      this.post.imageUrl = e.target.files[0];
       console.log(this.post.imageUrl);
       // this.post.imageUrl =this.$refs.file.files[0];
       // console.log(this.post.imageUrl);
