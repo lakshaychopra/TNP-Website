@@ -7,7 +7,8 @@
                       <div class="dropdown">
                           <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" @click="getPost(post.id)"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                            <router-link v-bind:to="{ path:'/post/edit/'+post.id}">
+                            <a class="dropdown-item" href="#"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></router-link>
                              <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                              <div class="dropdown-divider"></div>
@@ -56,16 +57,16 @@
         },
         getPost(id){
           // console.log(id);
-          axios.get('/admin/post/'+ id +'/edit')
-          .then((response) => {
+          // axios.get('/admin/post/'+ id +'/edit')
+          // .then((response) => {
             // console.log(response.data.data);
-            this.postEdit = response.data.data;
-            this.$router.push({
-              name:'edit',
-              params:{rec: this.postEdit}
-            });
-          })
-          .catch((error) => console.log(error))
+            // this.postEdit = response.data.data;
+            // this.$router.push({
+            //   name:'edit',
+            //   params:{rec: id}
+            // });
+          // })
+          // .catch((error) => console.log(error))
         }
       },
       mounted() {

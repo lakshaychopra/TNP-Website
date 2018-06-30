@@ -165,8 +165,12 @@ export default {
       //   this.post.imageUrl = e.target.result
       //   // console.log(e)
       // }
-      this.post.imageUrl =this.$refs.file.files[0];
+
+      var file =e.target.files[0];
+      this.post.imageUrl = URL.createObjectURL(file);
       console.log(this.post.imageUrl);
+      // this.post.imageUrl =this.$refs.file.files[0];
+      // console.log(this.post.imageUrl);
 },
     handleLoginFormSubmit(formName) {
       this.$refs[formName].validate((valid) => {
