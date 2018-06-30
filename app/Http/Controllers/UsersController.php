@@ -49,36 +49,35 @@ class UsersController extends Controller
     */
     public function store(CreateUserExcelRequest $request)
     {
-        $input = $request->all();
-         $type = $input['type']; 
-
-        if($request->hasFile('excel')){
-            try{
+        // $input = $request
+        if($request->hasFile('excel'))
+        {
+            try
+            {
                 DB::beginTransaction();
+                $type = $request->only('type');
                 $path = $request->file('excel')->getRealPath();
-                $data = \Excel::load($path)->get();
-                if($data->count()){
-                    foreach ($data as $key => $value) {
+                Excel::load($path, function ($reader)
+                {
+                    foreach ($reader->toArray() as $key => $row) 
+                    {
+                        
                         $password=str_random(6);
-                        $arr[] = [
-                            'username' => $value->username,
-                            'name'    => $value->name, 
-                            'email' => $value->email,
-                            'phone_number' => $value->phone_number,
-                            'type'=>$type,  
-                            'password'=>bcrypt($password),
-                        ];
-                    }
-                    if(!empty($arr)){
-                        // $this->service->createUser($user);
-                        $userCreate = DB::table('users')->insert($arr);
+                        $data['username']     =  $row['username'];
+                        $data['email']        =  $row['email'];
+                        $data['phone_number'] =  $row['phone_number'];
+                        // $data['type']         =  $row['type'];
+                        $data['type']         =  $type;
+                        $data['password']     =  bcrypt($password);
+                        if(empty($data)){
+                            return $this->respondError('Post Failed', 401);
+                        }
+                        // $this->service->createUser($data);
+                        DB::table('users')->insert($data);
                         DB::commit();    
-                        return $this->respondSuccess('Inserted',$userCreate );
+                        return $this->respondSuccess('Inserted');
                     }
-                    else{
-                        return $this->respondError('Post Failed', 401);
-                    }
-                }
+                });
             }
             catch(Exception $e){
                 DB::rollback();
@@ -86,6 +85,7 @@ class UsersController extends Controller
             }
         }
     }
+    
     /**
     * Display the specified resource.
     *
