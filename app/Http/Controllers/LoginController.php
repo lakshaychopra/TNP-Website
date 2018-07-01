@@ -29,7 +29,7 @@ class LoginController extends Controller
         if (!$token = JWTAuth::attempt($credentials)) {
             return $this->respondUnauthorized();
         }
-
+        
         $user = JWTAuth::user();
         
         if (!$user->isActiveAndVerified()) {
@@ -38,9 +38,9 @@ class LoginController extends Controller
         
         try{
             DB::beginTransaction();
-
+            
             $this->service->otpGenerated();
-
+            
             $data = [
                 'access_token' => $token,
             ];
@@ -59,28 +59,28 @@ class LoginController extends Controller
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
         $user = JWTAuth::user();
-     
+        
         if(!$request->input('token_2fa') == $user->token_2fa)
         {    
             return $this->respondUnauthorized();
         }
-
+        
         try
         {
             DB::beginTransaction();
-   
+            
             $user->token_2fa_expiry = Carbon::now()->addMinutes(config('session.lifetime'));
             $user->save();
-           
+            
             DB::commit();
-           
+            
             $data=[
                 'id' => $user->id,
                 'name' => $user->name,
                 'username' => $user->username,
                 'type' => $user->type,
             ];
-
+            
             return $this->respondSuccess('Authorized!! You have been logged-in!!', $data);
         }   
         catch(JWTException $e)
@@ -90,12 +90,18 @@ class LoginController extends Controller
         }
     }
     
-    public function doLogout()
+    public function logout(Request $request) 
     {
-        Auth::logout(); // log the user out of our application
-        \Session::flush();
-        return $this->respondSuccess('Success!! You have been logged-out!!');
-        
+        // Get JWT Token from the request header key "Authorization"
+        $token = $request->header('Authorization');
+        // Invalidate the token
+        try {
+            JWTAuth::invalidate($token);
+            $this->respondSuccess('Success!! You have been logged-out!!');
+        } catch (JWTException $e) {
+            // something went wrong whilst attempting to encode the token
+            return $this->respondException($e);
+        }
     }
-    
+
 }

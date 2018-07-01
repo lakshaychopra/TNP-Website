@@ -64,6 +64,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'two_factor' => \App\Http\Middleware\TwoFactorVerify::class,
+        'two_factor' => \App\Http\Middleware\TwoFactorVerify::class, 
+        'jwt.auth' => Tymon\JWTAuth\Middleware\Authenticate::class,
+        'jwt.refresh' => Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 }
