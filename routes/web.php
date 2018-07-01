@@ -30,7 +30,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/notify', array('uses' => 'PostController@PushNotification'))->name('pushNotify');
         Route::post('/markasread', array('uses' => 'PostController@MarkAsRead'))->name('markAsRead');
         Route::post('/markasunread', array('uses' => 'PostController@MarkAsUnRead'))->name('markAsUnRead');
-        Route::get('/excelfile', array('uses'=>'UsersController@downloadExcelFile'))->name('excelFile');
+        
+        Route::get('/userexcelfile', array('uses'=>'UsersController@userExcelFile'))->name('userExcelFile');
+        Route::get('/usercreatemail', array('uses'=>'UsersController@userCreateMail'))->name('userCreateMail');
+
     // });
 });
 

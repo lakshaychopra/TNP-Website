@@ -135,7 +135,7 @@ class UsersController extends Controller
     }
     
     
-    public function downloadExcelFile(){
+    public function userExcelFile(){
         $user = User::where('is_active',0)->get()->toArray();
         return \Excel::create('user', function($excel) use ($user) {
             $excel->sheet('User data', function($sheet) use ($user)
@@ -144,5 +144,9 @@ class UsersController extends Controller
             });
         })->download('xlsx');
     }      
-    
+
+    public function userCreateMail(){
+        $user = User::where('is_active',0)->get();
+        event(new UserCreatedEvent($user));
+    }
 }
