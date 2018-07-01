@@ -15,7 +15,7 @@
 Route::group(['prefix' => 'admin'], function () {
     Route::post('/login', array('uses' => 'LoginController@loginUser'))->name('users.post.login');
     
-    // Route::group(['middleware' => 'web'], function() {
+    Route::group(['middleware' => 'jwt.auth'], function() {
         
         Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
     
@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/userexcelfile', array('uses'=>'UsersController@userExcelFile'))->name('userExcelFile');
         Route::get('/usercreatemail', array('uses'=>'UsersController@userCreateMail'))->name('userCreateMail');
 
-    // });
+    });
 });
 
 Route::resource('/student', 'StudentsController');
