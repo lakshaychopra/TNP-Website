@@ -69,17 +69,17 @@ class UsersController extends Controller
                             'username'     =>  $value->username,
                             'email'        =>  $value->email,
                             'phone_number' =>  $value->phone_number,
-                            // 'type'         =>  $value->type,
+                            'type'         =>  $value->type,
                             'type'         =>  $type,
                             'password'     =>  bcrypt($password),
                         ];
                     }
-                    if(!empty($data)){
-                        DB::table('users')->insert($data);
-                        DB::commit();    
-                        return $this->respondSuccess('Inserted',$data);
+                    if(empty($data)){
+                        return $this->respondError('Insertion Failed', 401);
                     }
-                    return $this->respondError('Post Failed', 401);
+                    $inserted = DB::table('users')->insert($data);
+                    DB::commit();    
+                    return $this->respondSuccess('Inserted',$data);
                 }
             }   
             catch(Exception $e){
@@ -118,7 +118,7 @@ class UsersController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(CreateUserExcelRequest $request, $id)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -133,4 +133,16 @@ class UsersController extends Controller
     {
         //
     }
+    
+    
+    public function downloadExcelFile(){
+        $user = User::where('is_active',0)->get()->toArray();
+        return \Excel::create('user', function($excel) use ($user) {
+            $excel->sheet('User data', function($sheet) use ($user)
+            {
+                $sheet->fromArray($user);
+            });
+        })->download('xlsx');
+    }      
+    
 }
