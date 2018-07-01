@@ -65,30 +65,8 @@ class LoginController extends Controller
             return $this->respondUnauthorized();
         }
         
-        try
-        {
-            DB::beginTransaction();
-            
-            $user->token_2fa_expiry = Carbon::now()->addMinutes(config('session.lifetime'));
-            $user->save();
-            
-            DB::commit();
-            
-            $data=[
-                'id' => $user->id,
-                'name' => $user->name,
-                'username' => $user->username,
-                'type' => $user->type,
-            ];
-            
-            return $this->respondSuccess('Authorized!! You have been logged-in!!', $data);
-        }   
-        catch(JWTException $e)
-        {
-            DB::rollback();
-            return $this->respondException($e);
-        }
-    }
+        return $this->respondSuccess('Authorized!! You have been logged-in!!', $user);
+    }   
     
     public function logout(Request $request) 
     {
@@ -103,5 +81,5 @@ class LoginController extends Controller
             return $this->respondException($e);
         }
     }
-
+    
 }
