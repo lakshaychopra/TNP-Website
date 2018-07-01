@@ -13,7 +13,7 @@
 
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::post('/login', array('uses' => 'LoginController@loginUser'))->name('users.post.login');
+    Route::post('/login', array('uses' => 'LoginController@login'))->name('postLogin');
     
     Route::group(['middleware' => 'jwt.auth'], function() {
         
