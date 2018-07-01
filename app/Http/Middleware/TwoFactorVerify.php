@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
+use JWTAuth;
 use \Carbon\Carbon;
 
 class TwoFactorVerify
@@ -17,7 +17,7 @@ class TwoFactorVerify
     */
     public function handle($request, Closure $next)
     {
-        $user = Auth::user();
+        $user = JWTAuth::user();
         if($user->token_2fa_expiry > Carbon::now()){
             return $next($request);
         } 
