@@ -11,11 +11,10 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use App\Models\User;
 
-class TwoFactorEvent
+class UserCreatedEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $user;
     /**
      * Create a new event instance.
      *
