@@ -27,7 +27,7 @@ class UsersController extends Controller
     {
         //data fetched from database in $User
         // $this->service->listUser();
-        $user = Post::orderBy('created_at', 'decs')->paginate(6);
+        $user = Post::orderBy('created_at', 'decs')->paginate(20);
         return $this->respondData($user);
     }
     
@@ -69,7 +69,6 @@ class UsersController extends Controller
                             'username'     =>  $value->username,
                             'email'        =>  $value->email,
                             'phone_number' =>  $value->phone_number,
-                            'type'         =>  $value->type,
                             'type'         =>  $type,
                             'password'     =>  bcrypt($password),
                         ];

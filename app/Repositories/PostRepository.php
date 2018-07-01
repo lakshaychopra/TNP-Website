@@ -22,10 +22,13 @@ class PostRepository
         return $this->model->all();
     }
     
-    public function list()
+    public function list($limit = false)
     {
-        $lists = Post::orderBy('created_at', 'decs')->paginate(6);
-        return $lists;
+        $builder = Post::orderBy('created_at', 'decs');
+        if(!$limit) {
+            return $builder->get();
+        }
+        return $builder->paginate($limit);
     }
     
     // create new record

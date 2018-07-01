@@ -21,6 +21,7 @@ class LoginController extends Controller
     public function __construct(LoginService $service)
     {
         $this->service = $service;
+        
     }
     /**
     * Display a listing of the resource.
@@ -35,11 +36,11 @@ class LoginController extends Controller
     public function loginUser(UserLoginRequest $request)
     {
         $credentials = $request->only('username', 'password');
-        
+
         if (!$token = JWTAuth::attempt($credentials)) {
             return $this->respondUnauthorized();
         }
-        
+        // dd($token);
         $user = JWTAuth::user();
         
         if (!$user->isActiveAndVerified()) {
@@ -52,8 +53,8 @@ class LoginController extends Controller
             // $this->respondWithToken($token);
             $data = [
                 'access_token' => $token,
-                'token_type' => 'bearer',
-                'expires_in' => auth()->factory()->getTTL() * 60
+                // 'token_type' => 'bearer',
+                // 'expires_in' => auth()->factory()->getTTL() * 60
             ];
             DB::commit();
             

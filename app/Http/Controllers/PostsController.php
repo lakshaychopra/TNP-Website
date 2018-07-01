@@ -12,12 +12,15 @@ use DB;
 use Exception;
 use Notification;
 use Auth;
+use App\Repositories\PostRepository;
+use App\Transformers\PostTransformer;
 
 class PostController extends Controller
 {
-    public function __construct(PostService $service)
+    public function __construct(PostService $service,PostRepository $repository)
     {
         $this->service = $service;
+        $this->repository = $repository;
     }
     
     /**
@@ -25,11 +28,12 @@ class PostController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function index()
+    public function index(Request $request)
     {
-        // $this->service->listPost();
-        $post = Post::orderBy('created_at', 'decs')->paginate(6);
-        return $this->respondData($post);
+        $limit  = $request->input('limit') ?? 6;
+        $posts = $this->repository->list($limit);
+        // return \Fractal::collection($posts, new PostTransformer, 'post');
+        return $this->respondData($posts);
     }
     
     /**
