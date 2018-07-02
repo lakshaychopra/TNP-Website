@@ -136,9 +136,8 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         // $post['image'] = $this->service->deletePostImage($post);
-        // $delete = $this->service->deletePost($post);
-        // $record = Post::find($post->id);
-        $delete = Post::destroy($post->id);
+        // $delete = Post::destroy($post->id);
+        $delete = $this->repository->delete($post);
         return $this->respondSuccess('Deleted', $delete);
     }
     

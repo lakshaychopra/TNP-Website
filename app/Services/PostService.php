@@ -13,10 +13,6 @@ class PostService
 		$this->repository = $repository;
 	}
 	
-	public function listPost(){
-		return $this->repository->list();
-	}
-	
 	public function createPost(array $payload)
 	{
 		return $this->repository->create($payload);
@@ -25,11 +21,6 @@ class PostService
 	public function updatePost(array $payload, $id)
 	{
 		return $this->repository->update($payload, $id);
-	}
-	
-	public function deletePost(Post $post)
-	{
-		return $this->repository->delete($post);
 	}
 	
 	public function uploadPostImageService(array $payload)
