@@ -487,6 +487,8 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+var _this = this;
+
 /* harmony default export */ __webpack_exports__["a"] = ({
     logout: function logout() {
         return axios.post('/api/auth/logout').then(function (response) {
@@ -505,12 +507,46 @@ module.exports = {
         });
     },
     check: function check() {
-        return axios.post('/admin/check').then(function (response) {
+        return axios.post('/api/check').then(function (response) {
             return !!response.data.authenticated;
         }).catch(function (error) {
             return response.data.authenticated;
         });
     },
+
+
+    setToken: function setToken(token, expiration) {
+        localStorage.setItem('token', token);
+        localStorage.setItem('expiration', expiration);
+    },
+    getToken: function getToken() {
+        var token = localStorage.getItem('token');
+        // var expiration = localStorage.getItem('expiration')
+        if (!token) {
+            return null;
+        }
+
+        // if (!token || !expiration) {
+        //     return null
+        // }
+        // if (Date.now() > parseInt(expiration)) {
+        //     this.destroyToken()
+        //     return null
+        // } else
+        return token;
+    },
+    destroyToken: function destroyToken() {
+        localStorage.removeItem('token');
+        // localStorage.removeItem('expiration')
+    },
+    isAuthenticated: function isAuthenticated() {
+        if (_this.getToken()) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
     getFilterURL: function getFilterURL(data) {
         var url = '';
         $.each(data, function (key, value) {
@@ -19405,8 +19441,8 @@ module.exports = {
 /* unused harmony export oauthURL */
 /* unused harmony export addPostURL */
 var apiDomain = 'http://localhost:8000';
-var loginURL = '/admin/login';
-var securityURL = '/admin/security';
+var loginURL = '/api/login';
+var securityURL = '/api/dashboard/security';
 var oauthURL = '/oauth/token';
 var addPostURL = '/admin/post/';
 
@@ -19415,7 +19451,7 @@ var addPostURL = '/admin/post/';
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(22);
-module.exports = __webpack_require__(116);
+module.exports = __webpack_require__(117);
 
 
 /***/ }),
@@ -19427,11 +19463,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__packages_auth_auth__ = __webpack_require__(131);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
 
 
 
@@ -22308,7 +22346,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_helper__ = __webpack_require__(2);
 
 
-
 var routes = [{
     path: '/',
     component: __webpack_require__(54),
@@ -22364,7 +22401,6 @@ var routes = [{
         path: '/security',
         component: __webpack_require__(107),
         meta: { requiresAuth: true }
-
     }]
 }, {
     path: '*',
@@ -22387,10 +22423,11 @@ router.beforeEach(function (to, from, next) {
         return m.meta.requiresAuth;
     })) {
         return __WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].check().then(function (response) {
-            if (!response) {
-                return next({ path: '/login' });
+            if (__WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].getToken() == null) {
+                if (!response) {
+                    return next({ path: '/login' });
+                }
             }
-
             return next();
         });
     }
@@ -22400,7 +22437,9 @@ router.beforeEach(function (to, from, next) {
     })) {
         return __WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].check().then(function (response) {
             if (response) {
-                return next({ path: '/' });
+                if (__WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].getToken() != null) {
+                    return next({ path: '/home' });
+                }
             }
 
             return next();
@@ -29139,10 +29178,70 @@ if (false) {
 }
 
 /***/ }),
-/* 116 */
+/* 116 */,
+/* 117 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = (function (Vue) {
+    var _this = this;
+
+    Vue.auth = {
+        setToken: function setToken(token, expiration) {
+            localStorage.setItem('token', token);
+            localStorage.setItem('expiration', expiration);
+        },
+        getToken: function getToken() {
+            var token = localStorage.getItem('token');
+            var expiration = localStorage.getItem('expiration');
+
+            if (!token || !expiration) {
+                return null;
+            }
+            if (Date.now() > parseInt(expiration)) {
+                _this.destroyToken();
+                return null;
+            } else return token;
+        },
+        destroyToken: function destroyToken() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('expiration');
+        },
+        isAuthenticated: function isAuthenticated() {
+            if (_this.getToken()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    };
+    Object.defineProperties(Vue.prototype, {
+        $auth: {
+            get: function get() {
+                return Vue.auth;
+            }
+        }
+    });
+});
 
 /***/ })
 /******/ ]);

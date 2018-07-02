@@ -18,12 +18,44 @@ export default {
     },
 
     check(){
-        return axios.post('/admin/check').then(response =>  {
+        return axios.post('/api/check').then(response =>  {
             return !!response.data.authenticated;
         }).catch(error =>{
             return response.data.authenticated;
         });
     },
+
+    setToken: (token, expiration) => {
+            localStorage.setItem('token', token)
+            localStorage.setItem('expiration', expiration)
+        },
+        getToken: () => {
+            var token = localStorage.getItem('token')
+            // var expiration = localStorage.getItem('expiration')
+            if (!token) {
+                return null
+            }
+
+            // if (!token || !expiration) {
+            //     return null
+            // }
+            // if (Date.now() > parseInt(expiration)) {
+            //     this.destroyToken()
+            //     return null
+            // } else
+            return token
+        },
+        destroyToken: () => {
+            localStorage.removeItem('token')
+            // localStorage.removeItem('expiration')
+        },
+        isAuthenticated: () => {
+            if (this.getToken()) {
+                return true
+            } else {
+                return false
+            }
+        },
 
     getFilterURL(data){
         let url = '';

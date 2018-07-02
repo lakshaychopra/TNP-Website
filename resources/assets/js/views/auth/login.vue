@@ -58,9 +58,7 @@
 
 <script>
     import helper from '../../services/helper'
-    import {
-        loginURL
-    } from "../../config.js";
+    import {loginURL} from "../../config.js";
 
     // import GuestFooter from '../../layouts/guest-footer.vue'
 

@@ -11,38 +11,27 @@
 |
  */
 
+// Route::post('/login', array('uses' => 'LoginController@login'))->name('postLogin');
+// Route::post('/logout', array('uses' => 'LoginController@logout'))->name('logout');
+// Route::post('/check', 'LoginController@check');
 
-Route::group(['prefix' => 'admin'], function () {
-    Route::post('/login', array('uses' => 'LoginController@login'))->name('postLogin');
-    
-    Route::post('/check', 'LoginController@check');
-    Route::group(['middleware' => 'jwt.auth'], function() {
-
-        Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
-    
-        Route::post('/logout', array('uses' => 'LoginController@logout'))->name('logout');
+// Route::group(['prefix' => 'dashboard'], function () {
+//     Route::group(['middleware' => 'jwt.auth'], function() {
         
-        Route::post('/security', 'LoginController@verifyTwoFactor'); 
-    
-        Route::resource('/post', 'PostController');
-     
-        Route::resource('/user', 'UsersController');
-
-        Route::post('/notify', array('uses' => 'PostController@PushNotification'))->name('pushNotify');
-        Route::post('/markasread', array('uses' => 'PostController@MarkAsRead'))->name('markAsRead');
-        Route::post('/markasunread', array('uses' => 'PostController@MarkAsUnRead'))->name('markAsUnRead');
+//         Route::post('/security', 'LoginController@verifyTwoFactor'); 
+//         Route::resource('/post', 'PostController');
+//         Route::resource('/user', 'UsersController');
+//         Route::post('/notify', array('uses' => 'PostController@PushNotification'))->name('pushNotify');
+//         Route::post('/markasread', array('uses' => 'PostController@MarkAsRead'))->name('markAsRead');
+//         Route::post('/markasunread', array('uses' => 'PostController@MarkAsUnRead'))->name('markAsUnRead');
         
-        Route::get('/userexcelfile', array('uses'=>'UsersController@userExcelFile'))->name('userExcelFile');
-        Route::get('/usercreatemail', array('uses'=>'UsersController@userCreateMail'))->name('userCreateMail');
+//         Route::get('/userexcelfile', array('uses'=>'UsersController@userExcelFile'))->name('userExcelFile');
+//         Route::get('/usercreatemail', array('uses'=>'UsersController@userCreateMail'))->name('userCreateMail');
 
-    });
-});
+//     });
+// });
 
-Route::resource('/student', 'StudentsController');
-
-// Route::get('/{vue?}', function () {
-//     return view('welcome');
-// })->where('vue', '[\/\w\.-]*');
+// Route::resource('/student', 'StudentsController');
 
 Route::get('/{vue?}', function () {
     return view('home');

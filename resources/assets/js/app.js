@@ -7,6 +7,7 @@
 import './bootstrap';
 import store from './store'
 import router from './routes'
+import auth from './packages/auth/auth'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

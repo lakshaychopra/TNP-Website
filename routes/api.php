@@ -17,14 +17,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'admin'], function () {
-    Route::post('/login', 'LoginController@login');
-    Route::post('/check', 'LoginController@check');
-    
+Route::post('/login', 'LoginController@login');
+Route::post('/check', 'LoginController@check');
+Route::post('/logout', 'LoginController@logout');
+
+Route::group(['prefix' => 'dashboard'], function () {
+
     Route::group(['middleware' => 'jwt.auth'], function() {
         // Login Controller
-        Route::post('/dashboard', 'LoginController@showDash');
-        Route::post('/logout', 'LoginController@logout');
+        
         Route::post('/security', 'LoginController@verifyTwoFactor'); 
         // Post Controller
         Route::resource('/post', 'PostController');

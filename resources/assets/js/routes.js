@@ -1,6 +1,5 @@
 import VueRouter from 'vue-router'
 import helper from './services/helper'
-
 let routes = [
     {
         path: '/',
@@ -68,7 +67,6 @@ let routes = [
                  path: '/security',
                  component: require('./views/auth/security'),
                  meta: { requiresAuth: true },
-
              },
             // {
             //     path: '/password',
@@ -114,18 +112,21 @@ router.beforeEach((to, from, next) => {
 
     if (to.matched.some(m => m.meta.requiresAuth)){
         return helper.check().then(response => {
+        if (helper.getToken() == null){
             if(!response){
                 return next({ path : '/login'})
             }
-
+        }
             return next()
-        })
+        })        
     }
 
     if (to.matched.some(m => m.meta.requiresGuest)){
         return helper.check().then(response => {
             if(response){
-                return next({ path : '/'})
+                if (helper.getToken() != null) {
+                    return next({ path : '/home'})
+                }
             }
 
             return next()
