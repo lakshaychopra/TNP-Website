@@ -10,24 +10,28 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class UserCreateEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $user;
     /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    * Create a new message instance.
+    *
+    * @return void
+    */
+    public function __construct(User $user)
     {
-        //
+        $this->user = $user;
     }
-
+    
     /**
-     * Build the message.
-     *
-     * @return $this
-     */
+    * Build the message.
+    *
+    * @return $this
+    */
     public function build()
-    {
-        return $this->markdown('emails.users.userCreated');
+    { 
+        $params = [
+            'user' => $this->user,
+        ];
+        return $this->markdown('emails.users.userCreated',$params)
+        ->subject(trans('messages.email.userCreatedMailSendSubject'));
     }
 }

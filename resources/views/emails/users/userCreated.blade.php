@@ -3,7 +3,11 @@
 
 The body of your message.
 
-@component('mail::button', ['url' => ''])
+{{$user->username}}<br>
+{{$user->email}}<br>
+{{$user->phone_number}}<br>
+
+@component('mail::button', ['url' => '/register'])
 Button Text
 @endcomponent
 

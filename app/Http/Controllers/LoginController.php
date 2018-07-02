@@ -88,10 +88,9 @@ class LoginController extends Controller
         try {
             JWTAuth::parseToken()->authenticate();
         } catch (JWTException $e) {
-            return response(['authenticated' => false]);
+            return $this->respondException($e);
         }
-        
-        return response(['authenticated' => true]);
+        return $this->respondSuccess(['authenticated' => true]);
     }
     
     public function getAuthUser(){
@@ -100,13 +99,13 @@ class LoginController extends Controller
         } catch (JWTException $e) {
             return response()->json(['authenticated' => false],422);
         }
-
+        
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->Profile;
         $social_auth = ($user->password) ? 0 : 1;
-
+        
         return response()->json(compact('user','profile','social_auth'));
     }
-
+    
     
 }
