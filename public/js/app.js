@@ -28735,6 +28735,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -28809,13 +28814,9 @@ var render = function() {
               }
             },
             [
-              _c("h3", { staticClass: "box-title" }, [_vm._v("Sign In")]),
+              _vm._m(0),
               _vm._v(" "),
-              _c("small", [
-                _vm._v(
-                  "Enter the code recieved in your email.Please check the spam box also."
-                )
-              ]),
+              _vm._m(1),
               _vm._v(" "),
               _c("div", { staticClass: "form-group m-t-20 " }, [
                 _c("div", { staticClass: "col-xs-12" }, [
@@ -28832,7 +28833,8 @@ var render = function() {
                     attrs: {
                       type: "password",
                       name: "password",
-                      placeholder: "Password"
+                      placeholder: "Verification Code",
+                      autocomplete: "on"
                     },
                     domProps: { value: _vm.loginForm.token_2fa },
                     on: {
@@ -28851,9 +28853,9 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(0),
+              _vm._m(2),
               _vm._v(" "),
-              _vm._m(1)
+              _vm._m(3)
             ]
           )
         ])
@@ -28862,6 +28864,32 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h3", { staticClass: "box-title" }, [
+      _c("i", {
+        staticClass: "fa fa-user-circle-o",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" Verify it's you")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("small", [
+      _vm._v(
+        "A mail with 5-digit verification code was just sent to your email.\n                        "
+      ),
+      _c("br"),
+      _vm._v(" "),
+      _c("b", { staticClass: "text-danger" }, [_vm._v("NOTE : ")]),
+      _vm._v("Please check the spam box also.")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -28875,13 +28903,7 @@ var staticRenderFns = [
               "btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light",
             attrs: { type: "submit" }
           },
-          [
-            _vm._v("LogIn "),
-            _c("i", {
-              staticClass: "fa fa-arrow-right",
-              attrs: { "aria-hidden": "true" }
-            })
-          ]
+          [_vm._v("Login\n                                ")]
         )
       ])
     ])
