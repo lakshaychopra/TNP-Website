@@ -81,5 +81,18 @@ class LoginController extends Controller
             return $this->respondException($e);
         }
     }
+
+
+    public function check()
+    {
+        try {
+            JWTAuth::parseToken()->authenticate();
+        } catch (JWTException $e) {
+            return response(['authenticated' => false]);
+        }
+
+        return response(['authenticated' => true]);
+    }
+
     
 }

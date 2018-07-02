@@ -15,8 +15,9 @@
 Route::group(['prefix' => 'admin'], function () {
     Route::post('/login', array('uses' => 'LoginController@login'))->name('postLogin');
     
+    Route::post('/check', 'LoginController@check');
     Route::group(['middleware' => 'jwt.auth'], function() {
-        
+
         Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
     
         Route::post('/logout', array('uses' => 'LoginController@logout'))->name('logout');

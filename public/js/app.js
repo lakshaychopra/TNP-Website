@@ -505,7 +505,7 @@ module.exports = {
         });
     },
     check: function check() {
-        return axios.post('/api/auth/check').then(function (response) {
+        return axios.post('/admin/check').then(function (response) {
             return !!response.data.authenticated;
         }).catch(function (error) {
             return response.data.authenticated;
@@ -19415,7 +19415,7 @@ var addPostURL = '/admin/post/';
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(22);
-module.exports = __webpack_require__(116);
+module.exports = __webpack_require__(117);
 
 
 /***/ }),
@@ -22313,7 +22313,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 var routes = [{
     path: '/',
     component: __webpack_require__(54),
-    // meta: { requiresAuth: true },
+    meta: { requiresAuth: true },
     children: [{
         path: '/',
         component: __webpack_require__(15)
@@ -22357,13 +22357,15 @@ var routes = [{
 {
     path: '/',
     component: __webpack_require__(101),
-    // meta: { requiresGuest: true },
+    meta: { requiresGuest: true },
     children: [{
         path: '/login',
         component: __webpack_require__(104)
     }, {
         path: '/security',
-        component: __webpack_require__(107)
+        component: __webpack_require__(107),
+        meta: { requiresAuth: true }
+
     }]
 }, {
     path: '*',
@@ -29093,7 +29095,8 @@ if (false) {
 }
 
 /***/ }),
-/* 116 */
+/* 116 */,
+/* 117 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

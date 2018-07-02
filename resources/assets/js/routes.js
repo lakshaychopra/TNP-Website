@@ -5,7 +5,7 @@ let routes = [
     {
         path: '/',
         component: require('./layouts/default-page'),
-        // meta: { requiresAuth: true },
+        meta: { requiresAuth: true },
         children: [
             {
                 path: '/',
@@ -58,7 +58,7 @@ let routes = [
     {
         path: '/',
         component: require('./layouts/guest-page'),
-        // meta: { requiresGuest: true },
+        meta: { requiresGuest: true },
         children: [
             {
                 path: '/login',
@@ -66,7 +66,9 @@ let routes = [
             },
              {
                  path: '/security',
-                 component: require('./views/auth/security')
+                 component: require('./views/auth/security'),
+                 meta: { requiresAuth: true },
+
              },
             // {
             //     path: '/password',
