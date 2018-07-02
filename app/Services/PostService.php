@@ -28,10 +28,9 @@ class PostService
 		return $this->repository->uploadPostImage($payload);
 	}
 	
-	public function updatePostImage(array $payload,Post $post)
+	public function updatePostImage(array $payload, Post $post)
 	{
-		Post::find($post);
-		if(Post::hasFile('image'))
+		if($post->hasFile('image'))
 		{
 			$usersImage = public_path("images/posts/images/{$post->image}"); 
 			if (File::exists($usersImage))
@@ -46,9 +45,8 @@ class PostService
 		}
 	}
 	
-	public function deletePostImage(array $payload, $id)
+	public function deletePostImage(array $payload, Post $post)
 	{
-		$post=Post::find($id);
 		if(Input::hasFile('image'))
 		{
 			$usersImage = public_path("images/posts/images/{$post->image}"); 
