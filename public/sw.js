@@ -29,11 +29,11 @@ self.__precacheManifest = [
   },
   {
     "url": "js/app.js",
-    "revision": "da5d1d3c37b8568cd9b176fc2a40c6f1"
+    "revision": "0c07fe81653dcd60c9ad04ebc46d21fe"
   },
   {
     "url": "js/bundle.min.js",
-    "revision": "cba0c7aad4480d19d08f38af9334de0d"
+    "revision": "065601df6ce94497e95760e62fd73041"
   },
   {
     "url": "manifest.json",
