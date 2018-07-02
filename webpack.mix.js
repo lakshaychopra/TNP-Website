@@ -37,6 +37,7 @@ mix.js('resources/assets/js/app.js', 'public/js/app.js')
 
 
 
+
 // mix.options({
 //     imgLoaderOptions: {
 //         enabled: false
