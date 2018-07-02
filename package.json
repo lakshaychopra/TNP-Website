@@ -8,11 +8,14 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "wizard":"workbox wizard"
+        "wizard": "workbox wizard"
     },
     "devDependencies": {
         "autoprefixer": "7.2.3",
         "axios": "^0.18.0",
+        "browser-sync": "^2.18.13",
+        "browser-sync-webpack-plugin": "^1.2.0",
+        "normalize-scss": "^7.0.0",
         "babel-core": "6.26.0",
         "babel-eslint": "8.0.3",
         "babel-helper-vue-jsx-merge-props": "2.0.3",
@@ -68,6 +71,11 @@
         "workbox-cli": "^3.3.0"
     },
     "dependencies": {
+        "click-confirm": "^1.1.0",
+        "laravel-vue-pagination": "^1.0.6",
+        "vue-range-slider": "^0.2.4",
+        "vuejs-datepicker": "^0.9.11",
+        "vuex-persistedstate": "^2.0.0",
         "@fortawesome/fontawesome-free": "^5.1.0",
         "@johmun/vue-tags-input": "^1.5.4",
         "axios": "0.18.0",
@@ -85,6 +93,7 @@
         "mockjs": "1.0.1-beta3",
         "normalize.css": "7.0.0",
         "npm": "^6.1.0",
+        "npm-check": "^5.7.1",
         "nprogress": "0.2.0",
         "screenfull": "3.3.2",
         "showdown": "1.8.5",

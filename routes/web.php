@@ -36,6 +36,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::resource('/student', 'StudentsController');
 
+// Route::get('/{vue?}', function () {
+//     return view('welcome');
+// })->where('vue', '[\/\w\.-]*');
+
 Route::get('/{vue?}', function () {
-    return view('welcome');
-})->where('vue', '[\/\w\.-]*');
+    return view('home');
+})->where('vue', '[\/\w\.-]*')->name('home');

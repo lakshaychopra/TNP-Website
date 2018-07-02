@@ -1,0 +1,108 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+} 
+@import '~font-awesome/scss/font-awesome';
+// @import "~vue-wysiwyg/dist/vueWysiwyg.css";
+
+// .editr--content{
+//   background-color: #fff;
+// }
+// Bootstrap
+@import './styles/variables.scss';
+@import './styles/mixin.scss';
+@import './styles/transition.scss';
+@import './styles/element-ui.scss';
+@import './styles/sidebar.scss';
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+//main-container
+.app-main {
+  min-height: 100%
+}
+
+.app-container {
+  padding: 20px;
+}
+
+.drawer-bg {
+  z-index: 1002 !important;
+}
+.el-form-item__content {
+  margin-left: 0 !important;
+}
+.el-form-item__label{
+  width: 0px !important;
+}
