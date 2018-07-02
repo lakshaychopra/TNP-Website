@@ -68,21 +68,21 @@ class LoginController extends Controller
         return $this->respondSuccess('Authorized!! You have been logged-in!!', $user);
     }   
     
-    public function logout(Request $request) 
+    public function logout() 
     {
-        // Get JWT Token from the request header key "Authorization"
-        $token = $request->header('Authorization');
-        // Invalidate the token
         try {
-            JWTAuth::invalidate($token);
-            $this->respondSuccess('Success!! You have been logged-out!!');
+            $token = JWTAuth::getToken();
+            
+            if ($token) {
+                JWTAuth::invalidate($token);
+            }
         } catch (JWTException $e) {
-            // something went wrong whilst attempting to encode the token
             return $this->respondException($e);
         }
+        $this->respondSuccess('Success!! You have been logged-out!!');
     }
-
-
+    
+    
     public function check()
     {
         try {
@@ -90,8 +90,22 @@ class LoginController extends Controller
         } catch (JWTException $e) {
             return response(['authenticated' => false]);
         }
-
+        
         return response(['authenticated' => true]);
+    }
+    
+    public function getAuthUser(){
+        try {
+            JWTAuth::parseToken()->authenticate();
+        } catch (JWTException $e) {
+            return response()->json(['authenticated' => false],422);
+        }
+
+        $user = JWTAuth::parseToken()->authenticate();
+        $profile = $user->Profile;
+        $social_auth = ($user->password) ? 0 : 1;
+
+        return response()->json(compact('user','profile','social_auth'));
     }
 
     
