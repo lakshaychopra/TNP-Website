@@ -21,6 +21,10 @@ class CreateTableUsers extends Migration
             $table->string('phone_number')->unique();
             $table->string('token_2fa')->nullable();
             $table->enum('type', ['STUDENT', 'COMPANY', 'EXECUTIVE_MEMBER', 'MASTER_ADMIN'])->default('STUDENT');
+            $table->string('provider_unique_id')->nullable();
+            $table->string('activation_token',64)->nullable();
+            $table->string('status',25)->nullable();
+            $table->boolean('is_mailed')->default(false);
             $table->boolean('is_active')->default(false);
             $table->boolean('is_verified')->default(false);
             $table->rememberToken();

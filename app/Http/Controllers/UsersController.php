@@ -143,9 +143,22 @@ class UsersController extends Controller
             });
         })->download('xlsx');
     }      
-
+    
     public function userCreateMail(){
-        $user = User::where('is_active',0)->get();
-        event(new UserCreatedEvent($user));
+        $users = User::where('is_mailed',0)->get()->toArray();
+        try
+        {
+            DB::beginTransaction();
+            event(new UserCreatedEvent($users));
+            $users->is_mailed = 1;
+            $users->save();
+            DB::commit();    
+            return $this->respondSuccess('Mailed',$users);
+        }
+        catch(Exception $e){
+            DB::rollback();
+            return $this->respondException($e);
+        }
+        
     }
 }
