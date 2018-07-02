@@ -7,7 +7,7 @@
                     <h3 class="box-title m-b-20">Sign In</h3>
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input type="text" name="email" class="form-control" placeholder="Email" v-model="loginForm.email"> </div>
+                            <input type="text" name="email" class="form-control" placeholder="Email" v-model="loginForm.username"> </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
@@ -84,18 +84,28 @@
                 axios.post(loginURL, this.loginForm).then(response =>  {
                     if (response.status == "200") {
                         // window.location = "/dashboard";
-                         this.$router.push('/security');
-                        localStorage.setItem('access_token',response.data.token);
-                        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('auth_token');
+                        localStorage.setItem('token',response.data.data.access_token);
+                        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
                         toastr['success'](response.data.message);
+                        this.$router.push('/security');
                         // this.$router.push('/home')
 
-                    }
-                    if (response.status == "401") {
-                    }
-                    
+                    }                    
                 }).catch(error => {
-                    toastr['error'](error.response.data.message);
+                    console.log(error.response)
+                        var obj = JSON.parse(error.response.request.responseText);
+                        if(error.response.status=="401"){
+                            toastr['error'](obj['message']);
+                        }
+         
+                        if(error.response.status=="422"){
+                            if(obj['errors'].hasOwnProperty('username')){
+                                toastr['error'](obj['errors']['username']);
+                            }
+                            if (obj['errors'].hasOwnProperty('password')) {
+                                toastr['error'](obj['errors']['password']);
+                            }           
+                        }
                 });
             }
         }

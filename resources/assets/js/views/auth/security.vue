@@ -12,7 +12,7 @@
                     </div> -->
                     <div class="form-group m-t-20 ">
                         <div class="col-xs-12">
-                            <input type="password" name="password" class="form-control" placeholder="Password" v-model="loginForm.password"> </div>
+                            <input type="password" name="password" class="form-control" placeholder="Password" v-model="loginForm.token_2fa"> </div>
                     </div>
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">
@@ -46,14 +46,15 @@
 
 <script>
     import helper from '../../services/helper'
+    import { securityURL } from "../../config.js";
+
     // import GuestFooter from '../../layouts/guest-footer.vue'
 
     export default {
         data() {
             return {
                 loginForm: {
-                    email: '',
-                    password: ''
+                    token_2fa: '',
                 }
             }
         },
@@ -79,12 +80,12 @@
             },
         methods: {
             submit(e){
-                axios.post('/api/auth/login', this.loginForm).then(response =>  {
-                    localStorage.setItem('auth_token',response.data.token);
-                    axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('auth_token');
+                axios.post(securityURL, this.loginForm).then(response =>  {
+                    console.log(response)
                     toastr['success'](response.data.message);
                     this.$router.push('/home')
                 }).catch(error => {
+                    console.log(error.response.statusText);
                     toastr['error'](error.response.data.message);
                 });
             }
