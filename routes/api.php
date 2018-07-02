@@ -40,5 +40,3 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::resource('/student', 'StudentsController');
-
-// Route::get('/post', 'API\PostsCOntroller@index');
