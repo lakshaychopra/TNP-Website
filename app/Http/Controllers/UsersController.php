@@ -8,6 +8,7 @@ use App\Services\UserService;
 use App\Http\Requests\CreateUserExcelRequest;
 use Exception;
 use Excel;
+use JWTAuth;
 use DB;
 
 class UsersController extends Controller
@@ -49,6 +50,7 @@ class UsersController extends Controller
     */
     public function store(CreateUserExcelRequest $request)
     {  
+        $auth = JWTAuth::parseToken()->authenticate();
         $input = $request->only('type');
         if($request->hasFile('excel'))
         {
