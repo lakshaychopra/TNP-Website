@@ -13,13 +13,13 @@
 
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::post('/login', array('uses' => 'LoginController@loginUser'))->name('users.post.login');
+    Route::post('/login', array('uses' => 'LoginController@login'))->name('postLogin');
     
-    // Route::group(['middleware' => 'web'], function() {
+    Route::group(['middleware' => 'jwt.auth'], function() {
         
         Route::post('/dashboard', array('uses' => 'LoginController@showDash'))->name('dashboard');
     
-        Route::post('/logout', array('uses' => 'LoginController@doLogout'))->name('logout');
+        Route::post('/logout', array('uses' => 'LoginController@logout'))->name('logout');
         
         Route::post('/security', 'LoginController@verifyTwoFactor'); 
     
@@ -30,8 +30,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/notify', array('uses' => 'PostController@PushNotification'))->name('pushNotify');
         Route::post('/markasread', array('uses' => 'PostController@MarkAsRead'))->name('markAsRead');
         Route::post('/markasunread', array('uses' => 'PostController@MarkAsUnRead'))->name('markAsUnRead');
+        
+        Route::get('/userexcelfile', array('uses'=>'UsersController@userExcelFile'))->name('userExcelFile');
+        Route::get('/usercreatemail', array('uses'=>'UsersController@userCreateMail'))->name('userCreateMail');
 
-    // });
+    });
 });
 
 Route::resource('/student', 'StudentsController');

@@ -13,8 +13,13 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+
         'App\Events\TwoFactorEvent' => [
             'App\Listeners\TwoFactorMailSend',
+        ],
+
+        'App\Events\UserCreatedEvent' => [
+            'App\Listeners\UserCreatedMailSend',
         ],
     ];
 

@@ -152,8 +152,8 @@ return [
         */
         
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,       
-        // Jenssegers\Mongodb\MongodbServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class, 
+        Cyvelnet\Laravel5Fractal\Laravel5FractalServiceProvider::class,      
         
         /*
         * Application Service Providers...
@@ -163,6 +163,7 @@ return [
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
         
     ],
     
@@ -215,8 +216,7 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
-        // 'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
-        
+        'Fractal' => Cyvelnet\Laravel5Fractal\Facades\Fractal::class,
     ],
     
 ];
