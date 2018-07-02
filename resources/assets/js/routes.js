@@ -19,6 +19,10 @@ let routes = [
                 component: require('./views/pages/blank')
             },
             {
+                path: '/excel',
+                component: require('./views/excel')
+            },
+            {
                 path: '/configuration',
                 component: require('./views/configuration/configuration')
             },
