@@ -58,7 +58,7 @@ class LoginController extends Controller
     
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        $auth = JWTAuth::parseToken()->authenticate();
+        // $auth = JWTAuth::parseToken()->authenticate();
         $user = JWTAuth::user();
         
         if(!$request->input('token_2fa') == $user->token_2fa)
@@ -89,9 +89,9 @@ class LoginController extends Controller
         try {
             JWTAuth::parseToken()->authenticate();
         } catch (JWTException $e) {
-            return $this->respondException($e);
+            return response(['authenticated' => false]);
         }
-        return $this->respondSuccess(['authenticated' => true]);
+        return response(['authenticated' => true]);
     }
     
     public function getAuthUser(){
