@@ -80,9 +80,8 @@ class LoginController extends Controller
         } catch (JWTException $e) {
             return $this->respondException($e);
         }
-        $this->respondSuccess('Success!! You have been logged-out!!');
+        $this->respondMessage('Success!! You have been logged-out!!');
     }
-    
     
     public function check()
     {
