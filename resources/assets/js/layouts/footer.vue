@@ -1,6 +1,6 @@
 <template>
 	<footer class="footer">
-        Designed with love by <a href="http://wmlab.in" target="_blank">WMLab</a> | Theme by <a href="http://wrappixel.com" target="_blank">Wrappixel</a>
+		<p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i></span> by <a href="#" target="_blank">Genconians</a> | Copyright © 2018 <a href="#" target="_blank">GNDEC, Ldh</a></small></p>
     </footer>
 </template>
 

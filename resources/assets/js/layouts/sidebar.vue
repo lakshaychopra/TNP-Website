@@ -27,9 +27,12 @@
                     </li>
                     <li>
                         <router-link to="/anything" exact><i class="fa fa-exclamation-triangle"></i> <span class="hide-menu">Error Page</span></router-link>
+                    </li>                    
+                    <li>
+                        <router-link to="/excel" exact><i class="fa fa-file-excel"></i> <span class="hide-menu">Excel</span></router-link>
                     </li>
                     <li>
-                        <a href="#" @click.prevent="logout"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a>
+                        <a href="/logout" @click.prevent="logout"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a>
                     </li>
                 </ul>
             </nav>
@@ -37,7 +40,7 @@
         <div class="sidebar-footer">
             <router-link to="/configuration" class="link" data-toggle="tooltip" title="Configuration"><i class="fa fa-cogs"></i></router-link>
             <router-link to="/profile" class="link" data-toggle="tooltip" title="Profile"><i class="fa fa-user"></i></router-link>
-            <a href="#" class="link" data-toggle="tooltip" title="Logout" @click.prevent="logout"><i class="fa fa-power-off"></i></a>
+            <a href="/logout" class="link" data-toggle="tooltip" title="Logout" @click.prevent="logout"><i class="fa fa-power-off"></i></a>
         </div>
     </aside>
 </template>

@@ -42,7 +42,7 @@
                         </div>
                     </form>
                 </div>
-                <!-- <guest-footer></guest-footer> -->
+                <guest-footer></guest-footer>
             </div>
         </div>
 
@@ -55,7 +55,7 @@
         securityURL
     } from "../../config.js";
 
-    // import GuestFooter from '../../layouts/guest-footer.vue'
+    import GuestFooter from '../../layouts/guest-footer.vue'
 
     export default {
         data() {
@@ -66,7 +66,7 @@
             }
         },
         components: {
-            // GuestFooter
+            GuestFooter
         },
         mounted() {
             var random = Math.floor(Math.random() * 3) + 0;
