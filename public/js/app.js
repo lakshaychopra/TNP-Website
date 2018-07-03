@@ -181,8 +181,8 @@ var _this = this;
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     logout: function logout() {
-        return axios.post('/api/auth/logout').then(function (response) {
-            localStorage.removeItem('auth_token');
+        return axios.post('/api/logout').then(function (response) {
+            localStorage.removeItem('token');
             axios.defaults.headers.common['Authorization'] = null;
             toastr['success'](response.data.message);
         }).catch(function (error) {
@@ -190,7 +190,7 @@ var _this = this;
         });
     },
     authUser: function authUser() {
-        return axios.get('/api/auth/user').then(function (response) {
+        return axios.get('/api/dashboard/auth/user').then(function (response) {
             return response.data;
         }).catch(function (error) {
             return error.response.data;
@@ -205,9 +205,9 @@ var _this = this;
     },
 
 
-    setToken: function setToken(token, expiration) {
+    setToken: function setToken(token) {
         localStorage.setItem('token', token);
-        localStorage.setItem('expiration', expiration);
+        // localStorage.setItem('expiration', expiration), expiration
     },
     getToken: function getToken() {
         var token = localStorage.getItem('token');

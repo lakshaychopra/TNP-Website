@@ -98,11 +98,9 @@ class LoginController extends Controller
         try {
             JWTAuth::parseToken()->authenticate();
         } catch (JWTException $e) {
-            return response()->json(['authenticated' => false],422);
+            return $this->respondException($e);
         }
-        
         $user = JWTAuth::parseToken()->authenticate();
-        
         return response()->json($user);
     }
     
