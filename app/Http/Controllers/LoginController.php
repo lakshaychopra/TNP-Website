@@ -58,7 +58,7 @@ class LoginController extends Controller
     
     public function verifyTwoFactor(TwoFactorRequest $request)
     {
-        // $auth = JWTAuth::parseToken()->authenticate();
+        $auth = JWTAuth::parseToken()->authenticate();
         $user = JWTAuth::user();
         
         if(!$request->input('token_2fa') == $user->token_2fa)
