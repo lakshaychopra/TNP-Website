@@ -30,6 +30,7 @@ class PostController extends Controller
     */
     public function index(Request $request)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         $limit  = $request->input('limit') ?? 6;
         $posts = $this->repository->list($limit);
         // return \Fractal::collection($posts, new PostTransformer, 'post');
@@ -54,6 +55,7 @@ class PostController extends Controller
     */
     public function store(CreatePostRequest $request)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         $post = $request->all();
         try {
             DB::beginTransaction();
@@ -85,6 +87,7 @@ class PostController extends Controller
     */
     public function show(Post $post)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         //data fetched from database in $post with where id clause
         $post = $this->post->where('id', $post)->first();
         return $this->respondData($post);
@@ -98,6 +101,7 @@ class PostController extends Controller
     */
     public function edit(Post $post)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         return $this->respondData($post);
     }
     
@@ -110,6 +114,7 @@ class PostController extends Controller
     */
     public function update(CreatePostRequest $request,Post $post)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
             if(!$post){
@@ -135,6 +140,7 @@ class PostController extends Controller
     */
     public function destroy(Post $post)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         // $post['image'] = $this->service->deletePostImage($post);
         // $delete = Post::destroy($post->id);
         $delete = $this->repository->delete($post);
@@ -146,18 +152,21 @@ class PostController extends Controller
     }
     
     public function pushNotification(User $user,Post $post){
+        $auth = JWTAuth::parseToken()->authenticate();
         $user = User::all();
         $data = Post::find(['title','category']);   
         Notification::send($user, new PostNotification($data));
     }
     
     public function markAsRead(User $user){
+        $auth = JWTAuth::parseToken()->authenticate();
         JWTAuth::user()->notifications->markAsRead();
         return $this->respondSuccess();
     }
     
     public function markAsUnread(User $user){
-       JWTAuth::user()->notifications->markAsUnRead();
+        $auth = JWTAuth::parseToken()->authenticate();
+        JWTAuth::user()->notifications->markAsUnRead();
         return $this->respondSuccess();
     }
 }
