@@ -41,7 +41,7 @@
                         <h3 class="box-title m-b-20"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</h3>
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input type="password" name="password" class="form-control" placeholder="Password" v-model="registerForm.password"> </div>
+                            <input type="password" name="password" class="form-control" placeholder="Password" v-model="pswdUpdate.password"> </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">

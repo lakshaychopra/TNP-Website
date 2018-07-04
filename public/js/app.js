@@ -31253,8 +31253,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.registerForm.password,
-                              expression: "registerForm.password"
+                              value: _vm.pswdUpdate.password,
+                              expression: "pswdUpdate.password"
                             }
                           ],
                           staticClass: "form-control",
@@ -31263,14 +31263,14 @@ var render = function() {
                             name: "password",
                             placeholder: "Password"
                           },
-                          domProps: { value: _vm.registerForm.password },
+                          domProps: { value: _vm.pswdUpdate.password },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
                               _vm.$set(
-                                _vm.registerForm,
+                                _vm.pswdUpdate,
                                 "password",
                                 $event.target.value
                               )
