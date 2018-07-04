@@ -24405,8 +24405,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // .catch(error => {
             //     console.log(error);
             // });
-            var url = __WEBPACK_IMPORTED_MODULE_1__config_js__["b" /* apiDomain */] + __WEBPACK_IMPORTED_MODULE_1__config_js__["c" /* downloadExcelURL */];
-            window.open(url, '_blank');
+
+            //  var url = apiDomain + downloadExcelURL;
+            //  window.open(url, '_blank');
+
+            axios({
+                url: __WEBPACK_IMPORTED_MODULE_1__config_js__["b" /* apiDomain */] + __WEBPACK_IMPORTED_MODULE_1__config_js__["c" /* downloadExcelURL */],
+                method: 'GET',
+                responseType: 'blob' // important
+            }).then(function (response) {
+                var url = window.URL.createObjectURL(new Blob([response.data]));
+                var link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'user.xlsx');
+                document.body.appendChild(link);
+                link.click();
+            });
         },
         handleChange: function handleChange(e) {
             this.user.file = e.target.files[0];
