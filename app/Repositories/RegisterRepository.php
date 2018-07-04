@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\User;
 
-class LoginRepository
+class RegisterRepository
 {
     /**
      * create new instance
