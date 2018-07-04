@@ -6,14 +6,15 @@
                 <div class="card-body">
 
                     <form class="form-horizontal form-material" id="loginform" @submit.prevent="submit">
-                        <h3 class="box-title m-b-20"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In</h3>
-                       
+                        <h3 class="box-title m-b-20">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In</h3>
+
                         <div class="form-group ">
                             <div class="col-xs-12">
                                 <input type="text" name="email" class="form-control" autocomplete="on" placeholder="Username" v-model="loginForm.username">
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off" v-model="loginForm.password">
@@ -58,8 +59,9 @@
                     <form class="form-horizontal form-material" id="loginform" @submit.prevent="security_submit">
                         <h3 class="box-title">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> Verify it's you</h3>
-                        <small>A mail with 5-digit verification code was just sent to your email.
-                            <br>
+                        A mail with 5-digit verification code was just sent to your email.
+                        <br>
+                        <small>
                             <b class="text-danger">NOTE : </b>Please check the spam box also.</small>
                         <!-- <div class="form-group m-t-20 ">
                         <div class="col-xs-12">
@@ -102,15 +104,19 @@
 
 <script>
     import helper from '../../services/helper'
-    import {loginURL} from "../../config.js";
-    import {securityURL} from "../../config.js";
+    import {
+        loginURL
+    } from "../../config.js";
+    import {
+        securityURL
+    } from "../../config.js";
     import GuestFooter from '../../layouts/guest-footer.vue'
 
     export default {
         data() {
             return {
-            authenticated:false,
-            token:'',
+                authenticated: false,
+                token: '',
                 loginForm: {
                     username: '',
                     password: ''
@@ -123,8 +129,8 @@
         components: {
             GuestFooter
         },
-        created(){
-            if(helper.check()){
+        created() {
+            if (helper.check()) {
                 this.$router.push('/home')
             }
         },
@@ -150,7 +156,7 @@
                 axios.post(loginURL, this.loginForm).then(response => {
                     if (response.status == "200") {
                         // window.location = "/dashboard";
-                        this.token =response.data.data.access_token;
+                        this.token = response.data.data.access_token;
                         axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.token;
 
                         toastr['success'](response.data.message);

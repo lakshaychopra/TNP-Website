@@ -73,10 +73,10 @@
 
 <script>
 import { addPostURL } from "../../config.js";
-import InputTag from 'vue-input-tag'
+// import InputTag from 'vue-input-tag'
 export default {
    components: {
-    InputTag
+    // InputTag
   },
   data() {
       var validateFields = (rule, value, callback) => {
