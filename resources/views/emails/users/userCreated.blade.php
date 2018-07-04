@@ -3,9 +3,9 @@
 
 The body of your message.
 
-{{--  {{username}}<br>
-{{email}}<br>
-{{phone_number}}<br>  --}}
+{{--  {{$username}}<br>
+{{$email}}<br>
+{{$phone_number}}<br>  --}}
 
 @component('mail::button', ['url' => '/register'])
 Button Text

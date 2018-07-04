@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-// use App\Models\User;
+use App\Models\User;
 
 class UserCreateEmail extends Mailable
 {
@@ -16,10 +16,11 @@ class UserCreateEmail extends Mailable
     *
     * @return void
     */
-    // public function __construct($user)
-    // {
-    //     // $this->user = $user;
-    // }
+    public function __construct($user)
+    {
+        $this->user = $user;
+        \Log::info($user);
+    }
     
     /**
     * Build the message.
@@ -28,7 +29,6 @@ class UserCreateEmail extends Mailable
     */
     public function build()
     {  
-        \Log::info($user);
         // foreach ($user as $row) {
         //     $username=$row['username'];
         //     $email=$row['email'];
