@@ -16,18 +16,18 @@
                     <li>
                         <router-link to="/home" exact><i class="fa fa-home"></i> <span class="hide-menu">Home</span></router-link>
                     </li>
-                    <li>
+                    <!-- <li>
                         <router-link to="/blank" exact><i class="fa fa-user"></i> <span class="hide-menu">Blank Page</span></router-link>
                     </li>
                     <li>
                         <router-link to="/user" exact><i class="fa fa-users"></i> <span class="hide-menu">User</span></router-link>
-                    </li>
+                    </li> -->
                     <li>
-                        <router-link to="/task" exact><i class="fa fa-tasks"></i> <span class="hide-menu">Task</span></router-link>
+                        <router-link to="/post" exact><i class="fa fa-post"></i> <span class="hide-menu">Post</span></router-link>
                     </li>
-                    <li>
+                    <!-- <li>
                         <router-link to="/anything" exact><i class="fa fa-exclamation-triangle"></i> <span class="hide-menu">Error Page</span></router-link>
-                    </li>                    
+                    </li>                     -->
                     <li>
                         <router-link to="/excel" exact><i class="fa fa-file-excel"></i> <span class="hide-menu">Excel</span></router-link>
                     </li>
