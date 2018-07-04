@@ -34,9 +34,9 @@ Route::group(['prefix' => 'dashboard'], function () {
         Route::post('/markasunread', 'PostController@MarkAsUnRead');
         // Users Controller
         Route::resource('/user', 'UsersController');
-        Route::get('/userexcelfile', 'UsersController@userExcelFile');
         Route::get('/usercreatemail', 'UsersController@userCreateMail');
         //Student Controller
         Route::resource('/student', 'StudentsController');
     });
+    Route::get('/userexcelfile', 'UsersController@userExcelFile');
 });

@@ -5185,7 +5185,7 @@ var loginURL = '/api/login';
 var securityURL = '/api/dashboard/security';
 var oauthURL = '/oauth/token';
 var addPostURL = '/api/dashboard/post/';
-var downloadExcelURL = '/dashboard/userexcelfile/';
+var downloadExcelURL = '/api/dashboard/userexcelfile/';
 var mailExcelURL = '/api/dashboard/usercreatemail/';
 
 /***/ }),
