@@ -28,7 +28,11 @@ let routes = [
             },
             {
                 path: '/post',
-                component: require('./views/post/index')
+                component: require('./views/post/index'),
+            },
+            {
+                path: 'all',
+                component: require('./views/post/viewPosts')
             },
             {
                 path: '/task',

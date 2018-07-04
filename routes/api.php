@@ -29,6 +29,8 @@ Route::group(['prefix' => 'dashboard'], function () {
         // Login Controller
         Route::post('/security', 'LoginController@verifyTwoFactor'); 
         Route::get('/auth/user','LoginController@getAuthUser');
+        // Register Controller
+        Route::post('/setpassword', 'RegisterController@setPassword');
         // Post Controller
         Route::resource('/post', 'PostController');
         Route::post('/notify', 'PostController@PushNotification');

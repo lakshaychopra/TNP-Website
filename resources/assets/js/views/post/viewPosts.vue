@@ -96,6 +96,9 @@
 .col-primary{
   color: #304156 ;
 }
+.card-primary{
+  background: #fff;
+}
 .card{
   border-radius: 0;
   margin-bottom: 30px;
