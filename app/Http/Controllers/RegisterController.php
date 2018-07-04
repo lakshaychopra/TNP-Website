@@ -21,8 +21,14 @@ class RegisterController extends Controller
     
     public function register(UserRegisterRequest $request)
     {
-        $credentials = $request->only('username', 'email','phone_number');
-        if (!$token = JWTAuth::attempt($credentials)) {
+        $values = $request->all();
+        $user = User::where([
+            ['username', '=',$values['username']],
+            [ 'email', '=',$values['email']],
+            ['phone_number', '=',$values['phone_number']]
+            ])->first();
+        \Log::info($user);
+        if (!$token = JWTAuth::fromUser($user)) {
             return $this->respondUnauthorized();
         }
         try{
@@ -39,13 +45,13 @@ class RegisterController extends Controller
         }   
     }  
     
-    public function setsPassword(SetPasswordRequest $request){
+    public function setPassword(SetPasswordRequest $request){
         $auth = JWTAuth::parseToken()->authenticate();
         $password = $request->only('password');
         $user = JWTAuth::user();
         try{
             DB::beginTransaction();
-            $user->password = bcrypt(request('new_password'));
+            $user->password = bcrypt($password['password']);
             $user->save();
             DB::commit();
             return $this->respondSuccess('Congrats!! Your password has been set successfully!', $user);
