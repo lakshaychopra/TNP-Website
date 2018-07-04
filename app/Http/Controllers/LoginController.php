@@ -103,6 +103,4 @@ class LoginController extends Controller
         $user = JWTAuth::parseToken()->authenticate();
         return response()->json($user);
     }
-    
-    
 }
