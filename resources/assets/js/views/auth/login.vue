@@ -110,6 +110,7 @@
         data() {
             return {
             authenticated:false,
+            token:'',
                 loginForm: {
                     username: '',
                     password: ''
@@ -149,8 +150,8 @@
                 axios.post(loginURL, this.loginForm).then(response => {
                     if (response.status == "200") {
                         // window.location = "/dashboard";
-                        localStorage.setItem('token', response.data.data.access_token);
-                        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
+                        this.token =response.data.data.access_token;
+                        axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.token;
 
                         toastr['success'](response.data.message);
                         this.authenticated = true;
@@ -178,7 +179,8 @@
             },
             security_submit(e) {
                 axios.post(securityURL, this.security).then(response => {
-                    console.log(response)
+                    console.log(response);
+                    localStorage.setItem('token', this.token);
                     toastr['success'](response.data.message);
                     this.$router.push('/home')
                 }).catch(error => {

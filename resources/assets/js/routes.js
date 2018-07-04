@@ -72,10 +72,10 @@ let routes = [
             //     path: '/password',
             //     component: require('./views/auth/password')
             // },
-            // {
-            //     path: '/register',
-            //     component: require('./views/auth/register')
-            // },
+            {
+                path: '/register',
+                component: require('./views/auth/register')
+            },
             // {
             //     path: '/auth/:token/activate',
             //     component: require('./views/auth/activate')

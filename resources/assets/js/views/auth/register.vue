@@ -1,18 +1,18 @@
 <template>
     <section id="wrapper">
-        <div class="login-register" style="background-image:url(/images/background/background.jpg);">
+        <div class="login-register" id="bg">
             <div class="login-box card">
             <div class="card-body">
                 <form class="form-horizontal form-material" id="registerform" @submit.prevent="submit">
-                    <h3 class="box-title m-b-20">Sign Up</h3>
+                        <h3 class="box-title m-b-20"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</h3>
                     <div class="form-group ">
                         <div class="col-xs-6">
-                            <input type="text" name="first_name" class="form-control" placeholder="First Name" v-model="registerForm.first_name">
+                            <input type="text" name="uni_roll_no" class="form-control" placeholder="University Roll No." v-model="registerForm.username">
                         </div>
                     </div>
                     <div class="form-group ">
                         <div class="col-xs-6">
-                            <input type="text" name="last_name" class="form-control" placeholder="Last Name" v-model="registerForm.last_name">
+                            <input type="text" name="ph_no" class="form-control" placeholder="Phone No." v-model="registerForm.phone_number">
                         </div>
                     </div>
                     <div class="form-group ">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" v-model="registerForm.password_confirmation"> </div>
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" v-model="password_confirmation"> </div>
                     </div>
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">
@@ -52,12 +52,12 @@
     export default {
         data() {
             return {
+                password_confirmation: '',
                 registerForm: {
+                    username:'',
                     email: '',
                     password: '',
-                    password_confirmation: '',
-                    first_name: '',
-                    last_name: ''
+                    phone_number: '',
                 }
             }
         },
@@ -65,12 +65,26 @@
             GuestFooter
         },
         mounted(){
+            var random = Math.floor(Math.random() * 3) + 0;
+            var bigSize = [
+                'url(../images/1.jpg)',
+                'url(../images/2.jpg)',
+                'url(../images/3.jpg)'
+                // 'url(http://placehold.it/300&text=banner2)',
+                // 'url(http://placehold.it/300&text=banner3)',
+                // 'url(http://placehold.it/300&text=banner4)',
+                // 'url(http://placehold.it/300&text=banner5)',
+                // 'url(http://placehold.it/300&text=banner6)'
+            ];
+            //document.body.style.backgroundImage= bigSize[random];
+
+            document.getElementById('bg').style.backgroundImage = bigSize[random];
         },
         methods: {
             submit(e){
-                axios.post('/api/auth/register', this.registerForm).then(response =>  {
+                axios.post('/api/register', this.registerForm).then(response =>  {
                     toastr['success'](response.data.message);
-                    this.$router.push('/login');
+                    // this.$router.push('/login');
                 }).catch(error => {
                     toastr['error'](error.response.data.message);
                 });
