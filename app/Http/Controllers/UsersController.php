@@ -151,20 +151,20 @@ class UsersController extends Controller
     }      
     
     public function userCreateMail(){
-        $users = User::where('is_mailed',0)->get()->toArray();
-        try
-        {
-            DB::beginTransaction();
-            event(new UserCreatedEvent($users));
-            $users->is_mailed = 1;
-            $users->save();
-            DB::commit();    
-            return $this->respondSuccess('Mailed',$users);
-        }
-        catch(Exception $e){
-            DB::rollback();
-            return $this->respondException($e);
-        }
+        $user = User::where('is_mailed',0 && 'type', 'STUDENT')->get()->toArray();
+        event(new UserCreatedEvent($user));
+        // try
+        // {
+        //     DB::beginTransaction();
+        //     $user->is_mailed = true;
+        //     $user->save();
+        //     DB::commit();    
+            return $this->respondSuccess('Mailed',$user);
+        // }
+        // catch(Exception $e){
+        //     DB::rollback();
+        //     return $this->respondException($e);
+        // }
         
     }
 }

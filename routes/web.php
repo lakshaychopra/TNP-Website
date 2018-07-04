@@ -33,11 +33,6 @@
 
 // Route::resource('/student', 'StudentsController');
 
-Route::group(['prefix' => 'dashboard'], function () {     
-        Route::get('/userexcelfile', 'UsersController@userExcelFile');
-});
-
-
 Route::get('/{vue?}', function () {
     return view('home');
 })->where('vue', '[\/\w\.-]*')->name('home');

@@ -24391,7 +24391,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         mail: function mail() {
-            axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["e" /* mailExcelURL */]).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["e" /* mailExcelURL */]).then(function (response) {
                 console.log(response);
             }).catch(function (error) {
                 console.log(error);

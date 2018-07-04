@@ -70,7 +70,7 @@
         },
         methods: {
             mail(){
-                 axios.get(mailExcelURL)
+                 axios.post(mailExcelURL)
                     .then(function(response) {
                     console.log(response);
                 })

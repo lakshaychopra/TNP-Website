@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Models\User;
 use App\Repositories\LoginRepository;
-use Auth;
 use Carbon\Carbon;
 use App\Events\TwoFactorEvent;
 use JWTAuth;

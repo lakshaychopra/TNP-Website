@@ -35,7 +35,7 @@ Route::group(['prefix' => 'dashboard'], function () {
         // Users Controller
         Route::resource('/user', 'UsersController');
         Route::get('/userexcelfile', 'UsersController@userExcelFile');
-        Route::get('/usercreatemail', 'UsersController@userCreateMail');
+        Route::post('/usercreatemail', 'UsersController@userCreateMail');
         //Student Controller
         Route::resource('/student', 'StudentsController');
     });
