@@ -56,16 +56,16 @@
                 , color: '#dcdcdc'
             });
 
-            if(!this.getAuthUser('email')){
-                helper.authUser().then(response => {
-                    this.$store.dispatch('setAuthUserDetail',{
-                        first_name: response.profile.first_name,
-                        last_name: response.profile.last_name,
-                        email: response.user.email,
-                        avatar:response.profile.avatar
-                    });
-                });
-            }
+            // if(!this.getAuthUser('email')){
+            //     helper.authUser().then(response => {
+            //         this.$store.dispatch('setAuthUserDetail',{
+            //             first_name: response.profile.first_name,
+            //             last_name: response.profile.last_name,
+            //             email: response.user.email,
+            //             avatar:response.profile.avatar
+            //         });
+            //     });
+            // }
         }
     }
 </script>

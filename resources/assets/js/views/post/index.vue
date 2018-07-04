@@ -1,91 +1,76 @@
 <template>
-  <div class="app-container">
-    <el-form :model="post" :rules="rules2" ref="post">
-    <input type="hidden" name="_token" :value="csrf">
-      <el-form-item label="Title" prop="title" >
-        <el-input v-model="post.title" placeholder="Title"></el-input>
-      </el-form-item>
-      <el-form-item label="Body">
-        <!-- <el-select v-model="form.region" placeholder="please select your zone">
-          <el-option label="Zone one" value="shanghai"></el-option>
-          <el-option label="Zone two" value="beijing"></el-option>
-        </el-select> -->
+	<div>
+        <div class="row page-titles">
+            <div class="col-md-6 col-8 align-self-center">
+                <h3 class="text-themecolor m-b-0 m-t-0">Task</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><router-link to="/home">Home</router-link></li>
+                    <li class="breadcrumb-item active">Task</li>
+                </ol>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add new Task</h4>
+                            <form @submit.prevent="proceed">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Title</label>
+                                            <input class="form-control" type="text" value="" v-model="post.title">
+                                        </div>
+                                    </div>
+                                 </div>    
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Body</label>
+                                            <vue-html5-editor class="form-control" :content="post.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor> 
+                                        </div>
+                                    </div>
+                                 </div> 
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Tags</label>        
+                                            <vue-tags-input class="form-control"
+                                              v-model="post.tag"
+                                              :tags="post.tags"
+                                              :validation="validation"
+                                              @tags-changed="newTags => post.tags = newTags"
+                                            />
+                                        </div>
+                                    </div>
+                                 </div>  
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Category</label>
+                                            <select v-model="post.category" class="form-control">
+                                              <option value="Internship">Internship</option>
+                                              <option value="Placement" >Placement</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                 </div>  
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group files">
+                                            <label for="">Image</label>
+                                            <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
 
-      <vue-html5-editor class="form-control" :content="post.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor>
-      </el-form-item>
-
-       <!-- <trumbowyg v-model="myHTML" class="form-control"></trumbowyg> -->
-      <!-- <wysiwyg v-model="myHTML" /> -->
-      <el-form-item label="Tags">
-            <vue-tags-input class="form-control"
-              v-model="post.tag"
-              :tags="post.tags"
-              :validation="validation"
-              @tags-changed="newTags => post.tags = newTags"
-            />
-      </el-form-item>
-            <!-- <el-select class="form-control"
-                v-model="post.tags"
-                multiple
-                filterable
-                allow-create
-                placeholder=""
-                >
-                <el-option
-                  v-for="item in tagsOptions"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value">
-                </el-option>
-              </el-select> -->
-        
-        <!-- <el-col :span="11">
-          <el-date-picker type="date" placeholder="Pick a date" v-model="post.date1" style="width: 100%;"></el-date-picker>
-        </el-col> -->
-        <!-- <el-col class="line" :span="2">-</el-col> -->
-        <!-- <el-col :span="11"> -->
-          <!-- <el-time-picker type="fixed-time" placeholder="Pick a time" v-model="post.date2" style="width: 100%;"></el-time-picker> -->
-        <!-- </el-col> -->
-      <el-form-item label="Category" prop="category">
-        <!-- <el-switch v-model="post.delivery"></el-switch> -->
-         <el-select v-model="post.category" clearable placeholder="Category" class="form-control">
-          <el-option
-            v-for="item in categoryOptions"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="Image">
-        <!-- <el-checkbox-group v-model="post.type">
-          <el-checkbox label="Online activities" name="type"></el-checkbox>
-          <el-checkbox label="Promotion activities" name="type"></el-checkbox>
-          <el-checkbox label="Offline activities" name="type"></el-checkbox>
-          <el-checkbox label="Simple brand exposure" name="type"></el-checkbox>
-        </el-checkbox-group> -->
-       <div class="form-group files">
-       <!-- <img :src="post.imageUrl" alt="Image"> -->
-       <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
-      
-       </div>
-      </el-form-item>
-
-      <!-- <el-form-item label="Resources">
-        <el-radio-group v-model="post.resource">
-          <el-radio label="Sponsor"></el-radio>
-          <el-radio label="Venue"></el-radio>
-        </el-radio-group>
-      </el-form-item>
-      <el-form-item label="Activity form">
-        <el-input type="textarea" v-model="post.desc"></el-input>
-      </el-form-item> -->
-      <el-form-item>
-        <el-button type="primary" @click="handleLoginFormSubmit('post')">Add</el-button>
-        <el-button @click="onCancel">Cancel</el-button>
-      </el-form-item>
-    </el-form>
-  </div>
+                                        </div>
+                                    </div>
+                                 </div> 
+                              
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
 </template>
 
 <script>
@@ -353,6 +338,10 @@ export default {
 }
 .vue-tags-input[data-v-36b6250a]{
   max-width: 100%;
+}
+
+.vue-html5-editor>.toolbar{
+  z-index: -1 !important; 
 }
 </style>
 

@@ -91,6 +91,7 @@
 <script>
 import { addPostURL } from "../../config.js";
 import VueTagsInput from '@johmun/vue-tags-input';
+
 export default {
    components: {
     VueTagsInput,

@@ -9,7 +9,7 @@ window.axios = axios;
 window.Form = Form;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('auth_token');
+window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that

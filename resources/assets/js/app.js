@@ -7,13 +7,23 @@
 import './bootstrap';
 import store from './store'
 import router from './routes'
-import auth from './packages/auth/auth'
+// import auth from './packages/auth/auth'
 
 /**
- * Next, we will create a fresh Vue application instance and attach it to
+ * Nex;t, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+import VueHtml5Editor from 'vue-html5-editor'
+Vue.use(VueHtml5Editor, {
+    hiddenModules: [
+        "image",
+        "info",
+        "full-screen",
+    ],
+
+});
 
 const app = new Vue({
     el: '#root',

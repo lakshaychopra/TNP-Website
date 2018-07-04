@@ -27,8 +27,8 @@ let routes = [
                 component: require('./views/configuration/configuration')
             },
             {
-                path: '/profile',
-                component: require('./views/user/profile')
+                path: '/post',
+                component: require('./views/post/index')
             },
             {
                 path: '/task',
@@ -67,11 +67,7 @@ let routes = [
                 path: '/login',
                 component: require('./views/auth/login')
             },
-             {
-                 path: '/security',
-                 component: require('./views/auth/security'),
-                 meta: { requiresAuth: true },
-             },
+             
             // {
             //     path: '/password',
             //     component: require('./views/auth/password')
@@ -114,30 +110,31 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
 
-    if (to.matched.some(m => m.meta.requiresAuth)){
-        return helper.check().then(response => {
-        if (helper.getToken() == null){
-            if(!response){
-                return next({ path : '/login'})
-            }
-        }
-            return next()
-        })        
-    }
+     if (to.matched.some(m => m.meta.requiresAuth)) {
+         return helper.check().then(response => {
+             if (!response) {
+                 return next({
+                     path: '/login'
+                 })
+             }
 
-    if (to.matched.some(m => m.meta.requiresGuest)){
-        return helper.check().then(response => {
-            if(response){
-                if (helper.getToken() != null) {
-                    return next({ path : '/home'})
-                }
-            }
+             return next()
+         })
+     }
 
-            return next()
-        })
-    }
+     if (to.matched.some(m => m.meta.requiresGuest)) {
+         return helper.check().then(response => {
+             if (response) {
+                 return next({
+                     path: '/home'
+                 })
+             }
 
-    return next()
+             return next()
+         })
+     }
+
+     return next()
 });
 
 export default router;
