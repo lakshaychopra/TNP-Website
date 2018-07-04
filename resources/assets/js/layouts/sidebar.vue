@@ -3,12 +3,7 @@
         <div class="scroll-sidebar">
             <div class="user-profile">
                 <div class="profile-img"> <img :src="getAvatar" alt="user" /> </div>
-                <div class="profile-text"> <a href="#" class="dropdown-toggle link u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{getAuthUserFullName()}}<span class="caret"></span></a>
-                    <div class="dropdown-menu">
-                        <router-link to="/profile" class="dropdown-item"><i class="fa fa-user"></i> Profile</router-link>
-                        <div class="dropdown-divider"></div> <router-link to="/configuration" class="dropdown-item"><i class="fa fa-cogs"></i> Configuration</router-link>
-                        <div class="dropdown-divider"></div> <a href="#" class="dropdown-item" @click.prevent="logout"><i class="fa fa-power-off"></i> Logout</a>
-                    </div>
+                <div class="profile-text"><a href="#">{{getAuthUserFullName()}}</a>
                 </div>
             </div>
             <nav class="sidebar-nav">
