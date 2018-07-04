@@ -10,6 +10,7 @@ use Exception;
 use Excel;
 use JWTAuth;
 use DB;
+use Carbon\Carbon;
 
 class UsersController extends Controller
 {
@@ -73,6 +74,8 @@ class UsersController extends Controller
                             'phone_number' =>  $value->phone_number,
                             'type'         =>  $type,
                             'password'     =>  bcrypt($password),
+                            'created_at'   => Carbon::now(),
+                            'updated_at'   => Carbon::now(),
                         ];
                     }
                     if(empty($data)){
