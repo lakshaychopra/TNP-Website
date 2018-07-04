@@ -35,12 +35,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Tags</label>        
-                                            <vue-tags-input
-                                              v-model="post.tag"
-                                              :tags="post.tags"
-                                              :validation="validation"
-                                              @tags-changed="newTags => post.tags = newTags"
-                                            />
+                                            <input-tag :tags.sync="post.tags"></input-tag>
+
                                         </div>
                                     </div>
                                  </div>  
@@ -77,10 +73,10 @@
 
 <script>
 import { addPostURL } from "../../config.js";
-import VueTagsInput from '@johmun/vue-tags-input';
+import InputTag from 'vue-input-tag'
 export default {
    components: {
-    VueTagsInput,
+    InputTag
   },
   data() {
       var validateFields = (rule, value, callback) => {
@@ -119,11 +115,9 @@ export default {
         resource: '',
         desc: '',
         content:'',
-         tag: '',
         tags: ['gndec','tnp'],
         category: '' ,
         imageUrl: '',
-        tags_submit:[],
  
       },
       tagsOptions: [{
@@ -163,16 +157,13 @@ export default {
     proceed() {
       // this.$refs[formName].validate((valid) => {
           // if (valid) {
-      for (let i = 0; i < this.post.tags.length; i++){
-      this.post.tags_submit.push(this.post.tags[i].text);
-      }
              const postData = {
         // usertype : 'EXECUTIVE_MEMBER',
         title: this.post.title,
         body: this.post.content,
         username:'admin',
         user_id: '1',
-        tag:this.post.tags_submit.toString(),
+        tag:this.post.tags.toString(),
         post_link:'abc',
         category:this.post.category,
         image:this.post.imageUrl
