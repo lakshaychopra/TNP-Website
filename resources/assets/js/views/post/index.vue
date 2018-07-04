@@ -2,10 +2,10 @@
 	<div>
         <div class="row page-titles">
             <div class="col-md-6 col-8 align-self-center">
-                <h3 class="text-themecolor m-b-0 m-t-0">Task</h3>
+                <h3 class="text-themecolor m-b-0 m-t-0">Post</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><router-link to="/home">Home</router-link></li>
-                    <li class="breadcrumb-item active">Task</li>
+                    <li class="breadcrumb-item active">Post</li>
                 </ol>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Add new Task</h4>
+                        <h4 class="card-title">Add New Post</h4>
                             <form @submit.prevent="proceed">
                                  <div class="row">
                                     <div class="col-md-12">
@@ -27,7 +27,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Body</label>
-                                            <vue-html5-editor class="form-control" :content="post.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor> 
+                                            <vue-html5-editor :content="post.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor> 
                                         </div>
                                     </div>
                                  </div> 
@@ -35,7 +35,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Tags</label>        
-                                            <vue-tags-input class="form-control"
+                                            <vue-tags-input
                                               v-model="post.tag"
                                               :tags="post.tags"
                                               :validation="validation"
@@ -64,7 +64,9 @@
                                         </div>
                                     </div>
                                  </div> 
-                              
+                                  <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">
+                                      <span>Save</span>
+                                  </button>
                             </form>
                     </div>
                 </div>
@@ -158,9 +160,9 @@ export default {
       // this.post.imageUrl =this.$refs.file.files[0];
       // console.log(this.post.imageUrl);
 },
-    handleLoginFormSubmit(formName) {
-      this.$refs[formName].validate((valid) => {
-          if (valid) {
+    proceed() {
+      // this.$refs[formName].validate((valid) => {
+          // if (valid) {
       for (let i = 0; i < this.post.tags.length; i++){
       this.post.tags_submit.push(this.post.tags[i].text);
       }
@@ -262,11 +264,11 @@ export default {
           console.log(error);
         });
 
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
+          // } else {
+          //   console.log('error submit!!');
+          //   return false;
+          // }
+        // });
      
     },
     onSubmit() {
