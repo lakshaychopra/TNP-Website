@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Services\UserService;
+use App\Events\UserCreatedEvent;
 use App\Http\Requests\CreateUserExcelRequest;
 use Exception;
 use Excel;
@@ -146,7 +147,7 @@ class UsersController extends Controller
             {
                 $sheet->fromArray($user);
             });
-        })->download('xlsx');
+        })->export('xlsx');
     }      
     
     public function userCreateMail(){

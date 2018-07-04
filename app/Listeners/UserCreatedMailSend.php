@@ -8,9 +8,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
 use App\Mail\UserCreateEmail;
 
-class UserCreatedMailSend implements ShouldQueue
+class UserCreatedMailSend
 {
-    use InteractsWithQueue;
 
     /**
      * Create the event listener.
