@@ -30,6 +30,14 @@ class UserCreatedMailSend
     public function handle(UserCreatedEvent $event)
     {
         $user = $event->user;
-        Mail::to($user->email)->queue(new UserCreateEmail($user));
+        
+       
+        // array_walk_recursive($user, function ($item, $key) {
+        //     echo "$key holds $item\n";
+        // });
+        foreach ($user as $row) {
+          $mail=$row['email'];
+          Mail::to($mail)->queue(new UserCreateEmail($user));
+        }
     }
 }
