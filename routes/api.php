@@ -21,6 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/login', 'LoginController@login');
 Route::post('/check', 'LoginController@check');
 Route::post('/logout', 'LoginController@logout');
+// Register Controller
+Route::post('/register', 'RegisterController@register');
 
 Route::group(['prefix' => 'dashboard'], function () {
     Route::group(['middleware' => 'jwt.auth'], function() {
