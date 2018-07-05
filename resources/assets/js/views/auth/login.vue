@@ -63,7 +63,7 @@
                             <b class="text-danger">NOTE : </b>Please check the spam box also.</small>
                         <div class="form-group m-t-20 ">
                             <div class="col-xs-12">
-                                <input type="password" name="password" class="form-control" placeholder="Verification Code" autocomplete="off" v-model="security.token_2fa"> </div>
+                                <input type="password" name="password" class="form-control" placeholder="Verification Code" autocomplete="off" maxlength="5" pattern="[0-9]*" inputmode="numeric" v-model="security.token_2fa"> </div>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">

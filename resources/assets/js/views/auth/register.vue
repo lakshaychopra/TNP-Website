@@ -13,7 +13,7 @@
                         </div>
                         <div class="form-group ">
                             <div class="col-xs-6">
-                                <input type="tel" name="ph_no" class="form-control" placeholder="Phone No." autocomplete="tel" v-model="registerForm.phone_number">
+                                <input type="tel" name="ph_no" class="form-control" placeholder="Phone No." autocomplete="tel" inputmode="numeric" v-model="registerForm.phone_number">
                             </div>
                         </div>
                         <div class="form-group ">

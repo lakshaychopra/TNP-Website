@@ -29538,7 +29538,10 @@ var render = function() {
                             type: "password",
                             name: "password",
                             placeholder: "Verification Code",
-                            autocomplete: "off"
+                            autocomplete: "off",
+                            maxlength: "5",
+                            pattern: "[0-9]*",
+                            inputmode: "numeric"
                           },
                           domProps: { value: _vm.security.token_2fa },
                           on: {
@@ -29940,7 +29943,8 @@ var render = function() {
                             type: "tel",
                             name: "ph_no",
                             placeholder: "Phone No.",
-                            autocomplete: "tel"
+                            autocomplete: "tel",
+                            inputmode: "numeric"
                           },
                           domProps: { value: _vm.registerForm.phone_number },
                           on: {
