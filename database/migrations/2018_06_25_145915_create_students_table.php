@@ -16,8 +16,8 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
             $table->string('univ_roll_no')->unique();
-            $table->string('class_roll_no')->unique()->comment('6 digit numeric')->nullable();
-            $table->string('name');
+            $table->string('class_roll_no')->unique()->nullable();
+            $table->string('name')->nullable();
             $table->string('batch')->comment('Year of Addmission and Year of Passout')->nullable();
             $table->enum('branch_type',['B.Tech.', 'M.B.A.', 'M.C.A.', 'M.Tech.'])->nullable();
             $table->string('stream')->comment('Stream/Course type')->nullable();
@@ -40,7 +40,7 @@ class CreateStudentsTable extends Migration
             $table->string('state')->nullable();
             $table->string('district')->nullable();
             $table->integer('pincode')->nullable();
-            $table->enum('form_status',['NONE','PENDING','RECIEVED','SUBMITTED','REJECTED'])->default('NONE')->nullable();
+            $table->enum('form_status',['NONE','PENDING','RECIEVED','SUBMITTED','REJECTED'])->default('NONE');
             $table->timestamps();
         });
     }
