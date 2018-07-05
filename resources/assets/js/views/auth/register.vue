@@ -8,21 +8,23 @@
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</h3>
                         <div class="form-group ">
                             <div class="col-xs-6">
-                                <input type="text" name="uni_roll_no" class="form-control" placeholder="University Roll No." v-model="registerForm.username">
+                                <input type="text" name="uni_roll_no" class="form-control" placeholder="University Roll No." autocomplete="on" v-model="registerForm.username">
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="col-xs-6">
-                                <input type="text" name="ph_no" class="form-control" placeholder="Phone No." v-model="registerForm.phone_number">
+                                <input type="tel" name="ph_no" class="form-control" placeholder="Phone No." autocomplete="tel" v-model="registerForm.phone_number">
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input type="text" name="email" class="form-control" placeholder="Email" v-model="registerForm.email"> </div>
+                                <input type="email" name="email" class="form-control" placeholder="Email" autocomplete="email" v-model="registerForm.email"> </div>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
-                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Register</button>
+                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Next 
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="form-group m-b-0">
@@ -47,24 +49,15 @@
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</h3>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input type="password" name="password" class="form-control" placeholder="Password" v-model="pswdUpdate.password"> </div>
+                                <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Password" v-model="pswdUpdate.password"> </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" v-model="password_confirmation"> </div>
+                                <input type="password" name="password_confirmation" class="form-control" autocomplete="off" placeholder="Confirm Password" v-model="password_confirmation"> </div>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
                                 <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Register</button>
-                            </div>
-                        </div>
-                        <div class="form-group m-b-0">
-                            <div class="col-sm-12 text-center">
-                                <p>Already have an account?
-                                    <router-link to="/login" class="text-info m-l-5">
-                                        <b>Sign In</b>
-                                    </router-link>
-                                </p>
                             </div>
                         </div>
                     </form>
