@@ -17,32 +17,10 @@ class PostService
 	{
 		return $this->repository->create($payload);
 	}
-	
-	public function updatePost(array $payload, $id)
-	{
-		return $this->repository->update($payload, $id);
-	}
-	
+
 	public function uploadPostImageService(array $payload)
 	{
 		return $this->repository->uploadPostImage($payload);
-	}
-	
-	public function updatePostImage(array $payload, Post $post)
-	{
-		if($post->hasFile('image'))
-		{
-			$usersImage = public_path("images/posts/images/{$post->image}"); 
-			if (File::exists($usersImage))
-			{
-				File::delete($usersImage);
-			}
-			$extension = $payload['image']->getClientOriginalExtension();
-			$filename = 'post_'.str_random().'.'.$extension;
-			$path =  public_path('images/posts/images/');
-			$imageLocation = $payload['image']->move($path, $filename);
-			return $filename;
-		}
 	}
 	
 	public function deletePostImage(array $payload, Post $post)

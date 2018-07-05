@@ -56,12 +56,12 @@ class PostController extends Controller
     public function store(CreatePostRequest $request)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        $post = $request->all();
         try {
             DB::beginTransaction();
-            if (!$post) {
+            if (!$auth) {
                 return $this->respondUnauthorized('Post Failed');
             }
+            $post = $request->all();
             if ($request->hasFile('image')) {
                 $post['image'] = $this->service->uploadPostImageService($post);
             } 
@@ -117,13 +117,18 @@ class PostController extends Controller
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
-            if(!$post){
+            if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
+            $data = $request->all();
+            $post->title = $request->title;
+            $post->body = $request->body;
+            $post->tag = $request->tag;
+            $post->category = $request->category;
             if ($request->hasFile('image')) {
-                $post['image'] = $this->service->updatePostImage($request->only('image'),$post);
+                $post['image'] = $this->service->uploadPostImageService($data);
             } 
-            $post = $this->service->updatePost($request->all(),$post);
+            $post->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$post);
         } catch (Exception $e) {
