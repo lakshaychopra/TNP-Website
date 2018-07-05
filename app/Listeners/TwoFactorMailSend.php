@@ -28,6 +28,7 @@ class TwoFactorMailSend
     */
     public function handle(TwoFactorEvent $event)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         $user = $event->user;
         Mail::to($user->email)->queue(new TwoFactorEmail($user));
     }

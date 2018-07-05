@@ -10,6 +10,7 @@ use DB;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\Services\RegisterService;
+use App\Events\UserRegisterEvent;
 
 class RegisterController extends Controller
 {
@@ -48,13 +49,13 @@ class RegisterController extends Controller
             $auth = JWTAuth::parseToken()->authenticate();
             $password = $request->only('password');
             $user = JWTAuth::user();
+            // event(new UserRegisterEvent($user));
             try{
                 DB::beginTransaction();
                 $user->password = bcrypt($password['password']);
                 $user->is_verified = true;
                 $user->save();
                 DB::commit();
-                $this->service->RegisterMailWithInstructions();
                 return $this->respondSuccess('Congrats!! Your password has been set successfully!', $user);
             }
             catch(JWTException $e)

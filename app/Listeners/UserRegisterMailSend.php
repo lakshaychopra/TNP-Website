@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
 use App\Mail\UserRegisterEmail;
 
-class UserRegisterMailSend
+class UserRegisterMailSend 
 {
     /**
      * Create the event listener.
