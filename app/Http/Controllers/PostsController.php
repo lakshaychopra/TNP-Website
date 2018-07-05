@@ -87,7 +87,7 @@ class PostController extends Controller
     */
     public function show(Post $post)
     {
-        $auth = JWTAuth::parseToken()->authenticate();
+        // $auth = JWTAuth::parseToken()->authenticate();
         //data fetched from database in $post with where id clause
         $post = $this->post->where('id', $post)->first();
         return $this->respondData($post);

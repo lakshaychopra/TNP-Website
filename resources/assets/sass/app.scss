@@ -2149,3 +2149,16 @@ ul.common li{
     list-style: outside none none;
     width: 48%;
 }
+.vue-input-tag-wrapper .input-tag {
+    background-color: #00bbd9 !important;
+    border-radius: 0px !important;
+    border: 1px solid #00bbd9 !important;
+    color: #ffffff !important;
+}
+
+.vue-input-tag-wrapper .input-tag .remove {
+    color: #0085c2 !important;
+}
+.vue-html5-editor>.toolbar{
+    z-index: 0 !important;
+}

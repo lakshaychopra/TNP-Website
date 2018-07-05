@@ -14,56 +14,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Add New Post</h4>
-                            <form @submit.prevent="proceed">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="">Title</label>
-                                            <input class="form-control" type="text" value="" v-model="post.title">
-                                        </div>
-                                    </div>
-                                 </div>    
-                                  <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="">Body</label>
-                                            <vue-html5-editor :content="post.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor> 
-                                        </div>
-                                    </div>
-                                 </div> 
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="">Tags</label>        
-                                            <input-tag :tags.sync="post.tags"></input-tag>
-
-                                        </div>
-                                    </div>
-                                 </div>  
-                                  <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="">Category</label>
-                                            <select v-model="post.category" class="form-control">
-                                              <option value="Internship">Internship</option>
-                                              <option value="Placement" >Placement</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                 </div>  
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group files">
-                                            <label for="">Image</label>
-                                            <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
-
-                                        </div>
-                                    </div>
-                                 </div> 
-                                  <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">
-                                      <span>Save</span>
-                                  </button>
-                            </form>
+                          <post-form></post-form>
                     </div>
                 </div>
             </div>
@@ -72,11 +23,13 @@
 </template>
 
 <script>
-import { addPostURL } from "../../config.js";
-// import InputTag from 'vue-input-tag'
+
+  import PostForm from './form'
+
 export default {
+   props: ['id'],
    components: {
-    // InputTag
+    PostForm
   },
   data() {
       var validateFields = (rule, value, callback) => {
@@ -87,7 +40,6 @@ export default {
       type: 'min-length',
       rule: /^.{8,}$/,
     }]
-
 }
     return {
       csrf: document
@@ -139,25 +91,13 @@ export default {
         this.post.content = data
     },
     handleChange(e) {
-      // let image = e.target.files[0];
-      // let reader = new FileReader();
-      // reader.readAsDataURL(image);
-      // reader.onload = e =>{
-      //   this.post.imageUrl = e.target.result
-      //   // console.log(e)
-      // }
-
-      // var file =e.target.files[0];
-      // this.post.imageUrl = URL.createObjectURL(file);
       this.post.imageUrl = e.target.files[0];
       console.log(this.post.imageUrl);
-      // this.post.imageUrl =this.$refs.file.files[0];
-      // console.log(this.post.imageUrl);
 },
     proceed() {
       // this.$refs[formName].validate((valid) => {
           // if (valid) {
-             const postData = {
+        const postData = {
         // usertype : 'EXECUTIVE_MEMBER',
         title: this.post.title,
         body: this.post.content,
@@ -233,25 +173,6 @@ export default {
               }
          }
          
-        //   if(error.response.status=="422"){
-        //     // console.log(obj['errors']['username']);
-        //     if(obj['errors'].hasOwnProperty('username')){
-        //         Vue.toasted.show(obj['errors']['username'],{
-        //         icon : 'exclamation-circle',
-        //         position: "bottom-center", 
-        //         duration : 10000
-        //       })
-        //     }
-        //     if (obj['errors'].hasOwnProperty('password')) {
-        //         Vue.toasted.show(obj['errors']['password'],{
-        //         icon : 'exclamation-circle',
-        //         position: "bottom-center", 
-        //         duration : 10000
-        //       })
-        //     }
-
-            
-          // }
           console.log(error);
         });
 
@@ -277,6 +198,7 @@ export default {
 </script>
 
 <style scoped>
+
 .line{
   text-align: center;
 }
@@ -331,10 +253,6 @@ export default {
 }
 .vue-tags-input[data-v-36b6250a]{
   max-width: 100%;
-}
-
-.vue-html5-editor>.toolbar{
-  z-index: -1 !important; 
 }
 </style>
 
