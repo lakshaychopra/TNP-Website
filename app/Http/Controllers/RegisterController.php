@@ -54,6 +54,7 @@ class RegisterController extends Controller
                 $user->is_verified = true;
                 $user->save();
                 DB::commit();
+                $this->service->RegisterMailWithInstructions();
                 return $this->respondSuccess('Congrats!! Your password has been set successfully!', $user);
             }
             catch(JWTException $e)

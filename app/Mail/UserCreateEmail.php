@@ -19,7 +19,6 @@ class UserCreateEmail extends Mailable
     public function __construct($user)
     {
         $this->user = $user;
-        \Log::info($user);
     }
     
     /**
