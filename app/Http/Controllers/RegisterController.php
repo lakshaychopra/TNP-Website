@@ -26,7 +26,9 @@ class RegisterController extends Controller
         $user = User::where([
             ['username', '=',$values['username']],
             [ 'email', '=',$values['email']],
-            ['phone_number', '=',$values['phone_number']]
+            ['phone_number', '=',$values['phone_number']],
+            ['type','=','STUDENT'],
+            ['is_verified','=',0]
             ])->first();
             if (!$token = JWTAuth::fromUser($user)) {
                 return $this->respondUnauthorized();
@@ -34,7 +36,8 @@ class RegisterController extends Controller
             try{
                 $data = [
                     'access_token' => $token,
-                    'authenticated' => true
+                    'authenticated' => true,
+                    'user'=> $user
                 ];
                 return $this->respondSuccess('User Verified', $data);
             }   

@@ -43,7 +43,7 @@ class LoginController extends Controller
             
             $data = [
                 'access_token' => $token,
-                'authenticated' => true
+                'authenticated' => true,
             ];
             
             DB::commit();
