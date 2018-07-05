@@ -116,17 +116,17 @@
         data() {
             return {
                 authenticated: false,
-                token: '',
-                loginForm: {
-                    username: '',
-                    password: ''
+                token:'',
+                loginForm:{
+                    username:'',
+                    password:''
                 },
-                security: {
-                    token_2fa: '',
+                security:{
+                    token_2fa:'',
                 }
             }
         },
-        components: {
+        components:{
             GuestFooter
         },
         created() {
@@ -157,7 +157,7 @@
                     if (response.status == "200") {
                         // window.location = "/dashboard";
                         this.token = response.data.data.access_token;
-                        axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.token;
+                        axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
 
                         toastr['success'](response.data.message);
                         this.authenticated = true;

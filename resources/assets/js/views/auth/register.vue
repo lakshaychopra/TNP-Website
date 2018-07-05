@@ -87,16 +87,16 @@
     export default {
         data() {
             return {
-                token: '',
+                token:'',
                 authenticated: false,
-                password_confirmation: '',
+                password_confirmation:'',
                 registerForm: {
-                    username: '',
-                    email: '',
-                    phone_number: '',
+                    username:'',
+                    email:'',
+                    phone_number:'',
                 },
                 pswdUpdate: {
-                    password: '',
+                    password:'',
                 }
             }
         },
@@ -125,7 +125,7 @@
                     toastr['success'](response.data.message);
                     this.authenticated = true;
                     this.token = response.data.data.access_token;
-                    axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.token;
+                    axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
                     // this.$router.push('/login');
                 }).catch(error => {
                     toastr['error'](error.response.data.message);

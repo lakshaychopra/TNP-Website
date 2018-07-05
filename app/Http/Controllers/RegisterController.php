@@ -27,42 +27,43 @@ class RegisterController extends Controller
             [ 'email', '=',$values['email']],
             ['phone_number', '=',$values['phone_number']]
             ])->first();
-        \Log::info($user);
-        if (!$token = JWTAuth::fromUser($user)) {
-            return $this->respondUnauthorized();
-        }
-        try{
-            $data = [
-                'access_token' => $token,
-                'authenticated' => true
-            ];
-            return $this->respondSuccess('User Verified', $data);
-        }   
-        catch(JWTException $e)
-        {
-            DB::rollback();
-            return $this->respondException($e);
-        }   
-    }  
-    
-    public function setPassword(SetPasswordRequest $request){
-        $auth = JWTAuth::parseToken()->authenticate();
-        $password = $request->only('password');
-        $user = JWTAuth::user();
-        try{
-            DB::beginTransaction();
-            $user->password = bcrypt($password['password']);
-            $user->save();
-            DB::commit();
-            return $this->respondSuccess('Congrats!! Your password has been set successfully!', $user);
-        }
-        catch(JWTException $e)
-        {
-            DB::rollback();
-            return $this->respondException($e);
-        }   
+            if (!$token = JWTAuth::fromUser($user)) {
+                return $this->respondUnauthorized();
+            }
+            try{
+                $data = [
+                    'access_token' => $token,
+                    'authenticated' => true
+                ];
+                return $this->respondSuccess('User Verified', $data);
+            }   
+            catch(JWTException $e)
+            {
+                DB::rollback();
+                return $this->respondException($e);
+            }   
+        }  
         
+        public function setPassword(SetPasswordRequest $request){
+            $auth = JWTAuth::parseToken()->authenticate();
+            $password = $request->only('password');
+            $user = JWTAuth::user();
+            try{
+                DB::beginTransaction();
+                $user->password = bcrypt($password['password']);
+                $user->is_verified = true;
+                $user->save();
+                DB::commit();
+                return $this->respondSuccess('Congrats!! Your password has been set successfully!', $user);
+            }
+            catch(JWTException $e)
+            {
+                DB::rollback();
+                return $this->respondException($e);
+            }   
+            
+            
+        }
         
     }
     
-}
