@@ -28980,25 +28980,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -29051,7 +29032,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (response.status == "200") {
                     // window.location = "/dashboard";
                     _this.token = response.data.data.access_token;
-                    axios.defaults.headers.common['Authorization'] = 'Bearer ' + _this.token;
+                    axios.defaults.headers.common['Authorization'] = 'Bearer' + _this.token;
 
                     toastr['success'](response.data.message);
                     _this.authenticated = true;
@@ -29328,7 +29309,10 @@ var render = function() {
                             type: "password",
                             name: "password",
                             placeholder: "Verification Code",
-                            autocomplete: "on"
+                            autocomplete: "off",
+                            maxlength: "5",
+                            pattern: "[0-9]*",
+                            inputmode: "numeric"
                           },
                           domProps: { value: _vm.security.token_2fa },
                           on: {
@@ -29432,7 +29416,7 @@ var staticRenderFns = [
               "btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light",
             attrs: { type: "submit" }
           },
-          [_vm._v("Login\n                                ")]
+          [_vm._v("Login\n                            ")]
         )
       ])
     ])
@@ -29581,13 +29565,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -29635,7 +29612,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 toastr['success'](response.data.message);
                 _this.authenticated = true;
                 _this.token = response.data.data.access_token;
-                axios.defaults.headers.common['Authorization'] = 'Bearer ' + _this.token;
+                axios.defaults.headers.common['Authorization'] = 'Bearer' + _this.token;
                 // this.$router.push('/login');
             }).catch(function (error) {
                 toastr['error'](error.response.data.message);
@@ -29701,7 +29678,8 @@ var render = function() {
                           attrs: {
                             type: "text",
                             name: "uni_roll_no",
-                            placeholder: "University Roll No."
+                            placeholder: "University Roll No.",
+                            autocomplete: "on"
                           },
                           domProps: { value: _vm.registerForm.username },
                           on: {
@@ -29733,9 +29711,11 @@ var render = function() {
                           ],
                           staticClass: "form-control",
                           attrs: {
-                            type: "text",
+                            type: "tel",
                             name: "ph_no",
-                            placeholder: "Phone No."
+                            placeholder: "Phone No.",
+                            autocomplete: "tel",
+                            inputmode: "numeric"
                           },
                           domProps: { value: _vm.registerForm.phone_number },
                           on: {
@@ -29767,9 +29747,10 @@ var render = function() {
                           ],
                           staticClass: "form-control",
                           attrs: {
-                            type: "text",
+                            type: "email",
                             name: "email",
-                            placeholder: "Email"
+                            placeholder: "Email",
+                            autocomplete: "email"
                           },
                           domProps: { value: _vm.registerForm.email },
                           on: {
@@ -29856,6 +29837,7 @@ var render = function() {
                           attrs: {
                             type: "password",
                             name: "password",
+                            autocomplete: "off",
                             placeholder: "Password"
                           },
                           domProps: { value: _vm.pswdUpdate.password },
@@ -29890,6 +29872,7 @@ var render = function() {
                           attrs: {
                             type: "password",
                             name: "password_confirmation",
+                            autocomplete: "off",
                             placeholder: "Confirm Password"
                           },
                           domProps: { value: _vm.password_confirmation },
@@ -29905,29 +29888,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group m-b-0" }, [
-                      _c("div", { staticClass: "col-sm-12 text-center" }, [
-                        _c(
-                          "p",
-                          [
-                            _vm._v(
-                              "Already have an account?\n                                "
-                            ),
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "text-info m-l-5",
-                                attrs: { to: "/login" }
-                              },
-                              [_c("b", [_vm._v("Sign In")])]
-                            )
-                          ],
-                          1
-                        )
-                      ])
-                    ])
+                    _vm._m(3)
                   ]
                 )
               ]),
@@ -29965,7 +29926,13 @@ var staticRenderFns = [
               "btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light",
             attrs: { type: "submit" }
           },
-          [_vm._v("Register")]
+          [
+            _vm._v("Next \n                                "),
+            _c("i", {
+              staticClass: "fa fa-arrow-right",
+              attrs: { "aria-hidden": "true" }
+            })
+          ]
         )
       ])
     ])

@@ -14,7 +14,6 @@
                                 <input type="text" name="email" class="form-control" autocomplete="on" placeholder="Username" v-model="loginForm.username">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off" v-model="loginForm.password">
@@ -45,7 +44,6 @@
                                         <b>Forgot your password?</b>
                                     </router-link>
                                 </p>
-                                <!-- <p>Don't have an account? <router-link to="/register" class="text-info m-l-5"><b>Sign Up</b></router-link></p> -->
                             </div>
                         </div>
                     </form>
@@ -63,35 +61,18 @@
                         <br>
                         <small>
                             <b class="text-danger">NOTE : </b>Please check the spam box also.</small>
-                        <!-- <div class="form-group m-t-20 ">
-                        <div class="col-xs-12">
-                            <input type="text" name="email" class="form-control" placeholder="Email" v-model="loginForm.email"> </div>
-                    </div> -->
                         <div class="form-group m-t-20 ">
                             <div class="col-xs-12">
-                                <input type="password" name="password" class="form-control" placeholder="Verification Code" autocomplete="on" v-model="security.token_2fa"> </div>
+                                <input type="password" name="password" class="form-control" placeholder="Verification Code" autocomplete="off" maxlength="5" pattern="[0-9]*" inputmode="numeric" v-model="security.token_2fa"> </div>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
                                 <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Login
-                                    <!-- <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
                                 </button>
                             </div>
                         </div>
-                        <!-- <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-                            <div class="social">
-                                <a href="/auth/social/github" class="btn  btn-github" data-toggle="tooltip" title="Login with Github"> <i aria-hidden="true" class="fa fa-github"></i> </a>
-                                <a href="/auth/social/twitter" class="btn  btn-twitter" data-toggle="tooltip" title="Login with Twitter"> <i aria-hidden="true" class="fa fa-twitter"></i> </a>
-                                <a href="/auth/social/facebook" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a>
-                            </div>
-                        </div>
-                    </div> -->
-
                         <div class="form-group m-b-0">
                             <div class="col-sm-12 text-center">
-                                <!-- <p>Forgot your password? <router-link to="/password" class="text-info m-l-5"><b>Reset here!</b></router-link></p> -->
-                                <!-- <p>Don't have an account? <router-link to="/register" class="text-info m-l-5"><b>Sign Up</b></router-link></p> -->
                             </div>
                         </div>
                     </form>
@@ -116,17 +97,17 @@
         data() {
             return {
                 authenticated: false,
-                token: '',
-                loginForm: {
-                    username: '',
-                    password: ''
+                token:'',
+                loginForm:{
+                    username:'',
+                    password:''
                 },
-                security: {
-                    token_2fa: '',
+                security:{
+                    token_2fa:'',
                 }
             }
         },
-        components: {
+        components:{
             GuestFooter
         },
         created() {
@@ -157,7 +138,7 @@
                     if (response.status == "200") {
                         // window.location = "/dashboard";
                         this.token = response.data.data.access_token;
-                        axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.token;
+                        axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
 
                         toastr['success'](response.data.message);
                         this.authenticated = true;

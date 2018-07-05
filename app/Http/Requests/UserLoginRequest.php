@@ -24,7 +24,7 @@ class UserLoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'bail|required|min:3|exists:users,username', // make sure the username
+            'username' => 'bail|required|min:7|exists:users,username', // make sure the username
             'password' => 'required|min:6', // password has to be greater than 3 characters
         ];
     }
