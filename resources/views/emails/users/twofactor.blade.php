@@ -7,4 +7,11 @@ Please do not share this OTP with anyone for security reasons.<br>
 
 Thanks,<br>
 {{ config('app.name') }}
+
+<br>
+
+
+<small>** This is a system generated email, please do not reply to this email. </small>
+
+
 @endcomponent
