@@ -34,6 +34,14 @@ self.__precacheManifest = [
   {
     "url": "js/bundle.min.js",
     "revision": "811696e40a759895cd9ee746a144dd8c"
+  },
+  {
+    "url": "manifest.json",
+    "revision": "0e7bc9758c96f1532f286382fdf16ffd"
+  },
+  {
+    "url": "mix-manifest.json",
+    "revision": "55cee1fa25e0c158c2bff790b320a331"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
