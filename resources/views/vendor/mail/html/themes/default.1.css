@@ -1,8 +1,7 @@
 /* Base */
 
-body,
-body *:not(html):not(style):not(br):not(tr):not(code) {
-    font-family: Rubik, sans-serif;
+body, body *:not(html):not(style):not(br):not(tr):not(code) {
+    font-family: Avenir, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
@@ -37,7 +36,6 @@ a {
 a img {
     border: none;
 }
-
 
 /* Typography */
 
@@ -81,11 +79,10 @@ img {
     max-width: 100%;
 }
 
-
 /* Layout */
 
 .wrapper {
-    background-color: #0188c3;
+    background-color: #f5f8fa;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -103,7 +100,6 @@ img {
     -premailer-width: 100%;
 }
 
-
 /* Header */
 
 .header {
@@ -112,13 +108,12 @@ img {
 }
 
 .header a {
-    color: #ffffff;
+    color: #bbbfc3;
     font-size: 19px;
     font-weight: bold;
     text-decoration: none;
     text-shadow: 0 1px 0 white;
 }
-
 
 /* Body */
 
@@ -144,7 +139,6 @@ img {
     -premailer-width: 570px;
 }
 
-
 /* Subcopy */
 
 .subcopy {
@@ -156,7 +150,6 @@ img {
 .subcopy p {
     font-size: 12px;
 }
-
 
 /* Footer */
 
@@ -171,11 +164,10 @@ img {
 }
 
 .footer p {
-    color: #ffffff;
+    color: #AEAEAE;
     font-size: 12px;
     text-align: center;
 }
-
 
 /* Tables */
 
@@ -204,7 +196,6 @@ img {
 .content-cell {
     padding: 35px;
 }
-
 
 /* Buttons */
 
@@ -251,7 +242,6 @@ img {
     border-left: 18px solid #bf5329;
 }
 
-
 /* Panels */
 
 .panel {
@@ -271,7 +261,6 @@ img {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
 
 /* Promotions */
 
