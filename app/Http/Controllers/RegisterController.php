@@ -52,13 +52,14 @@ class RegisterController extends Controller
             $auth = JWTAuth::parseToken()->authenticate();
             $password = $request->only('password');
             $user = JWTAuth::user();
-            // event(new UserRegisterEvent($user));
+            // $userProfile = $user->profile;
             try{
                 DB::beginTransaction();
                 $user->password = bcrypt($password['password']);
                 $user->is_verified = true;
                 $user->save();
                 DB::commit();
+                event(new UserRegisterEvent($user));
                 return $this->respondSuccess('Congrats!! Your password has been set successfully!', $user);
             }
             catch(JWTException $e)
@@ -66,8 +67,6 @@ class RegisterController extends Controller
                 DB::rollback();
                 return $this->respondException($e);
             }   
-            
-            
         }
         
     }

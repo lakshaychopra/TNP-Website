@@ -1,16 +1,31 @@
 @component('mail::message')
-# Introduction
+# Verify account and complete registeration.
+<br>
+Dear Student,
 
-The body of your message.
+@component('mail::table')
+| Details           | Values            |
+| :---------------: |:-----------------:|
+|University Roll No.|{{$username}}      |
+|Email              |{{$email}}         |
+|Phone Number       |{{$phone_number}}  |
+@endcomponent
 
-{{--  {{$username}}<br>
-{{$email}}<br>
-{{$phone_number}}<br>  --}}
+
+<br>
+<br>
+<br>
 
 @component('mail::button', ['url' => '/register'])
 Button Text
-@endcomponent
 
 Thanks,<br>
 {{ config('app.name') }}
+
+<br>
+
+
+<small>** This is a system generated email, please do not reply to this email. </small>
+
+
 @endcomponent
