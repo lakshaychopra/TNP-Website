@@ -52,7 +52,8 @@ class RegisterController extends Controller
             $auth = JWTAuth::parseToken()->authenticate();
             $password = $request->only('password');
             $user = JWTAuth::user();
-            // event(new UserRegisterEvent($user));
+            // $userProfile = $user->profile;
+            event(new UserRegisterEvent($user));
             try{
                 DB::beginTransaction();
                 $user->password = bcrypt($password['password']);

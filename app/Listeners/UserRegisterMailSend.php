@@ -29,6 +29,6 @@ class UserRegisterMailSend
     public function handle(UserRegisterEvent $event)
     {
         $user = $event->user;
-        Mail::to($user->email)->queue(new UserRegisterEvent($user));
+        Mail::to($user->email)->queue(new UserRegisterEmail($user));
     }
 }

@@ -29,6 +29,7 @@ class UserCreatedMailSend
      */
     public function handle(UserCreatedEvent $event)
     {
+        try {
         $user = $event->user;
         
        
@@ -37,7 +38,10 @@ class UserCreatedMailSend
         // });
         foreach ($user as $row) {
           $mail=$row['email'];
-          Mail::to($mail)->queue(new UserCreateEmail($user));
+          Mail::to($mail)->queue(new UserCreateEmail($row));
+        }
+        } catch(\Exception $e) {
+        \Log::info($e);
         }
     }
 }
