@@ -14,7 +14,6 @@ Dear Student,
 
 <br>
 <br>
-<br>
 
 @component('mail::button', ['url' => '/register'])
 Button Text
