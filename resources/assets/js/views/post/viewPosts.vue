@@ -3,11 +3,11 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card card-primary shadow-sm" v-for="post in posts.data" :key="post.id">
-                    <div class="card-header"><h5>{{post.title}}</h5><small class="pull-right sub-head"><span style="float:left;">{{post.category}}</span>
+                    <div class="card-header"><h3>{{post.title}}</h3><small class="pull-right sub-head"><span style="float:left;">{{post.category}}</span>
                       <div class="dropdown">
                           <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                           <div class="dropdown-menu">
-                            <router-link v-bind:to="{ path:'/post/edit/'+post.id}">
+                            <router-link v-bind:to="{ path:'/post/'+post.id +'/edit'}">
                             <a class="dropdown-item" href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></router-link>
                              <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="" @click.prevent="delPost(post.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
@@ -63,7 +63,7 @@
           .catch((error) => console.log(error))
         },
         getImage(index){
-          return "background: url(/images/posts/images/" + index +") center no-repeat;";
+          return "background: url(/images/posts/images/" + index +") center no-repeat;    background-size: cover;";
         },
         getPost(id){
           // console.log(id);
@@ -102,13 +102,14 @@
 .card{
   border-radius: 0;
   margin-bottom: 30px;
+  border-top: 3px solid #00a7d0;
 }
 .card-header{
   background-color: #fff;
   padding: 0.62rem 1.15rem;
   margin-top: 6px;
 }
-.card-header h5{
+.card-header h3{
   float: left;
 }
 .card-footer{
@@ -134,7 +135,8 @@
   color: #696969;
   padding: 1px 4px;
   border-radius: 0;
-  font-size: 12px;
+  border-color:#b3b6b9;
+  font-size: 14px;
   margin-right: 4px;
 }
 .sub-head{

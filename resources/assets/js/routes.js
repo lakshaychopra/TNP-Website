@@ -52,6 +52,17 @@ let routes = [
             },
         ]
     },
+    {
+        path: '/index',
+        component: require('./layouts/index/pages.vue'),
+        name:'index'
+        // children: [{
+        //         path: '/',
+        //         name:'index',
+        //         component: require('./views/pages/home')
+        //     },
+        // ]
+    },
     // {
     //     path: '/',
     //     component: require('./layouts/login-security/auth_layout'),

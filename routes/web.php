@@ -35,4 +35,4 @@
 
 Route::get('/{vue?}', function () {
     return view('home');
-})->where('vue', '[\/\w\.-]*')->name('home');
+})->where('vue', '[\/\w\.-]*')->name('index');
