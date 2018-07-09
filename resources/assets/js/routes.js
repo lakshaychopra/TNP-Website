@@ -53,6 +53,22 @@ let routes = [
         ]
     },
     {
+        path: '/',
+        component: require('./layouts/user/default-page'),
+        meta: {
+            requiresAuth: true
+        },
+        children: [{
+                path: '/',
+                component: require('./views/pages/home')
+            },
+            {
+                path: '/home',
+                component: require('./views/pages/home')
+            },
+        ]
+    },
+    {
         path: '/index',
         component: require('./layouts/index/pages.vue'),
         name:'index'
