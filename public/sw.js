@@ -11,7 +11,7 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.1/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox-sw.js");
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -25,19 +25,19 @@ self.__precacheManifest = [
   },
   {
     "url": "css/style.css",
-    "revision": "c60bd58fa48260a8875b72ea1be39434"
+    "revision": "93f880bcb2bad0ff464cfd5ea81d068c"
   },
   {
     "url": "js/app.js",
-    "revision": "0c07fe81653dcd60c9ad04ebc46d21fe"
+    "revision": "639b9bc4eb7c733da86cd0ae3d390db6"
   },
   {
     "url": "js/bundle.min.js",
-    "revision": "065601df6ce94497e95760e62fd73041"
+    "revision": "811696e40a759895cd9ee746a144dd8c"
   },
   {
     "url": "manifest.json",
-    "revision": "e3bd2421522fe89595500c0f3c74dc77"
+    "revision": "0e7bc9758c96f1532f286382fdf16ffd"
   },
   {
     "url": "mix-manifest.json",

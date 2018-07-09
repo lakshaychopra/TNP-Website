@@ -37,6 +37,6 @@
 				<div id="root">
 					<router-view></router-view>
 				</div>
-				<script src="/js/bundle.min.js"></script>
+				<script type="text/javascript" src="/js/bundle.min.js"></script>
 			</body>
 			</html>

@@ -48,4 +48,11 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    // public function profile() {
+    //     if($this->type == 'STUADMINDENT') {
+    //         return $this->hasOne(Student::class, 'foriegn_key', id);
+    //     }
+    //     return $this->hasOne(Student::class, 'foriegn_key', id);
+    // }
 }

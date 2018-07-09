@@ -19560,16 +19560,19 @@ module.exports = __webpack_require__(154);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_html5_editor__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_html5_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_html5_editor__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_worker__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_worker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__service_worker__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bootstrap__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_html5_editor__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_html5_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue_html5_editor__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
 
 
 
@@ -19583,15 +19586,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_3_vue_html5_editor___default.a, {
+Vue.use(__WEBPACK_IMPORTED_MODULE_4_vue_html5_editor___default.a, {
     hiddenModules: ["image", "info", "full-screen"]
 
 });
 
 var app = new Vue({
     el: '#root',
-    store: __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */],
-    router: __WEBPACK_IMPORTED_MODULE_2__routes__["a" /* default */]
+    store: __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */],
+    router: __WEBPACK_IMPORTED_MODULE_3__routes__["a" /* default */]
 });
 
 /***/ }),
@@ -30160,6 +30163,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -30349,6 +30356,12 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group " }, [
                       _c("div", { staticClass: "col-xs-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "Username", hidden: "" } },
+                          [_vm._v("Username")]
+                        ),
+                        _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
@@ -30361,7 +30374,7 @@ var render = function() {
                           staticClass: "form-control",
                           attrs: {
                             type: "text",
-                            name: "email",
+                            name: "username",
                             autocomplete: "on",
                             placeholder: "Username"
                           },
@@ -30384,6 +30397,12 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       _c("div", { staticClass: "col-xs-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "password", hidden: "" } },
+                          [_vm._v("Password")]
+                        ),
+                        _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
@@ -30398,6 +30417,7 @@ var render = function() {
                             type: "password",
                             name: "password",
                             placeholder: "Password",
+                            minlength: "6",
                             autocomplete: "off"
                           },
                           domProps: { value: _vm.loginForm.password },
@@ -30475,6 +30495,12 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group m-t-20 " }, [
                       _c("div", { staticClass: "col-xs-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "password", hidden: "" } },
+                          [_vm._v("Verification Code")]
+                        ),
+                        _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
@@ -30745,6 +30771,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -30845,6 +30876,14 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group " }, [
                       _c("div", { staticClass: "col-xs-6" }, [
+                        _c(
+                          "label",
+                          {
+                            attrs: { for: "University Roll Number", hidden: "" }
+                          },
+                          [_vm._v("University Roll No.")]
+                        ),
+                        _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
@@ -30859,6 +30898,8 @@ var render = function() {
                             type: "text",
                             name: "uni_roll_no",
                             placeholder: "University Roll No.",
+                            minlength: "7",
+                            maxlength: "7",
                             autocomplete: "on"
                           },
                           domProps: { value: _vm.registerForm.username },
@@ -30880,6 +30921,12 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group " }, [
                       _c("div", { staticClass: "col-xs-6" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "phone number", hidden: "" } },
+                          [_vm._v("Phone Number")]
+                        ),
+                        _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
@@ -30917,6 +30964,10 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group " }, [
                       _c("div", { staticClass: "col-xs-12" }, [
+                        _c("label", { attrs: { for: "email", hidden: "" } }, [
+                          _vm._v("Email")
+                        ]),
+                        _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
@@ -31005,6 +31056,12 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       _c("div", { staticClass: "col-xs-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "password", hidden: "" } },
+                          [_vm._v("Password")]
+                        ),
+                        _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
@@ -31018,6 +31075,7 @@ var render = function() {
                           attrs: {
                             type: "password",
                             name: "password",
+                            minlength: "6",
                             autocomplete: "off",
                             placeholder: "Password"
                           },
@@ -31040,6 +31098,12 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       _c("div", { staticClass: "col-xs-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "password", hidden: "" } },
+                          [_vm._v("Confirm Password")]
+                        ),
+                        _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
@@ -31053,6 +31117,7 @@ var render = function() {
                           attrs: {
                             type: "password",
                             name: "password_confirmation",
+                            minlength: "6",
                             autocomplete: "off",
                             placeholder: "Confirm Password"
                           },
@@ -32903,6 +32968,30 @@ return VueHtml5Editor;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */
+/***/ (function(module, exports) {
+
+if ('serviceWorker' in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('../public/sw.js');
+    });
+}
 
 /***/ })
 /******/ ]);

@@ -1,7 +1,7 @@
 {
     "name": "Training and Placement Cell,GNDEC,LDH",
     "short_name": "T&P",
-    "start_url": "/login",
+    "start_url": "/",
     "scope": ".",
     "display": "standalone",
     "background_color": "#fff",

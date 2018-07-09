@@ -153,7 +153,7 @@ return [
         
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class, 
-        Cyvelnet\Laravel5Fractal\Laravel5FractalServiceProvider::class,      
+        Cyvelnet\Laravel5Fractal\Laravel5FractalServiceProvider::class,    
         
         /*
         * Application Service Providers...

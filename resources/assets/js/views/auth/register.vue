@@ -8,16 +8,19 @@
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</h3>
                         <div class="form-group ">
                             <div class="col-xs-6">
-                                <input type="text" name="uni_roll_no" class="form-control" placeholder="University Roll No." autocomplete="on" v-model="registerForm.username">
+                                <label for="University Roll Number" hidden>University Roll No.</label>
+                                <input type="text" name="uni_roll_no" class="form-control" placeholder="University Roll No." minlength="7" maxlength="7" autocomplete="on" v-model="registerForm.username">
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="col-xs-6">
+                                <label for="phone number" hidden>Phone Number</label>
                                 <input type="tel" name="ph_no" class="form-control" placeholder="Phone No." autocomplete="tel" maxlength="10" inputmode="numeric" v-model="registerForm.phone_number">
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="col-xs-12">
+                                <label for="email" hidden>Email</label>
                                 <input type="email" name="email" class="form-control" placeholder="Email" autocomplete="email" v-model="registerForm.email"> </div>
                         </div>
                         <div class="form-group text-center m-t-20">
@@ -49,11 +52,13 @@
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</h3>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Password" v-model="pswdUpdate.password"> </div>
+                                <label for="password" hidden>Password</label>
+                                <input type="password" name="password" minlength="6" class="form-control" autocomplete="off" placeholder="Password" v-model="pswdUpdate.password"> </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input type="password" name="password_confirmation" class="form-control" autocomplete="off" placeholder="Confirm Password" v-model="password_confirmation"> </div>
+                                <label for="password" hidden>Confirm Password</label>
+                                <input type="password" name="password_confirmation" minlength="6" class="form-control" autocomplete="off" placeholder="Confirm Password" v-model="password_confirmation"> </div>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">

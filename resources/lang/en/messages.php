@@ -2,8 +2,9 @@
 
 return [
     'email' =>[
-        'TwoFactorMailSendSubject' => 'One Time Password (OTP) for your T&P account.',
-        'userCreatedMailSendSubject' =>'Complete your registeration.',
-        'UserRegisterWithInstructionsEmailSubject'=>'Welcome to Training and Placement Cell, GNDEC, Ludhiana'
+        'TwoFactorMailSendSubject' => 'Important : One Time Password (OTP) for your T&P account.',
+        'userCreatedMailSendSubject' =>'Important : Complete registeration and verify your account!
+        ',
+        'UserRegisterWithInstructionsEmailSubject' => 'Welcome to Training and Placement Cell, GNDEC, Ldh',
         ]
     ];
