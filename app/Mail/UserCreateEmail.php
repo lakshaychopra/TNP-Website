@@ -20,7 +20,8 @@ class UserCreateEmail extends Mailable
     * @return void
     */
     public function __construct($user)
-    {\Log::info(1);
+    {
+        // \Log::info(1);
         $this->user = $user;
     }
     
@@ -30,8 +31,9 @@ class UserCreateEmail extends Mailable
     * @return $this
     */
     public function build()
-    {  \Log::info(2);
-        \Log::info($this->user);
+    {  
+        // \Log::info(2);
+        // \Log::info($this->user);
         // foreach ($user as $row) {
         //     $username=$row['username'];
         //     $email=$row['email'];
