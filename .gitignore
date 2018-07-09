@@ -11,3 +11,4 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 tnp.code-workspace
+database/seeds/UsersTableSeeder.php
