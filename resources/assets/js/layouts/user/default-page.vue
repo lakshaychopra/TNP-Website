@@ -19,7 +19,7 @@
     import AppSidebar from './sidebar.vue'
     import AppFooter from './footer.vue'
     import AppRightSidebar from './right-sidebar.vue'
-    import helper from '../services/helper'
+    import helper from './../../services/helper'
     export default {
         methods : {
             notification(){

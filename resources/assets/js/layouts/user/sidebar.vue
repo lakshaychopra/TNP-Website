@@ -42,7 +42,7 @@
 
 <script>
 
-    import helper from '../services/helper'
+    import helper from './../../services/helper'
 
     export default {
         mounted() {
