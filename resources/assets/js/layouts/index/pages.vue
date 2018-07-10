@@ -1,47 +1,62 @@
 <template>
 <div>
         <app-header></app-header>
-        <div class="container">
-            <div class="row justify-content-center" v-for="post in posts.data" :key="post.id">
-            <div class="col-md-12">
-                <div class="card card-primary shadow-sm" >
-                    <div class="card-header"><h3>{{post.title}}</h3><small class="pull-right sub-head"><span style="float:left;">{{post.category}}</span>
-                      <div class="dropdown">
-                          <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
-                          <div class="dropdown-menu">
-                            <router-link v-bind:to="{ path:'/post/'+post.id +'/edit'}">
-                            <a class="dropdown-item" href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></router-link>
-                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="" @click.prevent="delPost(post.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
-                          </div>
-                       </div>
-                    </small>
-                    </div>
-                    <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
-                    
-                    <div class="card-img-top" data-toggle="modal"  v-if="post.image != null" data-target="#exampleModal" :style="getImage(post.image)" :postImage="post.image" >
-                        <!-- <img :src="getImage(post.image_path)" alt=""> -->
-                    </div>
-                    <div class="card-body">
-                      <div><small ><strong>{{post.updated_at}}</strong></small><span class="pull-right"><i id="share" git class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span> </div>
-                        <!-- <ul class="list-group">
-                          <li class="list-group-item"></li>
-                        </ul> -->
-                      <span v-html="post.body"></span>
-                    </div>
-                    <div class="card-footer"><span class="pull-right"><button class="btn btn-custom shadow-sm" v-for="tag in post.tag.split(',')" :key="tag" >{{ tag.toUpperCase() }}</button></span></div>
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-3 px-1 d-none d-md-block" id="sticky-sidebar">
+            <div class="py-2 sticky-top">
+                <div class="nav flex-column">
+                    <a href="" class="nav-link">Sidebar</a>
+                    <a href="" class="nav-link">Link</a>
+                    <a href="" class="nav-link">Link</a>
+                    <a href="" class="nav-link">Link</a>
+                    <a href="" class="nav-link">Link</a>
+                    <a href="" class="nav-link">Link</a>
                 </div>
             </div>
-            <hr>
         </div>
+        <div class="col" id="main">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="card card-primary shadow-sm" v-for="post in posts.data" :key="post.id">
+                        <div class="card-header"><h3>{{post.title}}</h3><small class="pull-right sub-head"><span style="float:left;">{{post.category}}</span>
+                        <div class="dropdown">
+                            <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
+                            <div class="dropdown-menu">
+                                <router-link v-bind:to="{ path:'/post/'+post.id +'/edit'}">
+                                <a class="dropdown-item" href="#" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></router-link>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="" @click.prevent="delPost(post.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
+                            </div>
+                        </div>
+                        </small>
+                        </div>
+                        <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
+                        
+                        <div class="card-img-top" data-toggle="modal"  v-if="post.image != null" data-target="#exampleModal" :style="getImage(post.image)" :postImage="post.image" >
+                            <!-- <img :src="getImage(post.image_path)" alt=""> -->
+                        </div>
+                        <div class="card-body">
+                        <div><small ><strong>{{post.updated_at}}</strong></small><span class="pull-right"><i id="share" git class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span> </div>
+                            <!-- <ul class="list-group">
+                            <li class="list-group-item"></li>
+                            </ul> -->
+                        <span v-html="post.body"></span>
+                        </div>
+                        <div class="card-footer"><span class="pull-right"><button class="btn btn-custom shadow-sm" v-for="tag in post.tag.split(',')" :key="tag" >{{ tag.toUpperCase() }}</button></span></div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
 </div>
 </template>
 <script>
     import AppHeader from './header.vue'
-      import {addPostURL} from "../../config.js";
+    import {addPostURL} from "../../config.js";
 
 export default {
     components:{
