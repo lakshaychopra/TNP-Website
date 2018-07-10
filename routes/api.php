@@ -23,6 +23,8 @@ Route::post('/check', 'LoginController@check');
 Route::post('/logout', 'LoginController@logout');
 // Register Controller
 Route::post('/register', 'RegisterController@register');
+//Home Controller
+Route::resource('/home', 'HomeController');
 
 Route::group(['prefix' => 'dashboard'], function () {
     Route::group(['middleware' => 'jwt.auth'], function() {

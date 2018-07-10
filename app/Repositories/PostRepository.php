@@ -9,7 +9,7 @@ class PostRepository
     /**
     * create new instance
     *
-    * @param User $model
+    * @param Post $model
     */
     public function __construct(Post $model)
     {
@@ -24,7 +24,7 @@ class PostRepository
     
     public function list($limit = false)
     {
-        $builder = Post::orderBy('created_at', 'decs');
+        $builder = Post::orderBy('created_at', 'desc');
         if(!$limit) {
             return $builder->get();
         }
