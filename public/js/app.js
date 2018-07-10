@@ -31729,7 +31729,7 @@ var render = function() {
                             name: "password",
                             placeholder: "Password",
                             minlength: "6",
-                            autocomplete: "off"
+                            autocomplete: "current-password"
                           },
                           domProps: { value: _vm.loginForm.password },
                           on: {
@@ -32387,7 +32387,7 @@ var render = function() {
                             type: "password",
                             name: "password",
                             minlength: "6",
-                            autocomplete: "off",
+                            autocomplete: "new-password",
                             placeholder: "Password"
                           },
                           domProps: { value: _vm.pswdUpdate.password },
@@ -32429,7 +32429,7 @@ var render = function() {
                             type: "password",
                             name: "password_confirmation",
                             minlength: "6",
-                            autocomplete: "off",
+                            autocomplete: "new-password",
                             placeholder: "Confirm Password"
                           },
                           domProps: { value: _vm.password_confirmation },

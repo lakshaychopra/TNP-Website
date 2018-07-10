@@ -53,12 +53,12 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <label for="password" hidden>Password</label>
-                                <input type="password" name="password" minlength="6" class="form-control" autocomplete="off" placeholder="Password" v-model="pswdUpdate.password"> </div>
+                                <input type="password" name="password" minlength="6" class="form-control" autocomplete="new-password" placeholder="Password" v-model="pswdUpdate.password"> </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <label for="password" hidden>Confirm Password</label>
-                                <input type="password" name="password_confirmation" minlength="6" class="form-control" autocomplete="off" placeholder="Confirm Password" v-model="password_confirmation"> </div>
+                                <input type="password" name="password_confirmation" minlength="6" class="form-control" autocomplete="new-password" placeholder="Confirm Password" v-model="password_confirmation"> </div>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">

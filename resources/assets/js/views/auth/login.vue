@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <label for="password" hidden>Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" minlength="6" autocomplete="off" v-model="loginForm.password">
+                                <input type="password" name="password" class="form-control" placeholder="Password" minlength="6" autocomplete="current-password" v-model="loginForm.password">
                             </div>
                         </div>
 
