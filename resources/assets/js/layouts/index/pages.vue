@@ -16,11 +16,25 @@
             </div>
         </div>
         <div class="col" id="main">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" v-for="post in posts.data" :key="post.id">
                 <div class="col-md-12">
-                    <div class="card card-primary shadow-sm" v-for="post in posts.data" :key="post.id">
-                        <div class="card-header"><h3>{{post.title}}</h3><small class="pull-right sub-head"><span style="float:left;">{{post.category}}</span>
-                        <div class="dropdown">
+                    <div class="card card-primary shadow-sm" >
+                        <div class="card-header">
+                            <div style="float:left;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3 style="margin:0;">{{post.title}}</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <small ><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{post.updated_at}}</small>           
+                                    </div>
+                                </div>
+                            </div>
+                        <small class="pull-right sub-head">
+                            <span style="float:left;"><i class="fa fa-flag" aria-hidden="true"></i> {{post.category}}</span>
+                        <!-- <div class="dropdown">
                             <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                             <div class="dropdown-menu">
                                 <router-link v-bind:to="{ path:'/post/'+post.id +'/edit'}">
@@ -30,7 +44,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
                             </div>
-                        </div>
+                        </div> -->
                         </small>
                         </div>
                         <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
@@ -39,7 +53,7 @@
                             <!-- <img :src="getImage(post.image_path)" alt=""> -->
                         </div>
                         <div class="card-body">
-                        <div><small ><strong>{{post.updated_at}}</strong></small><span class="pull-right"><i id="share" git class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span> </div>
+                        <div><span class="pull-right"><i id="share" git class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span> </div>
                             <!-- <ul class="list-group">
                             <li class="list-group-item"></li>
                             </ul> -->
