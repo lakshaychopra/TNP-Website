@@ -30913,7 +30913,12 @@ var staticRenderFns = [
           _c("form", { staticClass: "form-inline", attrs: { action: "/" } }, [
             _c("input", {
               staticClass: "form-control mr-sm-2",
-              attrs: { type: "text", placeholder: "Search", id: "search" }
+              attrs: {
+                type: "text",
+                placeholder: "Search",
+                autocomplete: "on",
+                id: "search"
+              }
             }),
             _vm._v(" "),
             _c(
@@ -30965,7 +30970,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-md-11" }, [
         _c("input", {
           staticClass: "form-control mr-sm-2",
-          attrs: { id: "mr-btm-10", type: "text", placeholder: "Search" }
+          attrs: {
+            id: "mr-btm-10",
+            type: "text",
+            autocomplete: "on",
+            placeholder: "Search"
+          }
         })
       ]),
       _vm._v(" "),
