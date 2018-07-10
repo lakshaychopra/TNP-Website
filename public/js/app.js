@@ -30814,6 +30814,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -30833,8 +30834,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("nav", { staticClass: "navbar navbar-expand-md bg-dark navbar-dark" }, [
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _vm._v("Navbar")
+      _c(
+        "a",
+        { staticClass: "navbar-brand d-none d-md-block", attrs: { href: "/" } },
+        [_vm._v("Training & Placement Cell")]
+      ),
+      _vm._v(" "),
+      _c("a", { staticClass: "navbar-brand d-md-none", attrs: { href: "/" } }, [
+        _vm._v("T&P Cell")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "navbar-header" }, [
