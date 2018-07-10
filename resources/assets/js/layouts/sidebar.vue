@@ -20,9 +20,17 @@
                     <li>
                         <router-link to="/post" exact><i class="fa fa-post"></i> <span class="hide-menu">Post</span></router-link>
                     </li>
-                    <!-- <li>
-                        <router-link to="/anything" exact><i class="fa fa-exclamation-triangle"></i> <span class="hide-menu">Error Page</span></router-link>
-                    </li>                     -->
+                    <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-post"></i> <span class="hide-menu">Works </span><span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">Dropdown heading</li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
                     <li>
                         <router-link to="/excel" exact><i class="fa fa-file-excel"></i> <span class="hide-menu">Excel</span></router-link>
                     </li>
