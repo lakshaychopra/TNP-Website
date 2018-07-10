@@ -80,7 +80,7 @@ export default {
     list-style: none;
 }
 .bg-dark{
-    background-color: #0073e7 !important;
+    background-color: #038ed4 !important;
 }
 .bg-col-grey{
     background-color: #eee;

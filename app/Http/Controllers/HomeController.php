@@ -23,10 +23,8 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $auth = JWTAuth::parseToken()->authenticate();
         $limit  = $request->input('limit') ?? 6;
         $posts = $this->repository->list($limit);
-        // return \Fractal::collection($posts, new PostTransformer, 'post');
         return $this->respondData($posts);
     }
 
