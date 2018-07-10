@@ -56,7 +56,7 @@
 </template>
 <script>
     import AppHeader from './header.vue'
-    import {addPostURL} from "../../config.js";
+    import {addHomePostURL} from "../../config.js";
 
 export default {
     components:{
@@ -70,7 +70,7 @@ export default {
         }
       },
     created() {
-          axios.get(addPostURL)
+          axios.get(addHomePostURL)
           .then((response) => {
             // var obj = JSON.parse(response.data);
             // console.log(response);

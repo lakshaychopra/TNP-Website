@@ -610,6 +610,32 @@ module.exports = {
 
 /***/ }),
 /* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return apiDomain; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return loginURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return securityURL; });
+/* unused harmony export oauthURL */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return addPostURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addHomePostURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return registerURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return setPasswordURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return downloadExcelURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return mailExcelURL; });
+var apiDomain = 'http://localhost:8000';
+var loginURL = '/api/login';
+var securityURL = '/api/dashboard/security';
+var oauthURL = '/oauth/token';
+var addPostURL = '/api/dashboard/post/';
+var addHomePostURL = '/api/home/';
+var registerURL = '/api/register/';
+var setPasswordURL = '/api/dashboard/setpassword';
+var downloadExcelURL = '/api/dashboard/userexcelfile/';
+var mailExcelURL = '/api/dashboard/usercreatemail/';
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -689,30 +715,6 @@ function toComment(sourceMap) {
 	return '/*# ' + data + ' */';
 }
 
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return apiDomain; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return loginURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return securityURL; });
-/* unused harmony export oauthURL */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addPostURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return registerURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return setPasswordURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return downloadExcelURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return mailExcelURL; });
-var apiDomain = 'http://localhost:8000';
-var loginURL = '/api/login';
-var securityURL = '/api/dashboard/security';
-var oauthURL = '/oauth/token';
-var addPostURL = '/api/dashboard/post/';
-var registerURL = '/api/register/';
-var setPasswordURL = '/api/dashboard/setpassword';
-var downloadExcelURL = '/api/dashboard/userexcelfile/';
-var mailExcelURL = '/api/dashboard/usercreatemail/';
 
 /***/ }),
 /* 5 */
@@ -23626,7 +23628,7 @@ if(false) {
 /* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -24471,7 +24473,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_helper__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(3);
 //
 //
 //
@@ -24545,7 +24547,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         mail: function mail() {
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["e" /* mailExcelURL */]).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["f" /* mailExcelURL */]).then(function (response) {
                 console.log(response);
             }).catch(function (error) {
                 console.log(error);
@@ -24564,7 +24566,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //  window.open(url, '_blank');
 
             axios({
-                url: __WEBPACK_IMPORTED_MODULE_1__config_js__["b" /* apiDomain */] + __WEBPACK_IMPORTED_MODULE_1__config_js__["c" /* downloadExcelURL */],
+                url: __WEBPACK_IMPORTED_MODULE_1__config_js__["c" /* apiDomain */] + __WEBPACK_IMPORTED_MODULE_1__config_js__["d" /* downloadExcelURL */],
                 method: 'GET',
                 responseType: 'blob' // important
             }).then(function (response) {
@@ -25132,7 +25134,7 @@ if(false) {
 /* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -25369,7 +25371,7 @@ if(false) {
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -25386,7 +25388,7 @@ exports.push([module.i, "\n.line[data-v-6cd9d163]{\n  text-align: center;\n}\n.f
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_helper__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_input_tag__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_input_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_input_tag__);
 //
@@ -25525,7 +25527,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             formData.append('tag', postData.tag);
             formData.append('category', postData.category);
             formData.append('post_link', postData.post_link);
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["a" /* addPostURL */], formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["b" /* addPostURL */], formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
                 console.log(response);
                 // if (response.status == "200") {
                 //   // window.location = "/dashboard";
@@ -26140,7 +26142,7 @@ if(false) {
 /* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -26158,7 +26160,7 @@ exports.push([module.i, "\n.col-primary[data-v-45fe741f]{\r\n  color: #304156 ;\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(3);
 //
 //
 //
@@ -26245,7 +26247,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
-    axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["a" /* addPostURL */]).then(function (response) {
+    axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["b" /* addPostURL */]).then(function (response) {
       // var obj = JSON.parse(response.data);
       // console.log(response);
       _this.posts = response.data.data;
@@ -26337,7 +26339,7 @@ if(false) {
 /* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -26956,7 +26958,7 @@ if(false) {
 /* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -27391,7 +27393,7 @@ if(false) {
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -30550,7 +30552,7 @@ if(false) {
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -30568,7 +30570,7 @@ exports.push([module.i, "\n.col-primary[data-v-4ff4c190]{\r\n  color: #304156 ;\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header_vue__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__header_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(3);
 //
 //
 //
@@ -30643,7 +30645,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
-    axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["a" /* addPostURL */]).then(function (response) {
+    axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["a" /* addHomePostURL */]).then(function (response) {
       // var obj = JSON.parse(response.data);
       // console.log(response);
       _this.posts = response.data.data;
@@ -30741,7 +30743,7 @@ if(false) {
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -31381,7 +31383,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_helper__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layouts_guest_footer_vue__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layouts_guest_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__layouts_guest_footer_vue__);
 //
@@ -31521,7 +31523,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submit: function submit(e) {
             var _this = this;
 
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["d" /* loginURL */], this.loginForm).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["e" /* loginURL */], this.loginForm).then(function (response) {
                 if (response.status == "200") {
                     // window.location = "/dashboard";
                     _this.token = response.data.data.access_token;
@@ -31553,7 +31555,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         security_submit: function security_submit(e) {
             var _this2 = this;
 
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["g" /* securityURL */], this.security).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["h" /* securityURL */], this.security).then(function (response) {
                 console.log(response);
                 localStorage.setItem('token', _this2.token);
                 toastr['success'](response.data.message);
@@ -32006,7 +32008,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layouts_guest_footer_vue__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layouts_guest_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__layouts_guest_footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_js__ = __webpack_require__(3);
 //
 //
 //
@@ -32125,7 +32127,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submit: function submit(e) {
             var _this = this;
 
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["f" /* registerURL */], this.registerForm).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["g" /* registerURL */], this.registerForm).then(function (response) {
                 toastr['success'](response.data.message);
                 _this.authenticated = true;
                 _this.token = response.data.data.access_token;
@@ -32138,7 +32140,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submit_password: function submit_password(e) {
             var _this2 = this;
 
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["h" /* setPasswordURL */], this.pswdUpdate).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["i" /* setPasswordURL */], this.pswdUpdate).then(function (response) {
                 toastr['success'](response.data.message);
                 localStorage.setItem('token', _this2.token);
                 // this.$router.push('/login');
