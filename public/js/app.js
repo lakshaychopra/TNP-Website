@@ -23191,7 +23191,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -23249,7 +23279,10 @@ var render = function() {
             "li",
             [
               _c("router-link", { attrs: { to: "/home", exact: "" } }, [
-                _c("i", { staticClass: "fa fa-home" }),
+                _c("i", {
+                  staticClass: "fa fa-home fa-fw",
+                  attrs: { "aria-hidden": "true" }
+                }),
                 _vm._v(" "),
                 _c("span", { staticClass: "hide-menu" }, [_vm._v("Home")])
               ])
@@ -23257,49 +23290,73 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c("router-link", { attrs: { to: "/post", exact: "" } }, [
-                _c("i", { staticClass: "fa fa-post" }),
-                _vm._v(" "),
-                _c("span", { staticClass: "hide-menu" }, [_vm._v("Post")])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c("router-link", { attrs: { to: "/excel", exact: "" } }, [
-                _c("i", { staticClass: "fa fa-file-excel" }),
-                _vm._v(" "),
-                _c("span", { staticClass: "hide-menu" }, [_vm._v("Excel")])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("li", [
+          _c("li", { staticClass: "dropdown" }, [
+            _vm._m(0),
+            _vm._v(" "),
             _c(
-              "a",
-              {
-                attrs: { href: "/logout" },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.logout($event)
-                  }
-                }
-              },
+              "ul",
+              { staticClass: "dropdown-menu", attrs: { role: "menu" } },
               [
-                _c("i", { staticClass: "fa fa-power-off" }),
+                _vm._m(1),
                 _vm._v(" "),
-                _c("span", { staticClass: "hide-menu" }, [_vm._v("Logout")])
-              ]
+                _c("router-link", { attrs: { to: "/post", exact: "" } }, [
+                  _c("i", {
+                    staticClass: "fa fa-plus fa-fw",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" Add Posts\n                        ")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "/all", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-cogs fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Manage Posts\n                            ")
+                    ])
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "dropdown" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "ul",
+              { staticClass: "dropdown-menu", attrs: { role: "menu" } },
+              [
+                _vm._m(3),
+                _vm._v(" "),
+                _c("router-link", { attrs: { to: "/excel", exact: "" } }, [
+                  _c("i", {
+                    staticClass: "fa fa-plus fa-fw",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" Add Users\n                        ")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-cogs fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Manage Users\n                            ")
+                    ])
+                  ],
+                  1
+                )
+              ],
+              1
             )
           ])
         ])
@@ -23320,7 +23377,12 @@ var render = function() {
               title: "Configuration"
             }
           },
-          [_c("i", { staticClass: "fa fa-cogs" })]
+          [
+            _c("i", {
+              staticClass: "fa fa-cogs",
+              attrs: { "aria-hidden": "true" }
+            })
+          ]
         ),
         _vm._v(" "),
         _c(
@@ -23333,7 +23395,12 @@ var render = function() {
               title: "Profile"
             }
           },
-          [_c("i", { staticClass: "fa fa-user" })]
+          [
+            _c("i", {
+              staticClass: "fa fa-user",
+              attrs: { "aria-hidden": "true" }
+            })
+          ]
         ),
         _vm._v(" "),
         _c(
@@ -23352,7 +23419,12 @@ var render = function() {
               }
             }
           },
-          [_c("i", { staticClass: "fa fa-power-off" })]
+          [
+            _c("i", {
+              staticClass: "fa fa-power-off",
+              attrs: { "aria-hidden": "true" }
+            })
+          ]
         )
       ],
       1
@@ -23364,43 +23436,65 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "dropdown" }, [
-      _c(
-        "a",
-        {
-          staticClass: "dropdown-toggle",
-          attrs: { href: "#", "data-toggle": "dropdown" }
-        },
-        [
-          _c("i", { staticClass: "fa fa-post" }),
-          _vm._v(" "),
-          _c("span", { staticClass: "hide-menu" }, [_vm._v("Works ")]),
-          _c("span", { staticClass: "caret" })
-        ]
-      ),
+    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
+      _c("i", {
+        staticClass: "fa fa-file fa-fw",
+        attrs: { "aria-hidden": "true" }
+      }),
       _vm._v(" "),
-      _c("ul", { staticClass: "dropdown-menu", attrs: { role: "menu" } }, [
-        _c("li", { staticClass: "dropdown-header" }, [
-          _vm._v("Dropdown heading")
-        ]),
-        _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Action")])]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Another action")])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Something else here")])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Separated link")])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("One more separated link")])
-        ])
+      _c("span", { staticClass: "hide-menu" }, [
+        _vm._v("Post\n                            "),
+        _c("i", {
+          staticClass: "fa fa-caret-down fa-fw",
+          attrs: { "aria-hidden": "true" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-header" }, [
+      _c("strong", [
+        _c("i", {
+          staticClass: "fa fa-list fa-fw",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" Post Menu\n                            ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
+      _c("i", {
+        staticClass: "fa fa-user fa-fw",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "hide-menu" }, [
+        _vm._v("User\n                            "),
+        _c("i", {
+          staticClass: "fa fa-caret-down fa-fw",
+          attrs: { "aria-hidden": "true" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-header" }, [
+      _c("strong", [
+        _c("i", {
+          staticClass: "fa fa-list fa-fw",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" User Menu\n                            ")
       ])
     ])
   }
