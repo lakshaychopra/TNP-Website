@@ -83,7 +83,8 @@ class UsersController extends Controller
                         return $this->respondError('Insertion Failed', 401);
                     }
                     $inserted = DB::table('users')->insert($data);
-                    DB::commit();    
+                    DB::commit();  
+                    $this->userCreateMail();  
                     return $this->respondSuccess('Inserted',$data);
                 }
             }   
@@ -152,23 +153,18 @@ class UsersController extends Controller
     
     public function userCreateMail(){
         $user = User::where([
-            ['is_mailed','=',0],
+            ['is_mailed','=',false],
             ['type','=','STUDENT']
             ])->get()->toArray();
             event(new UserCreatedEvent($user));
             // try
             // {
-                //     DB::beginTransaction();
-                //     $user->is_mailed = true;
-                //     $user->save();
-                //     DB::commit();    
-                return $this->respondSuccess('Mailed',$user);
-                // }
-                // catch(Exception $e){
-                    //     DB::rollback();
-                    //     return $this->respondException($e);
-                    // }
-                    
-                    
-                }
-}
+            //     $mailedTrue = DB::table('users')->where(['is_mailed','=',false])->update(['is_mailed'=> 1]);
+                $this->respondSuccess('Mailed');
+                // ,$mailedTrue);
+            // }
+            // catch(Exception $e){
+            //     $this->respondException($e);
+            // }
+        }
+    }
