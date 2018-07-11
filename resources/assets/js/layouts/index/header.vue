@@ -23,7 +23,7 @@
             <div class="navbar-collapse collapse" id="collapsibleNavbar">
                 <div class="mr-auto d-none d-md-block w-75">
                     <form class="form-inline" action="/">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" autocomplete="on" id="search">
+                        <input class="form-control" type="text" placeholder="Search" autocomplete="on" id="search">
                         <button class="btn btn-info" type="submit">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
@@ -42,7 +42,7 @@
         <form action="/" method="GET" v-if="search" class="d-sm-none">
             <div class="row bg-col-grey">
                 <div class="col-md-11">
-                    <input id="mr-btm-10" class="form-control mr-sm-2" type="text" autocomplete="on" placeholder="Search">
+                    <input id="mr-btm-10" class="form-control" type="text" autocomplete="on" placeholder="Search">
                 </div>
                 <div class="col-md-1">
                     <button class="btn btn-block btn-info" type="submit">
@@ -91,12 +91,14 @@
         color: #f7fbff;
         padding: 20px;
         float: left;
-        border-bottom: 4px solid #ffffff;
+        border-bottom: 4px solid rgba(255, 255, 255, 0);
     }
 
     #list-menu li a:hover {
-        color: #0073BC;
-        border-bottom: 4px solid #0073BC;
+        /* color: #0073BC; */
+        /* border-bottom: 4px solid #0073BC; */
+        background-color: #f1f1f1;
+        color: #038ed4;
     }
 
     #search {
@@ -104,6 +106,7 @@
         border-color: #0073BC;
         width: 88%;
         color: #0073BC;
+        border-radius: 0;
     }
 
     #search::placeholder {
