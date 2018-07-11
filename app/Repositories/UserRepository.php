@@ -42,10 +42,10 @@ class UserRepository
         return $record->update($data);
     }
     
-    // remove record from the database
-    public function delete($id)
+    public function delete(User $user)
     {
-        return $this->model->destroy($id);
+        $delete = User::destroy($user->id);
+        return $delete;
     }
     
     private function setPayload(array $payload)

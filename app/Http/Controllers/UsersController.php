@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use App\Events\UserCreatedEvent;
+use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserExcelRequest;
 use Exception;
 use Excel;
@@ -16,9 +17,10 @@ use Carbon\Carbon;
 class UsersController extends Controller
 {
     
-    public function __construct(UserService $service)
+    public function __construct(UserService $service,UserRepository $repository)
     {
         $this->service = $service;
+        $this->repository = $repository;
     }
     
     /**
@@ -101,9 +103,11 @@ class UsersController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $delete = $this->repository->delete($user);
+        return $this->respondSuccess('Deleted', $delete);
     }
     
     /**
@@ -157,14 +161,13 @@ class UsersController extends Controller
             ['type','=','STUDENT']
             ])->get()->toArray();
             event(new UserCreatedEvent($user));
-            // try
-            // {
-            //     $mailedTrue = DB::table('users')->where(['is_mailed','=',false])->update(['is_mailed'=> 1]);
+            try
+            {
                 $this->respondSuccess('Mailed');
-                // ,$mailedTrue);
-            // }
-            // catch(Exception $e){
-            //     $this->respondException($e);
-            // }
+                //     $mailedTrue = DB::table('users')->where(['is_mailed','=',false])->update(['is_mailed'=> 1]);
+            }
+            catch(Exception $e){
+                $this->respondException($e);
+            }
         }
     }

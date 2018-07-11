@@ -58,6 +58,7 @@ class RegisterController extends Controller
                 DB::beginTransaction();
                 $user->password = bcrypt($password['password']);
                 $user->is_verified = true;
+                $user->is_active = true;
                 $user->is_mailed = true;
                 $user->save();
                 DB::commit();
@@ -69,6 +70,4 @@ class RegisterController extends Controller
                 return $this->respondException($e);
             }   
         }
-        
     }
-    
