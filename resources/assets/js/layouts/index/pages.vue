@@ -14,7 +14,7 @@
                             <a href="" class="nav-link">Link</a>
                             <a href="" class="nav-link">Link</a>
                         </div> -->
-                       <div style="overflow:hidden;" class="sticky-top">
+                       <div class="sticky-top fix">
                             <div class="row">
                                 <div class="col-md-12">
                                         <div class="card">
@@ -140,7 +140,7 @@
                             <a href="" class="nav-link">Link</a>
                             <a href="" class="nav-link">Link</a>
                         </div> -->
-                       <div style="overflow:hidden;" class="sticky-top">
+                       <div class="sticky-top fix">
                             <div class="row">
                                 <div class="col-md-12">
                                         <div class="card">
@@ -214,6 +214,10 @@
     }
 </script>
 <style scoped>
+.fix{
+    overflow:hidden; 
+    top: 90px;
+}
 .post-meta {
     margin-right: 15px;
     margin-bottom: 5px;

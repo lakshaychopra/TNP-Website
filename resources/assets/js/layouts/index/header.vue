@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="sticky-top" style="z-index:1022;">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!-- Brand -->
             <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
