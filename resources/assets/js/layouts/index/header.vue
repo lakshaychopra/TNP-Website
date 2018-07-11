@@ -21,7 +21,7 @@
 
             </div>
             <div class="navbar-collapse collapse" id="collapsibleNavbar">
-                <div class="mr-auto d-none d-md-block w-75">
+                <div class="mr-auto d-none d-md-block w-65">
                     <form class="form-inline" action="/">
                         <input class="form-control" type="text" placeholder="Search" autocomplete="on" id="search">
                         <button class="btn btn-info" type="submit">
@@ -104,7 +104,7 @@
     #search {
         background-color: #fff;
         border-color: #0073BC;
-        width: 88%;
+        width: 83%;
         color: #0073BC;
         border-radius: 0;
     }
@@ -115,5 +115,13 @@
 
     .navbar {
         padding: 0 1rem;
+    }
+    @media (min-width: 768px){
+        .navbar-header{
+            width: 142px;
+        }
+    }
+    .w-65{
+        width: 65%;
     }
 </style>

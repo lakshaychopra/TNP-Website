@@ -4,7 +4,7 @@
         <div class="container py-4">
             <div class="row">
 
-                <div class="col-3 px-1 d-none d-md-block" id="sidebar" >
+                <div class="col-3 px-1 d-none d-md-block sticky-top"  id="sidebar" >
                         <!-- <h2><i class="flag"></i> Category</h2>
                         <div class="nav flex-column">
                        
@@ -14,35 +14,37 @@
                             <a href="" class="nav-link">Link</a>
                             <a href="" class="nav-link">Link</a>
                         </div> -->
-                       <div class="row">
-                           <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                  <h4>  Category</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <ul>
-                                            <li><a href="#">Placement</a></li>
-                                            <li><a href="#">Internship</a></li>
-                                        </ul>
-                                    </div>
+                       <div style="overflow:hidden;" class="sticky-top">
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                        <h4>  Category</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">Placement</a></li>
+                                                    <li><a href="#">Internship</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                 </div>
-                           </div>
-                       </div>
-                       <div class="row">
-                           <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                  <h4>  Category</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <ul>
-                                            <li><a href="#">Placement</a></li>
-                                            <li><a href="#">Internship</a></li>
-                                        </ul>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                        <h4>  Category</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">Placement</a></li>
+                                                    <li><a href="#">Internship</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                 </div>
-                           </div>
+                            </div>
                        </div>
                 </div>
 
@@ -126,6 +128,50 @@
                         </div> -->
                     </div>
 
+                </div>
+
+                <div class="col-3 px-1 d-none d-md-block sticky-top"  id="sidebar" >
+                        <!-- <h2><i class="flag"></i> Category</h2>
+                        <div class="nav flex-column">
+                       
+                            <a href="" class="nav-link">Link</a>
+                            <a href="" class="nav-link">Link</a>
+                            <a href="" class="nav-link">Link</a>
+                            <a href="" class="nav-link">Link</a>
+                            <a href="" class="nav-link">Link</a>
+                        </div> -->
+                       <div style="overflow:hidden;" class="sticky-top">
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                        <h4>  Contact</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">Placement</a></li>
+                                                    <li><a href="#">Internship</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                        <h4>  Category</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li><a href="#">Placement</a></li>
+                                                    <li><a href="#">Internship</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                       </div>
                 </div>
             </div>
         </div>

@@ -30853,6 +30853,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -30974,7 +31020,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n.list-inline {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn {\n    line-height: 1.5 !important;\n}\n#mr-btm-10 {\n    margin-bottom: 10px;\n}\n#list-menu li a {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 88%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search::placeholder {\n    color: #0073BC;\n}\n.navbar {\n    padding: 0 1rem;\n}\n", ""]);
+exports.push([module.i, "\n.list-inline {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn {\n    line-height: 1.5 !important;\n}\n#mr-btm-10 {\n    margin-bottom: 10px;\n}\n#list-menu li a {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search::placeholder {\n    color: #0073BC;\n}\n.navbar {\n    padding: 0 1rem;\n}\n@media (min-width: 768px){\n.navbar-header{\n        width: 142px;\n}\n}\n.w-65{\n    width: 65%;\n}\n", ""]);
 
 // exports
 
@@ -31135,7 +31181,7 @@ var staticRenderFns = [
         attrs: { id: "collapsibleNavbar" }
       },
       [
-        _c("div", { staticClass: "mr-auto d-none d-md-block w-75" }, [
+        _c("div", { staticClass: "mr-auto d-none d-md-block w-65" }, [
           _c("form", { staticClass: "form-inline", attrs: { action: "/" } }, [
             _c("input", {
               staticClass: "form-control",
@@ -31352,7 +31398,9 @@ var render = function() {
                 ]
               )
             })
-          )
+          ),
+          _vm._v(" "),
+          _vm._m(2)
         ])
       ])
     ],
@@ -31366,51 +31414,64 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "col-3 px-1 d-none d-md-block", attrs: { id: "sidebar" } },
+      {
+        staticClass: "col-3 px-1 d-none d-md-block sticky-top",
+        attrs: { id: "sidebar" }
+      },
       [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-header" }, [
-                _c("h4", [_vm._v("  Category")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Placement")])
+        _c(
+          "div",
+          { staticClass: "sticky-top", staticStyle: { overflow: "hidden" } },
+          [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card-header" }, [
+                    _c("h4", [_vm._v("  Category")])
                   ]),
                   _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Internship")])
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("a", { attrs: { href: "#" } }, [_vm._v("Placement")])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v("Internship")
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card-header" }, [
+                    _c("h4", [_vm._v("  Category")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("a", { attrs: { href: "#" } }, [_vm._v("Placement")])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v("Internship")
+                        ])
+                      ])
+                    ])
                   ])
                 ])
               ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-header" }, [
-                _c("h4", [_vm._v("  Category")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Placement")])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Internship")])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
+          ]
+        )
       ]
     )
   },
@@ -31428,6 +31489,73 @@ var staticRenderFns = [
         _vm._v("Share")
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "col-3 px-1 d-none d-md-block sticky-top",
+        attrs: { id: "sidebar" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "sticky-top", staticStyle: { overflow: "hidden" } },
+          [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card-header" }, [
+                    _c("h4", [_vm._v("  Contact")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("a", { attrs: { href: "#" } }, [_vm._v("Placement")])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v("Internship")
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card-header" }, [
+                    _c("h4", [_vm._v("  Category")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("a", { attrs: { href: "#" } }, [_vm._v("Placement")])
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v("Internship")
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
