@@ -174,4 +174,15 @@ class PostController extends Controller
         JWTAuth::user()->notifications->markAsUnRead();
         return $this->respondSuccess();
     }
+
+    public function HomePostSearch($term = null){
+        if ($term != null) {
+            $post['data'] = Post::where('title', 'like', '%'.$term.'%')
+            ->orWhere('description', 'like', '%'.$term.'%')
+            ->get();
+            return $this->respondData($posts);
+        }
+        $post= Post::orderBy('created_at', 'desc');
+        return $this->respondData($posts);
+    }
 }
