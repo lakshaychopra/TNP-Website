@@ -11,7 +11,7 @@ export default {
     },
 
     authUser() {
-        return axios.get('/api/dashboard/auth/user').then(response => {
+        return axios.get('/api/auth/user').then(response => {
             return response.data;
         }).catch(error => {
             return error.response.data;

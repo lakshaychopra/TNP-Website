@@ -25,23 +25,26 @@ Route::post('/logout', 'LoginController@logout');
 Route::post('/register', 'RegisterController@register');
 //Home Controller
 Route::resource('/home', 'HomeController');
-
-Route::group(['prefix' => 'dashboard'], function () {
-    Route::group(['middleware' => 'jwt.auth'], function() {
-        // Login Controller
-        Route::post('/security', 'LoginController@verifyTwoFactor'); 
-        Route::get('/auth/user','LoginController@getAuthUser');
-        // Register Controller
-        Route::post('/setpassword', 'RegisterController@setPassword');
+Route::get('/home/post/search/{term?}', 'PostController@HomePostSearch');
+//Protected routes
+Route::group(['middleware' => 'jwt.auth'], function() {
+    // Login Controller
+    Route::post('/security', 'LoginController@verifyTwoFactor'); 
+    Route::get('/auth/user','LoginController@getAuthUser');
+    // Register Controller
+    Route::post('/register/password', 'RegisterController@setPassword');
+    //Dashboard
+    Route::group(['prefix' => 'dashboard'], function () {
         // Post Controller
         Route::resource('/post', 'PostController');
-        Route::post('/notify', 'PostController@PushNotification');
-        Route::post('/markasread', 'PostController@MarkAsRead');
-        Route::post('/markasunread', 'PostController@MarkAsUnRead');
+        Route::post('/post/notify', 'PostController@PushNotification');
+        Route::post('/post/markasread', 'PostController@MarkAsRead');
+        Route::post('/post/markasunread', 'PostController@MarkAsUnRead');
+        Route::get('/post/search/{term?}', 'PostController@PostSearch');
         // Users Controller
         Route::resource('/user', 'UsersController');
-        Route::get('/userexcelfile', 'UsersController@userExcelFile');
-        Route::post('/usercreatemail', 'UsersController@userCreateMail');
+        Route::get('/user/excelfile', 'UsersController@userExcelFile');
+        Route::post('/user/createmail', 'UsersController@userCreateMail');
         //Student Controller
         Route::resource('/student', 'StudentsController');
     });
