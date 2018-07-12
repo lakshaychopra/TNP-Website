@@ -195,6 +195,7 @@
             }
         },
         created() {
+            console.log("index");
             axios.get(addHomePostURL)
                 .then((response) => {
                     // var obj = JSON.parse(response.data);

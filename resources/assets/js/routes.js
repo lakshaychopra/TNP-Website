@@ -3,14 +3,15 @@ import helper from './services/helper'
 let routes = [{
         path: '/',
         component: require('./layouts/index/pages.vue'),
-        name: 'index'
+        name: 'index',
             // children: [{
-            //         path: '/',
+            //         path: '/index',
             //         name:'index',
-            //         component: require('./views/pages/home')
+            //         component: require('./layouts/index/pages.vue')
             //     },
             // ]
     },
+
     {
         path: '/',
         component: require('./layouts/default-page'),
@@ -20,10 +21,11 @@ let routes = [{
             userAuth: false
 
         },
-        children: [{
-                path: '/',
-                component: require('./views/pages/home')
-            },
+        children: [
+            // {
+            //     path: '/',
+            //     component: require('./views/pages/home')
+            // },
             {
                 path: '/home',
                 component: require('./views/pages/home')
@@ -74,10 +76,11 @@ let routes = [{
             userAuth: true,
             adminAuth: false
         },
-        children: [{
-                path: '/',
-                component: require('./views/pages/home')
-            },
+        children: [
+            // {
+            //     path: '/',
+            //     component: require('./views/pages/home')
+            // },
             {
                 path: '/userlogin',
                 component: require('./views/pages/home')
@@ -156,7 +159,7 @@ router.beforeEach((to, from, next) => {
                 return next({
                     path: '/login'
                 })
-            } else if (to.matched.some(a => a.meta.adminAuth)) {
+            } else if (to.matched.some(m => m.meta.adminAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "EXECUTIVE_MEMBER") {
                         return next()
@@ -166,7 +169,7 @@ router.beforeEach((to, from, next) => {
                         })
                     }
                 })
-            } else if (to.matched.some(n => n.meta.userAuth)) {
+            } else if (to.matched.some(m => m.meta.userAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
                         return next()
@@ -219,7 +222,7 @@ router.beforeEach((to, from, next) => {
         })
     }
 
-    //  return next()
+     return next()
 });
 
 export default router;
