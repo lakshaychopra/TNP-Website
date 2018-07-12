@@ -109,6 +109,7 @@
         "vue-resource": "^1.5.1",
         "vue-router": "^3.0.1",
         "vue-splitpane": "1.0.2",
+        "vue-sweetalert2": "^1.4.2",
         "vue-toasted": "^1.1.24",
         "vue-trumbowyg": "^3.3.0",
         "vue-wysiwyg": "^1.7.2",

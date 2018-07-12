@@ -15,6 +15,8 @@ import router from './routes'
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import swal from 'vue-sweetalert2';
+Vue.use(swal);
 
 import VueHtml5Editor from 'vue-html5-editor'
 Vue.use(VueHtml5Editor, {

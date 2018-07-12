@@ -51,6 +51,10 @@ let routes = [{
                 component: require('./views/post/edit')
             },
             {
+                path: '/post/:id',
+                component: require('./views/post/show')
+            },
+            {
                 path: 'all',
                 component: require('./views/post/viewPosts')
             },

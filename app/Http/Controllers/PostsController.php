@@ -68,10 +68,7 @@ class PostController extends Controller
             
             $postCreate = $this->service->createPost($post);
             DB::commit();
-            $data=[
-                'postCreate' => $postCreate
-            ];
-            return $this->respondSuccess('Inserted',$data);
+            return $this->respondSuccess('Inserted', $postCreate);
         }
         catch (Exception $e) {
             DB::rollback();
@@ -147,7 +144,8 @@ class PostController extends Controller
         // $post['image'] = $this->service->deletePostImage($post);
         // $delete = Post::destroy($post->id);
         $delete = $this->repository->delete($post);
-        return $this->respondSuccess('Deleted', $delete);
+        $index= Post::orderBy('created_at', 'desc')->get();
+        return $this->respondSuccess('Deleted', $index);
     }
     
     public function pinned(Post $post){

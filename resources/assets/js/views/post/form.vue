@@ -138,7 +138,7 @@
             formData.append('post_link', postData.post_link);
             axios.post(addPostURL,formData, {headers: {'Content-Type': 'multipart/form-data'}})
                 .then(function(response) {
-                console.log(response);
+                // console.log(response);
                 // if (response.status == "200") {
                 //   // window.location = "/dashboard";
                 //     router.push({name:'security'});
@@ -146,52 +146,11 @@
                 // }
                 // if (response.status == "401") {
                 //   }
-                
-
+                toastr['success'](response.data.message);
+                this.$router.push('/post/'+response.data.data.id);
+                    // console.log(response.data.data.postCreate.id);
                 })
                 .catch(function(error) {
-                var obj = JSON.parse(error.response.request.responseText);
-                console.log(obj);
-                //     // console.log(error.response);
-                if(error.response.status=="422"){
-                    // console.log(obj['error']);
-                    if(obj['errors'].hasOwnProperty('image')){
-                        Vue.toasted.show(obj['errors']['image'],{
-                        icon : 'exclamation-circle',
-                        position: "bottom-center", 
-                        duration : 10000
-                    })
-                    }
-                    if(obj['errors'].hasOwnProperty('title')){
-                        Vue.toasted.show(obj['errors']['title'],{
-                        icon : 'exclamation-circle',
-                        position: "bottom-center", 
-                        duration : 10000
-                    })
-                    }
-                    if(obj['errors'].hasOwnProperty('tags')){
-                        Vue.toasted.show(obj['errors']['tags'],{
-                        icon : 'exclamation-circle',
-                        position: "bottom-center", 
-                        duration : 10000
-                    })
-                    }
-                    if(obj['errors'].hasOwnProperty('category')){
-                        Vue.toasted.show(obj['errors']['category'],{
-                        icon : 'exclamation-circle',
-                        position: "bottom-center", 
-                        duration : 10000
-                    })
-                    }
-                    if(obj['errors'].hasOwnProperty('body')){
-                        Vue.toasted.show(obj['errors']['body'],{
-                        icon : 'exclamation-circle',
-                        position: "bottom-center", 
-                        duration : 10000
-                    })
-                    }
-                }
-                
                 console.log(error);
                 });
                 // this.taskForm.post('/api/task')
@@ -247,6 +206,11 @@
                     // else {
                     //     this.$router.push('/task');
                     // }
+                    toastr['success'](response.data.message);
+                    this.$router.push('/post/'+response.data.data.id);
+
+
+
                 })
                 .catch(response => {
                     toastr['error'](response.message);

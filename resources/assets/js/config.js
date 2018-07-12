@@ -3,6 +3,8 @@ export const loginURL = '/api/login'
 export const securityURL = '/api/security'
 export const oauthURL = '/oauth/token'
 export const addPostURL = '/api/dashboard/post/'
+export const showPostURL = '/api/dashboard/post/'
+
 export const addHomePostURL = '/api/home/'
 export const registerURL = '/api/register/'
 export const setPasswordURL = '/api/register/password'

@@ -53,15 +53,39 @@
         }
       },
       methods:{
+        refreshPost(record){
+          this.posts = record.data;
+        },
         delPost(id) {
-          console.log(id);
-          axios.post('/api/dashboard/post/'+id,{
+          this.$swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.value) {
+               axios.post('/api/dashboard/post/'+id,{
             id:id,
             _method:'DELETE'
           }) .then((response) => {
-            console.log(response);
+            // console.log(response.data);
+
+              this.$swal(
+                'Deleted!',
+                'Your post has been deleted.',
+                'success'
+              )
+              this.refreshPost(response);
           })
           .catch((error) => console.log(error))
+              
+            }
+          })
+          console.log(id);
+         
         },
         pinPost(id) {
           console.log(id);
