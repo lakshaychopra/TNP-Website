@@ -87,10 +87,8 @@ class PostController extends Controller
     */
     public function show(Post $post)
     {
-        // $auth = JWTAuth::parseToken()->authenticate();
-        //data fetched from database in $post with where id clause
-        $post = $this->post->where('id', $post)->first();
-        return $this->respondData($post);
+     $auth = JWTAuth::parseToken()->authenticate();
+     return $this->respondData($post);
     }
     
     /**
@@ -162,8 +160,7 @@ class PostController extends Controller
                 }
                 $post = DB::table('posts')
                 ->where("id", '=',  $post->id)
-                ->update(['is_pinned'=> true])
-                ->limit(1);
+                ->update(['is_pinned'=> true]);
                 DB::commit();
                 return $this->respondSuccess('Post Pinned Successfully',$post);
             }
@@ -184,8 +181,7 @@ class PostController extends Controller
             }
             $post = DB::table('posts')
             ->where("id", '=',  $post->id)
-            ->update(['is_pinned'=> false])
-            ->limit(1);
+            ->update(['is_pinned'=> false]);
             DB::commit();
             return $this->respondSuccess('Post Unpinned Successfully',$post);
         }

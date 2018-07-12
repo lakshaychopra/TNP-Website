@@ -12,7 +12,8 @@
                              <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="" @click.prevent="delPost(post.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                              <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
+                            <a v-if="post.is_pinned == 0" class="dropdown-item" href="#" @click.prevent="pinPost(post.id)"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
+                            <a v-else class="dropdown-item" href="#" @click.prevent="unpinPost(post.id)"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Unpin </a>
                           </div>
                        </div>
                     </small>
@@ -54,9 +55,29 @@
       methods:{
         delPost(id) {
           console.log(id);
-          axios.post('/dashboard/post/'+id,{
+          axios.post('/api/dashboard/post/'+id,{
             id:id,
             _method:'DELETE'
+          }) .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => console.log(error))
+        },
+        pinPost(id) {
+          console.log(id);
+          axios.post('/api/dashboard/post/pinned/'+id,{
+            id:id,
+            _method:'PUT'
+          }) .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => console.log(error))
+        },
+        unpinPost(id) {
+          console.log(id);
+          axios.post('/api/dashboard/post/unpinned/'+id,{
+            id:id,
+            _method:'PUT'
           }) .then((response) => {
             console.log(response);
           })
