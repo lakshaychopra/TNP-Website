@@ -162,11 +162,10 @@ class PostController extends Controller
                 }
                 $post = DB::table('posts')
                 ->where("id", '=',  $post->id)
+                ->update(['is_pinned'=> true])
                 ->limit(1);
-                $post->is_pinned = true;
-                $post->save(); 
                 DB::commit();
-                return $this->respondSuccess('Post Pinned Successfully');
+                return $this->respondSuccess('Post Pinned Successfully',$post);
             }
             catch (Exception $e) {
                 DB::rollback();
@@ -185,11 +184,10 @@ class PostController extends Controller
             }
             $post = DB::table('posts')
             ->where("id", '=',  $post->id)
+            ->update(['is_pinned'=> false])
             ->limit(1);
-            $post->is_pinned = false;
-            $post->save(); 
             DB::commit();
-            return $this->respondSuccess('Post Pinned Successfully');
+            return $this->respondSuccess('Post Unpinned Successfully',$post);
         }
         catch (Exception $e) {
             DB::rollback();
