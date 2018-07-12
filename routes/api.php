@@ -48,6 +48,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::resource('/user', 'UsersController');
         Route::get('/user/excelfile', 'UsersController@userExcelFile');
         Route::post('/user/createmail', 'UsersController@userCreateMail');
+        Route::post('/user/form/create', 'UsersController@UserCreateForm');
         //Student Controller
         Route::resource('/student', 'StudentsController');
     });

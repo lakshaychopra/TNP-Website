@@ -8,6 +8,7 @@ use App\Services\UserService;
 use App\Events\UserCreatedEvent;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserExcelRequest;
+use App\Http\Requests\CreateUserRequest;
 use Exception;
 use Excel;
 use JWTAuth;
@@ -105,9 +106,7 @@ class UsersController extends Controller
     */
     public function show(User $user)
     {
-        $auth = JWTAuth::parseToken()->authenticate();
-        $delete = $this->repository->delete($user);
-        return $this->respondSuccess('Deleted', $delete);
+        
     }
     
     /**
@@ -139,9 +138,11 @@ class UsersController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $delete = $this->repository->delete($user);
+        return $this->respondSuccess('Deleted', $delete);
     }
     
     
@@ -156,6 +157,7 @@ class UsersController extends Controller
     }      
     
     public function userCreateMail(){
+        $auth = JWTAuth::parseToken()->authenticate();
         $user = User::where([
             ['is_mailed','=',false],
             ['type','=','STUDENT']
@@ -163,11 +165,33 @@ class UsersController extends Controller
             event(new UserCreatedEvent($user));
             try
             {
+                if (!$auth) {
+                    return $this->respondUnauthorized('Failed');
+                }
                 $this->respondSuccess('Mailed');
-                //     $mailedTrue = DB::table('users')->where(['is_mailed','=',false])->update(['is_mailed'=> 1]);
             }
             catch(Exception $e){
                 $this->respondException($e);
+            }
+        }
+        
+        public function UserCreateForm(CreateUserRequest $request){
+            $auth = JWTAuth::parseToken()->authenticate();
+            try {
+                DB::beginTransaction();
+                if (!$auth) {
+                    return $this->respondUnauthorized('Failed');
+                }
+                $user = $request->all();
+                $userCreate = $this->service->createUser($user);
+                DB::commit();
+                // $this->userCreateMail();  
+                event(new UserCreatedEvent($user));
+                return $this->respondSuccess('User Created Successfully', $userCreate);
+            }
+            catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
             }
         }
     }
