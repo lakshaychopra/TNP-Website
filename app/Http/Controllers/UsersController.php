@@ -33,7 +33,7 @@ class UsersController extends Controller
     {
         //data fetched from database in $User
         // $this->service->listUser();
-        $user = Post::orderBy('created_at', 'decs')->paginate(20);
+        $user = User::orderBy('created_at', 'desc')->paginate(20);
         return $this->respondData($user);
     }
     
@@ -106,7 +106,7 @@ class UsersController extends Controller
     */
     public function show(User $user)
     {
-        
+        //
     }
     
     /**
@@ -127,9 +127,26 @@ class UsersController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, $id)
+    public function update(CreateUserRequest $request, User $user)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if(!$auth){
+                return $this->respondError('Failed', 401); 
+            }
+            $data = $request->all();
+            $post->username = $request->username;
+            $post->email = $request->email;
+            $post->phone_number = $request->phone_number;
+            $post->type = $request->type;
+            $post->save(); 
+            DB::commit();
+            return $this->respondSuccess('Updated',$post);
+        } catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
     
     /**
