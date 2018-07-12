@@ -1,28 +1,26 @@
 import VueRouter from 'vue-router'
 import helper from './services/helper'
-let routes = [
-    {
+let routes = [{
         path: '/',
         component: require('./layouts/index/pages.vue'),
         name: 'index'
-        // children: [{
-        //         path: '/',
-        //         name:'index',
-        //         component: require('./views/pages/home')
-        //     },
-        // ]
+            // children: [{
+            //         path: '/',
+            //         name:'index',
+            //         component: require('./views/pages/home')
+            //     },
+            // ]
     },
     {
         path: '/',
         component: require('./layouts/default-page'),
-        meta: { 
+        meta: {
             requiresAuth: true,
             adminAuth: true,
-            userAuth:false
-            
+            userAuth: false
+
         },
-        children: [
-            {
+        children: [{
                 path: '/',
                 component: require('./views/pages/home')
             },
@@ -73,8 +71,8 @@ let routes = [
         component: require('./layouts/user/default-page'),
         meta: {
             requiresAuth: true,
-            userAuth:true,
-            adminAuth:false
+            userAuth: true,
+            adminAuth: false
         },
         children: [{
                 path: '/',
@@ -86,7 +84,7 @@ let routes = [
             },
         ]
     },
-    
+
     // {
     //     path: '/',
     //     component: require('./layouts/login-security/auth_layout'),
@@ -104,13 +102,14 @@ let routes = [
     {
         path: '/',
         component: require('./layouts/guest-page'),
-        meta: { requiresGuest: true },
-        children: [
-            {
+        meta: {
+            requiresGuest: true
+        },
+        children: [{
                 path: '/login',
                 component: require('./views/auth/login')
             },
-             
+
             // {
             //     path: '/password',
             //     component: require('./views/auth/password')
@@ -135,18 +134,16 @@ let routes = [
     },
     {
         path: '*',
-        component : require('./layouts/error-page'),
-        children: [
-            {
-                path: '*',
-                component: require('./views/errors/page-not-found')
-            }
-        ]
+        component: require('./layouts/error-page'),
+        children: [{
+            path: '*',
+            component: require('./views/errors/page-not-found')
+        }]
     }
 ];
 
 const router = new VueRouter({
-	routes,
+    routes,
     linkActiveClass: 'active',
     mode: 'history'
 });
@@ -156,23 +153,20 @@ router.beforeEach((to, from, next) => {
     if (to.matched.some(m => m.meta.requiresAuth)) {
         return helper.check().then(response => {
             if (!response) {
-                    return next({
+                return next({
                     path: '/login'
                 })
-            }
-            else if (to.matched.some(a => a.meta.adminAuth)) {
-                 return helper.authUser().then(res => {
-                     if(res.type=="EXECUTIVE_MEMBER"){
+            } else if (to.matched.some(a => a.meta.adminAuth)) {
+                return helper.authUser().then(res => {
+                    if (res.type == "EXECUTIVE_MEMBER") {
                         return next()
-                     }
-                     else{
-                         return next({
-                             path: '/userlogin'
-                         })
-                     }
-                 })
-            }
-            else if (to.matched.some(n => n.meta.userAuth)) {
+                    } else {
+                        return next({
+                            path: '/userlogin'
+                        })
+                    }
+                })
+            } else if (to.matched.some(n => n.meta.userAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
                         return next()
@@ -182,8 +176,7 @@ router.beforeEach((to, from, next) => {
                         })
                     }
                 })
-            }
-            else{
+            } else {
                 return next()
             }
         })
@@ -197,35 +190,34 @@ router.beforeEach((to, from, next) => {
     //         }
     //             //  else{
     //                 //  }
-                                         
+
     //          return next()
     //      })
     //  }
 
-     if (to.matched.some(m => m.meta.requiresGuest)) {
-         return helper.check().then(response => {
-             if (response) {
+    if (to.matched.some(m => m.meta.requiresGuest)) {
+        return helper.check().then(response => {
+            if (response) {
                 //  return next({
-                //                          path: '/userlogin'
-                //                      })
-                 return helper.authUser().then(res => {
-                    if(res.type == "EXECUTIVE_MEMBER"){
+                //  path: '/userlogin'
+                // })
+                return helper.authUser().then(res => {
+                    if (res.type == "EXECUTIVE_MEMBER") {
                         return next({
                             path: '/home'
                         })
-                    
-                    }
-                    else{
+
+                    } else {
                         return next({
                             path: '/userlogin'
                         })
                     }
                 })
             }
-                
-                return next()
-            })
-     }
+
+            return next()
+        })
+    }
 
     //  return next()
 });
