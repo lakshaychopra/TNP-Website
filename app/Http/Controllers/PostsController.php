@@ -152,9 +152,8 @@ class PostController extends Controller
         return $this->respondSuccess('Deleted', $delete);
     }
     
-    public function pinned(Request $request,Post $post){
+    public function pinned(Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
-        $id = $request->only('id');
         if($post->is_pinned <= 3){
             try {
                 DB::beginTransaction();
@@ -162,7 +161,7 @@ class PostController extends Controller
                     return $this->respondError('Failed', 401); 
                 }
                 $post = DB::table('posts')
-                ->where("id", '=',  $id)
+                ->where("id", '=',  $post->id)
                 ->limit(1);
                 $post->is_pinned = true;
                 $post->save(); 
@@ -177,16 +176,15 @@ class PostController extends Controller
         return $this->respondError('Cannot pin more than 3 posts', 500); 
     }
     
-    public function unpinned(Request $request,Post $post){
+    public function unpinned(Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
-        $id = $request->only('id');
         try {
             DB::beginTransaction();
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
             $post = DB::table('posts')
-            ->where("id", '=',  $id)
+            ->where("id", '=',  $post->id)
             ->limit(1);
             $post->is_pinned = false;
             $post->save(); 
