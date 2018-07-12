@@ -3,8 +3,24 @@ import helper from './services/helper'
 let routes = [
     {
         path: '/',
+        component: require('./layouts/index/pages.vue'),
+        name: 'index'
+        // children: [{
+        //         path: '/',
+        //         name:'index',
+        //         component: require('./views/pages/home')
+        //     },
+        // ]
+    },
+    {
+        path: '/',
         component: require('./layouts/default-page'),
-        meta: { requiresAuth: true },
+        meta: { 
+            requiresAuth: true,
+            adminAuth: true,
+            userAuth:false
+            
+        },
         children: [
             {
                 path: '/',
@@ -56,29 +72,21 @@ let routes = [
         path: '/',
         component: require('./layouts/user/default-page'),
         meta: {
-            requiresAuth: true
+            requiresAuth: true,
+            userAuth:true,
+            adminAuth:false
         },
         children: [{
                 path: '/',
                 component: require('./views/pages/home')
             },
             {
-                path: '/home',
+                path: '/userlogin',
                 component: require('./views/pages/home')
             },
         ]
     },
-    {
-        path: '/index',
-        component: require('./layouts/index/pages.vue'),
-        name:'index'
-        // children: [{
-        //         path: '/',
-        //         name:'index',
-        //         component: require('./views/pages/home')
-        //     },
-        // ]
-    },
+    
     // {
     //     path: '/',
     //     component: require('./layouts/login-security/auth_layout'),
@@ -145,31 +153,81 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
 
-     if (to.matched.some(m => m.meta.requiresAuth)) {
-         return helper.check().then(response => {
-             if (!response) {
-                 return next({
-                     path: '/login'
+    if (to.matched.some(m => m.meta.requiresAuth)) {
+        return helper.check().then(response => {
+            if (!response) {
+                    return next({
+                    path: '/login'
+                })
+            }
+            else if (to.matched.some(a => a.meta.adminAuth)) {
+                 return helper.authUser().then(res => {
+                     if(res.type=="EXECUTIVE_MEMBER"){
+                        return next()
+                     }
+                     else{
+                         return next({
+                             path: '/userlogin'
+                         })
+                     }
                  })
-             }
-
-             return next()
-         })
-     }
+            }
+            else if (to.matched.some(n => n.meta.userAuth)) {
+                return helper.authUser().then(res => {
+                    if (res.type == "STUDENT") {
+                        return next()
+                    } else {
+                        return next({
+                            path: '/home'
+                        })
+                    }
+                })
+            }
+            else{
+                return next()
+            }
+        })
+    }
+    //  if (to.matched.some(m => m.meta.requiresAuth)) {
+    //      return helper.check().then(response => {
+    //          if (!response) {
+    //              return next({
+    //                  path: '/login'
+    //              })
+    //         }
+    //             //  else{
+    //                 //  }
+                                         
+    //          return next()
+    //      })
+    //  }
 
      if (to.matched.some(m => m.meta.requiresGuest)) {
          return helper.check().then(response => {
              if (response) {
-                 return next({
-                     path: '/home'
-                 })
-             }
-
-             return next()
-         })
+                //  return next({
+                //                          path: '/userlogin'
+                //                      })
+                 return helper.authUser().then(res => {
+                    if(res.type == "EXECUTIVE_MEMBER"){
+                        return next({
+                            path: '/home'
+                        })
+                    
+                    }
+                    else{
+                        return next({
+                            path: '/userlogin'
+                        })
+                    }
+                })
+            }
+                
+                return next()
+            })
      }
 
-     return next()
+    //  return next()
 });
 
 export default router;

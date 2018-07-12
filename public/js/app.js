@@ -22471,8 +22471,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 var routes = [{
     path: '/',
+    component: __webpack_require__(142),
+    name: 'index'
+    // children: [{
+    //         path: '/',
+    //         name:'index',
+    //         component: require('./views/pages/home')
+    //     },
+    // ]
+}, {
+    path: '/',
     component: __webpack_require__(56),
-    meta: { requiresAuth: true },
+    meta: {
+        requiresAuth: true,
+        adminAuth: true,
+        userAuth: false
+
+    },
     children: [{
         path: '/',
         component: __webpack_require__(7)
@@ -22511,26 +22526,19 @@ var routes = [{
     path: '/',
     component: __webpack_require__(127),
     meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        userAuth: true,
+        adminAuth: false
     },
     children: [{
         path: '/',
         component: __webpack_require__(7)
     }, {
-        path: '/home',
+        path: '/userlogin',
         component: __webpack_require__(7)
     }]
-}, {
-    path: '/index',
-    component: __webpack_require__(142),
-    name: 'index'
-    // children: [{
-    //         path: '/',
-    //         name:'index',
-    //         component: require('./views/pages/home')
-    //     },
-    // ]
 },
+
 // {
 //     path: '/',
 //     component: require('./layouts/login-security/auth_layout'),
@@ -22587,19 +22595,67 @@ router.beforeEach(function (to, from, next) {
                 return next({
                     path: '/login'
                 });
+            } else if (to.matched.some(function (a) {
+                return a.meta.adminAuth;
+            })) {
+                return __WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].authUser().then(function (res) {
+                    if (res.type == "EXECUTIVE_MEMBER") {
+                        return next();
+                    } else {
+                        return next({
+                            path: '/userlogin'
+                        });
+                    }
+                });
+            } else if (to.matched.some(function (n) {
+                return n.meta.userAuth;
+            })) {
+                return __WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].authUser().then(function (res) {
+                    if (res.type == "STUDENT") {
+                        return next();
+                    } else {
+                        return next({
+                            path: '/home'
+                        });
+                    }
+                });
+            } else {
+                return next();
             }
-
-            return next();
         });
     }
+    //  if (to.matched.some(m => m.meta.requiresAuth)) {
+    //      return helper.check().then(response => {
+    //          if (!response) {
+    //              return next({
+    //                  path: '/login'
+    //              })
+    //         }
+    //             //  else{
+    //                 //  }
+
+    //          return next()
+    //      })
+    //  }
 
     if (to.matched.some(function (m) {
         return m.meta.requiresGuest;
     })) {
         return __WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].check().then(function (response) {
             if (response) {
-                return next({
-                    path: '/home'
+                //  return next({
+                //                          path: '/userlogin'
+                //                      })
+                return __WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].authUser().then(function (res) {
+                    if (res.type == "EXECUTIVE_MEMBER") {
+                        return next({
+                            path: '/home'
+                        });
+                    } else {
+                        return next({
+                            path: '/userlogin'
+                        });
+                    }
                 });
             }
 
@@ -22607,7 +22663,7 @@ router.beforeEach(function (to, from, next) {
         });
     }
 
-    return next();
+    //  return next()
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (router);
@@ -30706,7 +30762,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n.fix[data-v-4ff4c190]{\r\n    overflow:hidden; \r\n    top: 90px;\n}\n.post-meta[data-v-4ff4c190] {\r\n    margin-right: 15px;\r\n    margin-bottom: 5px;\r\n    margin-top: 5px;\r\n    float: left;\r\n    padding: 10px;\r\n    border: 1px solid #e4e6e8;\r\n    background-color: #f6f6f6;\r\n    font-size: 12px;\r\n    text-transform: uppercase;\n}\n.post-meta i[data-v-4ff4c190] {\r\n    font-size: 15px;\r\n    float: left;\r\n    margin-right: 10px;\r\n    color: #a3a9b0;\n}\n.post-meta-text[data-v-4ff4c190]{\r\n    float: right;\n}\n#sidebar .card-header[data-v-4ff4c190]{\r\n    background-color: #fff;\r\n    border-bottom: 0;\r\n    padding-bottom: 0;\r\n    z-index: 1;\n}\n#sidebar .card-header h4[data-v-4ff4c190]{\r\n    border-bottom: 2px solid #ecedee;\r\n    margin-bottom: 20px;\r\n    line-height: 28px;\r\n    padding-bottom: 10px;\r\n    position: relative;\n}\n#sidebar .card-header h4[data-v-4ff4c190]:before{\r\n    content: \"\";\r\n    position: absolute;\r\n    height: 2px;\r\n    width: 28px;\r\n    background-color: #2f3c4e;\r\n    bottom: -2px;\r\n    left: 0;\n}\n#sidebar .card-header h4[data-v-4ff4c190]:after{\r\n    content: \"\\F0B0\";\r\n    display: block;\r\n    float: left;\r\n    background-color: #2f3c4e;\r\n    font-family: FontAwesome;\r\n    height: 28px;\r\n    width: 28px;\r\n    line-height: 28px;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    margin-right: 10px;\r\n    color: #fff;\n}\n#sidebar .card-header i[data-v-4ff4c190]{\r\n    float: left;\r\n    margin-right: 9px;\r\n    padding: 5px 7px;\r\n    background-color: #2f3c4e;\r\n    color: #fff;\r\n    border-radius: 3px;\n}\n#sidebar .card-body[data-v-4ff4c190]{\r\n    border-bottom: 1px solid #d3d5d7;\r\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n            box-shadow: 0 0 5px 0 #e2e3e4;\r\n    padding-top: 0;\n}\n#sidebar .card-body[data-v-4ff4c190]:before{\r\n        content: \"\";\r\n        height: 1px;\r\n        width: 100%;\r\n        background-color: #FFF;\r\n        border-bottom: 1px solid #d3d5d7;\r\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n        box-shadow: 0 0 5px 0 #e2e3e4;\r\n        bottom: 2px;\r\n        left: 0;\r\n        position: absolute;\n}\n#sidebar .card-body[data-v-4ff4c190]:after{\r\n        content: \"\";\r\n    height: 1px;\r\n    width: 100%;\r\n    background-color: #FFF;\r\n    border-bottom: 1px solid #d3d5d7;\r\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n    box-shadow: 0 0 5px 0 #e2e3e4;\r\n    bottom: 5px;\r\n    left: 0;\r\n    position: absolute;\n}\n.col-primary[data-v-4ff4c190] {\r\n        color: #304156;\n}\n.card-primary[data-v-4ff4c190] {\r\n        background: #fff;\n}\n#posts .card[data-v-4ff4c190] {\r\n        border-radius: 1px;\r\n        margin-bottom: 25px;\r\n        /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-4ff4c190] {\r\n        background-color: #fff;\r\n        padding: 0.62rem 1.15rem;\r\n        margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-4ff4c190] {\r\n        float: left;\r\n        color: #2f3c4e;\r\n        text-transform: uppercase;\r\n        font-weight: 400;\n}\n#posts .card-header h2 a[data-v-4ff4c190]:hover {\r\n        color: #038ed4;\n}\n#posts .post-share[data-v-4ff4c190]{\r\n        padding-top: 20px;\r\n        border-top: 1px solid #ecedee;\n}\n#posts .card-footer[data-v-4ff4c190] {\r\n        padding: 0.40rem 0.40rem;\r\n        background-color: #038ed4;\n}\n#posts .card-body[data-v-4ff4c190] {\r\n        padding: 30px;\r\n        font-size: 16px;\r\n        position: relative;\r\n        border-bottom: 1px solid #d3d5d7;\r\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n                box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-4ff4c190]:before{\r\n        content: \"\";\r\n        height: 1px;\r\n        width: 100%;\r\n        background-color: #FFF;\r\n        border-bottom: 1px solid #d3d5d7;\r\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n        box-shadow: 0 0 5px 0 #e2e3e4;\r\n        bottom: 2px;\r\n        left: 0;\r\n        position: absolute;\n}\n#posts .card-body[data-v-4ff4c190]:after{\r\n        content: \"\";\r\n    height: 1px;\r\n    width: 100%;\r\n    background-color: #FFF;\r\n    border-bottom: 1px solid #d3d5d7;\r\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n    box-shadow: 0 0 5px 0 #e2e3e4;\r\n    bottom: 5px;\r\n    left: 0;\r\n    position: absolute;\n}\n.clearfix[data-v-4ff4c190]{\r\n        margin-bottom: 20px;\n}\n.sub-menu[data-v-4ff4c190] {\r\n        background-color: #696969;\r\n        width: 150px;\r\n        list-style-type: none;\n}\n#posts .card-img-top[data-v-4ff4c190] {\r\n        height: 200px;\r\n        border-radius: 0;\r\n        /* border-top: 1px solid #000; */\r\n        /* background: url('/images/1.jpg') center no-repeat; */\r\n        background-size: cover;\n}\n.btn-custom[data-v-4ff4c190] {\r\n        background-color: #fff;\r\n        color: #212426;\r\n        padding: 1px 4px;\r\n        border-radius: 14px;\r\n        border-color: #b3b6b9;\r\n        font-size: 14px;\r\n        margin-right: 4px;\n}\n.sub-head[data-v-4ff4c190] {\r\n        margin-top: 3px;\n}\n#share[data-v-4ff4c190] {\r\n        position: absolute;\r\n        top: -22px;\r\n        padding: 12px;\r\n        right: 20px;\r\n        background: #038ed4;\r\n        border: 5px solid;\r\n        border-radius: 50%;\r\n        color: #fff;\n}\n#menu[data-v-4ff4c190] {\r\n        margin-left: 10px;\r\n        vertical-align: middle;\n}\n.dropdown[data-v-4ff4c190] {\r\n        float: right;\n}\n.dropdown-menu[data-v-4ff4c190] {\r\n        -webkit-transform: translate3d(-118px, 23px, 0px) !important;\r\n                transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-4ff4c190] {\r\n        margin-right: 10px;\n}\n.bg-gray[data-v-4ff4c190]{\r\n        background-color: #f1f1f1;\n}\n.color-main[data-v-4ff4c190]{\r\n        color: #038ed4;\n}\r\n", ""]);
+exports.push([module.i, "\n.fix[data-v-4ff4c190]{\r\n    overflow:hidden; \r\n    top: 90px;\n}\n.post-meta[data-v-4ff4c190] {\r\n    margin-right: 15px;\r\n    margin-bottom: 5px;\r\n    margin-top: 5px;\r\n    float: left;\r\n    padding: 10px;\r\n    border: 1px solid #e4e6e8;\r\n    background-color: #f6f6f6;\r\n    font-size: 12px;\r\n    text-transform: uppercase;\n}\n.post-meta i[data-v-4ff4c190] {\r\n    font-size: 15px;\r\n    float: left;\r\n    margin-right: 10px;\r\n    color: #a3a9b0;\n}\n.post-meta-text[data-v-4ff4c190]{\r\n    float: right;\r\n    font-size: 12px;\r\n    padding-top: 3px;\r\n    margin-left: 5px;\n}\n#sidebar .card-header[data-v-4ff4c190]{\r\n    background-color: #fff;\r\n    border-bottom: 0;\r\n    padding-bottom: 0;\r\n    z-index: 1;\n}\n#sidebar .card-header h4[data-v-4ff4c190]{\r\n    border-bottom: 2px solid #ecedee;\r\n    margin-bottom: 20px;\r\n    line-height: 28px;\r\n    padding-bottom: 10px;\r\n    position: relative;\n}\n#sidebar .card-header h4[data-v-4ff4c190]:before{\r\n    content: \"\";\r\n    position: absolute;\r\n    height: 2px;\r\n    width: 28px;\r\n    background-color: #2f3c4e;\r\n    bottom: -2px;\r\n    left: 0;\n}\n#sidebar .card-header h4[data-v-4ff4c190]:after{\r\n    content: \"\\F0B0\";\r\n    display: block;\r\n    float: left;\r\n    background-color: #2f3c4e;\r\n    font-family: FontAwesome;\r\n    height: 28px;\r\n    width: 28px;\r\n    line-height: 28px;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    margin-right: 10px;\r\n    color: #fff;\n}\n#sidebar .card-header i[data-v-4ff4c190]{\r\n    float: left;\r\n    margin-right: 9px;\r\n    padding: 5px 7px;\r\n    background-color: #2f3c4e;\r\n    color: #fff;\r\n    border-radius: 3px;\n}\n#sidebar .card-body[data-v-4ff4c190]{\r\n    border-bottom: 1px solid #d3d5d7;\r\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n            box-shadow: 0 0 5px 0 #e2e3e4;\r\n    padding-top: 0;\n}\n#sidebar .card-body[data-v-4ff4c190]:before{\r\n        content: \"\";\r\n        height: 1px;\r\n        width: 100%;\r\n        background-color: #FFF;\r\n        border-bottom: 1px solid #d3d5d7;\r\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n        box-shadow: 0 0 5px 0 #e2e3e4;\r\n        bottom: 2px;\r\n        left: 0;\r\n        position: absolute;\n}\n#sidebar .card-body[data-v-4ff4c190]:after{\r\n        content: \"\";\r\n    height: 1px;\r\n    width: 100%;\r\n    background-color: #FFF;\r\n    border-bottom: 1px solid #d3d5d7;\r\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n    box-shadow: 0 0 5px 0 #e2e3e4;\r\n    bottom: 5px;\r\n    left: 0;\r\n    position: absolute;\n}\n.col-primary[data-v-4ff4c190] {\r\n        color: #304156;\n}\n.card-primary[data-v-4ff4c190] {\r\n        background: #fff;\n}\n#posts .card[data-v-4ff4c190] {\r\n        border-radius: 1px;\r\n        margin-bottom: 25px;\r\n        /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-4ff4c190] {\r\n        background-color: #fff;\r\n        padding: 0.62rem 1.15rem;\r\n        margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-4ff4c190] {\r\n        float: left;\r\n        color: #2f3c4e;\r\n        text-transform: uppercase;\r\n        font-weight: 400;\n}\n#posts .card-header h2 a[data-v-4ff4c190]:hover {\r\n        color: #038ed4;\n}\n#posts .post-share[data-v-4ff4c190]{\r\n        padding-top: 20px;\r\n        border-top: 1px solid #ecedee;\n}\n#posts .card-footer[data-v-4ff4c190] {\r\n        padding: 0.40rem 0.40rem;\r\n        background-color: #038ed4;\n}\n#posts .card-body[data-v-4ff4c190] {\r\n        padding: 30px;\r\n        font-size: 16px;\r\n        position: relative;\r\n        border-bottom: 1px solid #d3d5d7;\r\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n                box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-4ff4c190]:before{\r\n        content: \"\";\r\n        height: 1px;\r\n        width: 100%;\r\n        background-color: #FFF;\r\n        border-bottom: 1px solid #d3d5d7;\r\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n        box-shadow: 0 0 5px 0 #e2e3e4;\r\n        bottom: 2px;\r\n        left: 0;\r\n        position: absolute;\n}\n#posts .card-body[data-v-4ff4c190]:after{\r\n        content: \"\";\r\n    height: 1px;\r\n    width: 100%;\r\n    background-color: #FFF;\r\n    border-bottom: 1px solid #d3d5d7;\r\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\r\n    box-shadow: 0 0 5px 0 #e2e3e4;\r\n    bottom: 5px;\r\n    left: 0;\r\n    position: absolute;\n}\n.clearfix[data-v-4ff4c190]{\r\n        margin-bottom: 20px;\n}\n.sub-menu[data-v-4ff4c190] {\r\n        background-color: #696969;\r\n        width: 150px;\r\n        list-style-type: none;\n}\n#posts .card-img-top[data-v-4ff4c190] {\r\n        height: 200px;\r\n        border-radius: 0;\r\n        /* border-top: 1px solid #000; */\r\n        /* background: url('/images/1.jpg') center no-repeat; */\r\n        background-size: cover;\n}\n.btn-custom[data-v-4ff4c190] {\r\n        background-color: #fff;\r\n        color: #212426;\r\n        padding: 1px 4px;\r\n        border-radius: 14px;\r\n        border-color: #b3b6b9;\r\n        font-size: 14px;\r\n        margin-right: 4px;\n}\n.sub-head[data-v-4ff4c190] {\r\n        margin-top: 3px;\n}\n#share[data-v-4ff4c190] {\r\n        position: absolute;\r\n        top: -22px;\r\n        padding: 12px;\r\n        right: 20px;\r\n        background: #038ed4;\r\n        border: 5px solid;\r\n        border-radius: 50%;\r\n        color: #fff;\n}\n#menu[data-v-4ff4c190] {\r\n        margin-left: 10px;\r\n        vertical-align: middle;\n}\n.dropdown[data-v-4ff4c190] {\r\n        float: right;\n}\n.dropdown-menu[data-v-4ff4c190] {\r\n        -webkit-transform: translate3d(-118px, 23px, 0px) !important;\r\n                transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-4ff4c190] {\r\n        margin-right: 10px;\n}\n.bg-gray[data-v-4ff4c190]{\r\n        background-color: #f1f1f1;\n}\n.color-main[data-v-4ff4c190]{\r\n        color: #038ed4;\n}\r\n", ""]);
 
 // exports
 
@@ -31333,7 +31389,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "row" }, [
                           _c("div", { staticClass: "col-md-12" }, [
-                            _c("div", { staticClass: "post-meta" }, [
+                            _c("div", { staticClass: "pull-left" }, [
                               _c("i", {
                                 staticClass: "fa fa-calendar-check-o",
                                 attrs: { "aria-hidden": "true" }
@@ -31346,7 +31402,7 @@ var render = function() {
                               )
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "post-meta" }, [
+                            _c("div", { staticClass: "pull-right" }, [
                               _c("i", {
                                 staticClass: "fa fa-flag",
                                 attrs: { "aria-hidden": "true" }
@@ -31484,16 +31540,29 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "post-meta" }, [
-      _c("i", {
-        staticClass: "fa fa-share-alt",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "post-meta-text col-primary " }, [
-        _vm._v("Share")
-      ])
-    ])
+    return _c(
+      "div",
+      {
+        staticClass: "post-meta",
+        staticStyle: { "background-color": "#038ed4" }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-share-alt",
+          staticStyle: { color: "#fff" },
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "post-meta-text col-primary ",
+            staticStyle: { color: "#fff" }
+          },
+          [_vm._v("Share")]
+        )
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -31896,7 +31965,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 console.log(response);
                 localStorage.setItem('token', _this2.token);
                 toastr['success'](response.data.message);
-                _this2.$router.push('/home');
+                if (response.data.data.type == "EXECUTIVE_MEMBER") {
+                    _this2.$router.push('/home');
+                } else {
+                    _this2.$router.push('/userlogin');
+                }
             }).catch(function (error) {
                 console.log(error.response.statusText);
                 toastr['error'](error.response.data.message);

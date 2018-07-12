@@ -65,12 +65,12 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="post-meta">
+                                            <div class="pull-left">
                                                  <!-- <small> -->
                                                 <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{post.updated_at}}</div>
                                                  <!-- </small> -->
                                             </div>
-                                            <div class="post-meta">
+                                            <div class="pull-right">
                                                  <!-- <small> -->
                                                 <i class="fa fa-flag" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{post.category}}</div>
                                                  <!-- </small> -->
@@ -107,8 +107,8 @@
                                     <div class="mb-3" v-html="post.body"></div>
                                     <div class="clearfix"></div>
                                     <div class="post-share">
-                                        <div class="post-meta">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i> <div class="post-meta-text col-primary ">Share</div>
+                                        <div class="post-meta" style="background-color: #038ed4;">
+                                            <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i> <div style="color:#fff;" class="post-meta-text col-primary ">Share</div>
                                         </div>
                                          <div class="post-meta" style="float:right;">
                                             <i class="fa fa-tags" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{ post.tag }}</div>
@@ -237,6 +237,9 @@
 }
 .post-meta-text{
     float: right;
+    font-size: 12px;
+    padding-top: 3px;
+    margin-left: 5px;
 }
 #sidebar .card-header{
     background-color: #fff;

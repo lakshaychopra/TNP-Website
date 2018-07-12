@@ -173,7 +173,12 @@
                     console.log(response);
                     localStorage.setItem('token', this.token);
                     toastr['success'](response.data.message);
-                    this.$router.push('/home')
+                    if(response.data.data.type == "EXECUTIVE_MEMBER"){
+                        this.$router.push('/home')
+                    }
+                    else{
+                        this.$router.push('/userlogin')
+                    }
                 }).catch(error => {
                     console.log(error.response.statusText);
                     toastr['error'](error.response.data.message);
