@@ -24643,6 +24643,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -24720,13 +24734,19 @@ var render = function() {
               [
                 _vm._m(1),
                 _vm._v(" "),
-                _c("router-link", { attrs: { to: "/post", exact: "" } }, [
-                  _c("i", {
-                    staticClass: "fa fa-plus fa-fw",
-                    attrs: { "aria-hidden": "true" }
-                  }),
-                  _vm._v(" Add Posts\n                        ")
-                ]),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "/post", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-plus fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Add Posts\n                            ")
+                    ])
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c(
                   "li",
@@ -24740,9 +24760,22 @@ var render = function() {
                     ])
                   ],
                   1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-thumb-tack fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Pinned Posts\n                            ")
+                    ])
+                  ],
+                  1
                 )
-              ],
-              1
+              ]
             )
           ]),
           _vm._v(" "),
@@ -24755,13 +24788,35 @@ var render = function() {
               [
                 _vm._m(3),
                 _vm._v(" "),
-                _c("router-link", { attrs: { to: "/excel", exact: "" } }, [
-                  _c("i", {
-                    staticClass: "fa fa-plus fa-fw",
-                    attrs: { "aria-hidden": "true" }
-                  }),
-                  _vm._v(" Add Users\n                        ")
-                ]),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "/excel", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-file-excel-o fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(
+                        " Add Users By Excel\n                            "
+                      )
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-plus fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Add Single User\n                            ")
+                    ])
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c(
                   "li",
@@ -24776,8 +24831,7 @@ var render = function() {
                   ],
                   1
                 )
-              ],
-              1
+              ]
             )
           ])
         ])

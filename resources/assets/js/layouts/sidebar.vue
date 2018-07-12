@@ -29,12 +29,19 @@
                                     <i class="fa fa-list fa-fw" aria-hidden="true"></i> Post Menu
                                 </strong>
                             </li>
-                            <router-link to="/post" exact>
-                                <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Posts
-                            </router-link>
+                            <li>
+                                <router-link to="/post" exact>
+                                    <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Posts
+                                </router-link>
+                            </li>
                             <li>
                                 <router-link to="/all" exact>
                                     <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Posts
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="#" exact>
+                                    <i class="fa fa-thumb-tack fa-fw" aria-hidden="true"></i> Pinned Posts
                                 </router-link>
                             </li>
                         </ul>
@@ -52,9 +59,16 @@
                                     <i class="fa fa-list fa-fw" aria-hidden="true"></i> User Menu
                                 </strong>
                             </li>
-                            <router-link to="/excel" exact>
-                                <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Users
-                            </router-link>
+                            <li>
+                                <router-link to="/excel" exact>
+                                    <i class="fa fa-file-excel-o fa-fw" aria-hidden="true"></i> Add Users By Excel
+                                </router-link>
+                            </li>
+                             <li>
+                                <router-link to="#" exact>
+                                    <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Single User
+                                </router-link>
+                            </li>
                             <li>
                                 <router-link to="#" exact>
                                     <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Users
