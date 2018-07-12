@@ -152,8 +152,26 @@ class PostController extends Controller
         return $this->respondSuccess('Deleted', $delete);
     }
     
-    public function pinToTop(Post $post){
-        return $this->respondSuccess('pinned');
+    public function pinned(Post $post){
+        $auth = JWTAuth::parseToken()->authenticate();
+        if($post->is_pinned <= 3){
+            try {
+                DB::beginTransaction();
+                if(!$auth){
+                    return $this->respondError('Failed', 401); 
+                }
+                $post->is_pinned = true;
+                $post->save(); 
+                DB::commit();
+                return $this->respondSuccess('pinned');
+            }
+            catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
+            }
+        }
+        return $this->respondError('Cannot pin more than 3 posts', 500); 
+
     }
     
     public function pushNotification(User $user,Post $post){
@@ -174,8 +192,9 @@ class PostController extends Controller
         JWTAuth::user()->notifications->markAsUnRead();
         return $this->respondSuccess();
     }
-
+    
     public function HomePostSearch($term = null){
+        $auth = JWTAuth::parseToken()->authenticate();
         if ($term != null) {
             $post['data'] = Post::where('title', 'like', '%'.$term.'%')
             ->orWhere('description', 'like', '%'.$term.'%')

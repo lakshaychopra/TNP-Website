@@ -41,7 +41,8 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::post('/post/markasread', 'PostController@MarkAsRead');
         Route::post('/post/markasunread', 'PostController@MarkAsUnRead');
         Route::get('/post/search/{term?}', 'PostController@PostSearch');
-        Route::post('/post/pintotop', 'PostController@pinToTop');
+        Route::post('/post/pinned', 'PostController@pinned');
+        Route::post('/post/unpinned', 'PostController@unpinned');
         
         // Users Controller
         Route::resource('/user', 'UsersController');
