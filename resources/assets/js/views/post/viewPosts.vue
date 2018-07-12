@@ -54,7 +54,7 @@
       methods:{
         delPost(id) {
           console.log(id);
-          axios.post('/admin/post/'+id,{
+          axios.post('/dashboard/post/'+id,{
             id:id,
             _method:'DELETE'
           }) .then((response) => {

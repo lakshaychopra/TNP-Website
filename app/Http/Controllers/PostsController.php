@@ -152,18 +152,22 @@ class PostController extends Controller
         return $this->respondSuccess('Deleted', $delete);
     }
     
-    public function pinned(Post $post){
+    public function pinned(Request $request,Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
+        $id = $request->only('id');
         if($post->is_pinned <= 3){
             try {
                 DB::beginTransaction();
                 if(!$auth){
                     return $this->respondError('Failed', 401); 
                 }
+                $post = DB::table('posts')
+                ->where("id", '=',  $id)
+                ->limit(1);
                 $post->is_pinned = true;
                 $post->save(); 
                 DB::commit();
-                return $this->respondSuccess('pinned');
+                return $this->respondSuccess('Post Pinned Successfully');
             }
             catch (Exception $e) {
                 DB::rollback();
@@ -171,7 +175,28 @@ class PostController extends Controller
             }
         }
         return $this->respondError('Cannot pin more than 3 posts', 500); 
-
+    }
+    
+    public function unpinned(Request $request,Post $post){
+        $auth = JWTAuth::parseToken()->authenticate();
+        $id = $request->only('id');
+        try {
+            DB::beginTransaction();
+            if(!$auth){
+                return $this->respondError('Failed', 401); 
+            }
+            $post = DB::table('posts')
+            ->where("id", '=',  $id)
+            ->limit(1);
+            $post->is_pinned = false;
+            $post->save(); 
+            DB::commit();
+            return $this->respondSuccess('Post Pinned Successfully');
+        }
+        catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
     
     public function pushNotification(User $user,Post $post){
