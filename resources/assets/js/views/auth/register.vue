@@ -9,19 +9,24 @@
                         <div class="form-group ">
                             <div class="col-xs-6">
                                 <label for="University Roll Number" hidden>University Roll No.</label>
-                                <input type="text" name="uni_roll_no" class="form-control" placeholder="University Roll No." minlength="7" maxlength="7" autocomplete="on" v-model="registerForm.username">
+                                <input v-validate="'required|numeric|min:7|max:7'" type="text" name="rollno" class="form-control" placeholder="University Roll No." minlength="7" maxlength="7" autocomplete="on" v-model="registerForm.username">
+                                <small class="text-danger">{{ errors.first('rollno') }}</small>
+
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="col-xs-6">
                                 <label for="phone number" hidden>Phone Number</label>
-                                <input type="tel" name="ph_no" class="form-control" placeholder="Phone No." autocomplete="tel" maxlength="10" inputmode="numeric" v-model="registerForm.phone_number">
+                                <input type="tel" v-validate="'required|numeric|min:10|max:10'" name="phno" class="form-control" placeholder="Phone No." autocomplete="tel" maxlength="10" inputmode="numeric" v-model="registerForm.phone_number">
+                                <small class="text-danger">{{ errors.first('phno') }}</small>
+
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="col-xs-12">
                                 <label for="email" hidden>Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Email" autocomplete="email" v-model="registerForm.email"> </div>
+                                <input type="email" name="email" v-validate="'required|email'" class="form-control" placeholder="Email" autocomplete="email" v-model="registerForm.email"> </div>
+                                <small class="text-danger">{{ errors.first('email') }}</small>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
@@ -53,12 +58,14 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <label for="password" hidden>Password</label>
-                                <input type="password" name="password" minlength="6" class="form-control" autocomplete="new-password" placeholder="Password" v-model="pswdUpdate.password"> </div>
+                                <input v-validate="'required'" type="password" name="password" minlength="6" class="form-control" autocomplete="new-password" placeholder="Password" v-model="pswdUpdate.password"> </div>
+                                <small class="text-danger">{{ errors.first('password') }}</small>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <label for="password" hidden>Confirm Password</label>
-                                <input type="password" name="password_confirmation" minlength="6" class="form-control" autocomplete="new-password" placeholder="Confirm Password" v-model="password_confirmation"> </div>
+                                <input type="password" name="pconfirm" minlength="6" class="form-control" autocomplete="new-password" placeholder="Confirm Password" v-model="password_confirmation"> </div>
+                                <!-- <small class="text-danger">{{ errors.first('pconfirm') }}</small> -->
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
@@ -119,24 +126,32 @@
         },
         methods: {
             submit(e) {
-                axios.post(registerURL, this.registerForm).then(response => {
-                    toastr['success'](response.data.message);
-                    this.authenticated = true;
-                    this.token = response.data.data.access_token;
-                    axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
-                    // this.$router.push('/login');
-                }).catch(error => {
-                    toastr['error'](error.response.data.message);
+                this.$validator.validateAll().then((result) => {
+                    if(result){
+                        axios.post(registerURL, this.registerForm).then(response => {
+                            toastr['success'](response.data.message);
+                            this.authenticated = true;
+                            this.token = response.data.data.access_token;
+                            axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
+                            // this.$router.push('/login');
+                        }).catch(error => {
+                            toastr['error'](error.response.data.message);
+                        });
+                    }
                 });
             },
 
             submit_password(e) {
-                axios.post(setPasswordURL, this.pswdUpdate).then(response => {
-                    toastr['success'](response.data.message);
-                    localStorage.setItem('token', this.token);
-                    // this.$router.push('/login');
-                }).catch(error => {
-                    toastr['error'](error.response.data.message);
+                this.$validator.validateAll().then((result) => {
+                    if(result){
+                        axios.post(setPasswordURL, this.pswdUpdate).then(response => {
+                            toastr['success'](response.data.message);
+                            localStorage.setItem('token', this.token);
+                            // this.$router.push('/login');
+                        }).catch(error => {
+                            toastr['error'](error.response.data.message);
+                        });
+                    }
                 });
             }
         }
