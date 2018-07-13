@@ -198,12 +198,13 @@ class UsersController extends Controller
                 if (!$auth) {
                     return $this->respondUnauthorized('Failed');
                 }
+                $password = $request->only('password');
                 $user = $request->all();
-                \Log::info($user);
+                $user['password'] = bcrypt(str_random(6));
                 $userCreate = $this->service->createUser($user);
+                // event(new UserCreatedEvent($user));
                 DB::commit();
                 // $this->userCreateMail();  
-                event(new UserCreatedEvent($user));
                 return $this->respondSuccess('User Created Successfully', $userCreate);
             }
             catch (Exception $e) {
