@@ -200,6 +200,7 @@ class UsersController extends Controller
                     return $this->respondUnauthorized('Failed');
                 }
                 $user = $request->all();
+                \Log::info($user);
                 $userCreate = $this->service->createUser($user);
                 DB::commit();
                 // $this->userCreateMail();  

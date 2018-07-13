@@ -9,7 +9,7 @@ class UserService
 {	
 	public function __construct(UserRepository $respository)
 	{
-		$this->respository = $respository;
+		$this->repository = $respository;
 	}
 	
 	public function listUser(){
