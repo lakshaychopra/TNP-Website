@@ -29,11 +29,10 @@ class UsersController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function index()
+    public function index(Request $request)
     {
-        //data fetched from database in $User
-        // $this->service->listUser();
-        $user = User::orderBy('created_at', 'desc')->paginate(20);
+        $limit  = $request->input('limit') ?? 20;
+        $user = $this->repository->list($limit);
         return $this->respondData($user);
     }
     
