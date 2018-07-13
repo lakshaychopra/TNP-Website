@@ -20,36 +20,40 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Category</label>
-                                        <select class="form-control" v-model="user.type">
+                                        <label for="">Category<span class="input-required text-danger">*</span></label>
+                                        <select class="form-control" v-model="user.type" v-validate="'required'" name="category"  >
                                             <option value="STUDENT">Student</option>
                                             <option value="COMPANY">Company</option>
                                             <option value="EXECUTIVE_MEMBER">Executive Member</option>
                                         </select>
+                                        <small class="text-danger">{{ errors.first('category') }}</small>
                                     </div>
                                 </div>
                             </div>    
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Username</label>
-                                        <input class="form-control" v-model="user.username" name="username"/>
+                                        <label for="">Username<span class="input-required text-danger">*</span></label>
+                                        <input class="form-control" v-validate="'required|numeric'" v-model="user.username" name="username"/>
+                                        <small class="text-danger">{{ errors.first('username') }}</small>
                                     </div>
                                 </div>
                             </div>    
                             <div class="row">    
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Email</label>
-                                        <input class="form-control" v-model="user.email" name="email"/>
+                                        <label for="">Email<span class="input-required text-danger">*</span></label>
+                                        <input class="form-control" v-validate="'required|email'" v-model="user.email" name="email"/>
+                                        <small class="text-danger">{{ errors.first('email') }}</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">    
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Phone No.</label>
-                                        <input class="form-control" v-model="user.phone_number" name="phone"/>
+                                        <label for="">Phone No.<span class="input-required text-danger">*</span></label>
+                                        <input class="form-control" v-validate="'required|min:10|max:10'" v-model="user.phone_number" name="phone"/>
+                                        <small class="text-danger">{{ errors.first('phone') }}</small>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +82,7 @@
     export default {
         data() {
             return {
-                loading: false,
+                // loading: false,
                 excel_added:false,
                 user:{
                     type:'',
@@ -91,18 +95,22 @@
         },
         methods: {
              storeUser(){
-                this.loading = true;
-                axios.post(singleuserURL,this.user)
-                    .then(function(response) {
-                        toastr['success'](response.message);
-                        this.loading = false;
-                        console.log(this.loading);
-                        console.log(response);
-                })
-                .catch(response => {
-                        this.loading = false;
-                        console.log(this.loading);
-                        toastr['error'](response.message);
+                this.$validator.validateAll().then((result) => {
+                        if(result){
+                        // this.loading = true;
+                        axios.post(singleuserURL,this.user)
+                            .then(function(response) {
+                                toastr['success'](response.message);
+                                // this.loading = false;
+                                // console.log(this.loading);
+                                console.log(response);
+                        })
+                        .catch(response => {
+                                // this.loading = false;
+                                // console.log(this.loading);
+                                toastr['error'](response.message);
+                        });
+                    }
                 });
             },
         },

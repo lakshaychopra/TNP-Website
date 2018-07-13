@@ -3,8 +3,9 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Title</label>
-                                            <input class="form-control" type="text" value="" v-model="post.title">
+                                            <label for="">Title<span class="input-required text-danger">*</span></label>
+                                            <input v-validate="'required'" class="form-control" type="text" value="" v-model="post.title" name="title" autofocus>
+                                            <small class="text-danger">{{ errors.first('title') }}</small>
                                         </div>
                                     </div>
                                  </div>    
@@ -12,7 +13,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Body</label>
-                                            <vue-html5-editor :content="post.content" :height="300" :auto-height="true"  @change="updateData"></vue-html5-editor> 
+                                            <vue-html5-editor :content="post.content" :height="300" :z-index="1000" :auto-height="true" @change="updateData" name="body" ></vue-html5-editor> 
                                         </div>
                                     </div>
                                  </div> 
@@ -20,7 +21,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Tags</label>        
-                                            <input-tag placeholder="Add Tag" :tags.sync="post.tags"></input-tag>
+                                            <input-tag placeholder="Add Tag" :tags.sync="post.tags" name="tags"></input-tag>
 
                                         </div>
                                     </div>
@@ -28,19 +29,22 @@
                                   <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Category</label>
-                                            <select v-model="post.category" class="form-control">
+                                            <label for="">Category<span class="input-required text-danger">*</span></label>
+                                            <select v-model="post.category" class="form-control" v-validate="'required'" name="category">
                                               <option value="Internship">Internship</option>
                                               <option value="Placement" >Placement</option>
                                             </select>
+                                            <small class="text-danger">{{ errors.first('category') }}</small>
+
                                         </div>
                                     </div>
                                  </div>  
                                  <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group files">
-                                            <label for="">Image</label>
-                                            <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
+                                            <label for="">Image<span class="input-required text-danger">*</span></label>
+                                            <input type="file" v-validate="'required|mimes:image/*'" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
+                                            <small class="text-danger">{{ errors.first('file') }}</small>
 
                                         </div>
                                     </div>
@@ -110,10 +114,14 @@
             proceed(){
                 // this.taskForm.start_date = moment(this.taskForm.start_date).format('YYYY-MM-DD');
                 // this.taskForm.due_date = moment(this.taskForm.due_date).format('YYYY-MM-DD');
-                if(this.id)
-                    this.updatePost();
-                else
-                    this.storePost();
+                this.$validator.validateAll().then((result) => {
+                if(result){
+                    if(this.id)
+                        this.updatePost();
+                    else
+                        this.storePost();
+                }
+                });
             },
             storePost(){
             const postData = {

@@ -24,20 +24,23 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Category</label>
-                                        <select class="form-control" v-model="user.type">
+                                        <label for="">Category<span class="input-required text-danger">*</span></label>
+                                        <select class="form-control" v-model="user.type" v-validate="'required'" name="category">
                                             <option value="STUDENT">Student</option>
                                             <option value="COMPANY">Company</option>
                                             <option value="EXECUTIVE_MEMBER">Executive Member</option>
                                         </select>
+                                        <small class="text-danger">{{ errors.first('category') }}</small>
                                     </div>
                                 </div>
                             </div>    
                             <div class="row">    
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="">Excel</label>
-                                            <input type="file" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
+                                        <label for="">Excel<span class="input-required text-danger">*</span></label>
+                                            <input type="file" class="form-control" v-validate="'required|mimes:application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'" ref="file" name="file" id="imageUrl" @change="handleChange">
+                                            <small class="text-danger">{{ errors.first('file') }}</small>
+
                                     </div>
                                 </div>
                             </div>
@@ -108,24 +111,28 @@
                 console.log(this.user.file);
              },
              storeTask(){
-                this.loading = true;
-                let formData = new FormData();
-                formData.append('excel', this.user.file);
-                formData.append('type', this.user.type);
-                axios.post('/api/dashboard/user',formData, {headers: {'Content-Type': 'multipart/form-data'}})
-                    .then(function(response) {
-                    toastr['success'](response.message);
-                    // this.$emit('completed',response.task)
-                    this.loading = false;
-                    this.excel_added=true;
-                    console.log(this.loading);
-                    console.log(response);
-                })
-                .catch(response => {
-                    this.loading = false;
-                    this.excel_added=true;
-                    console.log(this.loading);
-                    toastr['error'](response.message);
+                this.$validator.validateAll().then((result) => {
+                if(result){
+                    // this.loading = true;
+                    let formData = new FormData();
+                    formData.append('excel', this.user.file);
+                    formData.append('type', this.user.type);
+                    axios.post('/api/dashboard/user',formData, {headers: {'Content-Type': 'multipart/form-data'}})
+                        .then(function(response) {
+                        toastr['success'](response.message);
+                        // this.$emit('completed',response.task)
+                        // this.loading = false;
+                        this.excel_added=true;
+                        // console.log(this.loading);
+                        console.log(response);
+                    })
+                    .catch(response => {
+                        // this.loading = false;
+                        this.excel_added=true;
+                        console.log(this.loading);
+                        toastr['error'](response.message);
+                    });
+                }
                 });
             },
         },

@@ -70,11 +70,11 @@
                     axios.get(searchURL+this.search)
                         .then(function(response) {
                             // toastr['success'](response.message);
-                            console.log(this.loading);
+                            // console.log(this.loading);
                             console.log(response);
                     })
                     .catch(response => {
-                            console.log(this.loading);
+                            // console.log(this.loading);
                             toastr['error'](response.message);
                     });
                 }

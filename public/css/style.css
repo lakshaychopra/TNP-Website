@@ -11591,6 +11591,10 @@ ul.common li {
   z-index: 0 !important;
 }
 
+.input-required {
+  vertical-align: super;
+}
+
 /*
 Template Name: Monster Admin
 Author: Themedesigner

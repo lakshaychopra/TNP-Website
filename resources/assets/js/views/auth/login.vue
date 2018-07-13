@@ -13,13 +13,15 @@
                             <div class="col-xs-12">
                                 <label for="Username" hidden>Username</label>
                                 <input v-validate="'required|numeric'" type="text" name="username" class="form-control" autocomplete="on" placeholder="Username" v-model="loginForm.username">
-                                <small class="form-text text-danger">{{ errors.first('username') }}</small>
+                                <small class="text-danger">{{ errors.first('username') }}</small>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <label for="password" hidden>Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" minlength="6" autocomplete="current-password" v-model="loginForm.password">
+                                <input v-validate="'required|min:6'" type="password" name="password" class="form-control" placeholder="Password" autocomplete="current-password" v-model="loginForm.password">
+                                <small class="text-danger">{{ errors.first('password') }}</small>
+
                             </div>
                         </div>
 
@@ -67,7 +69,9 @@
                         <div class="form-group m-t-20 ">
                             <div class="col-xs-12">
                                 <label for="password" hidden>Verification Code</label>
-                                <input type="password" name="password" class="form-control" placeholder="Verification Code" autocomplete="off" maxlength="5" pattern="[0-9]*" inputmode="numeric" v-model="security.token_2fa"> 
+                                <input v-validate="'required|numeric'" type="password" name="otp" class="form-control" placeholder="Verification Code" autocomplete="off" maxlength="5" pattern="[0-9]*" inputmode="numeric" v-model="security.token_2fa"> 
+                                <small class="text-danger">{{ errors.first('otp') }}</small>
+
                             </div>
                         </div>
                         <div class="form-group text-center m-t-20">
@@ -141,52 +145,56 @@
             submit(e) {
                 this.$validator.validateAll().then((result) => {
                     if(result){
-                        axios.post(loginURL, this.loginForm).then(response => {
-                            if (response.status == "200") {
-                                // window.location = "/dashboard";
-                                this.token = response.data.data.access_token;
-                                axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
+                    axios.post(loginURL, this.loginForm).then(response => {
+                        if (response.status == "200") {
+                            // window.location = "/dashboard";
+                            this.token = response.data.data.access_token;
+                            axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
 
-                                toastr['success'](response.data.message);
-                                this.authenticated = true;
-                                // console.log(this.authenticated);
-                                // this.$router.push('/login');
-                                // this.$router.push('/home')
+                            toastr['success'](response.data.message);
+                            this.authenticated = true;
+                            // console.log(this.authenticated);
+                            // this.$router.push('/login');
+                            // this.$router.push('/home')
 
-                            }
-                        }).catch(error => {
-                            console.log(error.response)
-                            var obj = JSON.parse(error.response.request.responseText);
-                            if (error.response.status == "401") {
-                                toastr['error'](obj['message']);
-                            }
+                        }
+                    }).catch(error => {
+                        console.log(error.response)
+                        var obj = JSON.parse(error.response.request.responseText);
+                        if (error.response.status == "401") {
+                            toastr['error'](obj['message']);
+                        }
 
-                            if (error.response.status == "422") {
-                                if (obj['errors'].hasOwnProperty('username')) {
-                                    toastr['error'](obj['errors']['username']);
-                                }
-                                if (obj['errors'].hasOwnProperty('password')) {
-                                    toastr['error'](obj['errors']['password']);
-                                }
+                        if (error.response.status == "422") {
+                            if (obj['errors'].hasOwnProperty('username')) {
+                                toastr['error'](obj['errors']['username']);
                             }
-                        });
+                            if (obj['errors'].hasOwnProperty('password')) {
+                                toastr['error'](obj['errors']['password']);
+                            }
+                        }
+                    });
                     }
                 });
             },
             security_submit(e) {
-                axios.post(securityURL, this.security).then(response => {
-                    console.log(response);
-                    localStorage.setItem('token', this.token);
-                    toastr['success'](response.data.message);
-                    if(response.data.data.type == "EXECUTIVE_MEMBER"){
-                        this.$router.push('/home')
+                this.$validator.validateAll().then((result) => {
+                    if(result){
+                        axios.post(securityURL, this.security).then(response => {
+                            console.log(response);
+                            localStorage.setItem('token', this.token);
+                            toastr['success'](response.data.message);
+                            if(response.data.data.type == "EXECUTIVE_MEMBER"){
+                                this.$router.push('/home')
+                            }
+                            else{
+                                this.$router.push('/userlogin')
+                            }
+                        }).catch(error => {
+                            console.log(error.response.statusText);
+                            toastr['error'](error.response.data.message);
+                        });
                     }
-                    else{
-                        this.$router.push('/userlogin')
-                    }
-                }).catch(error => {
-                    console.log(error.response.statusText);
-                    toastr['error'](error.response.data.message);
                 });
             }
         }

@@ -23579,15 +23579,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         searchPost: function searchPost() {
-            var _this = this;
-
             if (this.search.length >= 3) {
                 axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["h" /* searchURL */] + this.search).then(function (response) {
                     // toastr['success'](response.message);
-                    console.log(this.loading);
+                    // console.log(this.loading);
                     console.log(response);
                 }).catch(function (response) {
-                    console.log(_this.loading);
+                    // console.log(this.loading);
                     toastr['error'](response.message);
                 });
             }
@@ -26425,6 +26423,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -26482,22 +26483,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         storeTask: function storeTask() {
             var _this = this;
 
-            this.loading = true;
-            var formData = new FormData();
-            formData.append('excel', this.user.file);
-            formData.append('type', this.user.type);
-            axios.post('/api/dashboard/user', formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
-                toastr['success'](response.message);
-                // this.$emit('completed',response.task)
-                this.loading = false;
-                this.excel_added = true;
-                console.log(this.loading);
-                console.log(response);
-            }).catch(function (response) {
-                _this.loading = false;
-                _this.excel_added = true;
-                console.log(_this.loading);
-                toastr['error'](response.message);
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    // this.loading = true;
+                    var formData = new FormData();
+                    formData.append('excel', _this.user.file);
+                    formData.append('type', _this.user.type);
+                    axios.post('/api/dashboard/user', formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
+                        toastr['success'](response.message);
+                        // this.$emit('completed',response.task)
+                        // this.loading = false;
+                        this.excel_added = true;
+                        // console.log(this.loading);
+                        console.log(response);
+                    }).catch(function (response) {
+                        // this.loading = false;
+                        _this.excel_added = true;
+                        console.log(_this.loading);
+                        toastr['error'](response.message);
+                    });
+                }
             });
         }
     }
@@ -26583,9 +26588,7 @@ var render = function() {
                     _c("div", { staticClass: "row" }, [
                       _c("div", { staticClass: "col-md-12" }, [
                         _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Category")
-                          ]),
+                          _vm._m(0),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -26596,9 +26599,16 @@ var render = function() {
                                   rawName: "v-model",
                                   value: _vm.user.type,
                                   expression: "user.type"
+                                },
+                                {
+                                  name: "validate",
+                                  rawName: "v-validate",
+                                  value: "required",
+                                  expression: "'required'"
                                 }
                               ],
                               staticClass: "form-control",
+                              attrs: { name: "category" },
                               on: {
                                 change: function($event) {
                                   var $$selectedVal = Array.prototype.filter
@@ -26635,7 +26645,11 @@ var render = function() {
                                 [_vm._v("Executive Member")]
                               )
                             ]
-                          )
+                          ),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.first("category")))
+                          ])
                         ])
                       ])
                     ]),
@@ -26643,11 +26657,19 @@ var render = function() {
                     _c("div", { staticClass: "row" }, [
                       _c("div", { staticClass: "col-md-12" }, [
                         _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Excel")
-                          ]),
+                          _vm._m(1),
                           _vm._v(" "),
                           _c("input", {
+                            directives: [
+                              {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value:
+                                  "required|mimes:application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                                expression:
+                                  "'required|mimes:application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'"
+                              }
+                            ],
                             ref: "file",
                             staticClass: "form-control",
                             attrs: {
@@ -26656,12 +26678,16 @@ var render = function() {
                               id: "imageUrl"
                             },
                             on: { change: _vm.handleChange }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.first("file")))
+                          ])
                         ])
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(0)
+                    _vm._m(2)
                   ]
                 )
           ])
@@ -26671,6 +26697,24 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Category"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Excel"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -26823,13 +26867,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            loading: false,
+            // loading: false,
             excel_added: false,
             user: {
                 type: '',
@@ -26845,16 +26893,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         storeUser: function storeUser() {
             var _this = this;
 
-            this.loading = true;
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["l" /* singleuserURL */], this.user).then(function (response) {
-                toastr['success'](response.message);
-                this.loading = false;
-                console.log(this.loading);
-                console.log(response);
-            }).catch(function (response) {
-                _this.loading = false;
-                console.log(_this.loading);
-                toastr['error'](response.message);
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    // this.loading = true;
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["l" /* singleuserURL */], _this.user).then(function (response) {
+                        toastr['success'](response.message);
+                        // this.loading = false;
+                        // console.log(this.loading);
+                        console.log(response);
+                    }).catch(function (response) {
+                        // this.loading = false;
+                        // console.log(this.loading);
+                        toastr['error'](response.message);
+                    });
+                }
             });
         }
     }
@@ -26912,9 +26964,7 @@ var render = function() {
                     _c("div", { staticClass: "row" }, [
                       _c("div", { staticClass: "col-md-12" }, [
                         _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Category")
-                          ]),
+                          _vm._m(0),
                           _vm._v(" "),
                           _c(
                             "select",
@@ -26925,9 +26975,16 @@ var render = function() {
                                   rawName: "v-model",
                                   value: _vm.user.type,
                                   expression: "user.type"
+                                },
+                                {
+                                  name: "validate",
+                                  rawName: "v-validate",
+                                  value: "required",
+                                  expression: "'required'"
                                 }
                               ],
                               staticClass: "form-control",
+                              attrs: { name: "category" },
                               on: {
                                 change: function($event) {
                                   var $$selectedVal = Array.prototype.filter
@@ -26964,7 +27021,11 @@ var render = function() {
                                 [_vm._v("Executive Member")]
                               )
                             ]
-                          )
+                          ),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.first("category")))
+                          ])
                         ])
                       ])
                     ]),
@@ -26972,12 +27033,16 @@ var render = function() {
                     _c("div", { staticClass: "row" }, [
                       _c("div", { staticClass: "col-md-12" }, [
                         _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Username")
-                          ]),
+                          _vm._m(1),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
+                              {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value: "required|numeric",
+                                expression: "'required|numeric'"
+                              },
                               {
                                 name: "model",
                                 rawName: "v-model",
@@ -27000,7 +27065,11 @@ var render = function() {
                                 )
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.first("username")))
+                          ])
                         ])
                       ])
                     ]),
@@ -27008,12 +27077,16 @@ var render = function() {
                     _c("div", { staticClass: "row" }, [
                       _c("div", { staticClass: "col-md-12" }, [
                         _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Email")
-                          ]),
+                          _vm._m(2),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
+                              {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value: "required|email",
+                                expression: "'required|email'"
+                              },
                               {
                                 name: "model",
                                 rawName: "v-model",
@@ -27032,7 +27105,11 @@ var render = function() {
                                 _vm.$set(_vm.user, "email", $event.target.value)
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.first("email")))
+                          ])
                         ])
                       ])
                     ]),
@@ -27040,12 +27117,16 @@ var render = function() {
                     _c("div", { staticClass: "row" }, [
                       _c("div", { staticClass: "col-md-12" }, [
                         _c("div", { staticClass: "form-group" }, [
-                          _c("label", { attrs: { for: "" } }, [
-                            _vm._v("Phone No.")
-                          ]),
+                          _vm._m(3),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
+                              {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value: "required|min:10|max:10",
+                                expression: "'required|min:10|max:10'"
+                              },
                               {
                                 name: "model",
                                 rawName: "v-model",
@@ -27068,7 +27149,11 @@ var render = function() {
                                 )
                               }
                             }
-                          })
+                          }),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.errors.first("phone")))
+                          ])
                         ])
                       ])
                     ]),
@@ -27109,7 +27194,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(0)
+                    _vm._m(4)
                   ]
                 )
           ])
@@ -27119,6 +27204,42 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Category"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Username"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Email"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Phone No."),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -27795,6 +27916,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -27847,9 +27972,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log(this.post.imageUrl);
         },
         proceed: function proceed() {
+            var _this = this;
+
             // this.taskForm.start_date = moment(this.taskForm.start_date).format('YYYY-MM-DD');
             // this.taskForm.due_date = moment(this.taskForm.due_date).format('YYYY-MM-DD');
-            if (this.id) this.updatePost();else this.storePost();
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    if (_this.id) _this.updatePost();else _this.storePost();
+                }
+            });
         },
         storePost: function storePost() {
             var postData = {
@@ -27897,20 +28028,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // });
         },
         getPosts: function getPosts() {
-            var _this = this;
+            var _this2 = this;
 
             axios.get('/api/dashboard/post/' + this.id + '/edit').then(function (response) {
-                _this.post.title = response.data.data.title;
-                _this.post.content = response.data.data.body;
-                _this.post.tags = response.data.data.tag.split(',');
-                _this.post.category = response.data.data.category;
-                _this.post.imageUrl = response.data.data.image;
+                _this2.post.title = response.data.data.title;
+                _this2.post.content = response.data.data.body;
+                _this2.post.tags = response.data.data.tag.split(',');
+                _this2.post.category = response.data.data.category;
+                _this2.post.imageUrl = response.data.data.image;
             }).catch(function (response) {
                 toastr['error'](response.message);
             });
         },
         updatePost: function updatePost() {
-            var _this2 = this;
+            var _this3 = this;
 
             var postData = {
                 // usertype : 'EXECUTIVE_MEMBER',
@@ -27942,7 +28073,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 //     this.$router.push('/task');
                 // }
                 toastr['success'](response.data.message);
-                _this2.$router.push('/post/' + response.data.data.id);
+                _this3.$router.push('/post/' + response.data.data.id);
             }).catch(function (response) {
                 toastr['error'](response.message);
             });
@@ -27979,10 +28110,16 @@ var render = function() {
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-12" }, [
           _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
+            _vm._m(0),
             _vm._v(" "),
             _c("input", {
               directives: [
+                {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required",
+                  expression: "'required'"
+                },
                 {
                   name: "model",
                   rawName: "v-model",
@@ -27991,7 +28128,7 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text", value: "" },
+              attrs: { type: "text", value: "", name: "title", autofocus: "" },
               domProps: { value: _vm.post.title },
               on: {
                 input: function($event) {
@@ -28001,7 +28138,11 @@ var render = function() {
                   _vm.$set(_vm.post, "title", $event.target.value)
                 }
               }
-            })
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.first("title")))
+            ])
           ])
         ])
       ]),
@@ -28018,7 +28159,9 @@ var render = function() {
                 attrs: {
                   content: _vm.post.content,
                   height: 300,
-                  "auto-height": true
+                  "z-index": 1000,
+                  "auto-height": true,
+                  name: "body"
                 },
                 on: { change: _vm.updateData }
               })
@@ -28037,7 +28180,11 @@ var render = function() {
               _c("label", { attrs: { for: "" } }, [_vm._v("Tags")]),
               _vm._v(" "),
               _c("input-tag", {
-                attrs: { placeholder: "Add Tag", tags: _vm.post.tags },
+                attrs: {
+                  placeholder: "Add Tag",
+                  tags: _vm.post.tags,
+                  name: "tags"
+                },
                 on: {
                   "update:tags": function($event) {
                     _vm.$set(_vm.post, "tags", $event)
@@ -28053,7 +28200,7 @@ var render = function() {
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-12" }, [
           _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "" } }, [_vm._v("Category")]),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "select",
@@ -28064,9 +28211,16 @@ var render = function() {
                     rawName: "v-model",
                     value: _vm.post.category,
                     expression: "post.category"
+                  },
+                  {
+                    name: "validate",
+                    rawName: "v-validate",
+                    value: "required",
+                    expression: "'required'"
                   }
                 ],
                 staticClass: "form-control",
+                attrs: { name: "category" },
                 on: {
                   change: function($event) {
                     var $$selectedVal = Array.prototype.filter
@@ -28094,7 +28248,11 @@ var render = function() {
                   _vm._v("Placement")
                 ])
               ]
-            )
+            ),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.first("category")))
+            ])
           ])
         ])
       ]),
@@ -28102,14 +28260,26 @@ var render = function() {
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-12" }, [
           _c("div", { staticClass: "form-group files" }, [
-            _c("label", { attrs: { for: "" } }, [_vm._v("Image")]),
+            _vm._m(2),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required|mimes:image/*",
+                  expression: "'required|mimes:image/*'"
+                }
+              ],
               ref: "file",
               staticClass: "form-control",
               attrs: { type: "file", name: "file", id: "imageUrl" },
               on: { change: _vm.handleChange }
-            })
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.first("file")))
+            ])
           ])
         ])
       ]),
@@ -28144,7 +28314,35 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Title"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Category"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "" } }, [
+      _vm._v("Image"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -33127,6 +33325,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -33211,18 +33413,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         security_submit: function security_submit(e) {
             var _this2 = this;
 
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["i" /* securityURL */], this.security).then(function (response) {
-                console.log(response);
-                localStorage.setItem('token', _this2.token);
-                toastr['success'](response.data.message);
-                if (response.data.data.type == "EXECUTIVE_MEMBER") {
-                    _this2.$router.push('/home');
-                } else {
-                    _this2.$router.push('/userlogin');
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["i" /* securityURL */], _this2.security).then(function (response) {
+                        console.log(response);
+                        localStorage.setItem('token', _this2.token);
+                        toastr['success'](response.data.message);
+                        if (response.data.data.type == "EXECUTIVE_MEMBER") {
+                            _this2.$router.push('/home');
+                        } else {
+                            _this2.$router.push('/userlogin');
+                        }
+                    }).catch(function (error) {
+                        console.log(error.response.statusText);
+                        toastr['error'](error.response.data.message);
+                    });
                 }
-            }).catch(function (error) {
-                console.log(error.response.statusText);
-                toastr['error'](error.response.data.message);
             });
         }
     }
@@ -33367,7 +33573,7 @@ var render = function() {
                           }
                         }),
                         _vm._v(" "),
-                        _c("small", { staticClass: "form-text text-danger" }, [
+                        _c("small", { staticClass: "text-danger" }, [
                           _vm._v(_vm._s(_vm.errors.first("username")))
                         ])
                       ])
@@ -33384,6 +33590,12 @@ var render = function() {
                         _c("input", {
                           directives: [
                             {
+                              name: "validate",
+                              rawName: "v-validate",
+                              value: "required|min:6",
+                              expression: "'required|min:6'"
+                            },
+                            {
                               name: "model",
                               rawName: "v-model",
                               value: _vm.loginForm.password,
@@ -33395,7 +33607,6 @@ var render = function() {
                             type: "password",
                             name: "password",
                             placeholder: "Password",
-                            minlength: "6",
                             autocomplete: "current-password"
                           },
                           domProps: { value: _vm.loginForm.password },
@@ -33411,7 +33622,11 @@ var render = function() {
                               )
                             }
                           }
-                        })
+                        }),
+                        _vm._v(" "),
+                        _c("small", { staticClass: "text-danger" }, [
+                          _vm._v(_vm._s(_vm.errors.first("password")))
+                        ])
                       ])
                     ]),
                     _vm._v(" "),
@@ -33482,6 +33697,12 @@ var render = function() {
                         _c("input", {
                           directives: [
                             {
+                              name: "validate",
+                              rawName: "v-validate",
+                              value: "required|numeric",
+                              expression: "'required|numeric'"
+                            },
+                            {
                               name: "model",
                               rawName: "v-model",
                               value: _vm.security.token_2fa,
@@ -33491,7 +33712,7 @@ var render = function() {
                           staticClass: "form-control",
                           attrs: {
                             type: "password",
-                            name: "password",
+                            name: "otp",
                             placeholder: "Verification Code",
                             autocomplete: "off",
                             maxlength: "5",
@@ -33511,7 +33732,11 @@ var render = function() {
                               )
                             }
                           }
-                        })
+                        }),
+                        _vm._v(" "),
+                        _c("small", { staticClass: "text-danger" }, [
+                          _vm._v(_vm._s(_vm.errors.first("otp")))
+                        ])
                       ])
                     ]),
                     _vm._v(" "),
