@@ -8,12 +8,11 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Models\User;
 
-class UserCreateEmail extends Mailable
+class UserSingleCreateEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
     private $user;
-
+    
     /**
     * Create a new message instance.
     *
@@ -30,14 +29,12 @@ class UserCreateEmail extends Mailable
     * @return $this
     */
     public function build()
-    {  
+    {
         $params = [
-            'username' => $this->user['username'],
-            'email' =>  $this->user['email'],
-            'phone_number' =>  $this->user['phone_number']
+            'user' => $this->user,
         ];
         
-        return $this->markdown('emails.users.userCreated',$params)
+        return $this->markdown('emails.users.userSingleCreated',$params)
         ->subject(trans('messages.email.userCreatedMailSendSubject'));
     }
 }

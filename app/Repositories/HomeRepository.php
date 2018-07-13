@@ -25,7 +25,4 @@ class HomeRepository
         return $builder->paginate($limit);
     }
     
-
-
-  
 }
