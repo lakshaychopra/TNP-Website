@@ -23438,6 +23438,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 // import AppHeader from './header.vue'
 
@@ -23726,15 +23732,28 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         _c("div", { staticClass: "card-body" }, [
-                          _c("div", {
-                            staticClass: "mb-3",
-                            domProps: { innerHTML: _vm._s(post.body) }
-                          }),
+                          post.body.length > 10
+                            ? _c("span", [
+                                _c("div", {
+                                  staticClass: "mb-3 show-read-more",
+                                  domProps: {
+                                    innerHTML: _vm._s(post.body.substr(0, 10))
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _vm._m(4, true)
+                              ])
+                            : _c("span", [
+                                _c("div", {
+                                  staticClass: "mb-3 show-read-more",
+                                  domProps: { innerHTML: _vm._s(post.body) }
+                                })
+                              ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "clearfix" }),
                           _vm._v(" "),
                           _c("div", { staticClass: "post-share" }, [
-                            _vm._m(4, true),
+                            _vm._m(5, true),
                             _vm._v(" "),
                             _c(
                               "div",
@@ -23795,7 +23814,7 @@ var render = function() {
             2
           ),
           _vm._v(" "),
-          _vm._m(5)
+          _vm._m(6)
         ])
       ])
     ])
@@ -23938,6 +23957,17 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center alert alert-primary" }, [
+      _c("a", { attrs: { href: "" } }, [
+        _vm._v("Read More "),
+        _c("i", { staticClass: "fa fa-plus" })
+      ])
+    ])
   },
   function() {
     var _vm = this

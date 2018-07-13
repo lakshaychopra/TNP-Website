@@ -158,7 +158,13 @@
                                     <!-- <ul class="list-group">
                             <li class="list-group-item"></li>
                             </ul> -->
-                                    <div class="mb-3" v-html="post.body"></div>
+                                    <span v-if="post.body.length>10">
+                                        <div class="mb-3 show-read-more" v-html="post.body.substr(0,10)"></div>
+                                        <div class="text-center alert alert-primary"><a href="">Read More <i class="fa fa-plus"></i></a></div>
+                                    </span>
+                                    <span v-else>
+                                        <div class="mb-3 show-read-more" v-html="post.body"></div>
+                                    </span>
                                     <div class="clearfix"></div>
                                     <div class="post-share">
                                         <div class="post-meta" style="background-color: #038ed4;">
