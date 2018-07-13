@@ -33,9 +33,9 @@ class HomeController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        return $this->respondData($post);
     }
     
     public function HomePostSearch($term = null){
