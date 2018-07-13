@@ -9,7 +9,7 @@
                 <div class="navbar-text d-md-none">
                     <ul class="navbar-nav list-inline">
                         <li class="nav-item ">
-                            <a class="nav-link" href="#" @click="search = !search">
+                            <a class="nav-link" href="#" @click="search_input = !search_input">
                                 <i class="fa fa-search"></i>
                             </a>
                         </li>
@@ -23,7 +23,7 @@
             <div class="navbar-collapse collapse" id="collapsibleNavbar">
                 <div class="mr-auto d-none d-md-block w-65">
                     <form class="form-inline" action="/">
-                        <input class="form-control" type="text" placeholder="Search" autocomplete="on" id="search">
+                        <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost" autocomplete="on" id="search">
                         <button class="btn btn-info" type="submit">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
@@ -55,10 +55,29 @@
 </template>
 
 <script>
+    import { searchURL } from "../../config.js";
+
     export default {
         data() {
             return {
-                search: false
+                search_input: false,
+                search:''
+            }
+        },
+        methods:{
+            searchPost(){
+                if(this.search.length >=3){
+                    axios.get(searchURL+this.search)
+                        .then(function(response) {
+                            // toastr['success'](response.message);
+                            console.log(this.loading);
+                            console.log(response);
+                    })
+                    .catch(response => {
+                            console.log(this.loading);
+                            toastr['error'](response.message);
+                    });
+                }
             }
         }
     }

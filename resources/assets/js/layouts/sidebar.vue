@@ -71,7 +71,7 @@
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="#" exact>
+                                <router-link to="/single" exact>
                                     <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Single User
                                 </router-link>
                             </li>
