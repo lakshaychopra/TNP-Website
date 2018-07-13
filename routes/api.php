@@ -25,7 +25,7 @@ Route::post('/logout', 'LoginController@logout');
 Route::post('/register', 'RegisterController@register');
 //Home Controller
 Route::resource('/home', 'HomeController');
-Route::get('/home/post/search/{term?}', 'PostController@HomePostSearch');
+Route::get('/home/post/search/{term?}', 'HomeController@HomePostSearch');
 //Protected routes
 Route::group(['middleware' => 'jwt.auth'], function() {
     // Login Controller

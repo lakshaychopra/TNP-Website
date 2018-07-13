@@ -41,11 +41,11 @@ class HomeController extends Controller
     public function HomePostSearch($term = null){
         if ($term != null) {
             $post['data'] = Post::where('title', 'like', '%'.$term.'%')
-            ->orWhere('description', 'like', '%'.$term.'%')
+            ->orWhere('body', 'like', '%'.$term.'%')
             ->get();
-            return $this->respondData($posts);
+            return $this->respondData($post);
         }
         $post= Post::orderBy('created_at', 'desc');
-        return $this->respondData($posts);
+        return $this->respondData($post);
     }
 }

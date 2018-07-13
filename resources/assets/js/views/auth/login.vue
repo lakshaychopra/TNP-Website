@@ -12,7 +12,8 @@
                         <div class="form-group ">
                             <div class="col-xs-12">
                                 <label for="Username" hidden>Username</label>
-                                <input type="text" name="username" class="form-control" autocomplete="on" placeholder="Username" v-model="loginForm.username">
+                                <input v-validate="'required|numeric'" type="text" name="username" class="form-control" autocomplete="on" placeholder="Username" v-model="loginForm.username">
+                                <small class="form-text text-danger">{{ errors.first('username') }}</small>
                             </div>
                         </div>
                         <div class="form-group">
@@ -138,33 +139,37 @@
         },
         methods: {
             submit(e) {
-                axios.post(loginURL, this.loginForm).then(response => {
-                    if (response.status == "200") {
-                        // window.location = "/dashboard";
-                        this.token = response.data.data.access_token;
-                        axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
+                this.$validator.validateAll().then((result) => {
+                    if(result){
+                        axios.post(loginURL, this.loginForm).then(response => {
+                            if (response.status == "200") {
+                                // window.location = "/dashboard";
+                                this.token = response.data.data.access_token;
+                                axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
 
-                        toastr['success'](response.data.message);
-                        this.authenticated = true;
-                        // console.log(this.authenticated);
-                        // this.$router.push('/login');
-                        // this.$router.push('/home')
+                                toastr['success'](response.data.message);
+                                this.authenticated = true;
+                                // console.log(this.authenticated);
+                                // this.$router.push('/login');
+                                // this.$router.push('/home')
 
-                    }
-                }).catch(error => {
-                    console.log(error.response)
-                    var obj = JSON.parse(error.response.request.responseText);
-                    if (error.response.status == "401") {
-                        toastr['error'](obj['message']);
-                    }
+                            }
+                        }).catch(error => {
+                            console.log(error.response)
+                            var obj = JSON.parse(error.response.request.responseText);
+                            if (error.response.status == "401") {
+                                toastr['error'](obj['message']);
+                            }
 
-                    if (error.response.status == "422") {
-                        if (obj['errors'].hasOwnProperty('username')) {
-                            toastr['error'](obj['errors']['username']);
-                        }
-                        if (obj['errors'].hasOwnProperty('password')) {
-                            toastr['error'](obj['errors']['password']);
-                        }
+                            if (error.response.status == "422") {
+                                if (obj['errors'].hasOwnProperty('username')) {
+                                    toastr['error'](obj['errors']['username']);
+                                }
+                                if (obj['errors'].hasOwnProperty('password')) {
+                                    toastr['error'](obj['errors']['password']);
+                                }
+                            }
+                        });
                     }
                 });
             },
