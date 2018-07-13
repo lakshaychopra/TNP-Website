@@ -22,7 +22,7 @@
             </div>
             <div class="navbar-collapse collapse" id="collapsibleNavbar">
                 <div class="mr-auto d-none d-md-block w-65">
-                    <form class="form-inline" action="/">
+                    <form class="form-inline" action="/" method="GET">
                         <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost" autocomplete="on" id="search">
                         <button class="btn btn-info" type="submit">
                             <i class="fa fa-search" aria-hidden="true"></i>
