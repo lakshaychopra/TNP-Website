@@ -146,8 +146,9 @@
                     if(result){
                         axios.post(setPasswordURL, this.pswdUpdate).then(response => {
                             toastr['success'](response.data.message);
-                            localStorage.setItem('token', this.token);
-                            // this.$router.push('/login');
+                            // localStorage.setItem('token', this.token);
+                            axios.defaults.headers.common['Authorization'] = null;
+                            this.$router.push('/login');
                         }).catch(error => {
                             toastr['error'](error.response.data.message);
                         });

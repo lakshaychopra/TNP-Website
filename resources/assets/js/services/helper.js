@@ -4,7 +4,7 @@ export default {
         return axios.post('/api/logout').then(response => {
             localStorage.removeItem('token');
             axios.defaults.headers.common['Authorization'] = null;
-            toastr['success'](response.data.message);
+            toastr['success']("Successfully!! Logged out");
         }).catch(error => {
             console.log(error);
         });

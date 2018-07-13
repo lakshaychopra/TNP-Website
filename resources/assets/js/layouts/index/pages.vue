@@ -25,9 +25,9 @@
                 <div class="mr-auto d-none d-md-block w-65">
                     <form class="form-inline" action="/" method="GET">
                         <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost" autocomplete="on" id="search">
-                        <button class="btn btn-info" type="submit">
+                        <!-- <button class="btn btn-info" type="submit">
                             <i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
+                        </button> -->
                     </form>
                 </div>
                 <ul class="nav navbar-nav" id="list-menu">
@@ -104,7 +104,7 @@
 
                 <div class="col" id="main">
                     
-                   <div class="row justify-content-center" v-for="post in posts.data" :key="post.id" id="posts">
+                   <div class="row justify-content-center" v-for="post in posts" :key="post.id" id="posts">
                         <div class="col-md-12">
 
                             <div class="card card-primary">
@@ -181,6 +181,10 @@
 
                         </div> -->
                     </div>
+                    <div class="text-center"  v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+                    <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px" v-if="loading"></i>
+                    </div> 
+
 
                 </div>
 
@@ -243,6 +247,9 @@
         // },
         data() {
             return {
+                loading:1,
+                page:2,
+                busy: false,
                 postEdit: {},
                 posts: {},
                 search_input: false,
@@ -252,11 +259,44 @@
         },
         created() {
             //console.log("index");
+            this.loading = 0; 
             this.getPosts();
         },
         methods: {
+            loadMore: function() { 
+                    const vm = this;
+                    vm.loading=1;
+                    vm.busy=true;
+                    vm.getallpost();                      
+                }, 
+                getallpost: function () {
+                    setTimeout(() => {
+                    const vm = this;    
+                        axios.get('/api/home?page='+vm.page)
+                        .then(function (response) {  
+                            console.log(response.data.data.data.length);   
+                            if(response.data.data.data.length ==0)
+                            {    
+                                vm.busy=true;  
+                            }
+                            else
+                            { 
+                                vm.busy = false;   
+                            } 
+                            for(var i=0;i<response.data.data.data.length;i++) {
+                                console.log(response.data.data.data[i]);
+                                vm.posts.push(response.data.data.data[i]);
+                            }
+                            vm.loading=0;  
+                            vm.page = vm.page + 1; 
+
+                        })
+                        .catch(function (error) { 
+                        });  
+                    }, 2000);
+            },  
             getrecord(record){
-                this.posts = record.data.data;
+                this.posts = record.data.data.data;
             },
             getPosts(){
                 axios.get(addHomePostURL)
@@ -273,7 +313,7 @@
             searchPost(){
                 if(this.search.length >=3){
                     axios.get(searchURL+this.search)
-                        .then(response => this.posts = response.data.data)
+                        .then(response => this.posts = response.data.data.data)
                 }
                 else{
                     this.getPosts();

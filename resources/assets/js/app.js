@@ -16,8 +16,13 @@ import router from './routes'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
+
+import infiniteScroll from 'vue-infinite-scroll';
+Vue.use(infiniteScroll)
 
 import swal from 'vue-sweetalert2';
 Vue.use(swal);

@@ -28,6 +28,8 @@ class RegisterController extends Controller
             [ 'email', '=',$values['email']],
             ['phone_number', '=',$values['phone_number']],
             ['type','=','STUDENT'],
+            ['is_active', '=', 0],
+            ['is_mailed', '=', 0],
             ['is_verified','=',0]
             ])->first();
             if (!$token = JWTAuth::fromUser($user)) {

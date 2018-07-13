@@ -100,7 +100,7 @@
                         // this.loading = true;
                         axios.post(singleuserURL,this.user)
                             .then(function(response) {
-                                toastr['success'](response.message);
+                                toastr['success'](response.data.message);
                                 // this.loading = false;
                                 // console.log(this.loading);
                                 console.log(response);

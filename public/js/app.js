@@ -184,7 +184,7 @@ var _this = this;
         return axios.post('/api/logout').then(function (response) {
             localStorage.removeItem('token');
             axios.defaults.headers.common['Authorization'] = null;
-            toastr['success'](response.data.message);
+            toastr['success']("Successfully!! Logged out");
         }).catch(function (error) {
             console.log(error);
         });
@@ -19944,9 +19944,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vee_validate__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_sweetalert2__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_html5_editor__ = __webpack_require__(182);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_html5_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vue_html5_editor__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_infinite_scroll__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_infinite_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_infinite_scroll__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_sweetalert2__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue_html5_editor__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue_html5_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_vue_html5_editor__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -19969,10 +19971,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Vue.use(__WEBPACK_IMPORTED_MODULE_4_vee_validate__["a" /* default */]);
 
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_5_vue_sweetalert2__["a" /* default */]);
+Vue.use(__WEBPACK_IMPORTED_MODULE_5_vue_infinite_scroll___default.a);
 
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_6_vue_html5_editor___default.a, {
+Vue.use(__WEBPACK_IMPORTED_MODULE_6_vue_sweetalert2__["a" /* default */]);
+
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_7_vue_html5_editor___default.a, {
     hiddenModules: ["image", "info", "full-screen"]
 
 });
@@ -23429,6 +23434,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 // import AppHeader from './header.vue'
 
@@ -23440,6 +23449,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     // },
     data: function data() {
         return {
+            loading: 1,
+            page: 2,
+            busy: false,
             postEdit: {},
             posts: {},
             search_input: false,
@@ -23449,20 +23461,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         //console.log("index");
+        this.loading = 0;
         this.getPosts();
     },
 
     methods: {
+        loadMore: function loadMore() {
+            var vm = this;
+            vm.loading = 1;
+            vm.busy = true;
+            vm.getallpost();
+        },
+        getallpost: function getallpost() {
+            var _this = this;
+
+            setTimeout(function () {
+                var vm = _this;
+                axios.get('/api/home?page=' + vm.page).then(function (response) {
+                    console.log(response.data.data.data.length);
+                    if (response.data.data.data.length == 0) {
+                        vm.busy = true;
+                    } else {
+                        vm.busy = false;
+                    }
+                    for (var i = 0; i < response.data.data.data.length; i++) {
+                        console.log(response.data.data.data[i]);
+                        vm.posts.push(response.data.data.data[i]);
+                    }
+                    vm.loading = 0;
+                    vm.page = vm.page + 1;
+                }).catch(function (error) {});
+            }, 2000);
+        },
         getrecord: function getrecord(record) {
-            this.posts = record.data.data;
+            this.posts = record.data.data.data;
         },
         getPosts: function getPosts() {
-            var _this = this;
+            var _this2 = this;
 
             axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["a" /* addHomePostURL */]).then(function (response) {
                 // var obj = JSON.parse(response.data);
                 // console.log(response);
-                _this.getrecord(response);
+                _this2.getrecord(response);
                 // this.posts = response.data.data;
                 console.log(response.data.data);
             }).catch(function (error) {
@@ -23470,11 +23510,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         searchPost: function searchPost() {
-            var _this2 = this;
+            var _this3 = this;
 
             if (this.search.length >= 3) {
                 axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["h" /* searchURL */] + this.search).then(function (response) {
-                    return _this2.posts = response.data.data;
+                    return _this3.posts = response.data.data.data;
                 });
             } else {
                 this.getPosts();
@@ -23583,14 +23623,12 @@ var render = function() {
                             _vm.search = $event.target.value
                           }
                         }
-                      }),
-                      _vm._v(" "),
-                      _vm._m(1)
+                      })
                     ]
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(2)
+                _vm._m(1)
               ]
             )
           ]
@@ -23603,7 +23641,7 @@ var render = function() {
                 staticClass: "d-sm-none",
                 attrs: { action: "/", method: "GET" }
               },
-              [_vm._m(3)]
+              [_vm._m(2)]
             )
           : _vm._e()
       ]
@@ -23612,116 +23650,152 @@ var render = function() {
     _c("div", { staticClass: "bg-gray" }, [
       _c("div", { staticClass: "container py-4" }, [
         _c("div", { staticClass: "row" }, [
-          _vm._m(4),
+          _vm._m(3),
           _vm._v(" "),
           _c(
             "div",
             { staticClass: "col", attrs: { id: "main" } },
-            _vm._l(_vm.posts.data, function(post) {
-              return _c(
-                "div",
-                {
-                  key: post.id,
-                  staticClass: "row justify-content-center",
-                  attrs: { id: "posts" }
-                },
-                [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "card card-primary" }, [
-                      _c("div", { staticClass: "card-header" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-12" }, [
-                            _c("h2", [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _vm._v(_vm._s(post.title))
+            [
+              _vm._l(_vm.posts, function(post) {
+                return _c(
+                  "div",
+                  {
+                    key: post.id,
+                    staticClass: "row justify-content-center",
+                    attrs: { id: "posts" }
+                  },
+                  [
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c("div", { staticClass: "card card-primary" }, [
+                        _c("div", { staticClass: "card-header" }, [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-md-12" }, [
+                              _c("h2", [
+                                _c("a", { attrs: { href: "#" } }, [
+                                  _vm._v(_vm._s(post.title))
+                                ])
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-md-12" }, [
+                              _c("div", { staticClass: "pull-left" }, [
+                                _c("i", {
+                                  staticClass: "fa fa-calendar-check-o",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "post-meta-text col-primary "
+                                  },
+                                  [_vm._v(_vm._s(post.updated_at))]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "pull-right" }, [
+                                _c("i", {
+                                  staticClass: "fa fa-flag",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "post-meta-text col-primary "
+                                  },
+                                  [_vm._v(_vm._s(post.category))]
+                                )
                               ])
                             ])
                           ])
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-12" }, [
-                            _c("div", { staticClass: "pull-left" }, [
-                              _c("i", {
-                                staticClass: "fa fa-calendar-check-o",
-                                attrs: { "aria-hidden": "true" }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "post-meta-text col-primary " },
-                                [_vm._v(_vm._s(post.updated_at))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "pull-right" }, [
-                              _c("i", {
-                                staticClass: "fa fa-flag",
-                                attrs: { "aria-hidden": "true" }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "post-meta-text col-primary " },
-                                [_vm._v(_vm._s(post.category))]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      post.image != null
-                        ? _c("div", {
-                            staticClass: "card-img-top",
-                            style: _vm.getImage(post.image),
-                            attrs: {
-                              "data-toggle": "modal",
-                              "data-target": "#exampleModal",
-                              postImage: post.image
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("div", {
-                          staticClass: "mb-3",
-                          domProps: { innerHTML: _vm._s(post.body) }
-                        }),
+                        post.image != null
+                          ? _c("div", {
+                              staticClass: "card-img-top",
+                              style: _vm.getImage(post.image),
+                              attrs: {
+                                "data-toggle": "modal",
+                                "data-target": "#exampleModal",
+                                postImage: post.image
+                              }
+                            })
+                          : _vm._e(),
                         _vm._v(" "),
-                        _c("div", { staticClass: "clearfix" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "post-share" }, [
-                          _vm._m(5, true),
+                        _c("div", { staticClass: "card-body" }, [
+                          _c("div", {
+                            staticClass: "mb-3",
+                            domProps: { innerHTML: _vm._s(post.body) }
+                          }),
                           _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "post-meta",
-                              staticStyle: { float: "right" }
-                            },
-                            [
-                              _c("i", {
-                                staticClass: "fa fa-tags",
-                                attrs: { "aria-hidden": "true" }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "post-meta-text col-primary " },
-                                [_vm._v(_vm._s(post.tag))]
-                              )
-                            ]
-                          )
+                          _c("div", { staticClass: "clearfix" }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "post-share" }, [
+                            _vm._m(4, true),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "post-meta",
+                                staticStyle: { float: "right" }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "fa fa-tags",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "post-meta-text col-primary "
+                                  },
+                                  [_vm._v(_vm._s(post.tag))]
+                                )
+                              ]
+                            )
+                          ])
                         ])
                       ])
                     ])
-                  ])
+                  ]
+                )
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "infinite-scroll",
+                      rawName: "v-infinite-scroll",
+                      value: _vm.loadMore,
+                      expression: "loadMore"
+                    }
+                  ],
+                  staticClass: "text-center",
+                  attrs: {
+                    "infinite-scroll-disabled": "busy",
+                    "infinite-scroll-distance": "10"
+                  }
+                },
+                [
+                  _vm.loading
+                    ? _c("i", {
+                        staticClass: "fa fa-circle-o-notch fa-spin",
+                        staticStyle: { "font-size": "24px" }
+                      })
+                    : _vm._e()
                 ]
               )
-            })
+            ],
+            2
           ),
           _vm._v(" "),
-          _vm._m(6)
+          _vm._m(5)
         ])
       ])
     ])
@@ -23743,21 +23817,6 @@ var staticRenderFns = [
         }
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "btn btn-info", attrs: { type: "submit" } },
-      [
-        _c("i", {
-          staticClass: "fa fa-search",
-          attrs: { "aria-hidden": "true" }
-        })
-      ]
     )
   },
   function() {
@@ -24225,7 +24284,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             __WEBPACK_IMPORTED_MODULE_0__services_helper__["a" /* default */].logout().then(function () {
                 _this.$store.dispatch('resetAuthUserDetail');
-                _this.$router.replace('/login');
+                _this.$router.push('/');
             });
         },
         getAuthUserFullName: function getAuthUserFullName() {
@@ -26769,7 +26828,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (result) {
                     // this.loading = true;
                     axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["l" /* singleuserURL */], _this.user).then(function (response) {
-                        toastr['success'](response.message);
+                        toastr['success'](response.data.message);
                         // this.loading = false;
                         // console.log(this.loading);
                         console.log(response);
@@ -33922,8 +33981,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (result) {
                     axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["j" /* setPasswordURL */], _this2.pswdUpdate).then(function (response) {
                         toastr['success'](response.data.message);
-                        localStorage.setItem('token', _this2.token);
-                        // this.$router.push('/login');
+                        // localStorage.setItem('token', this.token);
+                        axios.defaults.headers.common['Authorization'] = null;
+                        _this2.$router.push('/login');
                     }).catch(function (error) {
                         toastr['error'](error.response.data.message);
                     });
@@ -47418,6 +47478,260 @@ return VueHtml5Editor;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.infiniteScroll = factory());
+}(this, function () { 'use strict';
+
+  var ctx = '@@InfiniteScroll';
+
+  var throttle = function throttle(fn, delay) {
+    var now, lastExec, timer, context, args; //eslint-disable-line
+
+    var execute = function execute() {
+      fn.apply(context, args);
+      lastExec = now;
+    };
+
+    return function () {
+      context = this;
+      args = arguments;
+
+      now = Date.now();
+
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+
+      if (lastExec) {
+        var diff = delay - (now - lastExec);
+        if (diff < 0) {
+          execute();
+        } else {
+          timer = setTimeout(function () {
+            execute();
+          }, diff);
+        }
+      } else {
+        execute();
+      }
+    };
+  };
+
+  var getScrollTop = function getScrollTop(element) {
+    if (element === window) {
+      return Math.max(window.pageYOffset || 0, document.documentElement.scrollTop);
+    }
+
+    return element.scrollTop;
+  };
+
+  var getComputedStyle = document.defaultView.getComputedStyle;
+
+  var getScrollEventTarget = function getScrollEventTarget(element) {
+    var currentNode = element;
+    // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
+    while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
+      var overflowY = getComputedStyle(currentNode).overflowY;
+      if (overflowY === 'scroll' || overflowY === 'auto') {
+        return currentNode;
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return window;
+  };
+
+  var getVisibleHeight = function getVisibleHeight(element) {
+    if (element === window) {
+      return document.documentElement.clientHeight;
+    }
+
+    return element.clientHeight;
+  };
+
+  var getElementTop = function getElementTop(element) {
+    if (element === window) {
+      return getScrollTop(window);
+    }
+    return element.getBoundingClientRect().top + getScrollTop(window);
+  };
+
+  var isAttached = function isAttached(element) {
+    var currentNode = element.parentNode;
+    while (currentNode) {
+      if (currentNode.tagName === 'HTML') {
+        return true;
+      }
+      if (currentNode.nodeType === 11) {
+        return false;
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return false;
+  };
+
+  var doBind = function doBind() {
+    if (this.binded) return; // eslint-disable-line
+    this.binded = true;
+
+    var directive = this;
+    var element = directive.el;
+
+    var throttleDelayExpr = element.getAttribute('infinite-scroll-throttle-delay');
+    var throttleDelay = 200;
+    if (throttleDelayExpr) {
+      throttleDelay = Number(directive.vm[throttleDelayExpr] || throttleDelayExpr);
+      if (isNaN(throttleDelay) || throttleDelay < 0) {
+        throttleDelay = 200;
+      }
+    }
+    directive.throttleDelay = throttleDelay;
+
+    directive.scrollEventTarget = getScrollEventTarget(element);
+    directive.scrollListener = throttle(doCheck.bind(directive), directive.throttleDelay);
+    directive.scrollEventTarget.addEventListener('scroll', directive.scrollListener);
+
+    this.vm.$on('hook:beforeDestroy', function () {
+      directive.scrollEventTarget.removeEventListener('scroll', directive.scrollListener);
+    });
+
+    var disabledExpr = element.getAttribute('infinite-scroll-disabled');
+    var disabled = false;
+
+    if (disabledExpr) {
+      this.vm.$watch(disabledExpr, function (value) {
+        directive.disabled = value;
+        if (!value && directive.immediateCheck) {
+          doCheck.call(directive);
+        }
+      });
+      disabled = Boolean(directive.vm[disabledExpr]);
+    }
+    directive.disabled = disabled;
+
+    var distanceExpr = element.getAttribute('infinite-scroll-distance');
+    var distance = 0;
+    if (distanceExpr) {
+      distance = Number(directive.vm[distanceExpr] || distanceExpr);
+      if (isNaN(distance)) {
+        distance = 0;
+      }
+    }
+    directive.distance = distance;
+
+    var immediateCheckExpr = element.getAttribute('infinite-scroll-immediate-check');
+    var immediateCheck = true;
+    if (immediateCheckExpr) {
+      immediateCheck = Boolean(directive.vm[immediateCheckExpr]);
+    }
+    directive.immediateCheck = immediateCheck;
+
+    if (immediateCheck) {
+      doCheck.call(directive);
+    }
+
+    var eventName = element.getAttribute('infinite-scroll-listen-for-event');
+    if (eventName) {
+      directive.vm.$on(eventName, function () {
+        doCheck.call(directive);
+      });
+    }
+  };
+
+  var doCheck = function doCheck(force) {
+    var scrollEventTarget = this.scrollEventTarget;
+    var element = this.el;
+    var distance = this.distance;
+
+    if (force !== true && this.disabled) return; //eslint-disable-line
+    var viewportScrollTop = getScrollTop(scrollEventTarget);
+    var viewportBottom = viewportScrollTop + getVisibleHeight(scrollEventTarget);
+
+    var shouldTrigger = false;
+
+    if (scrollEventTarget === element) {
+      shouldTrigger = scrollEventTarget.scrollHeight - viewportBottom <= distance;
+    } else {
+      var elementBottom = getElementTop(element) - getElementTop(scrollEventTarget) + element.offsetHeight + viewportScrollTop;
+
+      shouldTrigger = viewportBottom + distance >= elementBottom;
+    }
+
+    if (shouldTrigger && this.expression) {
+      this.expression();
+    }
+  };
+
+  var InfiniteScroll = {
+    bind: function bind(el, binding, vnode) {
+      el[ctx] = {
+        el: el,
+        vm: vnode.context,
+        expression: binding.value
+      };
+      var args = arguments;
+      el[ctx].vm.$on('hook:mounted', function () {
+        el[ctx].vm.$nextTick(function () {
+          if (isAttached(el)) {
+            doBind.call(el[ctx], args);
+          }
+
+          el[ctx].bindTryCount = 0;
+
+          var tryBind = function tryBind() {
+            if (el[ctx].bindTryCount > 10) return; //eslint-disable-line
+            el[ctx].bindTryCount++;
+            if (isAttached(el)) {
+              doBind.call(el[ctx], args);
+            } else {
+              setTimeout(tryBind, 50);
+            }
+          };
+
+          tryBind();
+        });
+      });
+    },
+    unbind: function unbind(el) {
+      if (el && el[ctx] && el[ctx].scrollEventTarget) el[ctx].scrollEventTarget.removeEventListener('scroll', el[ctx].scrollListener);
+    }
+  };
+
+  var install = function install(Vue) {
+    Vue.directive('InfiniteScroll', InfiniteScroll);
+  };
+
+  if (window.Vue) {
+    window.infiniteScroll = InfiniteScroll;
+    Vue.use(install); // eslint-disable-line
+  }
+
+  InfiniteScroll.install = install;
+
+  return InfiniteScroll;
+
+}));
 
 /***/ })
 /******/ ]);
