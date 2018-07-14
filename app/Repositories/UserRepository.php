@@ -22,10 +22,13 @@ class UserRepository
     }
     
 
-    public function list()
+    public function list($limit = false)
     {
-        $lists = User::orderBy('created_at', 'decs')->paginate(15);
-        return $lists;
+        $builder = User::orderBy('created_at', 'desc');
+        if(!$limit) {
+            return $builder->get();
+        }
+        return $builder->paginate($limit);
     }
     
     // create new record

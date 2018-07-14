@@ -29,11 +29,10 @@ class UsersController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function index()
+    public function index(Request $request)
     {
-        //data fetched from database in $User
-        // $this->service->listUser();
-        $user = User::orderBy('created_at', 'desc')->paginate(20);
+        $limit  = $request->input('limit') ?? 20;
+        $user = $this->repository->list($limit);
         return $this->respondData($user);
     }
     
@@ -199,12 +198,13 @@ class UsersController extends Controller
                 if (!$auth) {
                     return $this->respondUnauthorized('Failed');
                 }
+                $password = $request->only('password');
                 $user = $request->all();
-                \Log::info($user);
+                $user['password'] = bcrypt(str_random(6));
                 $userCreate = $this->service->createUser($user);
+                // event(new UserCreatedEvent($user));
                 DB::commit();
                 // $this->userCreateMail();  
-                event(new UserCreatedEvent($user));
                 return $this->respondSuccess('User Created Successfully', $userCreate);
             }
             catch (Exception $e) {
