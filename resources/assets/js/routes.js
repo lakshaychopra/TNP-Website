@@ -4,14 +4,13 @@ let routes = [{
         path: '/',
         component: require('./layouts/index/pages.vue'),
         name: 'index',
-            // children: [{
-            //         path: '/index',
-            //         name:'index',
-            //         component: require('./layouts/index/pages.vue')
-            //     },
-            // ]
     },
-
+    {
+        path: '/view/:id',
+        name: 'view',
+        props: true,
+        component: require('./views/pages/show.vue')
+    },
     {
         path: '/',
         component: require('./layouts/default-page'),

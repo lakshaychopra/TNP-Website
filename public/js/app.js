@@ -19929,7 +19929,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(25);
-module.exports = __webpack_require__(183);
+module.exports = __webpack_require__(184);
 
 
 /***/ }),
@@ -19944,10 +19944,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vee_validate__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_infinite_scroll__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_infinite_scroll__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_infinite_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_infinite_scroll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_sweetalert2__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue_html5_editor__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_sweetalert2__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue_html5_editor__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue_html5_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_vue_html5_editor__);
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -22862,12 +22862,11 @@ var routes = [{
     path: '/',
     component: __webpack_require__(58),
     name: 'index'
-    // children: [{
-    //         path: '/index',
-    //         name:'index',
-    //         component: require('./layouts/index/pages.vue')
-    //     },
-    // ]
+}, {
+    path: '/view/:id',
+    name: 'view',
+    props: true,
+    component: __webpack_require__(198)
 }, {
     path: '/',
     component: __webpack_require__(64),
@@ -23444,6 +23443,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // import AppHeader from './header.vue'
 
@@ -23662,6 +23676,17 @@ var render = function() {
             "div",
             { staticClass: "col", attrs: { id: "main" } },
             [
+              _vm.posts.length == 0
+                ? _c(
+                    "div",
+                    {
+                      staticClass: "row justify-content-center",
+                      attrs: { id: "posts" }
+                    },
+                    [_vm._m(4)]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
               _vm._l(_vm.posts, function(post) {
                 return _c(
                   "div",
@@ -23732,16 +23757,39 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         _c("div", { staticClass: "card-body" }, [
-                          post.body.length > 10
+                          post.body.length > 200
                             ? _c("span", [
                                 _c("div", {
                                   staticClass: "mb-3 show-read-more",
                                   domProps: {
-                                    innerHTML: _vm._s(post.body.substr(0, 10))
+                                    innerHTML: _vm._s(post.body.substr(0, 200))
                                   }
                                 }),
                                 _vm._v(" "),
-                                _vm._m(4, true)
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "text-center alert alert-primary"
+                                  },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        attrs: {
+                                          to: { path: "view/" + post.id }
+                                        }
+                                      },
+                                      [
+                                        _c("a", { attrs: { href: "" } }, [
+                                          _vm._v("Read More "),
+                                          _c("i", { staticClass: "fa fa-plus" })
+                                        ])
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
                               ])
                             : _c("span", [
                                 _c("div", {
@@ -23962,10 +24010,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center alert alert-primary" }, [
-      _c("a", { attrs: { href: "" } }, [
-        _vm._v("Read More "),
-        _c("i", { staticClass: "fa fa-plus" })
+    return _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-header" }, [
+          _c("h3", [_vm._v("No results found...")])
+        ])
       ])
     ])
   },
@@ -31507,9 +31556,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (typeof page === 'undefined') {
                 page = 1;
             }
-            var url = __WEBPACK_IMPORTED_MODULE_1__services_helper__["a" /* default */].getFilterURL(this.filterUserForm);
-            axios.get('/api/user?page=' + page + url).then(function (response) {
-                return _this.users = response.data;
+            // let url = helper.getFilterURL(this.filterUserForm);
+            axios.get('/api/dashboard/user?page=' + page).then(function (response) {
+                return _this.users = response.data.data;
             });
         },
         deleteUser: function deleteUser(user) {
@@ -31570,277 +31619,6 @@ var render = function() {
           _c("div", { staticClass: "card-body" }, [
             _c("h4", { staticClass: "card-title" }, [_vm._v("Filter User")]),
             _vm._v(" "),
-            _c("div", { staticClass: "row m-t-40" }, [
-              _c("div", { staticClass: "col-md-3" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v("First Name")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.filterUserForm.first_name,
-                        expression: "filterUserForm.first_name"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    domProps: { value: _vm.filterUserForm.first_name },
-                    on: {
-                      blur: _vm.getUsers,
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.filterUserForm,
-                          "first_name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-3" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v("Last Name")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.filterUserForm.last_name,
-                        expression: "filterUserForm.last_name"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    domProps: { value: _vm.filterUserForm.last_name },
-                    on: {
-                      blur: _vm.getUsers,
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.filterUserForm,
-                          "last_name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-3" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v("Email")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.filterUserForm.email,
-                        expression: "filterUserForm.email"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    domProps: { value: _vm.filterUserForm.email },
-                    on: {
-                      blur: _vm.getUsers,
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.filterUserForm,
-                          "email",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-3" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v("Status")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.filterUserForm.status,
-                          expression: "filterUserForm.status"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { name: "status" },
-                      on: {
-                        change: [
-                          function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.filterUserForm,
-                              "status",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          },
-                          _vm.getUsers
-                        ]
-                      }
-                    },
-                    [
-                      _c("option", { attrs: { value: "" } }, [_vm._v("All")]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "pending_activation" } }, [
-                        _vm._v("Pending Activation")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "activated" } }, [
-                        _vm._v("Activated")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "banned" } }, [
-                        _vm._v("Banned")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-3" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v("Sort By")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.filterUserForm.sortBy,
-                          expression: "filterUserForm.sortBy"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { name: "sortBy" },
-                      on: {
-                        change: [
-                          function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.filterUserForm,
-                              "sortBy",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          },
-                          _vm.getUsers
-                        ]
-                      }
-                    },
-                    [
-                      _c("option", { attrs: { value: "first_name" } }, [
-                        _vm._v("First Name")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "last_name" } }, [
-                        _vm._v("Last Name")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "email" } }, [
-                        _vm._v("Email")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "status" } }, [
-                        _vm._v("Status")
-                      ])
-                    ]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-3" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v("Order")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.filterUserForm.order,
-                          expression: "filterUserForm.order"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { name: "order" },
-                      on: {
-                        change: [
-                          function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.filterUserForm,
-                              "order",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          },
-                          _vm.getUsers
-                        ]
-                      }
-                    },
-                    [
-                      _c("option", { attrs: { value: "asc" } }, [
-                        _vm._v("Asc")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "desc" } }, [
-                        _vm._v("Desc")
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
             _c("h4", { staticClass: "card-title" }, [_vm._v("User List")]),
             _vm._v(" "),
             _vm.users.total
@@ -31859,42 +31637,20 @@ var render = function() {
                     _c(
                       "tbody",
                       _vm._l(_vm.users.data, function(user) {
-                        return _c("tr", { key: user.profile.first_name }, [
+                        return _c("tr", { key: user.id }, [
                           _c("td", {
-                            domProps: {
-                              textContent: _vm._s(user.profile.first_name)
-                            }
+                            domProps: { textContent: _vm._s(user.username) }
                           }),
-                          _vm._v(" "),
-                          _c("td", {
-                            domProps: {
-                              textContent: _vm._s(user.profile.last_name)
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("td", [
-                            _vm._v(
-                              _vm._s(
-                                _vm._f("moment")(user.profile.date_of_birth)
-                              )
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("td", [
-                            _vm._v(
-                              _vm._s(_vm._f("ucword")(user.profile.gender))
-                            )
-                          ]),
                           _vm._v(" "),
                           _c("td", {
                             domProps: { textContent: _vm._s(user.email) }
                           }),
                           _vm._v(" "),
-                          _c("td", {
-                            domProps: {
-                              innerHTML: _vm._s(_vm.getUserStatus(user))
-                            }
-                          }),
+                          _c("td", [_vm._v(_vm._s(user.phone_number))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(_vm._f("ucword")(user.type)))
+                          ]),
                           _vm._v(" "),
                           _c(
                             "td",
@@ -32025,17 +31781,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("First Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Last Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Date of Birth")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Gender")]),
+        _c("th", [_vm._v("Username")]),
         _vm._v(" "),
         _c("th", [_vm._v("Email")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Status")]),
+        _c("th", [_vm._v("Phone")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Type")]),
         _vm._v(" "),
         _c("th", { staticStyle: { width: "150px" } }, [_vm._v("Action")])
       ])
@@ -42411,12 +42163,252 @@ var index_esm = {
 
 /***/ }),
 /* 178 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.infiniteScroll = factory());
+}(this, function () { 'use strict';
+
+  var ctx = '@@InfiniteScroll';
+
+  var throttle = function throttle(fn, delay) {
+    var now, lastExec, timer, context, args; //eslint-disable-line
+
+    var execute = function execute() {
+      fn.apply(context, args);
+      lastExec = now;
+    };
+
+    return function () {
+      context = this;
+      args = arguments;
+
+      now = Date.now();
+
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+
+      if (lastExec) {
+        var diff = delay - (now - lastExec);
+        if (diff < 0) {
+          execute();
+        } else {
+          timer = setTimeout(function () {
+            execute();
+          }, diff);
+        }
+      } else {
+        execute();
+      }
+    };
+  };
+
+  var getScrollTop = function getScrollTop(element) {
+    if (element === window) {
+      return Math.max(window.pageYOffset || 0, document.documentElement.scrollTop);
+    }
+
+    return element.scrollTop;
+  };
+
+  var getComputedStyle = document.defaultView.getComputedStyle;
+
+  var getScrollEventTarget = function getScrollEventTarget(element) {
+    var currentNode = element;
+    // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
+    while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
+      var overflowY = getComputedStyle(currentNode).overflowY;
+      if (overflowY === 'scroll' || overflowY === 'auto') {
+        return currentNode;
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return window;
+  };
+
+  var getVisibleHeight = function getVisibleHeight(element) {
+    if (element === window) {
+      return document.documentElement.clientHeight;
+    }
+
+    return element.clientHeight;
+  };
+
+  var getElementTop = function getElementTop(element) {
+    if (element === window) {
+      return getScrollTop(window);
+    }
+    return element.getBoundingClientRect().top + getScrollTop(window);
+  };
+
+  var isAttached = function isAttached(element) {
+    var currentNode = element.parentNode;
+    while (currentNode) {
+      if (currentNode.tagName === 'HTML') {
+        return true;
+      }
+      if (currentNode.nodeType === 11) {
+        return false;
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return false;
+  };
+
+  var doBind = function doBind() {
+    if (this.binded) return; // eslint-disable-line
+    this.binded = true;
+
+    var directive = this;
+    var element = directive.el;
+
+    var throttleDelayExpr = element.getAttribute('infinite-scroll-throttle-delay');
+    var throttleDelay = 200;
+    if (throttleDelayExpr) {
+      throttleDelay = Number(directive.vm[throttleDelayExpr] || throttleDelayExpr);
+      if (isNaN(throttleDelay) || throttleDelay < 0) {
+        throttleDelay = 200;
+      }
+    }
+    directive.throttleDelay = throttleDelay;
+
+    directive.scrollEventTarget = getScrollEventTarget(element);
+    directive.scrollListener = throttle(doCheck.bind(directive), directive.throttleDelay);
+    directive.scrollEventTarget.addEventListener('scroll', directive.scrollListener);
+
+    this.vm.$on('hook:beforeDestroy', function () {
+      directive.scrollEventTarget.removeEventListener('scroll', directive.scrollListener);
+    });
+
+    var disabledExpr = element.getAttribute('infinite-scroll-disabled');
+    var disabled = false;
+
+    if (disabledExpr) {
+      this.vm.$watch(disabledExpr, function (value) {
+        directive.disabled = value;
+        if (!value && directive.immediateCheck) {
+          doCheck.call(directive);
+        }
+      });
+      disabled = Boolean(directive.vm[disabledExpr]);
+    }
+    directive.disabled = disabled;
+
+    var distanceExpr = element.getAttribute('infinite-scroll-distance');
+    var distance = 0;
+    if (distanceExpr) {
+      distance = Number(directive.vm[distanceExpr] || distanceExpr);
+      if (isNaN(distance)) {
+        distance = 0;
+      }
+    }
+    directive.distance = distance;
+
+    var immediateCheckExpr = element.getAttribute('infinite-scroll-immediate-check');
+    var immediateCheck = true;
+    if (immediateCheckExpr) {
+      immediateCheck = Boolean(directive.vm[immediateCheckExpr]);
+    }
+    directive.immediateCheck = immediateCheck;
+
+    if (immediateCheck) {
+      doCheck.call(directive);
+    }
+
+    var eventName = element.getAttribute('infinite-scroll-listen-for-event');
+    if (eventName) {
+      directive.vm.$on(eventName, function () {
+        doCheck.call(directive);
+      });
+    }
+  };
+
+  var doCheck = function doCheck(force) {
+    var scrollEventTarget = this.scrollEventTarget;
+    var element = this.el;
+    var distance = this.distance;
+
+    if (force !== true && this.disabled) return; //eslint-disable-line
+    var viewportScrollTop = getScrollTop(scrollEventTarget);
+    var viewportBottom = viewportScrollTop + getVisibleHeight(scrollEventTarget);
+
+    var shouldTrigger = false;
+
+    if (scrollEventTarget === element) {
+      shouldTrigger = scrollEventTarget.scrollHeight - viewportBottom <= distance;
+    } else {
+      var elementBottom = getElementTop(element) - getElementTop(scrollEventTarget) + element.offsetHeight + viewportScrollTop;
+
+      shouldTrigger = viewportBottom + distance >= elementBottom;
+    }
+
+    if (shouldTrigger && this.expression) {
+      this.expression();
+    }
+  };
+
+  var InfiniteScroll = {
+    bind: function bind(el, binding, vnode) {
+      el[ctx] = {
+        el: el,
+        vm: vnode.context,
+        expression: binding.value
+      };
+      var args = arguments;
+      el[ctx].vm.$on('hook:mounted', function () {
+        el[ctx].vm.$nextTick(function () {
+          if (isAttached(el)) {
+            doBind.call(el[ctx], args);
+          }
+
+          el[ctx].bindTryCount = 0;
+
+          var tryBind = function tryBind() {
+            if (el[ctx].bindTryCount > 10) return; //eslint-disable-line
+            el[ctx].bindTryCount++;
+            if (isAttached(el)) {
+              doBind.call(el[ctx], args);
+            } else {
+              setTimeout(tryBind, 50);
+            }
+          };
+
+          tryBind();
+        });
+      });
+    },
+    unbind: function unbind(el) {
+      if (el && el[ctx] && el[ctx].scrollEventTarget) el[ctx].scrollEventTarget.removeEventListener('scroll', el[ctx].scrollListener);
+    }
+  };
+
+  var install = function install(Vue) {
+    Vue.directive('InfiniteScroll', InfiniteScroll);
+  };
+
+  if (window.Vue) {
+    window.infiniteScroll = InfiniteScroll;
+    Vue.use(install); // eslint-disable-line
+  }
+
+  InfiniteScroll.install = install;
+
+  return InfiniteScroll;
+
+}));
+
+/***/ }),
+/* 179 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2__ = __webpack_require__(180);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_sweetalert2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_sweetalert2_dist_sweetalert2_min_css__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_sweetalert2_dist_sweetalert2_min_css__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_sweetalert2_dist_sweetalert2_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_sweetalert2_dist_sweetalert2_min_css__);
 
 
@@ -42442,7 +42434,7 @@ VueSweetalert2.install = function(Vue) {
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -45932,13 +45924,13 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.swal = window.
 "            transform: rotate(360deg); } }");
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(181);
+var content = __webpack_require__(182);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -45963,7 +45955,7 @@ if(false) {
 }
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(undefined);
@@ -45977,7 +45969,7 @@ exports.push([module.i, "@-webkit-keyframes swal2-show{0%{-webkit-transform:scal
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -47504,13 +47496,12 @@ return VueHtml5Editor;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 184 */,
 /* 185 */,
 /* 186 */,
 /* 187 */,
@@ -47527,241 +47518,363 @@ return VueHtml5Editor;
 /* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
-(function (global, factory) {
-   true ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global.infiniteScroll = factory());
-}(this, function () { 'use strict';
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(199)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(201)
+/* template */
+var __vue_template__ = __webpack_require__(202)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-6986a57c"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\views\\pages\\show.vue"
 
-  var ctx = '@@InfiniteScroll';
-
-  var throttle = function throttle(fn, delay) {
-    var now, lastExec, timer, context, args; //eslint-disable-line
-
-    var execute = function execute() {
-      fn.apply(context, args);
-      lastExec = now;
-    };
-
-    return function () {
-      context = this;
-      args = arguments;
-
-      now = Date.now();
-
-      if (timer) {
-        clearTimeout(timer);
-        timer = null;
-      }
-
-      if (lastExec) {
-        var diff = delay - (now - lastExec);
-        if (diff < 0) {
-          execute();
-        } else {
-          timer = setTimeout(function () {
-            execute();
-          }, diff);
-        }
-      } else {
-        execute();
-      }
-    };
-  };
-
-  var getScrollTop = function getScrollTop(element) {
-    if (element === window) {
-      return Math.max(window.pageYOffset || 0, document.documentElement.scrollTop);
-    }
-
-    return element.scrollTop;
-  };
-
-  var getComputedStyle = document.defaultView.getComputedStyle;
-
-  var getScrollEventTarget = function getScrollEventTarget(element) {
-    var currentNode = element;
-    // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
-    while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
-      var overflowY = getComputedStyle(currentNode).overflowY;
-      if (overflowY === 'scroll' || overflowY === 'auto') {
-        return currentNode;
-      }
-      currentNode = currentNode.parentNode;
-    }
-    return window;
-  };
-
-  var getVisibleHeight = function getVisibleHeight(element) {
-    if (element === window) {
-      return document.documentElement.clientHeight;
-    }
-
-    return element.clientHeight;
-  };
-
-  var getElementTop = function getElementTop(element) {
-    if (element === window) {
-      return getScrollTop(window);
-    }
-    return element.getBoundingClientRect().top + getScrollTop(window);
-  };
-
-  var isAttached = function isAttached(element) {
-    var currentNode = element.parentNode;
-    while (currentNode) {
-      if (currentNode.tagName === 'HTML') {
-        return true;
-      }
-      if (currentNode.nodeType === 11) {
-        return false;
-      }
-      currentNode = currentNode.parentNode;
-    }
-    return false;
-  };
-
-  var doBind = function doBind() {
-    if (this.binded) return; // eslint-disable-line
-    this.binded = true;
-
-    var directive = this;
-    var element = directive.el;
-
-    var throttleDelayExpr = element.getAttribute('infinite-scroll-throttle-delay');
-    var throttleDelay = 200;
-    if (throttleDelayExpr) {
-      throttleDelay = Number(directive.vm[throttleDelayExpr] || throttleDelayExpr);
-      if (isNaN(throttleDelay) || throttleDelay < 0) {
-        throttleDelay = 200;
-      }
-    }
-    directive.throttleDelay = throttleDelay;
-
-    directive.scrollEventTarget = getScrollEventTarget(element);
-    directive.scrollListener = throttle(doCheck.bind(directive), directive.throttleDelay);
-    directive.scrollEventTarget.addEventListener('scroll', directive.scrollListener);
-
-    this.vm.$on('hook:beforeDestroy', function () {
-      directive.scrollEventTarget.removeEventListener('scroll', directive.scrollListener);
-    });
-
-    var disabledExpr = element.getAttribute('infinite-scroll-disabled');
-    var disabled = false;
-
-    if (disabledExpr) {
-      this.vm.$watch(disabledExpr, function (value) {
-        directive.disabled = value;
-        if (!value && directive.immediateCheck) {
-          doCheck.call(directive);
-        }
-      });
-      disabled = Boolean(directive.vm[disabledExpr]);
-    }
-    directive.disabled = disabled;
-
-    var distanceExpr = element.getAttribute('infinite-scroll-distance');
-    var distance = 0;
-    if (distanceExpr) {
-      distance = Number(directive.vm[distanceExpr] || distanceExpr);
-      if (isNaN(distance)) {
-        distance = 0;
-      }
-    }
-    directive.distance = distance;
-
-    var immediateCheckExpr = element.getAttribute('infinite-scroll-immediate-check');
-    var immediateCheck = true;
-    if (immediateCheckExpr) {
-      immediateCheck = Boolean(directive.vm[immediateCheckExpr]);
-    }
-    directive.immediateCheck = immediateCheck;
-
-    if (immediateCheck) {
-      doCheck.call(directive);
-    }
-
-    var eventName = element.getAttribute('infinite-scroll-listen-for-event');
-    if (eventName) {
-      directive.vm.$on(eventName, function () {
-        doCheck.call(directive);
-      });
-    }
-  };
-
-  var doCheck = function doCheck(force) {
-    var scrollEventTarget = this.scrollEventTarget;
-    var element = this.el;
-    var distance = this.distance;
-
-    if (force !== true && this.disabled) return; //eslint-disable-line
-    var viewportScrollTop = getScrollTop(scrollEventTarget);
-    var viewportBottom = viewportScrollTop + getVisibleHeight(scrollEventTarget);
-
-    var shouldTrigger = false;
-
-    if (scrollEventTarget === element) {
-      shouldTrigger = scrollEventTarget.scrollHeight - viewportBottom <= distance;
-    } else {
-      var elementBottom = getElementTop(element) - getElementTop(scrollEventTarget) + element.offsetHeight + viewportScrollTop;
-
-      shouldTrigger = viewportBottom + distance >= elementBottom;
-    }
-
-    if (shouldTrigger && this.expression) {
-      this.expression();
-    }
-  };
-
-  var InfiniteScroll = {
-    bind: function bind(el, binding, vnode) {
-      el[ctx] = {
-        el: el,
-        vm: vnode.context,
-        expression: binding.value
-      };
-      var args = arguments;
-      el[ctx].vm.$on('hook:mounted', function () {
-        el[ctx].vm.$nextTick(function () {
-          if (isAttached(el)) {
-            doBind.call(el[ctx], args);
-          }
-
-          el[ctx].bindTryCount = 0;
-
-          var tryBind = function tryBind() {
-            if (el[ctx].bindTryCount > 10) return; //eslint-disable-line
-            el[ctx].bindTryCount++;
-            if (isAttached(el)) {
-              doBind.call(el[ctx], args);
-            } else {
-              setTimeout(tryBind, 50);
-            }
-          };
-
-          tryBind();
-        });
-      });
-    },
-    unbind: function unbind(el) {
-      if (el && el[ctx] && el[ctx].scrollEventTarget) el[ctx].scrollEventTarget.removeEventListener('scroll', el[ctx].scrollListener);
-    }
-  };
-
-  var install = function install(Vue) {
-    Vue.directive('InfiniteScroll', InfiniteScroll);
-  };
-
-  if (window.Vue) {
-    window.infiniteScroll = InfiniteScroll;
-    Vue.use(install); // eslint-disable-line
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6986a57c", Component.options)
+  } else {
+    hotAPI.reload("data-v-6986a57c", Component.options)
   }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
 
-  InfiniteScroll.install = install;
+module.exports = Component.exports
 
-  return InfiniteScroll;
 
-}));
+/***/ }),
+/* 199 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(200);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("350245e8", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6986a57c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6986a57c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./show.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.list-inline[data-v-6986a57c] {\n        padding-left: 0;\n        list-style: none;\n}\n.bg-dark[data-v-6986a57c] {\n        background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-6986a57c] {\n        background-color: #eee;\n        padding: 10px;\n}\n.btn[data-v-6986a57c] {\n        line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-6986a57c] {\n        margin-bottom: 10px;\n}\n#list-menu li a[data-v-6986a57c] {\n        color: #f7fbff;\n        padding: 20px;\n        float: left;\n        border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-6986a57c]:hover {\n        /* color: #0073BC; */\n        /* border-bottom: 4px solid #0073BC; */\n        background-color: #f1f1f1;\n        color: #038ed4;\n}\n#search[data-v-6986a57c] {\n        background-color: #fff;\n        border-color: #0073BC;\n        width: 83%;\n        color: #0073BC;\n        border-radius: 0;\n}\n#search[data-v-6986a57c]::-webkit-input-placeholder {\n        color: #0073BC;\n}\n#search[data-v-6986a57c]:-ms-input-placeholder {\n        color: #0073BC;\n}\n#search[data-v-6986a57c]::-ms-input-placeholder {\n        color: #0073BC;\n}\n#search[data-v-6986a57c]::placeholder {\n        color: #0073BC;\n}\n.navbar[data-v-6986a57c] {\n        padding: 0 1rem;\n}\n@media (min-width: 768px){\n.navbar-header[data-v-6986a57c]{\n            width: 142px;\n}\n}\n.w-65[data-v-6986a57c]{\n        width: 65%;\n}\n.fix[data-v-6986a57c]{\n    overflow:hidden; \n    top: 90px;\n}\n.post-meta[data-v-6986a57c] {\n    margin-right: 15px;\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n}\n.post-meta i[data-v-6986a57c] {\n    font-size: 15px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n}\n.post-meta-text[data-v-6986a57c]{\n    float: right;\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header[data-v-6986a57c]{\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4[data-v-6986a57c]{\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4[data-v-6986a57c]:before{\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar .card-header h4[data-v-6986a57c]:after{\n    content: \"\\F0B0\";\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i[data-v-6986a57c]{\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body[data-v-6986a57c]{\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body[data-v-6986a57c]:before{\n        content: \"\";\n        height: 1px;\n        width: 100%;\n        background-color: #FFF;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n        box-shadow: 0 0 5px 0 #e2e3e4;\n        bottom: 2px;\n        left: 0;\n        position: absolute;\n}\n#sidebar .card-body[data-v-6986a57c]:after{\n        content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary[data-v-6986a57c] {\n        color: #304156;\n}\n.card-primary[data-v-6986a57c] {\n        background: #fff;\n}\n#posts .card[data-v-6986a57c] {\n        border-radius: 1px;\n        margin-bottom: 25px;\n        /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-6986a57c] {\n        background-color: #fff;\n        padding: 0.62rem 1.15rem;\n        margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-6986a57c] {\n        float: left;\n        color: #2f3c4e;\n        text-transform: uppercase;\n        font-weight: 400;\n}\n#posts .card-header h2 a[data-v-6986a57c]:hover {\n        color: #038ed4;\n}\n#posts .post-share[data-v-6986a57c]{\n        padding-top: 20px;\n        border-top: 1px solid #ecedee;\n}\n#posts .card-footer[data-v-6986a57c] {\n        padding: 0.40rem 0.40rem;\n        background-color: #038ed4;\n}\n#posts .card-body[data-v-6986a57c] {\n        padding: 30px;\n        font-size: 16px;\n        position: relative;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n                box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-6986a57c]:before{\n        content: \"\";\n        height: 1px;\n        width: 100%;\n        background-color: #FFF;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n        box-shadow: 0 0 5px 0 #e2e3e4;\n        bottom: 2px;\n        left: 0;\n        position: absolute;\n}\n#posts .card-body[data-v-6986a57c]:after{\n        content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix[data-v-6986a57c]{\n        margin-bottom: 20px;\n}\n.sub-menu[data-v-6986a57c] {\n        background-color: #696969;\n        width: 150px;\n        list-style-type: none;\n}\n#posts .card-img-top[data-v-6986a57c] {\n        height: 200px;\n        border-radius: 0;\n        /* border-top: 1px solid #000; */\n        /* background: url('/images/1.jpg') center no-repeat; */\n        background-size: cover;\n}\n.btn-custom[data-v-6986a57c] {\n        background-color: #fff;\n        color: #212426;\n        padding: 1px 4px;\n        border-radius: 14px;\n        border-color: #b3b6b9;\n        font-size: 14px;\n        margin-right: 4px;\n}\n.sub-head[data-v-6986a57c] {\n        margin-top: 3px;\n}\n#share[data-v-6986a57c] {\n        position: absolute;\n        top: -22px;\n        padding: 12px;\n        right: 20px;\n        background: #038ed4;\n        border: 5px solid;\n        border-radius: 50%;\n        color: #fff;\n}\n#menu[data-v-6986a57c] {\n        margin-left: 10px;\n        vertical-align: middle;\n}\n.dropdown[data-v-6986a57c] {\n        float: right;\n}\n.dropdown-menu[data-v-6986a57c] {\n        -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n                transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-6986a57c] {\n        margin-right: 10px;\n}\n.bg-gray[data-v-6986a57c]{\n        background-color: #f1f1f1;\n}\n.color-main[data-v-6986a57c]{\n        color: #038ed4;\n}\n.fix[data-v-6986a57c]{\n    overflow:hidden; \n    top: 90px;\n}\n.post-meta[data-v-6986a57c] {\n    margin-right: 15px;\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n}\n.post-meta i[data-v-6986a57c] {\n    font-size: 15px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n}\n.post-meta-text[data-v-6986a57c]{\n    float: right;\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n.col-primary[data-v-6986a57c] {\n        color: #304156;\n}\n.card-primary[data-v-6986a57c] {\n        background: #fff;\n}\n#posts .card[data-v-6986a57c] {\n        border-radius: 1px;\n        margin-bottom: 25px;\n        /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-6986a57c] {\n        background-color: #fff;\n        padding: 0.62rem 1.15rem;\n        margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-6986a57c] {\n        float: left;\n        color: #2f3c4e;\n        text-transform: uppercase;\n        font-weight: 400;\n}\n#posts .card-header h2 a[data-v-6986a57c]:hover {\n        color: #038ed4;\n}\n#posts .post-share[data-v-6986a57c]{\n        padding-top: 20px;\n        border-top: 1px solid #ecedee;\n}\n#posts .card-footer[data-v-6986a57c] {\n        padding: 0.40rem 0.40rem;\n        background-color: #038ed4;\n}\n#posts .card-body[data-v-6986a57c] {\n        padding: 30px;\n        font-size: 16px;\n        position: relative;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n                box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-6986a57c]:before{\n        content: \"\";\n        height: 1px;\n        width: 100%;\n        background-color: #FFF;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n        box-shadow: 0 0 5px 0 #e2e3e4;\n        bottom: 2px;\n        left: 0;\n        position: absolute;\n}\n#posts .card-body[data-v-6986a57c]:after{\n        content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix[data-v-6986a57c]{\n        margin-bottom: 20px;\n}\n.sub-menu[data-v-6986a57c] {\n        background-color: #696969;\n        width: 150px;\n        list-style-type: none;\n}\n#posts .card-img-top[data-v-6986a57c] {\n        height: 200px;\n        border-radius: 0;\n        /* border-top: 1px solid #000; */\n        /* background: url('/images/1.jpg') center no-repeat; */\n        background-size: cover;\n}\n.btn-custom[data-v-6986a57c] {\n        background-color: #fff;\n        color: #212426;\n        padding: 1px 4px;\n        border-radius: 14px;\n        border-color: #b3b6b9;\n        font-size: 14px;\n        margin-right: 4px;\n}\n.sub-head[data-v-6986a57c] {\n        margin-top: 3px;\n}\n#share[data-v-6986a57c] {\n        position: absolute;\n        top: -22px;\n        padding: 12px;\n        right: 20px;\n        background: #038ed4;\n        border: 5px solid;\n        border-radius: 50%;\n        color: #fff;\n}\n#menu[data-v-6986a57c] {\n        margin-left: 10px;\n        vertical-align: middle;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 201 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// import {showPostURL} from "../../config.js";
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            post: {},
+            id: this.$route.params.id
+        };
+    },
+    created: function created() {
+        var _this = this;
+
+        console.log(this.id);
+        axios.get('/api/home/view/' + this.id).then(function (response) {
+            _this.post = response.data.data.data[0];
+            console.log(_this.post);
+        }).catch(function (error) {
+            return console.log(error);
+        });
+    },
+
+    methods: {
+        getImage: function getImage(index) {
+            return "background: url(/images/posts/images/" + index + ") center no-repeat;    background-size: cover;";
+        }
+    }
+});
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "bg-gray" }, [
+      _c("div", { staticClass: "container py-4" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col", attrs: { id: "main" } }, [
+            _c(
+              "div",
+              {
+                staticClass: "row justify-content-center",
+                attrs: { id: "posts" }
+              },
+              [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "card card-primary" }, [
+                    _c("div", { staticClass: "card-header" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("h2", [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _vm._v(_vm._s(_vm.post.title))
+                            ])
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "pull-left" }, [
+                            _c("i", {
+                              staticClass: "fa fa-calendar-check-o",
+                              attrs: { "aria-hidden": "true" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "post-meta-text col-primary " },
+                              [_vm._v(_vm._s(_vm.post.updated_at))]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "pull-right" }, [
+                            _c("i", {
+                              staticClass: "fa fa-flag",
+                              attrs: { "aria-hidden": "true" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "post-meta-text col-primary " },
+                              [_vm._v(_vm._s(_vm.post.category))]
+                            )
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm.post.image != null
+                      ? _c("div", {
+                          staticClass: "card-img-top",
+                          style: _vm.getImage(_vm.post.image),
+                          attrs: {
+                            "data-toggle": "modal",
+                            "data-target": "#exampleModal",
+                            postImage: _vm.post.image
+                          }
+                        })
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("div", {
+                        staticClass: "mb-3",
+                        domProps: { innerHTML: _vm._s(_vm.post.body) }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "post-share" }, [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "post-meta",
+                            staticStyle: { float: "right" }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fa fa-tags",
+                              attrs: { "aria-hidden": "true" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "post-meta-text col-primary " },
+                              [_vm._v(_vm._s(_vm.post.tag))]
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "post-meta",
+        staticStyle: { "background-color": "#038ed4" }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-share-alt",
+          staticStyle: { color: "#fff" },
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "post-meta-text col-primary ",
+            staticStyle: { color: "#fff" }
+          },
+          [_vm._v("Share")]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6986a57c", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Filter User</h4>
 
-                        <div class="row m-t-40">
+                        <!-- <div class="row m-t-40">
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="">First Name</label>
@@ -66,7 +66,7 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <h4 class="card-title">User List</h4>
                         <h6 class="card-subtitle" v-if="users.total">Total {{users.total}} result found!</h6>
@@ -75,23 +75,23 @@
                             <table class="table" v-if="users.total">
                                 <thead>
                                     <tr>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Date of Birth</th>
-                                        <th>Gender</th>
+                                        <th>Username</th>
                                         <th>Email</th>
-                                        <th>Status</th>
+                                        <th>Phone</th>
+                                        <th>Type</th>
+                                        <!-- <th>Email</th> -->
+                                        <!-- <th>Status</th> -->
                                         <th style="width:150px;">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="user in users.data" :key="user.profile.first_name">
-                                        <td v-text="user.profile.first_name"></td>
-                                        <td v-text="user.profile.last_name"></td>
-                                        <td>{{ user.profile.date_of_birth | moment }}</td>
-                                        <td>{{ user.profile.gender | ucword }}</td>
+                                    <tr v-for="user in users.data" :key="user.id">
+                                        <td v-text="user.username"></td>
                                         <td v-text="user.email"></td>
-                                        <td v-html="getUserStatus(user)"></td>
+                                        <td>{{ user.phone_number }}</td>
+                                        <td>{{ user.type | ucword }}</td>
+                                        <!-- <td v-text="user.email"></td> -->
+                                        <!-- <td v-html="getUserStatus(user)"></td> -->
                                         <td>
                                             <click-confirm yes-class="btn btn-success" no-class="btn btn-danger">
                                                 <button class="btn btn-danger btn-sm" @click.prevent="deleteUser(user)" data-toggle="tooltip" title="Delete User"><i class="fa fa-trash"></i></button>
@@ -151,9 +151,9 @@
                 if (typeof page === 'undefined') {
                     page = 1;
                 }
-                let url = helper.getFilterURL(this.filterUserForm);
-                axios.get('/api/user?page=' + page + url)
-                    .then(response => this.users = response.data );
+                // let url = helper.getFilterURL(this.filterUserForm);
+                axios.get('/api/dashboard/user?page=' + page)
+                    .then(response => this.users = response.data.data );
             },
             deleteUser(user){
                 axios.delete('/api/user/'+user.id).then(response => {

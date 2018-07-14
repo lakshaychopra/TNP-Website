@@ -33,8 +33,14 @@ class HomeController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function show(Post $post)
+    public function showPost($postID=null)
     {
+        if ($postID != null){
+            $post['data'] = Post::where('id', '=', $postID)
+                ->get();
+            return $this->respondData($post);
+        }
+        $post = Post::orderBy('created_at', 'desc');
         return $this->respondData($post);
     }
     

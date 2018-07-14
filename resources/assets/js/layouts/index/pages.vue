@@ -104,6 +104,15 @@
 
                 <div class="col" id="main">
                     
+                    <div class="row justify-content-center" id="posts" v-if="posts.length==0">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>No results found...</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                    <div class="row justify-content-center" v-for="post in posts" :key="post.id" id="posts">
                         <div class="col-md-12">
 
@@ -158,9 +167,9 @@
                                     <!-- <ul class="list-group">
                             <li class="list-group-item"></li>
                             </ul> -->
-                                    <span v-if="post.body.length>10">
-                                        <div class="mb-3 show-read-more" v-html="post.body.substr(0,10)"></div>
-                                        <div class="text-center alert alert-primary"><a href="">Read More <i class="fa fa-plus"></i></a></div>
+                                    <span v-if="post.body.length>200">
+                                        <div class="mb-3 show-read-more" v-html="post.body.substr(0,200)"></div>
+                                        <div class="text-center alert alert-primary"><router-link :to="{ path: 'view/'+post.id}"><a href="">Read More <i class="fa fa-plus"></i></a></router-link></div>
                                     </span>
                                     <span v-else>
                                         <div class="mb-3 show-read-more" v-html="post.body"></div>
@@ -192,6 +201,12 @@
                     </div> 
 
 
+               
+                
+                
+                
+                
+                
                 </div>
 
                 <div class="col-3 px-1 d-none d-md-block sticky-top"  id="sidebar" >
