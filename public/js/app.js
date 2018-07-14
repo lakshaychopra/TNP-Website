@@ -23685,152 +23685,157 @@ var render = function() {
                     },
                     [_vm._m(4)]
                   )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm._l(_vm.posts, function(post) {
-                return _c(
-                  "div",
-                  {
-                    key: post.id,
-                    staticClass: "row justify-content-center",
-                    attrs: { id: "posts" }
-                  },
-                  [
-                    _c("div", { staticClass: "col-md-12" }, [
-                      _c("div", { staticClass: "card card-primary" }, [
-                        _c("div", { staticClass: "card-header" }, [
-                          _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-md-12" }, [
-                              _c("h2", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v(_vm._s(post.title))
+                : _vm._l(_vm.posts, function(post) {
+                    return _c(
+                      "div",
+                      {
+                        key: post.id,
+                        staticClass: "row justify-content-center",
+                        attrs: { id: "posts" }
+                      },
+                      [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "card card-primary" }, [
+                            _c("div", { staticClass: "card-header" }, [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-md-12" }, [
+                                  _c("h2", [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v(_vm._s(post.title))
+                                    ])
+                                  ])
                                 ])
-                              ])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-md-12" }, [
-                              _c("div", { staticClass: "pull-left" }, [
-                                _c("i", {
-                                  staticClass: "fa fa-calendar-check-o",
-                                  attrs: { "aria-hidden": "true" }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "post-meta-text col-primary "
-                                  },
-                                  [_vm._v(_vm._s(post.updated_at))]
-                                )
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "pull-right" }, [
-                                _c("i", {
-                                  staticClass: "fa fa-flag",
-                                  attrs: { "aria-hidden": "true" }
-                                }),
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-md-12" }, [
+                                  _c("div", { staticClass: "pull-left" }, [
+                                    _c("i", {
+                                      staticClass: "fa fa-calendar-check-o",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "post-meta-text col-primary "
+                                      },
+                                      [_vm._v(_vm._s(post.updated_at))]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "pull-right" }, [
+                                    _c("i", {
+                                      staticClass: "fa fa-flag",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "post-meta-text col-primary "
+                                      },
+                                      [_vm._v(_vm._s(post.category))]
+                                    )
+                                  ])
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            post.image != null
+                              ? _c("div", {
+                                  staticClass: "card-img-top",
+                                  style: _vm.getImage(post.image),
+                                  attrs: {
+                                    "data-toggle": "modal",
+                                    "data-target": "#exampleModal",
+                                    postImage: post.image
+                                  }
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "card-body" }, [
+                              post.body.length > 200
+                                ? _c("span", [
+                                    _c("div", {
+                                      staticClass: "mb-3 show-read-more",
+                                      domProps: {
+                                        innerHTML: _vm._s(
+                                          post.body.substr(0, 200)
+                                        )
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "text-center alert alert-primary"
+                                      },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            attrs: {
+                                              to: { path: "view/" + post.id }
+                                            }
+                                          },
+                                          [
+                                            _c("a", { attrs: { href: "" } }, [
+                                              _vm._v("Read More "),
+                                              _c("i", {
+                                                staticClass: "fa fa-plus"
+                                              })
+                                            ])
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ])
+                                : _c("span", [
+                                    _c("div", {
+                                      staticClass: "mb-3 show-read-more",
+                                      domProps: { innerHTML: _vm._s(post.body) }
+                                    })
+                                  ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "clearfix" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "post-share" }, [
+                                _vm._m(5, true),
                                 _vm._v(" "),
                                 _c(
                                   "div",
                                   {
-                                    staticClass: "post-meta-text col-primary "
+                                    staticClass: "post-meta",
+                                    staticStyle: { float: "right" }
                                   },
-                                  [_vm._v(_vm._s(post.category))]
+                                  [
+                                    _c("i", {
+                                      staticClass: "fa fa-tags",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "post-meta-text col-primary "
+                                      },
+                                      [_vm._v(_vm._s(post.tag))]
+                                    )
+                                  ]
                                 )
                               ])
                             ])
                           ])
-                        ]),
-                        _vm._v(" "),
-                        post.image != null
-                          ? _c("div", {
-                              staticClass: "card-img-top",
-                              style: _vm.getImage(post.image),
-                              attrs: {
-                                "data-toggle": "modal",
-                                "data-target": "#exampleModal",
-                                postImage: post.image
-                              }
-                            })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          post.body.length > 200
-                            ? _c("span", [
-                                _c("div", {
-                                  staticClass: "mb-3 show-read-more",
-                                  domProps: {
-                                    innerHTML: _vm._s(post.body.substr(0, 200))
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "text-center alert alert-primary"
-                                  },
-                                  [
-                                    _c(
-                                      "router-link",
-                                      {
-                                        attrs: {
-                                          to: { path: "view/" + post.id }
-                                        }
-                                      },
-                                      [
-                                        _c("a", { attrs: { href: "" } }, [
-                                          _vm._v("Read More "),
-                                          _c("i", { staticClass: "fa fa-plus" })
-                                        ])
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ])
-                            : _c("span", [
-                                _c("div", {
-                                  staticClass: "mb-3 show-read-more",
-                                  domProps: { innerHTML: _vm._s(post.body) }
-                                })
-                              ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "clearfix" }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "post-share" }, [
-                            _vm._m(5, true),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "post-meta",
-                                staticStyle: { float: "right" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "fa fa-tags",
-                                  attrs: { "aria-hidden": "true" }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "post-meta-text col-primary "
-                                  },
-                                  [_vm._v(_vm._s(post.tag))]
-                                )
-                              ]
-                            )
-                          ])
                         ])
-                      ])
-                    ])
-                  ]
-                )
-              }),
+                      ]
+                    )
+                  }),
               _vm._v(" "),
               _c(
                 "div",
@@ -24013,7 +24018,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-md-12" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-header" }, [
-          _c("h3", [_vm._v("No results found...")])
+          _c("h3", [_vm._v("No results found.")])
         ])
       ])
     ])

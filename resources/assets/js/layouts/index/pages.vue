@@ -103,17 +103,17 @@
                 </div>
 
                 <div class="col" id="main">
-                    
-                    <div class="row justify-content-center" id="posts" v-if="posts.length==0">
+                     <div class="row justify-content-center" id="posts" v-if="posts.length==0">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3>No results found...</h3>
+                                    <h3>No results found.</h3>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                   <div class="row justify-content-center" v-for="post in posts" :key="post.id" id="posts">
+                   <div class="row justify-content-center" v-for="post in posts" :key="post.id" id="posts" v-else>
                         <div class="col-md-12">
 
                             <div class="card card-primary">
