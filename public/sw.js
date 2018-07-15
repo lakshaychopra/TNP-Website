@@ -20,28 +20,32 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox
  */
 self.__precacheManifest = [
   {
-    "url": "css/app.css",
-    "revision": "216559bedabc0febb747548760948302"
-  },
-  {
     "url": "css/style.css",
-    "revision": "93f880bcb2bad0ff464cfd5ea81d068c"
+    "revision": "b9994b277b2646f6dfce4c9ebc5baedf"
   },
   {
-    "url": "js/app.js",
-    "revision": "639b9bc4eb7c733da86cd0ae3d390db6"
+    "url": "index.php",
+    "revision": "b9901d13f00ef92e0793e2d9fcd57431"
   },
   {
     "url": "js/bundle.min.js",
-    "revision": "811696e40a759895cd9ee746a144dd8c"
+    "revision": "c3d41080d10114fbd5ab66fe9b9159d1"
   },
   {
     "url": "manifest.json",
-    "revision": "0e7bc9758c96f1532f286382fdf16ffd"
+    "revision": "2ae4ea7cc23eca4807eeb791924746fc"
   },
   {
     "url": "mix-manifest.json",
     "revision": "55cee1fa25e0c158c2bff790b320a331"
+  },
+  {
+    "url": "service-worker.js",
+    "revision": "36bbcb5172544518dcf601687586837f"
+  },
+  {
+    "url": "web.config",
+    "revision": "50e9a0f34b264670691691d406428d75"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

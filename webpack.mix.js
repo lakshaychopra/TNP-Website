@@ -30,8 +30,7 @@ mix.js('resources/assets/js/app.js', 'public/js/app.js')
         'resources/assets/js/custom.js',
         'public/js/app.js',
     ], 'public/js/bundle.min.js')
-    .sass('resources/assets/sass/style.scss', 'public/css')
-    .browserSync('laravue');
+    .sass('resources/assets/sass/style.scss', 'public/css');
 
 
 

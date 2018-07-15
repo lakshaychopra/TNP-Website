@@ -1,7 +1,8 @@
 module.exports = {
     "globDirectory": "public/",
     "globPatterns": [
-        "**/*.{css,js,json}"
+        "**/*.{css,js,php,.htaccess,json,config}"
     ],
-    "swDest": "public\\sw.js"
+    "swDest": "public\\sw.js",
+    globIgnores: ['**/app.js', '**/app.css']
 };
