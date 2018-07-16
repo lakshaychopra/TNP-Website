@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use App\Events\UserCreatedEvent;
+use App\Events\UserSingleCreateEvent;
 use App\Repositories\UserRepository;
 use App\Http\Requests\CreateUserExcelRequest;
 use App\Http\Requests\CreateUserRequest;
@@ -202,7 +203,7 @@ class UsersController extends Controller
                 $user = $request->all();
                 $user['password'] = bcrypt(str_random(6));
                 $userCreate = $this->service->createUser($user);
-                // event(new UserCreatedEvent($user));
+                event(new UserSingleCreateEvent($user));
                 DB::commit();
                 // $this->userCreateMail();  
                 return $this->respondSuccess('User Created Successfully', $userCreate);

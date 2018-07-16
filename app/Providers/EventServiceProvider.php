@@ -25,6 +25,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\UserRegisterEvent' => [
             'App\Listeners\UserRegisterMailSend',
         ],
+
+        'App\Events\UserSingleCreateEvent' => [
+            'App\Listeners\UserSingleCreateEmail',
+        ],
     ];
 
     /**
