@@ -22,10 +22,13 @@ class StudentRepository
     }
     
 
-    public function list()
+    public function list($limit = false)
     {
-        $lists = Student::orderBy('created_at', 'decs')->paginate(15);
-        return $lists;
+        $builder = User::orderBy('created_at', 'desc');
+        if(!$limit) {
+            return $builder->get();
+        }
+        return $builder->paginate($limit);
     }
     
     // create new record
@@ -43,9 +46,10 @@ class StudentRepository
     }
     
     // remove record from the database
-    public function delete($id)
+    public function delete(Student $student)
     {
-        return $this->model->destroy($id);
+        $delete = Student::destroy($student->id);
+        return $delete;
     }
     
     private function setPayload(array $payload)
@@ -60,8 +64,6 @@ class StudentRepository
             'training_sem'            =>    $payload['training_sem'],
             'shift'                   =>    $payload['shift'],
             'section'                 =>    $payload['section'],
-            'email'                   =>    $payload['email'],
-            'phone_number'            =>    $payload['phone_number'],
             'gender'                  =>    $payload['gender'],
             'category'                =>    $payload['category'],
             'blood_group'             =>    $payload['blood_group'],
@@ -76,7 +78,6 @@ class StudentRepository
             'state'                   =>    $payload['state'],
             'district'                =>    $payload['district'],
             'pincode'                 =>    $payload['pincode'],
-            'form_status'             =>    $payload['form_status'],
         ];
 	}
 }

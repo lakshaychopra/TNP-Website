@@ -7,9 +7,9 @@ use App\Repositories\StudentRepository;
 
 class StudentService
 {	
-	public function __construct(StudentRepository $respository)
+	public function __construct(StudentRepository $repository)
 	{
-		$this->respository = $respository;
+		$this->repository = $repository;
 	}
 	
 	public function listStudent(){
