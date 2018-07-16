@@ -203,8 +203,8 @@ class UsersController extends Controller
                 $user = $request->all();
                 $user['password'] = bcrypt(str_random(6));
                 $userCreate = $this->service->createUser($user);
-                event(new UserSingleCreateEvent($user));
                 DB::commit();
+                // event(new UserSingleCreateEvent($request->email));
                 // $this->userCreateMail();  
                 return $this->respondSuccess('User Created Successfully', $userCreate);
             }
