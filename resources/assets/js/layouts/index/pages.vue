@@ -167,9 +167,9 @@
                                     <!-- <ul class="list-group">
                             <li class="list-group-item"></li>
                             </ul> -->
-                                    <span v-if="post.body.length>200">
-                                        <div class="mb-3 show-read-more" v-html="post.body.substr(0,200)"></div>
-                                        <div class="text-center alert alert-primary"><router-link :to="{ path: 'view/'+post.id}"><a href="">Read More <i class="fa fa-plus"></i></a></router-link></div>
+                                    <span v-if="post.body.length>400">
+                                        <div class="mb-3 show-read-more" v-html="gethtml(post.body)" id="bg-trans" style="padding: 10px;background-color: #f6f6f6;"></div>
+                                        <button class="btn btn-block text-center"><router-link :to="{ path: 'view/'+post.id}"><a href="" style="color: #333;">Read More <i class="fa fa-plus"></i></a></router-link></button>
                                     </span>
                                     <span v-else>
                                         <div class="mb-3 show-read-more" v-html="post.body"></div>
@@ -284,6 +284,14 @@
             this.getPosts();
         },
         methods: {
+            gethtml(text){
+                var maxLength = 400 // maximum number of characters to extract
+                //trim the string to the maximum length
+                var trimmedString = text.substr(0, maxLength);
+                //re-trim if we are in the middle of a word
+                trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+                return trimmedString;
+            },
             loadMore: function() { 
                     const vm = this;
                     vm.loading=1;
@@ -644,5 +652,10 @@
     }
     .color-main{
         color: #038ed4;
+    }
+    #bg-trans{
+    background: -webkit-linear-gradient(#333, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
 </style>
