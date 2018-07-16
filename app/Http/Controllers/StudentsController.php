@@ -59,13 +59,11 @@ class StudentsController extends Controller
             if (!$auth) {
                 return $this->respondUnauthorized('Post Failed');
             }
-            $student = $request->all();
-            $studentCreate = $this->service->createStudent($student);
+            $data = $request->only('univ_roll_no');
+            $student = new Student;
+            $student->create($data);
             DB::commit();
-            $data=[
-                'StudentCreate' => $studentCreate
-            ];
-            return $this->respondSuccess('Inserted',$data);
+            return $this->respondSuccess('Inserted',$student);
         }
         catch (Exception $e) {
             DB::rollback();
