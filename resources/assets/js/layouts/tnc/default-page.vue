@@ -57,15 +57,16 @@
             if(!this.getAuthUser('email')){
                 helper.authUser().then(response => {
                     this.$store.dispatch('setAuthUserDetail',{
+                        userid:response.id,
                         username: response.username,
                         phone_number: response.phone_number,
                         email: response.email,
                         // avatar:response.profile.avatar
                         
                     });
-                    console.log(this.$store.state.auth);
                 });  
 
+            console.log(this.$store.state.auth);
             
             }
             // if(!this.getAuthUser('status')){

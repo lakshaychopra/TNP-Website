@@ -21472,6 +21472,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 	state: {
 		auth: {
+			userid: '',
 			username: '',
 			phone_number: '',
 			email: ''
@@ -24645,6 +24646,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (!this.getAuthUser('email')) {
             __WEBPACK_IMPORTED_MODULE_4__services_helper__["a" /* default */].authUser().then(function (response) {
                 _this.$store.dispatch('setAuthUserDetail', {
+                    userid: response.id,
                     username: response.username,
                     phone_number: response.phone_number,
                     email: response.email
@@ -31990,6 +31992,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (!this.getAuthUser('email')) {
             __WEBPACK_IMPORTED_MODULE_4__services_helper__["a" /* default */].authUser().then(function (response) {
                 _this.$store.dispatch('setAuthUserDetail', {
+                    userid: response.id,
                     username: response.username,
                     phone_number: response.phone_number,
                     email: response.email
@@ -33018,14 +33021,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (!this.getAuthUser('email')) {
             __WEBPACK_IMPORTED_MODULE_3__services_helper__["a" /* default */].authUser().then(function (response) {
                 _this.$store.dispatch('setAuthUserDetail', {
+                    userid: response.id,
                     username: response.username,
                     phone_number: response.phone_number,
                     email: response.email
                     // avatar:response.profile.avatar
 
                 });
-                console.log(_this.$store.state.auth);
             });
+
+            console.log(this.$store.state.auth);
         }
         // if(!this.getAuthUser('status')){
         //     helper.authUser().then(response => {
@@ -33668,7 +33673,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -33723,17 +33728,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            id: {
+                'id': this.$store.state.auth.userid
+            },
             tnc: {
-                'form_status': 'pending'
+                'form_status': 'pending',
+                'id': this.$store.state.auth.userid
             }
         };
     },
 
     methods: {
+        getAuthUser: function getAuthUser(name) {
+            return this.$store.getters.getAuthUser(name);
+        },
         submit: function submit() {
             var _this = this;
 
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["e" /* firstLoginURL */]).then(function (response) {
+            console.log(this.tnc.id);
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["e" /* firstLoginURL */], this.id).then(function (response) {
                 console.log(response);
                 if (response.status == 200) {
                     axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["n" /* statusChangeURL */], _this.tnc).then(function (res) {

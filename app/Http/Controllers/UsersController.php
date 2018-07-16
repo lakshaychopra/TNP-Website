@@ -221,7 +221,8 @@ class UsersController extends Controller
                 if (!$auth) {
                     return $this->respondUnauthorized('Failed');
                 }
-                $user = User::find(1);
+                $id = $request->id;
+                $user = User::find($id);
                 $user->form_status = $request->form_status;
                 $user->save();
                 DB::commit();
@@ -240,7 +241,8 @@ class UsersController extends Controller
                 if (!$auth) {
                     return $this->respondUnauthorized('Failed');
                 }
-                $user = User::find(1);
+                $id = $request->id;
+                $user = User::find($id);
                 $user->is_first_login = 1;
                 $user->save();
                 DB::commit();

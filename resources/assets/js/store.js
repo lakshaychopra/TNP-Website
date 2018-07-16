@@ -7,6 +7,7 @@ import * as Cookies from 'js-cookie'
 const store = new Vuex.Store({
 	state: {
 		auth: {
+			userid:'',
 			username: '',
 			phone_number: '',
 			email: '',

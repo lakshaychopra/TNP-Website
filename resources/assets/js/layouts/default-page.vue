@@ -70,6 +70,7 @@
             if(!this.getAuthUser('email')){
                 helper.authUser().then(response => {
                     this.$store.dispatch('setAuthUserDetail',{
+                        userid:response.id,
                         username: response.username,
                         phone_number: response.phone_number,
                         email: response.email,

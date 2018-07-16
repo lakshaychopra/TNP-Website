@@ -41,14 +41,22 @@ import { statusChangeURL } from "../../config.js";
 export default {
     data(){
         return{
+            id:{
+                'id':this.$store.state.auth.userid,
+            },
             tnc:{
                 'form_status':'pending',
-            }
+                'id':this.$store.state.auth.userid,
+            },
         }
     },
     methods:{
+         getAuthUser(name){
+                return this.$store.getters.getAuthUser(name);
+        },
         submit(){
-            axios.post(firstLoginURL).then(response => {
+            console.log(this.tnc.id);
+            axios.post(firstLoginURL,this.id).then(response => {
                 console.log(response);
                 if (response.status == 200) {
                     axios.post(statusChangeURL,this.tnc).then(res => {
