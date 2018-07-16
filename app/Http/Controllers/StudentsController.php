@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Student;
 use App\Repositories\StudentRepository;
+use App\Http\Requests\CreateStudentRequest;
 use App\Services\StudentService;
 use DB;
 use Exception;

@@ -38,6 +38,7 @@
 <script>
 import { firstLoginURL } from "../../config.js";
 import { statusChangeURL } from "../../config.js";
+import { storeStudentURL } from "../../config.js";
 export default {
     data(){
         return{
@@ -47,6 +48,9 @@ export default {
             tnc:{
                 'form_status':'pending',
                 'id':this.$store.state.auth.userid,
+            },
+            username:{
+                'univ_roll_no':this.$store.state.auth.username,
             },
         }
     },
@@ -61,9 +65,16 @@ export default {
                 if (response.status == 200) {
                     axios.post(statusChangeURL,this.tnc).then(res => {
                         console.log(res);
-                        if (res.status == 200) {
-                            toastr['success']("User Added!!");
-                            this.$router.push('/userlogin');
+                        if (res.status == 200) {    
+                            axios.post(storeStudentURL,this.username).then(resp => {
+                                console.log(res);
+                                if (resp.status == 200) {
+                                    toastr['success']("User Added!!");
+                                    this.$router.push('/userlogin');
+                                }
+                            }).catch(erro => {
+                            console.log(erro);
+                            });
                         }
                     }).catch(err => {
                        console.log(err);
