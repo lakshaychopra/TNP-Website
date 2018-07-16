@@ -212,4 +212,42 @@ class UsersController extends Controller
                 return $this->respondException($e);
             }
         }
+        
+        public function UpdateFormStatus(Request $request){
+            $auth = JWTAuth::parseToken()->authenticate();
+            try {
+                DB::beginTransaction();
+                if (!$auth) {
+                    return $this->respondUnauthorized('Failed');
+                }
+                $user = User::find(1);
+                $user->form_status = $request->form_status;
+                $user->save();
+                DB::commit();
+                return $this->respondData($user);
+            }
+            catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
+            }
+        }
+
+        public function FirstLogin(Request $request){
+            $auth = JWTAuth::parseToken()->authenticate();
+            try {
+                DB::beginTransaction();
+                if (!$auth) {
+                    return $this->respondUnauthorized('Failed');
+                }
+                $user = User::find(1);
+                $user->is_first_login = 1;
+                $user->save();
+                DB::commit();
+                return $this->respondData($user);
+            }
+            catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
+            }
+        }
     }
