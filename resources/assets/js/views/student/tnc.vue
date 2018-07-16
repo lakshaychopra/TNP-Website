@@ -36,38 +36,34 @@
     </div>    
 </template>
 <script>
+import { firstLoginURL } from "../../config.js";
+import { statusChangeURL } from "../../config.js";
 export default {
+    data(){
+        return{
+            tnc:{
+                'form_status':'pending',
+            }
+        }
+    },
     methods:{
         submit(){
-            axios.post(loginURL, this.loginForm).then(response => {
-                        if (response.status == "200") {
-                            // window.location = "/dashboard";
-                            this.token = response.data.data.access_token;
-                            axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
-
-                            toastr['success'](response.data.message);
-                            this.authenticated = true;
-                            // console.log(this.authenticated);
-                            // this.$router.push('/login');
-                            // this.$router.push('/home')
-
+            axios.post(firstLoginURL).then(response => {
+                console.log(response);
+                if (response.status == 200) {
+                    axios.post(statusChangeURL,this.tnc).then(res => {
+                        console.log(res);
+                        if (res.status == 200) {
+                            toastr['success']("User Added!!");
+                            this.$router.push('/userlogin');
                         }
-                    }).catch(error => {
-                        console.log(error.response)
-                        var obj = JSON.parse(error.response.request.responseText);
-                        if (error.response.status == "401") {
-                            toastr['error'](obj['message']);
-                        }
-
-                        if (error.response.status == "422") {
-                            if (obj['errors'].hasOwnProperty('username')) {
-                                toastr['error'](obj['errors']['username']);
-                            }
-                            if (obj['errors'].hasOwnProperty('password')) {
-                                toastr['error'](obj['errors']['password']);
-                            }
-                        }
+                    }).catch(err => {
+                       console.log(err);
                     });
+                }
+            }).catch(error => {
+                       console.log(error);
+            });
         }
     }
 }

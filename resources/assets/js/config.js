@@ -17,3 +17,7 @@ export const singleuserURL = '/api/dashboard/user/form/create/'
 
 export const searchURL = '/api/home/post/search/'
 
+
+export const firstLoginURL = '/api/dashboard/user/first/login'
+export const statusChangeURL = '/api/dashboard/user/status/update'
+
