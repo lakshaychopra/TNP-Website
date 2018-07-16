@@ -84,8 +84,8 @@ class PostController extends Controller
     */
     public function show(Post $post)
     {
-     $auth = JWTAuth::parseToken()->authenticate();
-     return $this->respondData($post);
+        $auth = JWTAuth::parseToken()->authenticate();
+        return $this->respondData($post);
     }
     
     /**

@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Student;
+use App\Repositories\StudentRepository;
 use App\Services\StudentService;
 use DB;
 use Exception;
 use Notification;
-use Auth;
+use JWTAuth;
 
 class StudentsController extends Controller
 {
-    public function __construct(StudentService $service)
+    public function __construct(StudentService $service, StudentRepository $repository)
     {
+        $this->repository = $repository;
         $this->service = $service;
     }
     
@@ -23,10 +25,13 @@ class StudentsController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function index()
+    public function index(Request $request)
     {
-        $student = Student::orderBy('created_at', 'decs')->paginate(30);
-        return $this->respondData($student);
+        $auth = JWTAuth::parseToken()->authenticate();
+        $limit  = $request->input('limit') ?? 6;
+        $students = $this->repository->list($limit);
+        // return \Fractal::collection($posts, new PostTransformer, 'post');
+        return $this->respondData($students);
     }
     
     /**
@@ -75,8 +80,8 @@ class StudentsController extends Controller
     */
     public function show(Student $student)
     {
-        $student = $this->student->where('id', $student)->first();
-        return $this->respondData($student);
+        $auth = JWTAuth::parseToken()->authenticate();
+        return $this->respondData($post);
     }
     
     /**
@@ -87,6 +92,7 @@ class StudentsController extends Controller
     */
     public function edit(Student $student)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         return $this->respondData($student);
     }
     
@@ -125,7 +131,9 @@ class StudentsController extends Controller
     */
     public function destroy(Student $student)
     {
-        $this->service->deleteStudent($student->id);
-        return $this->respondSuccess('Deleted');
+        $auth = JWTAuth::parseToken()->authenticate();
+        $delete = $this->repository->delete($student);
+        $index= Student::orderBy('created_at', 'desc')->get();
+        return $this->respondSuccess('Deleted', $index);
     }
 }
