@@ -15,7 +15,6 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('uuid')->unique();
             $table->string('univ_roll_no')->unique();
             $table->string('class_roll_no')->unique()->nullable();
             $table->string('name')->nullable();
@@ -25,8 +24,6 @@ class CreateStudentsTable extends Migration
             $table->enum('training_sem',['7','8'])->nullable();
             $table->enum('shift',['MORNING', 'EVENING'])->nullable();
             $table->string('section')->comment('Class Section')->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('phone_number')->unique()->nullable();
             $table->enum('gender',['MALE', 'FEMALE'])->nullable();
             $table->enum('category',['OBC', 'SC', 'ST', 'GEN'])->nullable();
             $table->string('blood_group')->nullable();
@@ -41,7 +38,6 @@ class CreateStudentsTable extends Migration
             $table->string('state')->nullable();
             $table->string('district')->nullable();
             $table->integer('pincode')->nullable();
-            $table->enum('form_status',['NONE','PENDING','RECIEVED','SUBMITTED','REJECTED'])->default('NONE');
             $table->timestamps();
         });
     }

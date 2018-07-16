@@ -24,9 +24,11 @@ class CreateTableUsers extends Migration
             $table->string('provider_unique_id')->nullable();
             $table->string('activation_token',64)->nullable();
             $table->string('status',25)->nullable();
+            $table->enum('form_status',['N.A.','NONE','PENDING','RECIEVED','SUBMITTED','REJECTED'])->default('NONE');
             $table->boolean('is_mailed')->default(false);
             $table->boolean('is_active')->default(false);
             $table->boolean('is_verified')->default(false);
+            $table->boolean('is_first_login')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
