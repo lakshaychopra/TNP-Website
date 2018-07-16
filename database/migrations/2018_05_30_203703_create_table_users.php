@@ -24,7 +24,7 @@ class CreateTableUsers extends Migration
             $table->string('provider_unique_id')->nullable();
             $table->string('activation_token',64)->nullable();
             $table->string('status',25)->nullable();
-            $table->enum('form_status',['N.A.','NONE','PENDING','RECIEVED','SUBMITTED','REJECTED'])->default('NONE');
+            $table->enum('form_status',['N.A.','PENDING','SUBMITTED'])->default('N.A.');
             $table->boolean('is_mailed')->default(false);
             $table->boolean('is_active')->default(false);
             $table->boolean('is_verified')->default(false);

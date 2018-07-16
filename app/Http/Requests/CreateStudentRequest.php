@@ -33,8 +33,6 @@ class CreateStudentRequest extends FormRequest
             'training_sem'            =>    '',
             'shift'                   =>    '',
             'section'                 =>    '',
-            'email'                   =>    '',
-            'phone_number'            =>    '',
             'gender'                  =>    '',
             'category'                =>    '',
             'blood_group'             =>    '',
@@ -49,7 +47,6 @@ class CreateStudentRequest extends FormRequest
             'state'                   =>    '',
             'district'                =>    '',
             'pincode'                 =>    '',
-            'form_status'             =>    '',
         ];
     }
 }
