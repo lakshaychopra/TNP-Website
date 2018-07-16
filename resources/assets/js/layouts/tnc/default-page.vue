@@ -1,0 +1,93 @@
+<template>
+    <div id="main-wrapper">
+        <app-header></app-header>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <router-view></router-view>
+                <app-right-sidebar></app-right-sidebar>
+            </div>
+        	<app-footer></app-footer>
+        </div>
+    </div>
+</template>
+
+
+<script>
+    import AppHeader from './header.vue'
+    import AppFooter from './footer.vue'
+    import AppRightSidebar from './right-sidebar.vue'
+    import helper from './../../services/helper'
+    export default {
+        methods : {
+            notification(){
+                toastr.options = {
+                    "positionClass": "toast-top-right"
+                };
+
+                $('[data-toastr]').on('click',function(){
+                    var type = $(this).data('toastr'),message = $(this).data('message'),title = $(this).data('title');
+                    toastr[type](message, title);
+                });
+            },
+            getAuthUser(name){
+                return this.$store.getters.getAuthUser(name);
+            }
+        },
+        components: {
+            AppHeader, AppFooter, AppRightSidebar
+        },
+        mounted() {
+            $('body').addClass("fix-header fix-sidebar card-no-border");
+            $("body").trigger("resize");
+            $(".fix-header .topbar").stick_in_parent();
+            $('.scroll-sidebar').slimScroll({
+                position: 'left'
+                , size: "5px"
+                , height: '100%'
+                , color: '#dcdcdc'
+            });
+            $('.message-scroll').slimScroll({
+                position: 'right'
+                , size: "5px"
+                , height: '570'
+                , color: '#dcdcdc'
+            });
+
+            if(!this.getAuthUser('email')){
+                helper.authUser().then(response => {
+                    this.$store.dispatch('setAuthUserDetail',{
+                        username: response.username,
+                        phone_number: response.phone_number,
+                        email: response.email,
+                        // avatar:response.profile.avatar
+                        
+                    });
+                    console.log(this.$store.state.auth);
+                });  
+
+            
+            }
+            // if(!this.getAuthUser('status')){
+            //     helper.authUser().then(response => {
+            //         this.$router.push('/terms')
+            //     });
+            // }
+        },
+        // beforeUpdate(){
+        //      if(!this.getAuthUser('status')){
+        //         helper.authUser().then(response => {
+        //             this.$router.push('/terms')
+        //         });
+        //     }
+        // }
+    }
+</script>
+<style scoped>
+.page-wrapper{
+    margin-left: 0;
+}
+.footer{
+    left:0;
+}
+</style>
