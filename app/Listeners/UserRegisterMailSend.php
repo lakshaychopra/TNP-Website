@@ -23,7 +23,7 @@ class UserRegisterMailSend
     /**
      * Handle the event.
      *
-     * @param  object  $event
+     * @param  UserRegisterEvent  $event
      * @return void
      */
     public function handle(UserRegisterEvent $event)
