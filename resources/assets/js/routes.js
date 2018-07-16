@@ -195,7 +195,7 @@ router.beforeEach((to, from, next) => {
             } else if (to.matched.some(m => m.meta.userAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
-                        if (res.form_status == "N.A.") {
+                            if (res.form_status == "N.A." && res.is_first_login == 0) {
                             return next({
                                 path:'/terms'
                             })
@@ -211,7 +211,7 @@ router.beforeEach((to, from, next) => {
                 else if (to.matched.some(m => m.meta.userloginAuth)) {
                     return helper.authUser().then(res => {
                         if (res.type == "STUDENT" ) {
-                            if ( res.form_status == "N.A.") {
+                            if (res.form_status == "N.A." && res.is_first_login == 0) {
                                 return next()
                             }
                             return next({
