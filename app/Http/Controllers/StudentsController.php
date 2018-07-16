@@ -47,12 +47,13 @@ class StudentsController extends Controller
     */
     public function store(CreateStudentRequest $request)
     {
-        $student = $request->all();
+        $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
-            if (!$student) {
-                return $this->respondUnauthorized('Student Registeration Failed');
+            if (!$auth) {
+                return $this->respondUnauthorized('Post Failed');
             }
+            $student = $request->all();
             $studentCreate = $this->service->createStudent($student);
             DB::commit();
             $data=[
@@ -96,14 +97,18 @@ class StudentsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, Student $student)
+    public function update(CreateStudentRequest $request, Student $student)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
-            if(!$student){
+            if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            $student = $this->service->updateStudent($request->all(),$student->id);
+            $data = $request->all();
+            $id = $request->id;
+            $student = Student::find($id);
+            $student->update($data);
             DB::commit();
             return $this->respondSuccess('Updated',$student);
         } catch (Exception $e) {
