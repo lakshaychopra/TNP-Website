@@ -19,7 +19,6 @@ class LoginService
         $user = JWTAuth::user();
         $user->token_2fa = mt_rand(10000,99999);
         $user->save();
-
         event(new TwoFactorEvent($user));
     }
 }

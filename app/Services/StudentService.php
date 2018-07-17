@@ -12,10 +12,6 @@ class StudentService
 		$this->repository = $repository;
 	}
 	
-	public function listStudent(){
-		return $this->repository->list();
-	}
-	
 	public function createStudent(array $payload)
 	{
 		return $this->repository->create($payload);
@@ -26,8 +22,4 @@ class StudentService
 		return $this->repository->update($payload);
 	}
 
-	public function deleteStudent(array $payload, $id)
-	{
-		return $this->repository->delete($payload);
-	}
 }

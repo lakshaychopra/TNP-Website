@@ -46,7 +46,7 @@ class PreviousEducationsController extends Controller
                 return $this->respondUnauthorized('Failed');
             }
             $pe = $request->all();
-            $peCreate = $this->service->createPE($pe);
+            $peCreate = $this->service->createPreviousEducation($pe);
             DB::commit();
             return $this->respondSuccess('Inserted', $peCreate);
         }
