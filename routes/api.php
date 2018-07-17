@@ -54,5 +54,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::post('/user/first/login', 'UsersController@FirstLogin');
         //Student Controller
         Route::resource('/student', 'StudentsController');
+        //PreviousEducation
+        Route::resource('/student/pe', 'PreviousEducation');
     });
 });
