@@ -220,12 +220,15 @@ router.beforeEach((to, from, next) => {
                 else if (to.matched.some(m => m.meta.userloginAuth)) {
                     return helper.authUser().then(res => {
                         if (res.type == "STUDENT" ) {
-                            if (res.student_form_step == "SUBMITTED") {
-                                return next({
-                                    path:'/userlogin'
-                                })
+                            if (res.student_form_step == "N.A." && res.is_first_login == 0) {
+                                return next()
                             }
-                            return next()
+                            else if (res.student_form_step == "TC") {
+                                return next()
+                            }
+                            return next({
+                                path:'/userlogin'
+                            })
                         } else {
                             return next({
                                 path: '/home'
