@@ -253,4 +253,24 @@ class UsersController extends Controller
                 return $this->respondException($e);
             }
         }
+
+        public function UpdateFormSteps(Request $request){
+            $auth = JWTAuth::parseToken()->authenticate();
+            try {
+                DB::beginTransaction();
+                if (!$auth) {
+                    return $this->respondUnauthorized('Failed');
+                }
+                $id = $request->id;
+                $user = User::find($id);
+                $user->student_form_step = $request->student_form_step;
+                $user->save();
+                DB::commit();
+                return $this->respondData($user);
+            }
+            catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
+            }
+        }
     }

@@ -2,7 +2,7 @@
 	<div>
         <div class="row page-titles">
             <div class="col-md-6 col-8 align-self-center">
-                <h3 class="text-themecolor m-b-0 m-t-0">Terms and Conditions</h3>
+                <h3 class="text-themecolor m-b-0 m-t-0">Profile</h3>
                 <!-- <ol class="breadcrumb">
                     <li class="breadcrumb-item"><router-link to="/home">Home</router-link></li>
                     <li class="breadcrumb-item"><router-link to="/task">Post</router-link></li>
@@ -15,7 +15,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Terms and Conditions</h4>
+                        <h4 class="card-title">Fill the required details</h4>
                         <!-- <post-form :id="id"></post-form> -->
                         <form method="post"  @submit.prevent="submit">
                             <div class="row">
@@ -39,7 +39,6 @@
 import { firstLoginURL } from "../../config.js";
 import { statusChangeURL } from "../../config.js";
 import { storeStudentURL } from "../../config.js";
-import { formstepChangeURL } from "../../config.js";
 export default {
     data(){
         return{
@@ -53,10 +52,6 @@ export default {
             username:{
                 'univ_roll_no':this.$store.state.auth.username,
             },
-            form_step:{
-                'student_form_step':'TC',
-                'id':this.$store.state.auth.userid,
-            }
         }
     },
     methods:{
@@ -71,20 +66,11 @@ export default {
                     axios.post(statusChangeURL,this.tnc).then(res => {
                         console.log(res);
                         if (res.status == 200) {    
-                            axios.post(formstepChangeURL,this.form_step).then(stat => {
-                                console.log(stat);
-                                if (stat.status == 200) {
-                                        console.log(stat);
-                                        axios.post(storeStudentURL,this.username).then(resp => {
-                                        if (resp.status == 200) {
-                                            toastr['success']("User Added!!");
-                                            this.$router.push('/userlogin');
-                                        }
-                                    }).catch(er => {
-                                    console.log(er);
-                                    });
-                                    // toastr['success']("User Added!!");
-                                    // this.$router.push('/userlogin');
+                            axios.post(storeStudentURL,this.username).then(resp => {
+                                console.log(res);
+                                if (resp.status == 200) {
+                                    toastr['success']("User Added!!");
+                                    this.$router.push('/userlogin');
                                 }
                             }).catch(erro => {
                             console.log(erro);

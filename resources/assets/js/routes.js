@@ -108,6 +108,10 @@ let routes = [{
                  path: '/terms',
                  component: require('./views/student/tnc')
              },
+             {
+                 path: '/profileForm',
+                 component: require('./views/student/profileForm')
+             },
          ]
      },
 
@@ -195,9 +199,14 @@ router.beforeEach((to, from, next) => {
             } else if (to.matched.some(m => m.meta.userAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
-                            if (res.form_status == "N.A." && res.is_first_login == 0) {
+                            if (res.student_form_step == "N.A." && res.is_first_login == 0) {
                             return next({
                                 path:'/terms'
+                            })
+                        }
+                        else if (res.student_form_step == "TC") {
+                            return next({
+                                path:'/profileForm'
                             })
                         }
                         return next()
@@ -211,12 +220,12 @@ router.beforeEach((to, from, next) => {
                 else if (to.matched.some(m => m.meta.userloginAuth)) {
                     return helper.authUser().then(res => {
                         if (res.type == "STUDENT" ) {
-                            if (res.form_status == "N.A." && res.is_first_login == 0) {
-                                return next()
+                            if (res.student_form_step == "SUBMITTED") {
+                                return next({
+                                    path:'/userlogin'
+                                })
                             }
-                            return next({
-                                path:'/userlogin'
-                            })
+                            return next()
                         } else {
                             return next({
                                 path: '/home'
