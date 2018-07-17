@@ -12,3 +12,4 @@ npm-debug.log
 yarn-error.log
 tnp.code-workspace
 database/seeds/UsersTableSeeder.php
+database/seeds/UsersTableSeeder.php
