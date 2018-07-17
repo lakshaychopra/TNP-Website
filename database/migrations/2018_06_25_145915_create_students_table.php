@@ -39,7 +39,6 @@ class CreateStudentsTable extends Migration
             $table->string('state')->nullable();
             $table->string('district')->nullable();
             $table->integer('pincode')->nullable();
-            $table->boolean('is_submitted')->default(false);
             $table->timestamps();
         });
     }
