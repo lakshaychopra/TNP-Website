@@ -10,7 +10,7 @@
 
     <meta name="description" content="This is official application of Training and Placemant Cell, GNDEC, Ludhiana.">
     <meta name="author" content="Sanjampreet Singh, Karamveer Singh">
-    <meta name="theme-color" content="#fff">
+    <meta name="theme-color" content="#038ed4">
 
     <title>Laravel</title>
 
@@ -39,7 +39,7 @@
         <router-view></router-view>
     </div>
     <script type="text/javascript" src="/js/bundle.min.js"></script>
-    {{-- <script type="text/javascript" src="service-worker.js"></script> --}}
+    {{--  <script type="text/javascript" src="service-worker.js"></script>  --}}
 </body>
 
 </html>
