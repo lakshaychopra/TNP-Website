@@ -9,9 +9,9 @@ Dear Student,
 @component('mail::table')
 | Details           | Values            |
 | :---------------: |:-----------------:|
-|University Roll No.|{{$username}}      |
-|Email              |{{$email}}         |
-|Phone Number       |{{$phone_number}}  |
+|University Roll No.|{{$user->username}}      |
+|Phone Number       |{{$user->phone_number}}  |
+|Email              |{{$user->email}}         |
 @endcomponent
 
 <b>Note : To access your placement portal complete the registeration by clicking on the following button.</b>

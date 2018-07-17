@@ -10,8 +10,8 @@ Dear Student,
 | Details           | Values            |
 | :---------------: |:-----------------:|
 |University Roll No.|{{$username}}      |
-|Email              |{{$email}}         |
 |Phone Number       |{{$phone_number}}  |
+|Email              |{{$email}}         |
 @endcomponent
 
 <b>Note : To access your placement portal complete the registeration by clicking on the following button.</b>
