@@ -35,7 +35,8 @@
                         <a class="nav-link" href="/about"><i class="fa fa-users" aria-hidden="true"></i> About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                        <a class="nav-link" href="/login" v-if="this.$store.state.auth.username" ><i class="fa fa-home" aria-hidden="true"></i> Profile</a>
+                        <a class="nav-link" href="/login" v-else ><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
                     </li>
                 </ul>
             </div>

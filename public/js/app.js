@@ -23567,6 +23567,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 // import AppHeader from './header.vue'
@@ -23767,7 +23768,45 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(1)
+                _c(
+                  "ul",
+                  { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
+                  [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "nav-item" }, [
+                      this.$store.state.auth.username
+                        ? _c(
+                            "a",
+                            {
+                              staticClass: "nav-link",
+                              attrs: { href: "/login" }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fa fa-home",
+                                attrs: { "aria-hidden": "true" }
+                              }),
+                              _vm._v(" Profile")
+                            ]
+                          )
+                        : _c(
+                            "a",
+                            {
+                              staticClass: "nav-link",
+                              attrs: { href: "/login" }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fa fa-sign-in",
+                                attrs: { "aria-hidden": "true" }
+                              }),
+                              _vm._v(" Login")
+                            ]
+                          )
+                    ])
+                  ]
+                )
               ]
             )
           ]
@@ -24040,31 +24079,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "ul",
-      { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
-      [
-        _c("li", { staticClass: "nav-item" }, [
-          _c("a", { staticClass: "nav-link", attrs: { href: "/about" } }, [
-            _c("i", {
-              staticClass: "fa fa-users",
-              attrs: { "aria-hidden": "true" }
-            }),
-            _vm._v(" About")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "nav-item" }, [
-          _c("a", { staticClass: "nav-link", attrs: { href: "/login" } }, [
-            _c("i", {
-              staticClass: "fa fa-sign-in",
-              attrs: { "aria-hidden": "true" }
-            }),
-            _vm._v(" Login")
-          ])
-        ])
-      ]
-    )
+    return _c("li", { staticClass: "nav-item" }, [
+      _c("a", { staticClass: "nav-link", attrs: { href: "/about" } }, [
+        _c("i", {
+          staticClass: "fa fa-users",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" About")
+      ])
+    ])
   },
   function() {
     var _vm = this
