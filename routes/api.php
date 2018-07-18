@@ -22,7 +22,7 @@ Route::post('/login', 'LoginController@login');
 Route::post('/check', 'LoginController@check');
 Route::post('/logout', 'LoginController@logout');
 Route::post('/verify', 'LoginController@verify');
-Route::post('/reset', 'LoginController@resetPassword');
+Route::post('/reset/password', 'LoginController@resetPassword');
 // Register Controller
 Route::post('/register', 'RegisterController@register');
 //Home Controller
