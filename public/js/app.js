@@ -34056,11 +34056,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row page-titles" }, [
-      _c("div", { staticClass: "col-md-6 col-8 align-self-center" }, [
-        _c("h3", { staticClass: "text-themecolor m-b-0 m-t-0" }, [
-          _vm._v("Terms and Conditions")
-        ])
-      ])
+      _c("div", { staticClass: "col-md-6 col-8 align-self-center" })
     ])
   },
   function() {
@@ -34106,6 +34102,7 @@ var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(188)
+  __webpack_require__(231)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -34184,7 +34181,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n.text-primary[data-v-00b465e2]{\r\n    color: #0185c2 !important;\n}\nbody[data-v-00b465e2]{\r\n    font-family: 'Open Sans';\n}\r\n", ""]);
+exports.push([module.i, "\n.text-primary[data-v-00b465e2] {\n    color: #0185c2 !important;\n}\n.col-form-label[data-v-00b465e2]{\n    padding-left: 0;\n}\n", ""]);
 
 // exports
 
@@ -34196,6 +34193,53 @@ exports.push([module.i, "\n.text-primary[data-v-00b465e2]{\r\n    color: #0185c2
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -34441,8 +34485,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-sm-12" }, [
         _c("div", { staticClass: "form-material card" }, [
@@ -34463,39 +34505,39 @@ var render = function() {
                 }
               },
               [
+                _vm._m(0),
+                _vm._v(" "),
                 _vm._m(1),
                 _vm._v(" "),
                 _vm._m(2),
-                _vm._v(" "),
-                _vm._m(3),
                 _vm._v(" "),
                 _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
                   _vm._v("Acadaemic Details")
                 ]),
                 _vm._v(" "),
+                _vm._m(3),
+                _vm._v(" "),
                 _vm._m(4),
                 _vm._v(" "),
                 _vm._m(5),
-                _vm._v(" "),
-                _vm._m(6),
                 _vm._v(" "),
                 _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
                   _vm._v("Parent Details")
                 ]),
                 _vm._v(" "),
-                _vm._m(7),
+                _vm._m(6),
                 _vm._v(" "),
-                _vm._m(8),
+                _vm._m(7),
                 _vm._v(" "),
                 _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
                   _vm._v("Address Details")
                 ]),
                 _vm._v(" "),
+                _vm._m(8),
+                _vm._v(" "),
                 _vm._m(9),
                 _vm._v(" "),
-                _vm._m(10),
-                _vm._v(" "),
-                _vm._m(11)
+                _vm._m(10)
               ]
             )
           ])
@@ -34505,18 +34547,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-titles" }, [
-      _c("div", { staticClass: "col-md-6 col-8 align-self-center" }, [
-        _c("h3", { staticClass: "text-themecolor m-b-0 m-t-0" }, [
-          _vm._v("Profile")
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -34544,29 +34574,49 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Gender"
-            }
-          })
+          _c(
+            "label",
+            { staticClass: "col-md-2 col-form-label", attrs: { for: "" } },
+            [_vm._v("Gender :  ")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-2 md-radio md-radio-inline" }, [
+            _c("input", {
+              attrs: { type: "radio", name: "gender", id: "male", checked: "" }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "male" } }, [_vm._v("Male")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-2 md-radio md-radio-inline" }, [
+            _c("input", {
+              attrs: { type: "radio", name: "gender", id: "female" }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "female" } }, [_vm._v("Female")])
+          ])
         ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-6" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Category"
-            }
-          })
+          _c(
+            "select",
+            { staticClass: "form-control", attrs: { name: "category" } },
+            [
+              _c("option", { attrs: { selected: "", disabled: "" } }, [
+                _vm._v("Category")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("General")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("SC")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("ST")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("OBC")])
+            ]
+          )
         ])
       ])
     ])
@@ -34606,15 +34656,31 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Blood Group"
-            }
-          })
+          _c(
+            "select",
+            { staticClass: "form-control", attrs: { name: "blood_group" } },
+            [
+              _c("option", { attrs: { selected: "", disabled: "" } }, [
+                _vm._v("Blood Group")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("O+")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("O-")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("AB+")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("AB-")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("A+")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("A-")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("B+")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("B-")])
+            ]
+          )
         ])
       ])
     ])
@@ -34640,15 +34706,19 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "col-md-6" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Hosteller / Day Scholar"
-            }
-          })
+          _c(
+            "select",
+            { staticClass: "form-control", attrs: { name: "living" } },
+            [
+              _c("option", { attrs: { selected: "", disabled: "" } }, [
+                _vm._v("Hosteller / Day Scholar")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("Hosteller")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("Day Scholar")])
+            ]
+          )
         ])
       ])
     ])
@@ -34674,29 +34744,65 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Branch"
-            }
-          })
+          _c(
+            "select",
+            { staticClass: "form-control", attrs: { name: "branch" } },
+            [
+              _c("option", { attrs: { selected: "", disabled: "" } }, [
+                _vm._v("Branch")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("B.Tech")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("M.Tech")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("M.B.A.")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("M.C.A.")])
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Stream"
-            }
-          })
+          _c(
+            "select",
+            { staticClass: "form-control", attrs: { name: "stream" } },
+            [
+              _c("option", { attrs: { selected: "", disabled: "" } }, [
+                _vm._v("Stream")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Civil Engineering")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Computer Science and Engineering")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Electrical Engineering")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Electronics and Communication Engineering ")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Information Technology")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Mechenical Engineering")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Production Engineering")
+              ])
+            ]
+          )
         ])
       ])
     ])
@@ -34706,7 +34812,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4" }, [
+      _c("div", { staticClass: "col-md-3" }, [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
@@ -34720,31 +34826,45 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
+      _c("div", { staticClass: "col-md-3" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Shift"
-            }
-          })
+          _c(
+            "select",
+            { staticClass: "form-control", attrs: { name: "shift" } },
+            [
+              _c("option", { attrs: { selected: "", disabled: "" } }, [
+                _vm._v("Shift")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("Morning")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "" } }, [_vm._v("Evening")])
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
+      _c("div", { staticClass: "col-md-6" }, [
         _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Training Sem"
-            }
-          })
+          _c(
+            "label",
+            { staticClass: "col-md-3 col-form-label", attrs: { for: "" } },
+            [_vm._v("Training Semester :  ")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-2 md-radio md-radio-inline" }, [
+            _c("input", {
+              attrs: { type: "radio", name: "t_sem", id: "7", checked: "" }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "7" } }, [_vm._v("7")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-1 md-radio md-radio-inline" }, [
+            _c("input", { attrs: { type: "radio", name: "t_sem", id: "8" } }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "8" } }, [_vm._v("8")])
+          ])
         ])
       ])
     ])
@@ -49659,6 +49779,59 @@ return VueHtml5Editor;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(232);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("63f5c9f8", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-00b465e2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./profileForm.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-00b465e2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./profileForm.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 232 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n@-webkit-keyframes ripple-data-v-00b465e2 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n@keyframes ripple-data-v-00b465e2 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n.md-radio[data-v-00b465e2] {\n  margin: 16px 0;\n}\n.md-radio.md-radio-inline[data-v-00b465e2] {\n    display: inline-block;\n}\n.md-radio input[type=\"radio\"][data-v-00b465e2] {\n    display: none;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-00b465e2]:before {\n      border-color: #337ab7;\n      -webkit-animation: ripple-data-v-00b465e2 0.2s linear forwards;\n              animation: ripple-data-v-00b465e2 0.2s linear forwards;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-00b465e2]:after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n}\n.md-radio label[data-v-00b465e2] {\n    display: inline-block;\n    height: 20px;\n    position: relative;\n    padding: 0 30px;\n    margin-bottom: 0;\n    cursor: pointer;\n    vertical-align: bottom;\n}\n.md-radio label[data-v-00b465e2]:before, .md-radio label[data-v-00b465e2]:after {\n      position: absolute;\n      content: '';\n      border-radius: 50%;\n      -webkit-transition: all .3s ease;\n      transition: all .3s ease;\n      -webkit-transition-property: border-color, -webkit-transform;\n      transition-property: border-color, -webkit-transform;\n      transition-property: transform, border-color;\n      transition-property: transform, border-color, -webkit-transform;\n}\n.md-radio label[data-v-00b465e2]:before {\n      left: 0;\n      top: 0;\n      width: 20px;\n      height: 20px;\n      border: 2px solid rgba(0, 0, 0, 0.54);\n}\n.md-radio label[data-v-00b465e2]:after {\n      top: 5px;\n      left: 5px;\n      width: 10px;\n      height: 10px;\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      background: #337ab7;\n}\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);
