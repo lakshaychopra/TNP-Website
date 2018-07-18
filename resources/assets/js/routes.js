@@ -105,13 +105,13 @@ let routes = [{
          },
          children: [
              {
-                 path: '/terms',
-                 component: require('./views/student/tnc')
+                 path: '/req',
+                 component: require('./views/student/req')
              },
-             {
-                 path: '/profileForm',
-                 component: require('./views/student/profileForm')
-             },
+            //  {
+            //      path: '/profileForm',
+            //      component: require('./views/student/profileForm')
+            //  },
          ]
      },
 
@@ -199,18 +199,33 @@ router.beforeEach((to, from, next) => {
             } else if (to.matched.some(m => m.meta.userAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
-                            if (res.student_form_step == "N.A." && res.is_first_login == 0) {
+                    //    switch (res.student_form_step) {
+                    //        case "NA":
+                    //            if (res.is_first_login == 0) {
+                    //                return next({
+                    //                    path:'/terms'
+                    //                })
+                    //            }
+                    //            break;
+                    //        case "TC":
+                    //                 return next({
+                    //                     path:'/profileForm'
+                    //                 })
+                    //            break;
+                    //         default:
+                    //                 return next()
+                    //            break;
+                    //     }
+                        if (res.student_form_step == "SUBMITTED") {
+                            return next()
+                        }
+                        else{
                             return next({
-                                path:'/terms'
+                                path:'/req'
                             })
                         }
-                        else if (res.student_form_step == "TC") {
-                            return next({
-                                path:'/profileForm'
-                            })
-                        }
-                        return next()
-                    } else {
+                } 
+                    else {
                         return next({
                             path: '/home'
                         })
@@ -220,15 +235,24 @@ router.beforeEach((to, from, next) => {
                 else if (to.matched.some(m => m.meta.userloginAuth)) {
                     return helper.authUser().then(res => {
                         if (res.type == "STUDENT" ) {
-                            if (res.student_form_step == "N.A." && res.is_first_login == 0) {
-                                return next()
+                            if(res.student_form_step == "SUBMITTED"){
+                                return next({
+                                    path:'/userlogin'
+                                })
                             }
-                            else if (res.student_form_step == "TC") {
-                                return next()
-                            }
-                            return next({
-                                path:'/userlogin'
-                            })
+                            // switch (res.student_form_step) {
+                            //     case "NA":
+                            //         if (res.is_first_login == 0) {
+                            //             return next()
+                            //         }
+                            //         break;
+                            //     case "TC":
+                                
+                            //         break;    
+                            //     default:
+                            //         break;
+                            // }
+                            return next()
                         } else {
                             return next({
                                 path: '/home'

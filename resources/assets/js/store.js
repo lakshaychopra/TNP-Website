@@ -53,7 +53,7 @@ const store = new Vuex.Store({
 		    return state.auth[name];
 		},
 		getAuthUserFullName: (state) => {
-		    return state.auth['username']+' '+state.auth['phone_number'];
+		    return state.auth['username'];
 		},
 		getConfig: (state) => (name) => {
 		    return state.config[name];
