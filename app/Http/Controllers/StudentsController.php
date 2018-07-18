@@ -90,9 +90,10 @@ class StudentsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit(Student $student)
+    public function editStudent(Request $request)
     {
         $auth = JWTAuth::parseToken()->authenticate();
+        $student = Student::where('aadhaar_no', '=' , $request->aadhaar_no)->get();
         return $this->respondData($student);
     }
     
