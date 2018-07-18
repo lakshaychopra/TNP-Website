@@ -15,7 +15,7 @@ class CreateStudentSemesterMarksTable extends Migration
     {
         Schema::create('semester_marks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('univ_roll_no')->nullable();
+            $table->string('aadhaar_no')->nullable();
             $table->integer('semester')->nullable();
             $table->integer('marks_obtained')->nullable();
             $table->integer('sgpa')->nullable();

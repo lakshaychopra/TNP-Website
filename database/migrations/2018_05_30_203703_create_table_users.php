@@ -20,7 +20,7 @@ class CreateTableUsers extends Migration
             $table->string('email')->unique();
             $table->string('phone_number')->unique();
             $table->string('token_2fa')->nullable();
-            $table->enum('type', ['STUDENT', 'COMPANY', 'EXECUTIVE_MEMBER', 'MASTER_ADMIN'])->default('STUDENT');
+            $table->enum('type', ['STUDENT', 'COMPANY', 'EXECUTIVE_MEMBER', 'ADMIN'])->default('STUDENT');
             $table->string('provider_unique_id')->nullable();
             $table->string('activation_token',64)->nullable();
             $table->string('status',25)->nullable();

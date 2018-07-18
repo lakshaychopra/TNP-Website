@@ -59,7 +59,8 @@ class StudentsController extends Controller
             if (!$auth) {
                 return $this->respondUnauthorized('Post Failed');
             }
-            $data = $request->only('univ_roll_no');
+            $data = $request->only('aadhaar_no');
+            \Log::info($data);
             $student = new Student;
             $student->create($data);
             DB::commit();

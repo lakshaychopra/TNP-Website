@@ -9,7 +9,7 @@ Dear Student,
 @component('mail::table')
 | Details           | Values            |
 | :---------------: |:-----------------:|
-|University Roll No.|{{$username}}      |
+|Aadhaar No.        |{{$username}}      |
 |Phone Number       |{{$phone_number}}  |
 |Email              |{{$email}}         |
 @endcomponent

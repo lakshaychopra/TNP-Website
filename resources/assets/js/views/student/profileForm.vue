@@ -247,7 +247,7 @@
                     'id': this.$store.state.auth.userid,
                 },
                 username: {
-                    'univ_roll_no': this.$store.state.auth.username,
+                    'aadhaar_no': this.$store.state.auth.username,
                 },
             }
         },
@@ -256,7 +256,7 @@
                 return this.$store.getters.getAuthUser(name);
             },
             submit() {
-                console.log(this.tnc.id);
+                console.log(this.this.$store.state.auth.username);
                 axios.post(firstLoginURL, this.id).then(response => {
                     console.log(response);
                     if (response.status == 200) {

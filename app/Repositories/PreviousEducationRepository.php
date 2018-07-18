@@ -54,7 +54,7 @@ class PreviousEducationRepository
     private function setPayload(array $payload)
 	{
 		return [
-            'univ_roll_no'   => $payload['univ_roll_no'],
+            'aadhaar_no'     => $payload['aadhaar_no'],
             'board'          => $payload['board'],
             'month'          => $payload['month'],
             'year'           => $payload['year'],

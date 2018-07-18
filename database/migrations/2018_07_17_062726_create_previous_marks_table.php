@@ -15,7 +15,7 @@ class CreatePreviousMarksTable extends Migration
     {
         Schema::create('previous_education', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('univ_roll_no')->nullable();
+            $table->string('aadhaar_no')->nullable();
             $table->string('board')->nullable();
             $table->string('month')->nullable();
             $table->integer('year')->nullable();

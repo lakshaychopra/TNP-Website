@@ -8,8 +8,8 @@
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</h3>
                         <div class="form-group ">
                             <div class="col-xs-6">
-                                <label for="University Roll Number" hidden>University Roll No.</label>
-                                <input v-validate="'required|numeric|min:7|max:7'" type="text" name="rollno" class="form-control" placeholder="University Roll No." minlength="7" maxlength="7" autocomplete="on" v-model="registerForm.username">
+                                <label for="Aadhaar Number" hidden>Aadhaar No.</label>
+                                <input v-validate="'required|numeric|min:12|max:12'" type="text" name="rollno" class="form-control" placeholder="Aadhaar No." minlength="12" maxlength="12" autocomplete="on" v-model="registerForm.username">
                                 <small class="text-danger">{{ errors.first('rollno') }}</small>
 
                             </div>

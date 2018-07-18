@@ -24,7 +24,7 @@ class UserRegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'bail|required|min:7|exists:users,username', // make sure the username
+            'username' => 'bail|required|min:12|exists:users,username', // make sure the username
             'phone_number' => 'required|min:10|max:10', // password has to be greater than 3 characters
             'email' => 'required|min:6|email', // password has to be greater than 3 characters
         ];
