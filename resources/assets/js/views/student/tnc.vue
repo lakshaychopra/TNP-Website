@@ -78,7 +78,9 @@ export default {
                                         axios.post(storeStudentURL,this.username).then(resp => {
                                         if (resp.status == 200) {
                                             toastr['success']("User Added!!");
-                                            this.$router.push('/userlogin');
+                                            // this.$router.push('/userlogin');
+                                            this.$parent.step = 2;
+
                                         }
                                     }).catch(er => {
                                     console.log(er);
