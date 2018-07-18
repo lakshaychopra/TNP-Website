@@ -175,102 +175,108 @@ class UsersController extends Controller
     
     public function userCreateMail(){
         $auth = JWTAuth::parseToken()->authenticate();
+        if (!$auth) {
+            return $this->respondUnauthorized('Failed');
+        }
         $user = User::where([
             ['is_mailed','=',false],
             ['type','=','STUDENT']
             ])->get()->toArray();
             event(new UserCreatedEvent($user));
-            try
-            {
-                if (!$auth) {
-                    return $this->respondUnauthorized('Failed');
-                }
+            $this->respondSuccess('Mailed');
+        }
+        
+        public function userSingleCreateMail(){
+            $auth = JWTAuth::parseToken()->authenticate();
+            if (!$auth) {
+                return $this->respondUnauthorized('Failed');
+            }
+            $user = User::where([
+                ['is_mailed','=',false],
+                ['type','=','STUDENT']
+                ])->latest()->limit(1)->get()->toArray();
+                event(new UserSingleCreateEvent($user));
                 $this->respondSuccess('Mailed');
             }
-            catch(Exception $e){
-                $this->respondException($e);
-            }
-        }
-        
-        public function UserCreateForm(CreateUserRequest $request){
-            $auth = JWTAuth::parseToken()->authenticate();
-            try {
-                DB::beginTransaction();
-                if (!$auth) {
-                    return $this->respondUnauthorized('Failed');
+            
+            public function UserCreateForm(CreateUserRequest $request){
+                $auth = JWTAuth::parseToken()->authenticate();
+                try {
+                    DB::beginTransaction();
+                    if (!$auth) {
+                        return $this->respondUnauthorized('Failed');
+                    }
+                    $password = $request->only('password');
+                    $user = $request->all();
+                    $user['password'] = bcrypt(str_random(6));
+                    $userCreate = $this->service->createUser($user);
+                    DB::commit();
+                    $this->userSingleCreateMail();  
+                    return $this->respondSuccess('User Created Successfully', $userCreate);
                 }
-                $password = $request->only('password');
-                $user = $request->all();
-                $user['password'] = bcrypt(str_random(6));
-                $userCreate = $this->service->createUser($user);
-                DB::commit();
-                // event(new UserSingleCreateEvent($request->email));
-                // $this->userCreateMail();  
-                return $this->respondSuccess('User Created Successfully', $userCreate);
-            }
-            catch (Exception $e) {
-                DB::rollback();
-                return $this->respondException($e);
-            }
-        }
-        
-        public function UpdateFormStatus(Request $request){
-            $auth = JWTAuth::parseToken()->authenticate();
-            try {
-                DB::beginTransaction();
-                if (!$auth) {
-                    return $this->respondUnauthorized('Failed');
+                catch (Exception $e) {
+                    DB::rollback();
+                    return $this->respondException($e);
                 }
-                $id = $request->id;
-                $user = User::find($id);
-                $user->form_status = $request->form_status;
-                $user->save();
-                DB::commit();
-                return $this->respondData($user);
             }
-            catch (Exception $e) {
-                DB::rollback();
-                return $this->respondException($e);
-            }
-        }
-
-        public function FirstLogin(Request $request){
-            $auth = JWTAuth::parseToken()->authenticate();
-            try {
-                DB::beginTransaction();
-                if (!$auth) {
-                    return $this->respondUnauthorized('Failed');
+            
+            public function UpdateFormStatus(Request $request){
+                $auth = JWTAuth::parseToken()->authenticate();
+                try {
+                    DB::beginTransaction();
+                    if (!$auth) {
+                        return $this->respondUnauthorized('Failed');
+                    }
+                    $id = $request->id;
+                    $user = User::find($id);
+                    $user->form_status = $request->form_status;
+                    $user->save();
+                    DB::commit();
+                    return $this->respondData($user);
                 }
-                $id = $request->id;
-                $user = User::find($id);
-                $user->is_first_login = 1;
-                $user->save();
-                DB::commit();
-                return $this->respondData($user);
-            }
-            catch (Exception $e) {
-                DB::rollback();
-                return $this->respondException($e);
-            }
-        }
-
-        public function UpdateFormSteps(Request $request){
-            $auth = JWTAuth::parseToken()->authenticate();
-            try {
-                DB::beginTransaction();
-                if (!$auth) {
-                    return $this->respondUnauthorized('Failed');
+                catch (Exception $e) {
+                    DB::rollback();
+                    return $this->respondException($e);
                 }
-                $id = $request->id;
-                $user = User::find($id);
-                $user->student_form_step = $request->student_form_step;
-                $user->save();
-                DB::commit();
-                return $this->respondData($user);
             }
-            catch (Exception $e) {
-                DB::rollback();
-                return $this->respondException($e);
+            
+            public function FirstLogin(Request $request){
+                $auth = JWTAuth::parseToken()->authenticate();
+                try {
+                    DB::beginTransaction();
+                    if (!$auth) {
+                        return $this->respondUnauthorized('Failed');
+                    }
+                    $id = $request->id;
+                    $user = User::find($id);
+                    $user->is_first_login = 1;
+                    $user->save();
+                    DB::commit();
+                    return $this->respondData($user);
+                }
+                catch (Exception $e) {
+                    DB::rollback();
+                    return $this->respondException($e);
+                }
+            }
+            
+            public function UpdateFormSteps(Request $request){
+                $auth = JWTAuth::parseToken()->authenticate();
+                try {
+                    DB::beginTransaction();
+                    if (!$auth) {
+                        return $this->respondUnauthorized('Failed');
+                    }
+                    $id = $request->id;
+                    $user = User::find($id);
+                    $user->student_form_step = $request->student_form_step;
+                    $user->save();
+                    DB::commit();
+                    return $this->respondData($user);
+                }
+                catch (Exception $e) {
+                    DB::rollback();
+                    return $this->respondException($e);
+                }
             }
         }
-    }

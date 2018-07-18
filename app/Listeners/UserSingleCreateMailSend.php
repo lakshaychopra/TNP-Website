@@ -30,7 +30,14 @@ class UserSingleCreateMailSend
     */
     public function handle(UserSingleCreateEvent $event)
     {
-        $user = $event->user;
-        Mail::to($user->email)->queue(new UserSingleCreateEmail($user));
+        try {
+            $user = $event->user;
+            foreach ($user as $row) {
+                $mail=$row['email'];
+                Mail::to($mail)->queue(new UserSingleCreateEmail($row));
+            }
+        } catch(\Exception $e) {
+            return $this->respondException($e);
+        }
     }
 }

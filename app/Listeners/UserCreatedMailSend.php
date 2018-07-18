@@ -36,7 +36,7 @@ class UserCreatedMailSend
                 Mail::to($mail)->queue(new UserCreateEmail($row));
             }
         } catch(\Exception $e) {
-            \Log::info($e);
+            return $this->respondException($e);
         }
     }
 }

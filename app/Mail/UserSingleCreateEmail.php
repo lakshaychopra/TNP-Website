@@ -31,10 +31,12 @@ class UserSingleCreateEmail extends Mailable
     public function build()
     {
         $params = [
-            'user' => $this->user,
+            'username' => $this->user['username'],
+            'email' =>  $this->user['email'],
+            'phone_number' =>  $this->user['phone_number']
         ];
         
-        return $this->markdown('emails.users.userSingleCreated',$params)
+        return $this->markdown('emails.users.userCreated',$params)
         ->subject(trans('messages.email.userCreatedMailSendSubject'));
     }
 }
