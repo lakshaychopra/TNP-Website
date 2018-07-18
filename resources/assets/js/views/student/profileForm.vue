@@ -11,7 +11,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Name" class="form-control">
+                                        <input type="text" name="name"  placeholder="Name" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -45,12 +45,12 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Height" class="form-control">
+                                        <input type="text" name="height"  placeholder="Height" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Weight" class="form-control">
+                                        <input type="text" name="weight"  placeholder="Weight" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -74,12 +74,17 @@
                             <h2 class="card-title mt-3 text-primary">Acadaemic Details</h2>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Class Roll No." class="form-control">
+                                        <input type="text" name="uniRoll"  placeholder="University Roll No." class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" name="classRoll"  placeholder="Class Roll No." class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <select name="living" class="form-control">
                                             <option selected disabled>Hosteller / Day Scholar</option>
@@ -92,7 +97,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Batch" class="form-control">
+                                        <input type="text" name="batch"  placeholder="Batch" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -108,7 +113,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <!-- <input type="text" name="name" required="required" placeholder="Stream" class="form-control"> -->
+                                        <!-- <input type="text" name="name"  placeholder="Stream" class="form-control"> -->
                                         <select name="stream" class="form-control">
                                             <option selected disabled>Stream</option>
                                             <option value="">Civil Engineering</option>
@@ -126,7 +131,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Section" class="form-control">
+                                        <input type="text" name="section"  placeholder="Section" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -140,11 +145,10 @@
                                 </div>
                                 <div class="col-md-6">
                                      <div class="form-group">
-                                        <label for="" class="col-md-3 col-form-label">Training Semester :  </label>
-                                        <div class="col-md-2 md-radio md-radio-inline">
+                                        <label for="" class="col-md-4 col-form-label">Training Semester :  </label>
+                                        <div class="col-md-1 md-radio md-radio-inline">
                                             <input type="radio" name="t_sem" id="7" checked>       
                                             <label for="7">7</label>
-
                                         </div>
                                         <div class="col-md-1 md-radio md-radio-inline">
                                             <input type="radio" name="t_sem" id="8" >     
@@ -159,24 +163,24 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Father's Name" class="form-control">
+                                        <input type="text" name="fname"  placeholder="Father's Name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Father's Phone" class="form-control">
+                                        <input type="text" name="fphone"  placeholder="Father's Phone" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Mother's Name" class="form-control">
+                                        <input type="text" name="mname"  placeholder="Mother's Name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Mother's Phone" class="form-control">
+                                        <input type="text" name="mphone"  placeholder="Mother's Phone" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -186,29 +190,29 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Address" class="form-control">
+                                        <input type="text" name="address"  placeholder="Address" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="City" class="form-control">
+                                        <input type="text" name="city"  placeholder="City" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="District" class="form-control">
+                                        <input type="text" name="district"  placeholder="District" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="State" class="form-control">
+                                        <input type="text" name="state"  placeholder="State" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="name" required="required" placeholder="Pincode" class="form-control">
+                                        <input type="text" name="pincode"  placeholder="Pincode" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -227,59 +231,46 @@
     </div>
 </template>
 <script>
-    import {
-        firstLoginURL
-    } from "../../config.js";
-    import {
-        statusChangeURL
-    } from "../../config.js";
-    import {
-        storeStudentURL
-    } from "../../config.js";
+    import { updateProfileURL } from "../../config.js";
+    import { fetchProfileURL } from "../../config.js";
     export default {
         data() {
             return {
                 id: {
                     'id': this.$store.state.auth.userid,
+                    student:{}
                 },
-                tnc: {
-                    'form_status': 'pending',
-                    'id': this.$store.state.auth.userid,
-                },
-                username: {
+                 profile: {
                     'aadhaar_no': this.$store.state.auth.username,
                 },
             }
         },
-        methods: {
-            getAuthUser(name) {
-                return this.$store.getters.getAuthUser(name);
-            },
-            submit() {
-                console.log(this.this.$store.state.auth.username);
-                axios.post(firstLoginURL, this.id).then(response => {
+         created(){
+            axios.get('/api/dashboard/student/' + this.$store.state.auth.username +'/edit').then(response => {
                     console.log(response);
                     if (response.status == 200) {
-                        axios.post(statusChangeURL, this.tnc).then(res => {
-                            console.log(res);
-                            if (res.status == 200) {
-                                axios.post(storeStudentURL, this.username).then(resp => {
-                                    console.log(res);
-                                    if (resp.status == 200) {
-                                        toastr['success']("User Added!!");
-                                        this.$router.push('/userlogin');
-                                    }
-                                }).catch(erro => {
-                                    console.log(erro);
-                                });
-                            }
-                        }).catch(err => {
-                            console.log(err);
-                        });
+                        
                     }
                 }).catch(error => {
                     console.log(error);
                 });
+         },
+        methods: {
+
+            getAuthUser(name) {
+                return this.$store.getters.getAuthUser(name);
+            },
+            submit() {
+                console.log(this.$store.state.auth.username);
+                console.log('1');
+                // axios.post(firstLoginURL, this.id).then(response => {
+                //     console.log(response);
+                //     if (response.status == 200) {
+                        
+                //     }
+                // }).catch(error => {
+                //     console.log(error);
+                // });
             }
         }
     }

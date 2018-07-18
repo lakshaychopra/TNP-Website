@@ -38,6 +38,7 @@ export default {
                             }
                         }
                     })
+      
     },
     updated(){
                 return helper.authUser().then(res => {

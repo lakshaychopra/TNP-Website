@@ -23,3 +23,4 @@ export const firstLoginURL = '/api/dashboard/user/first/login'
 export const statusChangeURL = '/api/dashboard/user/status/update'
 export const storeStudentURL = '/api/dashboard/student'
 
+export const updateProfileURL = 'api/dashboard/student/'

@@ -40,10 +40,10 @@
                 </ul>
             </div>
         </nav>
-        <form action="/" method="GET" v-if="search" class="d-sm-none">
+        <form action="/" method="GET" v-if="search_input" class="d-sm-none">
             <div class="row bg-col-grey">
                 <div class="col-md-11">
-                    <input id="mr-btm-10" class="form-control" type="text" autocomplete="on" placeholder="Search">
+                    <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on" placeholder="Search">
                 </div>
                 <div class="col-md-1">
                     <button class="btn btn-block btn-info" type="submit">
@@ -169,7 +169,7 @@
                             </ul> -->
                                     <span v-if="post.body.length>400">
                                         <div class="mb-3 show-read-more" v-html="gethtml(post.body)" id="bg-trans" style="padding: 10px;background-color: #f6f6f6;"></div>
-                                        <button class="btn btn-block text-center"><router-link :to="{ path: 'view/'+post.id}"><a href="" style="color: #333;">Read More <i class="fa fa-plus"></i></a></router-link></button>
+                                        <button class="btn btn-block text-center" @click="gethtml(post.body)"><a href="" style="color: #333;">Read More <i class="fa fa-plus"></i></a></button>
                                     </span>
                                     <span v-else>
                                         <div class="mb-3 show-read-more" v-html="post.body"></div>

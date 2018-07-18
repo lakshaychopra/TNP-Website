@@ -320,6 +320,7 @@ var _this = this;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return firstLoginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return statusChangeURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return storeStudentURL; });
+/* unused harmony export updateProfileURL */
 var apiDomain = 'http://localhost:8000';
 
 var loginURL = '/api/login';
@@ -344,6 +345,8 @@ var formstepChangeURL = '/api/dashboard/user/step/update';
 var firstLoginURL = '/api/dashboard/user/first/login';
 var statusChangeURL = '/api/dashboard/user/status/update';
 var storeStudentURL = '/api/dashboard/student';
+
+var updateProfileURL = 'api/dashboard/student/';
 
 /***/ }),
 /* 3 */
@@ -23770,14 +23773,48 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _vm.search
+        _vm.search_input
           ? _c(
               "form",
               {
                 staticClass: "d-sm-none",
                 attrs: { action: "/", method: "GET" }
               },
-              [_vm._m(2)]
+              [
+                _c("div", { staticClass: "row bg-col-grey" }, [
+                  _c("div", { staticClass: "col-md-11" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.search,
+                          expression: "search"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "mr-btm-10",
+                        type: "text",
+                        autocomplete: "on",
+                        placeholder: "Search"
+                      },
+                      domProps: { value: _vm.search },
+                      on: {
+                        keyup: _vm.searchPost,
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.search = $event.target.value
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ])
+              ]
             )
           : _vm._e()
       ]
@@ -23892,34 +23929,15 @@ var render = function() {
                                     _c(
                                       "button",
                                       {
-                                        staticClass: "btn btn-block text-center"
+                                        staticClass:
+                                          "btn btn-block text-center",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.gethtml(post.body)
+                                          }
+                                        }
                                       },
-                                      [
-                                        _c(
-                                          "router-link",
-                                          {
-                                            attrs: {
-                                              to: { path: "view/" + post.id }
-                                            }
-                                          },
-                                          [
-                                            _c(
-                                              "a",
-                                              {
-                                                staticStyle: { color: "#333" },
-                                                attrs: { href: "" }
-                                              },
-                                              [
-                                                _vm._v("Read More "),
-                                                _c("i", {
-                                                  staticClass: "fa fa-plus"
-                                                })
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ],
-                                      1
+                                      [_vm._m(5, true)]
                                     )
                                   ])
                                 : _c("span", [
@@ -23932,7 +23950,7 @@ var render = function() {
                               _c("div", { staticClass: "clearfix" }),
                               _vm._v(" "),
                               _c("div", { staticClass: "post-share" }, [
-                                _vm._m(5, true),
+                                _vm._m(6, true),
                                 _vm._v(" "),
                                 _c(
                                   "div",
@@ -23994,7 +24012,7 @@ var render = function() {
             2
           ),
           _vm._v(" "),
-          _vm._m(6)
+          _vm._m(7)
         ])
       ])
     ])
@@ -24052,31 +24070,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row bg-col-grey" }, [
-      _c("div", { staticClass: "col-md-11" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            id: "mr-btm-10",
-            type: "text",
-            autocomplete: "on",
-            placeholder: "Search"
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-1" }, [
-        _c(
-          "button",
-          { staticClass: "btn btn-block btn-info", attrs: { type: "submit" } },
-          [
-            _c("i", {
-              staticClass: "fa fa-search",
-              attrs: { "aria-hidden": "true" }
-            })
-          ]
-        )
-      ])
+    return _c("div", { staticClass: "col-md-1" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-block btn-info", attrs: { type: "submit" } },
+        [
+          _c("i", {
+            staticClass: "fa fa-search",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
+      )
     ])
   },
   function() {
@@ -24148,6 +24152,15 @@ var staticRenderFns = [
           _c("h3", [_vm._v("No results found.")])
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticStyle: { color: "#333" }, attrs: { href: "" } }, [
+      _vm._v("Read More "),
+      _c("i", { staticClass: "fa fa-plus" })
     ])
   },
   function() {
@@ -33895,7 +33908,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -34588,7 +34601,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
+//
 
 
 
@@ -34596,16 +34612,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             id: {
-                'id': this.$store.state.auth.userid
+                'id': this.$store.state.auth.userid,
+                student: {}
             },
-            tnc: {
-                'form_status': 'pending',
-                'id': this.$store.state.auth.userid
-            },
-            username: {
+            profile: {
                 'aadhaar_no': this.$store.state.auth.username
             }
         };
+    },
+    created: function created() {
+        axios.get('/api/dashboard/student/' + this.$store.state.auth.username + '/edit').then(function (response) {
+            console.log(response);
+            if (response.status == 200) {}
+        }).catch(function (error) {
+            console.log(error);
+        });
     },
 
     methods: {
@@ -34613,32 +34634,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.$store.getters.getAuthUser(name);
         },
         submit: function submit() {
-            var _this = this;
+            console.log(this.$store.state.auth.username);
+            console.log('1');
+            // axios.post(firstLoginURL, this.id).then(response => {
+            //     console.log(response);
+            //     if (response.status == 200) {
 
-            console.log(this.this.$store.state.auth.username);
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["e" /* firstLoginURL */], this.id).then(function (response) {
-                console.log(response);
-                if (response.status == 200) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["o" /* statusChangeURL */], _this.tnc).then(function (res) {
-                        console.log(res);
-                        if (res.status == 200) {
-                            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["p" /* storeStudentURL */], _this.username).then(function (resp) {
-                                console.log(res);
-                                if (resp.status == 200) {
-                                    toastr['success']("User Added!!");
-                                    _this.$router.push('/userlogin');
-                                }
-                            }).catch(function (erro) {
-                                console.log(erro);
-                            });
-                        }
-                    }).catch(function (err) {
-                        console.log(err);
-                    });
-                }
-            }).catch(function (error) {
-                console.log(error);
-            });
+            //     }
+            // }).catch(error => {
+            //     console.log(error);
+            // });
         }
     }
 });
@@ -34723,12 +34728,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Name"
-            }
+            attrs: { type: "text", name: "name", placeholder: "Name" }
           })
         ])
       ])
@@ -34797,12 +34797,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Height"
-            }
+            attrs: { type: "text", name: "height", placeholder: "Height" }
           })
         ])
       ]),
@@ -34811,12 +34806,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Weight"
-            }
+            attrs: { type: "text", name: "weight", placeholder: "Weight" }
           })
         ])
       ]),
@@ -34857,21 +34847,33 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [
+      _c("div", { staticClass: "col-md-4" }, [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
             attrs: {
               type: "text",
-              name: "name",
-              required: "required",
+              name: "uniRoll",
+              placeholder: "University Roll No."
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              name: "classRoll",
               placeholder: "Class Roll No."
             }
           })
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-6" }, [
+      _c("div", { staticClass: "col-md-4" }, [
         _c("div", { staticClass: "form-group" }, [
           _c(
             "select",
@@ -34899,12 +34901,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Batch"
-            }
+            attrs: { type: "text", name: "batch", placeholder: "Batch" }
           })
         ])
       ]),
@@ -34983,12 +34980,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Section"
-            }
+            attrs: { type: "text", name: "section", placeholder: "Section" }
           })
         ])
       ]),
@@ -35015,11 +35007,11 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c(
             "label",
-            { staticClass: "col-md-3 col-form-label", attrs: { for: "" } },
+            { staticClass: "col-md-4 col-form-label", attrs: { for: "" } },
             [_vm._v("Training Semester :  ")]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-2 md-radio md-radio-inline" }, [
+          _c("div", { staticClass: "col-md-1 md-radio md-radio-inline" }, [
             _c("input", {
               attrs: { type: "radio", name: "t_sem", id: "7", checked: "" }
             }),
@@ -35045,12 +35037,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Father's Name"
-            }
+            attrs: { type: "text", name: "fname", placeholder: "Father's Name" }
           })
         ])
       ]),
@@ -35061,8 +35048,7 @@ var staticRenderFns = [
             staticClass: "form-control",
             attrs: {
               type: "text",
-              name: "name",
-              required: "required",
+              name: "fphone",
               placeholder: "Father's Phone"
             }
           })
@@ -35079,12 +35065,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Mother's Name"
-            }
+            attrs: { type: "text", name: "mname", placeholder: "Mother's Name" }
           })
         ])
       ]),
@@ -35095,8 +35076,7 @@ var staticRenderFns = [
             staticClass: "form-control",
             attrs: {
               type: "text",
-              name: "name",
-              required: "required",
+              name: "mphone",
               placeholder: "Mother's Phone"
             }
           })
@@ -35113,12 +35093,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Address"
-            }
+            attrs: { type: "text", name: "address", placeholder: "Address" }
           })
         ])
       ]),
@@ -35127,12 +35102,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "City"
-            }
+            attrs: { type: "text", name: "city", placeholder: "City" }
           })
         ])
       ])
@@ -35147,12 +35117,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "District"
-            }
+            attrs: { type: "text", name: "district", placeholder: "District" }
           })
         ])
       ]),
@@ -35161,12 +35126,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "State"
-            }
+            attrs: { type: "text", name: "state", placeholder: "State" }
           })
         ])
       ]),
@@ -35175,12 +35135,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "name",
-              required: "required",
-              placeholder: "Pincode"
-            }
+            attrs: { type: "text", name: "pincode", placeholder: "Pincode" }
           })
         ])
       ])
