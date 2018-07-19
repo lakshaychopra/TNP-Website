@@ -23924,35 +23924,68 @@ var render = function() {
                             _vm._v(" "),
                             _c("div", { staticClass: "card-body" }, [
                               post.body.length > 400
-                                ? _c("span", [
-                                    _c("div", {
-                                      staticClass: "mb-3 show-read-more",
-                                      staticStyle: {
-                                        padding: "10px",
-                                        "background-color": "#f6f6f6"
-                                      },
-                                      attrs: { id: "bg-trans" },
-                                      domProps: {
-                                        innerHTML: _vm._s(
-                                          _vm.gethtml(post.body)
-                                        )
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "button",
-                                      {
-                                        staticClass:
-                                          "btn btn-block text-center",
-                                        on: {
-                                          click: function($event) {
+                                ? _c(
+                                    "span",
+                                    [
+                                      _c("div", {
+                                        staticClass: "mb-3 show-read-more",
+                                        staticStyle: {
+                                          padding: "10px",
+                                          "background-color": "#f6f6f6"
+                                        },
+                                        attrs: { id: "bg-trans" },
+                                        domProps: {
+                                          innerHTML: _vm._s(
                                             _vm.gethtml(post.body)
-                                          }
+                                          )
                                         }
-                                      },
-                                      [_vm._m(5, true)]
-                                    )
-                                  ])
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "router-link",
+                                        {
+                                          attrs: {
+                                            to: {
+                                              name: "view",
+                                              params: { id: post.id }
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn btn-block text-center",
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.gethtml(post.body)
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "a",
+                                                {
+                                                  staticStyle: {
+                                                    color: "#333"
+                                                  },
+                                                  attrs: { href: "" }
+                                                },
+                                                [
+                                                  _vm._v("Read More "),
+                                                  _c("i", {
+                                                    staticClass: "fa fa-plus"
+                                                  })
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
                                 : _c("span", [
                                     _c("div", {
                                       staticClass: "mb-3 show-read-more",
@@ -23963,7 +23996,7 @@ var render = function() {
                               _c("div", { staticClass: "clearfix" }),
                               _vm._v(" "),
                               _c("div", { staticClass: "post-share" }, [
-                                _vm._m(6, true),
+                                _vm._m(5, true),
                                 _vm._v(" "),
                                 _c(
                                   "div",
@@ -24025,7 +24058,7 @@ var render = function() {
             2
           ),
           _vm._v(" "),
-          _vm._m(7)
+          _vm._m(6)
         ])
       ])
     ])
@@ -24165,15 +24198,6 @@ var staticRenderFns = [
           _c("h3", [_vm._v("No results found.")])
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticStyle: { color: "#333" }, attrs: { href: "" } }, [
-      _vm._v("Read More "),
-      _c("i", { staticClass: "fa fa-plus" })
     ])
   },
   function() {
