@@ -1,16 +1,23 @@
 <template>
     <div>
-         <!-- <div class="sticky-top" style="z-index:1022;">
+         <div class="sticky-top" style="z-index:1022;">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
             <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
             <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
             <div class="navbar-header">
+                <!-- Navbar links -->
+                <div class="navbar-text d-md-none">
+                    
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
             </div>
             <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                <div class="mr-auto d-none d-md-block w-65">
+                </div>
                 <ul class="nav navbar-nav" id="list-menu">
                     <li class="nav-item">
                         <a class="nav-link" href="/about"><i class="fa fa-users" aria-hidden="true"></i> About</a>
@@ -21,8 +28,7 @@
                 </ul>
             </div>
         </nav>
-
-    </div> -->
+         </div>
     <div class="bg-gray">
         <div class="container py-4">
             <div class="row">
@@ -84,7 +90,9 @@ export default {
     data() {
             return {
                 post:{},
-                id:this.$route.params.id
+                id:this.$route.params.id,
+                postEdit: {},
+                posts: {},
             }
     },
     created(){
@@ -96,6 +104,26 @@ export default {
           .catch((error) => console.log(error))
     },
     methods: {
+         gethtml(text){
+                var maxLength = 400 // maximum number of characters to extract
+                //trim the string to the maximum length
+                var trimmedString = text.substr(0, maxLength);
+                //re-trim if we are in the middle of a word
+                trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+                return trimmedString;
+            },
+            getrecord(record){
+                this.posts = record.data.data.data;
+            },
+            // searchPost(){
+            //     if(this.search.length >=3){
+            //         axios.get(searchURL+this.search)
+            //             .then(response => this.posts = response.data.data.data)
+            //     }
+            //     else{
+            //         this.getPosts();
+            //     }
+            // },        
             getImage(index) {
                 return "background: url(/images/posts/images/" + index +
                     ") center no-repeat;    background-size: cover;";
