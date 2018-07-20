@@ -10,6 +10,10 @@ class User extends Authenticatable implements JWTSubject
 {
     use  Notifiable;
     
+    const USER_TYPE_STUDENT = 'STUDENT';
+    const USER_TYPE_MEMBER = 'MEMBER';
+    const USER_TYPE_ADMIN = 'ADMIN';
+
     /**
     * Table mentioned users
     *
@@ -47,6 +51,26 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+/**
+     * get logged user profile
+     * 
+     * @return Object
+     */
+    public function profile()
+    {        
+        switch ($this->type) {
+            case self::USER_TYPE_STUDENT:
+                return $this->hasOne(Student::class);
+                break;
+            case self::USER_TYPE_ADMIN:
+                return $this->hasOne(Admin::class);
+                break;
+            default:
+                return $this->hasOne(Member::class);
+                break;
+        }
     }
 
     // public function profile() {

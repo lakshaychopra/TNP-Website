@@ -65,4 +65,10 @@ class HomeController extends Controller
         $post= Post::orderBy('created_at', 'desc');
         return $this->respondData($post);
     }
+
+    public function viewPinned()
+    {
+        $data = Post::where('is_pinned', '=', true)->get();
+        return $this->respondData($data);
+    }
 }

@@ -209,4 +209,11 @@ class PostController extends Controller
         $post= Post::orderBy('created_at', 'desc');
         return $this->respondData($post);
     }
+
+    public function viewPinned(Post $post)
+    {
+        $auth = JWTAuth::parseToken()->authenticate();
+        $post = Post::where('is_pinned', '=', true)->get();
+        return $this->respondData($post);
+    }
 }
