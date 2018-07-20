@@ -170,7 +170,7 @@
                             </ul> -->
                                     <span v-if="post.body.length>400">
                                         <div class="mb-3 show-read-more" v-html="gethtml(post.body)" id="bg-trans" style="padding: 10px;background-color: #f6f6f6;"></div>
-                                        <button class="btn btn-block text-center" @click="gethtml(post.body)"><a href="" style="color: #333;">Read More <i class="fa fa-plus"></i></a></button>
+                                        <router-link  :to="{ name: 'view', params: { id:post.id }}"><button class="btn btn-block text-center" @click="gethtml(post.body)"><a href="" style="color: #333;">Read More <i class="fa fa-plus"></i></a></button></router-link>
                                     </span>
                                     <span v-else>
                                         <div class="mb-3 show-read-more" v-html="post.body"></div>
@@ -233,23 +233,36 @@
                                                     <img src="/images/sodhi.jpg" width="60%" alt="">
                                                 </div>
                                               <div class="row">
-                                                  <div class="col-md-12">
-                                                      <p class="mb-0"><strong>Dr. G. S. SODHI</strong></p>
+                                                  <div class="col-md-2">
+                                                    
+                                                </div>
+                                                  <div class="col-md-10">
+                                                      <p class="mb-0"><strong>Prof. G. S. SODHI</strong></p>
                                                   </div> 
                                               </div>
                                               <div class="row">
-                                                  <div class="col-md-12">
+                                                  <div class="col-md-2">
+                                                    
+                                                </div>
+                                                  <div class="col-md-10">
                                                       <small>Officer (Training & Placement)</small>
                                                   </div> 
                                               </div>
-                                              <div class="row">
-                                                  <div class="col-md-12">
-                                                      <small>E-mail: gssodhi@gndec.ac.in</small>
+                                              <div class="row mt-2">
+                                                <div class="col-md-2">
+                                                    <i class="fa fa-envelope mt-1"  aria-hidden="true"></i>
+                                                </div>
+                                                  <div class="col-md-10">
+                                                      <small><a href="mailto:gssodhi@gndec.ac.in" target="_blank">gssodhi@gndec.ac.in</a></small>
                                                   </div> 
                                               </div>  
-                                            <div class="row">
-                                                  <div class="col-md-12">
-                                                      <small>Cell: 9999999999</small>
+                                            <div class="row mt-1">
+                                 
+                                                <div class="col-md-2">
+                                                    <i class="fa fa-phone mt-1"  aria-hidden="true"></i>
+                                                </div>
+                                                  <div class="col-md-10">
+                                                      <small>9999999999</small>
                                                   </div> 
                                               </div>  
                                                 

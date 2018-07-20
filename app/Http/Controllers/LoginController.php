@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\TwoFactorRequest;
+use App\Http\Requests\SetPasswordRequest;
+use App\Http\Requests\UserRegisterRequest;
 use App\Services\LoginService;
 use DB;
 use \Carbon\Carbon;
@@ -102,4 +104,48 @@ class LoginController extends Controller
         $user = JWTAuth::parseToken()->authenticate();
         return response()->json($user);
     }
+
+    public function verify(UserRegisterRequest $request)
+    {
+        $values = $request->all();
+        $user = User::where([
+            ['username', '=',$values['username']],
+            [ 'email', '=',$values['email']],
+            ['phone_number', '=',$values['phone_number']]
+            ])->first();
+            if (!$token = JWTAuth::fromUser($user)) {
+                return $this->respondUnauthorized();
+            }
+            try{
+                $data = [
+                    'access_token' => $token,
+                    'authenticated' => true,
+                    'user'=> $user
+                ];
+                return $this->respondSuccess('User Verified', $data);
+            }   
+            catch(JWTException $e)
+            {
+                DB::rollback();
+                return $this->respondException($e);
+            }   
+        }  
+        
+        public function resetPassword(SetPasswordRequest $request){
+            $auth = JWTAuth::parseToken()->authenticate();
+            $password = $request->only('password');
+            $user = JWTAuth::user();
+            try{
+                DB::beginTransaction();
+                $user->password = bcrypt($password['password']);
+                $user->save();
+                DB::commit();
+                return $this->respondSuccess('Congrats!! Your password has been changed successfully!', $user);
+            }
+            catch(JWTException $e)
+            {
+                DB::rollback();
+                return $this->respondException($e);
+            }   
+        }
 }
