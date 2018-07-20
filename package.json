@@ -9,7 +9,8 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "wizard": "workbox wizard",
-        "workbox-generate": "workbox generateSW workbox-config.js"
+        "workbox-generate": "workbox generateSW workbox-config.js",
+        "workbox-inject": "workbox injectManifest workbox-config.js"
     },
     "devDependencies": {
         "autoprefixer": "7.2.3",
