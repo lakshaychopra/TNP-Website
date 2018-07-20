@@ -4,15 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
+    {{--  <!-- Tell the browser to be responsive to screen width -->  --}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <meta name="description" content="This is official application of Training and Placemant Cell, GNDEC, Ludhiana.">
-    <meta name="author" content="Sanjampreet Singh, Karamveer Singh">
+    <meta name="author" content="co-authored by Sanjampreet Singh, Karamveer Singh">
+    <meta name="keywords" content="gndec,gne,t&p,cell">
     <meta name="theme-color" content="#038ed4">
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+    {{--  OG Tags   --}}
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Training and Placemant Cell">
+	{{--  <meta property="og:url" content="">  --}}
+	<meta property="og:site_name" content="T&P">
+	<meta property="og:description" content="This is official application of Training and Placemant Cell, GNDEC, Ludhiana.">
+	<meta property="og:image" content="{{asset('/images/icons/180x180.png')}}">
+	<meta property="og:locale" content="en_US">
 
-    <title>Laravel</title>
+
+    <title>Training and Placemant Cell</title>
 
     <link href="/css/style.css" rel="stylesheet">
     <link rel="manifest" href="{{asset('manifest.json')}}">
