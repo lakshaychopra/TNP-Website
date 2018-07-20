@@ -29,6 +29,7 @@ Route::post('/register', 'RegisterController@register');
 Route::resource('/home', 'HomeController');
 Route::get('/home/view/{postID?}', 'HomeController@showPost');
 Route::get('/home/post/search/{term?}', 'HomeController@HomePostSearch');
+Route::get('/home/post/view/{category?}', 'HomeController@HomeCategoryView');
 //Protected routes
 Route::group(['middleware' => 'jwt.auth'], function() {
     // Login Controller
@@ -44,8 +45,8 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::post('/post/markasread', 'PostController@MarkAsRead');
         Route::post('/post/markasunread', 'PostController@MarkAsUnRead');
         Route::get('/post/search/{term?}', 'PostController@PostSearch');
-        Route::put('/post/pinned/{post}', 'PostController@pinned');
-        Route::put('/post/unpinned/{post}', 'PostController@unpinned');
+        Route::put('/post/pinned/{post?}', 'PostController@pinned');
+        Route::put('/post/unpinned/{post?}', 'PostController@unpinned');
         
         // Users Controller
         Route::resource('/user', 'UsersController');

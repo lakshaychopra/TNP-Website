@@ -37,7 +37,18 @@ class HomeController extends Controller
     {
         if ($postID != null){
             $post['data'] = Post::where('id', '=', $postID)
-                ->get();
+            ->get();
+            return $this->respondData($post);
+        }
+        $post = Post::orderBy('created_at', 'desc');
+        return $this->respondData($post);
+    }
+    
+    public function HomeCategoryView($category=null)
+    {
+        if ($category != null){
+            $post['data'] = Post::where('category', '=', $category)
+            ->get();
             return $this->respondData($post);
         }
         $post = Post::orderBy('created_at', 'desc');
