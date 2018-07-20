@@ -60,7 +60,6 @@ class StudentsController extends Controller
                 return $this->respondUnauthorized('Post Failed');
             }
             $data = $request->only('aadhaar_no');
-            \Log::info($data);
             $student = new Student;
             $student->create($data);
             DB::commit();
