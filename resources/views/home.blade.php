@@ -30,7 +30,7 @@
     <link rel="apple-touch-icon" href="{{asset('/images/icons/152x152.png')}}" sizes="152x152">
     <link rel="apple-touch-icon" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180">
     <meta name="msapplication-TileImage" content="{{asset('/images/icons/144x144.png')}}">
-    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileColor" content="#038ed4">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
