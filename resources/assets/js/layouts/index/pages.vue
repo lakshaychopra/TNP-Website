@@ -123,20 +123,19 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <h3>No results found.</h3>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row justify-content-center" v-for="post in posts" :key="post.id" id="posts" v-else>
                             <div class="col-md-12">
-
                                 <div class="card card-primary">
-
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-md-1 d-none d-md-block mr-2">
-                                                <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
+                                                <a href="/">
+                                                    <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
+                                                </a>
                                             </div>
                                             <div class="col-md-10">
                                                 <div class="row">
@@ -159,7 +158,13 @@
                                                         <div class="pull-right">
                                                             <!-- <small> -->
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
-                                                            <div class="post-meta-text col-primary ">{{post.category}}</div>
+                                                            <div class="post-meta-text col-primary ">
+                                                                <router-link :to="{ name: 'view', params: { category:post.category }}">
+                                                                    <a href="#">
+                                                                        {{post.category}}
+                                                                    </a>
+                                                                </router-link>
+                                                            </div>
                                                             <!-- </small> -->
                                                         </div>
                                                         <!-- <small>
@@ -327,8 +332,7 @@
                                                     <small>Guru Nanak Dev Engineering College Gill Park Ludhiana 141006
                                                         <br> Ludhiana, Punjab, India
                                                         <br>
-                                                        <a href="https://goo.gl/maps/B61b8nR1svs"
-                                                            target="_blank">Get Directions</a>
+                                                        <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank">Get Directions</a>
                                                     </small>
                                                 </div>
                                             </div>
