@@ -26810,9 +26810,11 @@ var staticRenderFns = [
             _vm._v("Genconians")
           ]),
           _vm._v(" | © 2018 "),
-          _c("a", { attrs: { href: "#", target: "_blank" } }, [
-            _vm._v("GNDEC, Ldh")
-          ])
+          _c(
+            "a",
+            { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
+            [_vm._v("GNDEC, Ldh")]
+          )
         ])
       ])
     ])
@@ -33721,9 +33723,11 @@ var staticRenderFns = [
             _vm._v("Genconians")
           ]),
           _vm._v(" | © 2018 "),
-          _c("a", { attrs: { href: "#", target: "_blank" } }, [
-            _vm._v("GNDEC, Ldh")
-          ])
+          _c(
+            "a",
+            { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
+            [_vm._v("GNDEC, Ldh")]
+          )
         ])
       ])
     ])
@@ -34456,9 +34460,11 @@ var staticRenderFns = [
             _vm._v("Genconians")
           ]),
           _vm._v(" | © 2018 "),
-          _c("a", { attrs: { href: "#", target: "_blank" } }, [
-            _vm._v("GNDEC, Ldh")
-          ])
+          _c(
+            "a",
+            { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
+            [_vm._v("GNDEC, Ldh")]
+          )
         ])
       ])
     ])
@@ -36411,9 +36417,11 @@ var staticRenderFns = [
             _vm._v("Genconians")
           ]),
           _vm._v(" | © 2018 "),
-          _c("a", { attrs: { href: "#", target: "_blank" } }, [
-            _vm._v("GNDEC, Ldh")
-          ])
+          _c(
+            "a",
+            { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
+            [_vm._v("GNDEC, Ldh")]
+          )
         ])
       ])
     ])
