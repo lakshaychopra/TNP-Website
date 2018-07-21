@@ -43,6 +43,12 @@ class HomeController extends Controller
         return $this->respondData($post);
     }
     
+    public function viewWidgets(HomePage $homePage)
+    {
+        $homePage = HomePage::where('id', '=', '1')->get();
+        return $this->respondData($homePage);
+    }
+    
     public function HomeCategoryView($category=null)
     {
         if ($category != null){
@@ -64,7 +70,7 @@ class HomeController extends Controller
         $post= Post::orderBy('created_at', 'desc');
         return $this->respondData($post);
     }
-
+    
     public function viewPinned()
     {
         $data = Post::where('is_pinned', '=', true)->get();

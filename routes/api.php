@@ -31,6 +31,7 @@ Route::get('/home/view/{postID?}', 'HomeController@showPost');
 Route::get('/home/post/search/{term?}', 'HomeController@HomePostSearch');
 Route::get('/home/post/view/{category?}', 'HomeController@HomeCategoryView');
 Route::get('/home/post/view/pinned', 'HomeController@viewPinned');
+Route::get('/home/page/view/widgets', 'HomeController@viewWidgets');
 //Protected routes
 Route::group(['middleware' => 'jwt.auth'], function() {
     // Login Controller
