@@ -91,10 +91,10 @@
 <script>
     import GuestFooter from '../../layouts/guest-footer.vue'
     import {
-        forgetURL
+        verifyURL
     } from "../../config.js";
     import {
-        setPasswordURL
+        forgetURL
     } from "../../config.js";
 
     export default {
@@ -136,7 +136,7 @@
             submit(e) {
                 this.$validator.validateAll().then((result) => {
                     if(result){
-                        axios.post(forgetURL, this.registerForm).then(response => {
+                        axios.post(verifyURL, this.registerForm).then(response => {
                             toastr['success'](response.data.message);
                             this.authenticated = true;
                             this.token = response.data.data.access_token;
@@ -152,7 +152,7 @@
             submit_password(e) {
                 this.$validator.validateAll().then((result) => {
                     if(result){
-                        axios.post(setPasswordURL, this.pswdUpdate).then(response => {
+                        axios.post(forgetURL, this.pswdUpdate).then(response => {
                             toastr['success'](response.data.message);
                             // localStorage.setItem('token', this.token);
                             axios.defaults.headers.common['Authorization'] = null;
