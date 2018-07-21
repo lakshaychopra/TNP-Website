@@ -1,15 +1,40 @@
-# humanstxt.org/
+# 
 # The humans responsible & technology colophon
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Senior Developer: Sanjampreet Singh
+	Contact: sanjam531@gmail.com, linkedin.com/in/sanjampreetsingh/, facebook.com/sanjampreet.singh1
+	Twitter: @itzrealsanjam
+	From: Ludhiana, Punjab, India
+
+    Senior Developer: Karamveer Singh
+    Contact: kmvsingh007@gmail.com,
+	Twitter: @
+	From: Ludhiana, Punjab, India
 
 # THANKS
 
-    <name>
+    Dean T&P: Dr. K.S. Mann
+	Twitter: @
+	From: Ludhiana, Punjab, India
+
+    Officer TPO: Prof. G.S. Sodhi
+    Twitter: @
+	From: Ludhiana, Punjab, India
+
+    Cordinator TPO: Prof. Sachin Bagga
+    Twitter: @
+	From: Ludhiana, Punjab, India
 
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
     Apache Server Configs, jQuery, Modernizr, Normalize.css
+
+
+#SITE 
+	Last update:2018/07/20
+	Language: English
+	Doctype:HTML5
+	IDE: VS Code, FileZilla, Photoshop

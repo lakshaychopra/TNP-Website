@@ -24,10 +24,10 @@
 
 
     <title>Training and Placemant Cell</title>
-
+    <link type="text/plain" rel="author" href="{{asset('humans.txt')}}" />
     <link href="/css/style.css" rel="stylesheet">
     <link rel="manifest" href="{{asset('manifest.json')}}">
-
+    <meta name="robots" content="INDEX,FOLLOW">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="T&P">
