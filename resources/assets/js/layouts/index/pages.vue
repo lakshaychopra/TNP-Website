@@ -161,11 +161,9 @@
                                                             <!-- <small> -->
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
                                                             <div class="post-meta-text col-primary ">
-                                                                <router-link :to="{ name: 'view', params: { category:post.category }}">
                                                                     <a href="#" @click="searchby_category(post.category)">
                                                                         {{post.category}}
                                                                     </a>
-                                                                </router-link>
                                                             </div>
                                                             <!-- </small> -->
                                                         </div>

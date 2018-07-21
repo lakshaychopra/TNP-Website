@@ -158,10 +158,5 @@
                 return this.$store.getters.getAuthUser(name);
             }
         },
-        computed: {
-            getAvatar() {
-                return '/images/users/' + this.getAuthUser('avatar');
-            }
-        }
     }
 </script>
