@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {{--  <!-- Tell the browser to be responsive to screen width -->  --}}
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no,user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <meta name="description" content="This is official application of Training and Placemant Cell, GNDEC, Ludhiana.">
@@ -40,8 +40,9 @@
     <link rel="apple-touch-icon" href="{{asset('/images/icons/144x144.png')}}" sizes="144x144">
     <link rel="apple-touch-icon" href="{{asset('/images/icons/152x152.png')}}" sizes="152x152">
     <link rel="apple-touch-icon" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180">
+   
     <meta name="msapplication-TileImage" content="{{asset('/images/icons/144x144.png')}}">
-    <meta name="msapplication-TileColor" content="#038ed4">
+    <meta name="msapplication-TileColor" content="#fff">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
@@ -64,8 +65,7 @@
         <router-view></router-view>
     </div>
     <script type="text/javascript" src="/js/bundle.min.js"></script>
-    {{--
-    <script type="text/javascript" src="service-worker.js"></script> --}}
+    {{-- <script type="text/javascript" src="service-worker.js"></script> --}}
 </body>
 
 </html>
