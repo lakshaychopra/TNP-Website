@@ -58,7 +58,7 @@ let routes = [{
                 component: require('./views/post/show')
             },
             {
-                path: 'all',
+                path: '/all',
                 component: require('./views/post/viewPosts')
             },
             {

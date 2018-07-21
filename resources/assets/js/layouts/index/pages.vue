@@ -59,7 +59,7 @@
         <div class="container py-4">
             <div class="row">
 
-                <div class="col-3 px-1 d-none d-md-block sticky-top"  id="sidebar" >
+                <div class="col-2 px-1 d-none d-md-block sticky-top"  id="sidebar" >
                         <!-- <h2><i class="flag"></i> Category</h2>
                         <div class="nav flex-column">
                        
@@ -73,28 +73,29 @@
                             <div class="row">
                                 <div class="col-md-12">
                                         <div class="card">
-                                            <div class="card-header">
-                                        <h4>  Category</h4>
+                                            <div class="card-header" id="filter">
+                                        <h4 class="mb-1">  Filter By</h4>
                                             </div>
                                             <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Placement</a></li>
-                                                    <li><a href="#">Internship</a></li>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item"><a href="#" @click="searchby_category('All')">All</a></li>
+                                                    <li class="list-group-item"><a href="#" @click="searchby_category('Placement')">Placement</a></li>
+                                                    <li class="list-group-item"><a href="#" @click="searchby_category('Internship')" >Internship</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row d-none">
                                 <div class="col-md-12">
                                         <div class="card">
                                             <div class="card-header">
-                                        <h4>  Category</h4>
+                                        <h4 class="mb-1">  Category</h4>
                                             </div>
                                             <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Placement</a></li>
-                                                    <li><a href="#">Internship</a></li>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item"><a href="#">Placement</a></li>
+                                                    <li class="list-group-item"><a href="#">Internship</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -121,32 +122,40 @@
 
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col-md-12">
-                                                <h2>
-                                                    <a href="#">{{post.title}}</a>
-                                                </h2>
+                                        <div class="col-md-1 d-none d-md-block mr-2">
+                                            <img class=" mt-2" src="/images/icons/48x48.png" alt="">
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                        <h2>
+                                                            <router-link  :to="{ name: 'view', params: { id:post.id }}"><a href="#">{{post.title}}</a></router-link>
+                                                        </h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="pull-left">
+                                                        <!-- <small> -->
+                                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{post.updated_at}}</div>
+                                                        <!-- </small> -->
+                                                    </div>
+                                                    <div class="pull-right">
+                                                        <!-- <small> -->
+                                                        <i class="fa fa-flag" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{post.category}}</div>
+                                                        <!-- </small> -->
+                                                    </div>
+                                                    <!-- <small>
+                                                        <i class="fa fa-calendar-check-o color-main" aria-hidden="true"></i> {{post.updated_at}}
+                                                        <span class="pull-right sub-head">
+                                                            <i class="fa fa-flag color-main" aria-hidden="true"></i> {{post.category}}
+                                                        </span>
+                                                    </small> -->
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="pull-left">
-                                                 <!-- <small> -->
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{post.updated_at}}</div>
-                                                 <!-- </small> -->
-                                            </div>
-                                            <div class="pull-right">
-                                                 <!-- <small> -->
-                                                <i class="fa fa-flag" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{post.category}}</div>
-                                                 <!-- </small> -->
-                                            </div>
-                                            <!-- <small>
-                                                <i class="fa fa-calendar-check-o color-main" aria-hidden="true"></i> {{post.updated_at}}
-                                                <span class="pull-right sub-head">
-                                                    <i class="fa fa-flag color-main" aria-hidden="true"></i> {{post.category}}
-                                                </span>
-                                            </small> -->
-                                        </div>
-                                    </div>
+
                                 </div> 
                             
                                 <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
@@ -322,6 +331,7 @@
     // import AppHeader from './header.vue'
     import { addHomePostURL } from "../../config.js";
     import { searchURL } from "../../config.js";
+    import { categoryURL } from "../../config.js";
 
     export default {
         // components: {
@@ -413,6 +423,15 @@
                 return "background: url(/images/posts/images/" + index +
                     ") center no-repeat;    background-size: cover;";
             },
+            searchby_category(category){
+                if(category != "All"){
+                    axios.get(categoryURL+category)
+                        .then(response => this.posts =response.data.data.data)
+                   }
+                else{
+                    this.getPosts();
+                }
+            }
         }
     }
 </script>
@@ -531,6 +550,9 @@
 }
 #sidebar #office h4:after{
         content: "\f1ad";
+}
+#sidebar #filter h4:after{
+        content: "\f0b0";
 }
 #sidebar .card-header h4:after{
     display: block;

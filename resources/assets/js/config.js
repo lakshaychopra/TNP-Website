@@ -16,6 +16,7 @@ export const mailExcelURL = '/api/dashboard/user/createmail/'
 export const singleuserURL = '/api/dashboard/user/form/create/'
 
 export const searchURL = '/api/home/post/search/'
+export const categoryURL = '/api/home/post/view/'
 
 export const formstepChangeURL = '/api/dashboard/user/step/update'
 
