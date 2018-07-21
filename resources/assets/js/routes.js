@@ -145,8 +145,13 @@ let routes = [{
             //     component: require('./views/auth/password')
             // },
             {
-                path: '/register',
+                path: '/register/student',
                 component: require('./views/auth/register')
+            },
+            {
+                name:'forget',
+                path: '/forgetPassword/student',
+                component: require('./views/auth/forget')
             },
             // {
             //     path: '/auth/:token/activate',

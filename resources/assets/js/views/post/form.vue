@@ -41,6 +41,14 @@
                                  </div>  
                                  <div class="row">
                                     <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Post link</label>
+                                            <input class="form-control" type="text" value="" v-model="post.post_link" name="title" autofocus>
+                                        </div>
+                                    </div>
+                                 </div> 
+                                 <div class="row">
+                                    <div class="col-md-12">
                                         <div class="form-group files">
                                             <label for="">Image<span class="input-required text-danger">*</span></label>
                                             <input type="file" v-validate="'required|mimes:image/*'" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
@@ -49,6 +57,7 @@
                                         </div>
                                     </div>
                                  </div> 
+
                                  <div class="row" v-if="post.imageUrl !=null">
                                      <div class="col-md-12">
                                                 <img v-if="image_change == true " class="img-fluid" :src="img_preview" alt="Image">
@@ -81,6 +90,7 @@
                     title: '',
                     region: '',
                     date1: '',
+                    post_link:'',
                     date2: '',
                     delivery: false,
                     type: [],
@@ -128,10 +138,10 @@
                 // usertype : 'EXECUTIVE_MEMBER',
                 title: this.post.title,
                 body: this.post.content,
-                username:'admin',
-                user_id: '1',
+                username: this.$store.getters.getAuthUserFullName,
+                user_id: this.$store.getters.getAuthUserId,
                 tag:this.post.tags.toString(),
-                post_link:'abc',
+                post_link:this.post.post_link,
                 category:this.post.category,
                 image:this.post.imageUrl
             };
@@ -155,7 +165,9 @@
                 // if (response.status == "401") {
                 //   }
                 toastr['success'](response.data.message);
-                this.$router.push('/post/'+response.data.data.id);
+                this.$router.push('/post/' + response.data.data.id);
+         
+
                     // console.log(response.data.data.postCreate.id);
                 })
                 .catch(function(error) {
@@ -169,7 +181,13 @@
                 // .catch(response => {
                 //     toastr['error'](response.message);
                 // });
-            },
+                    this.post.title= '';
+                    this.post.content='';
+                    this.post.tags= ['gndec','tnp'];
+                    this.post.category= '' ;
+                    this.post.imageUrl= '';
+                    this.post.post_link= '';
+          },
             getPosts(){
                 axios.get('/api/dashboard/post/'+this.id+'/edit')
                 .then(response => {
@@ -188,10 +206,10 @@
                     // usertype : 'EXECUTIVE_MEMBER',
                     title: this.post.title,
                     body: this.post.content,
-                    username:'admin',
-                    user_id: '1',
+                    username: this.$store.getters.getAuthUserFullName,
+                    user_id: this.$store.getters.getAuthUserId,
                     tag:this.post.tags.toString(),
-                    post_link:'abc',
+                    post_link:this.post.post_link,
                     category:this.post.category,
                     image:this.post.imageUrl
             };

@@ -154,7 +154,7 @@
                                                         <div class="pull-left">
                                                             <!-- <small> -->
                                                             <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                            <div class="post-meta-text col-primary ">{{post.updated_at}}</div>
+                                                            <div class="post-meta-text col-primary " v-html="setDateFormat(post.updated_at)"></div>
                                                             <!-- </small> -->
                                                         </div>
                                                         <div class="pull-right">
@@ -162,7 +162,7 @@
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
                                                             <div class="post-meta-text col-primary ">
                                                                 <router-link :to="{ name: 'view', params: { category:post.category }}">
-                                                                    <a href="#">
+                                                                    <a href="#" @click="searchby_category(post.category)">
                                                                         {{post.category}}
                                                                     </a>
                                                                 </router-link>
@@ -218,7 +218,7 @@
                                         <div class="post-share">
                                             <div class="post-meta" style="background-color: #038ed4;">
                                                 <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
-                                                <div style="color:#fff;" class="post-meta-text col-primary ">Share</div>
+                                                <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip" title="Hooray!">Share</div>
                                             </div>
                                             <div class="post-meta" style="float:right;">
                                                 <i class="fa fa-tags" aria-hidden="true"></i>
@@ -380,6 +380,7 @@
     import {
         categoryURL
     } from "../../config.js";
+import helper from '../../services/helper.js';
 
     export default {
         // components: {
@@ -416,6 +417,9 @@
                 vm.loading = 1;
                 vm.busy = true;
                 vm.getallpost();
+            },
+            setDateFormat(date){
+               return helper.formatDateTime(date);
             },
             getallpost: function () {
                 setTimeout(() => {

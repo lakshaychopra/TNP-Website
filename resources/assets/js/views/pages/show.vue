@@ -94,10 +94,16 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="pull-left">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{post.updated_at}}</div>
+                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <div class="post-meta-text col-primary " v-html="setDateFormat(post.updated_at)"></div>
                                             </div>
                                             <div class="pull-right">
-                                                <i class="fa fa-flag" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{post.category}}</div>
+                                                <i class="fa fa-flag" aria-hidden="true"></i> <div class="post-meta-text col-primary ">
+                                                    <router-link to="/">
+                                                                    <a href="#" >
+                                                                        {{post.category}}
+                                                                    </a>
+                                                                </router-link>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -230,6 +236,7 @@
     </div>
 </template>
 <script>
+    import helper from '../../services/helper'
 // import {showPostURL} from "../../config.js";
 export default {
     data() {
@@ -249,6 +256,9 @@ export default {
           .catch((error) => console.log(error))
     },
     methods: {
+            setDateFormat(date){
+               return helper.formatDateTime(date);
+            },
          gethtml(text){
                 var maxLength = 400 // maximum number of characters to extract
                 //trim the string to the maximum length

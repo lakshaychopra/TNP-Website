@@ -7,8 +7,13 @@
 
                     <form class="form-horizontal form-material" id="loginform" @submit.prevent="submit">
                         <h3 class="box-title m-b-20">
-                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In</h3>
-
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In
+                            <small class="pull-right">
+                              <router-link to="/"> <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</router-link> 
+                            </small>
+                            </h3>
+                            
+                        
                         <div class="form-group ">
                             <div class="col-xs-12">
                                 <label for="Username" hidden>Username</label>
@@ -44,8 +49,8 @@
 
                         <div class="form-group m-b-0">
                             <div class="col-sm-12 text-center">
-                                <p>
-                                    <router-link to="/password" class="text-info m-l-5">
+                                <p class="text-info m-l-5">
+                                    <router-link :to="{name:'forget'}">
                                         <b>Forgot your password?</b>
                                     </router-link>
                                 </p>
@@ -61,7 +66,11 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material" id="loginform" @submit.prevent="security_submit">
                         <h3 class="box-title">
-                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Verify it's you</h3>
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Verify it's you
+                                <small class="pull-right">
+                                    <router-link to="/"> <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</router-link> 
+                                </small>
+                            </h3>
                         A mail with 5-digit verification code was just sent to your email.
                         <br>
                         <small>

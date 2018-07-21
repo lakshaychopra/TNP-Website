@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material" id="registerform" @submit.prevent="submit">
                         <h3 class="box-title m-b-20">
-                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Forget Password
                             <small class="pull-right">
                               <router-link to="/"> <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</router-link> 
                             </small>
@@ -58,7 +58,7 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material" id="registerform" @submit.prevent="submit_password">
                         <h3 class="box-title m-b-20">
-                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> Forget Password
                             <small class="pull-right">
                               <router-link to="/"> <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</router-link> 
                             </small>
@@ -91,7 +91,7 @@
 <script>
     import GuestFooter from '../../layouts/guest-footer.vue'
     import {
-        registerURL
+        forgetURL
     } from "../../config.js";
     import {
         setPasswordURL
@@ -136,7 +136,7 @@
             submit(e) {
                 this.$validator.validateAll().then((result) => {
                     if(result){
-                        axios.post(registerURL, this.registerForm).then(response => {
+                        axios.post(forgetURL, this.registerForm).then(response => {
                             toastr['success'](response.data.message);
                             this.authenticated = true;
                             this.token = response.data.data.access_token;

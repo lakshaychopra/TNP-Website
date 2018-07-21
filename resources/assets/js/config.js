@@ -1,6 +1,7 @@
 export const apiDomain = 'http://localhost:8000'
 
 export const loginURL = '/api/login'
+export const forgetURL = '/api/reset/password'
 export const securityURL = '/api/security'
 export const oauthURL = '/oauth/token'
 
@@ -25,3 +26,4 @@ export const statusChangeURL = '/api/dashboard/user/status/update'
 export const storeStudentURL = '/api/dashboard/student'
 
 export const updateProfileURL = 'api/dashboard/student/'
+
