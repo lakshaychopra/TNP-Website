@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('username');
             $table->string('tag');
             $table->string('category');
+            $table->string('url')->nullable();
             $table->string('post_link');
             $table->string('image')->nullable();
             $table->string('documents')->nullable();

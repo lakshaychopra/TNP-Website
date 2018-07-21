@@ -22,6 +22,7 @@ class CreateStudentSemesterMarksTable extends Migration
             $table->integer('credits')->nullable();
             $table->integer('active_backlog')->nullable();
             $table->integer('passive_backlog')->nullable();
+            $table->string('stream')->comment('Stream/Course type')->nullable();
             $table->enum('marks_type',['SGPA','MARKS'])->default('SGPA');
             $table->timestamps();
         });
