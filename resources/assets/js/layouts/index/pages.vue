@@ -812,6 +812,7 @@
 
     #bg-trans {
         background: -webkit-linear-gradient(#333, #fff);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
