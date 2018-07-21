@@ -1,10 +1,10 @@
 {
-    "name": "Training and Placement Cell,GNDEC,LDH",
+    "name": "Training and Placement Cell",
     "short_name": "T&P",
     "start_url": "/",
     "scope": ".",
     "display": "standalone",
-    "background_color": "#038ed4",
+    "background_color": "#fff",
     "theme_color": "#038ed4",
     "description": "This is official application of Training and Placemant Cell, GNDEC, Ludhiana.",
     "dir": "ltr",
