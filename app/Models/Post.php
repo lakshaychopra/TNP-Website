@@ -9,7 +9,7 @@ class Post extends Model
     protected $table = 'posts';
 
     protected $fillable = [
-        'title','body','user_id','username', 'tag', 'category','post_link','image','url'
+        'title','body','user_id','username', 'tag', 'category','post_link','image','url','is_pinned'
     ];
     
     public function isPinned(){
