@@ -5,15 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
-use App\Services\HomeService;
+use App\Models\HomePage;
 use App\Repositories\HomeRepository;
 
 
 class HomeController extends Controller
 {
-    public function __construct(HomeService $service,HomeRepository $repository)
+    public function __construct(HomeRepository $repository)
     {
-        $this->service = $service;
         $this->repository = $repository;
     }
     /**

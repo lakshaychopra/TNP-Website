@@ -62,5 +62,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::resource('/student', 'StudentsController');
         //PreviousEducation
         Route::resource('/student/pe', 'PreviousEducationsController');
+        //Home Controller
+        Route::resource('/homepage', 'HomePageController');
     });
 });

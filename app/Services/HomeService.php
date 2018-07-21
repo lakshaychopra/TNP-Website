@@ -2,12 +2,12 @@
 
 namespace App\Services;
 
-use App\Models\Post;
-use App\Repositories\HomeRepository;
+use App\Models\HomePage;
+use App\Repositories\HomePageRepository;
 
-class HomeService
+class HomePageService
 {	
-	public function __construct(HomeRepository $repository)
+	public function __construct(HomePageRepository $repository)
 	{
 		$this->repository = $repository;
 	}
