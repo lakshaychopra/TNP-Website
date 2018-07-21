@@ -16,12 +16,6 @@ class PostRepository
         $this->model = $model;         
     }
     
-    // Get all instances of model
-    public function all()
-    {
-        return $this->model->all();
-    }
-    
     public function list($limit = false)
     {
         $builder = Post::orderBy('created_at', 'desc');

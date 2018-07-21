@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\HomePage;
 use Illuminate\Http\Request;
 use App\Services\HomePageService;
-use App\Repositories\UserRepository;
+use App\Repositories\HomePageRepository;
 use App\Http\Requests\HomePageRequest;
 use Exception;
 use Excel;
@@ -55,10 +55,10 @@ class HomePageController extends Controller
             }
             $homePage = $request->all();
             if ($request->hasFile('office_picture')) {
-                $homePage['office_picture'] = $this->service->uploadPostImageService($homePage);
+                $homePage['office_picture'] = $this->service->uploadOfficeImageService($homePage);
             } 
             
-            $homePageCreate = $this->service->createPost($homePage);
+            $homePageCreate = $this->service->createHomePage($homePage);
             DB::commit();
             return $this->respondSuccess('Inserted', $homePageCreate);
         }
