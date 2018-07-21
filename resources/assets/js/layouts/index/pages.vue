@@ -3,8 +3,10 @@
         <div class="sticky-top" style="z-index:1022;">
             <nav class="navbar navbar-expand-md bg-dark navbar-dark">
                 <!-- Brand -->
-                <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
-                <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
+                <strong>
+                    <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
+                    <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
+                </strong>
                 <div class="navbar-header">
                     <!-- Navbar links -->
                     <div class="navbar-text d-md-none">

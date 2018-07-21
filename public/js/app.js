@@ -23634,6 +23634,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 // import AppHeader from './header.vue'
 
@@ -23760,20 +23762,7 @@ var render = function() {
           "nav",
           { staticClass: "navbar navbar-expand-md bg-dark navbar-dark" },
           [
-            _c(
-              "a",
-              {
-                staticClass: "navbar-brand d-none d-md-block",
-                attrs: { href: "/" }
-              },
-              [_vm._v("Training & Placement Cell")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              { staticClass: "navbar-brand d-md-none", attrs: { href: "/" } },
-              [_vm._v("T&P Cell")]
-            ),
+            _vm._m(0),
             _vm._v(" "),
             _c("div", { staticClass: "navbar-header" }, [
               _c("div", { staticClass: "navbar-text d-md-none" }, [
@@ -23796,7 +23785,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(0)
+              _vm._m(1)
             ]),
             _vm._v(" "),
             _c(
@@ -23849,7 +23838,7 @@ var render = function() {
                   "ul",
                   { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
                   [
-                    _vm._m(1),
+                    _vm._m(2),
                     _vm._v(" "),
                     _c("li", { staticClass: "nav-item" }, [
                       this.$store.state.auth.username
@@ -23928,7 +23917,7 @@ var render = function() {
                     })
                   ]),
                   _vm._v(" "),
-                  _vm._m(2)
+                  _vm._m(3)
                 ])
               ]
             )
@@ -23950,7 +23939,7 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-12" }, [
                     _c("div", { staticClass: "card" }, [
-                      _vm._m(3),
+                      _vm._m(4),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body" }, [
                         _c(
@@ -24008,7 +23997,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(4)
+                _vm._m(5)
               ])
             ]
           ),
@@ -24024,7 +24013,7 @@ var render = function() {
                       staticClass: "row justify-content-center",
                       attrs: { id: "posts" }
                     },
-                    [_vm._m(5)]
+                    [_vm._m(6)]
                   )
                 : _vm._l(_vm.posts, function(post) {
                     return _c(
@@ -24039,7 +24028,7 @@ var render = function() {
                           _c("div", { staticClass: "card card-primary" }, [
                             _c("div", { staticClass: "card-header" }, [
                               _c("div", { staticClass: "row" }, [
-                                _vm._m(6, true),
+                                _vm._m(7, true),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "col-md-10" }, [
                                   _c("div", { staticClass: "row" }, [
@@ -24226,7 +24215,7 @@ var render = function() {
                               _c("div", { staticClass: "clearfix" }),
                               _vm._v(" "),
                               _c("div", { staticClass: "post-share" }, [
-                                _vm._m(7, true),
+                                _vm._m(8, true),
                                 _vm._v(" "),
                                 _c(
                                   "div",
@@ -24288,13 +24277,29 @@ var render = function() {
             2
           ),
           _vm._v(" "),
-          _vm._m(8)
+          _vm._m(9)
         ])
       ])
     ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("strong", [
+      _c(
+        "a",
+        { staticClass: "navbar-brand d-none d-md-block", attrs: { href: "/" } },
+        [_vm._v("Training & Placement Cell")]
+      ),
+      _vm._v(" "),
+      _c("a", { staticClass: "navbar-brand d-md-none", attrs: { href: "/" } }, [
+        _vm._v("T&P Cell")
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
