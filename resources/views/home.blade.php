@@ -65,7 +65,7 @@
         <router-view></router-view>
     </div>
     <script type="text/javascript" src="/js/bundle.min.js"></script>
-    {{-- <script type="text/javascript" src="service-worker.js"></script> --}}
+    <script type="text/javascript" src="service-worker.js"></script>
 </body>
 
 </html>

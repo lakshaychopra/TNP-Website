@@ -1,25 +1,34 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox-sw.js");
 
-console.log('this is my custom service worker');
 workbox.precaching.precacheAndRoute([
   {
-    "url": "css/style.css",
-    "revision": "b9994b277b2646f6dfce4c9ebc5baedf"
+    "url": "css/app.css",
+    "revision": "6186a199ef1809d82b0f0aa212cfd676"
   },
   {
     "url": "favicon.ico",
     "revision": "ac29a51f219ca1c52ca4e2c58745361b"
   },
   {
-    "url": "js/bundle.min.js",
-    "revision": "7041a65e136711b60178bd5bbe8e7285"
+    "url": "index.php",
+    "revision": "b9901d13f00ef92e0793e2d9fcd57431"
   },
   {
     "url": "manifest.json",
-    "revision": "ff51dc6eb5255f82a99a5e95276f9e6e"
-  },
-  {
-    "url": "service-worker.js",
-    "revision": "36bbcb5172544518dcf601687586837f"
+    "revision": "fcfdf1a193c4f4a25eb49f17d9bcaf73"
   }
 ]);
+
+workbox.routing.registerRoute(
+    'http://localhost:8000/js/bundle.min.js',
+    workbox.strategies.staleWhileRevalidate({
+        cacheName: 'static-js',
+    }),
+);
+
+workbox.routing.registerRoute(
+    'http://localhost:8000/css/style.css',
+    workbox.strategies.staleWhileRevalidate({
+        cacheName: 'static-css',
+    }),
+);

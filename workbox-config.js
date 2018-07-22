@@ -1,13 +1,13 @@
 module.exports = {
     "globDirectory": "public/",
     "globPatterns": [
-        "**/*.{css,js,json,ico}"
+        "**/*.{css,json,ico,php}",
     ],
     "swDest": "public\\sw.js",
     "swSrc": "sw-base.js",
     "globIgnores": [
-        '**/app.js',
-        '**/app.css',
-        '**/mix-manifest.json'
+        '**/bundle.min.js',
+        '**/mix-manifest.json',
+        '**/style.css'
     ]
 };
