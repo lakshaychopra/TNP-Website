@@ -16,6 +16,14 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "manifest.json",
     "revision": "fcfdf1a193c4f4a25eb49f17d9bcaf73"
+  },
+  {
+    "url": "offline.html",
+    "revision": "387b9e384891cab8f0454b4729543487"
+  },
+  {
+    "url": "offline.png",
+    "revision": "b5a77fe1d90718592d6428b7f5298df2"
   }
 ]);
 
