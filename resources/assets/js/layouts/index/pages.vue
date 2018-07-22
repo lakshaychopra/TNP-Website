@@ -108,7 +108,10 @@
                                             <div class="post-meta" style="background-color: #038ed4;">
                                                <a href="" @click.prevent="AndroidNativeShare(post.title,post.id,post.category)"><i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
                                                 <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div></a> 
+
+                                            
                                             </div>
+                                                <span class="share" v-if="this.share"> <i class="fa fa-facebook-official" aria-hidden="true"></i> <i class="fa fa-linkedin" aria-hidden="true"></i> <i class="fa fa-whatsapp" aria-hidden="true"></i> </span>
                                             <div class="post-meta" style="float:right;">
                                                 <i class="fa fa-tags" aria-hidden="true"></i>
                                                 <div class="post-meta-text col-primary ">{{ post.tag }}</div>
@@ -159,7 +162,8 @@ import helper from '../../services/helper.js';
                 busy: false,
                 postEdit: {},
                 posts: {},
-                showDropDown: false
+                showDropDown: false,
+                share:false,
             }
         },
         created() {
@@ -181,12 +185,15 @@ import helper from '../../services/helper.js';
                                     console.log(Description);
 
                 if(typeof navigator.share==='undefined' || !navigator.share) {
+                    this.share = true;
                     alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
                 }
-                // else if(window.location.protocol !='https:') {
-                //     alert('Android Native Share support only on Https:// protocol');
-                // }
+                else if(window.location.protocol !='https:') {
+                    alert('Android Native Share support only on Https:// protocol');
+                    this.share = true
+                }
                 else {
+                    this.share = false;
                     if(typeof URL==='undefined') {
                         URL=window.location.href;
                     }
@@ -542,5 +549,12 @@ import helper from '../../services/helper.js';
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .share i{
+            margin-top: 14px;
+            font-size: 22px;
+            color: #6b6b6b;
+            margin-right: 6px;
     }
 </style>
