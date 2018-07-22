@@ -207,7 +207,7 @@ import helper from '../../services/helper.js';
                     if (navigator.share) {
                         navigator.share({
                             title:TitleConst ,
-                            text: TitleConst,
+                            text: DescriptionConst,
                             url:URLConst,
                         })
                             .then(() => console.log('Successful share'))
