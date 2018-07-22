@@ -1,122 +1,12 @@
 <template>
     <div>
-        <div class="sticky-top" style="z-index:1022;">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                <!-- Brand -->
-                <strong>
-                    <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
-                    <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
-                </strong>
-                <div class="navbar-header">
-                    <!-- Navbar links -->
-                    <div class="navbar-text d-md-none">
-                        <ul class="navbar-nav list-inline">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="#" @click="search_input = !search_input">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                </div>
-                <div class="navbar-collapse collapse" id="collapsibleNavbar">
-                    <div class="mr-auto d-none d-md-block w-65">
-                        <form class="form-inline" action="/" method="GET">
-                            <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost" autocomplete="on" id="search">
-                            <!-- <button class="btn btn-info" type="submit">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </button> -->
-                        </form>
-                    </div>
-                    <ul class="nav navbar-nav" id="list-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">
-                                <i class="fa fa-users" aria-hidden="true"></i> About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login" v-if="this.$store.state.auth.username">
-                                <i class="fa fa-home" aria-hidden="true"></i> Profile</a>
-                            <a class="nav-link" href="/login" v-else>
-                                <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <form action="/" method="GET" v-if="search_input" class="d-sm-none">
-                <div class="row bg-col-grey">
-                    <div class="col-md-11">
-                        <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on" placeholder="Search">
-                    </div>
-                    <div class="col-md-1">
-                        <button class="btn btn-block btn-info" type="submit">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
+        <app-header></app-header>
         <div class="bg-gray">
-            <!-- <app-header></app-header> -->
             <div class="container py-4">
                 <div class="row">
 
                     <div class="col-2 px-1 d-none d-md-block sticky-top" id="sidebar">
-                        <!-- <h2><i class="flag"></i> Category</h2>
-                        <div class="nav flex-column">
-                       
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                        </div> -->
-                        <div class="sticky-top fix">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-header" id="filter">
-                                            <h4 class="mb-1"> Filter By</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">
-                                                    <a href="#" @click="searchby_category('All')">All</a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <a href="#" @click="searchby_category('Placement')">Placement</a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <a href="#" @click="searchby_category('Internship')">Internship</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row d-none">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="mb-1"> Category</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">
-                                                    <a href="#">Placement</a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <a href="#">Internship</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       <widget-left></widget-left>
                     </div>
 
                     <div class="col" id="main">
@@ -161,7 +51,7 @@
                                                             <!-- <small> -->
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
                                                             <div class="post-meta-text col-primary ">
-                                                                    <a href="#" @click="searchby_category(post.category)">
+                                                                    <a href="#" @click="$children[1].searchby_category(post.category)">
                                                                         {{post.category}}
                                                                     </a>
                                                             </div>
@@ -201,7 +91,7 @@
                             </ul> -->
                                         <span v-if="post.body.length>400">
                                             <div class="mb-3 show-read-more" v-html="gethtml(post.body)" id="bg-trans" style="padding: 10px;background-color: #f6f6f6;"></div>
-                                            <router-link :to="{ name: 'view', params: { id:post.id }}">
+                                            <router-link :to="{ name: 'view', params: { id:post.id }}" :searchbox="false">
                                                 <button class="btn btn-block text-center" @click="gethtml(post.body)">
                                                     <a href="" style="color: #333;">Read More
                                                         <i class="fa fa-plus"></i>
@@ -240,150 +130,26 @@
                             <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px" v-if="loading"></i>
                         </div>
                     </div>
-
-                    <div class="col-3 px-1 d-none d-md-block sticky-top" id="sidebar">
-                        <!-- <h2><i class="flag"></i> Category</h2>
-                        <div class="nav flex-column">
-                       
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                        </div> -->
-                        <div class="sticky-top fix">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-header" id="office">
-                                            <h4>T&P OFFICE</h4>
-                                        </div>
-
-                                        <div class="card-body">
-                                            <div class="office text-center">
-                                                <img src="/images/sodhi.jpg" width="60%" alt="">
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-2">
-
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <p class="mb-0">
-                                                        <strong>Prof. G. S. SODHI</strong>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-2">
-
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small>Officer (Training & Placement)</small>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-envelope mt-1" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small>
-                                                        <a href="mailto:gssodhi@gndec.ac.in" target="_blank">gssodhi@gndec.ac.in</a>
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-1">
-
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-phone mt-1" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small>
-                                                        <a href="tel:+919999999999" target="_blank">+91 99999 99999</a>
-                                                    </small>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-header" id="about">
-                                            <h4> ABOUT</h4>
-                                        </div>
-                                        <div class="card-map">
-                                            <a href="https://wego.here.com/directions/mix/mylocation/e-eyJuYW1lIjoiR25kZWMtIFRyYWluaW5nIGFuZCBQbGFjZW1lbnQiLCJhZGRyZXNzIjoiR3VydSBOYW5hayBEZXYgRW5naW5lZXJpbmcgQ29sbGVnZSBHaWxsIFBhcmsgTHVkaGlhbmEgMTQxMDA2LCBMdWRoaWFuYSwgUHVuamFiLCBJbmRpYSAxNDEwMDYiLCJsYXRpdHVkZSI6MzAuODU5MzM3NTA3ODAzLCJsb25naXR1ZGUiOjc1Ljg2MTY3Mjk3MzYzMywicHJvdmlkZXJOYW1lIjoiZmFjZWJvb2siLCJwcm92aWRlcklkIjoyODg1Nzc3NzExOTM4ODB9?map=30.859337507803,75.861672973633,15,normal&fb_locale=en_GB"
-                                                rel="dialog" target="_blank" role="button" class="" tabindex="0">
-                                                <div class="_4j7v _5bld">
-                                                    <img class="_a3f img" alt="" aria-label="Map attachment" src="https://external.fluh1-1.fna.fbcdn.net/static_map.php?region=IN&amp;v=42&amp;osm_provider=2&amp;size=306x98&amp;zoom=15&amp;markers=30.85933751%2C75.86167297&amp;language=en_GB"
-                                                        width="306" height="98">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="card-body" style="padding-top:20px;">
-                                            <!-- <iframe style="pointer-events:none; border:0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.9278353122977!2d75.85737781489665!3d30.860695381592787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a828f09011b15%3A0xbf3f5b51dcc81b12!2sGuru+Nanak+Dev+Engineering+College!5e0!3m2!1sen!2sin!4v1531911243199" width="100%" height="200" frameborder="0"></iframe> -->
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-compass mt-1" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small>Guru Nanak Dev Engineering College Gill Park Ludhiana 141006
-                                                        <br> Ludhiana, Punjab, India
-                                                        <br>
-                                                        <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank">Get Directions</a>
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-phone mt-1" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small>
-                                                        <a href="tel:+919915781209" target="_blank">+91 99157 81209</a>
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-globe mt-1" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small>
-                                                        <a href="https://www.gndec.ac.in" target="_blank">www.gndec.ac.in</a>
-                                                    </small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <widget-right></widget-right>
+                    
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-    // import AppHeader from './header.vue'
+    import AppHeader from './header.vue'
+    import WidgetLeft from './leftWidget.vue'
+    import WidgetRight from './rightWidget.vue'
     import {
         addHomePostURL
-    } from "../../config.js";
-    import {
-        searchURL
-    } from "../../config.js";
-    import {
-        categoryURL
     } from "../../config.js";
 import helper from '../../services/helper.js';
 
     export default {
-        // components: {
-        //     AppHeader,
-        // },
+        components: {
+            AppHeader,WidgetLeft,WidgetRight
+        },
         data() {
             return {
                 loading: 1,
@@ -391,8 +157,6 @@ import helper from '../../services/helper.js';
                 busy: false,
                 postEdit: {},
                 posts: {},
-                search_input: false,
-                search: '',
                 showDropDown: false
             }
         },
@@ -456,97 +220,14 @@ import helper from '../../services/helper.js';
                     })
                     .catch((error) => console.log(error))
             },
-            searchPost() {
-                if (this.search.length >= 3) {
-                    axios.get(searchURL + this.search)
-                        .then(response => this.posts = response.data.data.data)
-                } else {
-                    this.getPosts();
-                }
-            },
             getImage(index) {
                 return "background: url(/images/posts/images/" + index +
                     ") center no-repeat;    background-size: cover;";
             },
-            searchby_category(category) {
-                if (category != "All") {
-                    axios.get(categoryURL + category)
-                        .then(response => this.posts = response.data.data.data)
-                } else {
-                    this.getPosts();
-                }
-            }
         }
     }
 </script>
-<style scoped>
-    .list-inline {
-        padding-left: 0;
-        list-style: none;
-    }
-
-    .bg-dark {
-        background-color: #038ed4 !important;
-    }
-
-    .bg-col-grey {
-        background-color: #eee;
-        padding: 10px;
-    }
-
-    .btn {
-        line-height: 1.5 !important;
-    }
-
-    #mr-btm-10 {
-        margin-bottom: 10px;
-    }
-
-    #list-menu li a {
-        color: #f7fbff;
-        padding: 20px;
-        float: left;
-        border-bottom: 4px solid rgba(255, 255, 255, 0);
-    }
-
-    #list-menu li a:hover {
-        /* color: #0073BC; */
-        /* border-bottom: 4px solid #0073BC; */
-        background-color: #f1f1f1;
-        color: #038ed4;
-    }
-
-    #search {
-        background-color: #fff;
-        border-color: #0073BC;
-        width: 83%;
-        color: #0073BC;
-        border-radius: 0;
-    }
-
-    #search::placeholder {
-        color: #0073BC;
-    }
-
-    .navbar {
-        padding: 0 1rem;
-    }
-
-    @media (min-width: 768px) {
-        .navbar-header {
-            width: 142px;
-        }
-    }
-
-    .w-65 {
-        width: 65%;
-    }
-
-    .fix {
-        overflow: hidden;
-        top: 90px;
-    }
-
+<style>
     .post-meta {
         margin-right: 15px;
         margin-bottom: 5px;

@@ -20,12 +20,14 @@
                                  <div class="col" id="main">
                     
                    <div class="row justify-content-center" id="posts">
+                        
                         <div class="col-md-12">
 
                             <div class="card card-primary">
 
                                 <div class="card-header">
                                     <div class="row">
+                                        
                                         <div class="col-md-12">
                                                 <h2>
                                                     <a href="#">{{post.title}}</a>
