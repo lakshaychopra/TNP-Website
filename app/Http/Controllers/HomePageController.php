@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\HomePage;
 use Illuminate\Http\Request;
-use App\Services\HomePageService;
 use App\Repositories\HomePageRepository;
 use App\Http\Requests\HomePageRequest;
 use Exception;
@@ -14,102 +13,65 @@ use DB;
 
 class HomePageController extends Controller
 {
-    public function __construct(HomePageService $service,HomePageRepository $repository)
+    public function __construct(HomePageRepository $repository)
     {
-        $this->service = $service;
         $this->repository = $repository;
     }
+    
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    * Display the specified resource.
+    *
+    * @param  \App\Models\HomePage  $homePage
+    * @return \Illuminate\Http\Response
+    */
+    public function show($homePage = 1)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $data = Student::where('id', '=' , $homePage)->get();
+        return $this->respondData($data);
     }
-
+    
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    * Show the form for editing the specified resource.
+    *
+    * @param  \App\Models\HomePage  $homePage
+    * @return \Illuminate\Http\Response
+    */
+    public function edit($homePage = 1)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $data = Student::where('id', '=' , $homePage)->get();
+        return $this->respondData($data);
     }
-
+    
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(HomePageRequest $request)
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  \App\Models\HomePage  $homePage
+    * @return \Illuminate\Http\Response
+    */
+    public function update(HomePageRequest $request, HomePage $homePage)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
             if (!$auth) {
-                return $this->respondUnauthorized('Post Failed');
+                return $this->respondUnauthorized('Failed');
             }
-            $homePage = $request->all();
+            $data = $request->all();
+            $id = $request->id;
+            $homePage = HomePage::find($id);
             if ($request->hasFile('office_picture')) {
-                $homePage['office_picture'] = $this->service->uploadOfficeImageService($homePage);
+                $data['office_picture'] = $this->repository->uploadOfficeImageService($data);
             } 
-            
-            $homePageCreate = $this->service->createHomePage($homePage);
+            $homePageUpdate = $homePage->update($data);
             DB::commit();
-            return $this->respondSuccess('Inserted', $homePageCreate);
+            return $this->respondSuccess('Updated', $homePageUpdate);
         }
         catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\HomePage  $homePage
-     * @return \Illuminate\Http\Response
-     */
-    public function show(HomePage $homePage)
-    {
-        
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\HomePage  $homePage
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(HomePage $homePage)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HomePage  $homePage
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, HomePage $homePage)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\HomePage  $homePage
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(HomePage $homePage)
-    {
-        //
     }
 }
