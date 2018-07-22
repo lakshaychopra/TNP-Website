@@ -144,7 +144,7 @@
     import WidgetRight from './rightWidget.vue'
     import share from './../share.vue'
     import {
-        addHomePostURL,apiDomain,viewPost
+        addHomePostURL,apiDomain,viewPost, categoryURL
     } from "../../config.js";
 import helper from '../../services/helper.js';
 
@@ -178,7 +178,6 @@ import helper from '../../services/helper.js';
             },
             AndroidNativeShare(Title, URL, Description) {
                                     console.log(Title);
-                                    console.log(URL);
                                     console.log(Description);
 
                 if(typeof navigator.share==='undefined' || !navigator.share) {
@@ -197,20 +196,23 @@ import helper from '../../services/helper.js';
                     if(typeof Description==='undefined') {
                         Description='Share your thoughts about '+Title;
                     }
-                    const TitleConst=Title;
-                    const URLConst=URL;
+                    let URLConst = document.location.href + 'view/'+URL;
+                    const canonicalElement = document.querySelector('link[rel=canonical]');
+                    if (canonicalElement !== null) {
+                        URLConst = canonicalElement.href;
+                    }
+                    const TitleConst='Post One';
                     const DescriptionConst=Description;
-
-                    try {
-                        navigator.share( {
-                            title: TitleConst, text:DescriptionConst, url:URLConst
+                    console.log(URLConst);
+                    if (navigator.share) {
+                        navigator.share({
+                            title:TitleConst ,
+                            text: TitleConst,
+                            url:URLConst,
+                        })
+                            .then(() => console.log('Successful share'))
+                            .catch((error) => console.log('Error sharing', error));
                         }
-                        );
-                    }
-                    catch (error) {
-                        console.log('Error sharing: ' + error);
-                        return;
-                    }
                 }
             },
             loadMore: function () {
