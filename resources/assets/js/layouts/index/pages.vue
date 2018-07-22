@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-header></app-header>
+        <app-header :searchbox="true" ></app-header>
         <div class="bg-gray">
             <div class="container py-4">
                 <div class="row">
@@ -104,9 +104,10 @@
                                         </span>
                                         <div class="clearfix"></div>
                                         <div class="post-share">
+                                            
                                             <div class="post-meta" style="background-color: #038ed4;">
-                                                <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
-                                                <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip" title="Hooray!">Share</div>
+                                               <a href="" @click.prevent="AndroidNativeShare(post.title,post.id,post.category)"><i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
+                                                <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div></a> 
                                             </div>
                                             <div class="post-meta" style="float:right;">
                                                 <i class="fa fa-tags" aria-hidden="true"></i>
@@ -141,14 +142,15 @@
     import AppHeader from './header.vue'
     import WidgetLeft from './leftWidget.vue'
     import WidgetRight from './rightWidget.vue'
+    import share from './../share.vue'
     import {
-        addHomePostURL
+        addHomePostURL,apiDomain,viewPost
     } from "../../config.js";
 import helper from '../../services/helper.js';
 
     export default {
         components: {
-            AppHeader,WidgetLeft,WidgetRight
+            AppHeader,WidgetLeft,WidgetRight,share
         },
         data() {
             return {
@@ -173,6 +175,43 @@ import helper from '../../services/helper.js';
                 //re-trim if we are in the middle of a word
                 trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
                 return trimmedString;
+            },
+            AndroidNativeShare(Title, URL, Description) {
+                                    console.log(Title);
+                                    console.log(URL);
+                                    console.log(Description);
+
+                if(typeof navigator.share==='undefined' || !navigator.share) {
+                    alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+                }
+                // else if(window.location.protocol !='https:') {
+                //     alert('Android Native Share support only on Https:// protocol');
+                // }
+                else {
+                    if(typeof URL==='undefined') {
+                        URL=window.location.href;
+                    }
+                    if(typeof Title==='undefined') {
+                        Title=document.title;
+                    }
+                    if(typeof Description==='undefined') {
+                        Description='Share your thoughts about '+Title;
+                    }
+                    const TitleConst=Title;
+                    const URLConst=URL;
+                    const DescriptionConst=Description;
+
+                    try {
+                        navigator.share( {
+                            title: TitleConst, text:DescriptionConst, url:URLConst
+                        }
+                        );
+                    }
+                    catch (error) {
+                        console.log('Error sharing: ' + error);
+                        return;
+                    }
+                }
             },
             loadMore: function () {
                 const vm = this;
@@ -238,13 +277,16 @@ import helper from '../../services/helper.js';
         background-color: #f6f6f6;
         font-size: 12px;
         text-transform: uppercase;
+        font-weight: 450;
     }
 
     .post-meta i {
-        font-size: 15px;
-        float: left;
-        margin-right: 10px;
-        color: #a3a9b0;
+        font-size: 20px;
+    float: left;
+    margin-right: 10px;
+    color: #a3a9b0;
+    margin-top: 2px;
+    font-weight: bold;
     }
 
     .post-meta-text {
