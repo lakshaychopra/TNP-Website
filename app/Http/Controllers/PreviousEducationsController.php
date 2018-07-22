@@ -41,14 +41,27 @@ class PreviousEducationsController extends Controller
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
-            DB::beginTransaction();
-            if (!$auth) {
-                return $this->respondUnauthorized('Failed');
+            for ($i=1; $i <= 3 ; $i++) { 
+                DB::beginTransaction();
+                if (!$auth) {
+                    return $this->respondUnauthorized('Failed');
+                }
+                $pe = $request->all();
+                switch ($i) {
+                    case 1:
+                    $pe['education'] = "X";
+                    break;
+                    case 2:
+                    $pe['education'] = "XII";
+                    break;
+                    case 3:
+                    $pe['education'] = "DIPLOMA";
+                    break;
+                }
+                $peCreate = $this->service->createPreviousEducation($pe);
+                DB::commit();
             }
-            $pe = $request->all();
-            $peCreate = $this->service->createPreviousEducation($pe);
-            DB::commit();
-            return $this->respondSuccess('Inserted', $peCreate);
+            return $this->respondSuccess('Inserted');
         }
         catch (Exception $e) {
             DB::rollback();
