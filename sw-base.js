@@ -15,3 +15,19 @@ workbox.routing.registerRoute(
         cacheName: 'static-css',
     }),
 );
+
+workbox.routing.registerRoute(
+    'http://localhost/*',
+    workbox.strategies.cacheFirst({
+        cacheName: 'posts',
+        plugins: [
+            new workbox.expiration.Plugin({
+                maxEntries: 50,
+                maxAgeSeconds: 5 * 60, // 5 minutes
+            }),
+            new workbox.cacheableResponse.Plugin({
+                statuses: [0, 200],
+            }),
+        ],
+    }),
+);

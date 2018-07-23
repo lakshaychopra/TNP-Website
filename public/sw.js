@@ -2,10 +2,6 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "css/app.css",
-    "revision": "6186a199ef1809d82b0f0aa212cfd676"
-  },
-  {
     "url": "favicon.ico",
     "revision": "ac29a51f219ca1c52ca4e2c58745361b"
   },
@@ -19,7 +15,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "offline.html",
-    "revision": "387b9e384891cab8f0454b4729543487"
+    "revision": "3228e231945b85e8b18496aa284c04fb"
   },
   {
     "url": "offline.png",
@@ -38,5 +34,21 @@ workbox.routing.registerRoute(
     'http://localhost:8000/css/style.css',
     workbox.strategies.staleWhileRevalidate({
         cacheName: 'static-css',
+    }),
+);
+
+workbox.routing.registerRoute(
+    'http://localhost/*',
+    workbox.strategies.cacheFirst({
+        cacheName: 'posts',
+        plugins: [
+            new workbox.expiration.Plugin({
+                maxEntries: 50,
+                maxAgeSeconds: 5 * 60, // 5 minutes
+            }),
+            new workbox.cacheableResponse.Plugin({
+                statuses: [0, 200],
+            }),
+        ],
     }),
 );
