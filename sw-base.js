@@ -16,18 +16,31 @@ workbox.routing.registerRoute(
     }),
 );
 
-workbox.routing.registerRoute(
-    'http://localhost/*',
-    workbox.strategies.cacheFirst({
-        cacheName: 'posts',
-        plugins: [
-            new workbox.expiration.Plugin({
-                maxEntries: 50,
-                maxAgeSeconds: 5 * 60, // 5 minutes
-            }),
-            new workbox.cacheableResponse.Plugin({
-                statuses: [0, 200],
-            }),
-        ],
-    }),
-);
+// workbox.routing.registerRoute(
+//     '/',
+//     workbox.strategies.cacheFirst({
+//         cacheName: 'posts',
+//         plugins: [
+//             new workbox.expiration.Plugin({
+//                 maxEntries: 50,
+//                 maxAgeSeconds: 5 * 60, // 5 minutes
+//             }),
+//             new workbox.cacheableResponse.Plugin({
+//                 statuses: [0, 200],
+//             }),
+//         ],
+//     }),
+// );
+
+const OFFLINE_URL = 'http://localhost:8000/offline.html';
+self.addEventListener('fetch', event => {
+    if (event.request.mode === 'navigate' ||
+        (event.request.method === 'GET' &&
+            event.request.headers.get('accept').includes('text/html'))) {
+        event.respondWith(
+            fetch(event.request).catch(error => {
+                return caches.match(OFFLINE_URL);
+            })
+        );
+    }
+});
