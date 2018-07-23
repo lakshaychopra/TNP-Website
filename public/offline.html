@@ -8,11 +8,6 @@
     <link rel="shortcut icon" href="favicon.ico">
     <meta name="theme-color" content="C0C0C0">
     <style>
-        body,
-        h1 {
-            font-weight: 300
-        }
-        
         * {
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -24,8 +19,7 @@
             font-size: 20px;
             line-height: 32px;
             background: #FFF;
-            text-rendering: optimizeLegibility;
-            vertical-align: baseline
+            margin: 0
         }
         
         p {
@@ -37,25 +31,27 @@
             line-height: 65px;
             margin: 0 0 25px;
             letter-spacing: 1px;
-            text-transform: uppercase
-        }
-        
-        .colour1 {
-            background: #038ed4
+            text-transform: uppercase;
+            font-weight: 300
         }
         
         .fullwidth {
             width: 100%;
             padding: 50px 25px;
-            min-width: 280px
+            min-width: 280px;
+            position: relative;
+            vertical-align: bottom;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #038ed4
         }
         
         .center_img {
             margin: 0 auto;
             width: 100%;
-            max-width: 1000px;
             text-align: center;
-            color: #FFF;
+            color: #FFF
         }
         
         @media screen and (max-width:768px) {
@@ -75,12 +71,10 @@
 
 <body>
     <div class="center_img">
-        <div class="bodycontainer">
-            <img src="offline.png" width="300px" height="300px">
-        </div>
+        <img src="offline.png" width="300px" height="300px">
     </div>
     <div class="fullwidth colour1 ">
-        <div class="center_img bodycontainer">
+        <div class="center_img ">
             <h1><span>T&amp;P</span><br />is Offline</h1>
             <p>Please find a network to continue to the app</p>
         </div>
