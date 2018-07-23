@@ -105,13 +105,27 @@
                                         <div class="clearfix"></div>
                                         <div class="post-share">
                                             
-                                            <div class="post-meta" style="background-color: #038ed4;">
+                                            <div class="post-meta" style="background-color: #038ed4;"  v-if="!share_fn()" >
                                                <a href="" @click.prevent="AndroidNativeShare(post.title,post.id,post.category)"><i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
                                                 <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div></a> 
 
                                             
                                             </div>
-                                                <span class="share" v-if="this.share"> <i class="fa fa-facebook-official" aria-hidden="true"></i> <i class="fa fa-linkedin" aria-hidden="true"></i> <i class="fa fa-whatsapp" aria-hidden="true"></i> </span>
+                                                <span class="share" v-if="share_fn()">
+                                                    <social-sharing :url="getURL(post.id)" inline-template>
+                                                       <div style="float:left;">
+                                                        <network network="facebook">
+                                                            <i class="fa fa-fw fa-facebook"></i>
+                                                        </network>
+                                                        <network network="linkedin">
+                                                            <i class="fa fa-fw fa-linkedin"></i>
+                                                        </network>
+                                                        <network network="twitter">
+                                                            <i class="fa fa-fw fa-twitter"></i>
+                                                        </network>
+                                                       </div>
+                                                </social-sharing>
+                                                </span>
                                             <div class="post-meta" style="float:right;">
                                                 <i class="fa fa-tags" aria-hidden="true"></i>
                                                 <div class="post-meta-text col-primary ">{{ post.tag }}</div>
@@ -168,10 +182,28 @@ import helper from '../../services/helper.js';
         },
         created() {
             //console.log("index");
+            if(typeof navigator.share==='undefined' || !navigator.share) {
+                    this.share = true;
+                    // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+                }
+                // else if(window.location.protocol !='https:') {
+                //     alert('Android Native Share support only on Https:// protocol');
+                //     this.share = true
+                // }
+                else{
+                    this.share = false;
+                }
+                console.log(this.share);
             this.loading = 0;
             this.getPosts();
         },
         methods: {
+            getURL(id){
+                return "http://localhost:8000/view/"+id;
+            },
+            share_fn(){
+                return this.share;
+            },
             gethtml(text) {
                 var maxLength = 400 // maximum number of characters to extract
                 //trim the string to the maximum length
@@ -185,15 +217,13 @@ import helper from '../../services/helper.js';
                                     console.log(Description);
 
                 if(typeof navigator.share==='undefined' || !navigator.share) {
-                    this.share = true;
                     alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
                 }
-                else if(window.location.protocol !='https:') {
-                    alert('Android Native Share support only on Https:// protocol');
-                    this.share = true
-                }
+                // else if(window.location.protocol !='https:') {
+                //     alert('Android Native Share support only on Https:// protocol');
+                //     this.share = true
+                // }
                 else {
-                    this.share = false;
                     if(typeof URL==='undefined') {
                         URL=window.location.href;
                     }

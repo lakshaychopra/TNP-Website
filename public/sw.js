@@ -11,27 +11,27 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "offline.html",
-    "revision": "3228e231945b85e8b18496aa284c04fb"
+    "revision": "3ef6e540f4e7764a3242c9d5e3b9c07f"
   },
   {
     "url": "offline.png",
-    "revision": "b5a77fe1d90718592d6428b7f5298df2"
+    "revision": "a62ebdc11693964198bc54c92521f35c"
   }
 ]);
 
-workbox.routing.registerRoute(
-    'http://localhost:8000/js/bundle.min.js',
-    workbox.strategies.staleWhileRevalidate({
-        cacheName: 'static-js',
-    }),
-);
+// workbox.routing.registerRoute(
+//     'http://localhost:8000/js/bundle.min.js',
+//     workbox.strategies.staleWhileRevalidate({
+//         cacheName: 'static-js',
+//     }),
+// );
 
-workbox.routing.registerRoute(
-    'http://localhost:8000/css/style.css',
-    workbox.strategies.staleWhileRevalidate({
-        cacheName: 'static-css',
-    }),
-);
+// workbox.routing.registerRoute(
+//     'http://localhost:8000/css/style.css',
+//     workbox.strategies.staleWhileRevalidate({
+//         cacheName: 'static-css',
+//     }),
+// );
 
 // workbox.routing.registerRoute(
 //     '/',

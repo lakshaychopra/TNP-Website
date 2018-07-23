@@ -25,6 +25,9 @@ Vue.use(infiniteScroll)
 import swal from 'vue-sweetalert2';
 Vue.use(swal);
 
+import SocialSharing from 'vue-social-sharing';
+Vue.use(SocialSharing);
+
 import VueHtml5Editor from 'vue-html5-editor'
 Vue.use(VueHtml5Editor, {
     hiddenModules: [

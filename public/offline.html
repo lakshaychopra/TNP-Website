@@ -23,7 +23,6 @@
             font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
             font-size: 20px;
             line-height: 32px;
-            color: #999;
             background: #FFF;
             text-rendering: optimizeLegibility;
             vertical-align: baseline
@@ -37,7 +36,7 @@
             font-size: 60px;
             line-height: 65px;
             margin: 0 0 25px;
-            letter-spacing: 3px;
+            letter-spacing: 1px;
             text-transform: uppercase
         }
         
@@ -47,19 +46,16 @@
         
         .fullwidth {
             width: 100%;
-            padding: 60px 30px;
+            padding: 50px 25px;
             min-width: 280px
         }
         
-        .fullwidth .bodycontainer {
+        .center_img {
             margin: 0 auto;
             width: 100%;
             max-width: 1000px;
-            text-align: center
-        }
-        
-        .countdown {
-            color: #FFF
+            text-align: center;
+            color: #FFF;
         }
         
         @media screen and (max-width:768px) {
@@ -67,27 +63,10 @@
                 font-size: 23px;
                 line-height: 29px
             }
-            #topcontainer h1 {
-                font-size: 54px;
-                line-height: 54px;
-                letter-spacing: -1.2px
-            }
-            #topcontainer h1 span {
-                font-size: 70px;
-                line-height: 70px
-            }
             @media screen and (max-width:480px) {
                 body {
                     font-size: 21px;
                     line-height: 27px
-                }
-                #topcontainer h1 {
-                    font-size: 36px;
-                    line-height: 36px
-                }
-                #topcontainer h1 span {
-                    font-size: 50px;
-                    line-height: 50px
                 }
             }
         }
@@ -95,13 +74,13 @@
 </head>
 
 <body>
-    <div class="fullwidth clearfix">
-        <div class="bodycontainer clearfix">
+    <div class="center_img">
+        <div class="bodycontainer">
             <img src="offline.png" width="300px" height="300px">
         </div>
     </div>
-    <div class="fullwidth colour1 clearfix">
-        <div class="countdown bodycontainer clearfix">
+    <div class="fullwidth colour1 ">
+        <div class="center_img bodycontainer">
             <h1><span>T&amp;P</span><br />is Offline</h1>
             <p>Please find a network to continue to the app</p>
         </div>

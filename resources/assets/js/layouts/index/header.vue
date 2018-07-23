@@ -13,6 +13,7 @@
                             <li class="nav-item ">
                                 <a class="nav-link" href="#" @click="search_input = !search_input">
                                     <i class="fa fa-search"></i>
+
                                 </a>
                             </li>
                         </ul>
@@ -47,13 +48,8 @@
             </nav>
             <form action="/" method="GET" v-if="search_input" class="d-sm-none">
                 <div class="row bg-col-grey">
-                    <div class="col-md-11">
-                        <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on" placeholder="Search">
-                    </div>
                     <div class="col-md-1">
-                        <button class="btn btn-block btn-info" type="submit">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
+                        <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on" placeholder="Search">
                     </div>
                 </div>
             </form>
