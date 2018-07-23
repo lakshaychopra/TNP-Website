@@ -22,8 +22,7 @@ class CreateTableUsers extends Migration
             $table->string('token_2fa')->nullable();
             $table->enum('type', ['STUDENT', 'COMPANY', 'EXECUTIVE_MEMBER', 'ADMIN'])->default('STUDENT');
             $table->string('provider_unique_id')->nullable();
-            $table->string('activation_token',64)->nullable();
-            $table->string('status',25)->nullable();
+            $table->enum('status',['ENABLED','DISABLED'])->default('ENABLED');
             $table->enum('form_status',['N.A.','PENDING','SUBMITTED','VERIFIED'])->default('N.A.');
             $table->enum('student_form_step',['N.A.','TC','PROFILE','PREVIOUS_EDUCATION','DEGREE','SUBMITTED'])->default('N.A.');
             $table->boolean('is_mailed')->default(false);
