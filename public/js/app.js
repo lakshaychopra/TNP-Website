@@ -24645,22 +24645,13 @@ var render = function() {
                       ),
                       _c("br"),
                       _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "https://goo.gl/maps/B61b8nR1svs",
-                            target: "_blank"
-                          }
-                        },
-                        [_vm._v("Get Directions")]
-                      )
+                      _vm._m(7)
                     ])
                   ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row mt-2" }, [
-                  _vm._m(7),
+                  _vm._m(8),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-10" }, [
                     _c("small", [
@@ -24679,7 +24670,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row mt-2" }, [
-                  _vm._m(8),
+                  _vm._m(9),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-10" }, [
                     _c("small", [
@@ -24698,7 +24689,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row mt-2" }, [
-                  _vm._m(9),
+                  _vm._m(10),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-10" }, [
                     _c("small", [
@@ -24821,6 +24812,16 @@ var staticRenderFns = [
         attrs: { "aria-hidden": "true" }
       })
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { attrs: { href: "https://goo.gl/maps/B61b8nR1svs", target: "_blank" } },
+      [_c("strong", [_vm._v("↱")]), _vm._v("  Get Directions")]
+    )
   },
   function() {
     var _vm = this

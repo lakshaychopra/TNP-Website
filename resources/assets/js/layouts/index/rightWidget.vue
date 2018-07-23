@@ -80,7 +80,7 @@
                                 <small>{{ office.about_address }}
                                     <br> {{ office.about_location }}
                                     <br>
-                                    <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank">Get Directions</a>
+                                    <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank"><strong>&#8625;</strong>&nbsp; Get Directions</a>
                                 </small>
                             </div>
                         </div>
