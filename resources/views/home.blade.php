@@ -15,7 +15,39 @@
 
     <link rel="icon" type="image/png" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180" />
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon"> {{-- OG Tags --}}
-    <script src="{{asset('jsonld.js')}}"></script>
+    <script type='application/ld+json'>
+        {
+            "@context": "http://schema.org/",
+            "@type": "CollegeOrUniversity",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "India",
+                "addressLocality": "Ludhiana, Punjab",
+                "addressRegion": "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006", 
+                "postOfficeBoxNumber ": "141006 ", 
+                "postalCode ": "141006 ", 
+                "streetAddress ": "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006 ", 
+                "email ": "tpo@gndec.ac.in ", 
+                "faxNumber ": " + 911612501106 ", 
+                "telephone ": " + 9101615064510 ", 
+                "alternateName ":"T&P Cell, GNDEC",
+                "description": "This is official application of Training and Placement Cell, GNDEC, Ludhiana.",
+                "disambiguatingDescription": "Training and Placement Cell, GNDEC",
+                "name": "Training and Placement Cell, GNDEC"
+            },
+            "mainEntityOfPage": "https://gndec.ac.in/",
+            "brand": "https://gndec.ac.in/",
+            "email": "tpo@gndec.ac.in",
+            "faxNumber": "+911612501106 ",
+            "foundingDate": "1956",
+            "globalLocationNumber": "+91",
+            "telephone": "+919872219178",
+            "alternateName": "T&P Cell,GNDEC ", 
+            "description ": "This is official application of Training and Placement Cell, GNDEC,Ludhiana.", 
+            "disambiguatingDescription ": "Training and Placement Cell, GNDEC ", 
+            "name ": "Training and Placement Cell, GNDEC " 
+        }
+        </script>
  {{-- fb    --}}
     <meta property="og:type" content="website">
     <meta property="og:title" content="Training and Placement Cell"> {{--
@@ -59,6 +91,7 @@
     <meta name="msapplication-TileImage" content="{{asset('/images/icons/144x144.png')}}">
     <meta name="msapplication-TileColor" content="#fff">
 {{-- JS fallback --}}
+<noscript>Your browser does not support JavaScript!</noscript>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
     <!--[if lt IE 9]>
