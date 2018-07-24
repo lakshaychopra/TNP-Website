@@ -18,7 +18,7 @@ class HomeRepository
     
     public function list($limit = false)
     {
-        $builder = Post::orderBy('created_at', 'desc');
+        $builder = Post::where('is_pinned', '=', '0')->orderBy('created_at', 'desc');
         if(!$limit) {
             return $builder->get();
         }
