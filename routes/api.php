@@ -17,7 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/aa', 'StudentFilterController@filterStudents');
+Route::get('/aaaa', 'StudentFilterController@filterStudents');
+Route::get('/bbbb', 'DashboardController@adminDashboard');
 
 // Login Controller
 Route::post('/login', 'LoginController@login');
