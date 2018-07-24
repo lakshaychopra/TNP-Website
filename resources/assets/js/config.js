@@ -10,6 +10,7 @@ export const addPostURL = '/api/dashboard/post/';
 export const showPostURL = '/api/dashboard/post/';
 
 export const addHomePostURL = '/api/home/';
+export const pinnedPostURL = '/api/home/page/view/pinned';
 export const registerURL = '/api/register/';
 export const setPasswordURL = '/api/register/password';
 

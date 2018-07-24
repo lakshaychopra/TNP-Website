@@ -10,6 +10,140 @@
                     </div>
 
                     <div class="col" id="main">
+                        <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts" v-if="pinned_posts.length>0">
+                            <div class="col-md-12">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-md-1 d-none d-md-block mr-2">
+                                                <a href="/">
+                                                    <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h2>
+                                                            <router-link :to="{ name: 'view', params: { id:pin.id }}">
+                                                                <a href="#">{{pin.title}}</a>
+                                                            </router-link>
+                                                        </h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="pull-left">
+                                                            <!-- <small> -->
+                                                            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                                            <div class="post-meta-text col-primary " v-html="setDateFormat(pin.updated_at)"></div>
+                                                            <!-- </small> -->
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            <!-- <small> -->
+                                                            <i class="fa fa-flag" aria-hidden="true"></i>
+                                                            <div class="post-meta-text col-primary ">
+                                                                    <a href="#" @click="$children[1].searchby_category(pin.category)">
+                                                                        {{pin.category}}
+                                                                    </a>
+                                                            </div>
+                                                            <!-- </small> -->
+                                                        </div>
+                                                        <!-- <small>
+                                                        <i class="fa fa-calendar-check-o color-main" aria-hidden="true"></i> {{post.updated_at}}
+                                                        <span class="pull-right sub-head">
+                                                            <i class="fa fa-flag color-main" aria-hidden="true"></i> {{post.category}}
+                                                        </span>
+                                                    </small> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
+
+                                    <div class="card-img-top" data-toggle="modal" v-if="post.image != null" data-target="#exampleModal" :style="getImage(pin.image)"
+                                        :postImage="pin.image">
+                                        <!-- <img :src="getImage(post.image_path)" alt=""> -->
+                                    </div>
+
+                                    <div class="card-body">
+                                        <!-- <div>
+                                        <span class="pull-right share-button">
+                                            <a href="#">
+                                                <i id="share" class="fa fa-share-alt fa-2x" aria-hidden="true"></i>
+                                            </a>
+                                        </span>
+                                    </div>  -->
+
+                                        <!-- <ul class="list-group">
+                            <li class="list-group-item"></li>
+                            </ul> -->
+                                        <span v-if="pin.body.length>400">
+                                            <div class="mb-3 show-read-more" v-html="gethtml(pin.body)" id="bg-trans" style="padding: 10px;background-color: #f6f6f6;"></div>
+                                            <router-link :to="{ name: 'view', params: { id:pin.id }}" :searchbox="false">
+                                                <button class="btn btn-block text-center" @click="gethtml(pin.body)">
+                                                    <a href="" style="color: #333;">Read More
+                                                        <i class="fa fa-plus"></i>
+                                                    </a>
+                                                </button>
+                                            </router-link>
+                                        </span>
+                                        <span v-else>
+                                            <div class="mb-3 show-read-more" v-html="pin.body"></div>
+                                        </span>
+                                        <div class="clearfix"></div>
+                                        <div class="post-share">
+                                            
+                                            <div class="post-meta" style="background-color: #038ed4;"  v-if="!share_fn()" >
+                                               <a href="" @click.prevent="AndroidNativeShare(pin.title,pin.id,pin.category)"><i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
+                                                <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div></a> 
+
+                                            
+                                            </div>
+                                                <span class="share" v-if="share_fn()">
+                                                    <social-sharing :url="getURL(pin.id)" inline-template>
+                                                       <div style="float:left;">
+                                                        <network network="facebook">
+                                                            <i class="fa fa-fw fa-facebook"></i>
+                                                        </network>
+                                                        <network network="linkedin">
+                                                            <i class="fa fa-fw fa-linkedin"></i>
+                                                        </network>
+                                                        <network network="twitter">
+                                                            <i class="fa fa-fw fa-twitter"></i>
+                                                        </network>
+                                                       </div>
+                                                </social-sharing>
+                                                </span>
+                                            <div class="post-meta" style="float:right;">
+                                                <i class="fa fa-tags" aria-hidden="true"></i>
+                                                <div class="post-meta-text col-primary ">{{ post.tag }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="card-footer">
+                                    <span class="pull-right">
+                                        <button class="btn btn-custom shadow-sm" v-for="tag in post.tag.split(',')" :key="tag">{{ tag.toUpperCase() }}</button>
+                                    </span>
+                                </div> -->
+
+                            <!-- </div>
+
+                        </div> -->
+                        </div>
+
+
+
+
+
+
+
+
+
                         <div class="row justify-content-center" id="posts" v-if="posts.length==0">
                             <div class="col-md-12">
                                 <div class="card">
@@ -161,7 +295,7 @@
     import WidgetRight from './rightWidget.vue'
     import share from './../share.vue'
     import {
-        addHomePostURL,apiDomain,viewPost, categoryURL
+        addHomePostURL,apiDomain,viewPost, categoryURL,pinnedPostURL
     } from "../../config.js";
 import helper from '../../services/helper.js';
 
@@ -176,6 +310,7 @@ import helper from '../../services/helper.js';
                 busy: false,
                 postEdit: {},
                 posts: {},
+                pinned_posts:{},
                 showDropDown: false,
                 share:false,
             }
@@ -196,6 +331,7 @@ import helper from '../../services/helper.js';
                 console.log(this.share);
             this.loading = 0;
             this.getPosts();
+            this.getPinnedPosts();
         },
         methods: {
             getURL(id){
@@ -292,6 +428,18 @@ import helper from '../../services/helper.js';
                         // var obj = JSON.parse(response.data);
                         // console.log(response);
                         this.getrecord(response);
+                        // this.posts = response.data.data;
+                        console.log(response.data.data);
+
+                    })
+                    .catch((error) => console.log(error))
+            },
+            getPinnedPosts() {
+                axios.get(pinnedPostURL)
+                    .then((response) => {
+                        // var obj = JSON.parse(response.data);
+                        // console.log(response);
+                        this.pinned_posts = response.data.data.data;
                         // this.posts = response.data.data;
                         console.log(response.data.data);
 

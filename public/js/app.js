@@ -306,24 +306,25 @@ var _this = this;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return apiDomain; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return loginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return forgetURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return verifyURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return securityURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return verifyURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return securityURL; });
 /* unused harmony export oauthURL */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return addPostURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showPostURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return showPostURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addHomePostURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return registerURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return setPasswordURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return pinnedPostURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return registerURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return setPasswordURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return downloadExcelURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return mailExcelURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return singleuserURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return searchURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return singleuserURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return searchURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return categoryURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return rightWidget; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return rightWidget; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return formstepChangeURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return firstLoginURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return statusChangeURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return storeStudentURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return statusChangeURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return storeStudentURL; });
 /* unused harmony export updateProfileURL */
 /* unused harmony export viewPost */
 var apiDomain = 'http://localhost:8000';
@@ -338,6 +339,7 @@ var addPostURL = '/api/dashboard/post/';
 var showPostURL = '/api/dashboard/post/';
 
 var addHomePostURL = '/api/home/';
+var pinnedPostURL = '/api/home/page/view/pinned';
 var registerURL = '/api/register/';
 var setPasswordURL = '/api/register/password';
 
@@ -23452,6 +23454,140 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -23471,6 +23607,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             busy: false,
             postEdit: {},
             posts: {},
+            pinned_posts: {},
             showDropDown: false,
             share: false
         };
@@ -23491,6 +23628,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         console.log(this.share);
         this.loading = 0;
         this.getPosts();
+        this.getPinnedPosts();
     },
 
     methods: {
@@ -23592,6 +23730,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // var obj = JSON.parse(response.data);
                 // console.log(response);
                 _this2.getrecord(response);
+                // this.posts = response.data.data;
+                console.log(response.data.data);
+            }).catch(function (error) {
+                return console.log(error);
+            });
+        },
+        getPinnedPosts: function getPinnedPosts() {
+            var _this3 = this;
+
+            axios.get(__WEBPACK_IMPORTED_MODULE_4__config_js__["k" /* pinnedPostURL */]).then(function (response) {
+                // var obj = JSON.parse(response.data);
+                // console.log(response);
+                _this3.pinned_posts = response.data.data.data;
                 // this.posts = response.data.data;
                 console.log(response.data.data);
             }).catch(function (error) {
@@ -23775,7 +23926,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             if (this.search.length >= 3) {
-                axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["m" /* searchURL */] + this.search).then(function (response) {
+                axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["n" /* searchURL */] + this.search).then(function (response) {
                     return _this.$parent.posts = response.data.data.data;
                 });
             } else {
@@ -24525,7 +24676,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["l" /* rightWidget */]).then(function (response) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["m" /* rightWidget */]).then(function (response) {
             _this.office = response.data.data[0];
             console.log(_this.office);
         }).catch(function (error) {
@@ -25031,6 +25182,402 @@ var render = function() {
                 "div",
                 { staticClass: "col", attrs: { id: "main" } },
                 [
+                  _vm._l(_vm.pinned_posts, function(pin) {
+                    return _vm.pinned_posts.length > 0
+                      ? _c(
+                          "div",
+                          {
+                            key: pin.id,
+                            staticClass: "row justify-content-center",
+                            attrs: { id: "posts" }
+                          },
+                          [
+                            _c("div", { staticClass: "col-md-12" }, [
+                              _c("div", { staticClass: "card card-primary" }, [
+                                _c("div", { staticClass: "card-header" }, [
+                                  _c("div", { staticClass: "row" }, [
+                                    _vm._m(0, true),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-md-10" }, [
+                                      _c("div", { staticClass: "row" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "col-md-12" },
+                                          [
+                                            _c(
+                                              "h2",
+                                              [
+                                                _c(
+                                                  "router-link",
+                                                  {
+                                                    attrs: {
+                                                      to: {
+                                                        name: "view",
+                                                        params: { id: pin.id }
+                                                      }
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "a",
+                                                      { attrs: { href: "#" } },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(pin.title)
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "row" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "col-md-12" },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "pull-left" },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-calendar-check-o",
+                                                  attrs: {
+                                                    "aria-hidden": "true"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c("div", {
+                                                  staticClass:
+                                                    "post-meta-text col-primary ",
+                                                  domProps: {
+                                                    innerHTML: _vm._s(
+                                                      _vm.setDateFormat(
+                                                        pin.updated_at
+                                                      )
+                                                    )
+                                                  }
+                                                })
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              { staticClass: "pull-right" },
+                                              [
+                                                _c("i", {
+                                                  staticClass: "fa fa-flag",
+                                                  attrs: {
+                                                    "aria-hidden": "true"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "post-meta-text col-primary "
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "a",
+                                                      {
+                                                        attrs: { href: "#" },
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            _vm.$children[1].searchby_category(
+                                                              pin.category
+                                                            )
+                                                          }
+                                                        }
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "\n                                                                    " +
+                                                            _vm._s(
+                                                              pin.category
+                                                            ) +
+                                                            "\n                                                                "
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _vm.post.image != null
+                                  ? _c("div", {
+                                      staticClass: "card-img-top",
+                                      style: _vm.getImage(pin.image),
+                                      attrs: {
+                                        "data-toggle": "modal",
+                                        "data-target": "#exampleModal",
+                                        postImage: pin.image
+                                      }
+                                    })
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "card-body" }, [
+                                  pin.body.length > 400
+                                    ? _c(
+                                        "span",
+                                        [
+                                          _c("div", {
+                                            staticClass: "mb-3 show-read-more",
+                                            staticStyle: {
+                                              padding: "10px",
+                                              "background-color": "#f6f6f6"
+                                            },
+                                            attrs: { id: "bg-trans" },
+                                            domProps: {
+                                              innerHTML: _vm._s(
+                                                _vm.gethtml(pin.body)
+                                              )
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "router-link",
+                                            {
+                                              attrs: {
+                                                to: {
+                                                  name: "view",
+                                                  params: { id: pin.id }
+                                                },
+                                                searchbox: false
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "button",
+                                                {
+                                                  staticClass:
+                                                    "btn btn-block text-center",
+                                                  on: {
+                                                    click: function($event) {
+                                                      _vm.gethtml(pin.body)
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "a",
+                                                    {
+                                                      staticStyle: {
+                                                        color: "#333"
+                                                      },
+                                                      attrs: { href: "" }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "Read More\n                                                    "
+                                                      ),
+                                                      _c("i", {
+                                                        staticClass:
+                                                          "fa fa-plus"
+                                                      })
+                                                    ]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    : _c("span", [
+                                        _c("div", {
+                                          staticClass: "mb-3 show-read-more",
+                                          domProps: {
+                                            innerHTML: _vm._s(pin.body)
+                                          }
+                                        })
+                                      ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "clearfix" }),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "post-share" }, [
+                                    !_vm.share_fn()
+                                      ? _c(
+                                          "div",
+                                          {
+                                            staticClass: "post-meta",
+                                            staticStyle: {
+                                              "background-color": "#038ed4"
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "a",
+                                              {
+                                                attrs: { href: "" },
+                                                on: {
+                                                  click: function($event) {
+                                                    $event.preventDefault()
+                                                    _vm.AndroidNativeShare(
+                                                      pin.title,
+                                                      pin.id,
+                                                      pin.category
+                                                    )
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-share-alt",
+                                                  staticStyle: {
+                                                    color: "#fff"
+                                                  },
+                                                  attrs: {
+                                                    "aria-hidden": "true"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "post-meta-text col-primary ",
+                                                    staticStyle: {
+                                                      color: "#fff"
+                                                    },
+                                                    attrs: {
+                                                      "data-toggle": "tooltip"
+                                                    }
+                                                  },
+                                                  [_vm._v(" Share")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _vm.share_fn()
+                                      ? _c(
+                                          "span",
+                                          { staticClass: "share" },
+                                          [
+                                            _c("social-sharing", {
+                                              attrs: {
+                                                url: _vm.getURL(pin.id)
+                                              },
+                                              inlineTemplate: {
+                                                render: function() {
+                                                  var _vm = this
+                                                  var _h = _vm.$createElement
+                                                  var _c = _vm._self._c || _h
+                                                  return _c(
+                                                    "div",
+                                                    {
+                                                      staticStyle: {
+                                                        float: "left"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "network",
+                                                        {
+                                                          attrs: {
+                                                            network: "facebook"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fa fa-fw fa-facebook"
+                                                          })
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "network",
+                                                        {
+                                                          attrs: {
+                                                            network: "linkedin"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fa fa-fw fa-linkedin"
+                                                          })
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "network",
+                                                        {
+                                                          attrs: {
+                                                            network: "twitter"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fa fa-fw fa-twitter"
+                                                          })
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                },
+                                                staticRenderFns: []
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "post-meta",
+                                        staticStyle: { float: "right" }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "fa fa-tags",
+                                          attrs: { "aria-hidden": "true" }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "post-meta-text col-primary "
+                                          },
+                                          [_vm._v(_vm._s(_vm.post.tag))]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ])
+                              ])
+                            ])
+                          ]
+                        )
+                      : _vm._e()
+                  }),
+                  _vm._v(" "),
                   _vm.posts.length == 0
                     ? _c(
                         "div",
@@ -25038,7 +25585,7 @@ var render = function() {
                           staticClass: "row justify-content-center",
                           attrs: { id: "posts" }
                         },
-                        [_vm._m(0)]
+                        [_vm._m(1)]
                       )
                     : _vm._l(_vm.posts, function(post) {
                         return _c(
@@ -25053,7 +25600,7 @@ var render = function() {
                               _c("div", { staticClass: "card card-primary" }, [
                                 _c("div", { staticClass: "card-header" }, [
                                   _c("div", { staticClass: "row" }, [
-                                    _vm._m(1, true),
+                                    _vm._m(2, true),
                                     _vm._v(" "),
                                     _c("div", { staticClass: "col-md-10" }, [
                                       _c("div", { staticClass: "row" }, [
@@ -25479,6 +26026,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-1 d-none d-md-block mr-2" }, [
+      _c("a", { attrs: { href: "/" } }, [
+        _c("img", {
+          staticClass: " mt-2",
+          attrs: {
+            src: "/images/icons/120x120.png",
+            width: "48px",
+            height: "48px",
+            alt: "logo-tpo"
+          }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-12" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-header" }, [
@@ -25613,6 +26178,9 @@ exports.push([module.i, "\n.list-inline[data-v-6986a57c] {\n        padding-left
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_helper__ = __webpack_require__(1);
+//
+//
+//
 //
 //
 //
@@ -26053,17 +26621,14 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm.post.image != null
-                      ? _c("div", {
-                          staticClass: "card-img-top",
-                          style: _vm.getImage(_vm.post.image),
-                          attrs: {
-                            "data-toggle": "modal",
-                            "data-target": "#exampleModal",
-                            postImage: _vm.post.image
-                          }
-                        })
-                      : _vm._e(),
+                    _c("img", {
+                      staticClass: "card-image-top",
+                      attrs: {
+                        src: "/images/posts/images/" + _vm.post.image,
+                        alt: _vm.post.image,
+                        width: "100%"
+                      }
+                    }),
                     _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
                       _c("div", {
@@ -28845,7 +29410,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$validator.validateAll().then(function (result) {
                 if (result) {
                     // this.loading = true;
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["q" /* singleuserURL */], _this.user).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["r" /* singleuserURL */], _this.user).then(function (response) {
                         toastr['success'](response.data.message);
                         // this.loading = false;
                         // console.log(this.loading);
@@ -30759,7 +31324,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["p" /* showPostURL */] + this.id).then(function (response) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["q" /* showPostURL */] + this.id).then(function (response) {
             _this.post = response.data.data;
             console.log(response.data.data);
         }).catch(function (error) {
@@ -35853,14 +36418,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["f" /* firstLoginURL */], this.id).then(function (response) {
                 console.log(response);
                 if (response.status == 200) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["r" /* statusChangeURL */], _this.tnc).then(function (res) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["s" /* statusChangeURL */], _this.tnc).then(function (res) {
                         console.log(res);
                         if (res.status == 200) {
                             axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["h" /* formstepChangeURL */], _this.form_step).then(function (stat) {
                                 console.log(stat);
                                 if (stat.status == 200) {
                                     console.log(stat);
-                                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["s" /* storeStudentURL */], _this.username).then(function (resp) {
+                                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["t" /* storeStudentURL */], _this.username).then(function (resp) {
                                         if (resp.status == 200) {
                                             toastr['success']("User Added!!");
                                             // this.$router.push('/userlogin');
@@ -37273,7 +37838,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["n" /* securityURL */], _this2.security).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["o" /* securityURL */], _this2.security).then(function (response) {
                         console.log(response);
                         localStorage.setItem('token', _this2.token);
                         toastr['success'](response.data.message);
@@ -37913,7 +38478,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["k" /* registerURL */], _this.registerForm).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["l" /* registerURL */], _this.registerForm).then(function (response) {
                         toastr['success'](response.data.message);
                         _this.authenticated = true;
                         _this.token = response.data.data.access_token;
@@ -37930,7 +38495,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["o" /* setPasswordURL */], _this2.pswdUpdate).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["p" /* setPasswordURL */], _this2.pswdUpdate).then(function (response) {
                         toastr['success'](response.data.message);
                         // localStorage.setItem('token', this.token);
                         axios.defaults.headers.common['Authorization'] = null;
@@ -38569,7 +39134,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["t" /* verifyURL */], _this.registerForm).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["u" /* verifyURL */], _this.registerForm).then(function (response) {
                         toastr['success'](response.data.message);
                         _this.authenticated = true;
                         _this.token = response.data.data.access_token;

@@ -108,9 +108,12 @@
                                         </div>
                                     </div>
                                 </div> 
-                                 <div class="card-img-top" data-toggle="modal" v-if="post.image != null" data-target="#exampleModal" :style="getImage(post.image)"
+                                 <!-- <div class="card-img-top" data-toggle="modal" v-if="post.image != null" data-target="#exampleModal" :style="getImage(post.image)"
                                     :postImage="post.image"> 
-                                 </div>
+                                 </div> -->
+
+                                <img :src="'/images/posts/images/'+post.image" :alt="post.image" width="100%" class="card-image-top">
+
                                  
                                 <div class="card-body">
                                     <div class="mb-3" v-html="post.body"></div>
