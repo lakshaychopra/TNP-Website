@@ -59,7 +59,7 @@ class StudentsController extends Controller
             if (!$auth) {
                 return $this->respondUnauthorized('Post Failed');
             }
-            $data = $request->only('aadhaar_no');
+            $data = $request->only('univ_roll_no');
             $student = new Student;
             $student->create($data);
             DB::commit();
@@ -93,7 +93,7 @@ class StudentsController extends Controller
     {
         $auth = JWTAuth::parseToken()->authenticate();
         if ($student != null) {
-            $data = Student::where('aadhaar_no', '=' , $student)->get();
+            $data = Student::where('univ_roll_no', '=' , $student)->get();
             return $this->respondData($data);
         }
     }

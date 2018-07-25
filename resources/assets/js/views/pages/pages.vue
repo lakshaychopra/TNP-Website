@@ -1,26 +1,16 @@
 <template>
     <div>
-        <app-header :searchbox="true" ></app-header>
-        <div class="bg-gray">
-            <div class="container py-4">
-                <div class="row">
-
-                    <div class="col-2 px-1 d-none d-md-block sticky-top" id="sidebar">
-                       <widget-left></widget-left>
-                    </div>
-
-                    <div class="col" id="main">
-                                               <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts" v-if="pinned_posts.length>0">
+                        <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts" v-if="pinned_posts.length>0">
                             <div class="col-md-12">
                                 <div class="card card-primary">
                                     <div class="card-header">
                                         <div class="row">
-                                            <div class="col-md-1 d-none d-md-block">
+                                            <div class="col-md-1 d-none d-md-block mr-2">
                                                 <a href="/">
                                                     <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
                                                 </a>
                                             </div>
-                                            <div class="col-md-10 pl-4">
+                                            <div class="col-md-10">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <h2>
@@ -29,7 +19,6 @@
                                                             </router-link>
                                                         </h2>
                                                     </div>
-                                                    
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -58,16 +47,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-1">
-                                                        <i class="fa fa-thumb-tack text-danger pin" aria-hidden="true"></i>
-                                                    </div>
                                         </div>
 
                                     </div>
 
                                     <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
 
-                                    <div class="card-img-top" data-toggle="modal" v-if="pin.image != null" data-target="#exampleModal" :style="getImage(pin.image)"
+                                    <div class="card-img-top" data-toggle="modal" v-if="post.image != null" data-target="#exampleModal" :style="getImage(pin.image)"
                                         :postImage="pin.image">
                                         <!-- <img :src="getImage(post.image_path)" alt=""> -->
                                     </div>
@@ -123,7 +109,7 @@
                                                 </span>
                                             <div class="post-meta" style="float:right;">
                                                 <i class="fa fa-tags" aria-hidden="true"></i>
-                                                <div class="post-meta-text col-primary ">{{ pin.tag }}</div>
+                                                <div class="post-meta-text col-primary ">{{ post.tag }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -270,28 +256,16 @@
                         <div class="text-center" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
                             <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px" v-if="loading"></i>
                         </div>
-                    </div>
-                    <widget-right></widget-right>
-                    
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 <script>
-    import AppHeader from './header.vue'
-    import WidgetLeft from './leftWidget.vue'
-    import WidgetRight from './rightWidget.vue'
     import {
         addHomePostURL,apiDomain,viewPost, categoryURL,pinnedPostURL
     } from "../../config.js";
 import helper from '../../services/helper.js';
 
     export default {
-        components: {
-            AppHeader,WidgetLeft,WidgetRight
-        },
-         data() {
+        data() {
             return {
                 loading: 1,
                 page: 2,
@@ -436,7 +410,7 @@ import helper from '../../services/helper.js';
                     .then((response) => {
                         // var obj = JSON.parse(response.data);
                         // console.log(response);
-                        this.pinned_posts = response.data.data;
+                        this.pinned_posts = response.data.data.data;
                         // this.posts = response.data.data;
                         console.log(response.data.data);
 
@@ -451,289 +425,5 @@ import helper from '../../services/helper.js';
     }
 </script>
 <style>
-    .post-meta {
-        margin-right: 15px;
-        margin-bottom: 5px;
-        margin-top: 5px;
-        float: left;
-        padding: 10px;
-        border: 1px solid #e4e6e8;
-        background-color: #f6f6f6;
-        font-size: 12px;
-        text-transform: uppercase;
-        font-weight: 450;
-    }
-
-    .post-meta i {
-        font-size: 20px;
-    float: left;
-    margin-right: 10px;
-    color: #a3a9b0;
-    margin-top: 2px;
-    font-weight: bold;
-    }
-    .pin{
-    position: absolute;
-    right: 7px;
-    top: -7px;
-    }
-    .post-meta-text {
-        float: right;
-        font-size: 12px;
-        padding-top: 3px;
-        margin-left: 5px;
-    }
-
-    #sidebar .card-header {
-        background-color: #fff;
-        border-bottom: 0;
-        padding-bottom: 0;
-        z-index: 1;
-    }
-
-    #sidebar .card-header h4 {
-        border-bottom: 2px solid #ecedee;
-        margin-bottom: 20px;
-        line-height: 28px;
-        padding-bottom: 10px;
-        position: relative;
-    }
-
-    #sidebar .card-header h4:before {
-        content: "";
-        position: absolute;
-        height: 2px;
-        width: 28px;
-        background-color: #2f3c4e;
-        bottom: -2px;
-        left: 0;
-    }
-
-    #sidebar #about h4:after {
-        content: "\f0c0";
-    }
-
-    #sidebar #office h4:after {
-        content: "\f1ad";
-    }
-
-    #sidebar #filter h4:after {
-        content: "\f0b0";
-    }
-
-    #sidebar .card-header h4:after {
-        display: block;
-        float: left;
-        background-color: #2f3c4e;
-        font-family: FontAwesome;
-        height: 28px;
-        width: 28px;
-        line-height: 28px;
-        font-size: 14px;
-        text-align: center;
-        margin-right: 10px;
-        color: #fff;
-    }
-
-    #sidebar .card-header i {
-        float: left;
-        margin-right: 9px;
-        padding: 5px 7px;
-        background-color: #2f3c4e;
-        color: #fff;
-        border-radius: 3px;
-    }
-
-    #sidebar .card-body {
-        border-bottom: 1px solid #d3d5d7;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        padding-top: 0;
-    }
-
-    #sidebar .card-body:before {
-        content: "";
-        height: 1px;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #d3d5d7;
-        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        bottom: 2px;
-        left: 0;
-        position: absolute;
-    }
-
-    #sidebar .card-body:after {
-        content: "";
-        height: 1px;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #d3d5d7;
-        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        bottom: 5px;
-        left: 0;
-        position: absolute;
-    }
-
-    .col-primary {
-        color: #304156;
-    }
-
-    .card-primary {
-        background: #fff;
-    }
-
-    #posts .card {
-        border-radius: 1px;
-        margin-bottom: 25px;
-        /* border-top: 4px solid #038ed4; */
-    }
-
-    #posts .card-header {
-        background-color: #fff;
-        padding: 0.62rem 1.15rem;
-        margin-top: 6px;
-    }
-
-    #posts .card-header h2 a {
-        float: left;
-        color: #2f3c4e;
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-
-    #posts .card-header h2 a:hover {
-        color: #038ed4;
-    }
-
-    #posts .post-share {
-        padding-top: 20px;
-        border-top: 1px solid #ecedee;
-    }
-
-    #posts .card-footer {
-        padding: 0.40rem 0.40rem;
-        background-color: #038ed4;
-    }
-
-    #posts .card-body {
-        padding: 30px;
-        font-size: 16px;
-        position: relative;
-        border-bottom: 1px solid #d3d5d7;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-    }
-
-    #posts .card-body:before {
-        content: "";
-        height: 1px;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #d3d5d7;
-        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        bottom: 2px;
-        left: 0;
-        position: absolute;
-    }
-
-    #posts .card-body:after {
-        content: "";
-        height: 1px;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #d3d5d7;
-        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        bottom: 5px;
-        left: 0;
-        position: absolute;
-    }
-
-    .clearfix {
-        margin-bottom: 20px;
-    }
-
-    .sub-menu {
-        background-color: #696969;
-        width: 150px;
-        list-style-type: none;
-    }
-
-    #posts .card-img-top {
-        height: 200px;
-        border-radius: 0;
-        /* border-top: 1px solid #000; */
-        /* background: url('/images/1.jpg') center no-repeat; */
-        background-size: cover;
-    }
-
-    .btn-custom {
-        background-color: #fff;
-        color: #212426;
-        padding: 1px 4px;
-        border-radius: 14px;
-        border-color: #b3b6b9;
-        font-size: 14px;
-        margin-right: 4px;
-    }
-
-    .sub-head {
-        margin-top: 3px;
-    }
-
-    #share {
-        position: absolute;
-        top: -22px;
-        padding: 12px;
-        right: 20px;
-        background: #038ed4;
-        border: 5px solid;
-        border-radius: 50%;
-        color: #fff;
-    }
-
-    #menu {
-        margin-left: 10px;
-        vertical-align: middle;
-    }
-
-    .dropdown {
-        float: right;
-    }
-
-    .dropdown-menu {
-        transform: translate3d(-118px, 23px, 0px) !important;
-    }
-
-    .dropdown-item i {
-        margin-right: 10px;
-    }
-
-    .bg-gray {
-        background-color: #f1f1f1;
-    }
-
-    .color-main {
-        color: #038ed4;
-    }
-
-    #bg-trans {
-        background: -webkit-linear-gradient(#333, #fff);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .share i{
-            margin-top: 14px;
-            font-size: 22px;
-            color: #6b6b6b;
-            margin-right: 6px;
-    }
+    
 </style>

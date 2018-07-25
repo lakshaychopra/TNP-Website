@@ -9,7 +9,7 @@ let routes = [{
         path: '/view/:id',
         name: 'view',
         props: true,
-        component: require('./views/pages/show.vue')
+        component: require('./layouts/index/show.vue')
     },
     {
         path: '/',
@@ -94,26 +94,25 @@ let routes = [{
             },
         ]
     },
-     {
-         path: '/',
-         component: require('./layouts/tnc/default-page'),
-         meta: {
-             requiresAuth: true,
-             userAuth: false,
-             adminAuth: false,
-             userloginAuth:true
-         },
-         children: [
-             {
-                 path: '/req',
-                 component: require('./views/student/req')
-             },
+    {
+        path: '/',
+        component: require('./layouts/tnc/default-page'),
+        meta: {
+            requiresAuth: true,
+            userAuth: false,
+            adminAuth: false,
+            userloginAuth: true
+        },
+        children: [{
+                path: '/req',
+                component: require('./views/student/req')
+            },
             //  {
             //      path: '/profileForm',
             //      component: require('./views/student/profileForm')
             //  },
-         ]
-     },
+        ]
+    },
 
     // {
     //     path: '/',
@@ -149,7 +148,7 @@ let routes = [{
                 component: require('./views/auth/register')
             },
             {
-                name:'forget',
+                name: 'forget',
                 path: '/forgetPassword/student',
                 component: require('./views/auth/forget')
             },
@@ -204,66 +203,63 @@ router.beforeEach((to, from, next) => {
             } else if (to.matched.some(m => m.meta.userAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
-                    //    switch (res.student_form_step) {
-                    //        case "NA":
-                    //            if (res.is_first_login == 0) {
-                    //                return next({
-                    //                    path:'/terms'
-                    //                })
-                    //            }
-                    //            break;
-                    //        case "TC":
-                    //                 return next({
-                    //                     path:'/profileForm'
-                    //                 })
-                    //            break;
-                    //         default:
-                    //                 return next()
-                    //            break;
-                    //     }
+                        //    switch (res.student_form_step) {
+                        //        case "NA":
+                        //            if (res.is_first_login == 0) {
+                        //                return next({
+                        //                    path:'/terms'
+                        //                })
+                        //            }
+                        //            break;
+                        //        case "TC":
+                        //                 return next({
+                        //                     path:'/profileForm'
+                        //                 })
+                        //            break;
+                        //         default:
+                        //                 return next()
+                        //            break;
+                        //     }
                         if (res.student_form_step == "SUBMITTED") {
                             return next()
-                        }
-                        else{
+                        } else {
                             return next({
-                                path:'/req'
+                                path: '/req'
                             })
                         }
-                } 
-                    else {
+                    } else {
                         return next({
                             path: '/home'
                         })
                     }
                 })
-            }
-                else if (to.matched.some(m => m.meta.userloginAuth)) {
-                    return helper.authUser().then(res => {
-                        if (res.type == "STUDENT" ) {
-                            if(res.student_form_step == "SUBMITTED"){
-                                return next({
-                                    path:'/userlogin'
-                                })
-                            }
-                            // switch (res.student_form_step) {
-                            //     case "NA":
-                            //         if (res.is_first_login == 0) {
-                            //             return next()
-                            //         }
-                            //         break;
-                            //     case "TC":
-                                
-                            //         break;    
-                            //     default:
-                            //         break;
-                            // }
-                            return next()
-                        } else {
+            } else if (to.matched.some(m => m.meta.userloginAuth)) {
+                return helper.authUser().then(res => {
+                    if (res.type == "STUDENT") {
+                        if (res.student_form_step == "SUBMITTED") {
                             return next({
-                                path: '/home'
+                                path: '/userlogin'
                             })
                         }
-                    })
+                        // switch (res.student_form_step) {
+                        //     case "NA":
+                        //         if (res.is_first_login == 0) {
+                        //             return next()
+                        //         }
+                        //         break;
+                        //     case "TC":
+
+                        //         break;    
+                        //     default:
+                        //         break;
+                        // }
+                        return next()
+                    } else {
+                        return next({
+                            path: '/home'
+                        })
+                    }
+                })
             } else {
                 return next()
             }
@@ -307,7 +303,7 @@ router.beforeEach((to, from, next) => {
         })
     }
 
-     return next()
+    return next()
 });
 
 export default router;

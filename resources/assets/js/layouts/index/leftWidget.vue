@@ -52,9 +52,10 @@ export default {
          searchby_category(category) {
                 if (category != "All") {
                     axios.get(categoryURL + category)
-                        .then(response => this.$parent.posts = response.data.data.data)
+                        .then(response => this.$parent.posts = response.data.data.data,this.$parent.pinned_posts = undefined)
                 } else {
                     this.$parent.getPosts();
+                    this.$parent.getPinnedPosts();
                 }
             }
     }

@@ -15,8 +15,7 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('aadhaar_no')->unique()->nullable();
-            $table->string('univ_roll_no')->unique()->nullable();
+            $table->string('univ_roll_no')->unique();
             $table->string('class_roll_no')->unique()->nullable();
             $table->string('name')->nullable();
             $table->string('batch')->comment('Year of Addmission and Year of Passout')->nullable();

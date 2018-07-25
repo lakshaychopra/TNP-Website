@@ -10,26 +10,25 @@
                     </div>
 
                     <div class="col" id="main">
-                                               <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts" v-if="pinned_posts.length>0">
+                        <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts" v-if="pinned_posts.length>0">
                             <div class="col-md-12">
                                 <div class="card card-primary">
                                     <div class="card-header">
                                         <div class="row">
-                                            <div class="col-md-1 d-none d-md-block">
+                                            <div class="col-md-1 d-none d-md-block mr-2">
                                                 <a href="/">
                                                     <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
                                                 </a>
                                             </div>
-                                            <div class="col-md-10 pl-4">
+                                            <div class="col-md-10">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <h2>
-                                                            <router-link :to="{ name: 'view', params: { id:pin.id }}" :searchbox="false" >
+                                                            <router-link :to="{ name: 'view', params: { id:pin.id }}" >
                                                                 <a href="#">{{pin.title}}</a>
                                                             </router-link>
                                                         </h2>
                                                     </div>
-                                                    
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -43,7 +42,7 @@
                                                             <!-- <small> -->
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
                                                             <div class="post-meta-text col-primary ">
-                                                                    <a href="#" @click="searchby_category(pin.category)">
+                                                                    <a href="#" @click="$children[1].searchby_category(pin.category)">
                                                                         {{pin.category}}
                                                                     </a>
                                                             </div>
@@ -58,16 +57,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-1">
-                                                        <i class="fa fa-thumb-tack text-danger pin" aria-hidden="true"></i>
-                                                    </div>
                                         </div>
 
                                     </div>
 
                                     <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
 
-                                    <div class="card-img-top" data-toggle="modal" v-if="pin.image != null" data-target="#exampleModal" :style="getImage(pin.image)"
+                                    <div class="card-img-top" data-toggle="modal" v-if="post.image != null" data-target="#exampleModal" :style="getImage(pin.image)"
                                         :postImage="pin.image">
                                         <!-- <img :src="getImage(post.image_path)" alt=""> -->
                                     </div>
@@ -123,7 +119,7 @@
                                                 </span>
                                             <div class="post-meta" style="float:right;">
                                                 <i class="fa fa-tags" aria-hidden="true"></i>
-                                                <div class="post-meta-text col-primary ">{{ pin.tag }}</div>
+                                                <div class="post-meta-text col-primary ">{{ post.tag }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +185,7 @@
                                                             <!-- <small> -->
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
                                                             <div class="post-meta-text col-primary ">
-                                                                    <a href="#" @click="searchby_category(post.category)">
+                                                                    <a href="#" @click="$children[1].searchby_category(post.category)">
                                                                         {{post.category}}
                                                                     </a>
                                                             </div>
@@ -282,6 +278,7 @@
     import AppHeader from './header.vue'
     import WidgetLeft from './leftWidget.vue'
     import WidgetRight from './rightWidget.vue'
+    import share from './../share.vue'
     import {
         addHomePostURL,apiDomain,viewPost, categoryURL,pinnedPostURL
     } from "../../config.js";
@@ -289,9 +286,9 @@ import helper from '../../services/helper.js';
 
     export default {
         components: {
-            AppHeader,WidgetLeft,WidgetRight
+            AppHeader,WidgetLeft,WidgetRight,share
         },
-         data() {
+        data() {
             return {
                 loading: 1,
                 page: 2,
@@ -323,14 +320,6 @@ import helper from '../../services/helper.js';
             this.getPinnedPosts();
         },
         methods: {
-            // searchby_category(category) {
-            //     if (category != "All") {
-            //         axios.get(categoryURL + category)
-            //             .then(response => this.$parent.posts = response.data.data.data)
-            //     } else {
-            //         this.$parent.getPosts();
-            //     }
-            // },
             getURL(id){
                 return "http://localhost:8000/view/"+id;
             },
@@ -436,7 +425,7 @@ import helper from '../../services/helper.js';
                     .then((response) => {
                         // var obj = JSON.parse(response.data);
                         // console.log(response);
-                        this.pinned_posts = response.data.data;
+                        this.pinned_posts = response.data.data.data;
                         // this.posts = response.data.data;
                         console.log(response.data.data);
 
@@ -472,11 +461,7 @@ import helper from '../../services/helper.js';
     margin-top: 2px;
     font-weight: bold;
     }
-    .pin{
-    position: absolute;
-    right: 7px;
-    top: -7px;
-    }
+
     .post-meta-text {
         float: right;
         font-size: 12px;

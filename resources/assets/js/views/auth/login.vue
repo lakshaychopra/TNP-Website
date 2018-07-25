@@ -17,7 +17,7 @@
                         <div class="form-group ">
                             <div class="col-xs-12">
                                 <label for="Username" hidden>Username</label>
-                                <input v-validate="'required|numeric'" type="text" name="username" class="form-control" autocomplete="on" placeholder="Username" v-model="loginForm.username">
+                                <input v-validate="'required'" type="text" name="username" class="form-control" autocomplete="on" placeholder="Username" v-model="loginForm.username">
                                 <small class="text-danger">{{ errors.first('username') }}</small>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                         <div class="form-group m-t-20 ">
                             <div class="col-xs-12">
                                 <label for="password" hidden>Verification Code</label>
-                                <input v-validate="'required|numeric'" type="password" name="otp" class="form-control" placeholder="Verification Code" autocomplete="off" maxlength="5" pattern="[0-9]*" inputmode="numeric" v-model="security.token_2fa"> 
+                                <input type="password" name="otp" class="form-control" placeholder="Verification Code" autocomplete="off" maxlength="5" pattern="[0-9]*" inputmode="numeric" v-model="security.token_2fa"> 
                                 <small class="text-danger">{{ errors.first('otp') }}</small>
 
                             </div>
@@ -187,8 +187,8 @@
                 });
             },
             security_submit(e) {
-                this.$validator.validateAll().then((result) => {
-                    if(result){
+                // this.$validator.validate('otp').then((res) => {
+                //     if(res){
                         axios.post(securityURL, this.security).then(response => {
                             console.log(response);
                             localStorage.setItem('token', this.token);
@@ -203,8 +203,9 @@
                             console.log(error.response.statusText);
                             toastr['error'](error.response.data.message);
                         });
-                    }
-                });
+                    // }
+                // console.log(res);
+                // });
             }
         }
     }

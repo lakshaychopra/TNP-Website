@@ -24,7 +24,6 @@ class CreateStudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'aadhaar_no'              =>    '',
             'univ_roll_no'            =>    '',
             'class_roll_no'           =>    '',
             'name'                    =>    '',

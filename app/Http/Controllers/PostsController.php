@@ -150,7 +150,8 @@ class PostController extends Controller
                 ->where("id", '=',  $post->id)
                 ->update(['is_pinned'=> true]);
                 DB::commit();
-                return $this->respondSuccess('Post Pinned Successfully',$post);
+                $index= Post::orderBy('created_at', 'desc')->get();
+                return $this->respondSuccess('Post Pinned Successfully',$index);
             }
             catch (Exception $e) {
                 DB::rollback();
@@ -171,7 +172,8 @@ class PostController extends Controller
             ->where("id", '=',  $post->id)
             ->update(['is_pinned'=> false]);
             DB::commit();
-            return $this->respondSuccess('Post Unpinned Successfully',$post);
+            $index= Post::orderBy('created_at', 'desc')->get();
+            return $this->respondSuccess('Post Unpinned Successfully',$index);
         }
         catch (Exception $e) {
             DB::rollback();
@@ -209,7 +211,7 @@ class PostController extends Controller
         $post= Post::orderBy('created_at', 'desc');
         return $this->respondData($post);
     }
-
+    
     public function viewPinned(Post $post)
     {
         $auth = JWTAuth::parseToken()->authenticate();

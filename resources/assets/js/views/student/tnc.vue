@@ -51,7 +51,7 @@ export default {
                 'id':this.$store.state.auth.userid,
             },
             username:{
-                'aadhaar_no':this.$store.state.auth.username,
+                'univ_roll_no':this.$store.state.auth.username,
             },
             form_step:{
                 'student_form_step':'TC',
@@ -64,7 +64,7 @@ export default {
                 return this.$store.getters.getAuthUser(name);
         },
         submit(){
-            console.log(this.username.aadhaar_no);
+            console.log(this.username.univ_roll_no);
             axios.post(firstLoginURL,this.id).then(response => {
                 console.log(response);
                 if (response.status == 200) {
