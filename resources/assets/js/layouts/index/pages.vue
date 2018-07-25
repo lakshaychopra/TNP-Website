@@ -220,6 +220,7 @@
                                             <div class="mb-3 show-read-more" v-html="post.body"></div>
                                         </span>
                                         <div class="clearfix"></div>
+                                        
                                         <div class="post-share">
                                             
                                             <div class="post-meta" style="background-color: #038ed4;"  v-if="!share_fn()" >
@@ -248,6 +249,7 @@
                                                 <div class="post-meta-text col-primary ">{{ post.tag }}</div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -332,46 +334,46 @@ import helper from '../../services/helper.js';
                 trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
                 return trimmedString;
             },
-            AndroidNativeShare(Title, URL, Description) {
-                                    console.log(Title);
-                                    console.log(Description);
+                AndroidNativeShare(Title, URL, Description) {
+                                        console.log(Title);
+                                        console.log(Description);
 
-                if(typeof navigator.share==='undefined' || !navigator.share) {
-                    alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
-                }
-                // else if(window.location.protocol !='https:') {
-                //     alert('Android Native Share support only on Https:// protocol');
-                //     this.share = true
-                // }
-                else {
-                    if(typeof URL==='undefined') {
-                        URL=window.location.href;
+                    if(typeof navigator.share==='undefined' || !navigator.share) {
+                        alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
                     }
-                    if(typeof Title==='undefined') {
-                        Title=document.title;
-                    }
-                    if(typeof Description==='undefined') {
-                        Description='Share your thoughts about '+Title;
-                    }
-                    let URLConst = document.location.href + 'view/'+URL;
-                    const canonicalElement = document.querySelector('link[rel=canonical]');
-                    if (canonicalElement !== null) {
-                        URLConst = canonicalElement.href;
-                    }
-                    const TitleConst='Post One';
-                    const DescriptionConst=Description;
-                    console.log(URLConst);
-                    if (navigator.share) {
-                        navigator.share({
-                            title:TitleConst ,
-                            text: DescriptionConst,
-                            url:URLConst,
-                        })
-                            .then(() => console.log('Successful share'))
-                            .catch((error) => console.log('Error sharing', error));
+                    // else if(window.location.protocol !='https:') {
+                    //     alert('Android Native Share support only on Https:// protocol');
+                    //     this.share = true
+                    // }
+                    else {
+                        if(typeof URL==='undefined') {
+                            URL=window.location.href;
                         }
-                }
-            },
+                        if(typeof Title==='undefined') {
+                            Title=document.title;
+                        }
+                        if(typeof Description==='undefined') {
+                            Description='Share your thoughts about '+Title;
+                        }
+                        let URLConst = document.location.href + 'view/'+URL;
+                        const canonicalElement = document.querySelector('link[rel=canonical]');
+                        if (canonicalElement !== null) {
+                            URLConst = canonicalElement.href;
+                        }
+                        const TitleConst='Post One';
+                        const DescriptionConst=Description;
+                        console.log(URLConst);
+                        if (navigator.share) {
+                            navigator.share({
+                                title:TitleConst ,
+                                text: DescriptionConst,
+                                url:URLConst,
+                            })
+                                .then(() => console.log('Successful share'))
+                                .catch((error) => console.log('Error sharing', error));
+                            }
+                    }
+                },
             loadMore: function () {
                 const vm = this;
                 vm.loading = 1;

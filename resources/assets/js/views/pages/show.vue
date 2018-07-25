@@ -150,11 +150,30 @@
                                     <div class="card-body">
                                         <div class="mb-3" v-html="post.body"></div>
                                         <div class="clearfix"></div>
-                                        <div class="post-share">
-                                            <div class="post-meta" style="background-color: #038ed4;">
-                                                <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
-                                                <div style="color:#fff;" class="post-meta-text col-primary ">Share</div>
+                                        
+                                         <div class="post-share">
+                                            
+                                            <div class="post-meta" style="background-color: #038ed4;"  v-if="!share_fn()" >
+                                               <a href="" @click.prevent="AndroidNativeShare(post.title,post.id,post.category)"><i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
+                                                <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div></a> 
+
+                                            
                                             </div>
+                                                <span class="share" v-if="share_fn()">
+                                                    <social-sharing :url="getURL(post.id)" inline-template>
+                                                       <div style="float:left;">
+                                                        <network network="facebook">
+                                                            <i class="fa fa-fw fa-facebook"></i>
+                                                        </network>
+                                                        <network network="linkedin">
+                                                            <i class="fa fa-fw fa-linkedin"></i>
+                                                        </network>
+                                                        <network network="twitter">
+                                                            <i class="fa fa-fw fa-twitter"></i>
+                                                        </network>
+                                                       </div>
+                                                </social-sharing>
+                                                </span>
                                             <div class="post-meta" style="float:right;">
                                                 <i class="fa fa-tags" aria-hidden="true"></i>
                                                 <div class="post-meta-text col-primary ">{{ post.tag }}</div>
@@ -190,6 +209,17 @@
             }
         },
         created() {
+             if(typeof navigator.share==='undefined' || !navigator.share) {
+                    this.share = true;
+                    // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+                }
+                // else if(window.location.protocol !='https:') {
+                //     alert('Android Native Share support only on Https:// protocol');
+                //     this.share = true
+                // }
+                else{
+                    this.share = false;
+                }
             console.log(this.id);
             axios.get('/api/home/view/' + this.id).then((response) => {
                     this.post = response.data.data.data[0];
@@ -198,6 +228,52 @@
                 .catch((error) => console.log(error))
         },
         methods: {
+             getURL(id){
+                return "http://localhost:8000/view/"+id;
+            },
+            share_fn(){
+                return this.share;
+            },
+             AndroidNativeShare(Title, URL, Description) {
+                                    console.log(Title);
+                                    console.log(Description);
+
+                if(typeof navigator.share==='undefined' || !navigator.share) {
+                    alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+                }
+                // else if(window.location.protocol !='https:') {
+                //     alert('Android Native Share support only on Https:// protocol');
+                //     this.share = true
+                // }
+                else {
+                    if(typeof URL==='undefined') {
+                        URL=window.location.href;
+                    }
+                    if(typeof Title==='undefined') {
+                        Title=document.title;
+                    }
+                    if(typeof Description==='undefined') {
+                        Description='Share your thoughts about '+Title;
+                    }
+                    let URLConst = document.location.href + 'view/'+URL;
+                    const canonicalElement = document.querySelector('link[rel=canonical]');
+                    if (canonicalElement !== null) {
+                        URLConst = canonicalElement.href;
+                    }
+                    const TitleConst='Post One';
+                    const DescriptionConst=Description;
+                    console.log(URLConst);
+                    if (navigator.share) {
+                        navigator.share({
+                            title:TitleConst ,
+                            text: DescriptionConst,
+                            url:URLConst,
+                        })
+                            .then(() => console.log('Successful share'))
+                            .catch((error) => console.log('Error sharing', error));
+                        }
+                }
+            },
             setDateFormat(date) {
                 return helper.formatDateTime(date);
             },
