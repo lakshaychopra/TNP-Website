@@ -1,38 +1,41 @@
 <template>
     <div>
-         <div class="sticky-top" style="z-index:1022;">
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <!-- Brand -->
-            <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
-            <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
-            <div class="navbar-header">
-                <!-- Navbar links -->
-                <div class="navbar-text d-md-none">
-                    
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div class="sticky-top" style="z-index:1022;">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <!-- Brand -->
+                <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
+                <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
+                <div class="navbar-header">
+                    <!-- Navbar links -->
+                    <div class="navbar-text d-md-none">
 
-            </div>
-            <div class="navbar-collapse collapse" id="collapsibleNavbar">
-                <div class="mr-auto d-none d-md-block w-65">
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
                 </div>
-                <ul class="nav navbar-nav" id="list-menu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about"><i class="fa fa-users" aria-hidden="true"></i> About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-         </div>
-    <div class="bg-gray">
-        <div class="container py-4">
-            <div class="row">
-                  <div class="col-2 px-1 d-none d-md-block sticky-top"  id="sidebar" >
+                <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                    <div class="mr-auto d-none d-md-block w-65">
+                    </div>
+                    <ul class="nav navbar-nav" id="list-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">
+                                <i class="fa fa-users" aria-hidden="true"></i> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">
+                                <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="bg-gray">
+            <div class="container py-4">
+                <div class="row">
+
+                    <div class="col-2 px-1 d-none d-md-block sticky-top" id="sidebar">
                         <!-- <h2><i class="flag"></i> Category</h2>
                         <div class="nav flex-column">
                        
@@ -42,227 +45,163 @@
                             <a href="" class="nav-link">Link</a>
                             <a href="" class="nav-link">Link</a>
                         </div> -->
-                       <div class="sticky-top fix">
+                        <div class="sticky-top fix">
                             <div class="row">
                                 <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                        <h4 class="mb-1">  Filter By</h4>
-                                            </div>
-                                            <div class="card-body">
-                                                <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item"><router-link to="/"><a href="#">All</a></router-link></li>
-                                                    <li class="list-group-item"><router-link to="/"><a href="#">Placement</a></router-link></li>
-                                                    <li class="list-group-item"><router-link to="/"><a href="#">Internship</a></router-link></li>
-                                                </ul>
-                                            </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="mb-1"> Filter By</h4>
                                         </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <router-link to="/">
+                                                        <a href="#">All</a>
+                                                    </router-link>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <router-link to="/">
+                                                        <a href="#">Placement</a>
+                                                    </router-link>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <router-link to="/">
+                                                        <a href="#">Internship</a>
+                                                    </router-link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row d-none">
                                 <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                        <h4>  Category</h4>
-                                            </div>
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Placement</a></li>
-                                                    <li><a href="#">Internship</a></li>
-                                                </ul>
-                                            </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4> Category</h4>
                                         </div>
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Placement</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Internship</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                       </div>
-                </div>
-                 <div class="col" id="main">
-                    
-                   <div class="row justify-content-center" id="posts">
-                        <div class="col-md-12">
-
-                            <div class="card card-primary">
-
-                                <div class="card-header">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                                <h2>
-                                                    <a href="#">{{post.title}}</a>
-                                                </h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="pull-left">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <div class="post-meta-text col-primary " v-html="setDateFormat(post.updated_at)"></div>
-                                            </div>
-                                            <div class="pull-right">
-                                                <i class="fa fa-flag" aria-hidden="true"></i> <div class="post-meta-text col-primary ">
-                                                    <router-link to="/">
-                                                                    <a href="#" >
-                                                                        {{post.category}}
-                                                                    </a>
-                                                                </router-link>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
-                                 <!-- <div class="card-img-top" data-toggle="modal" v-if="post.image != null" data-target="#exampleModal" :style="getImage(post.image)"
-                                    :postImage="post.image"> 
-                                 </div> -->
-
-                                <img :src="'/images/posts/images/'+post.image" :alt="post.image" width="100%" class="card-image-top">
-
-                                 
-                                <div class="card-body">
-                                    <div class="mb-3" v-html="post.body"></div>
-                                    <div class="clearfix"></div>
-                                    <div class="post-share">
-                                        <div class="post-meta" style="background-color: #038ed4;">
-                                            <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i> <div style="color:#fff;" class="post-meta-text col-primary ">Share</div>
-                                        </div>
-                                         <div class="post-meta" style="float:right;">
-                                            <i class="fa fa-tags" aria-hidden="true"></i> <div class="post-meta-text col-primary ">{{ post.tag }}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>
                         </div>
                     </div>
 
-                </div>
-                <div class="col-3 px-1 d-none d-md-block sticky-top"  id="sidebar" >
-                        <!-- <h2><i class="flag"></i> Category</h2>
-                        <div class="nav flex-column">
-                       
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                            <a href="" class="nav-link">Link</a>
-                        </div> -->
-                       <div class="sticky-top fix">
-                            <div class="row">
-                                <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header" id="office">
-                                        <h4>T&P OFFICE</h4>
-                                            </div>
+                    <div class="col" id="main">
 
-                                            <div class="card-body">
-                                                <div class="office text-center">
-                                                    <img src="/images/sodhi.jpg" width="60%" alt="">
+                        <div class="row justify-content-center" id="posts">
+                            <div class="col-md-12">
+
+                                <div class="card card-primary">
+
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-md-1 d-none d-md-block mr-1">
+                                                <a href="/">
+                                                    <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h2>
+                                                            <router-link :to="{ name: 'view', params: { id:post.id }}">
+                                                                <a href="#">{{post.title}}</a>
+                                                            </router-link>
+                                                        </h2>
+                                                    </div>
                                                 </div>
-                                              <div class="row">
-                                                  <div class="col-md-2">
-                                                    
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="pull-left">
+                                                            <!-- <small> -->
+                                                            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                                            <div class="post-meta-text col-primary " v-html="setDateFormat(post.updated_at)"></div>
+                                                            <!-- </small> -->
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            <!-- <small> -->
+                                                            <i class="fa fa-flag" aria-hidden="true"></i>
+                                                            <div class="post-meta-text col-primary ">
+                                                                    <a href="#" @click="$children[1].searchby_category(post.category)">
+                                                                        {{post.category}}
+                                                                    </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                  <div class="col-md-10">
-                                                      <p class="mb-0"><strong>Prof. G. S. SODHI</strong></p>
-                                                  </div> 
-                                              </div>
-                                              <div class="row">
-                                                  <div class="col-md-2">
-                                                    
-                                                </div>
-                                                  <div class="col-md-10">
-                                                      <small>Officer (Training & Placement)</small>
-                                                  </div> 
-                                              </div>
-                                              <div class="row mt-2">
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-envelope mt-1"  aria-hidden="true"></i>
-                                                </div>
-                                                  <div class="col-md-10">
-                                                      <small><a href="mailto:gssodhi@gndec.ac.in" target="_blank">gssodhi@gndec.ac.in</a></small>
-                                                  </div> 
-                                              </div>  
-                                            <div class="row mt-1">
-                                 
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-phone mt-1"  aria-hidden="true"></i>
-                                                </div>
-                                                  <div class="col-md-10">
-                                                      <small>9999999999</small>
-                                                  </div> 
-                                              </div>  
-                                                
                                             </div>
                                         </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-header" id="about">
-                                        <h4>  ABOUT</h4>
+                                        
+                                    </div>
+
+                                    <img :src="'/images/posts/images/'+post.image" :alt="post.image" width="100%" class="card-image-top">
+
+
+                                    <div class="card-body">
+                                        <div class="mb-3" v-html="post.body"></div>
+                                        <div class="clearfix"></div>
+                                        <div class="post-share">
+                                            <div class="post-meta" style="background-color: #038ed4;">
+                                                <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
+                                                <div style="color:#fff;" class="post-meta-text col-primary ">Share</div>
                                             </div>
-                                            <div class="card-map">
-                                                <a href="https://wego.here.com/directions/mix/mylocation/e-eyJuYW1lIjoiR25kZWMtIFRyYWluaW5nIGFuZCBQbGFjZW1lbnQiLCJhZGRyZXNzIjoiR3VydSBOYW5hayBEZXYgRW5naW5lZXJpbmcgQ29sbGVnZSBHaWxsIFBhcmsgTHVkaGlhbmEgMTQxMDA2LCBMdWRoaWFuYSwgUHVuamFiLCBJbmRpYSAxNDEwMDYiLCJsYXRpdHVkZSI6MzAuODU5MzM3NTA3ODAzLCJsb25naXR1ZGUiOjc1Ljg2MTY3Mjk3MzYzMywicHJvdmlkZXJOYW1lIjoiZmFjZWJvb2siLCJwcm92aWRlcklkIjoyODg1Nzc3NzExOTM4ODB9?map=30.859337507803,75.861672973633,15,normal&fb_locale=en_GB" rel="dialog" target="_blank" role="button" class="" tabindex="0"><div class="_4j7v _5bld"><img class="_a3f img" alt="" aria-label="Map attachment" src="https://external.fluh1-1.fna.fbcdn.net/static_map.php?region=IN&amp;v=42&amp;osm_provider=2&amp;size=306x98&amp;zoom=15&amp;markers=30.85933751%2C75.86167297&amp;language=en_GB" width="306" height="98"></div></a>
-                                            </div>
-                                            <div class="card-body" style="padding-top:20px;">
-                                                <!-- <iframe style="pointer-events:none; border:0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.9278353122977!2d75.85737781489665!3d30.860695381592787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a828f09011b15%3A0xbf3f5b51dcc81b12!2sGuru+Nanak+Dev+Engineering+College!5e0!3m2!1sen!2sin!4v1531911243199" width="100%" height="200" frameborder="0"></iframe> -->
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-compass mt-1"  aria-hidden="true"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small>Guru Nanak Dev Engineering College Gill Park Ludhiana 141006 (7.11 km) 141006 Ludhiana, Punjab, India <br> <a href="https://wego.here.com/directions/mix/mylocation/e-eyJuYW1lIjoiR25kZWMtIFRyYWluaW5nIGFuZCBQbGFjZW1lbnQiLCJhZGRyZXNzIjoiR3VydSBOYW5hayBEZXYgRW5naW5lZXJpbmcgQ29sbGVnZSBHaWxsIFBhcmsgTHVkaGlhbmEgMTQxMDA2LCBMdWRoaWFuYSwgUHVuamFiLCBJbmRpYSAxNDEwMDYiLCJsYXRpdHVkZSI6MzAuODU5MzM3NTA3ODAzLCJsb25naXR1ZGUiOjc1Ljg2MTY3Mjk3MzYzMywicHJvdmlkZXJOYW1lIjoiZmFjZWJvb2siLCJwcm92aWRlcklkIjoyODg1Nzc3NzExOTM4ODB9?map=30.859337507803,75.861672973633,15,normal&fb_locale=en_GB" target="_blank">Get Directions</a></small>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-phone mt-1"  aria-hidden="true"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small>099157 81209</small>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <i class="fa fa-globe mt-1"  aria-hidden="true"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <small><a href="https://www.gndec.ac.in" target="_blank">www.gndec.ac.in</a></small>
-                                                </div>
-                                            </div>
+                                            <div class="post-meta" style="float:right;">
+                                                <i class="fa fa-tags" aria-hidden="true"></i>
+                                                <div class="post-meta-text col-primary ">{{ post.tag }}</div>
                                             </div>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
-                       </div>
+                        </div>
+
+                    </div>
+
+                    <widget-right></widget-right>
                 </div>
             </div>
         </div>
     </div>
-    </div>
 </template>
 <script>
     import helper from '../../services/helper'
-// import {showPostURL} from "../../config.js";
-export default {
-    data() {
+    import WidgetRight from './../../layouts/index/rightWidget.vue'
+    // import {showPostURL} from "../../config.js";
+    export default {
+        components: {
+            WidgetRight
+        },
+        data() {
             return {
-                post:{},
-                id:this.$route.params.id,
+                post: {},
+                id: this.$route.params.id,
                 postEdit: {},
                 posts: {},
             }
-    },
-    created(){
-        console.log(this.id);
-            axios.get('/api/home/view/'+this.id).then((response) => {
-            this.post = response.data.data.data[0];
-            console.log(this.post);
-          })
-          .catch((error) => console.log(error))
-    },
-    methods: {
-            setDateFormat(date){
-               return helper.formatDateTime(date);
+        },
+        created() {
+            console.log(this.id);
+            axios.get('/api/home/view/' + this.id).then((response) => {
+                    this.post = response.data.data.data[0];
+                    console.log(this.post);
+                })
+                .catch((error) => console.log(error))
+        },
+        methods: {
+            setDateFormat(date) {
+                return helper.formatDateTime(date);
             },
-         gethtml(text){
+            gethtml(text) {
                 var maxLength = 400 // maximum number of characters to extract
                 //trim the string to the maximum length
                 var trimmedString = text.substr(0, maxLength);
@@ -270,7 +209,7 @@ export default {
                 trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
                 return trimmedString;
             },
-            getrecord(record){
+            getrecord(record) {
                 this.posts = record.data.data.data;
             },
             // searchPost(){
@@ -287,10 +226,9 @@ export default {
                     ") center no-repeat;    background-size: cover;";
             },
         }
-}
+    }
 </script>
 <style scoped>
-
     .list-inline {
         padding-left: 0;
         list-style: none;
@@ -342,91 +280,115 @@ export default {
     .navbar {
         padding: 0 1rem;
     }
-    @media (min-width: 768px){
-        .navbar-header{
+
+    @media (min-width: 768px) {
+        .navbar-header {
             width: 142px;
         }
     }
-    .w-65{
+
+    .w-65 {
         width: 65%;
     }
-.fix{
-    overflow:hidden; 
-    top: 90px;
-}
-.post-meta {
-    margin-right: 15px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    float: left;
-    padding: 10px;
-    border: 1px solid #e4e6e8;
-    background-color: #f6f6f6;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-.post-meta i {
-    font-size: 15px;
-    float: left;
-    margin-right: 10px;
-    color: #a3a9b0;
-}
-.post-meta-text{
-    float: right;
-    font-size: 12px;
-    padding-top: 3px;
-    margin-left: 5px;
-}
-#sidebar .card-header{
-    background-color: #fff;
-    border-bottom: 0;
-    padding-bottom: 0;
-    z-index: 1;
-}
-#sidebar .card-header h4{
-    border-bottom: 2px solid #ecedee;
-    margin-bottom: 20px;
-    line-height: 28px;
-    padding-bottom: 10px;
-    position: relative;
-}
-#sidebar .card-header h4:before{
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 28px;
-    background-color: #2f3c4e;
-    bottom: -2px;
-    left: 0;
-}
-#sidebar .card-header h4:after{
-    content: "\f0b0";
-    display: block;
-    float: left;
-    background-color: #2f3c4e;
-    font-family: FontAwesome;
-    height: 28px;
-    width: 28px;
-    line-height: 28px;
-    font-size: 14px;
-    text-align: center;
-    margin-right: 10px;
-    color: #fff;
-}
-#sidebar .card-header i{
-    float: left;
-    margin-right: 9px;
-    padding: 5px 7px;
-    background-color: #2f3c4e;
-    color: #fff;
-    border-radius: 3px;
-}
-#sidebar .card-body{
-    border-bottom: 1px solid #d3d5d7;
-    box-shadow: 0 0 5px 0 #e2e3e4;
-    padding-top: 0;
-}
-    #sidebar .card-body:before{
+
+    .fix {
+        overflow: hidden;
+        top: 90px;
+    }
+
+    .post-meta {
+        margin-right: 15px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        float: left;
+        padding: 10px;
+        border: 1px solid #e4e6e8;
+        background-color: #f6f6f6;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .post-meta i {
+        font-size: 15px;
+        float: left;
+        margin-right: 10px;
+        color: #a3a9b0;
+    }
+
+    .post-meta-text {
+        float: right;
+        font-size: 12px;
+        padding-top: 3px;
+        margin-left: 5px;
+    }
+
+    #sidebar .card-header {
+        background-color: #fff;
+        border-bottom: 0;
+        padding-bottom: 0;
+        z-index: 1;
+    }
+
+    #sidebar .card-header h4 {
+        border-bottom: 2px solid #ecedee;
+        margin-bottom: 20px;
+        line-height: 28px;
+        padding-bottom: 10px;
+        position: relative;
+    }
+
+    #sidebar .card-header h4:before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 28px;
+        background-color: #2f3c4e;
+        bottom: -2px;
+        left: 0;
+    }
+
+    #sidebar #about h4:after {
+        content: "\f0c0";
+    }
+
+    #sidebar #office h4:after {
+        content: "\f1ad";
+    }
+
+    #sidebar #filter h4:after {
+        content: "\f0b0";
+    }
+
+    #sidebar .card-header h4:after {
+        display: block;
+        float: left;
+        background-color: #2f3c4e;
+        font-family: FontAwesome;
+        height: 28px;
+        width: 28px;
+        line-height: 28px;
+        font-size: 14px;
+        text-align: center;
+        margin-right: 10px;
+        color: #fff;
+    }
+
+    #sidebar .card-header i {
+        float: left;
+        margin-right: 9px;
+        padding: 5px 7px;
+        background-color: #2f3c4e;
+        color: #fff;
+        border-radius: 3px;
+    }
+
+    #sidebar .card-body {
+        border-bottom: 1px solid #d3d5d7;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        padding-top: 0;
+    }
+
+    #sidebar .card-body:before {
         content: "";
         height: 1px;
         width: 100%;
@@ -439,19 +401,21 @@ export default {
         left: 0;
         position: absolute;
     }
-    #sidebar .card-body:after{
+
+    #sidebar .card-body:after {
         content: "";
-    height: 1px;
-    width: 100%;
-    background-color: #FFF;
-    border-bottom: 1px solid #d3d5d7;
-    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-    -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-    box-shadow: 0 0 5px 0 #e2e3e4;
-    bottom: 5px;
-    left: 0;
-    position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: #FFF;
+        border-bottom: 1px solid #d3d5d7;
+        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
+        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        bottom: 5px;
+        left: 0;
+        position: absolute;
     }
+
     .col-primary {
         color: #304156;
     }
@@ -478,13 +442,16 @@ export default {
         text-transform: uppercase;
         font-weight: 400;
     }
+
     #posts .card-header h2 a:hover {
         color: #038ed4;
     }
-    #posts .post-share{
+
+    #posts .post-share {
         padding-top: 20px;
         border-top: 1px solid #ecedee;
     }
+
     #posts .card-footer {
         padding: 0.40rem 0.40rem;
         background-color: #038ed4;
@@ -497,7 +464,8 @@ export default {
         border-bottom: 1px solid #d3d5d7;
         box-shadow: 0 0 5px 0 #e2e3e4;
     }
-    #posts .card-body:before{
+
+    #posts .card-body:before {
         content: "";
         height: 1px;
         width: 100%;
@@ -510,22 +478,25 @@ export default {
         left: 0;
         position: absolute;
     }
-    #posts .card-body:after{
+
+    #posts .card-body:after {
         content: "";
-    height: 1px;
-    width: 100%;
-    background-color: #FFF;
-    border-bottom: 1px solid #d3d5d7;
-    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-    -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-    box-shadow: 0 0 5px 0 #e2e3e4;
-    bottom: 5px;
-    left: 0;
-    position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: #FFF;
+        border-bottom: 1px solid #d3d5d7;
+        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
+        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        bottom: 5px;
+        left: 0;
+        position: absolute;
     }
-    .clearfix{
+
+    .clearfix {
         margin-bottom: 20px;
     }
+
     .sub-menu {
         background-color: #696969;
         width: 150px;
@@ -581,40 +552,47 @@ export default {
     .dropdown-item i {
         margin-right: 10px;
     }
-    .bg-gray{
+
+    .bg-gray {
         background-color: #f1f1f1;
     }
-    .color-main{
+
+    .color-main {
         color: #038ed4;
     }
-.fix{
-    overflow:hidden; 
-    top: 90px;
-}
-.post-meta {
-    margin-right: 15px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    float: left;
-    padding: 10px;
-    border: 1px solid #e4e6e8;
-    background-color: #f6f6f6;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-.post-meta i {
-    font-size: 15px;
-    float: left;
-    margin-right: 10px;
-    color: #a3a9b0;
-}
-.post-meta-text{
-    float: right;
-    font-size: 12px;
-    padding-top: 3px;
-    margin-left: 5px;
-}
- .col-primary {
+
+    .fix {
+        overflow: hidden;
+        top: 90px;
+    }
+
+    .post-meta {
+        margin-right: 15px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        float: left;
+        padding: 10px;
+        border: 1px solid #e4e6e8;
+        background-color: #f6f6f6;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .post-meta i {
+        font-size: 15px;
+        float: left;
+        margin-right: 10px;
+        color: #a3a9b0;
+    }
+
+    .post-meta-text {
+        float: right;
+        font-size: 12px;
+        padding-top: 3px;
+        margin-left: 5px;
+    }
+
+    .col-primary {
         color: #304156;
     }
 
@@ -640,13 +618,16 @@ export default {
         text-transform: uppercase;
         font-weight: 400;
     }
+
     #posts .card-header h2 a:hover {
         color: #038ed4;
     }
-    #posts .post-share{
+
+    #posts .post-share {
         padding-top: 20px;
         border-top: 1px solid #ecedee;
     }
+
     #posts .card-footer {
         padding: 0.40rem 0.40rem;
         background-color: #038ed4;
@@ -659,7 +640,8 @@ export default {
         border-bottom: 1px solid #d3d5d7;
         box-shadow: 0 0 5px 0 #e2e3e4;
     }
-    #posts .card-body:before{
+
+    #posts .card-body:before {
         content: "";
         height: 1px;
         width: 100%;
@@ -672,22 +654,25 @@ export default {
         left: 0;
         position: absolute;
     }
-    #posts .card-body:after{
+
+    #posts .card-body:after {
         content: "";
-    height: 1px;
-    width: 100%;
-    background-color: #FFF;
-    border-bottom: 1px solid #d3d5d7;
-    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-    -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-    box-shadow: 0 0 5px 0 #e2e3e4;
-    bottom: 5px;
-    left: 0;
-    position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: #FFF;
+        border-bottom: 1px solid #d3d5d7;
+        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
+        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        bottom: 5px;
+        left: 0;
+        position: absolute;
     }
-    .clearfix{
+
+    .clearfix {
         margin-bottom: 20px;
     }
+
     .sub-menu {
         background-color: #696969;
         width: 150px;

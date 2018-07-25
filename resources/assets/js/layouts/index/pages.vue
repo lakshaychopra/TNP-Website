@@ -24,7 +24,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <h2>
-                                                            <router-link :to="{ name: 'view', params: { id:pin.id }}">
+                                                            <router-link :to="{ name: 'view', params: { id:pin.id }}" >
                                                                 <a href="#">{{pin.title}}</a>
                                                             </router-link>
                                                         </h2>
@@ -189,14 +189,7 @@
                                                                         {{post.category}}
                                                                     </a>
                                                             </div>
-                                                            <!-- </small> -->
                                                         </div>
-                                                        <!-- <small>
-                                                        <i class="fa fa-calendar-check-o color-main" aria-hidden="true"></i> {{post.updated_at}}
-                                                        <span class="pull-right sub-head">
-                                                            <i class="fa fa-flag color-main" aria-hidden="true"></i> {{post.category}}
-                                                        </span>
-                                                    </small> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -212,17 +205,7 @@
                                     </div>
 
                                     <div class="card-body">
-                                        <!-- <div>
-                                        <span class="pull-right share-button">
-                                            <a href="#">
-                                                <i id="share" class="fa fa-share-alt fa-2x" aria-hidden="true"></i>
-                                            </a>
-                                        </span>
-                                    </div>  -->
-
-                                        <!-- <ul class="list-group">
-                            <li class="list-group-item"></li>
-                            </ul> -->
+                                      
                                         <span v-if="post.body.length>400">
                                             <div class="mb-3 show-read-more" v-html="gethtml(post.body)" id="bg-trans" style="padding: 10px;background-color: #f6f6f6;"></div>
                                             <router-link :to="{ name: 'view', params: { id:post.id }}" :searchbox="false">
@@ -313,6 +296,7 @@ import helper from '../../services/helper.js';
                 pinned_posts:{},
                 showDropDown: false,
                 share:false,
+                
             }
         },
         created() {

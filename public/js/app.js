@@ -23571,23 +23571,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -23610,6 +23593,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             pinned_posts: {},
             showDropDown: false,
             share: false
+
         };
     },
     created: function created() {
@@ -26166,7 +26150,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n.list-inline[data-v-6986a57c] {\n        padding-left: 0;\n        list-style: none;\n}\n.bg-dark[data-v-6986a57c] {\n        background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-6986a57c] {\n        background-color: #eee;\n        padding: 10px;\n}\n.btn[data-v-6986a57c] {\n        line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-6986a57c] {\n        margin-bottom: 10px;\n}\n#list-menu li a[data-v-6986a57c] {\n        color: #f7fbff;\n        padding: 20px;\n        float: left;\n        border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-6986a57c]:hover {\n        /* color: #0073BC; */\n        /* border-bottom: 4px solid #0073BC; */\n        background-color: #f1f1f1;\n        color: #038ed4;\n}\n#search[data-v-6986a57c] {\n        background-color: #fff;\n        border-color: #0073BC;\n        width: 83%;\n        color: #0073BC;\n        border-radius: 0;\n}\n#search[data-v-6986a57c]::-webkit-input-placeholder {\n        color: #0073BC;\n}\n#search[data-v-6986a57c]:-ms-input-placeholder {\n        color: #0073BC;\n}\n#search[data-v-6986a57c]::-ms-input-placeholder {\n        color: #0073BC;\n}\n#search[data-v-6986a57c]::placeholder {\n        color: #0073BC;\n}\n.navbar[data-v-6986a57c] {\n        padding: 0 1rem;\n}\n@media (min-width: 768px){\n.navbar-header[data-v-6986a57c]{\n            width: 142px;\n}\n}\n.w-65[data-v-6986a57c]{\n        width: 65%;\n}\n.fix[data-v-6986a57c]{\n    overflow:hidden; \n    top: 90px;\n}\n.post-meta[data-v-6986a57c] {\n    margin-right: 15px;\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n}\n.post-meta i[data-v-6986a57c] {\n    font-size: 15px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n}\n.post-meta-text[data-v-6986a57c]{\n    float: right;\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header[data-v-6986a57c]{\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4[data-v-6986a57c]{\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4[data-v-6986a57c]:before{\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar .card-header h4[data-v-6986a57c]:after{\n    content: \"\\F0B0\";\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i[data-v-6986a57c]{\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body[data-v-6986a57c]{\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body[data-v-6986a57c]:before{\n        content: \"\";\n        height: 1px;\n        width: 100%;\n        background-color: #FFF;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n        box-shadow: 0 0 5px 0 #e2e3e4;\n        bottom: 2px;\n        left: 0;\n        position: absolute;\n}\n#sidebar .card-body[data-v-6986a57c]:after{\n        content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary[data-v-6986a57c] {\n        color: #304156;\n}\n.card-primary[data-v-6986a57c] {\n        background: #fff;\n}\n#posts .card[data-v-6986a57c] {\n        border-radius: 1px;\n        margin-bottom: 25px;\n        /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-6986a57c] {\n        background-color: #fff;\n        padding: 0.62rem 1.15rem;\n        margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-6986a57c] {\n        float: left;\n        color: #2f3c4e;\n        text-transform: uppercase;\n        font-weight: 400;\n}\n#posts .card-header h2 a[data-v-6986a57c]:hover {\n        color: #038ed4;\n}\n#posts .post-share[data-v-6986a57c]{\n        padding-top: 20px;\n        border-top: 1px solid #ecedee;\n}\n#posts .card-footer[data-v-6986a57c] {\n        padding: 0.40rem 0.40rem;\n        background-color: #038ed4;\n}\n#posts .card-body[data-v-6986a57c] {\n        padding: 30px;\n        font-size: 16px;\n        position: relative;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n                box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-6986a57c]:before{\n        content: \"\";\n        height: 1px;\n        width: 100%;\n        background-color: #FFF;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n        box-shadow: 0 0 5px 0 #e2e3e4;\n        bottom: 2px;\n        left: 0;\n        position: absolute;\n}\n#posts .card-body[data-v-6986a57c]:after{\n        content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix[data-v-6986a57c]{\n        margin-bottom: 20px;\n}\n.sub-menu[data-v-6986a57c] {\n        background-color: #696969;\n        width: 150px;\n        list-style-type: none;\n}\n#posts .card-img-top[data-v-6986a57c] {\n        height: 200px;\n        border-radius: 0;\n        /* border-top: 1px solid #000; */\n        /* background: url('/images/1.jpg') center no-repeat; */\n        background-size: cover;\n}\n.btn-custom[data-v-6986a57c] {\n        background-color: #fff;\n        color: #212426;\n        padding: 1px 4px;\n        border-radius: 14px;\n        border-color: #b3b6b9;\n        font-size: 14px;\n        margin-right: 4px;\n}\n.sub-head[data-v-6986a57c] {\n        margin-top: 3px;\n}\n#share[data-v-6986a57c] {\n        position: absolute;\n        top: -22px;\n        padding: 12px;\n        right: 20px;\n        background: #038ed4;\n        border: 5px solid;\n        border-radius: 50%;\n        color: #fff;\n}\n#menu[data-v-6986a57c] {\n        margin-left: 10px;\n        vertical-align: middle;\n}\n.dropdown[data-v-6986a57c] {\n        float: right;\n}\n.dropdown-menu[data-v-6986a57c] {\n        -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n                transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-6986a57c] {\n        margin-right: 10px;\n}\n.bg-gray[data-v-6986a57c]{\n        background-color: #f1f1f1;\n}\n.color-main[data-v-6986a57c]{\n        color: #038ed4;\n}\n.fix[data-v-6986a57c]{\n    overflow:hidden; \n    top: 90px;\n}\n.post-meta[data-v-6986a57c] {\n    margin-right: 15px;\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n}\n.post-meta i[data-v-6986a57c] {\n    font-size: 15px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n}\n.post-meta-text[data-v-6986a57c]{\n    float: right;\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n.col-primary[data-v-6986a57c] {\n        color: #304156;\n}\n.card-primary[data-v-6986a57c] {\n        background: #fff;\n}\n#posts .card[data-v-6986a57c] {\n        border-radius: 1px;\n        margin-bottom: 25px;\n        /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-6986a57c] {\n        background-color: #fff;\n        padding: 0.62rem 1.15rem;\n        margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-6986a57c] {\n        float: left;\n        color: #2f3c4e;\n        text-transform: uppercase;\n        font-weight: 400;\n}\n#posts .card-header h2 a[data-v-6986a57c]:hover {\n        color: #038ed4;\n}\n#posts .post-share[data-v-6986a57c]{\n        padding-top: 20px;\n        border-top: 1px solid #ecedee;\n}\n#posts .card-footer[data-v-6986a57c] {\n        padding: 0.40rem 0.40rem;\n        background-color: #038ed4;\n}\n#posts .card-body[data-v-6986a57c] {\n        padding: 30px;\n        font-size: 16px;\n        position: relative;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n                box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-6986a57c]:before{\n        content: \"\";\n        height: 1px;\n        width: 100%;\n        background-color: #FFF;\n        border-bottom: 1px solid #d3d5d7;\n        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n        box-shadow: 0 0 5px 0 #e2e3e4;\n        bottom: 2px;\n        left: 0;\n        position: absolute;\n}\n#posts .card-body[data-v-6986a57c]:after{\n        content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix[data-v-6986a57c]{\n        margin-bottom: 20px;\n}\n.sub-menu[data-v-6986a57c] {\n        background-color: #696969;\n        width: 150px;\n        list-style-type: none;\n}\n#posts .card-img-top[data-v-6986a57c] {\n        height: 200px;\n        border-radius: 0;\n        /* border-top: 1px solid #000; */\n        /* background: url('/images/1.jpg') center no-repeat; */\n        background-size: cover;\n}\n.btn-custom[data-v-6986a57c] {\n        background-color: #fff;\n        color: #212426;\n        padding: 1px 4px;\n        border-radius: 14px;\n        border-color: #b3b6b9;\n        font-size: 14px;\n        margin-right: 4px;\n}\n.sub-head[data-v-6986a57c] {\n        margin-top: 3px;\n}\n#share[data-v-6986a57c] {\n        position: absolute;\n        top: -22px;\n        padding: 12px;\n        right: 20px;\n        background: #038ed4;\n        border: 5px solid;\n        border-radius: 50%;\n        color: #fff;\n}\n#menu[data-v-6986a57c] {\n        margin-left: 10px;\n        vertical-align: middle;\n}\n", ""]);
+exports.push([module.i, "\n.list-inline[data-v-6986a57c] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-6986a57c] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-6986a57c] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-6986a57c] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-6986a57c] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-6986a57c] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-6986a57c]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-6986a57c] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-6986a57c]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-6986a57c]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-6986a57c]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-6986a57c]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-6986a57c] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-6986a57c] {\n        width: 142px;\n}\n}\n.w-65[data-v-6986a57c] {\n    width: 65%;\n}\n.fix[data-v-6986a57c] {\n    overflow: hidden;\n    top: 90px;\n}\n.post-meta[data-v-6986a57c] {\n    margin-right: 15px;\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n}\n.post-meta i[data-v-6986a57c] {\n    font-size: 15px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n}\n.post-meta-text[data-v-6986a57c] {\n    float: right;\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header[data-v-6986a57c] {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4[data-v-6986a57c] {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4[data-v-6986a57c]:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4[data-v-6986a57c]:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4[data-v-6986a57c]:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4[data-v-6986a57c]:after {\n    content: \"\\F0B0\";\n}\n#sidebar .card-header h4[data-v-6986a57c]:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i[data-v-6986a57c] {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body[data-v-6986a57c] {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body[data-v-6986a57c]:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body[data-v-6986a57c]:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary[data-v-6986a57c] {\n    color: #304156;\n}\n.card-primary[data-v-6986a57c] {\n    background: #fff;\n}\n#posts .card[data-v-6986a57c] {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-6986a57c] {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-6986a57c] {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a[data-v-6986a57c]:hover {\n    color: #038ed4;\n}\n#posts .post-share[data-v-6986a57c] {\n    padding-top: 20px;\n    border-top: 1px solid #ecedee;\n}\n#posts .card-footer[data-v-6986a57c] {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body[data-v-6986a57c] {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-6986a57c]:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body[data-v-6986a57c]:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix[data-v-6986a57c] {\n    margin-bottom: 20px;\n}\n.sub-menu[data-v-6986a57c] {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top[data-v-6986a57c] {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom[data-v-6986a57c] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-6986a57c] {\n    margin-top: 3px;\n}\n#share[data-v-6986a57c] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-6986a57c] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown[data-v-6986a57c] {\n    float: right;\n}\n.dropdown-menu[data-v-6986a57c] {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-6986a57c] {\n    margin-right: 10px;\n}\n.bg-gray[data-v-6986a57c] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-6986a57c] {\n    color: #038ed4;\n}\n.fix[data-v-6986a57c] {\n    overflow: hidden;\n    top: 90px;\n}\n.post-meta[data-v-6986a57c] {\n    margin-right: 15px;\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n}\n.post-meta i[data-v-6986a57c] {\n    font-size: 15px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n}\n.post-meta-text[data-v-6986a57c] {\n    float: right;\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n.col-primary[data-v-6986a57c] {\n    color: #304156;\n}\n.card-primary[data-v-6986a57c] {\n    background: #fff;\n}\n#posts .card[data-v-6986a57c] {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-6986a57c] {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-6986a57c] {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a[data-v-6986a57c]:hover {\n    color: #038ed4;\n}\n#posts .post-share[data-v-6986a57c] {\n    padding-top: 20px;\n    border-top: 1px solid #ecedee;\n}\n#posts .card-footer[data-v-6986a57c] {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body[data-v-6986a57c] {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-6986a57c]:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body[data-v-6986a57c]:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix[data-v-6986a57c] {\n    margin-bottom: 20px;\n}\n.sub-menu[data-v-6986a57c] {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top[data-v-6986a57c] {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom[data-v-6986a57c] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-6986a57c] {\n    margin-top: 3px;\n}\n#share[data-v-6986a57c] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-6986a57c] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n", ""]);
 
 // exports
 
@@ -26178,6 +26162,8 @@ exports.push([module.i, "\n.list-inline[data-v-6986a57c] {\n        padding-left
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_helper__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__layouts_index_rightWidget_vue__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__layouts_index_rightWidget_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__layouts_index_rightWidget_vue__);
 //
 //
 //
@@ -26353,75 +26339,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 // import {showPostURL} from "../../config.js";
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        WidgetRight: __WEBPACK_IMPORTED_MODULE_1__layouts_index_rightWidget_vue___default.a
+    },
     data: function data() {
         return {
             post: {},
@@ -26486,190 +26411,230 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "bg-gray" }, [
       _c("div", { staticClass: "container py-4" }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            {
-              staticClass: "col-2 px-1 d-none d-md-block sticky-top",
-              attrs: { id: "sidebar" }
-            },
-            [
-              _c("div", { staticClass: "sticky-top fix" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("div", { staticClass: "card" }, [
-                      _vm._m(1),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-body" }, [
-                        _c(
-                          "ul",
-                          { staticClass: "list-group list-group-flush" },
-                          [
-                            _c(
-                              "li",
-                              { staticClass: "list-group-item" },
-                              [
-                                _c("router-link", { attrs: { to: "/" } }, [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v("All")
-                                  ])
-                                ])
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "list-group-item" },
-                              [
-                                _c("router-link", { attrs: { to: "/" } }, [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v("Placement")
-                                  ])
-                                ])
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "list-group-item" },
-                              [
-                                _c("router-link", { attrs: { to: "/" } }, [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v("Internship")
-                                  ])
-                                ])
-                              ],
-                              1
-                            )
-                          ]
-                        )
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _vm._m(2)
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "col", attrs: { id: "main" } }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
             _c(
               "div",
               {
-                staticClass: "row justify-content-center",
-                attrs: { id: "posts" }
+                staticClass: "col-2 px-1 d-none d-md-block sticky-top",
+                attrs: { id: "sidebar" }
               },
               [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "card card-primary" }, [
-                    _c("div", { staticClass: "card-header" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-12" }, [
-                          _c("h2", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v(_vm._s(_vm.post.title))
+                _c("div", { staticClass: "sticky-top fix" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c("div", { staticClass: "card" }, [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card-body" }, [
+                          _c(
+                            "ul",
+                            { staticClass: "list-group list-group-flush" },
+                            [
+                              _c(
+                                "li",
+                                { staticClass: "list-group-item" },
+                                [
+                                  _c("router-link", { attrs: { to: "/" } }, [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("All")
+                                    ])
+                                  ])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "li",
+                                { staticClass: "list-group-item" },
+                                [
+                                  _c("router-link", { attrs: { to: "/" } }, [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("Placement")
+                                    ])
+                                  ])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "li",
+                                { staticClass: "list-group-item" },
+                                [
+                                  _c("router-link", { attrs: { to: "/" } }, [
+                                    _c("a", { attrs: { href: "#" } }, [
+                                      _vm._v("Internship")
+                                    ])
+                                  ])
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col", attrs: { id: "main" } }, [
+              _c(
+                "div",
+                {
+                  staticClass: "row justify-content-center",
+                  attrs: { id: "posts" }
+                },
+                [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "card card-primary" }, [
+                      _c("div", { staticClass: "card-header" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _vm._m(3),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-10" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-12" }, [
+                                _c(
+                                  "h2",
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        attrs: {
+                                          to: {
+                                            name: "view",
+                                            params: { id: _vm.post.id }
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c("a", { attrs: { href: "#" } }, [
+                                          _vm._v(_vm._s(_vm.post.title))
+                                        ])
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-12" }, [
+                                _c("div", { staticClass: "pull-left" }, [
+                                  _c("i", {
+                                    staticClass: "fa fa-calendar-check-o",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "post-meta-text col-primary ",
+                                    domProps: {
+                                      innerHTML: _vm._s(
+                                        _vm.setDateFormat(_vm.post.updated_at)
+                                      )
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "pull-right" }, [
+                                  _c("i", {
+                                    staticClass: "fa fa-flag",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "post-meta-text col-primary "
+                                    },
+                                    [
+                                      _c(
+                                        "a",
+                                        {
+                                          attrs: { href: "#" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.$children[1].searchby_category(
+                                                _vm.post.category
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                                                    " +
+                                              _vm._s(_vm.post.category) +
+                                              "\n                                                                "
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ])
                             ])
                           ])
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-12" }, [
-                          _c("div", { staticClass: "pull-left" }, [
-                            _c("i", {
-                              staticClass: "fa fa-calendar-check-o",
-                              attrs: { "aria-hidden": "true" }
-                            }),
-                            _vm._v(" "),
-                            _c("div", {
-                              staticClass: "post-meta-text col-primary ",
-                              domProps: {
-                                innerHTML: _vm._s(
-                                  _vm.setDateFormat(_vm.post.updated_at)
-                                )
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "pull-right" }, [
-                            _c("i", {
-                              staticClass: "fa fa-flag",
-                              attrs: { "aria-hidden": "true" }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "post-meta-text col-primary " },
-                              [
-                                _c("router-link", { attrs: { to: "/" } }, [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v(
-                                      "\n                                                                    " +
-                                        _vm._s(_vm.post.category) +
-                                        "\n                                                                "
-                                    )
-                                  ])
-                                ])
-                              ],
-                              1
-                            )
-                          ])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("img", {
-                      staticClass: "card-image-top",
-                      attrs: {
-                        src: "/images/posts/images/" + _vm.post.image,
-                        alt: _vm.post.image,
-                        width: "100%"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("div", {
-                        staticClass: "mb-3",
-                        domProps: { innerHTML: _vm._s(_vm.post.body) }
+                      _c("img", {
+                        staticClass: "card-image-top",
+                        attrs: {
+                          src: "/images/posts/images/" + _vm.post.image,
+                          alt: _vm.post.image,
+                          width: "100%"
+                        }
                       }),
                       _vm._v(" "),
-                      _c("div", { staticClass: "clearfix" }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "post-share" }, [
-                        _vm._m(3),
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("div", {
+                          staticClass: "mb-3",
+                          domProps: { innerHTML: _vm._s(_vm.post.body) }
+                        }),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "post-meta",
-                            staticStyle: { float: "right" }
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "fa fa-tags",
-                              attrs: { "aria-hidden": "true" }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "post-meta-text col-primary " },
-                              [_vm._v(_vm._s(_vm.post.tag))]
-                            )
-                          ]
-                        )
+                        _c("div", { staticClass: "clearfix" }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "post-share" }, [
+                          _vm._m(4),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "post-meta",
+                              staticStyle: { float: "right" }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fa fa-tags",
+                                attrs: { "aria-hidden": "true" }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "post-meta-text col-primary " },
+                                [_vm._v(_vm._s(_vm.post.tag))]
+                              )
+                            ]
+                          )
+                        ])
                       ])
                     ])
                   ])
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _vm._m(4)
-        ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("widget-right")
+          ],
+          1
+        )
       ])
     ])
   ])
@@ -26773,7 +26738,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h4", { staticClass: "mb-1" }, [_vm._v("  Filter By")])
+      _c("h4", { staticClass: "mb-1" }, [_vm._v(" Filter By")])
     ])
   },
   function() {
@@ -26784,7 +26749,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
-            _c("h4", [_vm._v("  Category")])
+            _c("h4", [_vm._v(" Category")])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
@@ -26799,6 +26764,24 @@ var staticRenderFns = [
             ])
           ])
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-1 d-none d-md-block mr-1" }, [
+      _c("a", { attrs: { href: "/" } }, [
+        _c("img", {
+          staticClass: " mt-2",
+          attrs: {
+            src: "/images/icons/120x120.png",
+            width: "48px",
+            height: "48px",
+            alt: "logo-tpo"
+          }
+        })
       ])
     ])
   },
@@ -26827,215 +26810,6 @@ var staticRenderFns = [
           },
           [_vm._v("Share")]
         )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "col-3 px-1 d-none d-md-block sticky-top",
-        attrs: { id: "sidebar" }
-      },
-      [
-        _c("div", { staticClass: "sticky-top fix" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "card" }, [
-                _c(
-                  "div",
-                  { staticClass: "card-header", attrs: { id: "office" } },
-                  [_c("h4", [_vm._v("T&P OFFICE")])]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "office text-center" }, [
-                    _c("img", {
-                      attrs: { src: "/images/sodhi.jpg", width: "60%", alt: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-2" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-10" }, [
-                      _c("p", { staticClass: "mb-0" }, [
-                        _c("strong", [_vm._v("Prof. G. S. SODHI")])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-2" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-10" }, [
-                      _c("small", [_vm._v("Officer (Training & Placement)")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mt-2" }, [
-                    _c("div", { staticClass: "col-md-2" }, [
-                      _c("i", {
-                        staticClass: "fa fa-envelope mt-1",
-                        attrs: { "aria-hidden": "true" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-10" }, [
-                      _c("small", [
-                        _c(
-                          "a",
-                          {
-                            attrs: {
-                              href: "mailto:gssodhi@gndec.ac.in",
-                              target: "_blank"
-                            }
-                          },
-                          [_vm._v("gssodhi@gndec.ac.in")]
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mt-1" }, [
-                    _c("div", { staticClass: "col-md-2" }, [
-                      _c("i", {
-                        staticClass: "fa fa-phone mt-1",
-                        attrs: { "aria-hidden": "true" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-10" }, [
-                      _c("small", [_vm._v("9999999999")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", { staticClass: "card" }, [
-                _c(
-                  "div",
-                  { staticClass: "card-header", attrs: { id: "about" } },
-                  [_c("h4", [_vm._v("  ABOUT")])]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-map" }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href:
-                          "https://wego.here.com/directions/mix/mylocation/e-eyJuYW1lIjoiR25kZWMtIFRyYWluaW5nIGFuZCBQbGFjZW1lbnQiLCJhZGRyZXNzIjoiR3VydSBOYW5hayBEZXYgRW5naW5lZXJpbmcgQ29sbGVnZSBHaWxsIFBhcmsgTHVkaGlhbmEgMTQxMDA2LCBMdWRoaWFuYSwgUHVuamFiLCBJbmRpYSAxNDEwMDYiLCJsYXRpdHVkZSI6MzAuODU5MzM3NTA3ODAzLCJsb25naXR1ZGUiOjc1Ljg2MTY3Mjk3MzYzMywicHJvdmlkZXJOYW1lIjoiZmFjZWJvb2siLCJwcm92aWRlcklkIjoyODg1Nzc3NzExOTM4ODB9?map=30.859337507803,75.861672973633,15,normal&fb_locale=en_GB",
-                        rel: "dialog",
-                        target: "_blank",
-                        role: "button",
-                        tabindex: "0"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "_4j7v _5bld" }, [
-                        _c("img", {
-                          staticClass: "_a3f img",
-                          attrs: {
-                            alt: "",
-                            "aria-label": "Map attachment",
-                            src:
-                              "https://external.fluh1-1.fna.fbcdn.net/static_map.php?region=IN&v=42&osm_provider=2&size=306x98&zoom=15&markers=30.85933751%2C75.86167297&language=en_GB",
-                            width: "306",
-                            height: "98"
-                          }
-                        })
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "card-body",
-                    staticStyle: { "padding-top": "20px" }
-                  },
-                  [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-2" }, [
-                        _c("i", {
-                          staticClass: "fa fa-compass mt-1",
-                          attrs: { "aria-hidden": "true" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-10" }, [
-                        _c("small", [
-                          _vm._v(
-                            "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006 (7.11 km) 141006 Ludhiana, Punjab, India "
-                          ),
-                          _c("br"),
-                          _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                href:
-                                  "https://wego.here.com/directions/mix/mylocation/e-eyJuYW1lIjoiR25kZWMtIFRyYWluaW5nIGFuZCBQbGFjZW1lbnQiLCJhZGRyZXNzIjoiR3VydSBOYW5hayBEZXYgRW5naW5lZXJpbmcgQ29sbGVnZSBHaWxsIFBhcmsgTHVkaGlhbmEgMTQxMDA2LCBMdWRoaWFuYSwgUHVuamFiLCBJbmRpYSAxNDEwMDYiLCJsYXRpdHVkZSI6MzAuODU5MzM3NTA3ODAzLCJsb25naXR1ZGUiOjc1Ljg2MTY3Mjk3MzYzMywicHJvdmlkZXJOYW1lIjoiZmFjZWJvb2siLCJwcm92aWRlcklkIjoyODg1Nzc3NzExOTM4ODB9?map=30.859337507803,75.861672973633,15,normal&fb_locale=en_GB",
-                                target: "_blank"
-                              }
-                            },
-                            [_vm._v("Get Directions")]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row mt-2" }, [
-                      _c("div", { staticClass: "col-md-2" }, [
-                        _c("i", {
-                          staticClass: "fa fa-phone mt-1",
-                          attrs: { "aria-hidden": "true" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-10" }, [
-                        _c("small", [_vm._v("099157 81209")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-2" }, [
-                        _c("i", {
-                          staticClass: "fa fa-globe mt-1",
-                          attrs: { "aria-hidden": "true" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-10" }, [
-                        _c("small", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                href: "https://www.gndec.ac.in",
-                                target: "_blank"
-                              }
-                            },
-                            [_vm._v("www.gndec.ac.in")]
-                          )
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ])
-        ])
       ]
     )
   }
