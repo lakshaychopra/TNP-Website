@@ -72,7 +72,7 @@
 </template>
 <script>
     import helper from '../../services/helper'
-    import { addPostURL } from "../../config.js";
+    import { addPostURL,apiDomain } from "../../config.js";
     import InputTag from 'vue-input-tag'
     export default {
         data() {
