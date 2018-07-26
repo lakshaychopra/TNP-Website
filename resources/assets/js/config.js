@@ -1,4 +1,4 @@
-export const apiDomain = 'http://localhost:8000';
+export const apiDomain = 'http://www.tnpgndec.com';
 
 export const loginURL = '/api/login';
 export const forgetURL = '/api/reset/password';
