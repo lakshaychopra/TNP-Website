@@ -23805,7 +23805,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (canonicalElement !== null) {
                     URLConst = canonicalElement.href;
                 }
-                var TitleConst = 'Post One';
+                var TitleConst = Title;
                 var DescriptionConst = Description;
                 console.log(URLConst);
                 if (navigator.share) {
@@ -26287,7 +26287,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (canonicalElement !== null) {
                     URLConst = canonicalElement.href;
                 }
-                var TitleConst = 'Post One';
+                var TitleConst = Title;
                 var DescriptionConst = Description;
                 console.log(URLConst);
                 if (navigator.share) {

@@ -232,7 +232,7 @@ import helper from '../../services/helper.js';
                         if (canonicalElement !== null) {
                             URLConst = canonicalElement.href;
                         }
-                        const TitleConst='Post One';
+                        const TitleConst=Title;
                         const DescriptionConst=Description;
                         console.log(URLConst);
                         if (navigator.share) {
