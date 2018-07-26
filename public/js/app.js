@@ -209,7 +209,7 @@ var verifyURL = '/api/verify';
 var securityURL = '/api/security';
 var oauthURL = '/oauth/token';
 
-var addPostURL = '/api/dashboard/post/';
+var addPostURL = '/api/dashboard/post';
 var showPostURL = '/api/dashboard/post/';
 
 var addHomePostURL = '/api/home/';
@@ -30241,7 +30241,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             formData.append('tag', postData.tag);
             formData.append('category', postData.category);
             formData.append('post_link', postData.post_link);
-            formData.append('_method', 'POST');
             axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["b" /* addPostURL */], formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
                 // console.log(response);
                 // if (response.status == "200") {

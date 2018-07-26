@@ -154,7 +154,6 @@
             formData.append('tag', postData.tag);
             formData.append('category', postData.category);
             formData.append('post_link', postData.post_link);
-            formData.append('_method', 'POST');
             axios.post(addPostURL,formData, {headers: {'Content-Type': 'multipart/form-data'}})
                 .then(function(response) {
                 // console.log(response);

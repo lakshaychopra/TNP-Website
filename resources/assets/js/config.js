@@ -6,7 +6,7 @@ export const verifyURL = '/api/verify';
 export const securityURL = '/api/security';
 export const oauthURL = '/oauth/token';
 
-export const addPostURL = '/api/dashboard/post/';
+export const addPostURL = '/api/dashboard/post';
 export const showPostURL = '/api/dashboard/post/';
 
 export const addHomePostURL = '/api/home/';
