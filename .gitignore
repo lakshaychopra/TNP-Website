@@ -13,3 +13,4 @@ yarn-error.log
 tnp.code-workspace
 /database/seeds/UsersTableSeeder.php
 .env
+node_modules.zip
