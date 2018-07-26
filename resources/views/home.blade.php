@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> {{--
-    <!-- Tell the browser to be responsive to screen width -->--}}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    {{-- <!-- Tell the browser to be responsive to screen width -->--}}
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no,user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -35,8 +35,8 @@
                 "disambiguatingDescription": "Training and Placement Cell, GNDEC",
                 "name": "Training and Placement Cell, GNDEC"
             },
-            "mainEntityOfPage": "https://gndec.ac.in/",
-            "brand": "https://gndec.ac.in/",
+            "mainEntityOfPage": "https://www.tnpgndec.com",
+            "brand": "https://www.tnpgndec.com",
             "email": "tpo@gndec.ac.in",
             "faxNumber": "+911612501106 ",
             "foundingDate": "1956",
@@ -50,8 +50,8 @@
         </script>
  {{-- fb    --}}
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Training and Placement Cell"> {{--
-    <meta property="og:url" content=""> --}}
+    <meta property="og:title" content="Training and Placement Cell"> 
+    <meta property="og:url" content="https://www.tnpgndec.com">
     <meta property="og:site_name" content="T&P">
     <meta property="og:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
     <meta property="og:image" content="{{asset('/images/icons/512x512.png')}}">
@@ -60,7 +60,7 @@
     <meta name="twitter:card" content="summary">
     {{-- <meta name="twitter:site" content="@site_account"> --}}
     {{-- <meta name="twitter:creator" content="@individual_account"> --}}
-    {{-- <meta name="twitter:url" content="http://example.com/page.html"> --}}
+    <meta name="twitter:url" content="https://www.tnpgndec.com">
     <meta name="twitter:title" content="Training and Placement Cell">
     <meta name="twitter:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
     <meta name="twitter:image" content="{{asset('/images/icons/512x512.png')}}">
