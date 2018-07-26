@@ -71,9 +71,13 @@ export default {
             searchPost() {
                 if (this.search.length >= 3) {
                     axios.get(searchURL + this.search)
-                        .then(response => this.$parent.posts = response.data.data.data)
+                        .then(response => this.$parent.posts = response.data.data.data,
+
+                        this.$parent.pinned_posts = undefined
+                        )
                 } else {
                     this.$parent.getPosts();
+                    this.$parent.getPinnedPosts();
                 }
             },
     }
