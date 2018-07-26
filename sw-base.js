@@ -2,7 +2,7 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox
 
 workbox.precaching.precacheAndRoute([]);
 
-const OFFLINE_URL = 'http://localhost:8000/offline.html';
+const OFFLINE_URL = 'https://www.tnpgndec.com/offline.html';
 self.addEventListener('fetch', event => {
     if (event.request.mode === 'navigate' ||
         (event.request.method === 'GET' &&
