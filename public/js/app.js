@@ -210,19 +210,19 @@ var securityURL = '/api/security';
 var oauthURL = '/oauth/token';
 
 var addPostURL = '/api/dashboard/post';
-var showPostURL = '/api/dashboard/post/';
+var showPostURL = '/api/dashboard/post';
 
 var addHomePostURL = '/api/home/';
 var pinnedPostURL = '/api/home/page/view/pinned';
 var registerURL = '/api/register/';
 var setPasswordURL = '/api/register/password';
 
-var downloadExcelURL = '/api/dashboard/user/excelfile/';
-var mailExcelURL = '/api/dashboard/user/createmail/';
-var singleuserURL = '/api/dashboard/user/form/create/';
+var downloadExcelURL = '/api/dashboard/user/excelfile';
+var mailExcelURL = '/api/dashboard/user/createmail';
+var singleuserURL = '/api/dashboard/user/form/create';
 
-var searchURL = '/api/home/post/search/';
-var categoryURL = '/api/home/post/view/';
+var searchURL = '/api/home/post/search';
+var categoryURL = '/api/home/post/view';
 var rightWidget = '/api/home/page/view/widgets';
 
 var formstepChangeURL = '/api/dashboard/user/step/update';
@@ -231,9 +231,9 @@ var firstLoginURL = '/api/dashboard/user/first/login';
 var statusChangeURL = '/api/dashboard/user/status/update';
 var storeStudentURL = '/api/dashboard/student';
 
-var updateProfileURL = 'api/dashboard/student/';
+var updateProfileURL = 'api/dashboard/student';
 
-var viewPost = '/view/';
+var viewPost = '/view';
 
 /***/ }),
 /* 2 */
