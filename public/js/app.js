@@ -23770,7 +23770,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //     }
         // },
         getURL: function getURL(id) {
-            return "http://localhost:8000/view/" + id;
+            return "https://www.tnpgndec.com/view/" + id;
         },
         share_fn: function share_fn() {
             return this.share;
@@ -26255,7 +26255,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //     }
         // },
         getURL: function getURL(id) {
-            return "http://localhost:8000/view/" + id;
+            return "https://www.tnpgndec.com/view/" + id;
         },
         share_fn: function share_fn() {
             return this.share;
