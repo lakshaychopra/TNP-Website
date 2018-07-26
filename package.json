@@ -17,11 +17,13 @@
         "browser-sync": "^2.18.13",
         "browser-sync-webpack-plugin": "^1.2.0",
         "cross-env": "^5.2.0",
-        "laravel-mix": "^1.0",
+        "laravel-mix": "^2.1.11",
         "normalize-scss": "^7.0.0",
+        "vue-loader": "13.7.2",
         "workbox-cli": "^3.4.1"
     },
     "dependencies": {
+        "@johmun/vue-tags-input": "^1.5.4",
         "click-confirm": "^1.1.0",
         "js-cookie": "^2.1.4",
         "laravel-vue-pagination": "^1.0.6",
@@ -29,6 +31,7 @@
         "vue": "^2.4.2",
         "vue-html5-editor": "^1.1.1",
         "vue-infinite-scroll": "^2.0.2",
+        "vue-input-tag": "^1.0.4",
         "vue-range-slider": "^0.2.4",
         "vue-router": "^2.7.0",
         "vue-social-sharing": "^2.3.3",
