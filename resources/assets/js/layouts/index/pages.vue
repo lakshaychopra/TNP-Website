@@ -310,10 +310,10 @@ import helper from '../../services/helper.js';
                     this.share = true;
                     // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
                 }
-                // else if(window.location.protocol !='https:') {
-                //     alert('Android Native Share support only on Https:// protocol');
-                //     this.share = true
-                // }
+                else if(window.location.protocol !='https:') {
+                    // alert('Android Native Share support only on Https:// protocol');
+                    this.share = true
+                }
                 else{
                     this.share = false;
                 }
@@ -350,12 +350,12 @@ import helper from '../../services/helper.js';
                                         console.log(Description);
 
                     if(typeof navigator.share==='undefined' || !navigator.share) {
-                        alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+                        // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
                     }
-                    // else if(window.location.protocol !='https:') {
-                    //     alert('Android Native Share support only on Https:// protocol');
-                    //     this.share = true
-                    // }
+                    else if(window.location.protocol !='https:') {
+                        // alert('Android Native Share support only on Https:// protocol');
+                        this.share = true
+                    }
                     else {
                         if(typeof URL==='undefined') {
                             URL=window.location.href;
@@ -377,7 +377,7 @@ import helper from '../../services/helper.js';
                         if (navigator.share) {
                             navigator.share({
                                 title:TitleConst ,
-                                text: DescriptionConst,
+                                text: TitleConst,
                                 url:URLConst,
                             })
                                 .then(() => console.log('Successful share'))

@@ -23746,14 +23746,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (typeof navigator.share === 'undefined' || !navigator.share) {
             this.share = true;
             // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+        } else if (window.location.protocol != 'https:') {
+            // alert('Android Native Share support only on Https:// protocol');
+            this.share = true;
+        } else {
+            this.share = false;
         }
-        // else if(window.location.protocol !='https:') {
-        //     alert('Android Native Share support only on Https:// protocol');
-        //     this.share = true
-        // }
-        else {
-                this.share = false;
-            }
         console.log(this.share);
         this.loading = 0;
         this.getPosts();
@@ -23788,42 +23786,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log(Description);
 
             if (typeof navigator.share === 'undefined' || !navigator.share) {
-                alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
-            }
-            // else if(window.location.protocol !='https:') {
-            //     alert('Android Native Share support only on Https:// protocol');
-            //     this.share = true
-            // }
-            else {
-                    if (typeof URL === 'undefined') {
-                        URL = window.location.href;
-                    }
-                    if (typeof Title === 'undefined') {
-                        Title = document.title;
-                    }
-                    if (typeof Description === 'undefined') {
-                        Description = 'Share your thoughts about ' + Title;
-                    }
-                    var URLConst = document.location.href + 'view/' + URL;
-                    var canonicalElement = document.querySelector('link[rel=canonical]');
-                    if (canonicalElement !== null) {
-                        URLConst = canonicalElement.href;
-                    }
-                    var TitleConst = 'Post One';
-                    var DescriptionConst = Description;
-                    console.log(URLConst);
-                    if (navigator.share) {
-                        navigator.share({
-                            title: TitleConst,
-                            text: DescriptionConst,
-                            url: URLConst
-                        }).then(function () {
-                            return console.log('Successful share');
-                        }).catch(function (error) {
-                            return console.log('Error sharing', error);
-                        });
-                    }
+                // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+            } else if (window.location.protocol != 'https:') {
+                // alert('Android Native Share support only on Https:// protocol');
+                this.share = true;
+            } else {
+                if (typeof URL === 'undefined') {
+                    URL = window.location.href;
                 }
+                if (typeof Title === 'undefined') {
+                    Title = document.title;
+                }
+                if (typeof Description === 'undefined') {
+                    Description = 'Share your thoughts about ' + Title;
+                }
+                var URLConst = document.location.href + 'view/' + URL;
+                var canonicalElement = document.querySelector('link[rel=canonical]');
+                if (canonicalElement !== null) {
+                    URLConst = canonicalElement.href;
+                }
+                var TitleConst = 'Post One';
+                var DescriptionConst = Description;
+                console.log(URLConst);
+                if (navigator.share) {
+                    navigator.share({
+                        title: TitleConst,
+                        text: TitleConst,
+                        url: URLConst
+                    }).then(function () {
+                        return console.log('Successful share');
+                    }).catch(function (error) {
+                        return console.log('Error sharing', error);
+                    });
+                }
+            }
         },
 
         loadMore: function loadMore() {
@@ -26228,14 +26224,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (typeof navigator.share === 'undefined' || !navigator.share) {
             this.share = true;
             // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+        } else if (window.location.protocol != 'https:') {
+            // alert('Android Native Share support only on Https:// protocol');
+            this.share = true;
+        } else {
+            this.share = false;
         }
-        // else if(window.location.protocol !='https:') {
-        //     alert('Android Native Share support only on Https:// protocol');
-        //     this.share = true
-        // }
-        else {
-                this.share = false;
-            }
         console.log(this.share);
         this.loading = 0;
         axios.get('/api/home/view/' + this.id).then(function (response) {
@@ -26274,42 +26268,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log(Description);
 
             if (typeof navigator.share === 'undefined' || !navigator.share) {
-                alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
-            }
-            // else if(window.location.protocol !='https:') {
-            //     alert('Android Native Share support only on Https:// protocol');
-            //     this.share = true
-            // }
-            else {
-                    if (typeof URL === 'undefined') {
-                        URL = window.location.href;
-                    }
-                    if (typeof Title === 'undefined') {
-                        Title = document.title;
-                    }
-                    if (typeof Description === 'undefined') {
-                        Description = 'Share your thoughts about ' + Title;
-                    }
-                    var URLConst = document.location.href + 'view/' + URL;
-                    var canonicalElement = document.querySelector('link[rel=canonical]');
-                    if (canonicalElement !== null) {
-                        URLConst = canonicalElement.href;
-                    }
-                    var TitleConst = 'Post One';
-                    var DescriptionConst = Description;
-                    console.log(URLConst);
-                    if (navigator.share) {
-                        navigator.share({
-                            title: TitleConst,
-                            text: DescriptionConst,
-                            url: URLConst
-                        }).then(function () {
-                            return console.log('Successful share');
-                        }).catch(function (error) {
-                            return console.log('Error sharing', error);
-                        });
-                    }
+                // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+            } else if (window.location.protocol != 'https:') {
+                // alert('Android Native Share support only on Https:// protocol');
+                this.share = true;
+            } else {
+                if (typeof URL === 'undefined') {
+                    URL = window.location.href;
                 }
+                if (typeof Title === 'undefined') {
+                    Title = document.title;
+                }
+                if (typeof Description === 'undefined') {
+                    Description = 'Share your thoughts about ' + Title;
+                }
+                var URLConst = document.location.href + 'view/' + URL;
+                var canonicalElement = document.querySelector('link[rel=canonical]');
+                if (canonicalElement !== null) {
+                    URLConst = canonicalElement.href;
+                }
+                var TitleConst = 'Post One';
+                var DescriptionConst = Description;
+                console.log(URLConst);
+                if (navigator.share) {
+                    navigator.share({
+                        title: TitleConst,
+                        text: TitleConst,
+                        url: URLConst
+                    }).then(function () {
+                        return console.log('Successful share');
+                    }).catch(function (error) {
+                        return console.log('Error sharing', error);
+                    });
+                }
+            }
         },
 
         loadMore: function loadMore() {
