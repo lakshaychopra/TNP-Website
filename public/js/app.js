@@ -24313,7 +24313,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -24325,22 +24325,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(1);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -24409,7 +24393,7 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    attrs: { href: "#" },
+                    attrs: { href: "" },
                     on: {
                       click: function($event) {
                         _vm.searchby_category("All")
@@ -24424,7 +24408,7 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    attrs: { href: "#" },
+                    attrs: { href: "" },
                     on: {
                       click: function($event) {
                         _vm.searchby_category("Placement")
@@ -24434,12 +24418,27 @@ var render = function() {
                   [_vm._v("Placement")]
                 )
               ]),
+              _vm._v("Announcement\n                        "),
+              _c("li", { staticClass: "list-group-item" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "" },
+                    on: {
+                      click: function($event) {
+                        _vm.searchby_category("Announcement")
+                      }
+                    }
+                  },
+                  [_vm._v("Announcement")]
+                )
+              ]),
               _vm._v(" "),
               _c("li", { staticClass: "list-group-item" }, [
                 _c(
                   "a",
                   {
-                    attrs: { href: "#" },
+                    attrs: { href: "" },
                     on: {
                       click: function($event) {
                         _vm.searchby_category("Internship")
@@ -24453,9 +24452,7 @@ var render = function() {
           ])
         ])
       ])
-    ]),
-    _vm._v(" "),
-    _vm._m(1)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -24465,32 +24462,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header", attrs: { id: "filter" } }, [
       _c("h4", { staticClass: "mb-1" }, [_vm._v(" Filter By")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row d-none" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _c("h4", { staticClass: "mb-1" }, [_vm._v(" Category")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("ul", { staticClass: "list-group list-group-flush" }, [
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Placement")])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Internship")])
-              ])
-            ])
-          ])
-        ])
-      ])
     ])
   }
 ]
