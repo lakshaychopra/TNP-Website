@@ -64,7 +64,7 @@
                     </div>
                     <div class="card-map">
                         <a href="https://wego.here.com/directions/mix/mylocation/e-eyJuYW1lIjoiR25kZWMtIFRyYWluaW5nIGFuZCBQbGFjZW1lbnQiLCJhZGRyZXNzIjoiR3VydSBOYW5hayBEZXYgRW5naW5lZXJpbmcgQ29sbGVnZSBHaWxsIFBhcmsgTHVkaGlhbmEgMTQxMDA2LCBMdWRoaWFuYSwgUHVuamFiLCBJbmRpYSAxNDEwMDYiLCJsYXRpdHVkZSI6MzAuODU5MzM3NTA3ODAzLCJsb25naXR1ZGUiOjc1Ljg2MTY3Mjk3MzYzMywicHJvdmlkZXJOYW1lIjoiZmFjZWJvb2siLCJwcm92aWRlcklkIjoyODg1Nzc3NzExOTM4ODB9?map=30.859337507803,75.861672973633,15,normal&fb_locale=en_GB"
-                            rel="dialog" target="_blank" role="button" class="" tabindex="0">
+                            rel="noopener" target="_blank" role="button" class="" tabindex="0" >
                             <div class="_4j7v _5bld">
                                 <img class="_a3f img" alt="map" aria-label="Map attachment" src="https://external.fluh1-1.fna.fbcdn.net/static_map.php?region=IN&amp;v=42&amp;osm_provider=2&amp;size=306x98&amp;zoom=15&amp;markers=30.85933751%2C75.86167297&amp;language=en_GB"
                                     width="100%" height="98">
@@ -80,7 +80,7 @@
                                 <small>{{ office.about_address }}
                                     <br> {{ office.about_location }}
                                     <br>
-                                    <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank"><strong>&#8625;</strong>&nbsp; Get Directions</a>
+                                    <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank" rel="noopener"><strong>&#8625;</strong>&nbsp; Get Directions</a>
                                 </small>
                             </div>
                         </div>
