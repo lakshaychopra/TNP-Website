@@ -398,7 +398,7 @@
                     if (navigator.share) {
                         navigator.share({
                                 title: TitleConst,
-                                text: URLConst,
+                                text: TitleConst,
                                 url: URLConst,
                             })
                             .then(() => console.log('Successful share'))
