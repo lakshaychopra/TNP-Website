@@ -13,7 +13,7 @@
                             </li>
                             <li class="list-group-item">
                                 <a href="" @click="searchby_category('Placement')">Placement</a>
-                            </li>Announcement
+                            </li>
                             <li class="list-group-item">
                                 <a href="" @click="searchby_category('Announcement')">Announcement</a>
                             </li>

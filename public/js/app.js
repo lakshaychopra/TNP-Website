@@ -24418,7 +24418,7 @@ var render = function() {
                   [_vm._v("Placement")]
                 )
               ]),
-              _vm._v("Announcement\n                        "),
+              _vm._v(" "),
               _c("li", { staticClass: "list-group-item" }, [
                 _c(
                   "a",
