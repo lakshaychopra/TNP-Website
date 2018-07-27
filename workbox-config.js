@@ -3,7 +3,7 @@ module.exports = {
     "globPatterns": [
         "**/*.{ico,html}",
         "**/offline.png",
-        "**/manifest.json"
+        "**/manifest.webmanifest"
     ],
     "swDest": "public\\sw.js",
     "swSrc": "sw-base.js",

@@ -14,10 +14,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "a62ebdc11693964198bc54c92521f35c"
   },
   {
-    "url": "manifest.json",
-    "revision": "fcfdf1a193c4f4a25eb49f17d9bcaf73"
+    "url": "manifest.webmanifest",
+    "revision": "b5adeec1f38fb7cfa147c3ab44832e9a"
   }
 ]);
+
+workbox.googleAnalytics.initialize();
 
 const OFFLINE_URL = 'https://www.tnpgndec.com/offline.html';
 self.addEventListener('fetch', event => {

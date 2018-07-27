@@ -2,6 +2,8 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox
 
 workbox.precaching.precacheAndRoute([]);
 
+workbox.googleAnalytics.initialize();
+
 const OFFLINE_URL = 'https://www.tnpgndec.com/offline.html';
 self.addEventListener('fetch', event => {
     if (event.request.mode === 'navigate' ||
