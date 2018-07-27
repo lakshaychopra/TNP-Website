@@ -387,10 +387,10 @@
                     if (typeof Description === 'undefined') {
                         Description = 'Share your thoughts about ' + Title;
                     }
-                    let URLConst = document.location.href + 'view/' + URL;
+                    let URLConst = 'https://www.tnpgndec.com/view/' + URL;
                     const canonicalElement = document.querySelector('link[rel=canonical]');
                     if (canonicalElement !== null) {
-                        URLConst = canonicalElement.href;
+                        URLConst = 'https://www.tnpgndec.com/view/' + URL;
                     }
                     const TitleConst = Title;
                     const DescriptionConst = Description;
@@ -398,7 +398,7 @@
                     if (navigator.share) {
                         navigator.share({
                                 title: TitleConst,
-                                text: TitleConst,
+                                text: URLConst,
                                 url: URLConst,
                             })
                             .then(() => console.log('Successful share'))
