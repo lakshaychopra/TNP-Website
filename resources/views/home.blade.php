@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    {{-- <!-- Tell the browser to be responsive to screen width -->--}}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> {{--
+    <!-- Tell the browser to be responsive to screen width -->--}}
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no,user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -23,14 +23,14 @@
                 "@type": "PostalAddress",
                 "addressCountry": "India",
                 "addressLocality": "Ludhiana, Punjab",
-                "addressRegion": "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006", 
-                "postOfficeBoxNumber ": "141006 ", 
-                "postalCode ": "141006 ", 
-                "streetAddress ": "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006 ", 
-                "email ": "tpo@gndec.ac.in ", 
-                "faxNumber ": " + 911612501106 ", 
-                "telephone ": " + 9101615064510 ", 
-                "alternateName ":"T&P Cell, GNDEC",
+                "addressRegion": "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006",
+                "postOfficeBoxNumber ": "141006 ",
+                "postalCode ": "141006 ",
+                "streetAddress ": "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006 ",
+                "email ": "tpo@gndec.ac.in ",
+                "faxNumber ": " + 911612501106 ",
+                "telephone ": " + 9101615064510 ",
+                "alternateName ": "T&P Cell, GNDEC",
                 "description": "This is official application of Training and Placement Cell, GNDEC, Ludhiana.",
                 "disambiguatingDescription": "Training and Placement Cell, GNDEC",
                 "name": "Training and Placement Cell, GNDEC"
@@ -42,29 +42,27 @@
             "foundingDate": "1956",
             "globalLocationNumber": "+91",
             "telephone": "+919872219178",
-            "alternateName": "T&P Cell,GNDEC ", 
-            "description ": "This is official application of Training and Placement Cell, GNDEC,Ludhiana.", 
-            "disambiguatingDescription ": "Training and Placement Cell, GNDEC ", 
-            "name ": "Training and Placement Cell, GNDEC " 
+            "alternateName": "T&P Cell,GNDEC ",
+            "description ": "This is official application of Training and Placement Cell, GNDEC,Ludhiana.",
+            "disambiguatingDescription ": "Training and Placement Cell, GNDEC ",
+            "name ": "Training and Placement Cell, GNDEC "
         }
-        </script>
- {{-- fb    --}}
+    </script>
+    {{-- fb --}}
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Training and Placement Cell"> 
+    <meta property="og:title" content="Training and Placement Cell">
     <meta property="og:url" content="https://www.tnpgndec.com">
     <meta property="og:site_name" content="T&P">
     <meta property="og:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
     <meta property="og:image" content="{{asset('/images/icons/1200x1200.jpg')}}">
-    <meta property="og:locale" content="en_US">
-{{-- twitter     --}}
-    <meta name="twitter:card" content="summary">
-    {{-- <meta name="twitter:site" content="@site_account"> --}}
-    {{-- <meta name="twitter:creator" content="@individual_account"> --}}
+    <meta property="og:locale" content="en_US"> {{-- twitter --}}
+    <meta name="twitter:card" content="summary"> {{--
+    <meta name="twitter:site" content="@site_account"> --}} {{--
+    <meta name="twitter:creator" content="@individual_account"> --}}
     <meta name="twitter:url" content="https://www.tnpgndec.com">
     <meta name="twitter:title" content="Training and Placement Cell">
     <meta name="twitter:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
-    <meta name="twitter:image" content="{{asset('/images/icons/512x512.png')}}">
-{{-- title --}}
+    <meta name="twitter:image" content="{{asset('/images/icons/512x512.png')}}"> {{-- title --}}
     <title>Training and Placemant Cell</title>
 
     <link type="text/plain" rel="author" href="{{asset('humans.txt')}}" />
@@ -73,8 +71,7 @@
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js" integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
         crossorigin="anonymous"></script>
 
-    <meta name="robots" content="INDEX,FOLLOW">
-{{-- apple --}}
+    <meta name="robots" content="INDEX,FOLLOW"> {{-- apple --}}
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="T&P">
@@ -86,12 +83,10 @@
     <link rel="apple-touch-icon" href="{{asset('/images/icons/120x120.png')}}" sizes="120x120">
     <link rel="apple-touch-icon" href="{{asset('/images/icons/144x144.png')}}" sizes="144x144">
     <link rel="apple-touch-icon" href="{{asset('/images/icons/152x152.png')}}" sizes="152x152">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180">
-{{-- ms --}}
+    <link rel="apple-touch-icon" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180"> {{-- ms --}}
     <meta name="msapplication-TileImage" content="{{asset('/images/icons/144x144.png')}}">
-    <meta name="msapplication-TileColor" content="#fff">
-{{-- JS fallback --}}
-<noscript>Your browser does not support JavaScript!</noscript>
+    <meta name="msapplication-TileColor" content="#fff"> {{-- JS fallback --}}
+    <noscript>Your browser does not support JavaScript!</noscript>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -114,6 +109,19 @@
     </div>
     <script type="text/javascript" src="/js/bundle.min.js"></script>
     <script type="text/javascript" src="service-worker.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122948554-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-122948554-1');
+    </script>
+
 </body>
 
 </html>
