@@ -1,5 +1,5 @@
 <template>
-    <div class="col-3 px-1 d-none d-md-block" id="sidebar">
+    <div class="col-md-3 px-1 d-none d-md-block" id="sidebar">
 
         <div class="row">
             <div class="col-md-12">

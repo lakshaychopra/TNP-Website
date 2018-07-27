@@ -43,7 +43,7 @@
             </nav>        <div class="bg-gray">
             <div class="container py-4">
                 <div class="row">
-                    <div class="col-9" id="main">
+                    <div class="col-md-9 col-xs-12" id="main">
                        <div class="row justify-content-center" id="posts">
                             <div class="col-md-12">
 
