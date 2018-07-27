@@ -23385,7 +23385,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.post-meta {\n    margin-right: 15px;\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n    font-weight: 450;\n}\n.post-meta i {\n    font-size: 20px;\nfloat: left;\nmargin-right: 10px;\ncolor: #a3a9b0;\nmargin-top: 2px;\nfont-weight: bold;\n}\n.pin{\nposition: absolute;\nright: 7px;\ntop: -7px;\n}\n.post-meta-text {\n    float: right;\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4 {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4:after {\n    content: \"\\F0B0\";\n}\n#sidebar .card-header h4:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary {\n    color: #304156;\n}\n.card-primary {\n    background: #fff;\n}\n#posts .card {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a:hover {\n    color: #038ed4;\n}\n#posts .post-share {\n    padding-top: 20px;\n    border-top: 1px solid #ecedee;\n}\n#posts .card-footer {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix {\n    margin-bottom: 20px;\n}\n.sub-menu {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head {\n    margin-top: 3px;\n}\n#share {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown {\n    float: right;\n}\n.dropdown-menu {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i {\n    margin-right: 10px;\n}\n.bg-gray {\n    background-color: #f1f1f1;\n}\n.color-main {\n    color: #038ed4;\n}\n#bg-trans {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i{\n        margin-top: 14px;\n        font-size: 22px;\n        color: #6b6b6b;\n        margin-right: 6px;\n}\n", ""]);
+exports.push([module.i, "\n.post-meta {\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    width: 100%;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n    font-weight: 450;\n}\n.post-meta i {\n    font-size: 20px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n    margin-top: 2px;\n    font-weight: bold;\n}\n.pin {\n    position: absolute;\n    right: 18px;\n    top: 8px;\n}\n.post-meta-text {\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4 {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4:after {\n    content: \"\\F0B0\";\n}\n#sidebar .card-header h4:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary {\n    color: #304156;\n}\n.card-primary {\n    background: #fff;\n}\n#posts .card {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a:hover {\n    color: #038ed4;\n}\n#bt {\n    border-top: 1px solid #ecedee;\n}\n#posts .post-share {\n    padding-top: 20px;\n}\n#posts .card-footer {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix {\n    margin-bottom: 20px;\n}\n.sub-menu {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head {\n    margin-top: 3px;\n}\n#share {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown {\n    float: right;\n}\n.dropdown-menu {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i {\n    margin-right: 10px;\n}\n.bg-gray {\n    background-color: #f1f1f1;\n}\n.color-main {\n    color: #038ed4;\n}\n.share i {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n@media only screen and (max-width: 500px) {\n#share-social {\n        text-align: center;\n}\n}\n", ""]);
 
 // exports
 
@@ -23717,6 +23717,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -23726,7 +23745,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        AppHeader: __WEBPACK_IMPORTED_MODULE_0__header_vue___default.a, WidgetLeft: __WEBPACK_IMPORTED_MODULE_1__leftWidget_vue___default.a, WidgetRight: __WEBPACK_IMPORTED_MODULE_2__rightWidget_vue___default.a
+        AppHeader: __WEBPACK_IMPORTED_MODULE_0__header_vue___default.a,
+        WidgetLeft: __WEBPACK_IMPORTED_MODULE_1__leftWidget_vue___default.a,
+        WidgetRight: __WEBPACK_IMPORTED_MODULE_2__rightWidget_vue___default.a
     },
     data: function data() {
         return {
@@ -25056,7 +25077,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c(
                                       "div",
-                                      { staticClass: "col-md-10 pl-4" },
+                                      { staticClass: "col-md-11 pl-4" },
                                       [
                                         _c("div", { staticClass: "row" }, [
                                           _c(
@@ -25117,7 +25138,7 @@ var render = function() {
                                                   _vm._v(" "),
                                                   _c("div", {
                                                     staticClass:
-                                                      "post-meta-text col-primary ",
+                                                      "post-meta-text col-primary float-right",
                                                     domProps: {
                                                       innerHTML: _vm._s(
                                                         _vm.setDateFormat(
@@ -25144,7 +25165,7 @@ var render = function() {
                                                     "div",
                                                     {
                                                       staticClass:
-                                                        "post-meta-text col-primary "
+                                                        "post-meta-text col-primary float-right "
                                                     },
                                                     [
                                                       _c(
@@ -25163,11 +25184,11 @@ var render = function() {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "\n                                                                    " +
+                                                            "\n                                                                " +
                                                               _vm._s(
                                                                 pin.category
                                                               ) +
-                                                              "\n                                                                "
+                                                              "\n                                                            "
                                                           )
                                                         ]
                                                       )
@@ -25179,10 +25200,14 @@ var render = function() {
                                           )
                                         ])
                                       ]
-                                    ),
-                                    _vm._v(" "),
-                                    _vm._m(1, true)
-                                  ])
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("i", {
+                                    staticClass:
+                                      "fa fa-thumb-tack text-danger pin",
+                                    attrs: { "aria-hidden": "true" }
+                                  })
                                 ]),
                                 _vm._v(" "),
                                 pin.image != null
@@ -25276,165 +25301,200 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("div", { staticClass: "clearfix" }),
                                   _vm._v(" "),
-                                  _c("div", { staticClass: "post-share" }, [
-                                    !_vm.share_fn()
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass: "post-meta",
-                                            staticStyle: {
-                                              "background-color": "#038ed4"
-                                            }
-                                          },
-                                          [
-                                            _c(
-                                              "a",
-                                              {
-                                                attrs: { href: "" },
-                                                on: {
-                                                  click: function($event) {
-                                                    $event.preventDefault()
-                                                    _vm.AndroidNativeShare(
-                                                      pin.title,
-                                                      pin.id,
-                                                      pin.category
-                                                    )
-                                                  }
-                                                }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fa fa-share-alt",
-                                                  staticStyle: {
-                                                    color: "#fff"
-                                                  },
-                                                  attrs: {
-                                                    "aria-hidden": "true"
-                                                  }
-                                                }),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "post-meta-text col-primary ",
-                                                    staticStyle: {
-                                                      color: "#fff"
-                                                    },
-                                                    attrs: {
-                                                      "data-toggle": "tooltip"
-                                                    }
-                                                  },
-                                                  [_vm._v(" Share")]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _vm.share_fn()
-                                      ? _c(
-                                          "span",
-                                          { staticClass: "share" },
-                                          [
-                                            _c("social-sharing", {
-                                              attrs: {
-                                                url: _vm.getURL(pin.id)
-                                              },
-                                              inlineTemplate: {
-                                                render: function() {
-                                                  var _vm = this
-                                                  var _h = _vm.$createElement
-                                                  var _c = _vm._self._c || _h
-                                                  return _c(
+                                  _c(
+                                    "div",
+                                    { staticClass: "row", attrs: { id: "bt" } },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "col-md-6 col-xs-12",
+                                          attrs: { id: "share-social" }
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            { staticClass: "post-share" },
+                                            [
+                                              !_vm.share_fn()
+                                                ? _c(
                                                     "div",
                                                     {
+                                                      staticClass:
+                                                        "post-meta col-xs-12",
                                                       staticStyle: {
-                                                        float: "left"
+                                                        "background-color":
+                                                          "#038ed4"
                                                       }
                                                     },
                                                     [
                                                       _c(
-                                                        "network",
+                                                        "a",
                                                         {
-                                                          attrs: {
-                                                            network: "facebook"
+                                                          attrs: { href: "" },
+                                                          on: {
+                                                            click: function(
+                                                              $event
+                                                            ) {
+                                                              $event.preventDefault()
+                                                              _vm.AndroidNativeShare(
+                                                                pin.title,
+                                                                pin.id,
+                                                                pin.category
+                                                              )
+                                                            }
                                                           }
                                                         },
                                                         [
                                                           _c("i", {
                                                             staticClass:
-                                                              "fa fa-fw fa-facebook"
-                                                          })
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "network",
-                                                        {
-                                                          attrs: {
-                                                            network: "linkedin"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "fa fa-fw fa-linkedin"
-                                                          })
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "network",
-                                                        {
-                                                          attrs: {
-                                                            network: "twitter"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "fa fa-fw fa-twitter"
-                                                          })
+                                                              "fa fa-share-alt",
+                                                            staticStyle: {
+                                                              color: "#fff"
+                                                            },
+                                                            attrs: {
+                                                              "aria-hidden":
+                                                                "true"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "post-meta-text col-primary ",
+                                                              staticStyle: {
+                                                                color: "#fff"
+                                                              },
+                                                              attrs: {
+                                                                "data-toggle":
+                                                                  "tooltip"
+                                                              }
+                                                            },
+                                                            [_vm._v(" Share")]
+                                                          )
                                                         ]
                                                       )
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              _vm.share_fn()
+                                                ? _c(
+                                                    "span",
+                                                    { staticClass: "share" },
+                                                    [
+                                                      _c("social-sharing", {
+                                                        attrs: {
+                                                          url: _vm.getURL(
+                                                            pin.id
+                                                          )
+                                                        },
+                                                        inlineTemplate: {
+                                                          render: function() {
+                                                            var _vm = this
+                                                            var _h =
+                                                              _vm.$createElement
+                                                            var _c =
+                                                              _vm._self._c || _h
+                                                            return _c(
+                                                              "div",
+                                                              [
+                                                                _c(
+                                                                  "network",
+                                                                  {
+                                                                    attrs: {
+                                                                      network:
+                                                                        "facebook"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _c("i", {
+                                                                      staticClass:
+                                                                        "fa fa-fw fa-facebook mr-3"
+                                                                    })
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "network",
+                                                                  {
+                                                                    attrs: {
+                                                                      network:
+                                                                        "linkedin"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _c("i", {
+                                                                      staticClass:
+                                                                        "fa fa-fw fa-linkedin mr-3"
+                                                                    })
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "network",
+                                                                  {
+                                                                    attrs: {
+                                                                      network:
+                                                                        "twitter"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _c("i", {
+                                                                      staticClass:
+                                                                        "fa fa-fw fa-twitter"
+                                                                    })
+                                                                  ]
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          },
+                                                          staticRenderFns: []
+                                                        }
+                                                      })
                                                     ],
                                                     1
                                                   )
+                                                : _vm._e()
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "col-md-6 col-xs-12 mt-3"
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "post-meta",
+                                              staticStyle: { float: "right" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fa fa-tags",
+                                                attrs: { "aria-hidden": "true" }
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "post-meta-text col-primary "
                                                 },
-                                                staticRenderFns: []
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "post-meta",
-                                        staticStyle: { float: "right" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-tags",
-                                          attrs: { "aria-hidden": "true" }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "post-meta-text col-primary "
-                                          },
-                                          [_vm._v(_vm._s(pin.tag))]
-                                        )
-                                      ]
-                                    )
-                                  ])
+                                                [_vm._v(_vm._s(pin.tag))]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
                                 ])
                               ])
                             ])
@@ -25450,7 +25510,7 @@ var render = function() {
                           staticClass: "row justify-content-center",
                           attrs: { id: "posts" }
                         },
-                        [_vm._m(2)]
+                        [_vm._m(1)]
                       )
                     : _vm._l(_vm.posts, function(post) {
                         return _c(
@@ -25465,7 +25525,7 @@ var render = function() {
                               _c("div", { staticClass: "card card-primary" }, [
                                 _c("div", { staticClass: "card-header" }, [
                                   _c("div", { staticClass: "row" }, [
-                                    _vm._m(3, true),
+                                    _vm._m(2, true),
                                     _vm._v(" "),
                                     _c("div", { staticClass: "col-md-10" }, [
                                       _c("div", { staticClass: "row" }, [
@@ -25524,7 +25584,7 @@ var render = function() {
                                                 _vm._v(" "),
                                                 _c("div", {
                                                   staticClass:
-                                                    "post-meta-text col-primary ",
+                                                    "post-meta-text float-right col-primary ",
                                                   domProps: {
                                                     innerHTML: _vm._s(
                                                       _vm.setDateFormat(
@@ -25551,7 +25611,7 @@ var render = function() {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "post-meta-text col-primary "
+                                                      "post-meta-text float-right col-primary "
                                                   },
                                                   [
                                                     _c(
@@ -25570,11 +25630,11 @@ var render = function() {
                                                       },
                                                       [
                                                         _vm._v(
-                                                          "\n                                                                    " +
+                                                          "\n                                                                " +
                                                             _vm._s(
                                                               post.category
                                                             ) +
-                                                            "\n                                                                "
+                                                            "\n                                                            "
                                                         )
                                                       ]
                                                     )
@@ -25610,9 +25670,9 @@ var render = function() {
                                             staticClass: "mb-3 show-read-more",
                                             staticStyle: {
                                               padding: "10px",
-                                              "background-color": "#f6f6f6"
+                                              "padding-bottom": "0",
+                                              "background-color": "#fff"
                                             },
-                                            attrs: { id: "bg-trans" },
                                             domProps: {
                                               innerHTML: _vm._s(
                                                 _vm.gethtml(post.body)
@@ -25680,165 +25740,200 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("div", { staticClass: "clearfix" }),
                                   _vm._v(" "),
-                                  _c("div", { staticClass: "post-share" }, [
-                                    !_vm.share_fn()
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass: "post-meta col-xs-12",
-                                            staticStyle: {
-                                              "background-color": "#038ed4"
-                                            }
-                                          },
-                                          [
-                                            _c(
-                                              "a",
-                                              {
-                                                attrs: { href: "" },
-                                                on: {
-                                                  click: function($event) {
-                                                    $event.preventDefault()
-                                                    _vm.AndroidNativeShare(
-                                                      post.title,
-                                                      post.id,
-                                                      post.category
-                                                    )
-                                                  }
-                                                }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fa fa-share-alt",
-                                                  staticStyle: {
-                                                    color: "#fff"
-                                                  },
-                                                  attrs: {
-                                                    "aria-hidden": "true"
-                                                  }
-                                                }),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "post-meta-text col-primary ",
-                                                    staticStyle: {
-                                                      color: "#fff"
-                                                    },
-                                                    attrs: {
-                                                      "data-toggle": "tooltip"
-                                                    }
-                                                  },
-                                                  [_vm._v(" Share")]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _vm.share_fn()
-                                      ? _c(
-                                          "span",
-                                          { staticClass: "share" },
-                                          [
-                                            _c("social-sharing", {
-                                              attrs: {
-                                                url: _vm.getURL(post.id)
-                                              },
-                                              inlineTemplate: {
-                                                render: function() {
-                                                  var _vm = this
-                                                  var _h = _vm.$createElement
-                                                  var _c = _vm._self._c || _h
-                                                  return _c(
+                                  _c(
+                                    "div",
+                                    { staticClass: "row", attrs: { id: "bt" } },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "col-md-6 col-xs-12",
+                                          attrs: { id: "share-social" }
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            { staticClass: "post-share" },
+                                            [
+                                              !_vm.share_fn()
+                                                ? _c(
                                                     "div",
                                                     {
+                                                      staticClass:
+                                                        "post-meta col-xs-12",
                                                       staticStyle: {
-                                                        float: "left"
+                                                        "background-color":
+                                                          "#038ed4"
                                                       }
                                                     },
                                                     [
                                                       _c(
-                                                        "network",
+                                                        "a",
                                                         {
-                                                          attrs: {
-                                                            network: "facebook"
+                                                          attrs: { href: "" },
+                                                          on: {
+                                                            click: function(
+                                                              $event
+                                                            ) {
+                                                              $event.preventDefault()
+                                                              _vm.AndroidNativeShare(
+                                                                post.title,
+                                                                post.id,
+                                                                post.category
+                                                              )
+                                                            }
                                                           }
                                                         },
                                                         [
                                                           _c("i", {
                                                             staticClass:
-                                                              "fa fa-fw fa-facebook"
-                                                          })
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "network",
-                                                        {
-                                                          attrs: {
-                                                            network: "linkedin"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "fa fa-fw fa-linkedin"
-                                                          })
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "network",
-                                                        {
-                                                          attrs: {
-                                                            network: "twitter"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "fa fa-fw fa-twitter"
-                                                          })
+                                                              "fa fa-share-alt",
+                                                            staticStyle: {
+                                                              color: "#fff"
+                                                            },
+                                                            attrs: {
+                                                              "aria-hidden":
+                                                                "true"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "post-meta-text col-primary ",
+                                                              staticStyle: {
+                                                                color: "#fff"
+                                                              },
+                                                              attrs: {
+                                                                "data-toggle":
+                                                                  "tooltip"
+                                                              }
+                                                            },
+                                                            [_vm._v(" Share")]
+                                                          )
                                                         ]
                                                       )
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              _vm.share_fn()
+                                                ? _c(
+                                                    "span",
+                                                    { staticClass: "share" },
+                                                    [
+                                                      _c("social-sharing", {
+                                                        attrs: {
+                                                          url: _vm.getURL(
+                                                            post.id
+                                                          )
+                                                        },
+                                                        inlineTemplate: {
+                                                          render: function() {
+                                                            var _vm = this
+                                                            var _h =
+                                                              _vm.$createElement
+                                                            var _c =
+                                                              _vm._self._c || _h
+                                                            return _c(
+                                                              "div",
+                                                              [
+                                                                _c(
+                                                                  "network",
+                                                                  {
+                                                                    attrs: {
+                                                                      network:
+                                                                        "facebook"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _c("i", {
+                                                                      staticClass:
+                                                                        "fa fa-fw fa-facebook mr-3"
+                                                                    })
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "network",
+                                                                  {
+                                                                    attrs: {
+                                                                      network:
+                                                                        "linkedin"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _c("i", {
+                                                                      staticClass:
+                                                                        "fa fa-fw fa-linkedin mr-3"
+                                                                    })
+                                                                  ]
+                                                                ),
+                                                                _vm._v(" "),
+                                                                _c(
+                                                                  "network",
+                                                                  {
+                                                                    attrs: {
+                                                                      network:
+                                                                        "twitter"
+                                                                    }
+                                                                  },
+                                                                  [
+                                                                    _c("i", {
+                                                                      staticClass:
+                                                                        "fa fa-fw fa-twitter"
+                                                                    })
+                                                                  ]
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          },
+                                                          staticRenderFns: []
+                                                        }
+                                                      })
                                                     ],
                                                     1
                                                   )
+                                                : _vm._e()
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "col-md-6 col-xs-12 mt-3"
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "post-meta",
+                                              staticStyle: { float: "right" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fa fa-tags",
+                                                attrs: { "aria-hidden": "true" }
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "post-meta-text col-primary "
                                                 },
-                                                staticRenderFns: []
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "post-meta col-xs-12",
-                                        staticStyle: { float: "right" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-tags",
-                                          attrs: { "aria-hidden": "true" }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "post-meta-text col-primary "
-                                          },
-                                          [_vm._v(_vm._s(post.tag))]
-                                        )
-                                      ]
-                                    )
-                                  ])
+                                                [_vm._v(_vm._s(post.tag))]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
                                 ])
                               ])
                             ])
@@ -25903,17 +25998,6 @@ var staticRenderFns = [
           }
         })
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-1" }, [
-      _c("i", {
-        staticClass: "fa fa-thumb-tack text-danger pin",
-        attrs: { "aria-hidden": "true" }
-      })
     ])
   },
   function() {
@@ -26042,7 +26126,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.post-meta {\n    margin-right: 15px;\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n    font-weight: 450;\n}\n.post-meta i {\n    font-size: 20px;\nfloat: left;\nmargin-right: 10px;\ncolor: #a3a9b0;\nmargin-top: 2px;\nfont-weight: bold;\n}\n.pin{\nposition: absolute;\nright: 7px;\ntop: -7px;\n}\n.post-meta-text {\n    float: right;\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4 {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4:after {\n    content: \"\\F0B0\";\n}\n#sidebar .card-header h4:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary {\n    color: #304156;\n}\n.card-primary {\n    background: #fff;\n}\n#posts .card {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a:hover {\n    color: #038ed4;\n}\n#posts .post-share {\n    padding-top: 20px;\n    border-top: 1px solid #ecedee;\n}\n#posts .card-footer {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix {\n    margin-bottom: 20px;\n}\n.sub-menu {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head {\n    margin-top: 3px;\n}\n#share {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown {\n    float: right;\n}\n.dropdown-menu {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i {\n    margin-right: 10px;\n}\n.bg-gray {\n    background-color: #f1f1f1;\n}\n.color-main {\n    color: #038ed4;\n}\n#bg-trans {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i{\n        margin-top: 14px;\n        font-size: 22px;\n        color: #6b6b6b;\n        margin-right: 6px;\n}\n.list-inline {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn {\n    line-height: 1.5 !important;\n}\n#mr-btm-10 {\n    margin-bottom: 10px;\n}\n#list-menu li a {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search::placeholder {\n    color: #0073BC;\n}\n.navbar {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header {\n        width: 142px;\n}\n}\n.w-65 {\n    width: 65%;\n}\n.fix {\n    overflow: hidden;\n    top: 90px;\n}\n\n", ""]);
+exports.push([module.i, "\n.post-meta {\n      margin-bottom: 5px;\n      margin-top: 5px;\n      float: left;\n      width: 100%;\n      padding: 10px;\n      border: 1px solid #e4e6e8;\n      background-color: #f6f6f6;\n      font-size: 12px;\n      text-transform: uppercase;\n      font-weight: 450;\n}\n.post-meta i {\n      font-size: 20px;\n  float: left;\n  margin-right: 10px;\n  color: #a3a9b0;\n  margin-top: 2px;\n  font-weight: bold;\n}\n.pin{\n  position: absolute;\n  right: 7px;\n  top: -7px;\n}\n.post-meta-text {\n      font-size: 12px;\n      padding-top: 3px;\n      margin-left: 5px;\n}\n#sidebar .card-header {\n      background-color: #fff;\n      border-bottom: 0;\n      padding-bottom: 0;\n      z-index: 1;\n}\n#sidebar .card-header h4 {\n      border-bottom: 2px solid #ecedee;\n      margin-bottom: 20px;\n      line-height: 28px;\n      padding-bottom: 10px;\n      position: relative;\n}\n#sidebar .card-header h4:before {\n      content: \"\";\n      position: absolute;\n      height: 2px;\n      width: 28px;\n      background-color: #2f3c4e;\n      bottom: -2px;\n      left: 0;\n}\n#sidebar #about h4:after {\n      content: \"\\F0C0\";\n}\n#sidebar #office h4:after {\n      content: \"\\F1AD\";\n}\n#sidebar #filter h4:after {\n      content: \"\\F0B0\";\n}\n#sidebar .card-header h4:after {\n      display: block;\n      float: left;\n      background-color: #2f3c4e;\n      font-family: FontAwesome;\n      height: 28px;\n      width: 28px;\n      line-height: 28px;\n      font-size: 14px;\n      text-align: center;\n      margin-right: 10px;\n      color: #fff;\n}\n#sidebar .card-header i {\n      float: left;\n      margin-right: 9px;\n      padding: 5px 7px;\n      background-color: #2f3c4e;\n      color: #fff;\n      border-radius: 3px;\n}\n#sidebar .card-body {\n      border-bottom: 1px solid #d3d5d7;\n      -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n              box-shadow: 0 0 5px 0 #e2e3e4;\n      padding-top: 0;\n}\n#sidebar .card-body:before {\n      content: \"\";\n      height: 1px;\n      width: 100%;\n      background-color: #FFF;\n      border-bottom: 1px solid #d3d5d7;\n      -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n      box-shadow: 0 0 5px 0 #e2e3e4;\n      bottom: 2px;\n      left: 0;\n      position: absolute;\n}\n#sidebar .card-body:after {\n      content: \"\";\n      height: 1px;\n      width: 100%;\n      background-color: #FFF;\n      border-bottom: 1px solid #d3d5d7;\n      -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n      box-shadow: 0 0 5px 0 #e2e3e4;\n      bottom: 5px;\n      left: 0;\n      position: absolute;\n}\n.col-primary {\n      color: #304156;\n}\n.card-primary {\n      background: #fff;\n}\n#posts .card {\n      border-radius: 1px;\n      margin-bottom: 25px;\n      /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header {\n      background-color: #fff;\n      padding: 0.62rem 1.15rem;\n      margin-top: 6px;\n}\n#posts .card-header h2 a {\n      float: left;\n      color: #2f3c4e;\n      text-transform: uppercase;\n      font-weight: 400;\n}\n#posts .card-header h2 a:hover {\n      color: #038ed4;\n}\n#posts .post-share {\n      padding-top: 20px;\n}\n#posts .card-footer {\n      padding: 0.40rem 0.40rem;\n      background-color: #038ed4;\n}\n#posts .card-body {\n      padding: 30px;\n      font-size: 16px;\n      position: relative;\n      border-bottom: 1px solid #d3d5d7;\n      -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n              box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body:before {\n      content: \"\";\n      height: 1px;\n      width: 100%;\n      background-color: #FFF;\n      border-bottom: 1px solid #d3d5d7;\n      -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n      box-shadow: 0 0 5px 0 #e2e3e4;\n      bottom: 2px;\n      left: 0;\n      position: absolute;\n}\n#posts .card-body:after {\n      content: \"\";\n      height: 1px;\n      width: 100%;\n      background-color: #FFF;\n      border-bottom: 1px solid #d3d5d7;\n      -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n      box-shadow: 0 0 5px 0 #e2e3e4;\n      bottom: 5px;\n      left: 0;\n      position: absolute;\n}\n.clearfix {\n      margin-bottom: 20px;\n}\n.sub-menu {\n      background-color: #696969;\n      width: 150px;\n      list-style-type: none;\n}\n#posts .card-img-top {\n      height: 200px;\n      border-radius: 0;\n      /* border-top: 1px solid #000; */\n      /* background: url('/images/1.jpg') center no-repeat; */\n      background-size: cover;\n}\n.btn-custom {\n      background-color: #fff;\n      color: #212426;\n      padding: 1px 4px;\n      border-radius: 14px;\n      border-color: #b3b6b9;\n      font-size: 14px;\n      margin-right: 4px;\n}\n.sub-head {\n      margin-top: 3px;\n}\n#share {\n      position: absolute;\n      top: -22px;\n      padding: 12px;\n      right: 20px;\n      background: #038ed4;\n      border: 5px solid;\n      border-radius: 50%;\n      color: #fff;\n}\n#menu {\n      margin-left: 10px;\n      vertical-align: middle;\n}\n.dropdown {\n      float: right;\n}\n.dropdown-menu {\n      -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n              transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i {\n      margin-right: 10px;\n}\n.bg-gray {\n      background-color: #f1f1f1;\n}\n.color-main {\n      color: #038ed4;\n}\n#bg-trans {\n      background: -webkit-linear-gradient(#333, #fff);\n      background-clip: text;\n      -webkit-background-clip: text;\n      -webkit-text-fill-color: transparent;\n}\n.share i{\n          margin-top: 14px;\n          font-size: 22px;\n          color: #6b6b6b;\n          margin-right: 6px;\n}\n.list-inline {\n      padding-left: 0;\n      list-style: none;\n}\n.bg-dark {\n      background-color: #038ed4 !important;\n}\n.bg-col-grey {\n      background-color: #eee;\n      padding: 10px;\n}\n.btn {\n      line-height: 1.5 !important;\n}\n#mr-btm-10 {\n      margin-bottom: 10px;\n}\n#list-menu li a {\n      color: #f7fbff;\n      padding: 20px;\n      float: left;\n      border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a:hover {\n      /* color: #0073BC; */\n      /* border-bottom: 4px solid #0073BC; */\n      background-color: #f1f1f1;\n      color: #038ed4;\n}\n#search {\n      background-color: #fff;\n      border-color: #0073BC;\n      width: 83%;\n      color: #0073BC;\n      border-radius: 0;\n}\n#search::-webkit-input-placeholder {\n      color: #0073BC;\n}\n#search:-ms-input-placeholder {\n      color: #0073BC;\n}\n#search::-ms-input-placeholder {\n      color: #0073BC;\n}\n#search::placeholder {\n      color: #0073BC;\n}\n.navbar {\n      padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header {\n          width: 142px;\n}\n}\n.w-65 {\n      width: 65%;\n}\n.fix {\n      overflow: hidden;\n      top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social {\n          text-align: center;\n}\n}\n#bt {\n      border-top: 1px solid #ecedee;\n}\n", ""]);
 
 // exports
 
@@ -26061,6 +26145,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rightWidget_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__rightWidget_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_js__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_helper_js__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -26488,7 +26582,8 @@ var render = function() {
                                   }),
                                   _vm._v(" "),
                                   _c("div", {
-                                    staticClass: "post-meta-text col-primary ",
+                                    staticClass:
+                                      "post-meta-text col-primary float-right ",
                                     domProps: {
                                       innerHTML: _vm._s(
                                         _vm.setDateFormat(_vm.post.updated_at)
@@ -26506,7 +26601,8 @@ var render = function() {
                                   _c(
                                     "div",
                                     {
-                                      staticClass: "post-meta-text col-primary "
+                                      staticClass:
+                                        "post-meta-text col-primary float-right "
                                     },
                                     [
                                       _vm._v(
@@ -26540,133 +26636,165 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "clearfix" }),
                         _vm._v(" "),
-                        _c("div", { staticClass: "post-share" }, [
-                          !_vm.share_fn()
-                            ? _c(
-                                "div",
-                                {
-                                  staticClass: "post-meta",
-                                  staticStyle: { "background-color": "#038ed4" }
-                                },
-                                [
-                                  _c(
-                                    "a",
-                                    {
-                                      attrs: { href: "" },
-                                      on: {
-                                        click: function($event) {
-                                          $event.preventDefault()
-                                          _vm.AndroidNativeShare(
-                                            _vm.post.title,
-                                            _vm.post.id,
-                                            _vm.post.category
-                                          )
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _c("i", {
-                                        staticClass: "fa fa-share-alt",
-                                        staticStyle: { color: "#fff" },
-                                        attrs: { "aria-hidden": "true" }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "post-meta-text col-primary ",
-                                          staticStyle: { color: "#fff" },
-                                          attrs: { "data-toggle": "tooltip" }
-                                        },
-                                        [_vm._v(" Share")]
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.share_fn()
-                            ? _c(
-                                "span",
-                                { staticClass: "share" },
-                                [
-                                  _c("social-sharing", {
-                                    attrs: { url: _vm.getURL(_vm.post.id) },
-                                    inlineTemplate: {
-                                      render: function() {
-                                        var _vm = this
-                                        var _h = _vm.$createElement
-                                        var _c = _vm._self._c || _h
-                                        return _c(
-                                          "div",
-                                          { staticStyle: { float: "left" } },
-                                          [
-                                            _c(
-                                              "network",
-                                              {
-                                                attrs: { network: "facebook" }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fa fa-fw fa-facebook"
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "network",
-                                              {
-                                                attrs: { network: "linkedin" }
-                                              },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fa fa-fw fa-linkedin"
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "network",
-                                              { attrs: { network: "twitter" } },
-                                              [
-                                                _c("i", {
-                                                  staticClass:
-                                                    "fa fa-fw fa-twitter"
-                                                })
-                                              ]
-                                            )
-                                          ],
-                                          1
-                                        )
-                                      },
-                                      staticRenderFns: []
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
+                        _c("div", { staticClass: "row", attrs: { id: "bt" } }, [
                           _c(
                             "div",
                             {
-                              staticClass: "post-meta",
-                              staticStyle: { float: "right" }
+                              staticClass: "col-md-6 col-xs-12",
+                              attrs: { id: "share-social" }
                             },
                             [
-                              _c("i", {
-                                staticClass: "fa fa-tags",
-                                attrs: { "aria-hidden": "true" }
-                              }),
-                              _vm._v(" "),
+                              _c("div", { staticClass: "post-share" }, [
+                                !_vm.share_fn()
+                                  ? _c(
+                                      "div",
+                                      {
+                                        staticClass: "post-meta col-xs-12",
+                                        staticStyle: {
+                                          "background-color": "#038ed4"
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "a",
+                                          {
+                                            attrs: { href: "" },
+                                            on: {
+                                              click: function($event) {
+                                                $event.preventDefault()
+                                                _vm.AndroidNativeShare(
+                                                  _vm.post.title,
+                                                  _vm.post.id,
+                                                  _vm.post.category
+                                                )
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fa fa-share-alt",
+                                              staticStyle: { color: "#fff" },
+                                              attrs: { "aria-hidden": "true" }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "post-meta-text col-primary ",
+                                                staticStyle: { color: "#fff" },
+                                                attrs: {
+                                                  "data-toggle": "tooltip"
+                                                }
+                                              },
+                                              [_vm._v(" Share")]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.share_fn()
+                                  ? _c(
+                                      "span",
+                                      { staticClass: "share" },
+                                      [
+                                        _c("social-sharing", {
+                                          attrs: {
+                                            url: _vm.getURL(_vm.post.id)
+                                          },
+                                          inlineTemplate: {
+                                            render: function() {
+                                              var _vm = this
+                                              var _h = _vm.$createElement
+                                              var _c = _vm._self._c || _h
+                                              return _c(
+                                                "div",
+                                                [
+                                                  _c(
+                                                    "network",
+                                                    {
+                                                      attrs: {
+                                                        network: "facebook"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("i", {
+                                                        staticClass:
+                                                          "fa fa-fw fa-facebook mr-3"
+                                                      })
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "network",
+                                                    {
+                                                      attrs: {
+                                                        network: "linkedin"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("i", {
+                                                        staticClass:
+                                                          "fa fa-fw fa-linkedin mr-3"
+                                                      })
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "network",
+                                                    {
+                                                      attrs: {
+                                                        network: "twitter"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("i", {
+                                                        staticClass:
+                                                          "fa fa-fw fa-twitter"
+                                                      })
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            },
+                                            staticRenderFns: []
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e()
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-md-6 col-xs-12 mt-3" },
+                            [
                               _c(
                                 "div",
-                                { staticClass: "post-meta-text col-primary " },
-                                [_vm._v(_vm._s(_vm.post.tag))]
+                                {
+                                  staticClass: "post-meta",
+                                  staticStyle: { float: "right" }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-tags",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "post-meta-text col-primary "
+                                    },
+                                    [_vm._v(_vm._s(_vm.post.tag))]
+                                  )
+                                ]
                               )
                             ]
                           )
@@ -30539,8 +30667,8 @@ var render = function() {
                 {
                   name: "validate",
                   rawName: "v-validate",
-                  value: "required|mimes:image/*",
-                  expression: "'required|mimes:image/*'"
+                  value: "mimes:image/*",
+                  expression: "'mimes:image/*'"
                 }
               ],
               ref: "file",

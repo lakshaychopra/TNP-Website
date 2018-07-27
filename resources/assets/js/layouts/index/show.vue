@@ -71,13 +71,13 @@
                                                         <div class="pull-left">
                                                             <!-- <small> -->
                                                             <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                            <div class="post-meta-text col-primary " v-html="setDateFormat(post.updated_at)"></div>
+                                                            <div class="post-meta-text col-primary float-right " v-html="setDateFormat(post.updated_at)"></div>
                                                             <!-- </small> -->
                                                         </div>
                                                         <div class="pull-right">
                                                             <!-- <small> -->
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
-                                                            <div class="post-meta-text col-primary ">
+                                                            <div class="post-meta-text col-primary float-right ">
                                                                    
                                                                         {{post.category}}
                                                              
@@ -97,34 +97,44 @@
                                         <div class="mb-3" v-html="post.body"></div>
                                         <div class="clearfix"></div>
                                         
-                                         <div class="post-share">
-                                            
-                                            <div class="post-meta" style="background-color: #038ed4;"  v-if="!share_fn()" >
-                                               <a href="" @click.prevent="AndroidNativeShare(post.title,post.id,post.category)"><i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
-                                                <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div></a> 
+                                            <div class="row" id="bt">
+                                            <div class="col-md-6 col-xs-12" id="share-social">
+                                                <div class="post-share">
 
-                                            
+                                                    <div class="post-meta col-xs-12" style="background-color: #038ed4;" v-if="!share_fn()">
+                                                        <a href="" @click.prevent="AndroidNativeShare(post.title,post.id,post.category)">
+                                                            <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
+                                                            <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div>
+                                                        </a>
+
+
+                                                    </div>
+                                                    <span class="share" v-if="share_fn()">
+                                                        <social-sharing :url="getURL(post.id)" inline-template>
+                                                            <div>
+                                                                <network network="facebook">
+                                                                    <i class="fa fa-fw fa-facebook mr-3"></i>
+                                                                </network>
+                                                                <network network="linkedin">
+                                                                    <i class="fa fa-fw fa-linkedin mr-3"></i>
+                                                                </network>
+                                                                <network network="twitter">
+                                                                    <i class="fa fa-fw fa-twitter"></i>
+                                                                </network>
+                                                            </div>
+                                                        </social-sharing>
+                                                    </span>
+
+                                                </div>
+
                                             </div>
-                                                <span class="share" v-if="share_fn()">
-                                                    <social-sharing :url="getURL(post.id)" inline-template>
-                                                       <div style="float:left;">
-                                                        <network network="facebook">
-                                                            <i class="fa fa-fw fa-facebook"></i>
-                                                        </network>
-                                                        <network network="linkedin">
-                                                            <i class="fa fa-fw fa-linkedin"></i>
-                                                        </network>
-                                                        <network network="twitter">
-                                                            <i class="fa fa-fw fa-twitter"></i>
-                                                        </network>
-                                                       </div>
-                                                </social-sharing>
-                                                </span>
-                                            <div class="post-meta" style="float:right;">
-                                                <i class="fa fa-tags" aria-hidden="true"></i>
-                                                <div class="post-meta-text col-primary ">{{ post.tag }}</div>
+                                            <div class="col-md-6 col-xs-12 mt-3">
+                                                <div class="post-meta" style="float:right;">
+                                                    <i class="fa fa-tags" aria-hidden="true"></i>
+                                                    <div class="post-meta-text col-primary ">{{ post.tag }}</div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </div>  
                                     </div>
                                 </div>
                             </div>
@@ -286,10 +296,10 @@ import helper from '../../services/helper.js';
 </script>
 <style>
     .post-meta {
-        margin-right: 15px;
         margin-bottom: 5px;
         margin-top: 5px;
         float: left;
+        width: 100%;
         padding: 10px;
         border: 1px solid #e4e6e8;
         background-color: #f6f6f6;
@@ -312,7 +322,6 @@ import helper from '../../services/helper.js';
     top: -7px;
     }
     .post-meta-text {
-        float: right;
         font-size: 12px;
         padding-top: 3px;
         margin-left: 5px;
@@ -445,7 +454,6 @@ import helper from '../../services/helper.js';
 
     #posts .post-share {
         padding-top: 20px;
-        border-top: 1px solid #ecedee;
     }
 
     #posts .card-footer {
@@ -636,5 +644,13 @@ import helper from '../../services/helper.js';
         overflow: hidden;
         top: 90px;
     }
- 
+    
+    @media only screen and (max-width: 500px) {
+        #share-social {
+            text-align: center;
+        }
+    }
+  #bt {
+        border-top: 1px solid #ecedee;
+    }
 </style>

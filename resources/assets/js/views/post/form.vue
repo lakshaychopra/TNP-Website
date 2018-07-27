@@ -51,7 +51,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group files">
                                             <label for="">Image<span class="input-required text-danger">*</span></label>
-                                            <input type="file" v-validate="'required|mimes:image/*'" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
+                                            <input type="file" v-validate="'mimes:image/*'" class="form-control" ref="file" name="file" id="imageUrl" @change="handleChange">
                                             <small class="text-danger">{{ errors.first('file') }}</small>
 
                                         </div>
