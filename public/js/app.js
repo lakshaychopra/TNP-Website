@@ -30320,6 +30320,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -30654,6 +30655,10 @@ var render = function() {
                 _vm._v(" "),
                 _c("option", { attrs: { value: "Placement" } }, [
                   _vm._v("Placement")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "Announcement" } }, [
+                  _vm._v("Announcement")
                 ])
               ]
             ),

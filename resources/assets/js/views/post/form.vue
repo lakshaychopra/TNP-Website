@@ -33,6 +33,7 @@
                                             <select v-model="post.category" class="form-control" v-validate="'required'" name="category">
                                               <option value="Internship">Internship</option>
                                               <option value="Placement" >Placement</option>
+                                              <option value="Announcement" >Announcement</option>
                                             </select>
                                             <small class="text-danger">{{ errors.first('category') }}</small>
 
