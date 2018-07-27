@@ -26542,7 +26542,7 @@ var render = function() {
           "div",
           { staticClass: "row" },
           [
-            _c("div", { staticClass: "col", attrs: { id: "main" } }, [
+            _c("div", { staticClass: "col-9", attrs: { id: "main" } }, [
               _c(
                 "div",
                 {
