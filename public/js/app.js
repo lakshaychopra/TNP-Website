@@ -28035,9 +28035,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "#", target: "_blank" } }, [
-            _vm._v("Genconians")
-          ]),
+          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
@@ -34936,9 +34934,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "#", target: "_blank" } }, [
-            _vm._v("Genconians")
-          ]),
+          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
@@ -35673,9 +35669,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "#", target: "_blank" } }, [
-            _vm._v("Genconians")
-          ]),
+          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
@@ -37640,9 +37634,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "#", target: "_blank" } }, [
-            _vm._v("Genconians")
-          ]),
+          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
