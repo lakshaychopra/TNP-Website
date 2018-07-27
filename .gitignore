@@ -14,3 +14,4 @@ tnp.code-workspace
 /database/seeds/UsersTableSeeder.php
 .env
 node_modules.zip
+.env

@@ -227,7 +227,7 @@
                                         
                                         <div class="post-share">
                                             
-                                            <div class="post-meta" style="background-color: #038ed4;"  v-if="!share_fn()" >
+                                            <div class="post-meta col-xs-12" style="background-color: #038ed4;"  v-if="!share_fn()" >
                                                <a href="" @click.prevent="AndroidNativeShare(post.title,post.id,post.category)"><i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
                                                 <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div></a> 
 
@@ -248,7 +248,7 @@
                                                        </div>
                                                 </social-sharing>
                                                 </span>
-                                            <div class="post-meta" style="float:right;">
+                                            <div class="post-meta col-xs-12" style="float:right;">
                                                 <i class="fa fa-tags" aria-hidden="true"></i>
                                                 <div class="post-meta-text col-primary ">{{ post.tag }}</div>
                                             </div>

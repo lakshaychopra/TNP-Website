@@ -25685,7 +25685,7 @@ var render = function() {
                                       ? _c(
                                           "div",
                                           {
-                                            staticClass: "post-meta",
+                                            staticClass: "post-meta col-xs-12",
                                             staticStyle: {
                                               "background-color": "#038ed4"
                                             }
@@ -25819,7 +25819,7 @@ var render = function() {
                                     _c(
                                       "div",
                                       {
-                                        staticClass: "post-meta",
+                                        staticClass: "post-meta col-xs-12",
                                         staticStyle: { float: "right" }
                                       },
                                       [

@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Disallow:/css/
+Disallow:/images/
+Disallow:/js/
+Disallow:/fonts/
+Disallow:/vendor/
+Allow:/sitemap.xml
