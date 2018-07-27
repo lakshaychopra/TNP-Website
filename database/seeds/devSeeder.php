@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\User;
 
-class UsersTableSeeder extends Seeder
+class devSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,10 +13,10 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $user = new User;
-        $user->username ="tpoAdminGNDEC5312";        
-        $user->password=bcrypt("GNDECtpo2018#");
-        $user->email="tpo@gndec.ac.in";
-        $user->phone_number="9872219178";
+        $user->username ="123456789012";        
+        $user->password=bcrypt("12346789");
+        $user->email="sanjam531@gmail.com";
+        $user->phone_number="9815333040";
         $user->type = "EXECUTIVE_MEMBER";
         $user->is_mailed="1";
         $user->is_active="1";
