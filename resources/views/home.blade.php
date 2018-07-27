@@ -55,7 +55,8 @@
     <meta property="og:site_name" content="T&P">
     <meta property="og:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
     <meta property="og:image" content="{{asset('/images/icons/1200x1200.jpg')}}">
-    <meta property="og:locale" content="en_US"> {{-- twitter --}}
+    <meta property="og:locale" content="en_US"> 
+    {{-- twitter --}}
     <meta name="twitter:card" content="summary"> {{--
     <meta name="twitter:site" content="@site_account"> --}} {{--
     <meta name="twitter:creator" content="@individual_account"> --}}
@@ -70,8 +71,9 @@
     <link rel="manifest" href="{{asset('manifest.webmanifest')}}">
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js" integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
         crossorigin="anonymous"></script>
-
-    <meta name="robots" content="INDEX,FOLLOW"> {{-- apple --}}
+    <meta name="msvalidate.01" content="12764669904A814D6F82E14D5B9DCD1E" />
+    <meta name="robots" content="INDEX,FOLLOW"> 
+    {{-- apple --}}
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="T&P">
@@ -83,9 +85,11 @@
     <link rel="apple-touch-icon" href="{{asset('/images/icons/120x120.png')}}" sizes="120x120">
     <link rel="apple-touch-icon" href="{{asset('/images/icons/144x144.png')}}" sizes="144x144">
     <link rel="apple-touch-icon" href="{{asset('/images/icons/152x152.png')}}" sizes="152x152">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180"> {{-- ms --}}
+    <link rel="apple-touch-icon" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180"> 
+    {{-- ms --}}
     <meta name="msapplication-TileImage" content="{{asset('/images/icons/144x144.png')}}">
-    <meta name="msapplication-TileColor" content="#fff"> {{-- JS fallback --}}
+    <meta name="msapplication-TileColor" content="#fff"> 
+    {{-- JS fallback --}}
     <noscript>Your browser does not support JavaScript!</noscript>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
