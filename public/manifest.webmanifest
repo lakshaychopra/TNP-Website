@@ -126,18 +126,63 @@
             "sizes": "620x300"
         },
         {
+            "src": "/images/icons/640x960.png",
+            "type": "image/png",
+            "sizes": "640x960"
+        },
+        {
+            "src": "/images/icons/640x1136.png",
+            "type": "image/png",
+            "sizes": "640x1136"
+        },
+        {
+            "src": "/images/icons/750x1334.png",
+            "type": "image/png",
+            "sizes": "750x1334"
+        },
+        {
+            "src": "/images/icons/768x1024.png",
+            "type": "image/png",
+            "sizes": "768x1024"
+        },
+        {
+            "src": "/images/icons/1024x768.png",
+            "type": "image/png",
+            "sizes": "1024x768"
+        },
+        {
             "src": "/images/icons/1200x1200.jpg",
             "type": "image/png",
             "sizes": "1200x1200"
         },
         {
-            "src": "/images/icons/ios-appicon-1024-1024.png",
-            "sizes": "1024x1024",
-            "type": "image/png"
+            "src": "/images/icons/1024x2208.png",
+            "type": "image/png",
+            "sizes": "1024x2208"
         },
         {
-            "src": "/images/icons/SplashScreen.scale-200.png.png",
-            "sizes": "1240x600",
+            "src": "/images/icons/1334x750.png",
+            "type": "image/png",
+            "sizes": "1334x750"
+        },
+        {
+            "src": "/images/icons/1536x2048.png",
+            "type": "image/png",
+            "sizes": "1536x2048"
+        },
+        {
+            "src": "/images/icons/2048x1536.png",
+            "type": "image/png",
+            "sizes": "2048x1536"
+        },
+        {
+            "src": "/images/icons/2208x1242.png",
+            "type": "image/png",
+            "sizes": "2208x1242"
+        },
+        {
+            "src": "1024x1024.png",
+            "sizes": "1024x1024",
             "type": "image/png"
         }
     ]
