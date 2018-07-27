@@ -29,13 +29,13 @@
                     </div>
                     <ul class="nav navbar-nav" id="list-menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="/about">
+                            <a class="nav-link float-right" href="/about">
                                 <i class="fa fa-users" aria-hidden="true"></i> About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/login" v-if="this.$store.state.auth.username">
+                            <a class="nav-link float-right" href="/login" v-if="this.$store.state.auth.username">
                                 <i class="fa fa-home" aria-hidden="true"></i> Profile</a>
-                            <a class="nav-link" href="/login" v-else>
+                            <a class="nav-link float-right" href="/login" v-else>
                                 <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
                         </li>
                     </ul>

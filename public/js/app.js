@@ -24141,7 +24141,7 @@ var render = function() {
                       ? _c(
                           "a",
                           {
-                            staticClass: "nav-link",
+                            staticClass: "nav-link float-right",
                             attrs: { href: "/login" }
                           },
                           [
@@ -24155,7 +24155,7 @@ var render = function() {
                       : _c(
                           "a",
                           {
-                            staticClass: "nav-link",
+                            staticClass: "nav-link float-right",
                             attrs: { href: "/login" }
                           },
                           [
@@ -24255,13 +24255,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "/about" } }, [
-        _c("i", {
-          staticClass: "fa fa-users",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" About")
-      ])
+      _c(
+        "a",
+        { staticClass: "nav-link float-right", attrs: { href: "/about" } },
+        [
+          _c("i", {
+            staticClass: "fa fa-users",
+            attrs: { "aria-hidden": "true" }
+          }),
+          _vm._v(" About")
+        ]
+      )
     ])
   }
 ]
@@ -25231,7 +25235,7 @@ var render = function() {
                                             staticClass: "mb-3 show-read-more",
                                             staticStyle: {
                                               padding: "10px",
-                                              "background-color": "#f6f6f6"
+                                              "background-color": "#fff"
                                             },
                                             attrs: { id: "bg-trans" },
                                             domProps: {
@@ -26498,7 +26502,10 @@ var render = function() {
                 this.$store.state.auth.username
                   ? _c(
                       "a",
-                      { staticClass: "nav-link", attrs: { href: "/login" } },
+                      {
+                        staticClass: "nav-link float-right",
+                        attrs: { href: "/login" }
+                      },
                       [
                         _c("i", {
                           staticClass: "fa fa-home",
@@ -26509,7 +26516,10 @@ var render = function() {
                     )
                   : _c(
                       "a",
-                      { staticClass: "nav-link", attrs: { href: "/login" } },
+                      {
+                        staticClass: "nav-link float-right",
+                        attrs: { href: "/login" }
+                      },
                       [
                         _c("i", {
                           staticClass: "fa fa-sign-in",
@@ -26853,13 +26863,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "/about" } }, [
-        _c("i", {
-          staticClass: "fa fa-users",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" About")
-      ])
+      _c(
+        "a",
+        { staticClass: "nav-link float-right", attrs: { href: "/about" } },
+        [
+          _c("i", {
+            staticClass: "fa fa-users",
+            attrs: { "aria-hidden": "true" }
+          }),
+          _vm._v(" About")
+        ]
+      )
     ])
   },
   function() {

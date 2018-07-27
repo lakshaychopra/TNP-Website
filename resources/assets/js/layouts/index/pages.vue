@@ -85,7 +85,7 @@
                             <li class="list-group-item"></li>
                             </ul> -->
                                         <span v-if="pin.body.length>400">
-                                            <div class="mb-3 show-read-more" v-html="gethtml(pin.body)" id="bg-trans" style="padding: 10px;background-color: #f6f6f6;"></div>
+                                            <div class="mb-3 show-read-more" v-html="gethtml(pin.body)" id="bg-trans" style="padding: 10px;background-color: #fff;"></div>
                                             <router-link :to="{ name: 'view', params: { id:pin.id }}" :searchbox="false">
                                                 <button class="btn btn-block text-center" @click="gethtml(pin.body)">
                                                     <a href="" style="color: #333;">Read More
