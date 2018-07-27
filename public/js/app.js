@@ -26298,6 +26298,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -26629,14 +26630,18 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("img", {
-                        staticClass: "card-image-top",
-                        attrs: {
-                          src: "/images/posts/images/" + _vm.post.image,
-                          alt: _vm.post.image,
-                          width: "100%"
-                        }
-                      }),
+                      _vm.post.image != null
+                        ? _c("div", [
+                            _c("img", {
+                              staticClass: "card-image-top",
+                              attrs: {
+                                src: "/images/posts/images/" + _vm.post.image,
+                                alt: _vm.post.image,
+                                width: "100%"
+                              }
+                            })
+                          ])
+                        : _vm._e(),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body" }, [
                         _c("div", {

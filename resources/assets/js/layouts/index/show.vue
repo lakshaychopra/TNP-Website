@@ -89,8 +89,9 @@
                                         </div>
                                         
                                     </div>
-
+                                    <div v-if="post.image!=null">
                                     <img :src="'/images/posts/images/'+post.image" :alt="post.image" width="100%" class="card-image-top">
+                                    </div>
 
 
                                     <div class="card-body">
