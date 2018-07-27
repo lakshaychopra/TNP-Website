@@ -78,15 +78,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="T&P">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/57x57.png')}}" sizes="57x57">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/60x60.png')}}" sizes="60x60">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/72x72.png')}}" sizes="72x72">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/76x76.png')}}" sizes="76x76">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/114x114.png')}}" sizes="114x114">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/120x120.png')}}" sizes="120x120">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/144x144.png')}}" sizes="144x144">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/152x152.png')}}" sizes="152x152">
-    <link rel="apple-touch-icon" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180"> 
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('/images/icons/57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{asset('/images/icons/60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('/images/icons/72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('/images/icons/76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('/images/icons/114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('/images/icons/120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('/images/icons/144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('/images/icons/152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/images/icons/180x180.png')}}">
     {{-- ms --}}
     <meta name="msapplication-TileImage" content="{{asset('/images/icons/144x144.png')}}">
     <meta name="msapplication-TileColor" content="#fff"> 
