@@ -24393,7 +24393,7 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    attrs: { href: "" },
+                    attrs: { href: "#" },
                     on: {
                       click: function($event) {
                         _vm.searchby_category("All")
@@ -24408,7 +24408,7 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    attrs: { href: "" },
+                    attrs: { href: "#" },
                     on: {
                       click: function($event) {
                         _vm.searchby_category("Placement")
@@ -24423,7 +24423,7 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    attrs: { href: "" },
+                    attrs: { href: "#" },
                     on: {
                       click: function($event) {
                         _vm.searchby_category("Announcement")
@@ -24438,7 +24438,7 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    attrs: { href: "" },
+                    attrs: { href: "#" },
                     on: {
                       click: function($event) {
                         _vm.searchby_category("Internship")

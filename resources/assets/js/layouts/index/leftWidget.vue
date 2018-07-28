@@ -9,16 +9,16 @@
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <a href="" @click="searchby_category('All')">All</a>
+                                <a href="#" @click="searchby_category('All')">All</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="" @click="searchby_category('Placement')">Placement</a>
+                                <a href="#" @click="searchby_category('Placement')">Placement</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="" @click="searchby_category('Announcement')">Announcement</a>
+                                <a href="#" @click="searchby_category('Announcement')">Announcement</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="" @click="searchby_category('Internship')">Internship</a>
+                                <a href="#" @click="searchby_category('Internship')">Internship</a>
                             </li>
                         </ul>
                     </div>
