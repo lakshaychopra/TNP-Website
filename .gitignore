@@ -12,6 +12,6 @@ npm-debug.log
 yarn-error.log
 tnp.code-workspace
 /database/seeds/UsersTableSeeder.php
-.env
+/.env
 node_modules.zip
 .env
