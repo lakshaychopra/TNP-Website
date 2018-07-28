@@ -13,7 +13,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Body</label>
-                                            <vue-html5-editor :content="post.content" :height="300" :z-index="1000" :auto-height="true" @change="updateData" name="body" ></vue-html5-editor> 
+                                            <!-- <vue-html5-editor :content="post.content :height="300" :z-index="1000" :auto-height="true" @change="updateData" name="body" ></vue-html5-editor>  -->
+                                                 <vue-editor v-model="post.content"></vue-editor>
                                         </div>
                                     </div>
                                  </div> 
@@ -74,6 +75,7 @@
 <script>
     import helper from '../../services/helper'
     import { addPostURL,apiDomain } from "../../config.js";
+    import { VueEditor } from 'vue2-editor'
     import InputTag from 'vue-input-tag'
     export default {
         data() {
@@ -104,7 +106,7 @@
                 },
             };
         },
-        components : { InputTag },
+        components : { InputTag, VueEditor },
         props: ['id'],
         mounted() {
             // console.log(this.id);
