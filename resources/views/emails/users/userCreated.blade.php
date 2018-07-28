@@ -9,14 +9,14 @@ Dear Student,
 @component('mail::table')
 | Details           | Values            |
 | :---------------: |:-----------------:|
-|Aadhaar No.        |{{$username}}      |
+|Univ. Roll No      |{{$username}}      |
 |Phone Number       |{{$phone_number}}  |
 |Email              |{{$email}}         |
 @endcomponent
 
 <b>Note : To access your placement portal complete the registeration by clicking on the following button.</b>
 
-@component('mail::button', ['url' => 'localhost:8000/register'])
+@component('mail::button', ['url' => 'https://www.tnpgndec.com/register/student'])
 Register
 @endcomponent
 

@@ -12,8 +12,8 @@
                             </h3>
                         <div class="form-group ">
                             <div class="col-xs-6">
-                                <label for="Aadhaar Number" hidden>Aadhaar No.</label>
-                                <input v-validate="'required|numeric|min:12|max:12'" type="text" name="rollno" class="form-control" placeholder="Aadhaar No." minlength="12" maxlength="12" autocomplete="on" v-model="registerForm.username">
+                                <label for="Univ. Roll Number" hidden>Univ. Roll No.</label>
+                                <input v-validate="'required|numeric|min:12|max:12'" type="text" name="rollno" class="form-control" placeholder="Univ. Roll No." minlength="12" maxlength="12" autocomplete="on" v-model="registerForm.username">
                                 <small class="text-danger">{{ errors.first('rollno') }}</small>
 
                             </div>
@@ -23,7 +23,6 @@
                                 <label for="phone number" hidden>Phone Number</label>
                                 <input type="tel" v-validate="'required|numeric|min:10|max:10'" name="phno" class="form-control" placeholder="Phone No." autocomplete="tel" maxlength="10" inputmode="numeric" v-model="registerForm.phone_number">
                                 <small class="text-danger">{{ errors.first('phno') }}</small>
-
                             </div>
                         </div>
                         <div class="form-group ">

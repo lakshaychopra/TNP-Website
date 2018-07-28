@@ -125,7 +125,7 @@
         },
         methods: {
              getURL(id){
-                return "http://localhost:8000/view/"+id;
+                return "https://www.tnpgndec.com/view/"+id;
             },
             share_fn(){
                 return this.share;

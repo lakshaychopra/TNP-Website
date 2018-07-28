@@ -38440,8 +38440,8 @@ var render = function() {
                       _c("div", { staticClass: "col-xs-6" }, [
                         _c(
                           "label",
-                          { attrs: { for: "Aadhaar Number", hidden: "" } },
-                          [_vm._v("Aadhaar No.")]
+                          { attrs: { for: "Univ. Roll Number", hidden: "" } },
+                          [_vm._v("Univ. Roll No.")]
                         ),
                         _vm._v(" "),
                         _c("input", {
@@ -38463,7 +38463,7 @@ var render = function() {
                           attrs: {
                             type: "text",
                             name: "rollno",
-                            placeholder: "Aadhaar No.",
+                            placeholder: "Univ. Roll No.",
                             minlength: "12",
                             maxlength: "12",
                             autocomplete: "on"
@@ -38964,7 +38964,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -39096,8 +39095,8 @@ var render = function() {
                       _c("div", { staticClass: "col-xs-6" }, [
                         _c(
                           "label",
-                          { attrs: { for: "Aadhaar Number", hidden: "" } },
-                          [_vm._v("Aadhaar No.")]
+                          { attrs: { for: "Univ. Roll Number", hidden: "" } },
+                          [_vm._v("Univ. Roll No.")]
                         ),
                         _vm._v(" "),
                         _c("input", {
@@ -39119,7 +39118,7 @@ var render = function() {
                           attrs: {
                             type: "text",
                             name: "rollno",
-                            placeholder: "Aadhaar No.",
+                            placeholder: "Univ. Roll No.",
                             minlength: "12",
                             maxlength: "12",
                             autocomplete: "on"
