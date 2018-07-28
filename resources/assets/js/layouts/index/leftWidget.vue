@@ -6,7 +6,7 @@
                     <div class="card-header" id="filter">
                         <h4 class="mb-1"> Filter By</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <a href="#" @click="searchby_category('All')">All</a>
