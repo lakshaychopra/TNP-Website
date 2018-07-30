@@ -39,37 +39,38 @@ class LoginController extends Controller
         }
         
         try{
-            DB::beginTransaction();
+            // DB::beginTransaction();
             
-            $this->service->otpGenerated();
+            // $this->service->otpGenerated();
             
             $data = [
                 'access_token' => $token,
                 'authenticated' => true,
+                'user'=> $user,
             ];
             
-            DB::commit();
+            // DB::commit();
             
-            return $this->respondSuccess('OTP Sent', $data);
+            return $this->respondSuccess('Authorized!! You have been logged-in!!', $data);
         }   
         catch(JWTException $e)
         {
-            DB::rollback();
+            // DB::rollback();
             return $this->respondException($e);
         }   
     }  
     
-    public function verifyTwoFactor(TwoFactorRequest $request)
-    {
-        $auth = JWTAuth::parseToken()->authenticate();
-        $user = JWTAuth::user();
-        if($request->token_2fa != $user->token_2fa)
-        {    
-            return $this->respondUnauthorized();
-        }
+    // public function verifyTwoFactor(TwoFactorRequest $request)
+    // {
+    //     $auth = JWTAuth::parseToken()->authenticate();
+    //     $user = JWTAuth::user();
+    //     if($request->token_2fa != $user->token_2fa)
+    //     {    
+    //         return $this->respondUnauthorized();
+    //     }
         
-        return $this->respondSuccess('Authorized!! You have been logged-in!!', $user);
-    }   
+    //     return $this->respondSuccess('Authorized!! You have been logged-in!!', $user);
+    // }   
     
     public function logout() 
     {

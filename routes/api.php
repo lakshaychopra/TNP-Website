@@ -38,7 +38,7 @@ Route::get('/home/page/view/widgets', 'HomeController@viewWidgets');
 //Protected routes
 Route::group(['middleware' => 'jwt.auth'], function() {
     // Login Controller
-    Route::post('/security', 'LoginController@verifyTwoFactor'); 
+    // Route::post('/security', 'LoginController@verifyTwoFactor'); 
     Route::get('/auth/user','LoginController@getAuthUser');
     // Register Controller
     Route::post('/register/password', 'RegisterController@setPassword');

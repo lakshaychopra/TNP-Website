@@ -27,7 +27,7 @@ class RegisterController extends Controller
             ['username', '=',$values['username']],
             [ 'email', '=',$values['email']],
             ['phone_number', '=',$values['phone_number']],
-            ['type','=','STUDENT'],
+            // ['type','=','STUDENT'],
             ['is_active', '=', 0],
             ['is_mailed', '=', 0],
             ['is_verified','=',0]
