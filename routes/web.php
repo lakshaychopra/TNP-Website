@@ -10,7 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-
+Route::get('/test-mail', function () {
+  	\Mail::send('emails.test', [], function ($message) {
+  	    
+  	    $message->to('sjeswinder@jstrainer.com', 'Jeswinder');
+  	
+  	});
+});
 // Route::post('/login', array('uses' => 'LoginController@login'))->name('postLogin');
 // Route::post('/logout', array('uses' => 'LoginController@logout'))->name('logout');
 // Route::post('/check', 'LoginController@check');
