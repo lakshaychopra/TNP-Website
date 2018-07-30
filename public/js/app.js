@@ -38801,8 +38801,7 @@ var render = function() {
                           attrs: {
                             type: "text",
                             name: "rollno",
-                            placeholder: "Univ. Roll No.",
-                            minlength: "12",
+                            placeholder: "Username",
                             maxlength: "12",
                             autocomplete: "on"
                           },
