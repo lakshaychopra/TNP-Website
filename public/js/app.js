@@ -29417,7 +29417,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 email: '',
                 phone_number: '',
                 // password: Math.random().toString(36).slice(-8),
-                password: ''
+                password: 'secret'
             }
         };
     },
