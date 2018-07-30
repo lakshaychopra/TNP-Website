@@ -16,7 +16,7 @@ Dear Student,
 
 <b>Note : To access your placement portal complete the registeration by clicking on the following button.</b>
 
-@component('mail::button', ['url' => 'https://www.tnpgndec.com/register/student'])
+@component('mail::button', ['url' => 'https://www.tnpgndec.com/auth/register/'])
 Register
 @endcomponent
 
