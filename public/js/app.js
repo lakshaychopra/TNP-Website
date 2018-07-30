@@ -29573,8 +29573,8 @@ var render = function() {
                               {
                                 name: "validate",
                                 rawName: "v-validate",
-                                value: "required",
-                                expression: "'required'"
+                                value: "required|max:12",
+                                expression: "'required|max:12'"
                               },
                               {
                                 name: "model",

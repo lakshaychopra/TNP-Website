@@ -34,7 +34,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="">Username<span class="input-required text-danger">*</span></label>
-                                        <input class="form-control" v-validate="'required'" v-model="user.username" name="username"/>
+                                        <input class="form-control" v-validate="'required|max:12'" v-model="user.username" name="username"/>
                                         <small class="text-danger">{{ errors.first('username') }}</small>
                                     </div>
                                 </div>
