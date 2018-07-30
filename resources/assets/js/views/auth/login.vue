@@ -159,9 +159,15 @@
                             // window.location = "/dashboard";
                             this.token = response.data.data.access_token;
                             axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
-
+                            localStorage.setItem('token', this.token);                            
+                            if(response.data.data.user.type == "EXECUTIVE_MEMBER"){
+                                this.$router.push('/home');
+                            }
+                            else{
+                                this.$router.push('/userlogin');
+                            }
                             toastr['success'](response.data.message);
-                            this.authenticated = true;
+                            // this.authenticated = true;
                             // console.log(this.authenticated);
                             // this.$router.push('/login');
                             // this.$router.push('/home')

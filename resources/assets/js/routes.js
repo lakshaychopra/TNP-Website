@@ -144,7 +144,7 @@ let routes = [{
             //     component: require('./views/auth/password')
             // },
             {
-                path: '/register/student',
+                path: '/auth/register',
                 component: require('./views/auth/register')
             },
             {

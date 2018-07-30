@@ -15,7 +15,8 @@
                                             <label for="">Body</label>
                                             <!-- <vue-html5-editor :content="post.content :height="300" :z-index="1000" :auto-height="true" @change="updateData" name="body" ></vue-html5-editor>  -->
                                                  <!-- <vue-editor v-model="post.content"></vue-editor> -->
-                                                 <editor v-model="post.content"></editor>
+                                                 <editor v-model="post.content" :init="{plugins: 'table,lists'}"></editor>
+                                                 
                                         </div>
                                     </div>
                                  </div> 
@@ -200,7 +201,8 @@
                     this.post.content = response.data.data.body;
                     this.post.tags = response.data.data.tag.split(',');
                     this.post.category = response.data.data.category;
-                    this.post.imageUrl = response.data.data.image;
+                    this.post.imageUrl = '';
+                    this.post.post_link = response.data.data.post_link;
                 })
                 .catch(response => {
                     toastr['error'](response.message);

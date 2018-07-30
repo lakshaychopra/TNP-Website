@@ -84,7 +84,7 @@
                                         <!-- <ul class="list-group">
                             <li class="list-group-item"></li>
                             </ul> -->
-                                        <span v-if="pin.body.length>400">
+                                        <span v-if="pin.body.length>800">
                                             <div class="mb-3 show-read-more" v-html="gethtml(pin.body)" id="bg-trans" style="padding: 10px;background-color: #fff;"></div>
                                             <router-link :to="{ name: 'view', params: { id:pin.id }}" :searchbox="false">
                                                 <button class="btn btn-block text-center" @click="gethtml(pin.body)">
@@ -220,7 +220,7 @@
 
                                     <div class="card-body">
 
-                                        <span v-if="post.body.length>400">
+                                        <span v-if="post.body.length>800">
                                             <div class="mb-3 show-read-more" v-html="gethtml(post.body)" style="padding: 10px; padding-bottom:0; background-color: #fff;"></div>
                                             <router-link :to="{ name: 'view', params: { id:post.id }}" :searchbox="false">
                                                 <button class="btn btn-block text-center" @click="gethtml(post.body)">
@@ -361,7 +361,7 @@
                 return this.share;
             },
             gethtml(text) {
-                var maxLength = 400 // maximum number of characters to extract
+                var maxLength = 800 // maximum number of characters to extract
                 //trim the string to the maximum length
                 var trimmedString = text.substr(0, maxLength);
                 //re-trim if we are in the middle of a word
