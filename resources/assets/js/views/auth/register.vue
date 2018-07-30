@@ -13,8 +13,8 @@
                         <div class="form-group ">
                             <div class="col-xs-6">
                                 <label for="Univ. Roll Number" hidden>Username</label>
-                                <input v-validate="'required|max:12'" type="text" name="rollno" class="form-control" placeholder="Username" maxlength="12" autocomplete="on" v-model="registerForm.username">
-                                <small class="text-danger">{{ errors.first('rollno') }}</small>
+                                <input v-validate="'required|max:12'" type="text" name="username" class="form-control" placeholder="Username" maxlength="12" autocomplete="on" v-model="registerForm.username">
+                                <small class="text-danger">{{ errors.first('username') }}</small>
 
                             </div>
                         </div>

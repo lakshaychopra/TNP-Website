@@ -38800,7 +38800,7 @@ var render = function() {
                           staticClass: "form-control",
                           attrs: {
                             type: "text",
-                            name: "rollno",
+                            name: "username",
                             placeholder: "Username",
                             maxlength: "12",
                             autocomplete: "on"
@@ -38821,7 +38821,7 @@ var render = function() {
                         }),
                         _vm._v(" "),
                         _c("small", { staticClass: "text-danger" }, [
-                          _vm._v(_vm._s(_vm.errors.first("rollno")))
+                          _vm._v(_vm._s(_vm.errors.first("username")))
                         ])
                       ])
                     ]),
