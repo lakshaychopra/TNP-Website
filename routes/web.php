@@ -13,7 +13,7 @@
 Route::get('/test-mail', function () {
   	\Mail::send('emails.test', [], function ($message) {
   	    
-  	    $message->to('sjeswinder@jstrainer.com', 'Jeswinder');
+  	    $message->to('kmvsingh007@gmail.com', 'honey');
   	
   	});
 });
