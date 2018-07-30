@@ -34,7 +34,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="">Username<span class="input-required text-danger">*</span></label>
-                                        <input class="form-control" v-validate="'required|numeric'" v-model="user.username" name="username"/>
+                                        <input class="form-control" v-validate="'required'" v-model="user.username" name="username"/>
                                         <small class="text-danger">{{ errors.first('username') }}</small>
                                     </div>
                                 </div>
@@ -57,14 +57,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">    
+                            <!-- <div class="row">    
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="">Password</label>
                                         <input class="form-control" name="password" v-model="user.password" readonly/>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">
                                 <span>Save</span>
                             </button>
@@ -89,7 +89,8 @@
                     username:'',
                     email:'',
                     phone_number:'',
-                    password: Math.random().toString(36).slice(-8),
+                    // password: Math.random().toString(36).slice(-8),
+                    password:'',
                 }
             };
         },

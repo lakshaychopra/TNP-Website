@@ -28,16 +28,6 @@ Vue.use(swal);
 import SocialSharing from 'vue-social-sharing';
 Vue.use(SocialSharing);
 
-import VueHtml5Editor from 'vue-html5-editor'
-Vue.use(VueHtml5Editor, {
-    hiddenModules: [
-        "image",
-        "info",
-        "full-screen",
-    ],
-
-});
-
 const app = new Vue({
     el: '#root',
     store,
