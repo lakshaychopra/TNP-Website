@@ -40051,7 +40051,7 @@ if (false) {
 /* unused harmony export ErrorComponent */
 /* unused harmony export version */
 /**
-  * vee-validate v2.1.0-beta.6
+  * vee-validate v2.1.0-beta.7
   * (c) 2018 Abdelrahman Awad
   * @license MIT
   */
@@ -40905,7 +40905,7 @@ I18nDictionary.prototype.getAttribute = function getAttribute (locale, key, fall
 I18nDictionary.prototype.getFieldMessage = function getFieldMessage (locale, field, key, data) {
   var path = (this.rootKey) + ".custom." + field + "." + key;
   if (this.i18n.te(path)) {
-    return this.i18n.t(path);
+    return this.i18n.t(path, locale, data);
   }
 
   return this.getMessage(locale, key, data);
@@ -41172,14 +41172,18 @@ ErrorBag.prototype.clear = function clear (scope) {
  * Collects errors into groups or for a specific field.
  */
 ErrorBag.prototype.collect = function collect (field, scope, map) {
+    var this$1 = this;
     if ( map === void 0 ) map = true;
 
+  var isSingleField = !isNullOrUndefined(field) && !field.includes('*');
   var groupErrors = function (items) {
-    var fieldsCount = 0;
     var errors = items.reduce(function (collection, error) {
+      if (!isNullOrUndefined(this$1.vmId) && error.vmId !== this$1.vmId) {
+        return collection;
+      }
+
       if (!collection[error.field]) {
         collection[error.field] = [];
-        fieldsCount++;
       }
 
       collection[error.field].push(map ? error.msg : error);
@@ -41188,7 +41192,7 @@ ErrorBag.prototype.collect = function collect (field, scope, map) {
     }, {});
 
     // reduce the collection to be a single array.
-    if (fieldsCount <= 1) {
+    if (isSingleField) {
       return values(errors)[0] || [];
     }
 
@@ -43089,6 +43093,11 @@ Field.prototype.updateCustomValidity = function updateCustomValidity () {
  * Removes all listeners.
  */
 Field.prototype.destroy = function destroy () {
+  // ignore the result of any ongoing validation.
+  if (this._cancellationToken) {
+    this._cancellationToken.cancelled = true;
+  }
+
   this.unwatch();
   this.dependencies.forEach(function (d) { return d.field.destroy(); });
   this.dependencies = [];
@@ -43194,6 +43203,7 @@ Object.defineProperties( FieldBag.prototype, prototypeAccessors$4 );
 var ScopedValidator = function ScopedValidator (base, vm) {
   this.id = vm._uid;
   this._base = base;
+  this._paused = false;
 
   // create a mirror bag with limited component scope.
   this.errors = new ErrorBag(base.errors, this.id);
@@ -43261,6 +43271,14 @@ ScopedValidator.prototype.attach = function attach (opts) {
   return this._base.attach(attachOpts);
 };
 
+ScopedValidator.prototype.pause = function pause () {
+  this._paused = true;
+};
+
+ScopedValidator.prototype.resume = function resume () {
+  this._paused = false;
+};
+
 ScopedValidator.prototype.remove = function remove (ruleName) {
   return this._base.remove(ruleName);
 };
@@ -43284,17 +43302,23 @@ ScopedValidator.prototype.extend = function extend () {
 ScopedValidator.prototype.validate = function validate (descriptor, value, opts) {
     if ( opts === void 0 ) opts = {};
 
+  if (this._paused) { return Promise.resolve(true); }
+
   return this._base.validate(descriptor, value, assign({}, { vmId: this.id }, opts || {}));
 };
 
 ScopedValidator.prototype.validateAll = function validateAll (values$$1, opts) {
     if ( opts === void 0 ) opts = {};
 
+  if (this._paused) { return Promise.resolve(true); }
+
   return this._base.validateAll(values$$1, assign({}, { vmId: this.id }, opts || {}));
 };
 
 ScopedValidator.prototype.validateScopes = function validateScopes (opts) {
     if ( opts === void 0 ) opts = {};
+
+  if (this._paused) { return Promise.resolve(true); }
 
   return this._base.validateScopes(assign({}, { vmId: this.id }, opts || {}));
 };
@@ -47756,7 +47780,7 @@ var ErrorComponent = {
   }
 };
 
-var version = '2.1.0-beta.6';
+var version = '2.1.0-beta.7';
 
 var rulesPlugin = function (ref) {
   var Validator$$1 = ref.Validator;
