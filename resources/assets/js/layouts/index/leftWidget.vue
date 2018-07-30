@@ -1,5 +1,5 @@
 <template>
-    <div class="sticky-top fix">
+    <div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -25,6 +25,31 @@
                 </div>
             </div>
         </div>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" id="filter">
+                        <h4 class="mb-1"> Filter By</h4>
+                    </div>
+                    <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" @click="searchby_category('All')">All</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" @click="searchby_category('Placement')">Placement</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" @click="searchby_category('Announcement')">Announcement</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" @click="searchby_category('Internship')">Internship</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
 </template>
 <script>
