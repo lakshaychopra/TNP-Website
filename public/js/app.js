@@ -38779,7 +38779,7 @@ var render = function() {
                         _c(
                           "label",
                           { attrs: { for: "Univ. Roll Number", hidden: "" } },
-                          [_vm._v("Univ. Roll No.")]
+                          [_vm._v("Username")]
                         ),
                         _vm._v(" "),
                         _c("input", {
@@ -38787,8 +38787,8 @@ var render = function() {
                             {
                               name: "validate",
                               rawName: "v-validate",
-                              value: "required|numeric|min:12|max:12",
-                              expression: "'required|numeric|min:12|max:12'"
+                              value: "required|max:12",
+                              expression: "'required|max:12'"
                             },
                             {
                               name: "model",
