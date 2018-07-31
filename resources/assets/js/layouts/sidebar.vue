@@ -16,12 +16,12 @@
                             <span class="hide-menu">Home</span>
                         </router-link>
                     </li>
-                    <li>
+                    <!-- <li>
                         <router-link to="#" exact>
                             <i class="fa fa-file-word-o fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Notice Maker</span>
                         </router-link>
-                    </li>
+                    </li> -->
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-file fa-fw" aria-hidden="true"></i>
@@ -45,14 +45,14 @@
                                     <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Posts
                                 </router-link>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <router-link to="#" exact>
                                     <i class="fa fa-thumb-tack fa-fw" aria-hidden="true"></i> Pinned Posts
                                 </router-link>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <!-- <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-user fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">User
@@ -121,15 +121,15 @@
                                 </router-link>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
         </div>
         <div class="sidebar-footer">
-            <router-link to="/configuration" class="link" data-toggle="tooltip" title="Configuration">
+            <router-link to="#" class="link" data-toggle="tooltip" title="Configuration">
                 <i class="fa fa-cogs" aria-hidden="true"></i>
             </router-link>
-            <router-link to="/profile" class="link" data-toggle="tooltip" title="Profile">
+            <router-link to="#" class="link" data-toggle="tooltip" title="Profile">
                 <i class="fa fa-user" aria-hidden="true"></i>
             </router-link>
             <a href="/logout" class="link" data-toggle="tooltip" title="Logout" @click.prevent="logout">

@@ -7,7 +7,8 @@
                         <img src="/images/icons/60x60.png" height="35px" width="35px" alt="home" class="dark-logo" />
                     </b>
                     <span>
-                        <img src="../../images/logo-text.png" alt="home" class="dark-logo" />
+                        <!-- <img src="../../images/logo-text.png" alt="home" class="dark-logo" /> -->
+                        <b>T&P Cell</b>
                     </span>
                 </a>
             </div>
@@ -40,18 +41,18 @@
                                         <div class="u-text">
                                             <h4>{{getAuthUserFullName()}}</h4>
                                             <p class="text-muted">{{getAuthUser('email')}}</p>
-                                            <router-link to="/profile" class="btn btn-rounded btn-danger btn-sm">View Profile</router-link>
+                                            <router-link to="#" class="btn btn-rounded btn-danger btn-sm">View Profile</router-link>
                                         </div>
                                     </div>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <router-link to="/profile">
+                                    <router-link to="#">
                                         <i class="fa fa-user"></i> My Profile</router-link>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <router-link to="/configuration">
+                                    <router-link to="#">
                                         <i class="fa fa-cogs"></i> Configuration</router-link>
                                 </li>
                                 <li role="separator" class="divider"></li>

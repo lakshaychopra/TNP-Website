@@ -27339,6 +27339,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -27411,7 +27412,7 @@ var render = function() {
                             "router-link",
                             {
                               staticClass: "btn btn-rounded btn-danger btn-sm",
-                              attrs: { to: "/profile" }
+                              attrs: { to: "#" }
                             },
                             [_vm._v("View Profile")]
                           )
@@ -27429,7 +27430,7 @@ var render = function() {
                   _c(
                     "li",
                     [
-                      _c("router-link", { attrs: { to: "/profile" } }, [
+                      _c("router-link", { attrs: { to: "#" } }, [
                         _c("i", { staticClass: "fa fa-user" }),
                         _vm._v(" My Profile")
                       ])
@@ -27445,7 +27446,7 @@ var render = function() {
                   _c(
                     "li",
                     [
-                      _c("router-link", { attrs: { to: "/configuration" } }, [
+                      _c("router-link", { attrs: { to: "#" } }, [
                         _c("i", { staticClass: "fa fa-cogs" }),
                         _vm._v(" Configuration")
                       ])
@@ -27504,12 +27505,7 @@ var staticRenderFns = [
           })
         ]),
         _vm._v(" "),
-        _c("span", [
-          _c("img", {
-            staticClass: "dark-logo",
-            attrs: { src: __webpack_require__(89), alt: "home" }
-          })
-        ])
+        _c("span", [_c("b", [_vm._v("T&P Cell")])])
       ])
     ])
   },
@@ -27588,12 +27584,7 @@ if (false) {
 }
 
 /***/ }),
-/* 89 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/logo-text.png?4735376630df749654ce27e9edfd2528";
-
-/***/ }),
+/* 89 */,
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27849,23 +27840,6 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                _c("i", {
-                  staticClass: "fa fa-file-word-o fa-fw",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "hide-menu" }, [
-                  _vm._v("Notice Maker")
-                ])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
           _c("li", { staticClass: "dropdown" }, [
             _vm._m(1),
             _vm._v(" "),
@@ -27901,128 +27875,6 @@ var render = function() {
                     ])
                   ],
                   1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-thumb-tack fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Pinned Posts\n                            ")
-                    ])
-                  ],
-                  1
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "dropdown" }, [
-            _vm._m(3),
-            _vm._v(" "),
-            _c(
-              "ul",
-              { staticClass: "dropdown-menu", attrs: { role: "menu" } },
-              [
-                _vm._m(4),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "/excel", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-file-excel-o fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(
-                        " Add Users By Excel\n                            "
-                      )
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "/single", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-plus fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Add Single User\n                            ")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-cogs fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Manage Users\n                            ")
-                    ])
-                  ],
-                  1
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "dropdown" }, [
-            _vm._m(5),
-            _vm._v(" "),
-            _c(
-              "ul",
-              { staticClass: "dropdown-menu", attrs: { role: "menu" } },
-              [
-                _vm._m(6),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-cogs fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Manage Students\n                            ")
-                    ])
-                  ],
-                  1
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "dropdown" }, [
-            _vm._m(7),
-            _vm._v(" "),
-            _c(
-              "ul",
-              { staticClass: "dropdown-menu", attrs: { role: "menu" } },
-              [
-                _vm._m(8),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-cogs fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Manage Companies\n                            ")
-                    ])
-                  ],
-                  1
                 )
               ]
             )
@@ -28039,11 +27891,7 @@ var render = function() {
           "router-link",
           {
             staticClass: "link",
-            attrs: {
-              to: "/configuration",
-              "data-toggle": "tooltip",
-              title: "Configuration"
-            }
+            attrs: { to: "#", "data-toggle": "tooltip", title: "Configuration" }
           },
           [
             _c("i", {
@@ -28057,11 +27905,7 @@ var render = function() {
           "router-link",
           {
             staticClass: "link",
-            attrs: {
-              to: "/profile",
-              "data-toggle": "tooltip",
-              title: "Profile"
-            }
+            attrs: { to: "#", "data-toggle": "tooltip", title: "Profile" }
           },
           [
             _c("i", {
@@ -28140,105 +27984,6 @@ var staticRenderFns = [
           attrs: { "aria-hidden": "true" }
         }),
         _vm._v(" Post Menu\n                            ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-user fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("User\n                            "),
-        _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
-          attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "dropdown-header" }, [
-      _c("strong", [
-        _c("i", {
-          staticClass: "fa fa-list fa-fw",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" User Menu\n                            ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-graduation-cap fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("Students\n                            "),
-        _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
-          attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "dropdown-header" }, [
-      _c("strong", [
-        _c("i", {
-          staticClass: "fa fa-list fa-fw",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Students Menu\n                            ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-building fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("Companies\n                            "),
-        _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
-          attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "dropdown-header" }, [
-      _c("strong", [
-        _c("i", {
-          staticClass: "fa fa-list fa-fw",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Companies Menu\n                            ")
       ])
     ])
   }
