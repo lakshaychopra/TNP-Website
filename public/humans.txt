@@ -1,17 +1,17 @@
 # This is official site of Training and Placement Cell, GNDEC, Ludhiana developed with <3 by GENCONIANS
 
-
-   _____ _   _ _____  ______ _____   _______      _____     _____ ______ _      _      
-  / ____| \ | |  __ \|  ____/ ____| |__   __|__  |  __ \   / ____|  ____| |    | |     
- | |  __|  \| | |  | | |__ | |         | | ( _ ) | |__) | | |    | |__  | |    | |     
- | | |_ | . ` | |  | |  __|| |         | | / _ \/\  ___/  | |    |  __| | |    | |     
- | |__| | |\  | |__| | |___| |____     | || (_>  < |      | |____| |____| |____| |____ 
-  \_____|_| \_|_____/|______\_____|    |_| \___/\/_|       \_____|______|______|______|
+   _____ _   _ _____  ______ _____      _______      _____       _____ ______ _      _      
+  / ____| \ | |  __ \|  ____/ ____|    |__   __|__  |  __ \     / ____|  ____| |    | |     
+ | |  __|  \| | |  | | |__ | |            | | ( _ ) | |__) |   | |    | |__  | |    | |     
+ | | |_ | . ` | |  | |  __|| |            | | / _ \/\  ___/    | |    |  __| | |    | |     
+ | |__| | |\  | |__| | |___| |____        | || (_>  < |        | |____| |____| |____| |____ 
+  \_____|_| \_|_____/|______\_____|       |_| \___/\/_|         \_____|______|______|______|
                                                                                        
 # TEAM
-
     Senior Developer: Sanjampreet Singh
-	Contact: sanjam531@gmail.com, linkedin.com/in/sanjampreetsingh/, facebook.com/sanjampreet.singh1
+	Contact:sanjam531@gmail.com 
+	LinkedIn:linkedin.com/in/sanjampreetsingh/
+	Facebook: facebook.com/sanjampreet.singh1
 	Twitter: @itzrealsanjam
 	From: Ludhiana, Punjab, India
 
@@ -20,7 +20,6 @@
 	From: Ludhiana, Punjab, India
 
 # THANKS
-
     Adviser T&P: Dr. K.S. Mann
 	From: Ludhiana, Punjab, India
 
@@ -31,16 +30,13 @@
 	From: Ludhiana, Punjab, India
 
 # TECHNOLOGY COLOPHON
+    Apache Server Configs
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
-
-/* META */
-
-	Built with: WordPress, PHP, HTML, CSS, jQuery, JavaScript, SQL, .htaccess :)
+# META 
+	Built with: Laravel, PHP, HTML, CSS,Bootstrap, Vue.js, jQuery, JavaScript, MySQL, .htaccess :)
 
 #SITE 
-	Last update:2018/07/20
+	Last update:2018/07/31
 	Language: English
 	Doctype:HTML5
-	IDE: VS Code, FileZilla, Photoshop
+	IDE: VS Code, SSL, Photoshop, BitBucket

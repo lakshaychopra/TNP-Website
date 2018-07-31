@@ -15,3 +15,4 @@ tnp.code-workspace
 /.env
 node_modules.zip
 .env
+vendor.zip

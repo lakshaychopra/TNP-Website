@@ -365,6 +365,10 @@ import helper from '../../services/helper.js';
         content: "\f0b0";
     }
 
+    #sidebar #link h4:after {
+        content: "\f08e";
+    }
+
     #sidebar .card-header h4:after {
         display: block;
         float: left;

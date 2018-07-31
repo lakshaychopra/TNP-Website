@@ -542,6 +542,10 @@
     #sidebar #filter h4:after {
         content: "\f0b0";
     }
+    
+    #sidebar #link h4:after {
+        content: "\f08e";
+    }
 
     #sidebar .card-header h4:after {
         display: block;
