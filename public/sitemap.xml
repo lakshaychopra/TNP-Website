@@ -4,7 +4,6 @@
 	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	  	  
-<!-- www.check-domains.com sitemap generator -->
 
 <url>
    <loc>https://www.tnpgndec.com/</loc>
@@ -23,5 +22,17 @@
    <lastmod>2018-07-27T14:34:32+00:00</lastmod>
    <changefreq>monthly</changefreq>
    <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://www.tnpgndec.com/login</loc>
+   <lastmod>2018-07-31T15:50:13+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>1.0000</priority>
+</url>
+<url>
+   <loc>https://www.tnpgndec.com/about</loc>
+   <lastmod>2018-07-31T15:50:13+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>1.0000</priority>
 </url>
 </urlset>
