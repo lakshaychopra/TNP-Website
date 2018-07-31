@@ -179,8 +179,9 @@ class UsersController extends Controller
             return $this->respondUnauthorized('Failed');
         }
         $user = User::where([
-            ['is_mailed','=',false],
-            ['type','=','STUDENT']
+            ['is_mailed','=',false]
+            // ,
+            // ['type','=','STUDENT']
             ])->get()->toArray();
             event(new UserCreatedEvent($user));
             $this->respondSuccess('Mailed');
@@ -192,8 +193,9 @@ class UsersController extends Controller
                 return $this->respondUnauthorized('Failed');
             }
             $user = User::where([
-                ['is_mailed','=',false],
-                ['type','=','STUDENT']
+                ['is_mailed','=',false]
+                // ,
+                // ['type','=','STUDENT']
                 ])->latest()->limit(1)->get()->toArray();
                 event(new UserSingleCreateEvent($user));
                 $this->respondSuccess('Mailed');
