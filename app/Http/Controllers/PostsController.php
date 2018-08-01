@@ -140,7 +140,8 @@ class PostController extends Controller
     
     public function pinned(Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
-        if($post->is_pinned <= 3){
+        $count = Post::where('is_pinned', '=', true)->count();
+        if($count <= 3){
             try {
                 DB::beginTransaction();
                 if(!$auth){
