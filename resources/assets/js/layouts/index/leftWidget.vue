@@ -34,6 +34,12 @@
                     <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
+                                <a href="https://gndec.ac.in/" target="_blank" rel="noopener">GNDEC</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://www.indiabix.com/" target="_blank" rel="noopener">IndiaBIX</a>
+                            </li>
+                            <li class="list-group-item">
                                 <a href="https://www.naukri.com/" target="_blank" rel="noopener">Naukri.com</a>
                             </li>
                             <li class="list-group-item">
