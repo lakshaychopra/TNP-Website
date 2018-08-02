@@ -24314,10 +24314,10 @@ var render = function() {
       _vm.search_input
         ? _c(
             "form",
-            { staticClass: "d-sm-none", attrs: { action: "/", method: "GET" } },
+            { staticClass: "d-lg-none", attrs: { action: "/", method: "GET" } },
             [
               _c("div", { staticClass: "row bg-col-grey" }, [
-                _c("div", { staticClass: "col-xs-12" }, [
+                _c("div", { staticClass: "col-md-12" }, [
                   _c("input", {
                     directives: [
                       {

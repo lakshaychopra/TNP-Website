@@ -45,9 +45,9 @@
                     </ul>
                 </div>
             </nav>
-            <form action="/" method="GET" v-if="search_input" class="d-sm-none">
+            <form action="/" method="GET" v-if="search_input" class="d-lg-none">
                 <div class="row bg-col-grey">
-                    <div class="col-xs-12">
+                    <div class="col-md-12">
                         <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on" placeholder="Search">
                     </div>
                 </div>
