@@ -26786,7 +26786,7 @@ var render = function() {
           [
             _c(
               "div",
-              { staticClass: "col-md-9 col-xs-12", attrs: { id: "main" } },
+              { staticClass: "col-lg-9 col-xs-12", attrs: { id: "main" } },
               [
                 _c(
                   "div",
