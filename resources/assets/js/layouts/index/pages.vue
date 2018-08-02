@@ -38,7 +38,7 @@
                                                         <div class="pull-left">
                                                             <!-- <small> -->
                                                             <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                            <div class="post-meta-text col-primary float-right" v-html="setDateFormat(pin.updated_at)"></div>
+                                                            <div class="post-meta-text col-primary float-right" v-html="setDateFormat(pin.created_at)"></div>
                                                             <!-- </small> -->
                                                         </div>
                                                         <div class="pull-right">
@@ -192,7 +192,7 @@
                                                         <div class="pull-left">
                                                             <!-- <small> -->
                                                             <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                            <div class="post-meta-text float-right col-primary " v-html="setDateFormat(post.updated_at)"></div>
+                                                            <div class="post-meta-text float-right col-primary " v-html="setDateFormat(post.created_at)"></div>
                                                             <!-- </small> -->
                                                         </div>
                                                         <div class="pull-right">

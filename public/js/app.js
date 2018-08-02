@@ -25356,7 +25356,7 @@ var render = function() {
                                                     domProps: {
                                                       innerHTML: _vm._s(
                                                         _vm.setDateFormat(
-                                                          pin.updated_at
+                                                          pin.created_at
                                                         )
                                                       )
                                                     }
@@ -25802,7 +25802,7 @@ var render = function() {
                                                   domProps: {
                                                     innerHTML: _vm._s(
                                                       _vm.setDateFormat(
-                                                        post.updated_at
+                                                        post.created_at
                                                       )
                                                     )
                                                   }
@@ -26810,7 +26810,7 @@ var render = function() {
                                         "post-meta-text col-primary float-right ",
                                       domProps: {
                                         innerHTML: _vm._s(
-                                          _vm.setDateFormat(_vm.post.updated_at)
+                                          _vm.setDateFormat(_vm.post.created_at)
                                         )
                                       }
                                     })
