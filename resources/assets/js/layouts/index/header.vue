@@ -1,6 +1,6 @@
 <template>
           <div class="sticky-top" style="z-index:1022;">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                 <!-- Brand -->
                 <strong>
                     <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>

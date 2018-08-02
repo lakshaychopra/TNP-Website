@@ -30,7 +30,7 @@ class CreatePostRequest extends FormRequest
             'user_id'               => 'required',
             'tag'                   => 'required',
             'category'              => 'required',
-            'post_link'             => 'required',
+            'post_link'             => 'nullable',
             'image'                 => 'nullable|file|image|mimes:png,jpeg,jpg|max:2048',
         ];
     }
