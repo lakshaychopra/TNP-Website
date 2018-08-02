@@ -1,50 +1,50 @@
 <template>
     <div>
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                <!-- Brand -->
-                <strong>
-                    <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
-                    <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
-                </strong>
-                <div class="navbar-header">
-                    <!-- Navbar links -->
-                    <div class="navbar-text d-md-none">
-                        <ul class="navbar-nav list-inline">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="#" @click="search_input = !search_input">
-                                    <i class="fa fa-search"></i>
-
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                </div>
-                <div class="navbar-collapse collapse" id="collapsibleNavbar">
-                    <div class="mr-auto d-none d-md-block w-65" v-if="this.searchbox=true">
-                       
-                    </div>
-                    <ul class="nav navbar-nav" id="list-menu">
-                        <li class="nav-item">
-                            <a class="nav-link float-right" href="/about">
-                                <i class="fa fa-users" aria-hidden="true"></i> About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link float-right" href="/login" v-if="this.$store.state.auth.username">
-                                <i class="fa fa-home" aria-hidden="true"></i> Profile</a>
-                            <a class="nav-link float-right" href="/login" v-else>
-                                <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <!-- Brand -->
+            <strong>
+                <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
+                <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
+            </strong>
+            <div class="navbar-header">
+                <!-- Navbar links -->
+                <div class="navbar-text d-md-none">
+                    <ul class="navbar-nav list-inline">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#" @click="search_input = !search_input">
+                            </a>
                         </li>
                     </ul>
                 </div>
-            </nav>        <div class="bg-gray">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                <div class="mr-auto d-none d-md-block w-65" v-if="this.searchbox=true">
+
+                </div>
+                <ul class="nav navbar-nav" id="list-menu">
+                    <li class="nav-item">
+                        <a class="nav-link float-right" href="/about">
+                            <i class="fa fa-users" aria-hidden="true"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link float-right" href="/login" v-if="this.$store.state.auth.username">
+                            <i class="fa fa-home" aria-hidden="true"></i> Profile</a>
+                        <a class="nav-link float-right" href="/login" v-else>
+                            <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="bg-gray">
             <div class="container py-4">
                 <div class="row">
                     <div class="col-md-9 col-xs-12" id="main">
-                       <div class="row justify-content-center" id="posts">
+                        <div class="row justify-content-center" id="posts">
                             <div class="col-md-12">
 
                                 <div class="card card-primary">
@@ -78,27 +78,27 @@
                                                             <!-- <small> -->
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
                                                             <div class="post-meta-text col-primary float-right ">
-                                                                   
-                                                                        {{post.category}}
-                                                             
+
+                                                                {{post.category}}
+
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                     <div v-if="post.image!=null">
-                                    <img :src="'/images/posts/images/'+post.image" :alt="post.image" width="100%" class="card-image-top">
+                                        <img :src="'/images/posts/images/'+post.image" :alt="post.image" width="100%" class="card-image-top">
                                     </div>
 
 
                                     <div class="card-body">
                                         <div class="mb-3" v-html="post.body"></div>
                                         <div class="clearfix"></div>
-                                        
-                                            <div class="row" id="bt">
+
+                                        <div class="row" id="bt">
                                             <div class="col-md-6 col-xs-12" id="share-social">
                                                 <div class="post-share">
 
@@ -135,14 +135,14 @@
                                                     <div class="post-meta-text col-primary ">{{ post.tag }}</div>
                                                 </div>
                                             </div>
-                                        </div>  
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                     <widget-right></widget-right>
-                    
+
                 </div>
             </div>
         </div>
@@ -153,40 +153,44 @@
     import WidgetLeft from './leftWidget.vue'
     import WidgetRight from './rightWidget.vue'
     import {
-        addHomePostURL,apiDomain,viewPost, categoryURL,pinnedPostURL
+        addHomePostURL,
+        apiDomain,
+        viewPost,
+        categoryURL,
+        pinnedPostURL
     } from "../../config.js";
-import helper from '../../services/helper.js';
+    import helper from '../../services/helper.js';
 
     export default {
         components: {
-            AppHeader,WidgetLeft,WidgetRight
+            AppHeader,
+            WidgetLeft,
+            WidgetRight
         },
-         data() {
+        data() {
             return {
                 id: this.$route.params.id,
-              
+
                 postEdit: {},
                 post: {},
-                pinned_posts:{},
+                pinned_posts: {},
                 showDropDown: false,
-                share:false,
-                
+                share: false,
+
             }
         },
         created() {
             //console.log("index");
-            if(typeof navigator.share==='undefined' || !navigator.share) {
-                    this.share = true;
-                    // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
-                }
-                else if(window.location.protocol !='https:') {
-                    // alert('Android Native Share support only on Https:// protocol');
-                    this.share = true
-                }
-                else{
-                    this.share = false;
-                }
-                console.log(this.share);
+            if (typeof navigator.share === 'undefined' || !navigator.share) {
+                this.share = true;
+                // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+            } else if (window.location.protocol != 'https:') {
+                // alert('Android Native Share support only on Https:// protocol');
+                this.share = true
+            } else {
+                this.share = false;
+            }
+            console.log(this.share);
             this.loading = 0;
             axios.get('/api/home/view/' + this.id).then((response) => {
                     this.post = response.data.data.data[0];
@@ -203,10 +207,10 @@ import helper from '../../services/helper.js';
             //         this.$parent.getPosts();
             //     }
             // },
-            getURL(id){
-                return "https://www.tnpgndec.com/view/"+id;
+            getURL(id) {
+                return "https://www.tnpgndec.com/view/" + id;
             },
-            share_fn(){
+            share_fn() {
                 return this.share;
             },
             gethtml(text) {
@@ -217,54 +221,52 @@ import helper from '../../services/helper.js';
                 trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
                 return trimmedString;
             },
-                AndroidNativeShare(Title, URL, Description) {
-                                        console.log(Title);
-                                        console.log(Description);
+            AndroidNativeShare(Title, URL, Description) {
+                console.log(Title);
+                console.log(Description);
 
-                    if(typeof navigator.share==='undefined' || !navigator.share) {
-                        // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+                if (typeof navigator.share === 'undefined' || !navigator.share) {
+                    // alert('Your browser does not support Android Native Share, it\'s tested on chrome 63+');
+                } else if (window.location.protocol != 'https:') {
+                    // alert('Android Native Share support only on Https:// protocol');
+                    this.share = true
+                } else {
+                    if (typeof URL === 'undefined') {
+                        URL = window.location.href;
                     }
-                    else if(window.location.protocol !='https:') {
-                        // alert('Android Native Share support only on Https:// protocol');
-                        this.share = true
+                    if (typeof Title === 'undefined') {
+                        Title = document.title;
                     }
-                    else {
-                        if(typeof URL==='undefined') {
-                            URL=window.location.href;
-                        }
-                        if(typeof Title==='undefined') {
-                            Title=document.title;
-                        }
-                        if(typeof Description==='undefined') {
-                            Description='Share your thoughts about '+Title;
-                        }
+                    if (typeof Description === 'undefined') {
+                        Description = 'Share your thoughts about ' + Title;
+                    }
                     let URLConst = 'https://www.tnpgndec.com/view/' + URL;
-                        const canonicalElement = document.querySelector('link[rel=canonical]');
-                        if (canonicalElement !== null) {
-                            URLConst = 'https://www.tnpgndec.com/view/' + URL;
-                        }
-                        const TitleConst=Title;
-                        const DescriptionConst=URLConst;
-                        console.log(URLConst);
-                        if (navigator.share) {
-                            navigator.share({
-                                title:TitleConst ,
-                                text: TitleConst,
-                                url:URLConst,
-                            })
-                                .then(() => console.log('Successful share'))
-                                .catch((error) => console.log('Error sharing', error));
-                            }
+                    const canonicalElement = document.querySelector('link[rel=canonical]');
+                    if (canonicalElement !== null) {
+                        URLConst = 'https://www.tnpgndec.com/view/' + URL;
                     }
-                },
+                    const TitleConst = Title;
+                    const DescriptionConst = URLConst;
+                    console.log(URLConst);
+                    if (navigator.share) {
+                        navigator.share({
+                                title: TitleConst,
+                                text: TitleConst,
+                                url: URLConst,
+                            })
+                            .then(() => console.log('Successful share'))
+                            .catch((error) => console.log('Error sharing', error));
+                    }
+                }
+            },
             loadMore: function () {
                 const vm = this;
                 vm.loading = 1;
                 vm.busy = true;
                 vm.getallpost();
             },
-            setDateFormat(date){
-               return helper.formatDateTime(date);
+            setDateFormat(date) {
+                return helper.formatDateTime(date);
             },
             getallpost: function () {
                 setTimeout(() => {
@@ -311,17 +313,19 @@ import helper from '../../services/helper.js';
 
     .post-meta i {
         font-size: 20px;
-    float: left;
-    margin-right: 10px;
-    color: #a3a9b0;
-    margin-top: 2px;
-    font-weight: bold;
+        float: left;
+        margin-right: 10px;
+        color: #a3a9b0;
+        margin-top: 2px;
+        font-weight: bold;
     }
-    .pin{
-    position: absolute;
-    right: 7px;
-    top: -7px;
+
+    .pin {
+        position: absolute;
+        right: 7px;
+        top: -7px;
     }
+
     .post-meta-text {
         font-size: 12px;
         padding-top: 3px;
@@ -577,12 +581,13 @@ import helper from '../../services/helper.js';
         -webkit-text-fill-color: transparent;
     }
 
-    .share i{
-            margin-top: 14px;
-            font-size: 22px;
-            color: #6b6b6b;
-            margin-right: 6px;
+    .share i {
+        margin-top: 14px;
+        font-size: 22px;
+        color: #6b6b6b;
+        margin-right: 6px;
     }
+
     .list-inline {
         padding-left: 0;
         list-style: none;
@@ -649,13 +654,14 @@ import helper from '../../services/helper.js';
         overflow: hidden;
         top: 90px;
     }
-    
+
     @media only screen and (max-width: 500px) {
         #share-social {
             text-align: center;
         }
     }
-  #bt {
+
+    #bt {
         border-top: 1px solid #ecedee;
     }
 </style>

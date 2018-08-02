@@ -8,12 +8,11 @@
                 </strong>
                 <div class="navbar-header">
                     <!-- Navbar links -->
-                    <div class="navbar-text d-md-none">
+                    <div class="navbar-text d-lg-none">
                         <ul class="navbar-nav list-inline">
                             <li class="nav-item ">
                                 <a class="nav-link" href="#" @click="search_input = !search_input">
                                     <i class="fa fa-search"></i>
-
                                 </a>
                             </li>
                         </ul>
@@ -24,7 +23,7 @@
 
                 </div>
                 <div class="navbar-collapse collapse" id="collapsibleNavbar">
-                    <div class="mr-auto d-none d-md-block w-65" v-if="this.searchbox=true">
+                    <div class="mr-auto d-none d-lg-block w-65" v-if="this.searchbox=true">
                         <form class="form-inline" action="/" method="GET">
                             <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost" autocomplete="on" id="search">
                             <!-- <button class="btn btn-info" type="submit">
@@ -48,7 +47,7 @@
             </nav>
             <form action="/" method="GET" v-if="search_input" class="d-sm-none">
                 <div class="row bg-col-grey">
-                    <div class="col-md-1">
+                    <div class="col-xs-12">
                         <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on" placeholder="Search">
                     </div>
                 </div>
