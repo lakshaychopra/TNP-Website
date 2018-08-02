@@ -5,7 +5,7 @@
             <div class="container py-4">
                 <div class="row">
 
-                    <div class="col-2 px-1 d-none d-md-block sticky-top" id="sidebar">
+                    <div class="col-2 px-1 d-none d-md-block" id="sidebar">
                         <widget-left></widget-left>
                     </div>
 

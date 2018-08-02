@@ -25297,7 +25297,7 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "col-2 px-1 d-none d-md-block sticky-top",
+                  staticClass: "col-2 px-1 d-none d-md-block",
                   attrs: { id: "sidebar" }
                 },
                 [_c("widget-left")],
