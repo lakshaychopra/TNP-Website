@@ -110,7 +110,7 @@
                             </div>
                             <div class="col-md-10">
                                 <small>
-                                    <a :href="office.about_website" target="_blank">{{ office.about_website }}</a>
+                                    <a href="https://gndec.ac.in/" target="_blank" rel="noopener">{{ office.about_website }}</a>
                                 </small>
                             </div>
                         </div>

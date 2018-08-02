@@ -25099,8 +25099,9 @@ var render = function() {
                         "a",
                         {
                           attrs: {
-                            href: _vm.office.about_website,
-                            target: "_blank"
+                            href: "https://gndec.ac.in/",
+                            target: "_blank",
+                            rel: "noopener"
                           }
                         },
                         [_vm._v(_vm._s(_vm.office.about_website))]
