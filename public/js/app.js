@@ -24943,7 +24943,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "col-md-3 px-1 d-none d-md-block",
+      staticClass: "col-md-3 px-1 d-none d-lg-block",
       attrs: { id: "sidebar" }
     },
     [
@@ -25296,7 +25296,7 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "col-2 px-1 d-none d-md-block",
+                  staticClass: "col-2 px-1 d-none d-lg-block",
                   attrs: { id: "sidebar" }
                 },
                 [_c("widget-left")],
