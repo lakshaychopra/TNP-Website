@@ -16,12 +16,6 @@
                             <span class="hide-menu">Home</span>
                         </router-link>
                     </li>
-                    <!-- <li>
-                        <router-link to="#" exact>
-                            <i class="fa fa-file-word-o fa-fw" aria-hidden="true"></i>
-                            <span class="hide-menu">Notice Maker</span>
-                        </router-link>
-                    </li> -->
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-file fa-fw" aria-hidden="true"></i>
@@ -52,77 +46,7 @@
                             </li>
                         </ul>
                     </li>
-                   <!-- <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
-                            <i class="fa fa-user fa-fw" aria-hidden="true"></i>
-                            <span class="hide-menu">User
-                                <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="dropdown-header">
-                                <strong>
-                                    <i class="fa fa-list fa-fw" aria-hidden="true"></i> User Menu
-                                </strong>
-                            </li>
-                            <li>
-                                <router-link to="/excel" exact>
-                                    <i class="fa fa-file-excel-o fa-fw" aria-hidden="true"></i> Add Users By Excel
-                                </router-link>
-                            </li>
-                            <li>
-                                <router-link to="/single" exact>
-                                    <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Single User
-                                </router-link>
-                            </li>
-                            <li>
-                                <router-link to="#" exact>
-                                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Users
-                                </router-link>
-                            </li>
-                        </ul>
-                    </li> -->
-                   <!-- <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
-                            <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
-                            <span class="hide-menu">Students
-                                <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="dropdown-header">
-                                <strong>
-                                    <i class="fa fa-list fa-fw" aria-hidden="true"></i> Students Menu
-                                </strong>
-                            </li>
-                            <li>
-                                <router-link to="#" exact>
-                                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Students
-                                </router-link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
-                            <i class="fa fa-building fa-fw" aria-hidden="true"></i>
-                            <span class="hide-menu">Companies
-                                <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="dropdown-header">
-                                <strong>
-                                    <i class="fa fa-list fa-fw" aria-hidden="true"></i> Companies Menu
-                                </strong>
-                            </li>
-                            <li>
-                                <router-link to="#" exact>
-                                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Companies
-                                </router-link>
-                            </li>
-                        </ul>
-                    </li> -->
-                </ul>
+`                </ul>
             </nav>
         </div>
         <div class="sidebar-footer">

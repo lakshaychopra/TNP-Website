@@ -7,7 +7,6 @@
                         <img src="/images/icons/60x60.png" height="35px" width="35px" alt="home" class="dark-logo" />
                     </b>
                     <span>
-                        <!-- <img src="../../images/logo-text.png" alt="home" class="dark-logo" /> -->
                         <b>T&P Cell</b>
                     </span>
                 </a>
@@ -69,6 +68,7 @@
     </header>
 </template>
 
+
 <script>
     import helper from '../services/helper'
 
@@ -90,8 +90,7 @@
         },
         computed: {
             getAvatar() {
-                return '../../images/users/user.jpg';
-                // +this.getAuthUser('avatar');
+                return '../../../images/users/user.jpg';
             }
         }
     }
