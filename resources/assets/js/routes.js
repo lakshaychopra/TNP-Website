@@ -26,7 +26,7 @@ let routes = [{
             //     component: require('./views/pages/home')
             // },
             {
-                path: '/home',
+                path: '/admin',
                 component: require('./views/pages/home')
             },
             {
@@ -54,6 +54,10 @@ let routes = [{
                 component: require('./views/post/edit')
             },
             {
+                path: '/post/pinned',
+                component: require('./views/post/exec/pinned')
+            },
+            {
                 path: '/post/:id',
                 component: require('./views/post/show')
             },
@@ -75,6 +79,79 @@ let routes = [{
             },
         ]
     },
+
+
+    {
+        path: '/',
+        component: require('./layouts/exec/default-page'),
+        meta: {
+            requiresAuth: true,
+            execAuth: true,
+            userAuth: false
+
+        },
+        children: [
+            // {
+            //     path: '/',
+            //     component: require('./views/pages/home')
+            // },
+            {
+                path: '/home',
+                component: require('./views/pages/home')
+            },
+            {
+                path: '/blank',
+                component: require('./views/pages/blank')
+            },
+            // {
+            //     path: '/excel',
+            //     component: require('./views/excel')
+            // },
+            // {
+            //     path: '/single',
+            //     component: require('./views/excel/single')
+            // },
+            {
+                path: '/configuration',
+                component: require('./views/configuration/configuration')
+            },
+            {
+                path: '/exec/post',
+                component: require('./views/post/exec/index'),
+            },
+            {
+                path: '/exec/post/:id/edit',
+                component: require('./views/post/exec/edit')
+            },
+            {
+                path: '/exec/post/pinned',
+                component: require('./views/post/exec/pinned')
+            },
+            {
+                path: '/post/:id',
+                component: require('./views/post/exec/show')
+            },
+            {
+                path: '/exec/all',
+                component: require('./views/post/exec/viewPosts')
+            },
+            {
+                path: '/task',
+                component: require('./views/task/index')
+            },
+            {
+                path: '/task/:id/edit',
+                component: require('./views/task/edit')
+            },
+            {
+                path: '/user',
+                component: require('./views/user/index')
+            },
+        ]
+    },
+
+
+
     {
         path: '/',
         component: require('./layouts/user/default-page'),
@@ -190,17 +267,39 @@ router.beforeEach((to, from, next) => {
                 return next({
                     path: '/login'
                 })
-            } else if (to.matched.some(m => m.meta.adminAuth)) {
+            } else if (to.matched.some(m => m.meta.execAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "EXECUTIVE_MEMBER") {
                         return next()
+                    }
+                    else if (res.type == "ADMIN") {
+                        return next({
+                            path:'/admin'
+                        })
                     } else {
                         return next({
                             path: '/userlogin'
                         })
                     }
                 })
-            } else if (to.matched.some(m => m.meta.userAuth)) {
+            }
+                else if (to.matched.some(m => m.meta.adminAuth)) {
+                    return helper.authUser().then(res => {
+                        if (res.type == "ADMIN") {
+                            return next()
+                        } else if (res.type == "EXECUTIVE_MEMBER") {
+                            return next({
+                                path: '/home'
+                            })
+                        }
+                        else{
+                            return next({
+                                path: '/userlogin'
+                            })  
+                        } 
+                    })
+                }
+             else if (to.matched.some(m => m.meta.userAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
                         //    switch (res.student_form_step) {
@@ -227,12 +326,19 @@ router.beforeEach((to, from, next) => {
                                 path: '/req'
                             })
                         }
-                    } else {
+                    } 
+                    else if (res.type == "ADMIN") {
+                        return next({
+                            path:'/admin'
+                        })
+                    }
+                    else {
                         return next({
                             path: '/home'
                         })
                     }
                 })
+                
             } else if (to.matched.some(m => m.meta.userloginAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
@@ -291,7 +397,13 @@ router.beforeEach((to, from, next) => {
                             path: '/home'
                         })
 
-                    } else {
+                    } 
+                    else if (res.type == "ADMIN") {
+                        return next({
+                            path: '/admin'
+                        })
+                    }
+                    else {
                         return next({
                             path: '/userlogin'
                         })

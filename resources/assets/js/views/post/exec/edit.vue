@@ -4,8 +4,8 @@
             <div class="col-md-6 col-8 align-self-center">
                 <h3 class="text-themecolor m-b-0 m-t-0">Edit Post</h3>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><router-link to="/admin">Home</router-link></li>
-                    <li class="breadcrumb-item"><router-link to="/task">Post</router-link></li>
+                    <li class="breadcrumb-item"><router-link to="/home">Home</router-link></li>
+                    <li class="breadcrumb-item"><router-link to="/exec/task">Post</router-link></li>
                     <li class="breadcrumb-item active">Edit Post</li>
                 </ol>
             </div>
@@ -26,7 +26,7 @@
 
 <script>
     import PostForm from './form';
-    import helper from '../../services/helper'
+    import helper from '../../../services/helper'
 
     export default {
         components : { PostForm },

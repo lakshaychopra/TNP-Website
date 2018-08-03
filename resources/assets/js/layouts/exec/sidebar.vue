@@ -3,13 +3,13 @@
         <div class="scroll-sidebar">
             <div class="user-profile">
                 <div class="profile-img">
-                    <img src="../../images/users/user.jpg" alt="user" /> </div>
+                    <img src="../../../images/users/user.jpg" alt="user" /> </div>
                 <div class="profile-text">
                     <a href="#">{{getAuthUserFullName()}}</a>
                 </div>
             </div>
             <nav class="sidebar-nav">
-                <ul id="sidebarnav">
+                 <ul id="sidebarnav">
                     <li>
                         <router-link to="/home" exact>
                             <i class="fa fa-home fa-fw" aria-hidden="true"></i>
@@ -36,23 +36,23 @@
                                 </strong>
                             </li>
                             <li>
-                                <router-link to="/post" exact>
+                                <router-link to="/exec/post" exact>
                                     <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Posts
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/all" exact>
+                                <router-link to="/exec/all" exact>
                                     <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Posts
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/post/pinned" exact>
+                                <router-link to="/exec/post/pinned" exact>
                                     <i class="fa fa-thumb-tack fa-fw" aria-hidden="true"></i> Pinned Posts
                                 </router-link>
                             </li>
                         </ul>
                     </li>
-                   <li class="dropdown">
+                   <!-- <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-user fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">User
@@ -81,7 +81,7 @@
                                 </router-link>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                    <!-- <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
@@ -140,7 +140,7 @@
 </template>
 
 <script>
-    import helper from '../services/helper'
+    import helper from '../../services/helper'
 
     export default {
         mounted() {},

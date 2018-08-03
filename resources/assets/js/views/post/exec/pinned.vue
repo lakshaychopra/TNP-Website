@@ -10,7 +10,7 @@
               <div class="dropdown">
                 <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                 <div class="dropdown-menu">
-                  <router-link v-bind:to="{ path:'/post/'+post.id +'/edit'}">
+                  <router-link v-bind:to="{ path:'/exec/post/'+post.id +'/edit'}">
                     <a class="dropdown-item" href="#">
                       <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
                   </router-link>
@@ -52,27 +52,27 @@
             </span>
           </div>
         </div>
-        <div class="text-center" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+        <!-- <div class="text-center" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
                             <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px" v-if="loading"></i>
-        </div>
+        </div> -->
       </div>
     </div>
-    <modal></modal>
+    <!-- <modal></modal> -->
   </div>
 </template>
 
 <script>
-  import modal from "./modal";
+  // import modal from "./modal";
   import {
-    addPostURL
-  } from "../../config.js";
+    pinPostURL
+  } from "../../../config.js";
   export default {
     components: {
-      modal,
+      // modal,
     },
     data() {
       return {
-         loading: 1,
+        loading: 1,
         page: 2,
         busy: false,
         postEdit: {},
@@ -161,10 +161,10 @@
         // })
         // .catch((error) => console.log(error))
       },
-      getallpost: function () {
+       getallpost: function () {
                 setTimeout(() => {
                     const vm = this;
-                    axios.get('/api/dashboard/post?page=' + vm.page)
+                    axios.get(pinPostURL+'?page=' + vm.page)
                         .then(function (response) {
                             console.log(response.data.data.data.length);
                             if (response.data.data.data.length == 0) {
@@ -185,15 +185,16 @@
             },
     },
     created() {
-      axios.get(addPostURL)
+      axios.get(pinPostURL)
         .then((response) => {
           // var obj = JSON.parse(response.data);
           // console.log(response);
-          this.posts = response.data.data;
-          console.log(response.data.data);
+          this.posts = response.data;
+          console.log(response.data);
 
         })
         .catch((error) => console.log(error))
+      // this.getallpost();
     }
   }
 </script>

@@ -4,8 +4,8 @@
             <div class="col-md-6 col-8 align-self-center">
                 <h3 class="text-themecolor m-b-0 m-t-0">View Post</h3>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><router-link to="/admin">Home</router-link></li>
-                    <li class="breadcrumb-item"><router-link to="/post">Post</router-link></li>
+                    <li class="breadcrumb-item"><router-link to="/home">Home</router-link></li>
+                    <li class="breadcrumb-item"><router-link to="/exec/post">Post</router-link></li>
                     <li class="breadcrumb-item active">View Post</li>
                 </ol>
             </div>
@@ -84,7 +84,7 @@
     </div>
 </template>
 <script>
-import {showPostURL} from "../../config.js";
+import {showPostURL} from "../../../config.js";
 export default {
     data() {
             return {
