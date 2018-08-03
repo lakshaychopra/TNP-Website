@@ -1,15 +1,15 @@
 <template>
     <header class="topbar">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
-            <div class="navbar-header">
+             <div class="navbar-header">
                 <a class="navbar-brand" href="/">
                     <b>
-                        <img src="/images/logo-icon.png" alt="home" class="dark-logo" />
-                        <img src="/images/logo-light-icon.png" alt="home" class="light-logo" />
+                        <img src="/images/icons/60x60.png" height="35px" width="35px" alt="home" class="dark-logo" />
                     </b>
                     <span>
-                     <img src="/images/logo-text.png" alt="home" class="dark-logo" />
-                     <img src="/images/logo-light-text.png" class="light-logo" alt="home" /></span> </a>
+                        <b>T&P Cell</b>
+                    </span>
+                </a>
             </div>
             <div class="navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-md-0 ">

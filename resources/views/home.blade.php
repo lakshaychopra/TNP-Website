@@ -55,7 +55,7 @@
     <meta property="og:url" content="https://www.tnpgndec.com">
     <meta property="og:site_name" content="T&P">
     <meta property="og:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
-    <meta property="og:image" content="{{asset('/images/icons/1200x1200.jpg')}}">
+    <meta property="og:image" content="{{asset('/images/icons/300x300.jpg')}}">
     <meta property="og:locale" content="en_US"> 
     {{-- twitter --}}
     <meta name="twitter:card" content="summary"> {{--
@@ -64,8 +64,9 @@
     <meta name="twitter:url" content="https://www.tnpgndec.com">
     <meta name="twitter:title" content="Training and Placement Cell">
     <meta name="twitter:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
-    <meta name="twitter:image" content="{{asset('/images/icons/512x512.png')}}"> {{-- title --}}
-    <title>Training and Placemant Cell</title>
+    <meta name="twitter:image" content="{{asset('/images/icons/512x512.png')}}"> 
+    {{-- title --}}
+    <title>Training and Placement Cell</title>
 
     <link type="text/plain" rel="author" href="{{asset('humans.txt')}}" />
     <link href="/css/style.css" rel="stylesheet">

@@ -23974,7 +23974,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.post-meta {\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    width: 100%;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n    font-weight: 450;\n}\n.post-meta i {\n    font-size: 20px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n    margin-top: 2px;\n    font-weight: bold;\n}\n.pin {\n    position: absolute;\n    right: 18px;\n    top: 8px;\n}\n.post-meta-text {\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4 {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4:after {\n    content: \"\\F0B0\";\n}\n#sidebar #link h4:after {\n    content: \"\\F08E\";\n}\n#sidebar .card-header h4:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary {\n    color: #304156;\n}\n.card-primary {\n    background: #fff;\n}\n#posts .card {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a:hover {\n    color: #038ed4;\n}\n#bt {\n    border-top: 1px solid #ecedee;\n}\n#posts .post-share {\n    padding-top: 20px;\n}\n#posts .card-footer {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix {\n    margin-bottom: 20px;\n}\n.sub-menu {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head {\n    margin-top: 3px;\n}\n#share {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown {\n    float: right;\n}\n.dropdown-menu {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i {\n    margin-right: 10px;\n}\n.bg-gray {\n    background-color: #f1f1f1;\n}\n.color-main {\n    color: #038ed4;\n}\n.share i {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n@media only screen and (max-width: 500px) {\n#share-social {\n        text-align: center;\n}\n}\n", ""]);
+exports.push([module.i, "\n.post-meta {\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    width: 100%;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n    font-weight: 450;\n}\n.post-meta i {\n    font-size: 20px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n    margin-top: 2px;\n    font-weight: bold;\n}\n.pin {\n    position: absolute;\n    right: 18px;\n    top: 8px;\n}\n.post-meta-text {\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4 {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4:after {\n    content: \"\\F0B0\";\n}\n#sidebar #link h4:after {\n    content: \"\\F08E\";\n}\n#sidebar #downloads h4:after {\n    content: \"\\F019\";\n}\n#sidebar .card-header h4:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary {\n    color: #304156;\n}\n.card-primary {\n    background: #fff;\n}\n#posts .card {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a:hover {\n    color: #038ed4;\n}\n#bt {\n    border-top: 1px solid #ecedee;\n}\n#posts .post-share {\n    padding-top: 20px;\n}\n#posts .card-footer {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix {\n    margin-bottom: 20px;\n}\n.sub-menu {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head {\n    margin-top: 3px;\n}\n#share {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown {\n    float: right;\n}\n.dropdown-menu {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i {\n    margin-right: 10px;\n}\n.bg-gray {\n    background-color: #f1f1f1;\n}\n.color-main {\n    color: #038ed4;\n}\n.share i {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n@media only screen and (max-width: 500px) {\n#share-social {\n        text-align: center;\n}\n}\n", ""]);
 
 // exports
 
@@ -24901,7 +24901,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -24913,6 +24913,25 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -25077,7 +25096,9 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2)
   ])
 }
 var staticRenderFns = [
@@ -25175,6 +25196,53 @@ var staticRenderFns = [
                       }
                     },
                     [_vm._v("Internshala")]
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "card" }, [
+          _c(
+            "div",
+            { staticClass: "card-header", attrs: { id: "downloads" } },
+            [_c("h4", { staticClass: "mb-1" }, [_vm._v(" Downloads")])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "card-body",
+              staticStyle: { "padding-left": "10px", "padding-right": "10px" }
+            },
+            [
+              _c("ul", { staticClass: "list-group list-group-flush" }, [
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "../../files/PG.JPG", download: "PG.JPG" }
+                    },
+                    [_vm._v("PG Dataform")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "../../files/UG.JPG", download: "UG.JPG" }
+                    },
+                    [_vm._v("UG Dataform")]
                   )
                 ])
               ])
@@ -39823,26 +39891,16 @@ var staticRenderFns = [
         _c("b", [
           _c("img", {
             staticClass: "dark-logo",
-            attrs: { src: "/images/logo-icon.png", alt: "home" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "light-logo",
-            attrs: { src: "/images/logo-light-icon.png", alt: "home" }
+            attrs: {
+              src: "/images/icons/60x60.png",
+              height: "35px",
+              width: "35px",
+              alt: "home"
+            }
           })
         ]),
         _vm._v(" "),
-        _c("span", [
-          _c("img", {
-            staticClass: "dark-logo",
-            attrs: { src: "/images/logo-text.png", alt: "home" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "light-logo",
-            attrs: { src: "/images/logo-light-text.png", alt: "home" }
-          })
-        ])
+        _c("span", [_c("b", [_vm._v("T&P Cell")])])
       ])
     ])
   }

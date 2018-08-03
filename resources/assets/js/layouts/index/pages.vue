@@ -547,6 +547,10 @@
         content: "\f08e";
     }
 
+    #sidebar #downloads h4:after {
+        content: "\f019";
+    }
+
     #sidebar .card-header h4:after {
         display: block;
         float: left;
