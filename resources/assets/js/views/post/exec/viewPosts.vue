@@ -166,15 +166,15 @@
                     const vm = this;
                     axios.get('/api/dashboard/post?page=' + vm.page)
                         .then(function (response) {
-                            console.log(response.data.data.data.length);
-                            if (response.data.data.data.length == 0) {
+                            console.log(response.data.data.length);
+                            if (response.data.data.length == 0) {
                                 vm.busy = true;
                             } else {
                                 vm.busy = false;
                             }
-                            for (var i = 0; i < response.data.data.data.length; i++) {
-                                console.log(response.data.data.data[i]);
-                                vm.posts.push(response.data.data.data[i]);
+                            for (var i = 0; i < response.data.data.length; i++) {
+                                console.log(response.data.data[i]);
+                                vm.posts.push(response.data.data[i]);
                             }
                             vm.loading = 0;
                             vm.page = vm.page + 1;

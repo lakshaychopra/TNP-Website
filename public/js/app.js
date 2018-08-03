@@ -987,6 +987,12 @@ module.exports = {
 /* 6 */
 /***/ (function(module, exports) {
 
+module.exports = "/images/user.jpg?da138f24101e3d172160f05d6c8231c6";
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
 var g;
 
 // This works in non-strict mode
@@ -1009,12 +1015,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/user.jpg?da138f24101e3d172160f05d6c8231c6";
 
 /***/ }),
 /* 8 */
@@ -11980,7 +11980,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(40).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(40).setImmediate))
 
 /***/ }),
 /* 9 */
@@ -20793,7 +20793,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 41 */
@@ -20986,7 +20986,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(13)))
 
 /***/ }),
 /* 42 */
@@ -28106,7 +28106,7 @@ var staticRenderFns = [
       [
         _c("img", {
           staticClass: "profile-pic",
-          attrs: { src: __webpack_require__(7), alt: "user" }
+          attrs: { src: __webpack_require__(6), alt: "user" }
         })
       ]
     )
@@ -28117,7 +28117,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "u-img" }, [
       _c("img", {
-        attrs: { src: __webpack_require__(7), alt: "user" }
+        attrs: { src: __webpack_require__(6), alt: "user" }
       })
     ])
   }
@@ -28571,7 +28571,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "profile-img" }, [
       _c("img", {
-        attrs: { src: __webpack_require__(7), alt: "user" }
+        attrs: { src: __webpack_require__(6), alt: "user" }
       })
     ])
   },
@@ -31059,7 +31059,7 @@ var getTinymce = function () {
 };
 
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(7)))
 
 /***/ }),
 /* 129 */
@@ -35710,7 +35710,7 @@ var staticRenderFns = [
       [
         _c("img", {
           staticClass: "profile-pic",
-          attrs: { src: __webpack_require__(7), alt: "user" }
+          attrs: { src: __webpack_require__(6), alt: "user" }
         })
       ]
     )
@@ -35721,7 +35721,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "u-img" }, [
       _c("img", {
-        attrs: { src: __webpack_require__(7), alt: "user" }
+        attrs: { src: __webpack_require__(6), alt: "user" }
       })
     ])
   }
@@ -36056,7 +36056,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "profile-img" }, [
       _c("img", {
-        attrs: { src: __webpack_require__(7), alt: "user" }
+        attrs: { src: __webpack_require__(6), alt: "user" }
       })
     ])
   },
@@ -38106,15 +38106,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       setTimeout(function () {
         var vm = _this4;
         axios.get('/api/dashboard/post?page=' + vm.page).then(function (response) {
-          console.log(response.data.data.data.length);
-          if (response.data.data.data.length == 0) {
+          console.log(response.data.data.length);
+          if (response.data.data.length == 0) {
             vm.busy = true;
           } else {
             vm.busy = false;
           }
-          for (var i = 0; i < response.data.data.data.length; i++) {
-            console.log(response.data.data.data[i]);
-            vm.posts.push(response.data.data.data[i]);
+          for (var i = 0; i < response.data.data.length; i++) {
+            console.log(response.data.data[i]);
+            vm.posts.push(response.data.data[i]);
           }
           vm.loading = 0;
           vm.page = vm.page + 1;
