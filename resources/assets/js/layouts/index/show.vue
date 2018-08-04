@@ -2,10 +2,12 @@
     <div>
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <!-- Brand -->
-            <strong>
-                <a class="navbar-brand d-none d-md-block" href="/">Training &amp; Placement Cell</a>
-                <a class="navbar-brand d-md-none" href="/">T&amp;P Cell</a>
-            </strong>
+            <a class="navbar-brand d-none d-md-block" href="/">
+                <img src="/logo-md.png" alt="logo">
+            </a>
+            <a class="navbar-brand d-md-none" href="/">
+                <img src="/logo.png" alt="logo" height="55px" width="55px">
+            </a>
             <div class="navbar-header">
                 <!-- Navbar links -->
                 <div class="navbar-text d-md-none">
@@ -22,7 +24,7 @@
 
             </div>
             <div class="navbar-collapse collapse" id="collapsibleNavbar">
-                <div class="mr-auto d-none d-md-block w-65" v-if="this.searchbox=true">
+                <div class="mr-auto d-none d-md-block w-65">
 
                 </div>
                 <ul class="nav navbar-nav" id="list-menu">
