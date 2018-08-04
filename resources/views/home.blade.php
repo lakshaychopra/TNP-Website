@@ -55,7 +55,7 @@
     <meta property="og:url" content="https://www.tnpgndec.com">
     <meta property="og:site_name" content="T&P">
     <meta property="og:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
-    <meta property="og:image" content="{{asset('/images/icons/256x256.png')}}">
+    <meta property="og:image" content="{{asset('/images/icons/300x200.png')}}">
     <meta property="og:locale" content="en_US"> 
     {{-- twitter --}}
     <meta name="twitter:card" content="summary"> {{--
