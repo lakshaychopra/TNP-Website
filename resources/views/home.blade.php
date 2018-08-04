@@ -64,7 +64,7 @@
     <meta name="twitter:url" content="https://www.tnpgndec.com">
     <meta name="twitter:title" content="Training and Placement Cell">
     <meta name="twitter:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
-    <meta name="twitter:image" content="{{asset('/images/icons/150x150.png')}}"> 
+    <meta name="twitter:image" content="{{asset('/images/icons/128x128.png')}}"> 
     {{-- title --}}
     <title>Training and Placement Cell</title>
 
