@@ -24816,7 +24816,18 @@ var staticRenderFns = [
     return _c(
       "a",
       { staticClass: "navbar-brand d-none d-md-block", attrs: { href: "/" } },
-      [_c("img", { attrs: { src: "/logo-md.png", alt: "logo" } })]
+      [
+        _c("img", {
+          attrs: {
+            src: "/logo.png",
+            alt: "logo",
+            height: "55px",
+            width: "55px"
+          }
+        }),
+        _vm._v(" "),
+        _c("strong", [_vm._v("Training & Placement Cell")])
+      ]
     )
   },
   function() {
@@ -27633,7 +27644,18 @@ var staticRenderFns = [
     return _c(
       "a",
       { staticClass: "navbar-brand d-none d-md-block", attrs: { href: "/" } },
-      [_c("img", { attrs: { src: "/logo-md.png", alt: "logo" } })]
+      [
+        _c("img", {
+          attrs: {
+            src: "/logo.png",
+            alt: "logo",
+            height: "55px",
+            width: "55px"
+          }
+        }),
+        _vm._v(" "),
+        _c("strong", [_vm._v("Training & Placement Cell")])
+      ]
     )
   },
   function() {

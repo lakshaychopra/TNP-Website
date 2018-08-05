@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <!-- Brand -->
             <a class="navbar-brand d-none d-md-block" href="/">
-                <img src="/logo-md.png" alt="logo">
+                <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong> 
             </a>
             <a class="navbar-brand d-md-none" href="/">
                 <img src="/logo.png" alt="logo" height="55px" width="55px">
