@@ -11,7 +11,7 @@
 
     <meta name="description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
     <meta name="author" content="co-authored by Sanjampreet Singh, Karamveer Singh">
-    <meta name="keywords" content="gndec,gne,t&p,cell">
+    <meta name="keywords" content="gndec,gne,t&p,cell,Training and Placement Cell,Training,Placement,GNDEC,Ludhiana">
     <meta name="theme-color" content="#038ed4">
 
     <link rel="icon" type="image/png" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180" />
@@ -60,7 +60,7 @@
     {{-- twitter --}}
     <meta name="twitter:card" content="summary"> {{--
     <meta name="twitter:site" content="@site_account"> --}} 
-    <meta name="twitter:creator" content="@itzrealsanjam">
+    {{--  <meta name="twitter:creator" content="@itzrealsanjam">  --}}
     <meta name="twitter:url" content="https://www.tnpgndec.com">
     <meta name="twitter:title" content="Training and Placement Cell">
     <meta name="twitter:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
