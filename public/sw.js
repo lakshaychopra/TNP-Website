@@ -7,7 +7,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "offline.html",
-    "revision": "9c67ce1d07e877034f2435babb54fcd4"
+    "revision": "3cc36411bf6e69db7f8ad365381ee1c3"
   },
   {
     "url": "offline.png",
@@ -15,7 +15,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "b5adeec1f38fb7cfa147c3ab44832e9a"
+    "revision": "81ae69ddf37a24eecfcbabb9baa685e3"
   }
 ]);
 
@@ -46,5 +46,18 @@ workbox.routing.registerRoute(
                 statuses: [0, 200]
             }),
         ],
+    }),
+);
+
+workbox.routing.registerRoute(
+    new RegExp('/js/bundle.min.js'),
+    workbox.strategies.staleWhileRevalidate({
+        cacheName: 'static1',
+    }),
+);
+workbox.routing.registerRoute(
+    new RegExp('/css/style.css'),
+    workbox.strategies.staleWhileRevalidate({
+        cacheName: 'static2',
     }),
 );

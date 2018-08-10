@@ -31,3 +31,16 @@ workbox.routing.registerRoute(
         ],
     }),
 );
+
+workbox.routing.registerRoute(
+    new RegExp('/js/bundle.min.js'),
+    workbox.strategies.staleWhileRevalidate({
+        cacheName: 'static1',
+    }),
+);
+workbox.routing.registerRoute(
+    new RegExp('/css/style.css'),
+    workbox.strategies.staleWhileRevalidate({
+        cacheName: 'static2',
+    }),
+);

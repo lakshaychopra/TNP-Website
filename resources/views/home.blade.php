@@ -15,7 +15,10 @@
     <meta name="theme-color" content="#038ed4">
 
     <link rel="icon" type="image/png" href="{{asset('/images/icons/180x180.png')}}" sizes="180x180" />
-    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon"> {{-- OG Tags --}}
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon-16x16.png')}}">
+ {{-- OG Tags --}}
     <script type='application/ld+json'>
         {
             "@context": "http://schema.org/",
@@ -79,6 +82,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="T&P">
+    <link rel="mask-icon" href="{{asset('safari-pinned-tab.svg'}}" color="#4736f0">
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('/images/icons/57x57.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{asset('/images/icons/60x60.png')}}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{asset('/images/icons/72x72.png')}}">
