@@ -82,7 +82,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="T&P">
-    <link rel="mask-icon" href="{{asset('safari-pinned-tab.svg'}}" color="#4736f0">
+    <link rel="mask-icon" href="{{asset('safari-pinned-tab.svg')}}" color="#4736f0">
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('/images/icons/57x57.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{asset('/images/icons/60x60.png')}}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{asset('/images/icons/72x72.png')}}">
