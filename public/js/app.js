@@ -22144,7 +22144,8 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 			userid: '',
 			username: '',
 			phone_number: '',
-			email: ''
+			email: '',
+			type: ''
 			// avatar: ''
 		},
 		config: {
@@ -22259,6 +22260,9 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 		},
 		getAuthUserFullName: function getAuthUserFullName(state) {
 			return state.auth['username'];
+		},
+		getAuthUserType: function getAuthUserType(state) {
+			return state.auth['type'];
 		},
 		getAuthUserId: function getAuthUserId(state) {
 			return state.auth['userid'];
@@ -23626,7 +23630,7 @@ var routes = [{
         path: '/exec/post/pinned',
         component: __webpack_require__(29)
     }, {
-        path: '/post/:id',
+        path: '/exec/post/:id',
         component: __webpack_require__(196)
     }, {
         path: '/exec/all',
@@ -27854,6 +27858,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             height: '100%',
             color: '#dcdcdc'
         });
+        console.log(this.$store.getters.getAuthUserType);
         $('.message-scroll').slimScroll({
             position: 'right',
             size: "5px",
@@ -27878,7 +27883,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     userid: response.id,
                     username: response.username,
                     phone_number: response.phone_number,
-                    email: response.email
+                    email: response.email,
+                    type: response.type
                     // avatar:response.profile.avatar
                 });
             });
@@ -31022,7 +31028,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 //     this.$router.push('/task');
                 // }
                 toastr['success'](response.data.message);
-                _this3.$router.push('/post/' + response.data.data.id);
+                console.log(_this3.$store.getters.getAuthUserType);
+                if (_this3.$store.getters.getAuthUserType == "ADMIN") {
+                    _this3.$router.push('/post/' + response.data.data.id);
+                } else if (_this3.$store.getters.getAuthUserType == "EXECUTIVE_MEMBER") {
+                    _this3.$router.push('/exec/post/' + response.data.data.id);
+                }
             }).catch(function (response) {
                 toastr['error'](response.message);
             });
@@ -38623,7 +38634,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     userid: response.id,
                     username: response.username,
                     phone_number: response.phone_number,
-                    email: response.email
+                    email: response.email,
+                    type: response.type
                     // avatar:response.profile.avatar
                 });
             });
@@ -39652,7 +39664,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     userid: response.id,
                     username: response.username,
                     phone_number: response.phone_number,
-                    email: response.email
+                    email: response.email,
+                    type: response.type
+
                     // avatar:response.profile.avatar
 
                 });

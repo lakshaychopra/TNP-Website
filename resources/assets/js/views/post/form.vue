@@ -240,7 +240,14 @@
                     //     this.$router.push('/task');
                     // }
                     toastr['success'](response.data.message);
-                    this.$router.push('/post/'+response.data.data.id);
+                    console.log(this.$store.getters.getAuthUserType);
+                    if (this.$store.getters.getAuthUserType == "ADMIN") {
+                        this.$router.push('/post/'+response.data.data.id);
+                    }
+                    else if(this.$store.getters.getAuthUserType == "EXECUTIVE_MEMBER")
+                    {
+                        this.$router.push('/exec/post/'+response.data.data.id);
+                    }
 
 
 

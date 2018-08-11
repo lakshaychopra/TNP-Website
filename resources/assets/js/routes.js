@@ -128,7 +128,7 @@ let routes = [{
                 component: require('./views/post/exec/pinned')
             },
             {
-                path: '/post/:id',
+                path: '/exec/post/:id',
                 component: require('./views/post/exec/show')
             },
             {

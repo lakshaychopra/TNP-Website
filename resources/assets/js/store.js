@@ -11,6 +11,7 @@ const store = new Vuex.Store({
 			username: '',
 			phone_number: '',
 			email: '',
+			type:'',
 			// avatar: ''
 		},
 		config: {
@@ -54,6 +55,9 @@ const store = new Vuex.Store({
 		},
 		getAuthUserFullName: (state) => {
 		    return state.auth['username'];
+		},
+		getAuthUserType: (state) => {
+			return state.auth['type'];
 		},
 		getAuthUserId: (state) => {
 			return state.auth['userid'];

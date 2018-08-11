@@ -63,6 +63,7 @@
                         username: response.username,
                         phone_number: response.phone_number,
                         email: response.email,
+                        type: response.type,
                         // avatar:response.profile.avatar
                     });
                 });

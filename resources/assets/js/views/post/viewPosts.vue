@@ -169,16 +169,16 @@
                             console.log(response.data.data.data.length);
                             if (response.data.data.data.length == 0) {
                                 vm.busy = true;
-                            } else {
-                                vm.busy = false;
+                            } 
+                            else {
+                              vm.busy = false;
                             }
                             for (var i = 0; i < response.data.data.data.length; i++) {
-                                console.log(response.data.data.data[i]);
-                                vm.posts.push(response.data.data.data[i]);
+                              console.log(response.data.data.data[i]);
+                              vm.posts.push(response.data.data.data[i]);
                             }
                             vm.loading = 0;
                             vm.page = vm.page + 1;
-
                         })
                         .catch(function (error) {});
                 }, 2000);

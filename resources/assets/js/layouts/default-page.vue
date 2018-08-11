@@ -50,6 +50,7 @@
                 height: '100%',
                 color: '#dcdcdc'
             });
+            console.log(this.$store.getters.getAuthUserType);
             $('.message-scroll').slimScroll({
                 position: 'right',
                 size: "5px",
@@ -75,6 +76,7 @@
                         username: response.username,
                         phone_number: response.phone_number,
                         email: response.email,
+                        type: response.type,
                         // avatar:response.profile.avatar
                     });
                 });
