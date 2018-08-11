@@ -173,8 +173,8 @@
                                 vm.busy = false;
                             }
                                   for (var i = 0; i < response.data.data.data.length; i++) {
-                                      console.log(response.data.data[i]);
-                                      vm.posts.push(response.data.data[i]);
+                                      console.log(response.data.data.data[i]);
+                                      vm.posts.push(response.data.data.data[i]);
                                   }
                                 vm.loading = 0;
                                 vm.page = vm.page + 1;
