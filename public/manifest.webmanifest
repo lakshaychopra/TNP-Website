@@ -186,7 +186,7 @@
             "sizes": "2208x1242"
         },
         {
-            "src": "1024x1024.png",
+            "src": "/images/icons/1024x1024.png",
             "sizes": "1024x1024",
             "type": "image/png"
         }
