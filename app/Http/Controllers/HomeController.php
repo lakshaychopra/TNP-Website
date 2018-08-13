@@ -53,6 +53,7 @@ class HomeController extends Controller
     {
         if ($category != null){
             $post['data'] = Post::where('category', '=', $category)
+            ->orderBy('created_at', 'desc')
             ->get();
             return $this->respondData($post);
         }
