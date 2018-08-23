@@ -498,6 +498,9 @@
         position: absolute;
         right: 18px;
         top: 8px;
+        -ms-transform: rotate(20deg);
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg);
     }
 
     .post-meta-text {

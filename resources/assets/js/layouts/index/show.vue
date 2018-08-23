@@ -326,6 +326,9 @@
         position: absolute;
         right: 7px;
         top: -7px;
+        -ms-transform: rotate(20deg);
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg);
     }
 
     .post-meta-text {
