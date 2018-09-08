@@ -31302,13 +31302,7 @@ var render = function() {
               _c("label", { attrs: { for: "" } }, [_vm._v("Body")]),
               _vm._v(" "),
               _c("editor", {
-                attrs: {
-                  init: {
-                    plugins: "table,lists, link,media mediaembed",
-                    mediaembed_service_url: "SERVICE_URL",
-                    mediaembed_max_width: 300
-                  }
-                },
+                attrs: { init: { plugins: "table,lists, link,code" } },
                 model: {
                   value: _vm.post.content,
                   callback: function($$v) {
