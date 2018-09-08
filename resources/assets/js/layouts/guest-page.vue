@@ -19,7 +19,7 @@
             }
         },
         mounted() {
-        	$('body').removeClass('fix-header fix-sidebar card-no-border');
+        	// $('body').removeClass('fix-header fix-sidebar card-no-border');
             this.notification();
         },
         destroyed(){

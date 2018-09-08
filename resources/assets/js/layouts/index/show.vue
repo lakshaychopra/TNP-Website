@@ -192,11 +192,11 @@
             } else {
                 this.share = false;
             }
-            console.log(this.share);
+            
             this.loading = 0;
             axios.get('/api/home/view/' + this.id).then((response) => {
                     this.post = response.data.data.data[0];
-                    console.log(this.post);
+                    
                 })
                 .catch((error) => console.log(error))
         },

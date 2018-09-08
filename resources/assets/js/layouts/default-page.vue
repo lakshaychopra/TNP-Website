@@ -50,7 +50,7 @@
                 height: '100%',
                 color: '#dcdcdc'
             });
-            console.log(this.$store.getters.getAuthUserType);
+           
             $('.message-scroll').slimScroll({
                 position: 'right',
                 size: "5px",

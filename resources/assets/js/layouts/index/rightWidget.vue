@@ -1,6 +1,5 @@
 <template>
     <div class="col-md-3 px-1 d-none d-lg-block" id="sidebar">
-
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -134,8 +133,6 @@
             axios.get(rightWidget)
                 .then((response) => {
                     this.office = response.data.data[0];
-                    console.log(this.office);
-
                 })
                 .catch((error) => console.log(error))
         }

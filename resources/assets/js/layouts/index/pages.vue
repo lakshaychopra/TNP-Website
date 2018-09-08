@@ -129,7 +129,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-md-6 col-xs-12 mt-3">
+                                            <div class="col-md-6 col-xs-12 mt-3 d-none d-sm-block">
                                                 <div class="post-meta" style="float:right;">
                                                     <i class="fa fa-tags" aria-hidden="true"></i>
                                                     <div class="post-meta-text col-primary ">{{ pin.tag }}</div>
@@ -265,7 +265,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-md-6 col-xs-12 mt-3">
+                                            <div class="col-md-6 col-xs-12 mt-3 d-none d-sm-block">
                                                 <div class="post-meta" style="float:right;">
                                                     <i class="fa fa-tags" aria-hidden="true"></i>
                                                     <div class="post-meta-text col-primary ">{{ post.tag }}</div>
@@ -340,7 +340,7 @@
             } else {
                 this.share = false;
             }
-            console.log(this.share);
+            // console.log(this.share);
             this.loading = 0;
             this.getPosts();
             this.getPinnedPosts();
@@ -420,14 +420,14 @@
                     const vm = this;
                     axios.get('/api/home?page=' + vm.page)
                         .then(function (response) {
-                            console.log(response.data.data.data.length);
+                            // console.log(response.data.data.data.length);
                             if (response.data.data.data.length == 0) {
                                 vm.busy = true;
                             } else {
                                 vm.busy = false;
                             }
                             for (var i = 0; i < response.data.data.data.length; i++) {
-                                console.log(response.data.data.data[i]);
+                                // console.log(response.data.data.data[i]);
                                 vm.posts.push(response.data.data.data[i]);
                             }
                             vm.loading = 0;
@@ -447,7 +447,7 @@
                         // console.log(response);
                         this.getrecord(response);
                         // this.posts = response.data.data;
-                        console.log(response.data.data);
+                        // console.log(response.data.data);
 
                     })
                     .catch((error) => console.log(error))
@@ -459,7 +459,7 @@
                         // console.log(response);
                         this.pinned_posts = response.data.data;
                         // this.posts = response.data.data;
-                        console.log(response.data.data);
+                        // console.log(response.data.data);
 
                     })
                     .catch((error) => console.log(error))

@@ -61,15 +61,6 @@
                     </div>
                     <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
-                            <!-- <li class="list-group-item">
-                                <a href="../../files/PG.JPG" download="PG.JPG">PG Dataform</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../../files/UG.JPG" download="UG.JPG">UG Dataform</a>
-                            </li> -->
-                            <li class="list-group-item">
-                                <a href="../../files/Infosys.pdf" download="Infosys.pdf">Infosys Form</a>
-                            </li>
                             <li class="list-group-item">
                                 <a href="../../files/Evaluation.pdf" download="Evaluation.pdf">Evaluation Performa</a>
                             </li>

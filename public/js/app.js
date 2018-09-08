@@ -24366,7 +24366,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         } else {
             this.share = false;
         }
-        console.log(this.share);
+        // console.log(this.share);
         this.loading = 0;
         this.getPosts();
         this.getPinnedPosts();
@@ -24452,14 +24452,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             setTimeout(function () {
                 var vm = _this;
                 axios.get('/api/home?page=' + vm.page).then(function (response) {
-                    console.log(response.data.data.data.length);
+                    // console.log(response.data.data.data.length);
                     if (response.data.data.data.length == 0) {
                         vm.busy = true;
                     } else {
                         vm.busy = false;
                     }
                     for (var i = 0; i < response.data.data.data.length; i++) {
-                        console.log(response.data.data.data[i]);
+                        // console.log(response.data.data.data[i]);
                         vm.posts.push(response.data.data.data[i]);
                     }
                     vm.loading = 0;
@@ -24478,7 +24478,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // console.log(response);
                 _this2.getrecord(response);
                 // this.posts = response.data.data;
-                console.log(response.data.data);
+                // console.log(response.data.data);
             }).catch(function (error) {
                 return console.log(error);
             });
@@ -24491,7 +24491,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // console.log(response);
                 _this3.pinned_posts = response.data.data;
                 // this.posts = response.data.data;
-                console.log(response.data.data);
+                // console.log(response.data.data);
             }).catch(function (error) {
                 return console.log(error);
             });
@@ -24933,7 +24933,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -24945,15 +24945,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(2);
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -25272,19 +25263,6 @@ var staticRenderFns = [
                     "a",
                     {
                       attrs: {
-                        href: "../../files/Infosys.pdf",
-                        download: "Infosys.pdf"
-                      }
-                    },
-                    [_vm._v("Infosys Form")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "list-group-item" }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
                         href: "../../files/Evaluation.pdf",
                         download: "Evaluation.pdf"
                       }
@@ -25357,7 +25335,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -25369,7 +25347,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config__ = __webpack_require__(2);
-//
 //
 //
 //
@@ -25504,7 +25481,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["n" /* rightWidget */]).then(function (response) {
             _this.office = response.data.data[0];
-            console.log(_this.office);
         }).catch(function (error) {
             return console.log(error);
         });
@@ -26293,7 +26269,8 @@ var render = function() {
                                       _c(
                                         "div",
                                         {
-                                          staticClass: "col-md-6 col-xs-12 mt-3"
+                                          staticClass:
+                                            "col-md-6 col-xs-12 mt-3 d-none d-sm-block"
                                         },
                                         [
                                           _c(
@@ -26732,7 +26709,8 @@ var render = function() {
                                       _c(
                                         "div",
                                         {
-                                          staticClass: "col-md-6 col-xs-12 mt-3"
+                                          staticClass:
+                                            "col-md-6 col-xs-12 mt-3 d-none d-sm-block"
                                         },
                                         [
                                           _c(
@@ -27162,11 +27140,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         } else {
             this.share = false;
         }
-        console.log(this.share);
+
         this.loading = 0;
         axios.get('/api/home/view/' + this.id).then(function (response) {
             _this.post = response.data.data.data[0];
-            console.log(_this.post);
         }).catch(function (error) {
             return console.log(error);
         });
@@ -27886,7 +27863,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             height: '100%',
             color: '#dcdcdc'
         });
-        console.log(this.$store.getters.getAuthUserType);
+
         $('.message-scroll').slimScroll({
             position: 'right',
             size: "5px",
@@ -41731,7 +41708,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
-        $('body').removeClass('fix-header fix-sidebar card-no-border');
+        // $('body').removeClass('fix-header fix-sidebar card-no-border');
         this.notification();
     },
     destroyed: function destroyed() {}
