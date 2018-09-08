@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-3 px-1 d-none d-lg-block" id="sidebar">
+    <div class="col-md-3 px-1 d-none d-lg-block " id="sidebar">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row align-self-start sticky-top" style="top:75px">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" id="about">

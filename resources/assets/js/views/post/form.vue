@@ -15,7 +15,7 @@
                                             <label for="">Body</label>
                                             <!-- <vue-html5-editor :content="post.content :height="300" :z-index="1000" :auto-height="true" @change="updateData" name="body" ></vue-html5-editor>  -->
                                                  <!-- <vue-editor v-model="post.content"></vue-editor> -->
-                                                 <editor v-model="post.content" :init="{plugins: 'table,lists'}"></editor>
+                                                 <editor v-model="post.content" :init="{plugins: 'table,lists, link,media mediaembed', mediaembed_service_url: 'SERVICE_URL', mediaembed_max_width: 300}"></editor>
                                                  
                                         </div>
                                     </div>

@@ -25149,6 +25149,59 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
+          _c(
+            "div",
+            { staticClass: "card-header", attrs: { id: "downloads" } },
+            [_c("h4", { staticClass: "mb-1" }, [_vm._v(" Downloads")])]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "card-body",
+              staticStyle: { "padding-left": "10px", "padding-right": "10px" }
+            },
+            [
+              _c("ul", { staticClass: "list-group list-group-flush" }, [
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "../../files/Evaluation.pdf",
+                        download: "Evaluation.pdf"
+                      }
+                    },
+                    [_vm._v("Evaluation Performa")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "../../files/Training.pdf",
+                        download: "Training.pdf"
+                      }
+                    },
+                    [_vm._v("6 Month Training Form")]
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header", attrs: { id: "link" } }, [
             _c("h4", { staticClass: "mb-1" }, [_vm._v(" Useful Links")])
           ]),
@@ -25228,59 +25281,6 @@ var staticRenderFns = [
                       }
                     },
                     [_vm._v("Internshala")]
-                  )
-                ])
-              ])
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _c(
-            "div",
-            { staticClass: "card-header", attrs: { id: "downloads" } },
-            [_c("h4", { staticClass: "mb-1" }, [_vm._v(" Downloads")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "card-body",
-              staticStyle: { "padding-left": "10px", "padding-right": "10px" }
-            },
-            [
-              _c("ul", { staticClass: "list-group list-group-flush" }, [
-                _c("li", { staticClass: "list-group-item" }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "../../files/Evaluation.pdf",
-                        download: "Evaluation.pdf"
-                      }
-                    },
-                    [_vm._v("Evaluation Performa")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "list-group-item" }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "../../files/Training.pdf",
-                        download: "Training.pdf"
-                      }
-                    },
-                    [_vm._v("6 Month Training Form")]
                   )
                 ])
               ])
@@ -25498,7 +25498,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "col-md-3 px-1 d-none d-lg-block",
+      staticClass: "col-md-3 px-1 d-none d-lg-block ",
       attrs: { id: "sidebar" }
     },
     [
@@ -25570,104 +25570,111 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "card" }, [
-            _vm._m(4),
-            _vm._v(" "),
-            _vm._m(5),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "card-body",
-                staticStyle: { "padding-top": "20px" }
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _vm._m(6),
+      _c(
+        "div",
+        {
+          staticClass: "row align-self-start sticky-top",
+          staticStyle: { top: "75px" }
+        },
+        [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "card" }, [
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "card-body",
+                  staticStyle: { "padding-top": "20px" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("small", [
+                        _vm._v(
+                          _vm._s(_vm.office.about_address) +
+                            "\n                                "
+                        ),
+                        _c("br"),
+                        _vm._v(
+                          " " +
+                            _vm._s(_vm.office.about_location) +
+                            "\n                                "
+                        ),
+                        _c("br"),
+                        _vm._v(" "),
+                        _vm._m(7)
+                      ])
+                    ])
+                  ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("small", [
-                      _vm._v(
-                        _vm._s(_vm.office.about_address) +
-                          "\n                                "
-                      ),
-                      _c("br"),
-                      _vm._v(
-                        " " +
-                          _vm._s(_vm.office.about_location) +
-                          "\n                                "
-                      ),
-                      _c("br"),
-                      _vm._v(" "),
-                      _vm._m(7)
+                  _c("div", { staticClass: "row mt-2" }, [
+                    _vm._m(8),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("small", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "tel:" + _vm.office.about_phone,
+                              target: "_blank"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.office.about_phone))]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row mt-2" }, [
+                    _vm._m(9),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("small", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "mailto:" + _vm.office.about_email,
+                              target: "_blank"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.office.about_email))]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row mt-2" }, [
+                    _vm._m(10),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("small", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "https://gndec.ac.in/",
+                              target: "_blank",
+                              rel: "noopener"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.office.about_website))]
+                        )
+                      ])
                     ])
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _vm._m(8),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("small", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "tel:" + _vm.office.about_phone,
-                            target: "_blank"
-                          }
-                        },
-                        [_vm._v(_vm._s(_vm.office.about_phone))]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("small", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "mailto:" + _vm.office.about_email,
-                            target: "_blank"
-                          }
-                        },
-                        [_vm._v(_vm._s(_vm.office.about_email))]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mt-2" }, [
-                  _vm._m(10),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-10" }, [
-                    _c("small", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "https://gndec.ac.in/",
-                            target: "_blank",
-                            rel: "noopener"
-                          }
-                        },
-                        [_vm._v(_vm._s(_vm.office.about_website))]
-                      )
-                    ])
-                  ])
-                ])
-              ]
-            )
+                ]
+              )
+            ])
           ])
-        ])
-      ])
+        ]
+      )
     ]
   )
 }
@@ -31295,7 +31302,13 @@ var render = function() {
               _c("label", { attrs: { for: "" } }, [_vm._v("Body")]),
               _vm._v(" "),
               _c("editor", {
-                attrs: { init: { plugins: "table,lists" } },
+                attrs: {
+                  init: {
+                    plugins: "table,lists, link,media mediaembed",
+                    mediaembed_service_url: "SERVICE_URL",
+                    mediaembed_max_width: 300
+                  }
+                },
                 model: {
                   value: _vm.post.content,
                   callback: function($$v) {

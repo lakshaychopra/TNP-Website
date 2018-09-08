@@ -25,6 +25,25 @@
                 </div>
             </div>
         </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" id="downloads">
+                        <h4 class="mb-1"> Downloads</h4>
+                    </div>
+                    <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="../../files/Evaluation.pdf" download="Evaluation.pdf">Evaluation Performa</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../../files/Training.pdf" download="Training.pdf">6 Month Training Form</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -47,25 +66,6 @@
                             </li>
                             <li class="list-group-item">
                                 <a href="https://internshala.com" target="_blank" rel="noopener">Internshala</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header" id="downloads">
-                        <h4 class="mb-1"> Downloads</h4>
-                    </div>
-                    <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="../../files/Evaluation.pdf" download="Evaluation.pdf">Evaluation Performa</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../../files/Training.pdf" download="Training.pdf">6 Month Training Form</a>
                             </li>
                         </ul>
                     </div>
