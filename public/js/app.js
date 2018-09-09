@@ -29911,14 +29911,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             setTimeout(function () {
                 var vm = _this2;
                 axios.get('/api/home?page=' + vm.page).then(function (response) {
-                    console.log(response.data.data.data.length);
+                    // console.log(response.data.data.data.length);
                     if (response.data.data.data.length == 0) {
                         vm.busy = true;
                     } else {
                         vm.busy = false;
                     }
                     for (var i = 0; i < response.data.data.data.length; i++) {
-                        console.log(response.data.data.data[i]);
+                        // console.log(response.data.data.data[i]);
                         vm.posts.push(response.data.data.data[i]);
                     }
                     vm.loading = 0;
