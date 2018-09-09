@@ -2,12 +2,12 @@
     <div class="sticky-top" style="z-index:1022;">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <!-- Brand -->
-            <a class="navbar-brand d-none d-md-block" href="/">
+            <router-link to="/" class="navbar-brand d-none d-md-block">
                 <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
-            </a>
-            <a class="navbar-brand d-md-none" href="/">
+            </router-link>
+            <router-link to="/" class="navbar-brand d-md-none">
                 <img src="/logo.png" alt="logo" height="55px" width="55px">
-            </a>
+            </router-link>
             <div class="navbar-header">
                 <!-- Navbar links -->
                 <div class="navbar-text d-lg-none">
