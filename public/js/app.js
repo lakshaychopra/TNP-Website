@@ -26953,7 +26953,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.post-meta[data-v-0263ce66] {\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    width: 100%;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n    font-weight: 450;\n}\n.post-meta i[data-v-0263ce66] {\n    font-size: 20px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n    margin-top: 2px;\n    font-weight: bold;\n}\n.pin[data-v-0263ce66] {\n    position: absolute;\n    right: 7px;\n    top: -7px;\n    -webkit-transform: rotate(20deg);\n    transform: rotate(20deg);\n}\n.post-meta-text[data-v-0263ce66] {\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header[data-v-0263ce66] {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4[data-v-0263ce66] {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4[data-v-0263ce66]:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4[data-v-0263ce66]:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4[data-v-0263ce66]:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4[data-v-0263ce66]:after {\n    content: \"\\F0B0\";\n}\n#sidebar #link h4[data-v-0263ce66]:after {\n    content: \"\\F08E\";\n}\n#sidebar .card-header h4[data-v-0263ce66]:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i[data-v-0263ce66] {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body[data-v-0263ce66] {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body[data-v-0263ce66]:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body[data-v-0263ce66]:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary[data-v-0263ce66] {\n    color: #304156;\n}\n.card-primary[data-v-0263ce66] {\n    background: #fff;\n}\n#posts .card[data-v-0263ce66] {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header[data-v-0263ce66] {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a[data-v-0263ce66] {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a[data-v-0263ce66]:hover {\n    color: #038ed4;\n}\n#posts .post-share[data-v-0263ce66] {\n    padding-top: 20px;\n}\n#posts .card-footer[data-v-0263ce66] {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body[data-v-0263ce66] {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body[data-v-0263ce66]:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body[data-v-0263ce66]:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix[data-v-0263ce66] {\n    margin-bottom: 20px;\n}\n.sub-menu[data-v-0263ce66] {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top[data-v-0263ce66] {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom[data-v-0263ce66] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-0263ce66] {\n    margin-top: 3px;\n}\n#share[data-v-0263ce66] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-0263ce66] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown[data-v-0263ce66] {\n    float: right;\n}\n.dropdown-menu[data-v-0263ce66] {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-0263ce66] {\n    margin-right: 10px;\n}\n.bg-gray[data-v-0263ce66] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0263ce66] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0263ce66] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i[data-v-0263ce66] {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-0263ce66] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-0263ce66] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-0263ce66] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-0263ce66]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0263ce66] {\n        width: 142px;\n}\n}\n.w-65[data-v-0263ce66] {\n    width: 65%;\n}\n.fix[data-v-0263ce66] {\n    overflow: hidden;\n    top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social[data-v-0263ce66] {\n        text-align: center;\n}\n}\n#bt[data-v-0263ce66] {\n    border-top: 1px solid #ecedee;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\ndiv.scrollmenu[data-v-0263ce66] {\n    background-color: #333;\n    overflow: auto;\n    white-space: nowrap;\n}\ndiv.scrollmenu a[data-v-0263ce66] {\n    display: inline-block;\n    color: white;\n    text-align: center;\n    padding: 14px;\n    text-decoration: none;\n}\ndiv.scrollmenu a[data-v-0263ce66]:hover {\n    background-color: #777;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bg-img.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage2[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg2.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage3[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg3.jpg');\n    width: 100%;\n    height: 500px;\n    background-size: cover;\n}\n.p-top[data-v-0263ce66] {\n    padding-top: 430px;\n}\n#bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#bor-right[data-v-0263ce66] {\n    border-right: 1px solid #000;\n    height: 164px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo1 .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo1 .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n.bgcolor3[data-v-0263ce66] {\n    background-color: #474747;\n}\n.listt ul[data-v-0263ce66] {\n    list-style-type: none;\n}\n.mar-top[data-v-0263ce66] {\n    margin-top: 50px;\n}\n\n/* CSS used here will be applied after bootstrap.css */\n.closeBtn[data-v-0263ce66]:focus {\n    outline: none;\n}\n.close[data-v-0263ce66] {\n    color: gray;\n}\n.wrapper[data-v-0263ce66] {\n    position: relative;\n    margin: 0 auto;\n    overflow: hidden;\n    padding: 5px;\n    height: 50px;\n}\n.list[data-v-0263ce66] {\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    min-width: 3500px;\n    margin-top: 0px;\n}\n.list li[data-v-0263ce66] {\n    display: table-cell;\n    position: relative;\n    text-align: center;\n    cursor: grab;\n    cursor: -webkit-grab;\n    color: #efefef;\n    vertical-align: middle;\n}\n.scroller[data-v-0263ce66] {\n    text-align: center;\n    cursor: pointer;\n    display: none;\n    padding: 7px;\n    padding-top: 11px;\n    white-space: no-wrap;\n    vertical-align: middle;\n    background-color: transparent;\n}\n.scroller-right[data-v-0263ce66] {\n    float: right;\n}\n.scroller-left[data-v-0263ce66] {\n    float: left;\n}\n@media screen and (max-width:425px) {\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n.bgimage[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.bgimage2[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.mar-top[data-v-0263ce66] {\n        margin-top: 10px;\n}\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 1px solid #fff;\n    height: 200px;\n}\n.icons[data-v-0263ce66] {\n    border: 1px solid #fff;\n    padding: 12px;\n    border-radius: 50%;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\na[data-v-0263ce66] {\n    color: #fff;\n    font-size: 17px;\n}\n.scroller[data-v-0263ce66] {\n    background-color: 0;\n    color: #fff;\n}\n#nav-carousel p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n.row[data-v-0263ce66] {\n    margin-left: 0;\n    margin-right: 0;\n}\n", ""]);
+exports.push([module.i, "\n.col-primary[data-v-0263ce66] {\n    color: #304156;\n}\n.card-primary[data-v-0263ce66] {\n    background: #fff;\n}\n.btn-custom[data-v-0263ce66] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-0263ce66] {\n    margin-top: 3px;\n}\n#share[data-v-0263ce66] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-0263ce66] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown[data-v-0263ce66] {\n    float: right;\n}\n.dropdown-menu[data-v-0263ce66] {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-0263ce66] {\n    margin-right: 10px;\n}\n.bg-gray[data-v-0263ce66] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0263ce66] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0263ce66] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i[data-v-0263ce66] {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-0263ce66] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-0263ce66] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-0263ce66] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-0263ce66]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0263ce66] {\n        width: 142px;\n}\n}\n.w-65[data-v-0263ce66] {\n    width: 65%;\n}\n.fix[data-v-0263ce66] {\n    overflow: hidden;\n    top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social[data-v-0263ce66] {\n        text-align: center;\n}\n}\n#bt[data-v-0263ce66] {\n    border-top: 1px solid #ecedee;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\ndiv.scrollmenu[data-v-0263ce66] {\n    background-color: #333;\n    overflow: auto;\n    white-space: nowrap;\n}\ndiv.scrollmenu a[data-v-0263ce66] {\n    display: inline-block;\n    color: white;\n    text-align: center;\n    padding: 14px;\n    text-decoration: none;\n}\ndiv.scrollmenu a[data-v-0263ce66]:hover {\n    background-color: #777;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bg-img.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage2[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg2.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage3[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg3.jpg');\n    width: 100%;\n    height: 500px;\n    background-size: cover;\n}\n.p-top[data-v-0263ce66] {\n    padding-top: 430px;\n}\n#bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#bor-right[data-v-0263ce66] {\n    border-right: 1px solid #000;\n    height: 164px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo1 .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo1 .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n.bgcolor3[data-v-0263ce66] {\n    background-color: #474747;\n}\n.listt ul[data-v-0263ce66] {\n    list-style-type: none;\n}\n.mar-top[data-v-0263ce66] {\n    margin-top: 50px;\n}\n\n/* CSS used here will be applied after bootstrap.css */\n.closeBtn[data-v-0263ce66]:focus {\n    outline: none;\n}\n.close[data-v-0263ce66] {\n    color: gray;\n}\n.wrapper[data-v-0263ce66] {\n    position: relative;\n    margin: 0 auto;\n    overflow: hidden;\n    padding: 5px;\n    height: 50px;\n}\n.list[data-v-0263ce66] {\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    min-width: 3500px;\n    margin-top: 0px;\n}\n.list li[data-v-0263ce66] {\n    display: table-cell;\n    position: relative;\n    text-align: center;\n    cursor: grab;\n    cursor: -webkit-grab;\n    color: #efefef;\n    vertical-align: middle;\n}\n@media screen and (max-width:425px) {\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n.bgimage[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.bgimage2[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.mar-top[data-v-0263ce66] {\n        margin-top: 10px;\n}\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 1px solid #fff;\n    height: 200px;\n}\n.icons[data-v-0263ce66] {\n    border: 1px solid #fff;\n    padding: 12px;\n    border-radius: 50%;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\na[data-v-0263ce66] {\n    color: #fff;\n    font-size: 17px;\n}\n#nav-carousel p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n.row[data-v-0263ce66] {\n    margin-left: 0;\n    margin-right: 0;\n}\n", ""]);
 
 // exports
 
@@ -26970,270 +26970,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_assets_owl_theme_default_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_assets_owl_theme_default_min_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_owl_carousel2_dist_owl_carousel_min_js__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_owl_carousel2_dist_owl_carousel_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_owl_carousel2_dist_owl_carousel_min_js__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -28487,138 +28223,13 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _vm._m(5),
-    _vm._v(" "),
-    _vm._m(6),
-    _vm._v(" "),
-    _vm._m(7),
-    _vm._v(" "),
-    _vm._m(8),
-    _vm._v(" "),
-    _c("div", { staticClass: "row bgcolor3 " }, [
-      _c("div", { staticClass: "row listt" }, [
-        _vm._m(9),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-2 text-color12 mt-5" }, [
-          _vm._m(10),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c(
-                "ul",
-                [
-                  _c("h7", [_c("strong", [_vm._v("SERVICES")])]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Quality engineering")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Business operations")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("consulting & systems")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Integration")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Engineering")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Life sciences & healthcare")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Technology operations")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("TCS interactive")]),
-                  _vm._v(" "),
-                  _c("h7", [_c("strong", [_vm._v("TECHNOLOGIES")])]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Artificial intelligence")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Big data")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Cloud computing")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Cyber security")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Internet of things")])
-                ],
-                1
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-2 text-color12 mt-5" }, [
-          _vm._m(11),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c(
-                "ul",
-                [
-                  _c("h7", [_c("strong", [_vm._v("PRODUCTS")])]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Quality engineering")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Business operations")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("consulting & systems")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Integration")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Engineering")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Life sciences & healthcare")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Technology operations")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("TCS interactive")]),
-                  _vm._v(" "),
-                  _c("h7", [_c("strong", [_vm._v("PLATFORMS")])]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Advance drug development")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Connected intelligence platform")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("ERP on cloud")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("HOBS")])
-                ],
-                1
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(12),
-        _vm._v(" "),
-        _vm._m(13)
-      ]),
-      _vm._v(" "),
-      _vm._m(14)
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
+    _c(
       "nav",
-      { staticClass: "navbar navbar-expand-lg bg-dark navbar-dark" },
+      { staticClass: "navbar bg-dark navbar-dark" },
       [
         _c(
-          "a",
-          {
-            staticClass: "navbar-brand d-none d-md-block",
-            attrs: { href: "/" }
-          },
+          "router-link",
+          { staticClass: "navbar-brand d-none d-md-block", attrs: { to: "/" } },
           [
             _c("img", {
               attrs: {
@@ -28634,8 +28245,8 @@ var staticRenderFns = [
         ),
         _vm._v(" "),
         _c(
-          "a",
-          { staticClass: "navbar-brand d-md-none", attrs: { href: "/" } },
+          "router-link",
+          { staticClass: "navbar-brand d-md-none", attrs: { to: "/" } },
           [
             _c("img", {
               attrs: {
@@ -28648,46 +28259,75 @@ var staticRenderFns = [
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "navbar-header" }, [
-          _c("div", { staticClass: "navbar-text d-md-none" }, [
-            _c("ul", { staticClass: "navbar-nav list-inline" }, [
-              _c("li", { staticClass: "nav-item " })
-            ])
-          ])
-        ]),
+        _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "navbar" }, [
-          _c("div", { staticClass: "mr-auto d-none d-md-block w-65" }),
-          _vm._v(" "),
+        _vm._m(1)
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3),
+    _vm._v(" "),
+    _vm._m(4),
+    _vm._v(" "),
+    _vm._m(5),
+    _vm._v(" "),
+    _vm._m(6),
+    _vm._v(" "),
+    _vm._m(7),
+    _vm._v(" "),
+    _vm._m(8),
+    _vm._v(" "),
+    _vm._m(9),
+    _vm._v(" "),
+    _vm._m(10)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navbar-header" }, [
+      _c("div", { staticClass: "navbar-text d-md-none" }, [
+        _c("ul", { staticClass: "navbar-nav list-inline" }, [
+          _c("li", { staticClass: "nav-item " })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navbar" }, [
+      _c("div", { staticClass: "mr-auto d-none d-md-block w-65" }),
+      _vm._v(" "),
+      _c("ul", { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } }, [
+        _c("li", { staticClass: "nav-item" }, [
           _c(
-            "ul",
-            { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
+            "a",
+            {
+              staticClass: "nav-link float-right",
+              attrs: {
+                href: "#",
+                "data-target": "#more",
+                "data-toggle": "collapse"
+              }
+            },
             [
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link float-right",
-                    attrs: {
-                      href: "#",
-                      "data-target": "#more",
-                      "data-toggle": "collapse"
-                    }
-                  },
-                  [
-                    _vm._v("\n                            More "),
-                    _c("i", {
-                      staticClass: "fa fa-caret-down",
-                      attrs: { "aria-hidden": "true" }
-                    })
-                  ]
-                )
-              ])
+              _vm._v("\n                            More "),
+              _c("i", {
+                staticClass: "fa fa-caret-down",
+                attrs: { "aria-hidden": "true" }
+              })
             ]
           )
         ])
-      ]
-    )
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -28818,7 +28458,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "card-body text-justify" }, [
                 _c("p", [
                   _vm._v(
-                    "TCS lets you draw upon its superlative treasure of experience."
+                    "T&P lets you draw upon its superlative treasure of experience."
                   )
                 ])
               ])
@@ -28844,7 +28484,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "card-body text-justify" }, [
                 _c("p", [
                   _vm._v(
-                    "Stay ahead of the race by giving your career a kickstart with TCS."
+                    "Stay ahead of the race by giving your career a kickstart with T&P."
                   )
                 ])
               ])
@@ -28870,7 +28510,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "card-body text-justify" }, [
                 _c("p", [
                   _vm._v(
-                    "'Campus Meets Corporate' via digital channels to engage with TCS."
+                    "'Campus Meets Corporate' via digital channels to engage with T&P."
                   )
                 ])
               ])
@@ -28972,7 +28612,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-body text-justify" }, [
-                _c("p", [_vm._v("Develop What's Next with TCS BPS")])
+                _c("p", [_vm._v("Develop What's Next with T&P BPS")])
               ])
             ])
           ]),
@@ -29016,28 +28656,33 @@ var staticRenderFns = [
           attrs: { id: "demo", "data-ride": "carousel" }
         },
         [
-          _c(
-            "div",
-            {
-              staticClass: "carousel-indicators",
-              attrs: { id: "carousel-indicators" }
-            },
-            [
+          _c("div", { staticClass: "carousel-inner" }, [
+            _c("div", { staticClass: "carousel-item active" }, [
               _c(
                 "div",
                 {
-                  staticClass: "ml-5 mar-top border-left active",
+                  staticClass: "ml-5 mar-top border-left",
                   attrs: { "data-target": "#demo", "data-slide-to": "0" }
                 },
                 [
+                  _c("img", {
+                    attrs: {
+                      src: "images/about/img/bg-image1.jpg",
+                      alt: "Los Angeles",
+                      width: "100%"
+                    }
+                  }),
+                  _vm._v(" "),
                   _c("h6", [_c("strong", [_vm._v("Akihiko Sugiural")])]),
                   _vm._v(" "),
                   _c("p", [_vm._v("UX Designer")]),
                   _vm._v(" "),
                   _c("p", [_vm._v("Santa Clara,CA")])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "carousel-item" }, [
               _c(
                 "div",
                 {
@@ -29045,14 +28690,24 @@ var staticRenderFns = [
                   attrs: { "data-target": "#demo", "data-slide-to": "1" }
                 },
                 [
+                  _c("img", {
+                    attrs: {
+                      src: "images/about/img/bg-image2.jpg",
+                      alt: "Chicago",
+                      width: "100%"
+                    }
+                  }),
+                  _vm._v(" "),
                   _c("h6", [_c("strong", [_vm._v("Shweta Singh")])]),
                   _vm._v(" "),
                   _c("p", [_vm._v("Program Manager")]),
                   _vm._v(" "),
                   _c("p", [_vm._v("Santa Clara,CA")])
                 ]
-              ),
-              _vm._v(" "),
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "carousel-item" }, [
               _c(
                 "div",
                 {
@@ -29060,6 +28715,14 @@ var staticRenderFns = [
                   attrs: { "data-target": "#demo", "data-slide-to": "2" }
                 },
                 [
+                  _c("img", {
+                    attrs: {
+                      src: "images/about/img/bg-image3.png",
+                      alt: "New York",
+                      width: "100%"
+                    }
+                  }),
+                  _vm._v(" "),
                   _c("h6", [_c("strong", [_vm._v("Yvonne Gensurowsky")])]),
                   _vm._v(" "),
                   _c("p", [_vm._v("Senior Lead, Visual Designer")]),
@@ -29067,38 +28730,6 @@ var staticRenderFns = [
                   _c("p", [_vm._v("Santa Clara,CA")])
                 ]
               )
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "carousel-inner" }, [
-            _c("div", { staticClass: "carousel-item active" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/about/img/bg-image1.jpg",
-                  alt: "Los Angeles",
-                  width: "100%"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "carousel-item" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/about/img/bg-image2.jpg",
-                  alt: "Chicago",
-                  width: "100%"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "carousel-item" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/about/img/bg-image3.png",
-                  alt: "New York",
-                  width: "100%"
-                }
-              })
             ])
           ]),
           _vm._v(" "),
@@ -29149,13 +28780,13 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-title text-center mt-2" }, [
-              _c("h5", [_vm._v("@TCS")])
+              _c("h5", [_vm._v("@T&P")])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body text-justify" }, [
               _c("p", [
                 _vm._v(
-                  "Does embracing agile mean having to comprise on quality assurance? Gaurav Gupta, TCS\n                                explains\n                                how AI and Machine. "
+                  "Does embracing agile mean having to comprise on quality assurance? Gaurav Gupta, T&P\n                                explains\n                                how AI and Machine. "
                 )
               ])
             ])
@@ -29176,7 +28807,7 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-title text-center mt-2" }, [
-              _c("h5", [_vm._v("@TCS")])
+              _c("h5", [_vm._v("@T&P")])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body text-justify" }, [
@@ -29203,7 +28834,7 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-title text-center mt-2" }, [
-              _c("h5", [_vm._v("@TCS")])
+              _c("h5", [_vm._v("@T&P")])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body text-justify" }, [
@@ -29240,7 +28871,7 @@ var staticRenderFns = [
               _c("p", [
                 _c("strong", [
                   _vm._v(
-                    "Become a business partner in TCS' hunt for talented professionals."
+                    "Become a business partner in T&P' hunt for talented professionals."
                   )
                 ])
               ])
@@ -29257,14 +28888,14 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", [
             _c("div", { staticClass: "mb-5  mt-5" }, [
-              _c("h5", [_c("strong", [_vm._v("TCS Alumni")])])
+              _c("h5", [_c("strong", [_vm._v("T&P Alumni")])])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mb-5" }, [
               _c("p", [
                 _c("strong", [
                   _vm._v(
-                    "Become a business partner in TCS' hunt for talented professionals."
+                    "Become a business partner in T&P' hunt for talented professionals."
                   )
                 ])
               ])
@@ -29288,7 +28919,7 @@ var staticRenderFns = [
               _c("p", [
                 _c("strong", [
                   _vm._v(
-                    "Become a business partner in TCS' hunt for talented professionals."
+                    "Become a business partner in T&P' hunt for talented professionals."
                   )
                 ])
               ])
@@ -29312,7 +28943,7 @@ var staticRenderFns = [
               _c("p", [
                 _c("strong", [
                   _vm._v(
-                    "Manage your faculty account ,stay connected with TCS and more."
+                    "Manage your faculty account ,stay connected with T&P and more."
                   )
                 ])
               ])
@@ -29336,7 +28967,7 @@ var staticRenderFns = [
               _c("p", [
                 _c("strong", [
                   _vm._v(
-                    "Manage your TPO account ,stay connected with TCS and more."
+                    "Manage your TPO account ,stay connected with T&P and more."
                   )
                 ])
               ])
@@ -29358,163 +28989,195 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-2 text-color12 mt-5" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("h5", [_c("strong", [_vm._v("INDUSTRIES")])])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("ul", [
-            _c("li", [_vm._v("Banking & financial services")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Consumer goods and distribution")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Communications, media & technology")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Energy resources & utilities")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Insurance")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Life sciences & healthcare")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Manufacturing")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Public services")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Retail")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Travel transportation & hospitality")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Hitech")])
+    return _c("div", { staticClass: "row bgcolor3 " }, [
+      _c("div", { staticClass: "row listt" }, [
+        _c("div", { staticClass: "col-md-2 text-color12 mt-5" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("h5", [_c("strong", [_vm._v("INDUSTRIES")])])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("ul", [
+                _c("li", [_vm._v("Banking & financial services")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Consumer goods and distribution")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Communications, media & technology")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Energy resources & utilities")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Insurance")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Life sciences & healthcare")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Manufacturing")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Public services")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Retail")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Travel transportation & hospitality")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Hitech")])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-2 text-color12 mt-5" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("h5", [_c("strong", [_vm._v("SERVICES & TECHNOLOGIES")])])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("ul", [
+                _c("h6", [_c("strong", [_vm._v("SERVICES")])]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Quality engineering")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Business operations")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("consulting & systems")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Integration")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Engineering")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Life sciences & healthcare")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Technology operations")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("T&P interactive")]),
+                _vm._v(" "),
+                _c("h6", [_c("strong", [_vm._v("TECHNOLOGIES")])]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Artificial intelligence")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Big data")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Cloud computing")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Cyber security")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Internet of things")])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-2 text-color12 mt-5" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("h5", [_c("strong", [_vm._v("PRODUCTS & PLATFORMS")])])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("ul", [
+                _c("h6", [_c("strong", [_vm._v("PRODUCTS")])]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Quality engineering")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Business operations")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("consulting & systems")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Integration")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Engineering")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Life sciences & healthcare")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Technology operations")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("T&P interactive")]),
+                _vm._v(" "),
+                _c("h6", [_c("strong", [_vm._v("PLATFORMS")])]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Advance drug development")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Connected intelligence platform")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("ERP on cloud")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("HOBS")])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-2 text-color12 mt-5 " }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("h5", [_c("strong", [_vm._v("DISCOVER T&P")])])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("ul", [
+                _c("li", [_vm._v("About us")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Blogs")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Alliances and partnership")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Investor relations")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Research & innovation")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Perspectives")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("corporate Sustainability")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Newsroom")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Careers")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("T&P Worldwide")])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 text-color12 mt-5 bor-left" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("h5", [_vm._v("CONNECT WITH T&P")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row mt-3" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("ul", [
+                _c("li", [_c("h6", [_vm._v("Contact Us")])]),
+                _vm._v(" "),
+                _c("li", [_c("h6", [_vm._v("Disclaimer")])]),
+                _vm._v(" "),
+                _c("li", [_c("h6", [_vm._v("Private Policy")])])
+              ])
+            ])
           ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("h5", [_c("strong", [_vm._v("SERVICES & TECHNOLOGIES")])])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("h5", [_c("strong", [_vm._v("PRODUCTS & PLATFORMS")])])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-2 text-color12 mt-5 " }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("h5", [_c("strong", [_vm._v("DISCOVER TCS")])])
-        ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("ul", [
-            _c("li", [_vm._v("About us")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Blogs")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Alliances and partnership")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Investor relations")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Research & innovation")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Perspectives")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("corporate Sustainability")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Newsroom")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Careers")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("TCS Worldwide")])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-4 text-color12 mt-5 bor-left" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("h5", [_vm._v("CONNECT WITH TCS")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("i", { staticClass: "fab fa-twitter icons mr-2" }),
-          _vm._v(" "),
-          _c("i", { staticClass: "fab fa-facebook-f icons mr-2" }),
-          _vm._v(" "),
-          _c("i", { staticClass: "fab fa-instagram icons mr-2" }),
-          _vm._v(" "),
-          _c("i", { staticClass: "fab fa-google-plus-g icons mr-2" })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-3" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("i", { staticClass: "fas fa-envelope icons mr-2" }),
-          _vm._v(" "),
-          _c("i", { staticClass: "fab fa-youtube icons mr-2" }),
-          _vm._v(" "),
-          _c("i", { staticClass: "fab fa-linkedin-in icons mr-2" })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-3" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("ul", [
-            _c("li", [_c("h6", [_vm._v("Contact Us")])]),
-            _vm._v(" "),
-            _c("li", [_c("h6", [_vm._v("Disclaimer")])]),
-            _vm._v(" "),
-            _c("li", [_c("h6", [_vm._v("Private Policy")])])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row mt-5 text-color12 mx-auto text-center" },
-      [
+      _c("div", { staticClass: "row mt-5 text-color12 mx-auto text-center" }, [
         _c("div", { staticClass: "col-md-12" }, [
           _c("p", [
             _vm._v(
-              "�2018 Tata Consultancy Services Limited.All Rights Reserved."
+              "�2018 Training and Placement Cell, GNDEC Limited.All Rights Reserved."
             )
           ])
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true

@@ -1,13 +1,13 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar bg-dark navbar-dark">
             <!-- Brand -->
-            <a class="navbar-brand d-none d-md-block" href="/">
+            <router-link class="navbar-brand d-none d-md-block" to="/">
                 <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
-            </a>
-            <a class="navbar-brand d-md-none" href="/">
+            </router-link>
+            <router-link class="navbar-brand d-md-none" to="/">
                 <img src="/logo.png" alt="logo" height="55px" width="55px">
-            </a>
+            </router-link>
             <div class="navbar-header">
                 <!-- Navbar links -->
                 <div class="navbar-text d-md-none">
@@ -159,7 +159,7 @@ NAVBAR
                                 <h5>Experienced Professionals</h5>
                             </div>
                             <div class="card-body text-justify">
-                                <p>TCS lets you draw upon its superlative treasure of experience.</p>
+                                <p>T&amp;P lets you draw upon its superlative treasure of experience.</p>
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@ NAVBAR
                                 <h5>Entry Level Hiring</h5>
                             </div>
                             <div class="card-body text-justify">
-                                <p>Stay ahead of the race by giving your career a kickstart with TCS.</p>
+                                <p>Stay ahead of the race by giving your career a kickstart with T&amp;P.</p>
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@ NAVBAR
                                 <h5>Campus Commune</h5>
                             </div>
                             <div class="card-body text-justify">
-                                <p>'Campus Meets Corporate' via digital channels to engage with TCS.</p>
+                                <p>'Campus Meets Corporate' via digital channels to engage with T&amp;P.</p>
                             </div>
                         </div>
                     </div>
@@ -253,7 +253,7 @@ NAVBAR
                                 <h5>Shape the Future</h5>
                             </div>
                             <div class="card-body text-justify">
-                                <p>Develop What's Next with TCS BPS</p>
+                                <p>Develop What's Next with T&amp;P BPS</p>
                             </div>
                         </div>
                     </div>
@@ -277,47 +277,42 @@ NAVBAR
 
         <!--
          ##########################
-         people for tcs
+         people for T&amp;P
          ##########################
          	-->
         <div class="row mt-5">
             <div id="demo" class="carousel slide" data-ride="carousel">
-                <div class="carousel-indicators" id="carousel-indicators">
-                    <div class="ml-5 mar-top border-left active" data-target="#demo" data-slide-to="0">
-                        <h6>
-                            <strong>Akihiko Sugiural</strong>
-                        </h6>
-                        <p>UX Designer</p>
-                        <p>Santa Clara,CA</p>
-                    </div>
-                    <div class="ml-5 mar-top" data-target="#demo" data-slide-to="1">
-                        <h6>
-                            <strong>Shweta Singh</strong>
-                        </h6>
-                        <p>Program Manager</p>
-                        <p>Santa Clara,CA</p>
-                    </div>
-                    <div class="ml-5 mar-top" data-target="#demo" data-slide-to="2">
-                        <h6>
-                            <strong>Yvonne Gensurowsky</strong>
-                        </h6>
-                        <p>Senior Lead, Visual Designer</p>
-                        <p>Santa Clara,CA</p>
-                    </div>
-                </div>
-                <!-- Indicators
-  <ul class="carousel-indicators"><li data-target="#demo" data-slide-to="0" class="active"></li><li data-target="#demo" data-slide-to="1"></li><li data-target="#demo" data-slide-to="2"></li></ul>-->
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="images/about/img/bg-image1.jpg" alt="Los Angeles" width="100%">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/about/img/bg-image2.jpg" alt="Chicago" width="100%">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/about/img/bg-image3.png" alt="New York" width="100%">
-                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="ml-5 mar-top border-left" data-target="#demo" data-slide-to="0">
+                            <img src="images/about/img/bg-image1.jpg" alt="Los Angeles" width="100%">
+                                <h6>
+                                    <strong>Akihiko Sugiural</strong>
+                                </h6>
+                                <p>UX Designer</p>
+                                <p>Santa Clara,CA</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="ml-5 mar-top" data-target="#demo" data-slide-to="1">
+                            <img src="images/about/img/bg-image2.jpg" alt="Chicago" width="100%">
+                                <h6>
+                                    <strong>Shweta Singh</strong>
+                                </h6>
+                                <p>Program Manager</p>
+                                <p>Santa Clara,CA</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="ml-5 mar-top" data-target="#demo" data-slide-to="2">
+                            <img src="images/about/img/bg-image3.png" alt="New York" width="100%">
+                                <h6>
+                                    <strong>Yvonne Gensurowsky</strong>
+                                </h6>
+                                <p>Senior Lead, Visual Designer</p>
+                                <p>Santa Clara,CA</p>
+                            </div>
+                        </div>
                 </div>
                 <!-- Left and right controls -->
                 <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -348,10 +343,10 @@ NAVBAR
                             <img src="images/about/img/ccimage1.jpg" alt="image" width="100%" height="200px" />
                         </div>
                         <div class="card-title text-center mt-2">
-                            <h5>@TCS</h5>
+                            <h5>@T&amp;P</h5>
                         </div>
                         <div class="card-body text-justify">
-                            <p>Does embracing agile mean having to comprise on quality assurance? Gaurav Gupta, TCS
+                            <p>Does embracing agile mean having to comprise on quality assurance? Gaurav Gupta, T&amp;P
                                 explains
                                 how AI and Machine. </p>
                         </div>
@@ -363,7 +358,7 @@ NAVBAR
                             <img src="images/about/img/ccimage2.jpg" alt="image" width="100%" height="200px" />
                         </div>
                         <div class="card-title text-center mt-2">
-                            <h5>@TCS</h5>
+                            <h5>@T&amp;P</h5>
                         </div>
                         <div class="card-body text-justify">
                             <p>#Business 4.0 technology pillars are all set to rewrite the playbook for managing
@@ -379,7 +374,7 @@ NAVBAR
                             <img src="images/about/img/ccimage3.jpg" alt="image" width="100%" height="200px" />
                         </div>
                         <div class="card-title text-center mt-2">
-                            <h5>@TCS</h5>
+                            <h5>@T&amp;P</h5>
                         </div>
                         <div class="card-body text-justify">
                             <p>Learn how our partnership with @ABNAmro helped in its #digitaltransformation to Open.</p>
@@ -404,7 +399,7 @@ NAVBAR
                         </div>
                         <div class="mb-5">
                             <p>
-                                <strong>Become a business partner in TCS' hunt for talented professionals.</strong>
+                                <strong>Become a business partner in T&amp;P' hunt for talented professionals.</strong>
                             </p>
                         </div>
                         <div class="mb-5">
@@ -414,12 +409,12 @@ NAVBAR
                     <div>
                         <div class="mb-5  mt-5">
                             <h5>
-                                <strong>TCS Alumni</strong>
+                                <strong>T&amp;P Alumni</strong>
                             </h5>
                         </div>
                         <div class="mb-5">
                             <p>
-                                <strong>Become a business partner in TCS' hunt for talented professionals.</strong>
+                                <strong>Become a business partner in T&amp;P' hunt for talented professionals.</strong>
                             </p>
                         </div>
                         <div class="mb-5">
@@ -434,7 +429,7 @@ NAVBAR
                         </div>
                         <div class="mb-5">
                             <p>
-                                <strong>Become a business partner in TCS' hunt for talented professionals.</strong>
+                                <strong>Become a business partner in T&amp;P' hunt for talented professionals.</strong>
                             </p>
                         </div>
                         <div class="mb-5">
@@ -449,7 +444,7 @@ NAVBAR
                         </div>
                         <div class="mb-5">
                             <p>
-                                <strong>Manage your faculty account ,stay connected with TCS and more.</strong>
+                                <strong>Manage your faculty account ,stay connected with T&amp;P and more.</strong>
                             </p>
                         </div>
                         <div class="mb-5">
@@ -464,7 +459,7 @@ NAVBAR
                         </div>
                         <div class="mb-5">
                             <p>
-                                <strong>Manage your TPO account ,stay connected with TCS and more.</strong>
+                                <strong>Manage your TPO account ,stay connected with T&amp;P and more.</strong>
                             </p>
                         </div>
                         <div class="mb-5">
@@ -521,9 +516,9 @@ NAVBAR
                     <div class="row">
                         <div class="col-md-12">
                             <ul>
-                                <h7>
+                                <h6>
                                     <strong>SERVICES</strong>
-                                </h7>
+                                </h6>
                                 <li>Quality engineering</li>
                                 <li>Business operations</li>
                                 <li>consulting & systems</li>
@@ -531,10 +526,10 @@ NAVBAR
                                 <li>Engineering</li>
                                 <li>Life sciences & healthcare</li>
                                 <li>Technology operations</li>
-                                <li>TCS interactive</li>
-                                <h7>
+                                <li>T&amp;P interactive</li>
+                                <h6>
                                     <strong>TECHNOLOGIES</strong>
-                                </h7>
+                                </h6>
                                 <li>Artificial intelligence</li>
                                 <li>Big data</li>
                                 <li>Cloud computing</li>
@@ -555,9 +550,9 @@ NAVBAR
                     <div class="row">
                         <div class="col-md-12">
                             <ul>
-                                <h7>
+                                <h6>
                                     <strong>PRODUCTS</strong>
-                                </h7>
+                                </h6>
                                 <li>Quality engineering</li>
                                 <li>Business operations</li>
                                 <li>consulting & systems</li>
@@ -565,10 +560,10 @@ NAVBAR
                                 <li>Engineering</li>
                                 <li>Life sciences & healthcare</li>
                                 <li>Technology operations</li>
-                                <li>TCS interactive</li>
-                                <h7>
+                                <li>T&amp;P interactive</li>
+                                <h6>
                                     <strong>PLATFORMS</strong>
-                                </h7>
+                                </h6>
                                 <li>Advance drug development</li>
                                 <li>Connected intelligence platform</li>
                                 <li>ERP on cloud</li>
@@ -581,7 +576,7 @@ NAVBAR
                     <div class="row">
                         <div class="col-md-12">
                             <h5>
-                                <strong>DISCOVER TCS</strong>
+                                <strong>DISCOVER T&amp;P</strong>
                             </h5>
                         </div>
                     </div>
@@ -597,7 +592,7 @@ NAVBAR
                                 <li>corporate Sustainability</li>
                                 <li>Newsroom</li>
                                 <li>Careers</li>
-                                <li>TCS Worldwide</li>
+                                <li>T&amp;P Worldwide</li>
                             </ul>
                         </div>
                     </div>
@@ -605,22 +600,7 @@ NAVBAR
                 <div class="col-md-4 text-color12 mt-5 bor-left">
                     <div class="row">
                         <div class="col-md-12">
-                            <h5>CONNECT WITH TCS</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <i class="fab fa-twitter icons mr-2"></i>
-                            <i class="fab fa-facebook-f icons mr-2"></i>
-                            <i class="fab fa-instagram icons mr-2"></i>
-                            <i class="fab fa-google-plus-g icons mr-2"></i>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <i class="fas fa-envelope icons mr-2"></i>
-                            <i class="fab fa-youtube icons mr-2"></i>
-                            <i class="fab fa-linkedin-in icons mr-2"></i>
+                            <h5>CONNECT WITH T&amp;P</h5>
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -642,240 +622,19 @@ NAVBAR
             </div>
             <div class="row mt-5 text-color12 mx-auto text-center">
                 <div class="col-md-12">
-                    <p>�2018 Tata Consultancy Services Limited.All Rights Reserved.</p>
+                    <p>�2018 Training and Placement Cell, GNDEC Limited.All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <style scoped>
-    .post-meta {
-        margin-bottom: 5px;
-        margin-top: 5px;
-        float: left;
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #e4e6e8;
-        background-color: #f6f6f6;
-        font-size: 12px;
-        text-transform: uppercase;
-        font-weight: 450;
-    }
-
-    .post-meta i {
-        font-size: 20px;
-        float: left;
-        margin-right: 10px;
-        color: #a3a9b0;
-        margin-top: 2px;
-        font-weight: bold;
-    }
-
-    .pin {
-        position: absolute;
-        right: 7px;
-        top: -7px;
-        -ms-transform: rotate(20deg);
-        -webkit-transform: rotate(20deg);
-        transform: rotate(20deg);
-    }
-
-    .post-meta-text {
-        font-size: 12px;
-        padding-top: 3px;
-        margin-left: 5px;
-    }
-
-    #sidebar .card-header {
-        background-color: #fff;
-        border-bottom: 0;
-        padding-bottom: 0;
-        z-index: 1;
-    }
-
-    #sidebar .card-header h4 {
-        border-bottom: 2px solid #ecedee;
-        margin-bottom: 20px;
-        line-height: 28px;
-        padding-bottom: 10px;
-        position: relative;
-    }
-
-    #sidebar .card-header h4:before {
-        content: "";
-        position: absolute;
-        height: 2px;
-        width: 28px;
-        background-color: #2f3c4e;
-        bottom: -2px;
-        left: 0;
-    }
-
-    #sidebar #about h4:after {
-        content: "\f0c0";
-    }
-
-    #sidebar #office h4:after {
-        content: "\f1ad";
-    }
-
-    #sidebar #filter h4:after {
-        content: "\f0b0";
-    }
-
-    #sidebar #link h4:after {
-        content: "\f08e";
-    }
-
-    #sidebar .card-header h4:after {
-        display: block;
-        float: left;
-        background-color: #2f3c4e;
-        font-family: FontAwesome;
-        height: 28px;
-        width: 28px;
-        line-height: 28px;
-        font-size: 14px;
-        text-align: center;
-        margin-right: 10px;
-        color: #fff;
-    }
-
-    #sidebar .card-header i {
-        float: left;
-        margin-right: 9px;
-        padding: 5px 7px;
-        background-color: #2f3c4e;
-        color: #fff;
-        border-radius: 3px;
-    }
-
-    #sidebar .card-body {
-        border-bottom: 1px solid #d3d5d7;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        padding-top: 0;
-    }
-
-    #sidebar .card-body:before {
-        content: "";
-        height: 1px;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #d3d5d7;
-        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        bottom: 2px;
-        left: 0;
-        position: absolute;
-    }
-
-    #sidebar .card-body:after {
-        content: "";
-        height: 1px;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #d3d5d7;
-        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        bottom: 5px;
-        left: 0;
-        position: absolute;
-    }
-
     .col-primary {
         color: #304156;
     }
 
     .card-primary {
         background: #fff;
-    }
-
-    #posts .card {
-        border-radius: 1px;
-        margin-bottom: 25px;
-        /* border-top: 4px solid #038ed4; */
-    }
-
-    #posts .card-header {
-        background-color: #fff;
-        padding: 0.62rem 1.15rem;
-        margin-top: 6px;
-    }
-
-    #posts .card-header h2 a {
-        float: left;
-        color: #2f3c4e;
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-
-    #posts .card-header h2 a:hover {
-        color: #038ed4;
-    }
-
-    #posts .post-share {
-        padding-top: 20px;
-    }
-
-    #posts .card-footer {
-        padding: 0.40rem 0.40rem;
-        background-color: #038ed4;
-    }
-
-    #posts .card-body {
-        padding: 30px;
-        font-size: 16px;
-        position: relative;
-        border-bottom: 1px solid #d3d5d7;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-    }
-
-    #posts .card-body:before {
-        content: "";
-        height: 1px;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #d3d5d7;
-        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        bottom: 2px;
-        left: 0;
-        position: absolute;
-    }
-
-    #posts .card-body:after {
-        content: "";
-        height: 1px;
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid #d3d5d7;
-        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
-        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
-        box-shadow: 0 0 5px 0 #e2e3e4;
-        bottom: 5px;
-        left: 0;
-        position: absolute;
-    }
-
-    .clearfix {
-        margin-bottom: 20px;
-    }
-
-    .sub-menu {
-        background-color: #696969;
-        width: 150px;
-        list-style-type: none;
-    }
-
-    #posts .card-img-top {
-        height: 200px;
-        border-radius: 0;
-        /* border-top: 1px solid #000; */
-        /* background: url('/images/1.jpg') center no-repeat; */
-        background-size: cover;
     }
 
     .btn-custom {
@@ -1160,24 +919,6 @@ NAVBAR
         vertical-align: middle;
     }
 
-    .scroller {
-        text-align: center;
-        cursor: pointer;
-        display: none;
-        padding: 7px;
-        padding-top: 11px;
-        white-space: no-wrap;
-        vertical-align: middle;
-        background-color: transparent;
-    }
-
-    .scroller-right {
-        float: right;
-    }
-
-    .scroller-left {
-        float: left;
-    }
 
     @media screen and (max-width:425px) {
         #demo .carousel-indicators {
@@ -1218,11 +959,6 @@ NAVBAR
     a {
         color: #fff;
         font-size: 17px;
-    }
-
-    .scroller {
-        background-color: 0;
-        color: #fff;
     }
 
     #nav-carousel p {
