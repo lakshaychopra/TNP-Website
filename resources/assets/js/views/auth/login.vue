@@ -156,7 +156,6 @@
                     if(result){
                     axios.post(loginURL, this.loginForm).then(response => {
                         if (response.status == "200") {
-                            // window.location = "/dashboard";
                             this.token = response.data.data.access_token;
                             axios.defaults.headers.common['Authorization'] = 'Bearer' + this.token;
                             localStorage.setItem('token', this.token);                            
@@ -165,6 +164,7 @@
                             }
                             else{
                                 this.$router.push('/userlogin');
+                            // window.location = "/dashboard";
                             }
                             toastr['success'](response.data.message);
                             // this.authenticated = true;

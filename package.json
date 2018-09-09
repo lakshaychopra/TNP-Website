@@ -28,6 +28,7 @@
         "click-confirm": "^1.1.0",
         "js-cookie": "^2.1.4",
         "laravel-vue-pagination": "^1.0.6",
+        "owl.carousel2": "^2.2.1",
         "vee-validate": "^2.1.0-beta.7",
         "vue": "^2.4.2",
         "vue-infinite-scroll": "^2.0.2",
