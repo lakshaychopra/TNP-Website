@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <!-- Brand -->
             <a class="navbar-brand d-none d-md-block" href="/">
@@ -17,8 +16,6 @@
                         </li>
                     </ul>
                 </div>
-
-
             </div>
             <div class="navbar">
                 <div class="mr-auto d-none d-md-block w-65">
@@ -1283,5 +1280,4 @@ NAVBAR
         });
 
     });
-
 </script>
