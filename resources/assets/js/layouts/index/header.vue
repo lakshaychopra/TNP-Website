@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <!-- Brand -->
             <a class="navbar-brand d-none d-md-block" href="/">
-                <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong> 
+                <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
             </a>
             <a class="navbar-brand d-md-none" href="/">
                 <img src="/logo.png" alt="logo" height="55px" width="55px">
@@ -27,7 +27,8 @@
             <div class="navbar-collapse collapse" id="collapsibleNavbar">
                 <div class="mr-auto d-none d-lg-block w-65" v-if="this.searchbox=true">
                     <form class="form-inline" action="/" method="GET">
-                        <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost" autocomplete="on" id="search">
+                        <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost"
+                            autocomplete="on" id="search">
                         <!-- <button class="btn btn-info" type="submit">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button> -->
@@ -35,15 +36,20 @@
                 </div>
                 <ul class="nav navbar-nav" id="list-menu">
                     <li class="nav-item">
-                       <router-link to="/about"> <a class="nav-link float-right">
-                            <i class="fa fa-users" aria-hidden="true"></i> About</a></router-link>
+                        <router-link to="/about" class="nav-link float-right">
+                            <a>
+                                <i class="fa fa-users" aria-hidden="true"></i> About
+                            </a>
+                        </router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/login">
-                        <a class="nav-link float-right" v-if="this.$store.state.auth.username">
-                            <i class="fa fa-home" aria-hidden="true"></i> Profile</a>
-                        <a class="nav-link float-right" v-else>
-                            <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                        <router-link to="/login" class="nav-link float-right">
+                            <a  v-if="this.$store.state.auth.username">
+                                <i class="fa fa-home" aria-hidden="true"></i> Profile
+                            </a>
+                            <a  v-else>
+                                <i class="fa fa-sign-in" aria-hidden="true"></i> Login
+                            </a>
                         </router-link>
                     </li>
                 </ul>
@@ -52,7 +58,8 @@
         <form action="/" method="GET" v-if="search_input" class="d-lg-none">
             <div class="row bg-col-grey">
                 <div class="col-md-12">
-                    <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on" placeholder="Search">
+                    <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost"
+                        autocomplete="on" placeholder="Search">
                 </div>
             </div>
         </form>

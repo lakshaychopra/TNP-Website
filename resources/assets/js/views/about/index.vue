@@ -1,16 +1,28 @@
 <template>
     <div>
-        <nav style="z-index:1022;">
-            <div class="navbar navbar-expand-lg bg-dark navbar-dark">
-                <!-- Brand -->
-                <a class="navbar-brand d-none d-md-block" href="/">
-                    <img src="/logo.png" alt="logo" height="55px" width="55px">
-                    <strong>Training & Placement Cell</strong>
-                </a>
-                <a class="navbar-brand d-md-none" href="/">
-                    <img src="/logo.png" alt="logo" height="55px" width="55px">
-                </a>
-                <div class="mr-auto d-none d-lg-block w-65">
+
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand d-none d-md-block" href="/">
+                <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
+            </a>
+            <a class="navbar-brand d-md-none" href="/">
+                <img src="/logo.png" alt="logo" height="55px" width="55px">
+            </a>
+            <div class="navbar-header">
+                <!-- Navbar links -->
+                <div class="navbar-text d-md-none">
+                    <ul class="navbar-nav list-inline">
+                        <li class="nav-item ">
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="navbar">
+                <div class="mr-auto d-none d-md-block w-65">
+
                 </div>
                 <ul class="nav navbar-nav" id="list-menu">
                     <li class="nav-item">
@@ -22,218 +34,89 @@
             </div>
         </nav>
 
-
         <!--
 *************
 NAVBAR
 *************
 -->
 
-        <!-- <div class="w-100 p-2 font bgcolor textcolor" >
-            <div class="scroller scroller-left mt-2" style="display: none;">
-                <i class="fa fa-chevron-left"></i>
-            </div>
-            <div class="scroller scroller-right mt-2" style="display: flex;">
-                <i class="fa fa-chevron-right"></i>
-            </div>
-
-            <div class="wrapper">
-                <nav class="nav list mt-2" id="myTab" role="tablist" style="left: 0px;">
-                    <strong>
-                        <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#HOME" role="tab" aria-controls="public"
-                            aria-expanded="true">HOME</a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#NEWS" role="tab" data-toggle="tab">NEWS&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#CONTACT" role="tab" data-toggle="tab">CONTACT&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#ABOUT" role="tab" data-toggle="tab">ABOUT&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#SUPPORT" role="tab" data-toggle="tab">SUPPORT&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#BLOG" role="tab" data-toggle="tab">BLOG&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#TOOLS" role="tab" data-toggle="tab">TOOLS&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#BASE" role="tab" data-toggle="tab">BASE&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#CUSTOM" role="tab" data-toggle="tab">CUSTOM&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#MORE" role="tab" data-toggle="tab">MORE&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#LOGO" role="tab" data-toggle="tab">LOGO&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#FRIENDS" role="tab" data-toggle="tab">FRIENDS&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#PARTNERS" role="tab" data-toggle="tab">PARTNERS&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#PEOPLE" role="tab" data-toggle="tab">PEOPLE&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-                    <strong>
-                        <a class="nav-item nav-link" href="#WORK" role="tab" data-toggle="tab">WORK&nbsp;
-                            <button type="button" class="close closeBtn" aria-label="Close">
-
-                            </button>
-                        </a>
-                    </strong>
-
-
-                </nav>
-            </div>
-            <div class="tab-content" id="myTabContent">
-                <div role="tabpanel" class="tab-pane fade active show mt-2" id="publicChat" aria-labelledby="public-tab" aria-expanded="true">
-
-
-
-                </div>
-                <div class="tab-pane fade mt-2" id="group2" role="tabpanel" aria-labelledby="group-dropdown2-tab" aria-expanded="false">
-                    <p class="">Group chat of test group</p>
-                </div>
-            </div>
-        </div> -->
-
         <div class="w-100 p-2 font bgcolor textcolor collapse" id="more">
-                            <div class="owl-carousel" id="nav-carousel">
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                <div>
-                                    <p>HOME</p>
-                                </div>
-                                
+            <div class="owl-carousel" id="nav-carousel">
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
+                <div>
+                    <p>HOME</p>
+                </div>
 
-                            </div>
+
+            </div>
         </div>
         <!--
          ############
@@ -247,7 +130,8 @@ NAVBAR
                         <strong>Shape the Digital World</strong>
                     </h2>
                     <h5 class="text-color12">
-                        <strong>Join our global team to transform what's next. Immerse yourself in an atmosphere of innovative solutions.
+                        <strong>Join our global team to transform what's next. Immerse yourself in an atmosphere of
+                            innovative solutions.
                         </strong>
                     </h5>
                     <div class="mt-3">
@@ -323,7 +207,8 @@ NAVBAR
                         <strong>Our Heritage and Values</strong>
                     </h2>
                     <h5 class="text-color12">
-                        <strong>We're proud of our heritage and values based on creativity and innovation.Discover the best platform
+                        <strong>We're proud of our heritage and values based on creativity and innovation.Discover the
+                            best platform
                             to solidify your career.</strong>
                     </h5>
                     <div class="mt-3">
@@ -469,7 +354,8 @@ NAVBAR
                             <h5>@TCS</h5>
                         </div>
                         <div class="card-body text-justify">
-                            <p>Does embracing agile mean having to comprise on quality assurance? Gaurav Gupta, TCS explains
+                            <p>Does embracing agile mean having to comprise on quality assurance? Gaurav Gupta, TCS
+                                explains
                                 how AI and Machine. </p>
                         </div>
                     </div>
@@ -483,7 +369,8 @@ NAVBAR
                             <h5>@TCS</h5>
                         </div>
                         <div class="card-body text-justify">
-                            <p>#Business 4.0 technology pillars are all set to rewrite the playbook for managing existing downstream
+                            <p>#Business 4.0 technology pillars are all set to rewrite the playbook for managing
+                                existing downstream
                                 processes.
                             </p>
                         </div>
@@ -765,6 +652,299 @@ NAVBAR
     </div>
 </template>
 <style scoped>
+    .post-meta {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        float: left;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #e4e6e8;
+        background-color: #f6f6f6;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 450;
+    }
+
+    .post-meta i {
+        font-size: 20px;
+        float: left;
+        margin-right: 10px;
+        color: #a3a9b0;
+        margin-top: 2px;
+        font-weight: bold;
+    }
+
+    .pin {
+        position: absolute;
+        right: 7px;
+        top: -7px;
+        -ms-transform: rotate(20deg);
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg);
+    }
+
+    .post-meta-text {
+        font-size: 12px;
+        padding-top: 3px;
+        margin-left: 5px;
+    }
+
+    #sidebar .card-header {
+        background-color: #fff;
+        border-bottom: 0;
+        padding-bottom: 0;
+        z-index: 1;
+    }
+
+    #sidebar .card-header h4 {
+        border-bottom: 2px solid #ecedee;
+        margin-bottom: 20px;
+        line-height: 28px;
+        padding-bottom: 10px;
+        position: relative;
+    }
+
+    #sidebar .card-header h4:before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 28px;
+        background-color: #2f3c4e;
+        bottom: -2px;
+        left: 0;
+    }
+
+    #sidebar #about h4:after {
+        content: "\f0c0";
+    }
+
+    #sidebar #office h4:after {
+        content: "\f1ad";
+    }
+
+    #sidebar #filter h4:after {
+        content: "\f0b0";
+    }
+
+    #sidebar #link h4:after {
+        content: "\f08e";
+    }
+
+    #sidebar .card-header h4:after {
+        display: block;
+        float: left;
+        background-color: #2f3c4e;
+        font-family: FontAwesome;
+        height: 28px;
+        width: 28px;
+        line-height: 28px;
+        font-size: 14px;
+        text-align: center;
+        margin-right: 10px;
+        color: #fff;
+    }
+
+    #sidebar .card-header i {
+        float: left;
+        margin-right: 9px;
+        padding: 5px 7px;
+        background-color: #2f3c4e;
+        color: #fff;
+        border-radius: 3px;
+    }
+
+    #sidebar .card-body {
+        border-bottom: 1px solid #d3d5d7;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        padding-top: 0;
+    }
+
+    #sidebar .card-body:before {
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: #FFF;
+        border-bottom: 1px solid #d3d5d7;
+        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
+        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        bottom: 2px;
+        left: 0;
+        position: absolute;
+    }
+
+    #sidebar .card-body:after {
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: #FFF;
+        border-bottom: 1px solid #d3d5d7;
+        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
+        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        bottom: 5px;
+        left: 0;
+        position: absolute;
+    }
+
+    .col-primary {
+        color: #304156;
+    }
+
+    .card-primary {
+        background: #fff;
+    }
+
+    #posts .card {
+        border-radius: 1px;
+        margin-bottom: 25px;
+        /* border-top: 4px solid #038ed4; */
+    }
+
+    #posts .card-header {
+        background-color: #fff;
+        padding: 0.62rem 1.15rem;
+        margin-top: 6px;
+    }
+
+    #posts .card-header h2 a {
+        float: left;
+        color: #2f3c4e;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    #posts .card-header h2 a:hover {
+        color: #038ed4;
+    }
+
+    #posts .post-share {
+        padding-top: 20px;
+    }
+
+    #posts .card-footer {
+        padding: 0.40rem 0.40rem;
+        background-color: #038ed4;
+    }
+
+    #posts .card-body {
+        padding: 30px;
+        font-size: 16px;
+        position: relative;
+        border-bottom: 1px solid #d3d5d7;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+    }
+
+    #posts .card-body:before {
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: #FFF;
+        border-bottom: 1px solid #d3d5d7;
+        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
+        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        bottom: 2px;
+        left: 0;
+        position: absolute;
+    }
+
+    #posts .card-body:after {
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: #FFF;
+        border-bottom: 1px solid #d3d5d7;
+        -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
+        -moz-box-shadow: 0 0 5px 0 #e2e3e4;
+        box-shadow: 0 0 5px 0 #e2e3e4;
+        bottom: 5px;
+        left: 0;
+        position: absolute;
+    }
+
+    .clearfix {
+        margin-bottom: 20px;
+    }
+
+    .sub-menu {
+        background-color: #696969;
+        width: 150px;
+        list-style-type: none;
+    }
+
+    #posts .card-img-top {
+        height: 200px;
+        border-radius: 0;
+        /* border-top: 1px solid #000; */
+        /* background: url('/images/1.jpg') center no-repeat; */
+        background-size: cover;
+    }
+
+    .btn-custom {
+        background-color: #fff;
+        color: #212426;
+        padding: 1px 4px;
+        border-radius: 14px;
+        border-color: #b3b6b9;
+        font-size: 14px;
+        margin-right: 4px;
+    }
+
+    .sub-head {
+        margin-top: 3px;
+    }
+
+    #share {
+        position: absolute;
+        top: -22px;
+        padding: 12px;
+        right: 20px;
+        background: #038ed4;
+        border: 5px solid;
+        border-radius: 50%;
+        color: #fff;
+    }
+
+    #menu {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+
+    .dropdown {
+        float: right;
+    }
+
+    .dropdown-menu {
+        transform: translate3d(-118px, 23px, 0px) !important;
+    }
+
+    .dropdown-item i {
+        margin-right: 10px;
+    }
+
+    .bg-gray {
+        background-color: #f1f1f1;
+    }
+
+    .color-main {
+        color: #038ed4;
+    }
+
+    #bg-trans {
+        background: -webkit-linear-gradient(#333, #fff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .share i {
+        margin-top: 14px;
+        font-size: 22px;
+        color: #6b6b6b;
+        margin-right: 6px;
+    }
+
     .list-inline {
         padding-left: 0;
         list-style: none;
@@ -801,6 +981,18 @@ NAVBAR
         color: #038ed4;
     }
 
+    #search {
+        background-color: #fff;
+        border-color: #0073BC;
+        width: 83%;
+        color: #0073BC;
+        border-radius: 0;
+    }
+
+    #search::placeholder {
+        color: #0073BC;
+    }
+
     .navbar {
         padding: 0 1rem;
     }
@@ -818,6 +1010,16 @@ NAVBAR
     .fix {
         overflow: hidden;
         top: 90px;
+    }
+
+    @media only screen and (max-width: 500px) {
+        #share-social {
+            text-align: center;
+        }
+    }
+
+    #bt {
+        border-top: 1px solid #ecedee;
     }
 
     .btn-primary {
@@ -984,14 +1186,17 @@ NAVBAR
         #demo .carousel-indicators {
             top: unset;
         }
+
         .bgimage {
             height: 645px;
             overflow: hidden;
         }
+
         .bgimage2 {
             height: 645px;
             overflow: hidden;
         }
+
         .mar-top {
             margin-top: 10px;
         }
@@ -1022,12 +1227,14 @@ NAVBAR
         background-color: 0;
         color: #fff;
     }
-    #nav-carousel p{
+
+    #nav-carousel p {
         margin-bottom: 0;
         color: #fff;
         font-size: 14px;
     }
-    .row{
+
+    .row {
         margin-left: 0;
         margin-right: 0;
     }
@@ -1045,11 +1252,11 @@ NAVBAR
     }
 
     $(document).ready(function () {
-        
+
         $("#nav-carousel").owlCarousel({
-            autoWidth:true,
-            margin:30,
-                stagePadding: 50,
+            autoWidth: true,
+            margin: 30,
+            stagePadding: 50,
 
         });
         $(".owl-carousel").owlCarousel({
