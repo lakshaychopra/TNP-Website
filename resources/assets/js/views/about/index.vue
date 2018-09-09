@@ -120,20 +120,13 @@ NAVBAR
          image
          ############
          -->
-        <div class="row text-color12 text-center mb-5 mx-0">
+        <div class="row mb-5 mx-0" style="position:relative">
             <div class="bgimage">
-                <div class="p-top">
-                    <h2 class="text-color12">
-                        <strong>Shape the Digital World</strong>
-                    </h2>
-                    <h5 class="text-color12">
-                        <strong>Join our global team to transform what's next. Immerse yourself in an atmosphere of
-                            innovative solutions.
-                        </strong>
+                <div class="mb-5 ml-5 mr-5 bottom-left">
+                    <h1 class="text-color12">Training &amp; Placement Cell</h1>
+                    <h5 class="text-color12 text-justify">
+                    The goal of Training & Placement Cell is to provide students with a platform for using their potential to gain valuable experience by working in industry ,it also acts as the interface between various companies seeking talented young graduates and post graduates in various disciplines.
                     </h5>
-                    <div class="mt-3">
-                        <button class="btn btn-primary pt-2 pb-2 px-3">Search Job</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -804,7 +797,7 @@ NAVBAR
 
     .text-color12 {
         color: #fff !important;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
     }
 
     .bgimage {
@@ -812,6 +805,11 @@ NAVBAR
         width: 100%;
         height: 580px;
         background-size: cover;
+    }
+
+    .bottom-left {
+        position: absolute;
+        bottom: 8px;
     }
 
     .bgimage2 {
@@ -830,7 +828,7 @@ NAVBAR
     }
 
     .p-top {
-        padding-top: 430px;
+        padding-top: 400px;
     }
 
     #bor-left {
@@ -963,10 +961,6 @@ NAVBAR
         font-size: 14px;
     }
 
-    .row {
-        margin-left: 0;
-        margin-right: 0;
-    }
 </style>
 <script>
     import 'owl.carousel2/dist/assets/owl.carousel.css';
