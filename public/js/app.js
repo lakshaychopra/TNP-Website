@@ -24325,14 +24325,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -25892,7 +25884,32 @@ var render = function() {
                               _c("div", { staticClass: "card card-primary" }, [
                                 _c("div", { staticClass: "card-header" }, [
                                   _c("div", { staticClass: "row" }, [
-                                    _vm._m(0, true),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-1 d-none d-md-block"
+                                      },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          { attrs: { to: "/" } },
+                                          [
+                                            _c("img", {
+                                              staticClass: " mt-2",
+                                              attrs: {
+                                                src:
+                                                  "/images/icons/120x120.png",
+                                                width: "48px",
+                                                height: "48px",
+                                                alt: "logo-tpo"
+                                              }
+                                            })
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    ),
                                     _vm._v(" "),
                                     _c(
                                       "div",
@@ -26330,7 +26347,7 @@ var render = function() {
                           staticClass: "row justify-content-center",
                           attrs: { id: "posts" }
                         },
-                        [_vm._m(1)]
+                        [_vm._m(0)]
                       )
                     : _vm._l(_vm.posts, function(post) {
                         return _c(
@@ -26345,7 +26362,32 @@ var render = function() {
                               _c("div", { staticClass: "card card-primary" }, [
                                 _c("div", { staticClass: "card-header" }, [
                                   _c("div", { staticClass: "row" }, [
-                                    _vm._m(2, true),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-1 d-none d-md-block mr-2"
+                                      },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          { attrs: { to: "/" } },
+                                          [
+                                            _c("img", {
+                                              staticClass: " mt-2",
+                                              attrs: {
+                                                src:
+                                                  "/images/icons/120x120.png",
+                                                width: "48px",
+                                                height: "48px",
+                                                alt: "logo-tpo"
+                                              }
+                                            })
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    ),
                                     _vm._v(" "),
                                     _c("div", { staticClass: "col-md-10" }, [
                                       _c("div", { staticClass: "row" }, [
@@ -26807,47 +26849,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-1 d-none d-md-block" }, [
-      _c("a", { attrs: { href: "/" } }, [
-        _c("img", {
-          staticClass: " mt-2",
-          attrs: {
-            src: "/images/icons/120x120.png",
-            width: "48px",
-            height: "48px",
-            alt: "logo-tpo"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-12" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-header" }, [
           _c("h3", [_vm._v("No results found.")])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-1 d-none d-md-block mr-2" }, [
-      _c("a", { attrs: { href: "/" } }, [
-        _c("img", {
-          staticClass: " mt-2",
-          attrs: {
-            src: "/images/icons/120x120.png",
-            width: "48px",
-            height: "48px",
-            alt: "logo-tpo"
-          }
-        })
       ])
     ])
   }
@@ -30094,7 +30100,26 @@ var render = function() {
                       _c("div", { staticClass: "card card-primary" }, [
                         _c("div", { staticClass: "card-header" }, [
                           _c("div", { staticClass: "row" }, [
-                            _vm._m(1),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "col-md-1 d-none d-md-block mr-1"
+                              },
+                              [
+                                _c("router-link", { attrs: { to: "/" } }, [
+                                  _c("img", {
+                                    staticClass: " mt-2",
+                                    attrs: {
+                                      src: "/images/icons/120x120.png",
+                                      width: "48px",
+                                      height: "48px",
+                                      alt: "logo-tpo"
+                                    }
+                                  })
+                                ])
+                              ],
+                              1
+                            ),
                             _vm._v(" "),
                             _c("div", { staticClass: "col-md-10" }, [
                               _c("div", { staticClass: "row" }, [
@@ -30399,24 +30424,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-1 d-none d-md-block mr-1" }, [
-      _c("a", { attrs: { href: "/" } }, [
-        _c("img", {
-          staticClass: " mt-2",
-          attrs: {
-            src: "/images/icons/120x120.png",
-            width: "48px",
-            height: "48px",
-            alt: "logo-tpo"
-          }
-        })
-      ])
-    ])
   }
 ]
 render._withStripped = true

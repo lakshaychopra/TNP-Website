@@ -61,9 +61,9 @@
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-md-1 d-none d-md-block mr-1">
-                                                <a href="/">
+                                                <router-link to="/">
                                                     <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
-                                                </a>
+                                                </router-link>
                                             </div>
                                             <div class="col-md-10">
                                                 <div class="row">
