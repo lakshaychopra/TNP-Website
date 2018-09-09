@@ -35,14 +35,16 @@
                 </div>
                 <ul class="nav navbar-nav" id="list-menu">
                     <li class="nav-item">
-                        <a class="nav-link float-right" href="/about">
-                            <i class="fa fa-users" aria-hidden="true"></i> About</a>
+                       <router-link to="/about"> <a class="nav-link float-right">
+                            <i class="fa fa-users" aria-hidden="true"></i> About</a></router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link float-right" href="/login" v-if="this.$store.state.auth.username">
+                        <router-link to="/login">
+                        <a class="nav-link float-right" v-if="this.$store.state.auth.username">
                             <i class="fa fa-home" aria-hidden="true"></i> Profile</a>
-                        <a class="nav-link float-right" href="/login" v-else>
+                        <a class="nav-link float-right" v-else>
                             <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                        </router-link>
                     </li>
                 </ul>
             </div>
@@ -109,7 +111,7 @@
 
     #list-menu li a {
         color: #f7fbff;
-        padding: 20px;
+        padding: 10px;
         float: left;
         border-bottom: 4px solid rgba(255, 255, 255, 0);
     }

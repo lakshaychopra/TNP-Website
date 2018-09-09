@@ -1,11 +1,16 @@
 import VueRouter from 'vue-router'
 import helper from './services/helper'
 let routes = [{
-        path: '/',
-        component: require('./layouts/index/pages.vue'),
-        name: 'index',
-    },
-    {
+    path: '/',
+    component: require('./layouts/index/pages.vue'),
+    name: 'index',
+},
+{
+    path: '/hid',
+    component: require('./views/about/index.vue'),
+    name: 'hid',
+},
+{
         path: '/view/:id',
         name: 'view',
         props: true,
