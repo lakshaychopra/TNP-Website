@@ -26953,7 +26953,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.col-primary[data-v-0263ce66] {\n    color: #304156;\n}\n.card-primary[data-v-0263ce66] {\n    background: #fff;\n}\n.btn-custom[data-v-0263ce66] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-0263ce66] {\n    margin-top: 3px;\n}\n#share[data-v-0263ce66] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-0263ce66] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown[data-v-0263ce66] {\n    float: right;\n}\n.dropdown-menu[data-v-0263ce66] {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-0263ce66] {\n    margin-right: 10px;\n}\n.bg-gray[data-v-0263ce66] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0263ce66] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0263ce66] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i[data-v-0263ce66] {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-0263ce66] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-0263ce66] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-0263ce66] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-0263ce66]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0263ce66] {\n        width: 142px;\n}\n}\n.w-65[data-v-0263ce66] {\n    width: 65%;\n}\n.fix[data-v-0263ce66] {\n    overflow: hidden;\n    top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social[data-v-0263ce66] {\n        text-align: center;\n}\n}\n#bt[data-v-0263ce66] {\n    border-top: 1px solid #ecedee;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\ndiv.scrollmenu[data-v-0263ce66] {\n    background-color: #333;\n    overflow: auto;\n    white-space: nowrap;\n}\ndiv.scrollmenu a[data-v-0263ce66] {\n    display: inline-block;\n    color: white;\n    text-align: center;\n    padding: 14px;\n    text-decoration: none;\n}\ndiv.scrollmenu a[data-v-0263ce66]:hover {\n    background-color: #777;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n    /* font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"; */\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bg-img.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bottom-left[data-v-0263ce66] {\n    position: absolute;\n    bottom: 8px;\n}\n.bgimage2[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg2.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage3[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg3.jpg');\n    width: 100%;\n    height: 500px;\n    background-size: cover;\n}\n.p-top[data-v-0263ce66] {\n    padding-top: 400px;\n}\n#bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#bor-right[data-v-0263ce66] {\n    border-right: 1px solid #000;\n    height: 164px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo1 .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo1 .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n.bgcolor3[data-v-0263ce66] {\n    background-color: #474747;\n}\n.listt ul[data-v-0263ce66] {\n    list-style-type: none;\n}\n.mar-top[data-v-0263ce66] {\n    margin-top: 50px;\n}\n\n/* CSS used here will be applied after bootstrap.css */\n.closeBtn[data-v-0263ce66]:focus {\n    outline: none;\n}\n.close[data-v-0263ce66] {\n    color: gray;\n}\n.wrapper[data-v-0263ce66] {\n    position: relative;\n    margin: 0 auto;\n    overflow: hidden;\n    padding: 5px;\n    height: 50px;\n}\n.list[data-v-0263ce66] {\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    min-width: 3500px;\n    margin-top: 0px;\n}\n.list li[data-v-0263ce66] {\n    display: table-cell;\n    position: relative;\n    text-align: center;\n    cursor: grab;\n    cursor: -webkit-grab;\n    color: #efefef;\n    vertical-align: middle;\n}\n@media screen and (max-width:425px) {\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n.bgimage[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.bgimage2[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.mar-top[data-v-0263ce66] {\n        margin-top: 10px;\n}\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 1px solid #fff;\n    height: 200px;\n}\n.icons[data-v-0263ce66] {\n    border: 1px solid #fff;\n    padding: 12px;\n    border-radius: 50%;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\na[data-v-0263ce66] {\n    color: #fff;\n    font-size: 17px;\n}\n#nav-carousel p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n\n", ""]);
+exports.push([module.i, "\n.col-primary[data-v-0263ce66] {\n    color: #304156;\n}\n.card-primary[data-v-0263ce66] {\n    background: #fff;\n}\n.btn-custom[data-v-0263ce66] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-0263ce66] {\n    margin-top: 3px;\n}\n#share[data-v-0263ce66] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-0263ce66] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.dropdown[data-v-0263ce66] {\n    float: right;\n}\n.dropdown-menu[data-v-0263ce66] {\n    -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n            transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-0263ce66] {\n    margin-right: 10px;\n}\n.bg-gray[data-v-0263ce66] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0263ce66] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0263ce66] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i[data-v-0263ce66] {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-0263ce66] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-0263ce66] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-0263ce66] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-0263ce66]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0263ce66] {\n        width: 142px;\n}\n}\n.w-65[data-v-0263ce66] {\n    width: 65%;\n}\n.fix[data-v-0263ce66] {\n    overflow: hidden;\n    top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social[data-v-0263ce66] {\n        text-align: center;\n}\n}\n#bt[data-v-0263ce66] {\n    border-top: 1px solid #ecedee;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\ndiv.scrollmenu[data-v-0263ce66] {\n    background-color: #333;\n    overflow: auto;\n    white-space: nowrap;\n}\ndiv.scrollmenu a[data-v-0263ce66] {\n    display: inline-block;\n    color: white;\n    text-align: center;\n    padding: 14px;\n    text-decoration: none;\n}\ndiv.scrollmenu a[data-v-0263ce66]:hover {\n    background-color: #777;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n    /* font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"; */\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bg-img.jpg');\n    width: 100%;\n    height: 100vh;\n    background-size: cover;\n}\n.bottom-left[data-v-0263ce66] {\n    position: absolute;\n    bottom: 8px;\n}\n.bgimage2[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg2.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage3[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg3.jpg');\n    width: 100%;\n    height: 500px;\n    background-size: cover;\n}\n.p-top[data-v-0263ce66] {\n    padding-top: 400px;\n}\n#bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#bor-right[data-v-0263ce66] {\n    border-right: 1px solid #000;\n    height: 164px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo1 .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo1 .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n.bgcolor3[data-v-0263ce66] {\n    background-color: #474747;\n}\n.listt ul[data-v-0263ce66] {\n    list-style-type: none;\n}\n.mar-top[data-v-0263ce66] {\n    margin-top: 50px;\n}\n\n/* CSS used here will be applied after bootstrap.css */\n.closeBtn[data-v-0263ce66]:focus {\n    outline: none;\n}\n.close[data-v-0263ce66] {\n    color: gray;\n}\n.wrapper[data-v-0263ce66] {\n    position: relative;\n    margin: 0 auto;\n    overflow: hidden;\n    padding: 5px;\n    height: 50px;\n}\n.list[data-v-0263ce66] {\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    min-width: 3500px;\n    margin-top: 0px;\n}\n.list li[data-v-0263ce66] {\n    display: table-cell;\n    position: relative;\n    text-align: center;\n    cursor: grab;\n    cursor: -webkit-grab;\n    color: #efefef;\n    vertical-align: middle;\n}\n@media screen and (max-width:425px) {\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n.bgimage[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.bgimage2[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.mar-top[data-v-0263ce66] {\n        margin-top: 10px;\n}\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 1px solid #fff;\n    height: 200px;\n}\n.icons[data-v-0263ce66] {\n    border: 1px solid #fff;\n    padding: 12px;\n    border-radius: 50%;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\na[data-v-0263ce66] {\n    color: #fff;\n    font-size: 17px;\n}\n#nav-carousel p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n\n", ""]);
 
 // exports
 
@@ -26970,6 +26970,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_assets_owl_theme_default_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_assets_owl_theme_default_min_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_owl_carousel2_dist_owl_carousel_min_js__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_owl_carousel2_dist_owl_carousel_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_owl_carousel2_dist_owl_carousel_min_js__);
+//
 //
 //
 //
@@ -28214,46 +28215,55 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c(
-      "nav",
-      { staticClass: "navbar bg-dark navbar-dark" },
+      "div",
+      { staticClass: "sticky-top", staticStyle: { "z-index": "1022" } },
       [
         _c(
-          "router-link",
-          { staticClass: "navbar-brand d-none d-md-block", attrs: { to: "/" } },
+          "nav",
+          { staticClass: "navbar bg-dark navbar-dark" },
           [
-            _c("img", {
-              attrs: {
-                src: "/logo.png",
-                alt: "logo",
-                height: "55px",
-                width: "55px"
-              }
-            }),
+            _c(
+              "router-link",
+              {
+                staticClass: "navbar-brand d-none d-md-block",
+                attrs: { to: "/" }
+              },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "/logo.png",
+                    alt: "logo",
+                    height: "55px",
+                    width: "55px"
+                  }
+                }),
+                _vm._v(" "),
+                _c("strong", [_vm._v("Training & Placement Cell")])
+              ]
+            ),
             _vm._v(" "),
-            _c("strong", [_vm._v("Training & Placement Cell")])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          { staticClass: "navbar-brand d-md-none", attrs: { to: "/" } },
-          [
-            _c("img", {
-              attrs: {
-                src: "/logo.png",
-                alt: "logo",
-                height: "55px",
-                width: "55px"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1)
-      ],
-      1
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand d-md-none", attrs: { to: "/" } },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "/logo.png",
+                    alt: "logo",
+                    height: "55px",
+                    width: "55px"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1)
+          ],
+          1
+        )
+      ]
     ),
     _vm._v(" "),
     _vm._m(2),

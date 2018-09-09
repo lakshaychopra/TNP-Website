@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div class="sticky-top" style="z-index:1022;">
         <nav class="navbar bg-dark navbar-dark">
             <!-- Brand -->
             <router-link class="navbar-brand d-none d-md-block" to="/">
@@ -30,7 +31,7 @@
                 </ul>
             </div>
         </nav>
-
+        </div>
         <!--
 *************
 NAVBAR
@@ -803,7 +804,7 @@ NAVBAR
     .bgimage {
         background-image: url('/images/about/img/bg-img.jpg');
         width: 100%;
-        height: 580px;
+        height: 100vh;
         background-size: cover;
     }
 
