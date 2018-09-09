@@ -282,37 +282,33 @@ NAVBAR
          	-->
         <div class="row mt-5">
             <div id="demo" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="ml-5 mar-top border-left" data-target="#demo" data-slide-to="0">
-                            <img src="images/about/img/bg-image1.jpg" alt="Los Angeles" width="100%">
-                                <h6>
-                                    <strong>Akihiko Sugiural</strong>
-                                </h6>
-                                <p>UX Designer</p>
-                                <p>Santa Clara,CA</p>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="ml-5 mar-top border-left" data-target="#demo" data-slide-to="0">
+                            <div>
+                                <strong>Prof. G. S. Sodhi</strong>
+                                <p>Officer</p>
+                                <p>Training &amp; Placement Cell</p>
                             </div>
+                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell" width="100%">
                         </div>
-                        <div class="carousel-item">
-                            <div class="ml-5 mar-top" data-target="#demo" data-slide-to="1">
-                            <img src="images/about/img/bg-image2.jpg" alt="Chicago" width="100%">
-                                <h6>
-                                    <strong>Shweta Singh</strong>
-                                </h6>
-                                <p>Program Manager</p>
-                                <p>Santa Clara,CA</p>
-                            </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="ml-5 mar-top" data-target="#demo" data-slide-to="1">
+                            <strong>Dr. K. S. Mann</strong>
+                            <p>Advisor</p>
+                            <p>Training &amp; Placement Cell</p>
+                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell" width="100%">
                         </div>
-                        <div class="carousel-item">
-                            <div class="ml-5 mar-top" data-target="#demo" data-slide-to="2">
-                            <img src="images/about/img/bg-image3.png" alt="New York" width="100%">
-                                <h6>
-                                    <strong>Yvonne Gensurowsky</strong>
-                                </h6>
-                                <p>Senior Lead, Visual Designer</p>
-                                <p>Santa Clara,CA</p>
-                            </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="ml-5 mar-top" data-target="#demo" data-slide-to="2">
+                            <strong>Prof. Sachin Bagga</strong>
+                            <p>Faculty Co-ordinator</p>
+                            <p>Training &amp; Placement Cell</p>
+                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell" width="100%">
                         </div>
+                    </div>
                 </div>
                 <!-- Left and right controls -->
                 <a class="carousel-control-prev" href="#demo" data-slide="prev">
