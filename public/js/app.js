@@ -29447,6 +29447,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -29605,135 +29607,148 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c(
-      "nav",
-      { staticClass: "navbar navbar-expand-lg bg-dark navbar-dark" },
+      "div",
+      { staticClass: "sticky-top", staticStyle: { "z-index": "1022" } },
       [
         _c(
-          "router-link",
-          { staticClass: "navbar-brand d-none d-md-block", attrs: { to: "/" } },
+          "nav",
+          { staticClass: "navbar navbar-expand-lg bg-dark navbar-dark" },
           [
-            _c("img", {
-              attrs: {
-                src: "/logo.png",
-                alt: "logo",
-                height: "55px",
-                width: "55px"
-              }
-            }),
-            _vm._v(" "),
-            _c("strong", [_vm._v("Training & Placement Cell")])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          { staticClass: "navbar-brand d-md-none", attrs: { to: "/" } },
-          [
-            _c("img", {
-              attrs: {
-                src: "/logo.png",
-                alt: "logo",
-                height: "55px",
-                width: "55px"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "navbar-header" }, [
-          _c("div", { staticClass: "navbar-text d-md-none" }, [
-            _c("ul", { staticClass: "navbar-nav list-inline" }, [
-              _c("li", { staticClass: "nav-item " }, [
-                _c("a", {
-                  staticClass: "nav-link",
-                  attrs: { href: "#" },
-                  on: {
-                    click: function($event) {
-                      _vm.search_input = !_vm.search_input
-                    }
+            _c(
+              "router-link",
+              {
+                staticClass: "navbar-brand d-none d-md-block",
+                attrs: { to: "/" }
+              },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "/logo.png",
+                    alt: "logo",
+                    height: "55px",
+                    width: "55px"
                   }
-                })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(0)
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "navbar-collapse collapse",
-            attrs: { id: "collapsibleNavbar" }
-          },
-          [
-            _c("div", { staticClass: "mr-auto d-none d-md-block w-65" }),
+                }),
+                _vm._v(" "),
+                _c("strong", [_vm._v("Training & Placement Cell")])
+              ]
+            ),
             _vm._v(" "),
             _c(
-              "ul",
-              { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
+              "router-link",
+              { staticClass: "navbar-brand d-md-none", attrs: { to: "/" } },
               [
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link float-right",
-                        attrs: { to: "/about" }
-                      },
-                      [
-                        _c("a", [
-                          _c("i", {
-                            staticClass: "fa fa-users",
-                            attrs: { "aria-hidden": "true" }
-                          }),
-                          _vm._v(" About\n                        ")
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                ),
+                _c("img", {
+                  attrs: {
+                    src: "/logo.png",
+                    alt: "logo",
+                    height: "55px",
+                    width: "55px"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "navbar-header" }, [
+              _c("div", { staticClass: "navbar-text d-md-none" }, [
+                _c("ul", { staticClass: "navbar-nav list-inline" }, [
+                  _c(
+                    "li",
+                    { staticClass: "nav-item " },
+                    [
+                      _c(
+                        "router-link",
+                        { staticClass: "nav-link", attrs: { to: "/" } },
+                        [
+                          _c("i", { staticClass: "fa fa-long-arrow-left" }),
+                          _vm._v(" Back\n                        ")
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "navbar-collapse collapse",
+                attrs: { id: "collapsibleNavbar" }
+              },
+              [
+                _c("div", { staticClass: "mr-auto d-none d-md-block w-65" }),
                 _vm._v(" "),
                 _c(
-                  "li",
-                  { staticClass: "nav-item" },
+                  "ul",
+                  { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
                   [
                     _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link float-right",
-                        attrs: { to: "/login" }
-                      },
+                      "li",
+                      { staticClass: "nav-item" },
                       [
-                        this.$store.state.auth.username
-                          ? _c("a", [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link float-right",
+                            attrs: { to: "/about" }
+                          },
+                          [
+                            _c("a", [
                               _c("i", {
-                                staticClass: "fa fa-home",
+                                staticClass: "fa fa-users",
                                 attrs: { "aria-hidden": "true" }
                               }),
-                              _vm._v(" Profile\n                        ")
+                              _vm._v(" About\n                        ")
                             ])
-                          : _c("a", [
-                              _c("i", {
-                                staticClass: "fa fa-sign-in",
-                                attrs: { "aria-hidden": "true" }
-                              }),
-                              _vm._v(" Login\n                        ")
-                            ])
-                      ]
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link float-right",
+                            attrs: { to: "/login" }
+                          },
+                          [
+                            this.$store.state.auth.username
+                              ? _c("a", [
+                                  _c("i", {
+                                    staticClass: "fa fa-home",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _vm._v(" Profile\n                        ")
+                                ])
+                              : _c("a", [
+                                  _c("i", {
+                                    staticClass: "fa fa-sign-in",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _vm._v(" Login\n                        ")
+                                ])
+                          ]
+                        )
+                      ],
+                      1
                     )
-                  ],
-                  1
+                  ]
                 )
               ]
             )
-          ]
+          ],
+          1
         )
-      ],
-      1
+      ]
     ),
     _vm._v(" "),
     _c("div", { staticClass: "bg-gray" }, [

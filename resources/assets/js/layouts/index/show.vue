@@ -1,5 +1,6 @@
 <template>
     <div>
+    <div class="sticky-top" style="z-index:1022;">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <!-- Brand -->
             <router-link to="/" class="navbar-brand d-none d-md-block">
@@ -13,8 +14,9 @@
                 <div class="navbar-text d-md-none">
                     <ul class="navbar-nav list-inline">
                         <li class="nav-item ">
-                            <a class="nav-link" href="#" @click="search_input = !search_input">
-                            </a>
+                            <router-link class="nav-link" to="/" >
+                                <i class="fa fa-long-arrow-left"></i> Back
+                            </router-link>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +50,7 @@
                 </ul>
             </div>
         </nav>
-
+    </div>
         <div class="bg-gray">
             <div class="container py-4">
                 <div class="row">
