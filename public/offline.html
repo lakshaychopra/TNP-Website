@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -12,8 +12,8 @@
     <meta name="keywords" content="gndec,gne,t&p,cell">
     <meta name="theme-color" content="#038ed4">
 
-    <link rel="icon" type="image/png" href="/images/icons/180x180.png" sizes="180x180" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="images/icons/180x180.png" sizes="180x180" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script type='application/ld+json'>
         {
             "@context": "http://schema.org/",
@@ -52,7 +52,7 @@
     <meta property="og:url" content="https://www.tnpgndec.com">
     <meta property="og:site_name" content="T&P">
     <meta property="og:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
-    <meta property="og:image" content="/images/icons/512x512.png">
+    <meta property="og:image" content="images/icons/512x512.png">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="https://www.tnpgndec.com">
@@ -61,24 +61,24 @@
     <meta name="twitter:image" content="/images/icons/300x300.png">
     <title>Training and Placement Cell Offline</title>
 
-    <link type="text/plain" rel="author" href="/humans.txt" />
-    <link rel="manifest" href="/manifest.webmanifest">
+    <link type="text/plain" rel="author" href="humans.txt" />
+    <link rel="manifest" href="manifest.webmanifest">
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js" integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA" crossorigin="anonymous"></script>
     <meta name="msvalidate.01" content="12764669904A814D6F82E14D5B9DCD1E" />
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="T&P">
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/180x180.png">
-    <meta name="msapplication-TileImage" content="/images/icons/144x144.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/icons/57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/icons/60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/icons/76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/180x180.png">
+    <meta name="msapplication-TileImage" content="images/icons/144x144.png">
     <meta name="msapplication-TileColor" content="#fff">
     <noscript>Your browser does not support JavaScript!</noscript>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -100,16 +100,16 @@
         font-size: 20px;
         line-height: 32px;
         background: #FFF;
-        margin: 0
+        margin: 0;
+        height: 100vh;
     }
     
     p {
         margin: 0 0 20px
     }
     
-    h1 {
-        font-size: 60px;
-        line-height: 65px;
+    h2 {
+        line-height: 45px;
         margin: 0 0 25px;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -118,21 +118,27 @@
     
     .fullwidth {
         width: 100%;
-        padding: 50px 25px;
+        padding: 60px 25px;
         min-width: 280px;
-        position: relative;
+        position: fixed;
         vertical-align: bottom;
-        bottom: 0;
+        bottom: 40px;
         left: 0;
-        right: 0;
         background: #038ed4
     }
     
-    .center_img {
-        margin: 0 auto;
-        width: 100%;
+    .center_text {
         text-align: center;
-        color: #FFF
+        color: #FFF;
+        position: relative;
+    }
+    
+    .image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        padding: 20px 25px;
     }
     
     @media screen and (max-width:768px) {
@@ -147,18 +153,84 @@
             }
         }
     }
+    
+    .nav {
+        height: 50px;
+        width: 100%;
+        background-color: #038ed4;
+        position: relative;
+    }
+    
+    .nav>.nav-header {
+        display: inline;
+    }
+    
+    .nav>.nav-header>.nav-title {
+        display: inline-block;
+        font-size: 22px;
+        color: #fff;
+        padding: 10px 10px 10px 10px;
+    }
+    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #038ed4;
+        color: white;
+        text-align: center;
+    }
+    
+    @media (max-width:600px) {
+        .nav>.nav-links {
+            position: absolute;
+            display: block;
+            width: 100%;
+            background-color: #333;
+            height: 0px;
+            transition: all 0.3s ease-in;
+            overflow-y: hidden;
+            top: 50px;
+            left: 0px;
+        }
+        .nav>.nav-links>a {
+            display: block;
+            width: 100%;
+        }
+        .nav>#nav-check:not(:checked)+.nav-links {
+            height: 0px;
+        }
+        .nav>#nav-check:checked+.nav-links {
+            height: calc(100vh - 50px);
+            overflow-y: auto;
+        }
+    }
 </style>
 </head>
 
 <body>
-    <div class="center_img">
-        <img src="offline.png" width="300px" height="300px">
+
+    <div class="nav">
+        <div class="nav-header">
+            <div class="nav-title">
+                T&amp;P Cell
+            </div>
+        </div>
+        <div class="nav-links">
+        </div>
     </div>
-    <div class="fullwidth colour1 ">
-        <div class="center_img ">
-            <h1><span>T&amp;P</span><br />is Offline</h1>
+
+    <img src="offline.png" class="image" alt="offline" width="300" height="300">
+    <div class="fullwidth colour1">
+        <div class="center_text ">
+            <h2><span>T&amp;P</span><br />is Offline</h2>
             <p>Please find internet to continue to the app</p>
         </div>
+    </div>
+    <div class="footer">
+        <hr>
+        <p class="center_text "><small>Developed with &lt;3 by <a href="humans.txt">Genconians</a> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC, Ldh</a></small></p>
     </div>
 </body>
 <!-- Global site tag (gtag.js) - Google Analytics -->
