@@ -657,18 +657,6 @@ NAVBAR
         vertical-align: middle;
     }
 
-    .dropdown {
-        float: right;
-    }
-
-    .dropdown-menu {
-        transform: translate3d(-118px, 23px, 0px) !important;
-    }
-
-    .dropdown-item i {
-        margin-right: 10px;
-    }
-
     .bg-gray {
         background-color: #f1f1f1;
     }
@@ -772,24 +760,6 @@ NAVBAR
         color: #fff;
         background-color: #007bff;
         border-color: #007bff;
-    }
-
-    div.scrollmenu {
-        background-color: #333;
-        overflow: auto;
-        white-space: nowrap;
-    }
-
-    div.scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
-    }
-
-    div.scrollmenu a:hover {
-        background-color: #777;
     }
 
     .bgcolor {
@@ -965,7 +935,6 @@ NAVBAR
 </style>
 <script>
     import 'owl.carousel2/dist/assets/owl.carousel.css';
-    import 'owl.carousel2/dist/assets/owl.theme.default.min.css';
     import 'owl.carousel2/dist/owl.carousel.min.js';
     export default {
         data() {

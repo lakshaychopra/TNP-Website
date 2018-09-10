@@ -513,18 +513,6 @@
         vertical-align: middle;
     }
 
-    .dropdown {
-        float: right;
-    }
-
-    .dropdown-menu {
-        transform: translate3d(-118px, 23px, 0px) !important;
-    }
-
-    .dropdown-item i {
-        margin-right: 10px;
-    }
-
     .bg-gray {
         background-color: #f1f1f1;
     }
