@@ -18,6 +18,75 @@
             </ul>
         </nav>
 
+        <!--Thanks-->
+        <!-- TESTIMONIALS -->
+        <section class="testimonials pb-0">
+            <div class="container">
+                <h5 class="thanks-title h1">THANKS TO FACULTY TEAM</h5>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="customers-testimonials" class="owl-carousel">
+                            <!--TESTIMONIAL 1 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <div class="item-details">
+                                        <h5>Prof. G.S. Sodhi</h5>
+                                        <p class="thanks-subtitle">Training and Placement Officer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 1 -->
+                            <!--TESTIMONIAL 2 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <div class="item-details">
+                                        <h5>Dr. Sehijpal Singh</h5>
+                                        <p class="thanks-subtitle">Principal, GNDEC</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 2 -->
+                            <!--TESTIMONIAL 3 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <div class="item-details">
+                                        <h5>Dr. K.S. Mann</h5>
+                                        <p class="thanks-subtitle">T&amp;P Advisor</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 3 -->
+                            <!--TESTIMONIAL 4 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <div class="item-details">
+                                        <h5>Prof. Jasmaninder Singh</h5>
+                                        <p class="thanks-subtitle">T&amp;P Advisor</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 4 -->
+                            <!--TESTIMONIAL 5 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <div class="item-details">
+                                        <h5>Prof. Sachin Bagga</h5>
+                                        <p class="thanks-subtitle">T&amp;P FACULTY Cordinator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 5 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END OF TESTIMONIALS -->
 
         <!-- Team -->
         <section id="team" class="mb-5">
@@ -121,20 +190,45 @@
         <!-- Team -->
 
         <footer class="row footer mt-5" style="left:0">
-        <div class="container">
-            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
-                    </span> by
-                    <a href="#">Genconians</a> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC, Ldh</a></small></p>
-        </div>
+            <div class="container">
+                <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart"
+                                aria-hidden="true"></i>
+                        </span> by
+                        <a href="#">Genconians</a> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC,
+                            Ldh</a></small></p>
+            </div>
         </footer>
     </div>
 </template>
 <script>
-    export default {
-        mounted() {
-
-        }
-    }
+    import 'owl.carousel2/dist/assets/owl.carousel.css';
+    import 'owl.carousel2/dist/owl.carousel.min.js';
+    jQuery(document).ready(function ($) {
+        "use strict";
+        $('#customers-testimonials').owlCarousel({
+            loop: true,
+            center: true,
+            items: 3,
+            margin: 30,
+            autoplay: true,
+            dots: true,
+            nav: true,
+            autoplayTimeout: 8500,
+            smartSpeed: 450,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                1170: {
+                    items: 3
+                }
+            }
+        });
+    });
 </script>
 <style scoped>
     ul.list-inline li {
@@ -281,4 +375,94 @@
         font-size: 22px;
     }
 
+    /* thanks */
+
+    section .thanks-title {
+        text-align: left;
+        color: #038ed4;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+    .thanks-subtitle {
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .testimonials {
+        background-color: #fff;
+        position: relative;
+        padding-top: 60px;
+    }
+
+    .testimonials:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 30%;
+        background-color: #f1f1f1;
+    }
+
+    #customers-testimonials .item-details {
+        background-color: #333333;
+        color: #fff;
+        padding: 20px 10px;
+        text-align: left;
+    }
+
+    #customers-testimonials .item-details h5 {
+        margin: 0 0 15px;
+        font-size: 18px;
+        line-height: 18px;
+        color: #fff;
+    }
+
+
+    #customers-testimonials .item-details h5 span p {
+        font-size: 14px;
+    }
+
+    .item {
+        text-align: center;
+        /*  padding: 20px; */
+        margin-bottom: 80px;
+    }
+
+    .owl-carousel .owl-nav [class*='owl-'] {
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+
+    .owl-carousel .owl-nav [class*='owl-'].disabled:hover {
+        background-color: #D6D6D6;
+    }
+
+    .owl-carousel {
+        position: relative;
+    }
+
+    .owl-carousel .owl-next,
+    .owl-carousel .owl-prev {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        top: 30%;
+        font-size: 20px;
+        color: #fff;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .owl-carousel .owl-prev {
+        left: -70px;
+    }
+
+    .owl-carousel .owl-next {
+        right: -70px;
+    }
 </style>
