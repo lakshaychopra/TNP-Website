@@ -1,23 +1,25 @@
 <template>
     <div>
-        <nav class="navbar bg-dark navbar-dark">
-            <!-- Brand -->
-            <router-link to="/" class="navbar-brand d-none d-md-block">
-                <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
-            </router-link>
-            <router-link to="/" class="navbar-brand d-md-none">
-                <img src="/logo.png" alt="logo" height="55px" width="55px">
-            </router-link>
+        <div class="sticky-top" style="z-index:1022;">
+            <nav class="navbar bg-dark navbar-dark">
+                <!-- Brand -->
+                <router-link to="/" class="navbar-brand d-none d-md-block">
+                    <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
+                </router-link>
+                <router-link to="/" class="navbar-brand d-md-none">
+                    <img src="/logo.png" alt="logo" height="55px" width="55px">
+                </router-link>
 
-            <ul class="nav navbar-nav" id="list-menu">
-                <li class="nav-item">
-                    <router-link to="/" class="pull-right nav-link">
-                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back
-                    </router-link>
-                </li>
-            </ul>
-        </nav>
-
+                <ul class="nav navbar-nav" id="list-menu">
+                    <li class="nav-item">
+                        <router-link to="/" class="pull-right nav-link">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back
+                        </router-link>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
         <!--Thanks-->
         <!-- TESTIMONIALS -->
         <section class="testimonials pb-0">
@@ -382,12 +384,12 @@
         text-transform: uppercase;
     }
 
-     #customers-testimonials .thanks-subtitle {
+    #customers-testimonials .thanks-subtitle {
         color: #fff;
         text-transform: uppercase;
     }
 
-     #customers-testimonials .testimonials {
+    #customers-testimonials .testimonials {
         background-color: #fff;
         position: relative;
         padding-top: 60px;
