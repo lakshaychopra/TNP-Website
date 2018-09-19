@@ -18,8 +18,9 @@
             </ul>
         </nav>
 
+
         <!-- Team -->
-        <section id="team">
+        <section id="team" class="mb-5">
             <div class="container">
                 <h5 class="section-title h1">THE TEAM</h5>
                 <div class="row">
@@ -28,8 +29,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png"
-                                            alt="card image"></p>
+                                    <p><img class=" img-fluid" src="/images/genconian/sanjam.jpeg" alt="card image"></p>
                                     <h4 class="card-title">Sanjampreet Singh</h4>
                                     <p class="card-subtitle">Developer</p>
                                     <p class="card-text">He is a Genconian. He is a B.Tech student in Information
@@ -74,8 +74,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png"
-                                            alt="card image"></p>
+                                    <p><img class=" img-fluid" src="/images/genconian/karamveer.jpg" alt="card image"></p>
                                     <h4 class="card-title">Karamveer Singh</h4>
                                     <p class="card-subtitle">Developer</p>
                                     <p class="card-text">He is a Genconian. He is a B.Tech student in Computer Science
@@ -121,22 +120,30 @@
         </section>
         <!-- Team -->
 
-        <footer class="container footer" style="left:0">
+        <footer class="row footer mt-5" style="left:0">
+        <div class="container">
             <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
                     </span> by
                     <a href="#">Genconians</a> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC, Ldh</a></small></p>
+        </div>
         </footer>
     </div>
 </template>
 <script>
     export default {
-        mounted() {}
+        mounted() {
+
+        }
     }
 </script>
 <style scoped>
-    .list-inline {
-        padding-left: 0;
+    ul.list-inline li {
+        padding: 0;
         list-style: none;
+    }
+
+    .mar-top {
+        margin-top: 50px;
     }
 
     .bg-gray {
@@ -205,14 +212,17 @@
         top: 90px;
     }
 
+    /* 
+    Our Team
+     */
     #team {
-        background: #fff !important;
+        background: #038ed4 !important;
     }
 
     .btn-primary:hover,
     .btn-primary:focus {
         background-color: #038ed4;
-        border-color: #038ed4;
+        border-color: #ffffff;
         box-shadow: none;
         outline: none;
     }
@@ -229,7 +239,7 @@
 
     section .section-title {
         text-align: justify;
-        color: #038ed4;
+        color: #ffffff;
         margin-bottom: 50px;
         text-transform: uppercase;
     }
@@ -254,7 +264,7 @@
         font-size: 25px;
     }
 
-    .card-body{
+    .card-body {
         padding-bottom: 0px;
     }
 
@@ -270,4 +280,5 @@
     .social-icon {
         font-size: 22px;
     }
+
 </style>

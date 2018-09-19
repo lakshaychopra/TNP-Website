@@ -29154,7 +29154,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.list-inline[data-v-56786506] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-gray[data-v-56786506] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-56786506] {\n    color: #038ed4;\n}\n#bg-trans[data-v-56786506] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.bg-dark[data-v-56786506] {\n    background-color: #038ed4 !important;\n}\n#list-menu li a[data-v-56786506] {\n    color: #f1f1f1;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-56786506]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#list-link li a[data-v-56786506] {\n    color: #038ed4;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-link li a[data-v-56786506]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #038ed4;\n    color: #f1f1f1;\n}\n.navbar[data-v-56786506] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-56786506] {\n        width: 142px;\n}\n}\n.w-65[data-v-56786506] {\n    width: 65%;\n}\n.fix[data-v-56786506] {\n    overflow: hidden;\n    top: 90px;\n}\n#team[data-v-56786506] {\n    background: #fff !important;\n}\n.btn-primary[data-v-56786506]:hover,\n.btn-primary[data-v-56786506]:focus {\n    background-color: #038ed4;\n    border-color: #038ed4;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    outline: none;\n}\n.btn-primary[data-v-56786506] {\n    color: #fff;\n    background-color: #038ed4;\n    border-color: #038ed4;\n}\nsection[data-v-56786506] {\n    padding: 60px 0;\n}\nsection .section-title[data-v-56786506] {\n    text-align: justify;\n    color: #038ed4;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\n.card-text[data-v-56786506] {\n    text-align: justify;\n}\n#team .card[data-v-56786506] {\n    border: solid #038ed4;\n    border-radius: 20px;\n    background: #ffffff;\n}\n.frontside .card[data-v-56786506] {\n    min-height: 312px;\n}\n.frontside .card .card-title[data-v-56786506] {\n    color: #038ed4 !important;\n    font-variant: small-caps;\n    font-size: 25px;\n}\n.card-body[data-v-56786506]{\n    padding-bottom: 0px;\n}\n.frontside .card .card-body img[data-v-56786506] {\n    width: 120px;\n    border-radius: 50%;\n}\n.card-subtitle[data-v-56786506] {\n    color: rgb(66, 66, 66);\n}\n.social-icon[data-v-56786506] {\n    font-size: 22px;\n}\n", ""]);
+exports.push([module.i, "\nul.list-inline li[data-v-56786506] {\n    padding: 0;\n    list-style: none;\n}\n.mar-top[data-v-56786506] {\n    margin-top: 50px;\n}\n.bg-gray[data-v-56786506] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-56786506] {\n    color: #038ed4;\n}\n#bg-trans[data-v-56786506] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.bg-dark[data-v-56786506] {\n    background-color: #038ed4 !important;\n}\n#list-menu li a[data-v-56786506] {\n    color: #f1f1f1;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-56786506]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#list-link li a[data-v-56786506] {\n    color: #038ed4;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-link li a[data-v-56786506]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #038ed4;\n    color: #f1f1f1;\n}\n.navbar[data-v-56786506] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-56786506] {\n        width: 142px;\n}\n}\n.w-65[data-v-56786506] {\n    width: 65%;\n}\n.fix[data-v-56786506] {\n    overflow: hidden;\n    top: 90px;\n}\n\n/* \nOur Team\n */\n#team[data-v-56786506] {\n    background: #038ed4 !important;\n}\n.btn-primary[data-v-56786506]:hover,\n.btn-primary[data-v-56786506]:focus {\n    background-color: #038ed4;\n    border-color: #ffffff;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    outline: none;\n}\n.btn-primary[data-v-56786506] {\n    color: #fff;\n    background-color: #038ed4;\n    border-color: #038ed4;\n}\nsection[data-v-56786506] {\n    padding: 60px 0;\n}\nsection .section-title[data-v-56786506] {\n    text-align: justify;\n    color: #ffffff;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\n.card-text[data-v-56786506] {\n    text-align: justify;\n}\n#team .card[data-v-56786506] {\n    border: solid #038ed4;\n    border-radius: 20px;\n    background: #ffffff;\n}\n.frontside .card[data-v-56786506] {\n    min-height: 312px;\n}\n.frontside .card .card-title[data-v-56786506] {\n    color: #038ed4 !important;\n    font-variant: small-caps;\n    font-size: 25px;\n}\n.card-body[data-v-56786506] {\n    padding-bottom: 0px;\n}\n.frontside .card .card-body img[data-v-56786506] {\n    width: 120px;\n    border-radius: 50%;\n}\n.card-subtitle[data-v-56786506] {\n    color: rgb(66, 66, 66);\n}\n.social-icon[data-v-56786506] {\n    font-size: 22px;\n}\n\n", ""]);
 
 // exports
 
@@ -29165,6 +29165,7 @@ exports.push([module.i, "\n.list-inline[data-v-56786506] {\n    padding-left: 0;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -29383,7 +29384,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { attrs: { id: "team" } }, [
+    return _c("section", { staticClass: "mb-5", attrs: { id: "team" } }, [
       _c("div", { staticClass: "container" }, [
         _c("h5", { staticClass: "section-title h1" }, [_vm._v("THE TEAM")]),
         _vm._v(" "),
@@ -29396,8 +29397,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: " img-fluid",
                       attrs: {
-                        src:
-                          "https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png",
+                        src: "/images/genconian/sanjam.jpeg",
                         alt: "card image"
                       }
                     })
@@ -29513,8 +29513,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: " img-fluid",
                       attrs: {
-                        src:
-                          "https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png",
+                        src: "/images/genconian/karamveer.jpg",
                         alt: "card image"
                       }
                     })
@@ -29630,25 +29629,29 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "footer",
-      { staticClass: "container footer", staticStyle: { left: "0" } },
+      { staticClass: "row footer mt-5", staticStyle: { left: "0" } },
       [
-        _c("p", { staticClass: "text-center" }, [
-          _c("small", [
-            _vm._v("Developed with "),
-            _c("span", { staticClass: "text-danger" }, [
-              _c("i", {
-                staticClass: "fa fa-heart",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]),
-            _vm._v(" by\n                "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Genconians")]),
-            _vm._v(" | © 2018 "),
-            _c(
-              "a",
-              { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
-              [_vm._v("GNDEC, Ldh")]
-            )
+        _c("div", { staticClass: "container" }, [
+          _c("p", { staticClass: "text-center" }, [
+            _c("small", [
+              _vm._v("Developed with "),
+              _c("span", { staticClass: "text-danger" }, [
+                _c("i", {
+                  staticClass: "fa fa-heart",
+                  attrs: { "aria-hidden": "true" }
+                })
+              ]),
+              _vm._v(" by\n                "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Genconians")]),
+              _vm._v(" | © 2018 "),
+              _c(
+                "a",
+                {
+                  attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
+                },
+                [_vm._v("GNDEC, Ldh")]
+              )
+            ])
           ])
         ])
       ]
@@ -31713,7 +31716,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
+          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
@@ -39075,7 +39078,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
+          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
@@ -42094,7 +42097,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
+          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
@@ -42821,7 +42824,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
+          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
@@ -44791,7 +44794,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
+          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
@@ -46834,7 +46837,7 @@ var staticRenderFns = [
             })
           ]),
           _vm._v("\n                by "),
-          _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
+          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
