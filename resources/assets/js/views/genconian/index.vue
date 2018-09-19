@@ -19,7 +19,7 @@
                 </ul>
             </nav>
         </div>
-        
+
         <!--Thanks-->
         <!-- TESTIMONIALS -->
         <section class="testimonials pb-0">
@@ -196,16 +196,16 @@
                 <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart"
                                 aria-hidden="true"></i>
                         </span> by
-                        <a href="#">Genconians</a> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC,
+                        <a href="/humans.txt">Genconians</a> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC,
                             Ldh</a></small></p>
             </div>
         </footer>
     </div>
 </template>
 <script>
-    import 'owl.carousel2/dist/assets/owl.carousel.css';
-    import 'owl.carousel2/dist/owl.carousel.min.js';
-    jQuery(document).ready(function ($) {
+   
+    var vm = this;
+    Vue.nextTick(function () {
         $('#customers-testimonials').owlCarousel({
             loop: true,
             center: true,
@@ -213,7 +213,7 @@
             margin: 30,
             autoplay: true,
             dots: false,
-            nav: true,
+            nav: false,
             autoplayTimeout: 8500,
             smartSpeed: 450,
             responsive: {
@@ -228,7 +228,7 @@
                 }
             }
         });
-    });
+    }.bind(vm));
 </script>
 <style scoped>
     ul.list-inline li {

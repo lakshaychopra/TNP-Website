@@ -20636,8 +20636,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_infinite_scroll__ = __webpack_require__(290);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_infinite_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue_infinite_scroll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_sweetalert2__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_social_sharing__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_social_sharing___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vue_social_sharing__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_owl_carousel2_dist_assets_owl_carousel_css__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_owl_carousel2_dist_assets_owl_carousel_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_owl_carousel2_dist_assets_owl_carousel_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_owl_carousel2_dist_owl_carousel_min_js__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_owl_carousel2_dist_owl_carousel_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_owl_carousel2_dist_owl_carousel_min_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_vue_social_sharing__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_vue_social_sharing___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_vue_social_sharing__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -20664,7 +20668,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_4_vue_infinite_scroll___default.a);
 Vue.use(__WEBPACK_IMPORTED_MODULE_5_vue_sweetalert2__["a" /* default */]);
 
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_6_vue_social_sharing___default.a);
+
+
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_8_vue_social_sharing___default.a);
 
 var app = new Vue({
   el: '#root',
@@ -29161,14 +29168,8 @@ exports.push([module.i, "\nul.list-inline li[data-v-56786506] {\n    padding: 0;
 
 /***/ }),
 /* 102 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_owl_carousel2_dist_assets_owl_carousel_css__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_owl_carousel2_dist_assets_owl_carousel_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_owl_carousel2_dist_assets_owl_carousel_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js__);
 //
 //
 //
@@ -29375,8 +29376,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-
-jQuery(document).ready(function ($) {
+var vm = this;
+Vue.nextTick(function () {
     $('#customers-testimonials').owlCarousel({
         loop: true,
         center: true,
@@ -29384,7 +29385,7 @@ jQuery(document).ready(function ($) {
         margin: 30,
         autoplay: true,
         dots: false,
-        nav: true,
+        nav: false,
         autoplayTimeout: 8500,
         smartSpeed: 450,
         responsive: {
@@ -29399,7 +29400,7 @@ jQuery(document).ready(function ($) {
             }
         }
     });
-});
+}.bind(vm));
 
 /***/ }),
 /* 103 */
@@ -29866,7 +29867,9 @@ var staticRenderFns = [
                 })
               ]),
               _vm._v(" by\n                    "),
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Genconians")]),
+              _c("a", { attrs: { href: "/humans.txt" } }, [
+                _vm._v("Genconians")
+              ]),
               _vm._v(" | © 2018 "),
               _c(
                 "a",
@@ -31922,33 +31925,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "footer" }, [
-      _c("p", { staticClass: "text-center" }, [
-        _c("small", [
+  return _c("footer", { staticClass: "footer" }, [
+    _c("p", { staticClass: "text-center" }, [
+      _c(
+        "small",
+        [
           _vm._v("Developed with "),
-          _c("span", { staticClass: "text-danger" }, [
-            _c("i", {
-              staticClass: "fa fa-heart",
-              attrs: { "aria-hidden": "true" }
-            })
-          ]),
+          _vm._m(0),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
+          _c("router-link", { attrs: { to: "/genconian" } }, [
+            _vm._v("Genconians")
+          ]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
             { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
             [_vm._v("GNDEC, Ldh")]
           )
-        ])
-      ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
     ])
   }
 ]
@@ -39284,33 +39290,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "footer" }, [
-      _c("p", { staticClass: "text-center" }, [
-        _c("small", [
+  return _c("footer", { staticClass: "footer" }, [
+    _c("p", { staticClass: "text-center" }, [
+      _c(
+        "small",
+        [
           _vm._v("Developed with "),
-          _c("span", { staticClass: "text-danger" }, [
-            _c("i", {
-              staticClass: "fa fa-heart",
-              attrs: { "aria-hidden": "true" }
-            })
-          ]),
+          _vm._m(0),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
+          _c("router-link", { attrs: { to: "/genconian" } }, [
+            _vm._v("Genconians")
+          ]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
             { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
             [_vm._v("GNDEC, Ldh")]
           )
-        ])
-      ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
     ])
   }
 ]
@@ -42303,33 +42312,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "footer" }, [
-      _c("p", { staticClass: "text-center" }, [
-        _c("small", [
+  return _c("footer", { staticClass: "footer" }, [
+    _c("p", { staticClass: "text-center" }, [
+      _c(
+        "small",
+        [
           _vm._v("Developed with "),
-          _c("span", { staticClass: "text-danger" }, [
-            _c("i", {
-              staticClass: "fa fa-heart",
-              attrs: { "aria-hidden": "true" }
-            })
-          ]),
+          _vm._m(0),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
+          _c("router-link", { attrs: { to: "/genconian" } }, [
+            _vm._v("Genconians")
+          ]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
             { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
             [_vm._v("GNDEC, Ldh")]
           )
-        ])
-      ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
     ])
   }
 ]
@@ -43030,33 +43042,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "footer" }, [
-      _c("p", { staticClass: "text-center" }, [
-        _c("small", [
+  return _c("footer", { staticClass: "footer" }, [
+    _c("p", { staticClass: "text-center" }, [
+      _c(
+        "small",
+        [
           _vm._v("Developed with "),
-          _c("span", { staticClass: "text-danger" }, [
-            _c("i", {
-              staticClass: "fa fa-heart",
-              attrs: { "aria-hidden": "true" }
-            })
-          ]),
+          _vm._m(0),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
+          _c("router-link", { attrs: { to: "/genconian" } }, [
+            _vm._v("Genconians")
+          ]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
             { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
             [_vm._v("GNDEC, Ldh")]
           )
-        ])
-      ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
     ])
   }
 ]
@@ -45000,33 +45015,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "footer" }, [
-      _c("p", { staticClass: "text-center" }, [
-        _c("small", [
+  return _c("footer", { staticClass: "footer" }, [
+    _c("p", { staticClass: "text-center" }, [
+      _c(
+        "small",
+        [
           _vm._v("Developed with "),
-          _c("span", { staticClass: "text-danger" }, [
-            _c("i", {
-              staticClass: "fa fa-heart",
-              attrs: { "aria-hidden": "true" }
-            })
-          ]),
+          _vm._m(0),
           _vm._v(" by "),
-          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
+          _c("router-link", { attrs: { to: "/genconian" } }, [
+            _vm._v("Genconians")
+          ]),
           _vm._v(" | © 2018 "),
           _c(
             "a",
             { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
             [_vm._v("GNDEC, Ldh")]
           )
-        ])
-      ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
     ])
   }
 ]
@@ -47042,7 +47060,28 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(0)
+    _c("footer", { staticClass: "footer", staticStyle: { left: "0" } }, [
+      _c("p", { staticClass: "text-center" }, [
+        _c(
+          "small",
+          [
+            _vm._v("Developed with "),
+            _vm._m(0),
+            _vm._v("\n                by "),
+            _c("router-link", { attrs: { to: "/genconian" } }, [
+              _vm._v("Genconians")
+            ]),
+            _vm._v(" | © 2018 "),
+            _c(
+              "a",
+              { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
+              [_vm._v("GNDEC,\n                    Ldh")]
+            )
+          ],
+          1
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -47050,26 +47089,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "footer", staticStyle: { left: "0" } }, [
-      _c("p", { staticClass: "text-center" }, [
-        _c("small", [
-          _vm._v("Developed with "),
-          _c("span", { staticClass: "text-danger" }, [
-            _c("i", {
-              staticClass: "fa fa-heart",
-              attrs: { "aria-hidden": "true" }
-            })
-          ]),
-          _vm._v("\n                by "),
-          _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
-          _vm._v(" | © 2018 "),
-          _c(
-            "a",
-            { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
-            [_vm._v("GNDEC,\n                    Ldh")]
-          )
-        ])
-      ])
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
     ])
   }
 ]
