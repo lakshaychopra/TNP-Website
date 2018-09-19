@@ -39,27 +39,27 @@
                                             Cell's website.</a></p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/sanjampreet.singh1    ">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="https://twitter.com/Itzrealsanjam">
                                                 <i class="fa fa-twitter"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/sanjampreetsingh/">
                                                 <i class="fa fa-linkedin"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/sanjampreetsingh_/">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="mailto:sanjam531@gmail.com">
                                                 <i class="fa fa-envelope"></i>
                                             </a>
                                         </li>
@@ -86,27 +86,27 @@
                                         website.</p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/loveforeverKM">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="https://www.twitter.com/kmvsingh007">
                                                 <i class="fa fa-twitter"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/singh-karamveer/">
                                                 <i class="fa fa-linkedin"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/honey_singh008/">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="mailto:kmvsingh007@gmail.com">
                                                 <i class="fa fa-envelope"></i>
                                             </a>
                                         </li>

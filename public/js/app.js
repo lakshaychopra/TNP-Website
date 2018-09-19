@@ -29431,7 +29431,11 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href:
+                                "https://www.facebook.com/sanjampreet.singh1    "
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-facebook" })]
                         )
@@ -29442,7 +29446,10 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href: "https://twitter.com/Itzrealsanjam"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-twitter" })]
                         )
@@ -29453,7 +29460,11 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href:
+                                "https://www.linkedin.com/in/sanjampreetsingh/"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-linkedin" })]
                         )
@@ -29464,7 +29475,11 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href:
+                                "https://www.instagram.com/sanjampreetsingh_/"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-instagram" })]
                         )
@@ -29475,7 +29490,10 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href: "mailto:sanjam531@gmail.com"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-envelope" })]
                         )
@@ -29531,7 +29549,10 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href: "https://www.facebook.com/loveforeverKM"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-facebook" })]
                         )
@@ -29542,7 +29563,10 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href: "https://www.twitter.com/kmvsingh007"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-twitter" })]
                         )
@@ -29553,7 +29577,11 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href:
+                                "https://www.linkedin.com/in/singh-karamveer/"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-linkedin" })]
                         )
@@ -29564,7 +29592,10 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href: "https://www.instagram.com/honey_singh008/"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-instagram" })]
                         )
@@ -29575,7 +29606,10 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href: "mailto:kmvsingh007@gmail.com"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-envelope" })]
                         )
