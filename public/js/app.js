@@ -29397,7 +29397,7 @@ var staticRenderFns = [
                       staticClass: " img-fluid",
                       attrs: {
                         src:
-                          "https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png",
+                          "https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png",
                         alt: "card image"
                       }
                     })

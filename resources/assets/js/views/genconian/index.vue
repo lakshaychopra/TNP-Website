@@ -28,7 +28,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"
+                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png"
                                             alt="card image"></p>
                                     <h4 class="card-title">Sanjampreet Singh</h4>
                                     <p class="card-subtitle">Developer</p>
