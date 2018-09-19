@@ -32,7 +32,7 @@
                                     <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
                                     <div class="item-details">
                                         <h5>Prof. G.S. Sodhi</h5>
-                                        <p class="thanks-subtitle">Training and Placement Officer</p>
+                                        <p class="thanks-subtitle">T&amp;P Officer</p>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                 <div class="shadow-effect">
                                     <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
                                     <div class="item-details">
-                                        <h5>Prof. Jasmaninder Singh</h5>
+                                        <h5>Prof. J.S. Grewal</h5>
                                         <p class="thanks-subtitle">T&amp;P Advisor</p>
                                     </div>
                                 </div>
@@ -204,18 +204,16 @@
     import 'owl.carousel2/dist/assets/owl.carousel.css';
     import 'owl.carousel2/dist/owl.carousel.min.js';
     jQuery(document).ready(function ($) {
-        "use strict";
         $('#customers-testimonials').owlCarousel({
             loop: true,
             center: true,
             items: 3,
             margin: 30,
             autoplay: true,
-            dots: true,
+            dots: false,
             nav: true,
             autoplayTimeout: 8500,
             smartSpeed: 450,
-            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
             responsive: {
                 0: {
                     items: 1
@@ -384,18 +382,18 @@
         text-transform: uppercase;
     }
 
-    .thanks-subtitle {
+     #customers-testimonials .thanks-subtitle {
         color: #fff;
         text-transform: uppercase;
     }
 
-    .testimonials {
+     #customers-testimonials .testimonials {
         background-color: #fff;
         position: relative;
         padding-top: 60px;
     }
 
-    .testimonials:after {
+    #customers-testimonials .testimonials:after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -425,27 +423,23 @@
         font-size: 14px;
     }
 
-    .item {
+    #customers-testimonials .item {
         text-align: center;
         /*  padding: 20px; */
         margin-bottom: 80px;
     }
 
-    .owl-carousel .owl-nav [class*='owl-'] {
+    #customers-testimonials .owl-carousel .owl-nav {
         -webkit-transition: all .3s ease;
         transition: all .3s ease;
     }
 
-    .owl-carousel .owl-nav [class*='owl-'].disabled:hover {
-        background-color: #D6D6D6;
-    }
-
-    .owl-carousel {
+    #customers-testimonials .owl-carousel {
         position: relative;
     }
 
-    .owl-carousel .owl-next,
-    .owl-carousel .owl-prev {
+    #customers-testimonials .owl-carousel .owl-next,
+    #customers-testimonials .owl-carousel .owl-prev {
         width: 50px;
         height: 50px;
         line-height: 50px;
@@ -458,11 +452,11 @@
         text-align: center;
     }
 
-    .owl-carousel .owl-prev {
+    #customers-testimonials .owl-carousel .owl-prev {
         left: -70px;
     }
 
-    .owl-carousel .owl-next {
+    #customers-testimonials .owl-carousel .owl-next {
         right: -70px;
     }
 </style>
