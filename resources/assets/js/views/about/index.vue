@@ -1,36 +1,85 @@
 <template>
     <div>
         <div class="sticky-top" style="z-index:1022;">
-        <nav class="navbar bg-dark navbar-dark">
-            <!-- Brand -->
-            <router-link class="navbar-brand d-none d-md-block" to="/">
-                <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
-            </router-link>
-            <router-link class="navbar-brand d-md-none" to="/">
-                <img src="/logo.png" alt="logo" height="55px" width="55px">
-            </router-link>
-            <div class="navbar-header">
-                <!-- Navbar links -->
-                <div class="navbar-text d-md-none">
-                    <ul class="navbar-nav list-inline">
-                        <li class="nav-item ">
+            <nav class="navbar bg-dark navbar-dark">
+                <!-- Brand -->
+                <router-link class="navbar-brand d-none d-md-block" to="/">
+                    <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
+                </router-link>
+                <router-link class="navbar-brand d-md-none" to="/">
+                    <img src="/logo.png" alt="logo" height="55px" width="55px">
+                </router-link>
+                <div class="navbar-header">
+                    <!-- Navbar links -->
+                    <div class="navbar-text d-md-none">
+                        <ul class="navbar-nav list-inline">
+                            <li class="nav-item ">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navbar">
+                    <div class="mr-auto d-none d-md-block w-65">
+
+                    </div>
+                    <ul class="nav navbar-nav" id="list-menu">
+                        <li class="nav-item">
+                            <a class="nav-link float-right" href="#" data-target="#more" data-toggle="collapse">
+                                More <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div class="navbar">
-                <div class="mr-auto d-none d-md-block w-65">
-
+                <div class="w-100 p-2 font bgcolor textcolor collapse" id="more">
+                    <div class="owl-carousel" id="nav-carousel">
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                        <div>
+                            <p>HOME</p>
+                        </div>
+                    </div>
                 </div>
-                <ul class="nav navbar-nav" id="list-menu">
-                    <li class="nav-item">
-                        <a class="nav-link float-right" href="#" data-target="#more" data-toggle="collapse">
-                            More <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+            </nav>
         </div>
         <!--
 *************
@@ -38,84 +87,7 @@ NAVBAR
 *************
 -->
 
-        <div class="w-100 p-2 font bgcolor textcolor collapse" id="more">
-            <div class="owl-carousel" id="nav-carousel">
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
-                <div>
-                    <p>HOME</p>
-                </div>
 
-
-            </div>
-        </div>
         <!--
          ############
          image
@@ -126,7 +98,10 @@ NAVBAR
                 <div class="mb-5 ml-5 mr-5 bottom-left">
                     <h1 class="text-color12">Training &amp; Placement Cell</h1>
                     <h5 class="text-color12 text-justify">
-                    The goal of Training & Placement Cell is to provide students with a platform for using their potential to gain valuable experience by working in industry ,it also acts as the interface between various companies seeking talented young graduates and post graduates in various disciplines.
+                        The goal of Training & Placement Cell is to provide students with a platform for using their
+                        potential to gain valuable experience by working in industry ,it also acts as the interface
+                        between various companies seeking talented young graduates and post graduates in various
+                        disciplines.
                     </h5>
                 </div>
             </div>
@@ -284,7 +259,8 @@ NAVBAR
                                 <p>Officer</p>
                                 <p>Training &amp; Placement Cell</p>
                             </div>
-                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell" width="100%">
+                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
+                                width="100%">
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -292,7 +268,8 @@ NAVBAR
                             <strong>Dr. K. S. Mann</strong>
                             <p>Advisor</p>
                             <p>Training &amp; Placement Cell</p>
-                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell" width="100%">
+                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
+                                width="100%">
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -300,7 +277,8 @@ NAVBAR
                             <strong>Prof. Sachin Bagga</strong>
                             <p>Faculty Co-ordinator</p>
                             <p>Training &amp; Placement Cell</p>
-                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell" width="100%">
+                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
+                                width="100%">
                         </div>
                     </div>
                 </div>
@@ -931,7 +909,6 @@ NAVBAR
         color: #fff;
         font-size: 14px;
     }
-
 </style>
 <script>
     import 'owl.carousel2/dist/assets/owl.carousel.css';

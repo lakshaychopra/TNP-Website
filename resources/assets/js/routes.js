@@ -1,16 +1,21 @@
 import VueRouter from 'vue-router'
 import helper from './services/helper'
 let routes = [{
-    path: '/',
-    component: require('./layouts/index/pages.vue'),
-    name: 'index',
-},
-{
-    path: '/hid',
-    component: require('./views/about/index.vue'),
-    name: 'hid',
-},
-{
+        path: '/',
+        component: require('./layouts/index/pages.vue'),
+        name: 'index',
+    },
+    {
+        path: '/hid',
+        component: require('./views/about/index.vue'),
+        name: 'hid',
+    },
+    {
+        path: '/genconian',
+        component: require('./views/genconian/index.vue'),
+        name: 'genconian',
+    },
+    {
         path: '/view/:id',
         name: 'view',
         props: true,
@@ -276,10 +281,9 @@ router.beforeEach((to, from, next) => {
                 return helper.authUser().then(res => {
                     if (res.type == "EXECUTIVE_MEMBER") {
                         return next()
-                    }
-                    else if (res.type == "ADMIN") {
+                    } else if (res.type == "ADMIN") {
                         return next({
-                            path:'/admin'
+                            path: '/admin'
                         })
                     } else {
                         return next({
@@ -287,24 +291,21 @@ router.beforeEach((to, from, next) => {
                         })
                     }
                 })
-            }
-                else if (to.matched.some(m => m.meta.adminAuth)) {
-                    return helper.authUser().then(res => {
-                        if (res.type == "ADMIN") {
-                            return next()
-                        } else if (res.type == "EXECUTIVE_MEMBER") {
-                            return next({
-                                path: '/home'
-                            })
-                        }
-                        else{
-                            return next({
-                                path: '/userlogin'
-                            })  
-                        } 
-                    })
-                }
-             else if (to.matched.some(m => m.meta.userAuth)) {
+            } else if (to.matched.some(m => m.meta.adminAuth)) {
+                return helper.authUser().then(res => {
+                    if (res.type == "ADMIN") {
+                        return next()
+                    } else if (res.type == "EXECUTIVE_MEMBER") {
+                        return next({
+                            path: '/home'
+                        })
+                    } else {
+                        return next({
+                            path: '/userlogin'
+                        })
+                    }
+                })
+            } else if (to.matched.some(m => m.meta.userAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
                         //    switch (res.student_form_step) {
@@ -331,19 +332,17 @@ router.beforeEach((to, from, next) => {
                                 path: '/req'
                             })
                         }
-                    } 
-                    else if (res.type == "ADMIN") {
+                    } else if (res.type == "ADMIN") {
                         return next({
-                            path:'/admin'
+                            path: '/admin'
                         })
-                    }
-                    else {
+                    } else {
                         return next({
                             path: '/home'
                         })
                     }
                 })
-                
+
             } else if (to.matched.some(m => m.meta.userloginAuth)) {
                 return helper.authUser().then(res => {
                     if (res.type == "STUDENT") {
@@ -402,13 +401,11 @@ router.beforeEach((to, from, next) => {
                             path: '/home'
                         })
 
-                    } 
-                    else if (res.type == "ADMIN") {
+                    } else if (res.type == "ADMIN") {
                         return next({
                             path: '/admin'
                         })
-                    }
-                    else {
+                    } else {
                         return next({
                             path: '/userlogin'
                         })
