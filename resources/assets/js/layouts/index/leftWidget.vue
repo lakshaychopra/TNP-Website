@@ -39,6 +39,9 @@
                             <li class="list-group-item">
                                 <a href="../../files/Training.pdf" download="Training.pdf">6 Month Training Form</a>
                             </li>
+                            <li class="list-group-item">
+                                <a href="../../files/tcsform.pdf" download="tcsform.pdf">TCS Consent Form</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
