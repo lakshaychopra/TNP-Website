@@ -24988,7 +24988,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -25000,9 +25000,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(3);
-//
-//
-//
 //
 //
 //
@@ -25244,19 +25241,6 @@ var staticRenderFns = [
                       }
                     },
                     [_vm._v("6 Month Training Form")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "list-group-item" }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: {
-                        href: "../../files/tcsform.pdf",
-                        download: "tcsform.pdf"
-                      }
-                    },
-                    [_vm._v("TCS Consent Form")]
                   )
                 ])
               ])
@@ -29387,10 +29371,6 @@ exports.push([module.i, "\nul.list-inline li[data-v-56786506] {\n    padding: 0;
 //
 //
 //
-//
-//
-//
-
 
 var vm = this;
 Vue.nextTick(function () {
@@ -29870,31 +29850,28 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "footer",
-      { staticClass: "row footer mt-5", staticStyle: { left: "0" } },
+      {
+        staticClass: "container-fluid footer mt-5",
+        staticStyle: { left: "0" }
+      },
       [
-        _c("div", { staticClass: "container" }, [
-          _c("p", { staticClass: "text-center" }, [
-            _c("small", [
-              _vm._v("Developed with "),
-              _c("span", { staticClass: "text-danger" }, [
-                _c("i", {
-                  staticClass: "fa fa-heart",
-                  attrs: { "aria-hidden": "true" }
-                })
-              ]),
-              _vm._v(" by\n                    "),
-              _c("a", { attrs: { href: "/humans.txt" } }, [
-                _vm._v("Genconians")
-              ]),
-              _vm._v(" | © 2018 "),
-              _c(
-                "a",
-                {
-                  attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
-                },
-                [_vm._v("GNDEC,\n                        Ldh")]
-              )
-            ])
+        _c("p", { staticClass: "text-center" }, [
+          _c("small", [
+            _vm._v("Developed with "),
+            _c("span", { staticClass: "text-danger" }, [
+              _c("i", {
+                staticClass: "fa fa-heart",
+                attrs: { "aria-hidden": "true" }
+              })
+            ]),
+            _vm._v(" by\n                "),
+            _c("a", { attrs: { href: "/humans.txt" } }, [_vm._v("Genconians")]),
+            _vm._v(" | © 2018 "),
+            _c(
+              "a",
+              { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
+              [_vm._v("GNDEC,\n                    Ldh")]
+            )
           ])
         ])
       ]
