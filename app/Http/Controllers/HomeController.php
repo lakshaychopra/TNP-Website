@@ -64,7 +64,6 @@ class HomeController extends Controller
     public function HomePostSearch($term = null){
         if ($term != null) {
             $post['data'] = Post::where('title', 'like', '%'.$term.'%')
-            ->orWhere('body', 'like', '%'.$term.'%')
             ->get();
             return $this->respondData($post);
         }

@@ -10,6 +10,8 @@
     "dir": "ltr",
     "lang": "en",
     "orientation": "portrait",
+    "gcm_sender_id": "482941778795",
+    "gcm_sender_id_comment": "Do not change the GCM Sender ID",
     "icons": [{
             "src": "/images/icons/24x24.png",
             "type": "image/png",
