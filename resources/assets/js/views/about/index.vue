@@ -445,158 +445,19 @@ NAVBAR
          footer
          ##########################
 	-->
-        <div class="row bgcolor3 ">
-            <div class="row listt">
-                <div class="col-md-2 text-color12 mt-5">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5>
-                                <strong>INDUSTRIES</strong>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul>
-                                <li>Banking & financial services</li>
-                                <li>Consumer goods and distribution</li>
-                                <li>Communications, media & technology</li>
-                                <li>Energy resources & utilities</li>
-                                <li>Insurance</li>
-                                <li>Life sciences & healthcare</li>
-                                <li>Manufacturing</li>
-                                <li>Public services</li>
-                                <li>Retail</li>
-                                <li>Travel transportation & hospitality</li>
-                                <li>Hitech</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 text-color12 mt-5">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5>
-                                <strong>SERVICES & TECHNOLOGIES</strong>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul>
-                                <h6>
-                                    <strong>SERVICES</strong>
-                                </h6>
-                                <li>Quality engineering</li>
-                                <li>Business operations</li>
-                                <li>consulting & systems</li>
-                                <li>Integration</li>
-                                <li>Engineering</li>
-                                <li>Life sciences & healthcare</li>
-                                <li>Technology operations</li>
-                                <li>T&amp;P interactive</li>
-                                <h6>
-                                    <strong>TECHNOLOGIES</strong>
-                                </h6>
-                                <li>Artificial intelligence</li>
-                                <li>Big data</li>
-                                <li>Cloud computing</li>
-                                <li>Cyber security</li>
-                                <li>Internet of things</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 text-color12 mt-5">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5>
-                                <strong>PRODUCTS & PLATFORMS</strong>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul>
-                                <h6>
-                                    <strong>PRODUCTS</strong>
-                                </h6>
-                                <li>Quality engineering</li>
-                                <li>Business operations</li>
-                                <li>consulting & systems</li>
-                                <li>Integration</li>
-                                <li>Engineering</li>
-                                <li>Life sciences & healthcare</li>
-                                <li>Technology operations</li>
-                                <li>T&amp;P interactive</li>
-                                <h6>
-                                    <strong>PLATFORMS</strong>
-                                </h6>
-                                <li>Advance drug development</li>
-                                <li>Connected intelligence platform</li>
-                                <li>ERP on cloud</li>
-                                <li>HOBS</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 text-color12 mt-5 ">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5>
-                                <strong>DISCOVER T&amp;P</strong>
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul>
-                                <li>About us</li>
-                                <li>Blogs</li>
-                                <li>Alliances and partnership</li>
-                                <li>Investor relations</li>
-                                <li>Research & innovation</li>
-                                <li>Perspectives</li>
-                                <li>corporate Sustainability</li>
-                                <li>Newsroom</li>
-                                <li>Careers</li>
-                                <li>T&amp;P Worldwide</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-color12 mt-5 bor-left">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5>CONNECT WITH T&amp;P</h5>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <ul>
-                                <li>
-                                    <h6>Contact Us</h6>
-                                </li>
-                                <li>
-                                    <h6>Disclaimer</h6>
-                                </li>
-                                <li>
-                                    <h6>Private Policy</h6>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5 text-color12 mx-auto text-center">
-                <div class="col-md-12">
-                    <p>�2018 Training and Placement Cell, GNDEC Limited.All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
+             <footer class="container-fluid footer mt-5" style="left:0">
+            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
+                    </span> by
+                    <a href="/humans.txt">Genconians</a> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC,
+                        Ldh</a></small></p>
+        </footer>
     </div>
 </template>
 <style scoped>
+    #more{
+        border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    }
     .col-primary {
         color: #304156;
     }
@@ -899,10 +760,10 @@ NAVBAR
         margin-bottom: 0;
     }
 
-    a {
+    /* a {
         color: #fff;
         font-size: 17px;
-    }
+    } */
 
     #nav-carousel p {
         margin-bottom: 0;
@@ -919,16 +780,17 @@ NAVBAR
                 nav: false,
             }
         },
-    }
-
-    $(document).ready(function () {
-
-        $("#nav-carousel").owlCarousel({
+       beforeCreate() {
+        var vm = this;
+        Vue.nextTick(function () {
+            $("#nav-carousel").owlCarousel({
             autoWidth: true,
             margin: 30,
             stagePadding: 50,
 
         });
+        }.bind(vm));
+        Vue.nextTick(function () {
         $(".owl-carousel").owlCarousel({
             margin: 10,
             nav: false,
@@ -951,6 +813,8 @@ NAVBAR
             }
 
         });
+        }.bind(vm));
 
-    });
+       }
+    }
 </script>

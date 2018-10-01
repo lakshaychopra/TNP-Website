@@ -25,8 +25,8 @@ Vue.use(infiniteScroll)
 import swal from 'vue-sweetalert2';
 Vue.use(swal);
 
-import 'owl.carousel2/dist/assets/owl.carousel.css';
-import 'owl.carousel2/dist/owl.carousel.min.js';
+import OwlCarousel from 'owl.carousel2';
+Vue.use(OwlCarousel);
 
 import SocialSharing from 'vue-social-sharing';
 Vue.use(SocialSharing);

@@ -200,31 +200,35 @@
     </div>
 </template>
 <script>
-    var vm = this;
-    Vue.nextTick(function () {
-        $('#customers-testimonials').owlCarousel({
-            loop: true,
-            center: true,
-            items: 3,
-            margin: 30,
-            autoplay: true,
-            dots: false,
-            nav: false,
-            autoplayTimeout: 8500,
-            smartSpeed: 450,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                1170: {
-                    items: 3
-                }
-            }
-        });
-    }.bind(vm));
+  export default {
+       beforeCreate() {
+           var vm = this;
+           Vue.nextTick(function () {
+               $('#customers-testimonials').owlCarousel({
+                   loop: true,
+                   center: true,
+                   items: 3,
+                   margin: 30,
+                   autoplay: true,
+                   dots: false,
+                   nav: false,
+                   autoplayTimeout: 8500,
+                   smartSpeed: 450,
+                   responsive: {
+                       0: {
+                           items: 1
+                       },
+                       768: {
+                           items: 2
+                       },
+                       1170: {
+                           items: 3
+                       }
+                   }
+               });
+           }.bind(vm));
+    }
+}
 </script>
 <style scoped>
     ul.list-inline li {

@@ -51,7 +51,7 @@
             </div>
         </nav>
     </div>
-        <div class="bg-gray">
+        <div class="bg-gray mb-5">
             <div class="container py-4">
                 <div class="row">
                     <div class="col-lg-9 col-xs-12" id="main">
@@ -157,6 +157,12 @@
                 </div>
             </div>
         </div>
+         <footer class="container-fluid footer mt-5 " style="left:0">
+            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
+                    </span> by
+                    <a href="/humans.txt">Genconians</a> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC,
+                        Ldh</a></small></p>
+        </footer>
     </div>
 </template>
 <script>
