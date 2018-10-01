@@ -6,24 +6,23 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use NotificationChannels\WebPush\WebPushMessage;
-use NotificationChannels\WebPush\WebPushChannel;
+use NotificationChannels\OneSignal\OneSignalChannel;
+use NotificationChannels\OneSignal\OneSignalMessage;
+use NotificationChannels\OneSignal\OneSignalWebButton;
+use App\Models\Post;
 
 class GenericNotification extends Notification
 {
     use Queueable;
-    public $title, $body;
-
+    private $data;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($title, $body)
+    public function __construct($data)
     {
-        //
-        $this->title = $title;
-        $this->body = $body;
+        $this->data = $data;
     }
 
     /**
@@ -34,18 +33,27 @@ class GenericNotification extends Notification
      */
     public function via($notifiable)
     {
-        return [WebPushChannel::class];
+        return [OneSignalChannel::class];
     }
+
 
     public function toWebPush($notifiable, $notification)
     {
       $time = \Carbon\Carbon::now();
-        return WebPushMessage::create()
-            // ->id($notification->id)
-            ->title($this->title)
-            ->icon(url('/push.png'))
-            ->body($this->body);
-            //->action('View account', 'view_account');
+      return OneSignalMessage::create()
+      ->subject($data->title)
+      ->body("Click here to see details.")
+      ->url('https://www.tnpgndec.com')
+      ->webButton(
+          OneSignalWebButton::create('link-1')
+              ->text('Home')
+              ->url('https://www.tnpgndec.com')
+      )
+      ->webButton(
+        OneSignalWebButton::create('link-2')
+            ->text('About')
+            ->url('https://www.tnpgndec.com/about')
+    );
     }
 
     /**

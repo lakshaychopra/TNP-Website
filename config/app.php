@@ -154,6 +154,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class, 
         Cyvelnet\Laravel5Fractal\Laravel5FractalServiceProvider::class,    
+        Berkayk\OneSignal\OneSignalServiceProvider::class,
         
         /*
         * Application Service Providers...
@@ -217,6 +218,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Fractal' => Cyvelnet\Laravel5Fractal\Facades\Fractal::class,
+        'OneSignal' => Berkayk\OneSignal\OneSignalFacade::class,
     ],
     
 ];

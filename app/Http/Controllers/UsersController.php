@@ -281,13 +281,4 @@ class UsersController extends Controller
                     return $this->respondException($e);
                 }
             }
-
-            // public function notifyMe($id, Request $request){
-            //         $user = User::all();
-            //         $user->notify(new \App\Notifications\GenericNotification($request->title, $request->body));
-            //         return response()->json([
-            //           'success' => true
-            //         ]);
-            
-            // }
         }

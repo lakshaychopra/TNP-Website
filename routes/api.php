@@ -27,7 +27,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     ]);
 //   });
   
-//   Route::post('/send-notification', 'UsersController@notifyMe');
+Route::post('/send-notification', 'PostController@pushNotification');
 
 Route::get('/aaaa', 'StudentFilterController@filterStudents');
 Route::get('/bbbb', 'DashboardController@adminDashboard');
@@ -65,6 +65,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::put('/post/pinned/{post?}', 'PostController@pinned');
         Route::put('/post/unpinned/{post?}', 'PostController@unpinned');
         Route::get('/post/view/pinned', 'PostController@viewPinned');
+        // Route::post('/send-notification', 'PostController@pushNotification');
         
         // Users Controller
         Route::resource('/user', 'UsersController');

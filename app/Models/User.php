@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
-// use NotificationChannels\WebPush\HasPushSubscriptions;
 
 class User extends Authenticatable implements JWTSubject
 {
     use  Notifiable;
-    // use HasPushSubscriptions;
     
     const USER_TYPE_STUDENT = 'STUDENT';
     const USER_TYPE_MEMBER = 'MEMBER';
