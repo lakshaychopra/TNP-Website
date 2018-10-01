@@ -28061,7 +28061,37 @@ var render = function() {
     _vm._v(" "),
     _vm._m(9),
     _vm._v(" "),
-    _vm._m(10)
+    _c(
+      "footer",
+      {
+        staticClass: "container-fluid footer mt-5",
+        staticStyle: { left: "0" }
+      },
+      [
+        _c("p", { staticClass: "text-center" }, [
+          _c(
+            "small",
+            [
+              _vm._v("Developed with "),
+              _vm._m(10),
+              _vm._v(" by\n                    "),
+              _c("router-link", { attrs: { to: "/genconian" } }, [
+                _vm._v("Genconians")
+              ]),
+              _vm._v(" | © 2018 "),
+              _c(
+                "a",
+                {
+                  attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
+                },
+                [_vm._v("GNDEC,\n                        Ldh")]
+              )
+            ],
+            1
+          )
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -28744,34 +28774,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "footer",
-      {
-        staticClass: "container-fluid footer mt-5",
-        staticStyle: { left: "0" }
-      },
-      [
-        _c("p", { staticClass: "text-center" }, [
-          _c("small", [
-            _vm._v("Developed with "),
-            _c("span", { staticClass: "text-danger" }, [
-              _c("i", {
-                staticClass: "fa fa-heart",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]),
-            _vm._v(" by\n                    "),
-            _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
-            _vm._v(" | © 2018 "),
-            _c(
-              "a",
-              { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
-              [_vm._v("GNDEC,\n                        Ldh")]
-            )
-          ])
-        ])
-      ]
-    )
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
+    ])
   }
 ]
 render._withStripped = true
@@ -29201,7 +29206,37 @@ var render = function() {
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
-    _vm._m(2)
+    _c(
+      "footer",
+      {
+        staticClass: "container-fluid footer mt-5",
+        staticStyle: { left: "0" }
+      },
+      [
+        _c("p", { staticClass: "text-center" }, [
+          _c(
+            "small",
+            [
+              _vm._v("Developed with "),
+              _vm._m(2),
+              _vm._v(" by\n                "),
+              _c("router-link", { attrs: { to: "/genconian" } }, [
+                _vm._v("Genconians")
+              ]),
+              _vm._v(" | © 2018 "),
+              _c(
+                "a",
+                {
+                  attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
+                },
+                [_vm._v("GNDEC,\n                    Ldh")]
+              )
+            ],
+            1
+          )
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -29562,34 +29597,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "footer",
-      {
-        staticClass: "container-fluid footer mt-5",
-        staticStyle: { left: "0" }
-      },
-      [
-        _c("p", { staticClass: "text-center" }, [
-          _c("small", [
-            _vm._v("Developed with "),
-            _c("span", { staticClass: "text-danger" }, [
-              _c("i", {
-                staticClass: "fa fa-heart",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]),
-            _vm._v(" by\n                "),
-            _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
-            _vm._v(" | © 2018 "),
-            _c(
-              "a",
-              { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
-              [_vm._v("GNDEC,\n                    Ldh")]
-            )
-          ])
-        ])
-      ]
-    )
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
+    ])
   }
 ]
 render._withStripped = true
@@ -30502,7 +30512,37 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _c(
+      "footer",
+      {
+        staticClass: "container-fluid footer mt-5 ",
+        staticStyle: { left: "0" }
+      },
+      [
+        _c("p", { staticClass: "text-center" }, [
+          _c(
+            "small",
+            [
+              _vm._v("Developed with "),
+              _vm._m(1),
+              _vm._v(" by\n                "),
+              _c("router-link", { attrs: { to: "/genconian" } }, [
+                _vm._v("Genconians")
+              ]),
+              _vm._v(" | © 2018 "),
+              _c(
+                "a",
+                {
+                  attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
+                },
+                [_vm._v("GNDEC,\n                    Ldh")]
+              )
+            ],
+            1
+          )
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -30527,34 +30567,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "footer",
-      {
-        staticClass: "container-fluid footer mt-5 ",
-        staticStyle: { left: "0" }
-      },
-      [
-        _c("p", { staticClass: "text-center" }, [
-          _c("small", [
-            _vm._v("Developed with "),
-            _c("span", { staticClass: "text-danger" }, [
-              _c("i", {
-                staticClass: "fa fa-heart",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]),
-            _vm._v(" by\n                "),
-            _c("a", { attrs: { href: "/genconian" } }, [_vm._v("Genconians")]),
-            _vm._v(" | © 2018 "),
-            _c(
-              "a",
-              { attrs: { href: "https://www.gndec.ac.in/", target: "_blank" } },
-              [_vm._v("GNDEC,\n                    Ldh")]
-            )
-          ])
-        ])
-      ]
-    )
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
+    ])
   }
 ]
 render._withStripped = true
