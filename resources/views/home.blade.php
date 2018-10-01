@@ -137,7 +137,7 @@
       OneSignal.push(function() {
         OneSignal.init({
           appId: "c2c76dab-8872-40fc-a694-ac0a73e1b6b2",
-          autoRegister: false,
+          autoRegister: true,
           notifyButton: {
             enable: true,
           },
