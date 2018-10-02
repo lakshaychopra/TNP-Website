@@ -24,7 +24,7 @@
         <!-- TESTIMONIALS -->
         <section class="testimonials pb-0">
             <div class="container">
-                <h5 class="thanks-title h1">THANKS TO FACULTY TEAM</h5>
+                <h5 class="thanks-title h1">THANKS TO FACULTY MEMBERS</h5>
                 <div class="row">
                     <div class="col-sm-12">
                         <div id="customers-testimonials" class="owl-carousel">
@@ -96,7 +96,7 @@
                 <h5 class="section-title h1">THE TEAM</h5>
                 <div class="row">
                     <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
@@ -141,7 +141,7 @@
                     </div>
                     <!-- ./Team member -->
                     <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
@@ -193,7 +193,7 @@
 
         <section class="testimonials mb-5">
             <div class="container">
-                <h5 class="thanks-title h1">OUR CONTRIBUTORS</h5>
+                <h5 class="thanks-title h1">CONTRIBUTORS</h5>
                 <div class="row">
                     <!-- Team member -->
                     <!-- <div class="col-xs-12 col-sm-6 col-md-6">
@@ -246,7 +246,7 @@
         </section>
         <!-- END OF TESTIMONIALS -->
 
-        <section id="team" class="testimonials mb-5">
+        <section id="team" class="testimonials">
             <div class="container">
                 <h5 class="section-title h1" style="margin-bottom: 15px;">CONTACT US</h5>
                 <p class="section-subtitle h3">Get in Touch<br>We're always standing by and eager to help.</p>
@@ -306,19 +306,19 @@
         </section>
         <section class="testimonials mb-5">
             <div class="container">
-                <h5 class="thanks-title h1" style="margin-bottom: 15px;">Have a query?</h5>
+                <h5 class="thanks-title h1">Have a query?</h5>
                 <p class="thanks-subtitle h3">Feel Free<br>Ask anything?</p>
-                    <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" target="_blank">
+                    <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" target="_blank" class="mb-5">
                         <div class="form-group">
                             <label for="question" style="color:#038ed4">Query/Suggestion:</label>
-                            <input type="text" class="form-control" placeholder="Ask anything? Try from PC" name="Query/Suggestion" width="100%">
+                            <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%">
                         </div>
                         <input type="submit" value="Send" class="btn btn-primary btn-block">
                     </form>
             </div>
         </section>
 
-        <footer class="container-fluid footer mt-5 bg-dark" style="left:0">
+        <footer class="container-fluid footer mt-3 bg-dark" style="left:0">
             <p class="text-center" style="color:white"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i></span> by <router-link to="/genconian" style="color:white">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank" style="color:white">GNDEC, Ldh</a></small></p>
         </footer>
     </div>
@@ -488,7 +488,7 @@
     }
 
     section .section-subtitle {
-        text-align: justify;
+        text-align: left;
         color: #ffffff;
         margin-bottom: 25px;
         text-transform: uppercase;
