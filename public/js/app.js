@@ -30099,7 +30099,7 @@ var staticRenderFns = [
                 staticClass: "form-control",
                 attrs: {
                   type: "text",
-                  placeholder: "Ask anything?",
+                  placeholder: "Ask anything? Try from PC",
                   name: "Query/Suggestion",
                   width: "100%"
                 }
