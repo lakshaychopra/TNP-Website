@@ -184,26 +184,26 @@ class PostController extends Controller
     
     public function pushNotification(Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
-        \OneSignal::sendNotificationToAll(
-            $post->title, 
-            $url = "https://www.tnpgndec.com/view/".$post->id, 
-            $data = "Click here to know more",
-            $buttons = array(
-                [
-                    "id" => "home-button", 
-                    "text"=> "Home", 
-                    "icon"=> "/images/icons/other/home.png", 
-                    "url"=> "https://www.tnpgndec.com"
-                ], 
-                [
-                    "id"=> "about-button", 
-                    "text"=> "About TnP", 
-                    "icon"=> "/images/icons/other/about.png", 
-                    "url"=> "https://www.tnpgndec.com/about"
-                ]
-                ),
-                $schedule = null
-            );
+        \OneSignal::sendNotificationToAll("Test Message", $url = null, $data = null, $buttons = null, $schedule = null);
+            // $post->title, 
+            // $url = "https://www.tnpgndec.com/view/".$post->id, 
+            // $data = "Click here to know more",
+            // $buttons = array(
+            //     [
+            //         "id" => "home-button", 
+            //         "text"=> "Home", 
+            //         "icon"=> "/images/icons/other/home.png", 
+            //         "url"=> "https://www.tnpgndec.com"
+            //     ], 
+            //     [
+            //         "id"=> "about-button", 
+            //         "text"=> "About TnP", 
+            //         "icon"=> "/images/icons/other/about.png", 
+            //         "url"=> "https://www.tnpgndec.com/about"
+            //     ]
+            //     ),
+            //     $schedule = null
+            // );
             }
 
             public function getFirstID(Post $post){
