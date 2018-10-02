@@ -200,8 +200,10 @@ class PostController extends Controller
                     "text"=> "About TnP", 
                     "icon"=> "/images/icons/other/about.png", 
                     "url"=> "https://www.tnpgndec.com/about"
-                    ]
-                ));
+                ]
+                ),
+                $schedule = null
+            );
             }
 
             public function getFirstID(Post $post){
