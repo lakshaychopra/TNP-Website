@@ -29008,7 +29008,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\nul.list-inline li[data-v-56786506] {\n    padding: 0;\n    list-style: none;\n}\n.mar-top[data-v-56786506] {\n    margin-top: 50px;\n}\n.bg-gray[data-v-56786506] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-56786506] {\n    color: #038ed4;\n}\n#bg-trans[data-v-56786506] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.bg-dark[data-v-56786506] {\n    background-color: #038ed4 !important;\n}\n#list-menu li a[data-v-56786506] {\n    color: #f1f1f1;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-56786506]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#list-link li a[data-v-56786506] {\n    color: #038ed4;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-link li a[data-v-56786506]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #038ed4;\n    color: #f1f1f1;\n}\n.navbar[data-v-56786506] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-56786506] {\n        width: 142px;\n}\n}\n.w-65[data-v-56786506] {\n    width: 65%;\n}\n.fix[data-v-56786506] {\n    overflow: hidden;\n    top: 90px;\n}\n\n/* \nOur Team\n */\n#team[data-v-56786506] {\n    background: #038ed4 !important;\n}\n.btn-primary[data-v-56786506]:hover,\n.btn-primary[data-v-56786506]:focus {\n    background-color: #038ed4;\n    border-color: #ffffff;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    outline: none;\n}\n.btn-primary[data-v-56786506] {\n    color: #fff;\n    background-color: #038ed4;\n    border-color: #038ed4;\n}\nsection[data-v-56786506] {\n    padding: 60px 0;\n}\nsection .section-title[data-v-56786506] {\n    text-align: justify;\n    color: #ffffff;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\n.card-text[data-v-56786506] {\n    text-align: justify;\n}\n#team .card[data-v-56786506] {\n    border: solid #038ed4;\n    border-radius: 20px;\n    background: #ffffff;\n}\n.frontside .card[data-v-56786506] {\n    min-height: 312px;\n}\n.frontside .card .card-title[data-v-56786506] {\n    color: #038ed4 !important;\n    font-variant: small-caps;\n    font-size: 25px;\n}\n.card-body[data-v-56786506] {\n    padding-bottom: 0px;\n}\n.frontside .card .card-body img[data-v-56786506] {\n    width: 120px;\n    border-radius: 50%;\n}\n.card-subtitle[data-v-56786506] {\n    color: rgb(66, 66, 66);\n}\n.social-icon[data-v-56786506] {\n    font-size: 22px;\n}\n\n/* thanks */\nsection .thanks-title[data-v-56786506] {\n    text-align: left;\n    color: #038ed4;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\n#customers-testimonials .thanks-subtitle[data-v-56786506] {\n    color: #fff;\n    text-transform: uppercase;\n}\n#customers-testimonials .testimonials[data-v-56786506] {\n    background-color: #fff;\n    position: relative;\n    padding-top: 60px;\n}\n#customers-testimonials .testimonials[data-v-56786506]:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    width: 100%;\n    height: 30%;\n    background-color: #f1f1f1;\n}\n#customers-testimonials .item-details[data-v-56786506] {\n    background-color: #333333;\n    color: #fff;\n    padding: 20px 10px;\n    text-align: left;\n}\n#customers-testimonials .item-details h5[data-v-56786506] {\n    margin: 0 0 15px;\n    font-size: 18px;\n    line-height: 18px;\n    color: #fff;\n}\n#customers-testimonials .item-details h5 span p[data-v-56786506] {\n    font-size: 14px;\n}\n#customers-testimonials .item[data-v-56786506] {\n    text-align: center;\n    /*  padding: 20px; */\n    margin-bottom: 80px;\n}\n#customers-testimonials .owl-carousel .owl-nav[data-v-56786506] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n#customers-testimonials .owl-carousel[data-v-56786506] {\n    position: relative;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-56786506],\n#customers-testimonials .owl-carousel .owl-prev[data-v-56786506] {\n    width: 50px;\n    height: 50px;\n    line-height: 50px;\n    border-radius: 50%;\n    position: absolute;\n    top: 30%;\n    font-size: 20px;\n    color: #fff;\n    border: 1px solid #ddd;\n    text-align: center;\n}\n#customers-testimonials .owl-carousel .owl-prev[data-v-56786506] {\n    left: -70px;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-56786506] {\n    right: -70px;\n}\n", ""]);
+exports.push([module.i, "\nul.list-inline li[data-v-56786506] {\n    padding: 0;\n    list-style: none;\n}\n.mar-top[data-v-56786506] {\n    margin-top: 50px;\n}\n.bg-gray[data-v-56786506] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-56786506] {\n    color: #038ed4;\n}\n#bg-trans[data-v-56786506] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.bg-dark[data-v-56786506] {\n    background-color: #038ed4 !important;\n}\n#list-menu li a[data-v-56786506] {\n    color: #f1f1f1;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-56786506]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#list-link li a[data-v-56786506] {\n    color: #038ed4;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-link li a[data-v-56786506]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #038ed4;\n    color: #f1f1f1;\n}\n.navbar[data-v-56786506] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-56786506] {\n        width: 142px;\n}\n}\n.w-65[data-v-56786506] {\n    width: 65%;\n}\n.fix[data-v-56786506] {\n    overflow: hidden;\n    top: 90px;\n}\n\n/* \nOur Team\n */\n#team[data-v-56786506] {\n    background: #038ed4 !important;\n}\n.btn-primary[data-v-56786506]:hover,\n.btn-primary[data-v-56786506]:focus {\n    background-color: #038ed4;\n    border-color: #ffffff;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    outline: none;\n}\n.btn-primary[data-v-56786506] {\n    color: #fff;\n    background-color: #038ed4;\n    border-color: #038ed4;\n}\nsection[data-v-56786506] {\n    padding: 60px 0;\n}\nsection .section-title[data-v-56786506] {\n    text-align: justify;\n    color: #ffffff;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\nsection .section-subtitle[data-v-56786506] {\n    text-align: justify;\n    color: #ffffff;\n    margin-bottom: 25px;\n    text-transform: uppercase;\n}\n#contact .card:hover i[data-v-56786506],\n#contact .card:hover h4[data-v-56786506] {\n    color: #038ed4;\n}\n.card-text[data-v-56786506] {\n    text-align: justify;\n}\n#team .card[data-v-56786506] {\n    border: solid #038ed4;\n    border-radius: 20px;\n    background: #ffffff;\n}\n.frontside .card[data-v-56786506] {\n    min-height: 312px;\n}\n.frontside .card .card-title[data-v-56786506] {\n    color: #038ed4 !important;\n    font-variant: small-caps;\n    font-size: 25px;\n}\n.card-body[data-v-56786506] {\n    padding-bottom: 0px;\n}\n.frontside .card .card-body img[data-v-56786506] {\n    width: 120px;\n    border-radius: 50%;\n}\n.card-subtitle[data-v-56786506] {\n    color: rgb(66, 66, 66);\n}\n.social-icon[data-v-56786506] {\n    font-size: 22px;\n}\n\n/* thanks */\nsection .thanks-title[data-v-56786506] {\n    text-align: left;\n    color: #038ed4;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\nsection .thanks-subtitle[data-v-56786506] {\n    text-align: left;\n    color: #038ed4;\n    margin-bottom: 25px;\n    text-transform: uppercase;\n}\n#customers-testimonials .thanks-subtitle[data-v-56786506] {\n    color: #fff;\n    text-transform: uppercase;\n}\n#customers-testimonials .testimonials[data-v-56786506] {\n    background-color: #fff;\n    position: relative;\n    padding-top: 60px;\n}\n#customers-testimonials .testimonials[data-v-56786506]:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    width: 100%;\n    height: 30%;\n    background-color: #f1f1f1;\n}\n#customers-testimonials .item-details[data-v-56786506] {\n    background-color: #333333;\n    color: #fff;\n    padding: 20px 10px;\n    text-align: left;\n}\n#customers-testimonials .item-details h5[data-v-56786506] {\n    margin: 0 0 15px;\n    font-size: 18px;\n    line-height: 18px;\n    color: #fff;\n}\n#customers-testimonials .item-details h5 span p[data-v-56786506] {\n    font-size: 14px;\n}\n#customers-testimonials .item[data-v-56786506] {\n    text-align: center;\n    /*  padding: 20px; */\n    margin-bottom: 80px;\n}\n#customers-testimonials .owl-carousel .owl-nav[data-v-56786506] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n#customers-testimonials .owl-carousel[data-v-56786506] {\n    position: relative;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-56786506],\n#customers-testimonials .owl-carousel .owl-prev[data-v-56786506] {\n    width: 50px;\n    height: 50px;\n    line-height: 50px;\n    border-radius: 50%;\n    position: absolute;\n    top: 30%;\n    font-size: 20px;\n    color: #fff;\n    border: 1px solid #ddd;\n    text-align: center;\n}\n#customers-testimonials .owl-carousel .owl-prev[data-v-56786506] {\n    left: -70px;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-56786506] {\n    right: -70px;\n}\n", ""]);
 
 // exports
 
@@ -29019,6 +29019,27 @@ exports.push([module.i, "\nul.list-inline li[data-v-56786506] {\n    padding: 0;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29337,6 +29358,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 dots: false,
                 nav: false,
                 autoplayTimeout: 8500,
+                smartSpeed: 600,
+                lazyLoad: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    1170: {
+                        items: 3
+                    }
+                }
+            });
+        }.bind(vm));
+        Vue.nextTick(function () {
+            $('#contact').owlCarousel({
+                loop: true,
+                center: true,
+                items: 3,
+                margin: 30,
+                autoplay: true,
+                dots: false,
+                nav: false,
+                autoplayTimeout: 8500,
                 smartSpeed: 450,
                 responsive: {
                     0: {
@@ -29425,7 +29471,7 @@ var render = function() {
                           staticClass: "fa fa-long-arrow-left",
                           attrs: { "aria-hidden": "true" }
                         }),
-                        _vm._v(" Back\n                       ")
+                        _vm._v(" Back\n                    ")
                       ]
                     )
                   ],
@@ -29447,35 +29493,50 @@ var render = function() {
     _vm._v(" "),
     _vm._m(3),
     _vm._v(" "),
+    _vm._m(4),
+    _vm._v(" "),
     _c(
       "footer",
       {
-        staticClass: "container-fluid footer mt-5",
+        staticClass: "container-fluid footer mt-5 bg-dark",
         staticStyle: { left: "0" }
       },
       [
-        _c("p", { staticClass: "text-center" }, [
-          _c(
-            "small",
-            [
-              _vm._v("Developed with "),
-              _vm._m(4),
-              _vm._v(" by\n                   "),
-              _c("router-link", { attrs: { to: "/genconian" } }, [
-                _vm._v("Genconians")
-              ]),
-              _vm._v(" | © 2018 "),
-              _c(
-                "a",
-                {
-                  attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
-                },
-                [_vm._v("GNDEC,\n                       Ldh")]
-              )
-            ],
-            1
-          )
-        ])
+        _c(
+          "p",
+          { staticClass: "text-center", staticStyle: { color: "white" } },
+          [
+            _c(
+              "small",
+              [
+                _vm._v("Developed with "),
+                _vm._m(5),
+                _vm._v(" by "),
+                _c(
+                  "router-link",
+                  {
+                    staticStyle: { color: "white" },
+                    attrs: { to: "/genconian" }
+                  },
+                  [_vm._v("Genconians")]
+                ),
+                _vm._v(" | © 2018 "),
+                _c(
+                  "a",
+                  {
+                    staticStyle: { color: "white" },
+                    attrs: {
+                      href: "https://www.gndec.ac.in/",
+                      target: "_blank"
+                    }
+                  },
+                  [_vm._v("GNDEC, Ldh")]
+                )
+              ],
+              1
+            )
+          ]
+        )
       ]
     )
   ])
@@ -29624,11 +29685,11 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "He is a Genconian. He is a B.Tech student in Information\n                                       Technology of 2015-19 batch. He is Co-Cordinator of Training and Placement\n                                       Cell. He has been working day-night on T&P Cell's website for college\n                                       students. He has worked as Developer on the PWA and Restful APIs of "
+                      "He is a Genconian. He is a B.Tech student in Information\n                                    Technology of 2015-19 batch. He is Co-Cordinator of Training and Placement\n                                    Cell. He has been working day-night on T&P Cell's website for college\n                                    students. He has worked as Developer on the PWA and Restful APIs of "
                     ),
                     _c("a", { attrs: { href: "https://www.tnpgndec.com" } }, [
                       _vm._v(
-                        "T&P\n                                           Cell's website."
+                        "T&P\n                                        Cell's website."
                       )
                     ])
                   ]),
@@ -29740,13 +29801,13 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "He is a Genconian. He is a B.Tech student in Computer Science\n                                       and Engineering of 2015-19 batch. He has been working day-night on T&P\n                                       Cell's website for college students. He has worked as Developer on the SPA and\n                                       Vue.js part of "
+                      "He is a Genconian. He is a B.Tech student in Computer Science\n                                    and Engineering of 2015-19 batch. He has been working day-night on T&P\n                                    Cell's website for college students. He has worked as Developer on the SPA and\n                                    Vue.js part of "
                     ),
                     _c("a", { attrs: { href: "https://www.tnpgndec.com" } }, [
                       _vm._v("T&P Cell's website")
                     ]),
                     _vm._v(
-                      ".\n                                       He is not even a member of T&P Cell and has contributed a lot to the\n                                       website."
+                      ".\n                                    He is not even a member of T&P Cell and has contributed a lot to the\n                                    website."
                     )
                   ]),
                   _vm._v(" "),
@@ -29852,83 +29913,205 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "mb-5", attrs: { id: "team" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c("h5", { staticClass: "section-title h1" }, [_vm._v("CONTACT US")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 my-5" }, [
-            _c("div", { staticClass: "card border-0" }, [
-              _c("div", { staticClass: "card-body text-center" }, [
-                _c("i", {
-                  staticClass: "fa fa-phone fa-5x mb-3",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("h4", { staticClass: "text-uppercase mb-5" }, [
-                  _vm._v("call us")
-                ]),
-                _vm._v(" "),
-                _c("p", [_vm._v("+8801683615582,+8801750603409")])
-              ])
-            ])
+    return _c(
+      "section",
+      { staticClass: "testimonials mb-5", attrs: { id: "team" } },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "h5",
+            {
+              staticClass: "section-title h1",
+              staticStyle: { "margin-bottom": "15px" }
+            },
+            [_vm._v("CONTACT US")]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "section-subtitle h3" }, [
+            _vm._v("Get in Touch"),
+            _c("br"),
+            _vm._v("We're always standing by and eager to help.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 my-5" }, [
-            _c("div", { staticClass: "card border-0" }, [
-              _c("div", { staticClass: "card-body text-center" }, [
-                _c("i", {
-                  staticClass: "fa fa-map-marker fa-5x mb-3",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("h4", { staticClass: "text-uppercase mb-5" }, [
-                  _vm._v("office loaction")
-                ]),
-                _vm._v(" "),
-                _c("address", [
-                  _vm._v("Suite 02, Level 12, Sahera Tropical Center ")
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 my-5" }, [
-            _c("div", { staticClass: "card border-0" }, [
-              _c("div", { staticClass: "card-body text-center" }, [
-                _c("i", {
-                  staticClass: "fa fa-map-marker fa-5x mb-3",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("h4", { staticClass: "text-uppercase mb-5" }, [
-                  _vm._v("office loaction")
-                ]),
-                _vm._v(" "),
-                _c("address", [
-                  _vm._v("Suite 02, Level 12, Sahera Tropical Center ")
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 my-5" }, [
-            _c("div", { staticClass: "card border-0" }, [
-              _c("div", { staticClass: "card-body text-center" }, [
-                _c("i", {
-                  staticClass: "fa fa-globe fa-5x mb-3",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("h4", { staticClass: "text-uppercase mb-5" }, [
-                  _vm._v("email")
-                ]),
-                _vm._v(" "),
-                _c("p", [_vm._v("http://al.a.noman1416@gmail.com")])
-              ])
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-12" }, [
+              _c(
+                "div",
+                { staticClass: "owl-carousel", attrs: { id: "contact" } },
+                [
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "card border-0" }, [
+                      _c("div", { staticClass: "card-body text-center" }, [
+                        _c("a", { attrs: { href: "tel:+91-81980-77793" } }, [
+                          _c("i", {
+                            staticClass: "fa fa-phone fa-5x mb-3",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(" "),
+                          _c("h4", { staticClass: "text-uppercase mb-2" }, [
+                            _vm._v("call us")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("+91-81980-77793")])
+                        ])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "card border-0" }, [
+                      _c("div", { staticClass: "card-body text-center" }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "https://goo.gl/maps/B61b8nR1svs",
+                              target: "_blank",
+                              rel: "noopener"
+                            }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fa fa-map-marker fa-5x mb-3",
+                              attrs: { "aria-hidden": "true" }
+                            }),
+                            _vm._v(" "),
+                            _c("h4", { staticClass: "text-uppercase mb-2" }, [
+                              _vm._v("office location")
+                            ]),
+                            _vm._v(" "),
+                            _c("address", [
+                              _vm._v("GNDEC Gill Park 141006 Ludhiana")
+                            ])
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "card border-0" }, [
+                      _c("div", { staticClass: "card-body text-center" }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "https://gndec.ac.in/",
+                              target: "_blank",
+                              rel: "noopener"
+                            }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fa fa-globe fa-5x mb-3",
+                              attrs: { "aria-hidden": "true" }
+                            }),
+                            _vm._v(" "),
+                            _c("h4", { staticClass: "text-uppercase mb-2" }, [
+                              _vm._v("College Website")
+                            ]),
+                            _vm._v(" "),
+                            _c("address", [_vm._v("https://gndec.ac.in/")])
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "card border-0" }, [
+                      _c("div", { staticClass: "card-body text-center" }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "mailto:tpo@gndec.ac.in",
+                              target: "_blank"
+                            }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fa fa-envelope fa-5x mb-3",
+                              attrs: { "aria-hidden": "true" }
+                            }),
+                            _vm._v(" "),
+                            _c("h4", { staticClass: "text-uppercase mb-2" }, [
+                              _vm._v("email")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("tpo@gndec.ac.in")])
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ]
+              )
             ])
           ])
         ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "testimonials mb-5" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "h5",
+          {
+            staticClass: "thanks-title h1",
+            staticStyle: { "margin-bottom": "15px" }
+          },
+          [_vm._v("Have a query?")]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "thanks-subtitle h3" }, [
+          _vm._v("Feel Free"),
+          _c("br"),
+          _vm._v("Ask anything?")
+        ]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            attrs: {
+              action: "mailto:gndectpo@gmail.com",
+              method: "post",
+              enctype: "text/plain",
+              target: "_blank"
+            }
+          },
+          [
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "label",
+                {
+                  staticStyle: { color: "#038ed4" },
+                  attrs: { for: "question" }
+                },
+                [_vm._v("Query/Suggestion:")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  placeholder: "Ask anything?",
+                  name: "Query/Suggestion",
+                  width: "100%"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "btn btn-default",
+              attrs: { type: "submit", value: "Send" }
+            })
+          ]
+        )
       ])
     ])
   },

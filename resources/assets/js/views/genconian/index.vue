@@ -246,59 +246,80 @@
         </section>
         <!-- END OF TESTIMONIALS -->
 
- <section id="team" class="mb-5">
+        <section id="team" class="testimonials mb-5">
             <div class="container">
-                <h5 class="section-title h1">CONTACT US</h5>
+                <h5 class="section-title h1" style="margin-bottom: 15px;">CONTACT US</h5>
+                <p class="section-subtitle h3">Get in Touch<br>We're always standing by and eager to help.</p>
                 <div class="row">
-                    <!-- contact info -->
-                   <div class="col-sm-12 col-md-6 col-lg-3 my-5">
-               <div class="card border-0">
-                  <div class="card-body text-center">
-                    <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
-                    <h4 class="text-uppercase mb-5">call us</h4>
-                    <p>+8801683615582,+8801750603409</p>
-                  </div>
-                </div>
-             </div>
-             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
-               <div class="card border-0">
-                  <div class="card-body text-center">
-                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
-                    <h4 class="text-uppercase mb-5">office loaction</h4>
-                   <address>Suite 02, Level 12, Sahera Tropical Center </address>
-                  </div>
-                </div>
-             </div>
-             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
-               <div class="card border-0">
-                  <div class="card-body text-center">
-                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
-                    <h4 class="text-uppercase mb-5">office loaction</h4>
-                    <address>Suite 02, Level 12, Sahera Tropical Center </address>
-                  </div>
-                </div>
-             </div>
-             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
-               <div class="card border-0">
-                  <div class="card-body text-center">
-                    <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
-                    <h4 class="text-uppercase mb-5">email</h4>
-                    <p>http://al.a.noman1416@gmail.com</p>
-                  </div>
-                </div>
-             </div>
-                    <!-- ./contact info -->
-                    
+                    <div class="col-sm-12">
+                        <div id="contact" class="owl-carousel">
+                            <!-- contact info -->
+                            <div class="item">
+                                <div class="card border-0">
+                                    <div class="card-body text-center">
+                                        <a href="tel:+91-81980-77793">
+                                            <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">call us</h4>
+                                            <p>+91-81980-77793</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card border-0">
+                                    <div class="card-body text-center">
+                                        <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank" rel="noopener">
+                                            <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">office location</h4>
+                                            <address>GNDEC Gill Park 141006 Ludhiana</address>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card border-0">
+                                    <div class="card-body text-center">
+                                        <a href="https://gndec.ac.in/" target="_blank" rel="noopener">
+                                            <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">College Website</h4>
+                                            <address>https://gndec.ac.in/</address>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card border-0">
+                                    <div class="card-body text-center">
+                                        <a href="mailto:tpo@gndec.ac.in" target="_blank">
+                                            <i class="fa fa-envelope fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">email</h4>
+                                            <p>tpo@gndec.ac.in</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./contact info -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <section class="testimonials mb-5">
+            <div class="container">
+                <h5 class="thanks-title h1" style="margin-bottom: 15px;">Have a query?</h5>
+                <p class="thanks-subtitle h3">Feel Free<br>Ask anything?</p>
+                    <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" target="_blank">
+                        <div class="form-group">
+                            <label for="question" style="color:#038ed4">Query/Suggestion:</label>
+                            <input type="text" class="form-control" placeholder="Ask anything?" name="Query/Suggestion" width="100%">
+                        </div>
+                        <input type="submit" value="Send" class="btn btn-default">
+                    </form>
+            </div>
+        </section>
 
-        <footer class="container-fluid footer mt-5" style="left:0">
-            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
-                    </span> by
-                    <router-link to="/genconian">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/"
-                        target="_blank">GNDEC,
-                        Ldh</a></small></p>
+        <footer class="container-fluid footer mt-5 bg-dark" style="left:0">
+            <p class="text-center" style="color:white"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i></span> by <router-link to="/genconian" style="color:white">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank" style="color:white">GNDEC, Ldh</a></small></p>
         </footer>
     </div>
 </template>
@@ -308,6 +329,31 @@
             var vm = this;
             Vue.nextTick(function () {
                 $('#customers-testimonials').owlCarousel({
+                    loop: true,
+                    center: true,
+                    items: 3,
+                    margin: 30,
+                    autoplay: true,
+                    dots: false,
+                    nav: false,
+                    autoplayTimeout: 8500,
+                    smartSpeed: 600,
+                    lazyLoad: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 2
+                        },
+                        1170: {
+                            items: 3
+                        }
+                    }
+                });
+            }.bind(vm));
+            Vue.nextTick(function () {
+                $('#contact').owlCarousel({
                     loop: true,
                     center: true,
                     items: 3,
@@ -441,6 +487,18 @@
         text-transform: uppercase;
     }
 
+    section .section-subtitle {
+        text-align: justify;
+        color: #ffffff;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+    }
+
+    #contact .card:hover i,
+    #contact .card:hover h4 {
+        color: #038ed4;
+    }
+
     .card-text {
         text-align: justify;
     }
@@ -484,6 +542,13 @@
         text-align: left;
         color: #038ed4;
         margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+    section .thanks-subtitle {
+        text-align: left;
+        color: #038ed4;
+        margin-bottom: 25px;
         text-transform: uppercase;
     }
 
