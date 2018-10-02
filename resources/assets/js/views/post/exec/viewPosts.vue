@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12">
-        <div class="card card-primary shadow-sm" v-for="post in posts.data" :key="post.id">
+        <div class="card card-primary shadow-sm" v-for="post in posts" :key="post.id">
           <div class="card-header">
             <h3>{{post.title}}</h3>
             <small class="pull-right sub-head">
@@ -22,6 +22,9 @@
                     <i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
                   <a v-else class="dropdown-item" href="#" @click.prevent="unpinPost(post.id)">
                     <i class="fa fa-thumb-tack" aria-hidden="true"></i> Unpin </a>
+                    <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="" @click.prevent="notifyPost(post.id)">
+                    <i class="fa fa-share" aria-hidden="true"></i> Notify</a>
                 </div>
               </div>
             </small>
@@ -37,9 +40,6 @@
               <small>
                 <strong>{{post.updated_at}}</strong>
               </small>
-              <span class="pull-right">
-                <i id="share" git class="fa fa-share-alt fa-2x" aria-hidden="true"></i>
-              </span>
             </div>
             <!-- <ul class="list-group">
                           <li class="list-group-item"></li>
@@ -119,6 +119,34 @@
           }
         })
       },
+        notifyPost(id,title) {
+        this.$swal({
+          title: 'Are you sure to notify post?',
+          text: "You won't be able to revert this!",
+          type: 'info',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, Notify subscribers!'
+        }).then((result) => {
+          if (result.value) {
+            axios.post('/api/dashboard/post/notifyme' + id, {
+                id: id,
+                _method: 'POST'
+              }).then((response) => {
+                // console.log(response.data);
+
+                this.$swal(
+                  'Notified!',
+                  'Your post has been notified.',
+                  'success'
+                )
+                this.refreshPost(response);
+              })
+              .catch((error) => console.log(error))
+          }
+        })
+      },
       pinPost(id) {
         axios.post('/api/dashboard/post/pinned/' + id, {
             id: id,
@@ -161,40 +189,39 @@
         // })
         // .catch((error) => console.log(error))
       },
-       getallpost: function () {
+        getallpost: function () {
                 setTimeout(() => {
-                    const vm = this;
+                  const vm = this;
+                  vm.page = vm.page + 1;
                     axios.get('/api/dashboard/post?page=' + vm.page)
                         .then(function (response) {
-                            console.log(response.data.data.length);
+                            // console.log(response.data.data.data);
                             if (response.data.data.data.length == 0) {
                                 vm.busy = true;
                             } else {
                                 vm.busy = false;
                             }
-                                  for (var i = 0; i < response.data.data.data.length; i++) {
-                                      console.log(response.data.data.data[i]);
-                                      vm.posts.push(response.data.data.data[i]);
-                                  }
-                                vm.loading = 0;
-                                vm.page = vm.page + 1;
+                            for (var i = 0; i < response.data.data.data.length; i++) {
+                                // console.log(response.data.data.data[i]);
+                                vm.posts.push(response.data.data.data[i]);
+                            }
+                            vm.loading = 0;
 
                         })
                         .catch(function (error) {});
                 }, 2000);
-            },
+            }
     },
     created() {
       axios.get(addPostURL)
         .then((response) => {
           // var obj = JSON.parse(response.data);
           // console.log(response);
-          this.posts = response.data.data;
-          console.log(response.data.data);
+          this.posts = response.data.data.data;
+          // console.log(response.data.data.data);
 
         })
         .catch((error) => console.log(error))
-      // this.getallpost();
     }
   }
 </script>

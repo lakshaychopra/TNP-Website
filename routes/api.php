@@ -17,15 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::post('/save-subscription/{id}',function($id, Request $request){
-//     $user = \App\User::findOrFail($id);
-  
-//     $user->updatePushSubscription($request->input('endpoint'), $request->input('keys.p256dh'), $request->input('keys.auth'));
-//     $user->notify(new \App\Notifications\GenericNotification("Welcome To WebPush", "You will now get all of our push notifications"));
-//     return response()->json([
-//       'success' => true
-//     ]);
-//   });
   
 Route::post('/send-notification', 'PostController@pushNotification');
 
@@ -65,7 +56,8 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::put('/post/pinned/{post?}', 'PostController@pinned');
         Route::put('/post/unpinned/{post?}', 'PostController@unpinned');
         Route::get('/post/view/pinned', 'PostController@viewPinned');
-        // Route::post('/send-notification', 'PostController@pushNotification');
+        Route::post('/post/getpostid', 'PostController@getFirstID');
+        Route::post('/post/notifyme', 'PostController@pushNotification');
         
         // Users Controller
         Route::resource('/user', 'UsersController');

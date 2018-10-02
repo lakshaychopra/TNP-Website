@@ -388,26 +388,28 @@ function toComment(sourceMap) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return apiDomain; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return loginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return forgetURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return verifyURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return securityURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return verifyURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return securityURL; });
 /* unused harmony export oauthURL */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return addPostURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return showPostURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return postIdGetURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return showPostURL; });
+/* unused harmony export notifyPostURL */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return pinPostURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addHomePostURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return pinnedPostURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return registerURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return setPasswordURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return registerURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return setPasswordURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return downloadExcelURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return mailExcelURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return singleuserURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return searchURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return singleuserURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return searchURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return categoryURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return rightWidget; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return rightWidget; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return formstepChangeURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return firstLoginURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return statusChangeURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return storeStudentURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return statusChangeURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return storeStudentURL; });
 /* unused harmony export updateProfileURL */
 /* unused harmony export viewPost */
 var apiDomain = 'https://www.tnpgndec.com';
@@ -419,7 +421,9 @@ var securityURL = '/api/security';
 var oauthURL = '/oauth/token';
 
 var addPostURL = '/api/dashboard/post';
+var postIdGetURL = '/api/dashboard/post/getpostid/';
 var showPostURL = '/api/dashboard/post/';
+var notifyPostURL = '/api/dashboard/post/notifyme';
 
 var pinPostURL = '/api/dashboard/post/view/pinned';
 var addHomePostURL = '/api/home';
@@ -24637,7 +24641,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             if (this.search.length >= 2) {
-                axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["o" /* searchURL */] + this.search).then(function (response) {
+                axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["p" /* searchURL */] + this.search).then(function (response) {
                     return _this.$parent.posts = response.data.data.data;
                 }, this.$parent.pinned_posts = undefined);
             } else {
@@ -25497,7 +25501,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["n" /* rightWidget */]).then(function (response) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["o" /* rightWidget */]).then(function (response) {
             _this.office = response.data.data[0];
         }).catch(function (error) {
             return console.log(error);
@@ -26969,7 +26973,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n#more[data-v-0263ce66]{\n    border-top-left-radius: 10px;\nborder-top-right-radius: 10px;\n}\n.col-primary[data-v-0263ce66] {\n    color: #304156;\n}\n.card-primary[data-v-0263ce66] {\n    background: #fff;\n}\n.btn-custom[data-v-0263ce66] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-0263ce66] {\n    margin-top: 3px;\n}\n#share[data-v-0263ce66] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-0263ce66] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.bg-gray[data-v-0263ce66] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0263ce66] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0263ce66] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i[data-v-0263ce66] {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-0263ce66] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-0263ce66] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-0263ce66] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-0263ce66]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0263ce66] {\n        width: 142px;\n}\n}\n.w-65[data-v-0263ce66] {\n    width: 65%;\n}\n.fix[data-v-0263ce66] {\n    overflow: hidden;\n    top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social[data-v-0263ce66] {\n        text-align: center;\n}\n}\n#bt[data-v-0263ce66] {\n    border-top: 1px solid #ecedee;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n    /* font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"; */\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bg-img.jpg');\n    width: 100%;\n    height: 100vh;\n    background-size: cover;\n}\n.bottom-left[data-v-0263ce66] {\n    position: absolute;\n    bottom: 8px;\n}\n.bgimage2[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg2.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage3[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg3.jpg');\n    width: 100%;\n    height: 500px;\n    background-size: cover;\n}\n.p-top[data-v-0263ce66] {\n    padding-top: 400px;\n}\n#bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#bor-right[data-v-0263ce66] {\n    border-right: 1px solid #000;\n    height: 164px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo1 .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo1 .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n.bgcolor3[data-v-0263ce66] {\n    background-color: #474747;\n}\n.listt ul[data-v-0263ce66] {\n    list-style-type: none;\n}\n.mar-top[data-v-0263ce66] {\n    margin-top: 50px;\n}\n\n/* CSS used here will be applied after bootstrap.css */\n.closeBtn[data-v-0263ce66]:focus {\n    outline: none;\n}\n.close[data-v-0263ce66] {\n    color: gray;\n}\n.wrapper[data-v-0263ce66] {\n    position: relative;\n    margin: 0 auto;\n    overflow: hidden;\n    padding: 5px;\n    height: 50px;\n}\n.list[data-v-0263ce66] {\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    min-width: 3500px;\n    margin-top: 0px;\n}\n.list li[data-v-0263ce66] {\n    display: table-cell;\n    position: relative;\n    text-align: center;\n    cursor: grab;\n    cursor: -webkit-grab;\n    color: #efefef;\n    vertical-align: middle;\n}\n@media screen and (max-width:425px) {\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n.bgimage[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.bgimage2[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.mar-top[data-v-0263ce66] {\n        margin-top: 10px;\n}\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 1px solid #fff;\n    height: 200px;\n}\n.icons[data-v-0263ce66] {\n    border: 1px solid #fff;\n    padding: 12px;\n    border-radius: 50%;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\n\n/* a {\n    color: #fff;\n    font-size: 17px;\n} */\n#nav-carousel p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n", ""]);
+exports.push([module.i, "\n#more[data-v-0263ce66] {\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n}\n.col-primary[data-v-0263ce66] {\n    color: #304156;\n}\n.card-primary[data-v-0263ce66] {\n    background: #fff;\n}\n.btn-custom[data-v-0263ce66] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-0263ce66] {\n    margin-top: 3px;\n}\n#share[data-v-0263ce66] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-0263ce66] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.bg-gray[data-v-0263ce66] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0263ce66] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0263ce66] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i[data-v-0263ce66] {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-0263ce66] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-0263ce66] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-0263ce66] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-0263ce66]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0263ce66] {\n        width: 142px;\n}\n}\n.w-65[data-v-0263ce66] {\n    width: 65%;\n}\n.fix[data-v-0263ce66] {\n    overflow: hidden;\n    top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social[data-v-0263ce66] {\n        text-align: center;\n}\n}\n#bt[data-v-0263ce66] {\n    border-top: 1px solid #ecedee;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n    /* font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"; */\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bg-img.jpg');\n    width: 100%;\n    height: 100vh;\n    background-size: cover;\n}\n.bottom-left[data-v-0263ce66] {\n    position: absolute;\n    bottom: 8px;\n}\n.bgimage2[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg2.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage3[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg3.jpg');\n    width: 100%;\n    height: 500px;\n    background-size: cover;\n}\n.p-top[data-v-0263ce66] {\n    padding-top: 400px;\n}\n#bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#bor-right[data-v-0263ce66] {\n    border-right: 1px solid #000;\n    height: 164px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo1 .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo1 .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n.bgcolor3[data-v-0263ce66] {\n    background-color: #474747;\n}\n.listt ul[data-v-0263ce66] {\n    list-style-type: none;\n}\n.mar-top[data-v-0263ce66] {\n    margin-top: 50px;\n}\n\n/* CSS used here will be applied after bootstrap.css */\n.closeBtn[data-v-0263ce66]:focus {\n    outline: none;\n}\n.close[data-v-0263ce66] {\n    color: gray;\n}\n.wrapper[data-v-0263ce66] {\n    position: relative;\n    margin: 0 auto;\n    overflow: hidden;\n    padding: 5px;\n    height: 50px;\n}\n.list[data-v-0263ce66] {\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    min-width: 3500px;\n    margin-top: 0px;\n}\n.list li[data-v-0263ce66] {\n    display: table-cell;\n    position: relative;\n    text-align: center;\n    cursor: grab;\n    cursor: -webkit-grab;\n    color: #efefef;\n    vertical-align: middle;\n}\n@media screen and (max-width:425px) {\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n.bgimage[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.bgimage2[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.mar-top[data-v-0263ce66] {\n        margin-top: 10px;\n}\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 1px solid #fff;\n    height: 200px;\n}\n.icons[data-v-0263ce66] {\n    border: 1px solid #fff;\n    padding: 12px;\n    border-radius: 50%;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\n\n/* a {\n    color: #fff;\n    font-size: 17px;\n} */\n#nav-carousel p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n", ""]);
 
 // exports
 
@@ -26984,6 +26988,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_owl_carousel2_dist_assets_owl_carousel_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_owl_carousel2_dist_assets_owl_carousel_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -28038,28 +28053,136 @@ var render = function() {
             _vm._v(" "),
             _vm._m(0),
             _vm._v(" "),
-            _vm._m(1),
+            _c("div", { staticClass: "navbar" }, [
+              _c("div", { staticClass: "mr-auto d-none d-md-block w-65" }),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
+                [
+                  _c(
+                    "li",
+                    { staticClass: "nav-item" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "pull-right nav-link",
+                          attrs: { to: "/" }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "fa fa-long-arrow-left",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(" Back\n                            ")
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1)
+                    ],
+                    1
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
-            _vm._m(2)
+            _c(
+              "div",
+              {
+                staticClass: "w-100 p-2 font bgcolor textcolor collapse",
+                attrs: { id: "more" }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "owl-carousel",
+                    attrs: { id: "nav-carousel" }
+                  },
+                  [
+                    _c("div", [
+                      _c(
+                        "p",
+                        [
+                          _c("router-link", { attrs: { to: "/" } }, [
+                            _vm._v("Home")
+                          ])
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c(
+                        "p",
+                        [
+                          _c("router-link", { attrs: { to: "/login" } }, [
+                            _vm._v("Login")
+                          ])
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _vm._m(5),
+                    _vm._v(" "),
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _vm._m(7),
+                    _vm._v(" "),
+                    _vm._m(8),
+                    _vm._v(" "),
+                    _vm._m(9),
+                    _vm._v(" "),
+                    _vm._m(10),
+                    _vm._v(" "),
+                    _vm._m(11),
+                    _vm._v(" "),
+                    _vm._m(12),
+                    _vm._v(" "),
+                    _vm._m(13),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c(
+                        "p",
+                        [
+                          _c("router-link", { attrs: { to: "/genconian" } }, [
+                            _vm._v("Developer and Contributers")
+                          ])
+                        ],
+                        1
+                      )
+                    ])
+                  ]
+                )
+              ]
+            )
           ],
           1
         )
       ]
     ),
     _vm._v(" "),
-    _vm._m(3),
+    _vm._m(14),
     _vm._v(" "),
-    _vm._m(4),
+    _vm._m(15),
     _vm._v(" "),
-    _vm._m(5),
+    _vm._m(16),
     _vm._v(" "),
-    _vm._m(6),
+    _vm._m(17),
     _vm._v(" "),
-    _vm._m(7),
+    _vm._m(18),
     _vm._v(" "),
-    _vm._m(8),
+    _vm._m(19),
     _vm._v(" "),
-    _vm._m(9),
+    _vm._m(20),
     _vm._v(" "),
     _c(
       "footer",
@@ -28073,7 +28196,7 @@ var render = function() {
             "small",
             [
               _vm._v("Developed with "),
-              _vm._m(10),
+              _vm._m(21),
               _vm._v(" by\n                    "),
               _c("router-link", { attrs: { to: "/genconian" } }, [
                 _vm._v("Genconians")
@@ -28111,81 +28234,92 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar" }, [
-      _c("div", { staticClass: "mr-auto d-none d-md-block w-65" }),
-      _vm._v(" "),
-      _c("ul", { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } }, [
-        _c("li", { staticClass: "nav-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "nav-link float-right",
-              attrs: {
-                href: "#",
-                "data-target": "#more",
-                "data-toggle": "collapse"
-              }
-            },
-            [
-              _vm._v("\n                                More "),
-              _c("i", {
-                staticClass: "fa fa-caret-down",
-                attrs: { "aria-hidden": "true" }
-              })
-            ]
-          )
-        ])
-      ])
-    ])
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link float-right",
+        attrs: { href: "#", "data-target": "#more", "data-toggle": "collapse" }
+      },
+      [
+        _vm._v("\n                                More "),
+        _c("i", {
+          staticClass: "fa fa-caret-down",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "w-100 p-2 font bgcolor textcolor collapse",
-        attrs: { id: "more" }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "owl-carousel", attrs: { id: "nav-carousel" } },
-          [
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])]),
-            _vm._v(" "),
-            _c("div", [_c("p", [_vm._v("HOME")])])
-          ]
-        )
-      ]
-    )
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", [_vm._v("HOME")])])
   },
   function() {
     var _vm = this
@@ -29086,6 +29220,109 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     beforeCreate: function beforeCreate() {
@@ -29188,7 +29425,7 @@ var render = function() {
                           staticClass: "fa fa-long-arrow-left",
                           attrs: { "aria-hidden": "true" }
                         }),
-                        _vm._v(" Back\n                    ")
+                        _vm._v(" Back\n                       ")
                       ]
                     )
                   ],
@@ -29206,6 +29443,10 @@ var render = function() {
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3),
+    _vm._v(" "),
     _c(
       "footer",
       {
@@ -29218,8 +29459,8 @@ var render = function() {
             "small",
             [
               _vm._v("Developed with "),
-              _vm._m(2),
-              _vm._v(" by\n                "),
+              _vm._m(4),
+              _vm._v(" by\n                   "),
               _c("router-link", { attrs: { to: "/genconian" } }, [
                 _vm._v("Genconians")
               ]),
@@ -29229,7 +29470,7 @@ var render = function() {
                 {
                   attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
                 },
-                [_vm._v("GNDEC,\n                    Ldh")]
+                [_vm._v("GNDEC,\n                       Ldh")]
               )
             ],
             1
@@ -29383,11 +29624,11 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "He is a Genconian. He is a B.Tech student in Information\n                                    Technology of 2015-19 batch. He is Co-Cordinator of Training and Placement\n                                    Cell. He has been working day-night on T&P Cell's website for college\n                                    students. He has worked as Developer on the PWA and Restful APIs of "
+                      "He is a Genconian. He is a B.Tech student in Information\n                                       Technology of 2015-19 batch. He is Co-Cordinator of Training and Placement\n                                       Cell. He has been working day-night on T&P Cell's website for college\n                                       students. He has worked as Developer on the PWA and Restful APIs of "
                     ),
                     _c("a", { attrs: { href: "https://www.tnpgndec.com" } }, [
                       _vm._v(
-                        "T&P\n                                        Cell's website."
+                        "T&P\n                                           Cell's website."
                       )
                     ])
                   ]),
@@ -29499,13 +29740,13 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "He is a Genconian. He is a B.Tech student in Computer Science\n                                    and Engineering of 2015-19 batch. He has been working day-night on T&P\n                                    Cell's website for college students. He has worked as Developer on the SPA and\n                                    Vue.js part of "
+                      "He is a Genconian. He is a B.Tech student in Computer Science\n                                       and Engineering of 2015-19 batch. He has been working day-night on T&P\n                                       Cell's website for college students. He has worked as Developer on the SPA and\n                                       Vue.js part of "
                     ),
                     _c("a", { attrs: { href: "https://www.tnpgndec.com" } }, [
                       _vm._v("T&P Cell's website")
                     ]),
                     _vm._v(
-                      ".\n                                    He is not even a member of T&P Cell and has contributed a lot to the\n                                    website."
+                      ".\n                                       He is not even a member of T&P Cell and has contributed a lot to the\n                                       website."
                     )
                   ]),
                   _vm._v(" "),
@@ -29586,6 +29827,104 @@ var staticRenderFns = [
                     ]
                   )
                 ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "testimonials mb-5" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h5", { staticClass: "thanks-title h1" }, [
+          _vm._v("OUR CONTRIBUTORS")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "mb-5", attrs: { id: "team" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h5", { staticClass: "section-title h1" }, [_vm._v("CONTACT US")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 my-5" }, [
+            _c("div", { staticClass: "card border-0" }, [
+              _c("div", { staticClass: "card-body text-center" }, [
+                _c("i", {
+                  staticClass: "fa fa-phone fa-5x mb-3",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("h4", { staticClass: "text-uppercase mb-5" }, [
+                  _vm._v("call us")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("+8801683615582,+8801750603409")])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 my-5" }, [
+            _c("div", { staticClass: "card border-0" }, [
+              _c("div", { staticClass: "card-body text-center" }, [
+                _c("i", {
+                  staticClass: "fa fa-map-marker fa-5x mb-3",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("h4", { staticClass: "text-uppercase mb-5" }, [
+                  _vm._v("office loaction")
+                ]),
+                _vm._v(" "),
+                _c("address", [
+                  _vm._v("Suite 02, Level 12, Sahera Tropical Center ")
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 my-5" }, [
+            _c("div", { staticClass: "card border-0" }, [
+              _c("div", { staticClass: "card-body text-center" }, [
+                _c("i", {
+                  staticClass: "fa fa-map-marker fa-5x mb-3",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("h4", { staticClass: "text-uppercase mb-5" }, [
+                  _vm._v("office loaction")
+                ]),
+                _vm._v(" "),
+                _c("address", [
+                  _vm._v("Suite 02, Level 12, Sahera Tropical Center ")
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-12 col-md-6 col-lg-3 my-5" }, [
+            _c("div", { staticClass: "card border-0" }, [
+              _c("div", { staticClass: "card-body text-center" }, [
+                _c("i", {
+                  staticClass: "fa fa-globe fa-5x mb-3",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("h4", { staticClass: "text-uppercase mb-5" }, [
+                  _vm._v("email")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("http://al.a.noman1416@gmail.com")])
               ])
             ])
           ])
@@ -32749,7 +33088,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$validator.validateAll().then(function (result) {
                 if (result) {
                     // this.loading = true;
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["s" /* singleuserURL */], _this.user).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["t" /* singleuserURL */], _this.user).then(function (response) {
                         toastr['success'](response.data.message);
                         // this.loading = false;
                         // console.log(this.loading);
@@ -33710,6 +34049,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import { VueEditor } from 'vue2-editor'
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
@@ -33770,6 +34110,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         storePost: function storePost() {
+            var navigate = this;
             var postData = {
                 // usertype : 'EXECUTIVE_MEMBER',
                 title: this.post.title,
@@ -33800,7 +34141,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // if (response.status == "401") {
                 //   }
                 toastr['success'](response.data.message);
-                this.$router.push('/post/' + response.data.data.id);
+                axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["m" /* postIdGetURL */]).then(function (res) {
+                    // console.log(res.data.data);
+                    navigate.$router.push({ path: '/post/' + res.data.data });
+                }).catch(function (err) {
+                    console.log(err);
+                });
 
                 // console.log(response.data.data.postCreate.id);
             }).catch(function (error) {
@@ -34102,7 +34448,13 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text", value: "", name: "title", autofocus: "" },
+              attrs: {
+                type: "text",
+                value: "",
+                name: "title",
+                autofocus: "",
+                maxlength: "50"
+              },
               domProps: { value: _vm.post.title },
               on: {
                 input: function($event) {
@@ -34130,7 +34482,13 @@ var render = function() {
               _c("label", { attrs: { for: "" } }, [_vm._v("Body")]),
               _vm._v(" "),
               _c("editor", {
-                attrs: { init: { plugins: "table,lists,link,code" } },
+                attrs: {
+                  init: {
+                    height: 300,
+                    paste_as_text: true,
+                    plugins: "paste,table,lists,link,code"
+                  }
+                },
                 model: {
                   value: _vm.post.content,
                   callback: function($$v) {
@@ -35222,7 +35580,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["r" /* showPostURL */] + this.id).then(function (response) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["s" /* showPostURL */] + this.id).then(function (response) {
             _this.post = response.data.data;
             console.log(response.data.data);
         }).catch(function (error) {
@@ -35633,30 +35991,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       });
     },
-    pinPost: function pinPost(id) {
+    notifyPost: function notifyPost(id, title) {
       var _this2 = this;
+
+      this.$swal({
+        title: 'Are you sure to notify post?',
+        text: "You won't be able to revert this!",
+        type: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Notify subscribers!'
+      }).then(function (result) {
+        if (result.value) {
+          axios.post('/api/dashboard/post/notifyme', {
+            id: id,
+            title: title,
+            _method: 'POST'
+          }).then(function (response) {
+            // console.log(response.data);
+
+            _this2.$swal('Notified!', 'Your post has been notified.', 'success');
+            _this2.refreshPost(response);
+          }).catch(function (error) {
+            return console.log(error);
+          });
+        }
+      });
+    },
+    pinPost: function pinPost(id) {
+      var _this3 = this;
 
       axios.post('/api/dashboard/post/pinned/' + id, {
         id: id,
         _method: 'PUT'
       }).then(function (response) {
         //toastr['response'](response.data.message);
-        _this2.$swal(response.data.message);
-        _this2.refreshPost(response);
+        _this3.$swal(response.data.message);
+        _this3.refreshPost(response);
       }).catch(function (error) {
         return console.log(error);
       });
     },
     unpinPost: function unpinPost(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post('/api/dashboard/post/unpinned/' + id, {
         id: id,
         _method: 'PUT'
       }).then(function (response) {
         // toastr['response'](obj['response']['message']);
-        _this3.$swal(response.data.message);
-        _this3.refreshPost(response);
+        _this4.$swal(response.data.message);
+        _this4.refreshPost(response);
       }).catch(function (error) {
         return console.log(error);
       });
@@ -35679,35 +36065,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     getallpost: function getallpost() {
-      var _this4 = this;
+      var _this5 = this;
 
       setTimeout(function () {
-        var vm = _this4;
+        var vm = _this5;
+        vm.page = vm.page + 1;
         axios.get('/api/dashboard/post?page=' + vm.page).then(function (response) {
-          console.log(response.data.data.data.length);
+          // console.log(response.data.data.data);
           if (response.data.data.data.length == 0) {
             vm.busy = true;
           } else {
             vm.busy = false;
           }
           for (var i = 0; i < response.data.data.data.length; i++) {
-            console.log(response.data.data.data[i]);
+            // console.log(response.data.data.data[i]);
             vm.posts.push(response.data.data.data[i]);
           }
           vm.loading = 0;
-          vm.page = vm.page + 1;
         }).catch(function (error) {});
       }, 2000);
     }
   },
   created: function created() {
-    var _this5 = this;
+    var _this6 = this;
 
     axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["b" /* addPostURL */]).then(function (response) {
       // var obj = JSON.parse(response.data);
       // console.log(response);
-      _this5.posts = response.data.data;
-      console.log(response.data.data);
+      _this6.posts = response.data.data.data;
+      // console.log(response.data.data.data);
     }).catch(function (error) {
       return console.log(error);
     });
@@ -35954,7 +36340,7 @@ var render = function() {
           "div",
           { staticClass: "col-md-12" },
           [
-            _vm._l(_vm.posts.data, function(post) {
+            _vm._l(_vm.posts, function(post) {
               return _c(
                 "div",
                 { key: post.id, staticClass: "card card-primary shadow-sm" },
@@ -36071,7 +36457,30 @@ var render = function() {
                                     }),
                                     _vm._v(" Unpin ")
                                   ]
-                                )
+                                ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item",
+                                attrs: { href: "" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    _vm.notifyPost(post.id, post.title)
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "fa fa-share",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" Notify")
+                              ]
+                            )
                           ],
                           1
                         )
@@ -36095,9 +36504,7 @@ var render = function() {
                     _c("div", [
                       _c("small", [
                         _c("strong", [_vm._v(_vm._s(post.updated_at))])
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(0, true)
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("span", { domProps: { innerHTML: _vm._s(post.body) } })
@@ -36156,19 +36563,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "pull-right" }, [
-      _c("i", {
-        staticClass: "fa fa-share-alt fa-2x",
-        attrs: { id: "share", git: "", "aria-hidden": "true" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -39704,6 +40099,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         storePost: function storePost() {
+            var navigate = this;
             var postData = {
                 // usertype : 'EXECUTIVE_MEMBER',
                 title: this.post.title,
@@ -39734,7 +40130,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // if (response.status == "401") {
                 //   }
                 toastr['success'](response.data.message);
-                this.$router.push('/exec/post/' + response.data.data.id);
+                axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["m" /* postIdGetURL */]).then(function (res) {
+                    // console.log(res.data.data);
+                    navigate.$router.push({ path: '/exec/post/' + res.data.data });
+                }).catch(function (err) {
+                    console.log(err);
+                });
 
                 // console.log(response.data.data.postCreate.id);
             }).catch(function (error) {
@@ -39850,7 +40251,13 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text", value: "", name: "title", autofocus: "" },
+              attrs: {
+                type: "text",
+                value: "",
+                name: "title",
+                autofocus: "",
+                maxlength: "50"
+              },
               domProps: { value: _vm.post.title },
               on: {
                 input: function($event) {
@@ -39878,7 +40285,13 @@ var render = function() {
               _c("label", { attrs: { for: "" } }, [_vm._v("Body")]),
               _vm._v(" "),
               _c("editor", {
-                attrs: { init: { plugins: "table,lists,link,code" } },
+                attrs: {
+                  init: {
+                    height: 300,
+                    paste_as_text: true,
+                    plugins: "paste,table,lists,link,code"
+                  }
+                },
                 model: {
                   value: _vm.post.content,
                   callback: function($$v) {
@@ -40523,7 +40936,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["r" /* showPostURL */] + this.id).then(function (response) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["s" /* showPostURL */] + this.id).then(function (response) {
             _this.post = response.data.data;
             console.log(response.data.data);
         }).catch(function (error) {
@@ -40936,30 +41349,57 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       });
     },
-    pinPost: function pinPost(id) {
+    notifyPost: function notifyPost(id, title) {
       var _this2 = this;
+
+      this.$swal({
+        title: 'Are you sure to notify post?',
+        text: "You won't be able to revert this!",
+        type: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Notify subscribers!'
+      }).then(function (result) {
+        if (result.value) {
+          axios.post('/api/dashboard/post/notifyme' + id, {
+            id: id,
+            _method: 'POST'
+          }).then(function (response) {
+            // console.log(response.data);
+
+            _this2.$swal('Notified!', 'Your post has been notified.', 'success');
+            _this2.refreshPost(response);
+          }).catch(function (error) {
+            return console.log(error);
+          });
+        }
+      });
+    },
+    pinPost: function pinPost(id) {
+      var _this3 = this;
 
       axios.post('/api/dashboard/post/pinned/' + id, {
         id: id,
         _method: 'PUT'
       }).then(function (response) {
         //toastr['response'](response.data.message);
-        _this2.$swal(response.data.message);
-        _this2.refreshPost(response);
+        _this3.$swal(response.data.message);
+        _this3.refreshPost(response);
       }).catch(function (error) {
         return console.log(error);
       });
     },
     unpinPost: function unpinPost(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post('/api/dashboard/post/unpinned/' + id, {
         id: id,
         _method: 'PUT'
       }).then(function (response) {
         // toastr['response'](obj['response']['message']);
-        _this3.$swal(response.data.message);
-        _this3.refreshPost(response);
+        _this4.$swal(response.data.message);
+        _this4.refreshPost(response);
       }).catch(function (error) {
         return console.log(error);
       });
@@ -40982,39 +41422,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     getallpost: function getallpost() {
-      var _this4 = this;
+      var _this5 = this;
 
       setTimeout(function () {
-        var vm = _this4;
+        var vm = _this5;
+        vm.page = vm.page + 1;
         axios.get('/api/dashboard/post?page=' + vm.page).then(function (response) {
-          console.log(response.data.data.length);
+          // console.log(response.data.data.data);
           if (response.data.data.data.length == 0) {
             vm.busy = true;
           } else {
             vm.busy = false;
           }
           for (var i = 0; i < response.data.data.data.length; i++) {
-            console.log(response.data.data.data[i]);
+            // console.log(response.data.data.data[i]);
             vm.posts.push(response.data.data.data[i]);
           }
           vm.loading = 0;
-          vm.page = vm.page + 1;
         }).catch(function (error) {});
       }, 2000);
     }
   },
   created: function created() {
-    var _this5 = this;
+    var _this6 = this;
 
     axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["b" /* addPostURL */]).then(function (response) {
       // var obj = JSON.parse(response.data);
       // console.log(response);
-      _this5.posts = response.data.data;
-      console.log(response.data.data);
+      _this6.posts = response.data.data.data;
+      // console.log(response.data.data.data);
     }).catch(function (error) {
       return console.log(error);
     });
-    // this.getallpost();
   }
 });
 
@@ -41032,7 +41471,7 @@ var render = function() {
         "div",
         { staticClass: "col-md-12" },
         [
-          _vm._l(_vm.posts.data, function(post) {
+          _vm._l(_vm.posts, function(post) {
             return _c(
               "div",
               { key: post.id, staticClass: "card card-primary shadow-sm" },
@@ -41149,7 +41588,30 @@ var render = function() {
                                   }),
                                   _vm._v(" Unpin ")
                                 ]
-                              )
+                              ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "dropdown-divider" }),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item",
+                              attrs: { href: "" },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  _vm.notifyPost(post.id)
+                                }
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fa fa-share",
+                                attrs: { "aria-hidden": "true" }
+                              }),
+                              _vm._v(" Notify")
+                            ]
+                          )
                         ],
                         1
                       )
@@ -41173,9 +41635,7 @@ var render = function() {
                   _c("div", [
                     _c("small", [
                       _c("strong", [_vm._v(_vm._s(post.updated_at))])
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(0, true)
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("span", { domProps: { innerHTML: _vm._s(post.body) } })
@@ -41230,19 +41690,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "pull-right" }, [
-      _c("i", {
-        staticClass: "fa fa-share-alt fa-2x",
-        attrs: { id: "share", git: "", "aria-hidden": "true" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -43309,14 +43757,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["f" /* firstLoginURL */], this.id).then(function (response) {
                 console.log(response);
                 if (response.status == 200) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["t" /* statusChangeURL */], _this.tnc).then(function (res) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["u" /* statusChangeURL */], _this.tnc).then(function (res) {
                         console.log(res);
                         if (res.status == 200) {
                             axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["h" /* formstepChangeURL */], _this.form_step).then(function (stat) {
                                 console.log(stat);
                                 if (stat.status == 200) {
                                     console.log(stat);
-                                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["u" /* storeStudentURL */], _this.username).then(function (resp) {
+                                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["v" /* storeStudentURL */], _this.username).then(function (resp) {
                                         if (resp.status == 200) {
                                             toastr['success']("User Added!!");
                                             // this.$router.push('/userlogin');
@@ -44734,7 +45182,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // this.$validator.validate('otp').then((res) => {
             //     if(res){
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["p" /* securityURL */], this.security).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["q" /* securityURL */], this.security).then(function (response) {
                 console.log(response);
                 localStorage.setItem('token', _this2.token);
                 toastr['success'](response.data.message);
@@ -45370,7 +45818,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["m" /* registerURL */], _this.registerForm).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["n" /* registerURL */], _this.registerForm).then(function (response) {
                         toastr['success'](response.data.message);
                         _this.authenticated = true;
                         _this.token = response.data.data.access_token;
@@ -45387,7 +45835,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["q" /* setPasswordURL */], _this2.pswdUpdate).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["r" /* setPasswordURL */], _this2.pswdUpdate).then(function (response) {
                         toastr['success'](response.data.message);
                         // localStorage.setItem('token', this.token);
                         axios.defaults.headers.common['Authorization'] = null;
@@ -46024,7 +46472,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["v" /* verifyURL */], _this.registerForm).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["w" /* verifyURL */], _this.registerForm).then(function (response) {
                         toastr['success'](response.data.message);
                         _this.authenticated = true;
                         _this.token = response.data.data.access_token;

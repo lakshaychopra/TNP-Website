@@ -24,6 +24,9 @@
                     </div>
                     <ul class="nav navbar-nav" id="list-menu">
                         <li class="nav-item">
+                            <router-link to="/" class="pull-right nav-link">
+                                <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back
+                            </router-link>
                             <a class="nav-link float-right" href="#" data-target="#more" data-toggle="collapse">
                                 More <i class="fa fa-caret-down" aria-hidden="true"></i>
                             </a>
@@ -33,7 +36,14 @@
                 <div class="w-100 p-2 font bgcolor textcolor collapse" id="more">
                     <div class="owl-carousel" id="nav-carousel">
                         <div>
-                            <p>HOME</p>
+                            <p>
+                                <router-link to="/">Home</router-link>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <router-link to="/login">Login</router-link>
+                            </p>
                         </div>
                         <div>
                             <p>HOME</p>
@@ -72,10 +82,9 @@
                             <p>HOME</p>
                         </div>
                         <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
+                            <p>
+                                <router-link to="/genconian">Developer and Contributers</router-link>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -445,19 +454,21 @@ NAVBAR
          footer
          ##########################
 	-->
-             <footer class="container-fluid footer mt-5" style="left:0">
+        <footer class="container-fluid footer mt-5" style="left:0">
             <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
                     </span> by
-                    <router-link to="/genconian">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC,
+                    <router-link to="/genconian">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/"
+                        target="_blank">GNDEC,
                         Ldh</a></small></p>
         </footer>
     </div>
 </template>
 <style scoped>
-    #more{
+    #more {
         border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+        border-top-right-radius: 10px;
     }
+
     .col-primary {
         color: #304156;
     }
@@ -780,41 +791,41 @@ NAVBAR
                 nav: false,
             }
         },
-       beforeCreate() {
-        var vm = this;
-        Vue.nextTick(function () {
-            $("#nav-carousel").owlCarousel({
-            autoWidth: true,
-            margin: 30,
-            stagePadding: 50,
+        beforeCreate() {
+            var vm = this;
+            Vue.nextTick(function () {
+                $("#nav-carousel").owlCarousel({
+                    autoWidth: true,
+                    margin: 30,
+                    stagePadding: 50,
 
-        });
-        }.bind(vm));
-        Vue.nextTick(function () {
-        $(".owl-carousel").owlCarousel({
-            margin: 10,
-            nav: false,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false
-                },
-                480: {
-                    items: 3,
-                },
-                768: {
-                    items: 3,
-                    loop: false
-                }
-            }
+                });
+            }.bind(vm));
+            Vue.nextTick(function () {
+                $(".owl-carousel").owlCarousel({
+                    margin: 10,
+                    nav: false,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    responsiveClass: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: false
+                        },
+                        480: {
+                            items: 3,
+                        },
+                        768: {
+                            items: 3,
+                            loop: false
+                        }
+                    }
 
-        });
-        }.bind(vm));
+                });
+            }.bind(vm));
 
-       }
+        }
     }
 </script>

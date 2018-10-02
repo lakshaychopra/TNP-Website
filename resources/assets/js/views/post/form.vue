@@ -4,18 +4,18 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Title<span class="input-required text-danger">*</span></label>
-                                            <input v-validate="'required'" class="form-control" type="text" value="" v-model="post.title" name="title" autofocus>
+                                            <input v-validate="'required'" class="form-control" type="text" value="" v-model="post.title" name="title" autofocus maxlength="50">
                                             <small class="text-danger">{{ errors.first('title') }}</small>
                                         </div>
                                     </div>
                                  </div>    
-                                  <div class="row">
+                                   <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Body</label>
                                             <!-- <vue-html5-editor :content="post.content :height="300" :z-index="1000" :auto-height="true" @change="updateData" name="body" ></vue-html5-editor>  -->
                                                  <!-- <vue-editor v-model="post.content"></vue-editor> -->
-                                                 <editor v-model="post.content" :init="{plugins: 'table,lists,link,code'}"></editor>
+                                                  <editor v-model="post.content" :init="{height: 300, paste_as_text: true, plugins: 'paste,table,lists,link,code' }"></editor>
                                                  
                                         </div>
                                     </div>
@@ -76,10 +76,11 @@
 </template>
 <script>
     import helper from '../../services/helper'
-    import { addPostURL,apiDomain } from "../../config.js";
+    import { addPostURL,postIdGetURL,apiDomain } from "../../config.js";
     // import { VueEditor } from 'vue2-editor'
     import Editor from '@tinymce/tinymce-vue';
     import InputTag from 'vue-input-tag'
+                
     export default {
         data() {
             return {
@@ -140,6 +141,7 @@
                 });
             },
             storePost(){
+            var navigate = this;
             const postData = {
                 // usertype : 'EXECUTIVE_MEMBER',
                 title: this.post.title,
@@ -171,7 +173,13 @@
                 // if (response.status == "401") {
                 //   }
                 toastr['success'](response.data.message);
-                this.$router.push('/post/' + response.data.data.id);
+                axios.post(postIdGetURL).then(function(res){
+                    // console.log(res.data.data);
+                        navigate.$router.push({path:'/post/'+res.data.data});
+                })
+                .catch(function(err) {
+                console.log(err);
+                });
          
 
                     // console.log(response.data.data.postCreate.id);

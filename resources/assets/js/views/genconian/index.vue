@@ -191,44 +191,147 @@
         </section>
         <!-- Team -->
 
+        <section class="testimonials mb-5">
+            <div class="container">
+                <h5 class="thanks-title h1">OUR CONTRIBUTORS</h5>
+                <div class="row">
+                    <!-- Team member -->
+                    <!-- <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/images/genconian/sanjam.jpeg" alt="card image"></p>
+                                    <h4 class="card-title">Sanjampreet Singh</h4>
+                                    <p class="card-subtitle">Developer</p>
+                                    <p class="card-text">He is a Genconian. He is a B.Tech student in Information
+                                        Technology of 2015-19 batch. He is Co-Cordinator of Training and Placement
+                                        Cell. He has been working day-night on T&amp;P Cell's website for college
+                                        students. He has worked as Developer on the PWA and Restful APIs of <a href="https://www.tnpgndec.com">T&amp;P
+                                            Cell's website.</a></p>
+                                    <ul class="list-inline" id="list-link">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/sanjampreet.singh1    ">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://twitter.com/Itzrealsanjam">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/sanjampreetsingh/">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/sanjampreetsingh_/">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="mailto:sanjam531@gmail.com">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- ./Team member -->
+
+                </div>
+            </div>
+        </section>
+        <!-- END OF TESTIMONIALS -->
+
+ <section id="team" class="mb-5">
+            <div class="container">
+                <h5 class="section-title h1">CONTACT US</h5>
+                <div class="row">
+                    <!-- contact info -->
+                   <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">call us</h4>
+                    <p>+8801683615582,+8801750603409</p>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">office loaction</h4>
+                   <address>Suite 02, Level 12, Sahera Tropical Center </address>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">office loaction</h4>
+                    <address>Suite 02, Level 12, Sahera Tropical Center </address>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 class="text-uppercase mb-5">email</h4>
+                    <p>http://al.a.noman1416@gmail.com</p>
+                  </div>
+                </div>
+             </div>
+                    <!-- ./contact info -->
+                    
+                </div>
+            </div>
+        </section>
+
         <footer class="container-fluid footer mt-5" style="left:0">
             <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
                     </span> by
-                    <router-link to="/genconian">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC,
+                    <router-link to="/genconian">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/"
+                        target="_blank">GNDEC,
                         Ldh</a></small></p>
         </footer>
     </div>
 </template>
 <script>
-  export default {
-       beforeCreate() {
-           var vm = this;
-           Vue.nextTick(function () {
-               $('#customers-testimonials').owlCarousel({
-                   loop: true,
-                   center: true,
-                   items: 3,
-                   margin: 30,
-                   autoplay: true,
-                   dots: false,
-                   nav: false,
-                   autoplayTimeout: 8500,
-                   smartSpeed: 450,
-                   responsive: {
-                       0: {
-                           items: 1
-                       },
-                       768: {
-                           items: 2
-                       },
-                       1170: {
-                           items: 3
-                       }
-                   }
-               });
-           }.bind(vm));
+    export default {
+        beforeCreate() {
+            var vm = this;
+            Vue.nextTick(function () {
+                $('#customers-testimonials').owlCarousel({
+                    loop: true,
+                    center: true,
+                    items: 3,
+                    margin: 30,
+                    autoplay: true,
+                    dots: false,
+                    nav: false,
+                    autoplayTimeout: 8500,
+                    smartSpeed: 450,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 2
+                        },
+                        1170: {
+                            items: 3
+                        }
+                    }
+                });
+            }.bind(vm));
+        }
     }
-}
 </script>
 <style scoped>
     ul.list-inline li {

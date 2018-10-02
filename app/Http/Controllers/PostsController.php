@@ -184,7 +184,7 @@ class PostController extends Controller
     
     public function pushNotification(Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
-        OneSignal::sendNotificationToAll(
+        \OneSignal::sendNotificationToAll(
             $post->title, 
             $url = "https://www.tnpgndec.com/view/".$post->id, 
             $data = "Click here to know more",
@@ -202,6 +202,14 @@ class PostController extends Controller
                     "url"=> "https://www.tnpgndec.com/about"
                     ]
                 ));
+            }
+
+            public function getFirstID(Post $post){
+                $auth = JWTAuth::parseToken()->authenticate();
+                $post= Post::
+                orderBY('created_at', 'desc')->
+                pluck('id')->first();
+                return $this->respondData($post);
             }
             
             public function HomePostSearch($term = null){

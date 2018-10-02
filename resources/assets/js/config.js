@@ -7,9 +7,11 @@ export const securityURL = '/api/security';
 export const oauthURL = '/oauth/token';
 
 export const addPostURL = '/api/dashboard/post';
+export const postIdGetURL = '/api/dashboard/post/getpostid/';
 export const showPostURL = '/api/dashboard/post/';
+export const notifyPostURL = '/api/dashboard/post/notifyme';
 
-export const pinPostURL  = '/api/dashboard/post/view/pinned';
+export const pinPostURL = '/api/dashboard/post/view/pinned';
 export const addHomePostURL = '/api/home';
 export const pinnedPostURL = '/api/home/page/view/pinned/';
 export const registerURL = '/api/register';
