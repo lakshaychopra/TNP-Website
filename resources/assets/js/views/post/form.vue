@@ -15,7 +15,7 @@
                                             <label for="">Body</label>
                                             <!-- <vue-html5-editor :content="post.content :height="300" :z-index="1000" :auto-height="true" @change="updateData" name="body" ></vue-html5-editor>  -->
                                                  <!-- <vue-editor v-model="post.content"></vue-editor> -->
-                                                  <editor v-model="post.content" :init="{height: 300, paste_as_text: true, plugins: 'paste,table,lists,link,code' }"></editor>
+                                                  <editor v-model="post.content" :init="{height: 300, paste_as_text: true, toolbar: 'mybutton | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview',fullscreen,browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code'}"></editor>
                                                  
                                         </div>
                                     </div>

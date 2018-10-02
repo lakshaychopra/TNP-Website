@@ -34486,7 +34486,13 @@ var render = function() {
                   init: {
                     height: 300,
                     paste_as_text: true,
-                    plugins: "paste,table,lists,link,code"
+                    toolbar:
+                      "mybutton | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview",
+                    fullscreen: _vm.fullscreen,
+                    browser_spellcheck: true,
+                    preview: true,
+                    plugins:
+                      "autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code"
                   }
                 },
                 model: {
@@ -40032,7 +40038,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -40289,7 +40294,13 @@ var render = function() {
                   init: {
                     height: 300,
                     paste_as_text: true,
-                    plugins: "paste,table,lists,link,code"
+                    toolbar:
+                      "mybutton | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code | preview",
+                    fullscreen: _vm.fullscreen,
+                    browser_spellcheck: true,
+                    preview: true,
+                    plugins:
+                      "autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code"
                   }
                 },
                 model: {

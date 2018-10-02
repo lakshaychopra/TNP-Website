@@ -52,6 +52,32 @@
             "name ": "Training and Placement Cell, GNDEC "
         }
     </script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=6g1ocyfhfb8feorgc0xhm55uck1b2gj3uyizkrcl13qii61m"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122948554-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-122948554-1');
+    </script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "c2c76dab-8872-40fc-a694-ac0a73e1b6b2",
+          autoRegister: true,
+          notifyButton: {
+            enable: false,
+          },
+        });
+      });
+    </script>
     {{-- fb --}}
     <meta property="og:type" content="website">
     <meta property="og:title" content="Training and Placement Cell">
@@ -119,31 +145,7 @@
     </div>
     <script type="text/javascript" src="/js/bundle.min.js"></script>
     <script type="text/javascript" src="service-worker.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122948554-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-122948554-1');
-    </script>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-      var OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: "c2c76dab-8872-40fc-a694-ac0a73e1b6b2",
-          autoRegister: true,
-          notifyButton: {
-            enable: false,
-          },
-        });
-      });
-    </script>
+    
 </body>
 
 </html>
