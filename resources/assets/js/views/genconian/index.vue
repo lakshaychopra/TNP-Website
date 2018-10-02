@@ -308,7 +308,7 @@
             <div class="container">
                 <h5 class="thanks-title h1">Have a query?</h5>
                 <p class="thanks-subtitle h3">Feel Free<br>Ask anything?</p>
-                    <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" target="_blank" class="mb-5">
+                    <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" class="mb-5">
                         <div class="form-group">
                             <label for="question" style="color:#038ed4">Query/Suggestion:</label>
                             <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%">

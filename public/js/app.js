@@ -30072,8 +30072,7 @@ var staticRenderFns = [
             attrs: {
               action: "mailto:gndectpo@gmail.com",
               method: "post",
-              enctype: "text/plain",
-              target: "_blank"
+              enctype: "text/plain"
             }
           },
           [
