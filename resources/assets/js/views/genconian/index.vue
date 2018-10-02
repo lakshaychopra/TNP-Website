@@ -313,7 +313,7 @@
                             <label for="question" style="color:#038ed4">Query/Suggestion:</label>
                             <input type="text" class="form-control" placeholder="Ask anything?" name="Query/Suggestion" width="100%">
                         </div>
-                        <input type="submit" value="Send" class="btn btn-default">
+                        <input type="submit" value="Send" class="btn btn-primary btn-block">
                     </form>
             </div>
         </section>

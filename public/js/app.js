@@ -30107,7 +30107,7 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("input", {
-              staticClass: "btn btn-default",
+              staticClass: "btn btn-primary btn-block",
               attrs: { type: "submit", value: "Send" }
             })
           ]
