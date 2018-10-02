@@ -184,7 +184,7 @@ class PostController extends Controller
     
     public function pushNotification(Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
-        \OneSignal::sendNotificationToAll("Test Message", $url = 'www.tnpgndec.com', $data = null, $buttons = null, $schedule = null);
+        // \OneSignal::sendNotificationToAll("Test Message", $url = 'www.tnpgndec.com', $data = null, $buttons = null, $schedule = null);
             // $post->title, 
             // $url = "https://www.tnpgndec.com/view/".$post->id, 
             // $data = "Click here to know more",
