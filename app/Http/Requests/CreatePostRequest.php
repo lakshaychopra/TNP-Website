@@ -24,7 +24,7 @@ class CreatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'                 => 'bail|required|min:5|max:255',
+            'title'                 => 'bail|required|min:5|max:60',
             'body'                  => 'required|min:5',
             'username'              => 'required',
             'user_id'               => 'required',

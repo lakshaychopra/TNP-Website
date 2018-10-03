@@ -290,7 +290,7 @@
                             <div class="item">
                                 <div class="card border-0">
                                     <div class="card-body text-center">
-                                        <a href="mailto:tpo@gndec.ac.in" target="_blank">
+                                        <a href="mailto:tpo@gndec.ac.in">
                                             <i class="fa fa-envelope fa-5x mb-3" aria-hidden="true"></i>
                                             <h4 class="text-uppercase mb-2">email</h4>
                                             <p>tpo@gndec.ac.in</p>
