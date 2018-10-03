@@ -23547,6 +23547,10 @@ var routes = [{
     component: __webpack_require__(99),
     name: 'genconian'
 }, {
+    path: '/privacy',
+    component: __webpack_require__(310),
+    name: 'privacy'
+}, {
     path: '/view/:id',
     name: 'view',
     props: true,
@@ -62763,6 +62767,4592 @@ module.exports = SocialSharing;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(311)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(313)
+/* template */
+var __vue_template__ = __webpack_require__(314)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-0459cc3e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\views\\privacy\\index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0459cc3e", Component.options)
+  } else {
+    hotAPI.reload("data-v-0459cc3e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 311 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(312);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("1ca237be", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0459cc3e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0459cc3e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nul.list-inline li[data-v-0459cc3e] {\n    padding: 0;\n    list-style: none;\n}\n.mar-top[data-v-0459cc3e] {\n    margin-top: 50px;\n}\n.bg-gray[data-v-0459cc3e] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0459cc3e] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0459cc3e] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.bg-dark[data-v-0459cc3e] {\n    background-color: #038ed4 !important;\n}\n#list-menu li a[data-v-0459cc3e] {\n    color: #f1f1f1;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0459cc3e]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#list-link li a[data-v-0459cc3e] {\n    color: #038ed4;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-link li a[data-v-0459cc3e]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #038ed4;\n    color: #f1f1f1;\n}\n.navbar[data-v-0459cc3e] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0459cc3e] {\n        width: 142px;\n}\n}\n.w-65[data-v-0459cc3e] {\n    width: 65%;\n}\n.fix[data-v-0459cc3e] {\n    overflow: hidden;\n    top: 90px;\n}\n.languages[data-v-0459cc3e] {\n    background: #212020;\n}\n.languages .nav-tabs[data-v-0459cc3e] {\n    border: 0;\n}\n.languages .nav-tabs li[data-v-0459cc3e] {\n    font-size: 14px;\n}\n.languages .nav-tabs li a[data-v-0459cc3e] {\n    padding: 10px 15px;\n    border: 0;\n    border-radius: 0;\n}\n.header1[data-v-0459cc3e] {\n    margin: 0;\n    padding: 40px 0;\n    background: #3c3c3c;\n    color: #FFF;\n}\n.header1 h1[data-v-0459cc3e] {\n    font-size: 25px;\n    line-height: 35px;\n    margin: 0;\n    color: #fff\n}\np[data-v-0459cc3e] {\n    margin: 0 0 10px;\n}\n.policy[data-v-0459cc3e] {\n    padding: 0;\n    background: #FFF;\n}\n.content[data-v-0459cc3e] {\n    font-size: 16px;\n    line-height: 22px;\n    word-wrap: break-word;\n    color: #333;\n    padding: 30px 0;\n    background: #FFF;\n}\n.content p[data-v-0459cc3e] {\n    margin: 0 0 30px 0;\n    color: #333;\n}\n.content h2[data-v-0459cc3e] {\n    font-size: 24px;\n    margin: 0 0 30px 0;\n}\n.content ol[data-v-0459cc3e],\n.content ul[data-v-0459cc3e] {\n    margin: 0 0 30px 0;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 313 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "sticky-top", staticStyle: { "z-index": "1022" } },
+      [
+        _c(
+          "nav",
+          { staticClass: "navbar bg-dark navbar-dark" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "navbar-brand d-none d-md-block",
+                attrs: { to: "/" }
+              },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "/logo.png",
+                    alt: "logo",
+                    height: "55px",
+                    width: "55px"
+                  }
+                }),
+                _vm._v(" "),
+                _c("strong", [_vm._v("Training & Placement Cell")])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand d-md-none", attrs: { to: "/" } },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "/logo.png",
+                    alt: "logo",
+                    height: "55px",
+                    width: "55px"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "ul",
+              { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
+              [
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "pull-right nav-link",
+                        attrs: { to: "/" }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-long-arrow-left",
+                          attrs: { "aria-hidden": "true" }
+                        }),
+                        _vm._v(" Back\n                    ")
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]
+            )
+          ],
+          1
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "footer",
+      {
+        staticClass: "container-fluid footer mt-3 bg-dark",
+        staticStyle: { left: "0" }
+      },
+      [
+        _c(
+          "p",
+          { staticClass: "text-center", staticStyle: { color: "white" } },
+          [
+            _c(
+              "small",
+              [
+                _vm._v("Developed with "),
+                _vm._m(1),
+                _vm._v(" by "),
+                _c(
+                  "router-link",
+                  {
+                    staticStyle: { color: "white" },
+                    attrs: { to: "/genconian" }
+                  },
+                  [_vm._v("Genconians")]
+                ),
+                _vm._v("\n                | © 2018 "),
+                _c(
+                  "a",
+                  {
+                    staticStyle: { color: "white" },
+                    attrs: {
+                      href: "https://www.gndec.ac.in/",
+                      target: "_blank"
+                    }
+                  },
+                  [_vm._v("GNDEC, Ldh")]
+                )
+              ],
+              1
+            )
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-5", attrs: { id: "wrap" } }, [
+      _c("div", { staticClass: "languages" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c(
+                "ul",
+                { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
+                [
+                  _c(
+                    "li",
+                    { staticClass: "active", attrs: { role: "presentation" } },
+                    [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "#english",
+                            "aria-controls": "english",
+                            role: "tab",
+                            "data-toggle": "tab",
+                            "aria-expanded": "false"
+                          }
+                        },
+                        [_vm._v("English")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("li", { attrs: { role: "presentation" } }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "#spanish",
+                          "aria-controls": "spanish",
+                          role: "tab",
+                          "data-toggle": "tab",
+                          "aria-expanded": "false"
+                        }
+                      },
+                      [_vm._v(" Spanish")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { attrs: { role: "presentation" } }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "#french",
+                          "aria-controls": "french",
+                          role: "tab",
+                          "data-toggle": "tab",
+                          "aria-expanded": "true"
+                        }
+                      },
+                      [_vm._v("\n                                    French")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { attrs: { role: "presentation" } }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "#german",
+                          "aria-controls": "german",
+                          role: "tab",
+                          "data-toggle": "tab"
+                        }
+                      },
+                      [_vm._v(" German")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { attrs: { role: "presentation" } }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "#italian",
+                          "aria-controls": "italian",
+                          role: "tab",
+                          "data-toggle": "tab"
+                        }
+                      },
+                      [_vm._v(" Italian")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { attrs: { role: "presentation" } }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "#dutch",
+                          "aria-controls": "dutch",
+                          role: "tab",
+                          "data-toggle": "tab"
+                        }
+                      },
+                      [_vm._v(" Dutch")]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "header1" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("h1", [
+                _vm._v(
+                  "\n                            Training and Placement Cell, GNDEC\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            Privacy Policy of https://www.tnpgndec.com/\n                        "
+                )
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "policy" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "content" }, [
+                _c("div", { staticClass: "page-tabs" }, [
+                  _c("div", { staticClass: "tab-content" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane",
+                        attrs: { role: "tabpanel", id: "english" }
+                      },
+                      [
+                        _c("h1", [_vm._v("Privacy Policy")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Effective date: October 03, 2018")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Training and Placement Cell, GNDEC ("us", "we", or "our") operates the\n                                            https://www.tnpgndec.com/ website and the Training And Placement Cell\n                                            mobile application (the "Service").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "This page informs you of our policies regarding the collection, use, and\n                                            disclosure of personal data when you use our Service and the choices\n                                            you have associated with that data. Our Privacy Policy for Training and\n                                            Placement Cell, GNDEC is managed through "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href:
+                                  "https://www.freeprivacypolicy.com/free-privacy-policy-generator.php"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Free\n                                                Privacy Policy"
+                              )
+                            ]
+                          ),
+                          _vm._v(".")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "We use your data to provide and improve the Service. By using the\n                                            Service, you agree to the collection and use of information in\n                                            accordance with this policy. Unless otherwise defined in this Privacy\n                                            Policy, terms used in this Privacy Policy have the same meanings as in\n                                            our Terms and Conditions."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Information Collection And Use")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "We collect several different types of information for various purposes\n                                            to provide and improve our Service to you."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Types of Data Collected")]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Personal Data")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'While using our Service, we may ask you to provide us with certain\n                                            personally identifiable information that can be used to contact or\n                                            identify you ("Personal Data"). Personally identifiable information may\n                                            include, but is not limited to:'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Email address")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("First name and last name")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Phone number")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Address, State, Province, ZIP/Postal code, City"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Cookies and Usage Data")])
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Usage Data")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'We may also collect information that your browser sends whenever you\n                                            visit our Service or when you access the Service by or through a mobile\n                                            device ("Usage Data").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "This Usage Data may include information such as your computer's Internet\n                                            Protocol address (e.g. IP address), browser type, browser version, the\n                                            pages of our Service that you visit, the time and date of your visit,\n                                            the time spent on those pages, unique device identifiers and other\n                                            diagnostic data."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "When you access the Service by or through a mobile device, this Usage\n                                            Data may include information such as the type of mobile device you use,\n                                            your mobile device unique ID, the IP address of your mobile device,\n                                            your mobile operating system, the type of mobile Internet browser you\n                                            use, unique device identifiers and other diagnostic data."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Tracking & Cookies Data")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "We use cookies and similar tracking technologies to track the activity\n                                            on our Service and hold certain information."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Cookies are files with small amount of data which may include an\n                                            anonymous unique identifier. Cookies are sent to your browser from a\n                                            website and stored on your device. Tracking technologies also used are\n                                            beacons, tags, and scripts to collect and track information and to\n                                            improve and analyze our Service."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "You can instruct your browser to refuse all cookies or to indicate when\n                                            a cookie is being sent. However, if you do not accept cookies, you may\n                                            not be able to use some portions of our Service."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Examples of Cookies we use:")]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("strong", [_vm._v("Session Cookies.")]),
+                            _vm._v(
+                              " We use Session Cookies to operate\n                                                our Service."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Preference Cookies.")]),
+                            _vm._v(
+                              " We use Preference Cookies to\n                                                remember your preferences and various settings."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Security Cookies.")]),
+                            _vm._v(
+                              " We use Security Cookies for\n                                                security purposes."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Use of Data")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC uses the collected data for various\n                                            purposes:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("To provide and maintain the Service")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("To notify you about changes to our Service")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "To allow you to participate in interactive features of our Service\n                                                when you choose to do so"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("To provide customer care and support")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "To provide analysis or valuable information so that we can improve\n                                                the Service"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("To monitor the usage of the Service")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "To detect, prevent and address technical issues"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Transfer Of Data")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Your information, including Personal Data, may be transferred to — and\n                                            maintained on — computers located outside of your state, province,\n                                            country or other governmental jurisdiction where the data protection\n                                            laws may differ than those from your jurisdiction."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "If you are located outside India and choose to provide information to\n                                            us, please note that we transfer the data, including Personal Data, to\n                                            India and process it there."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Your consent to this Privacy Policy followed by your submission of such\n                                            information represents your agreement to that transfer."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC will take all steps reasonably\n                                            necessary to ensure that your data is treated securely and in\n                                            accordance with this Privacy Policy and no transfer of your Personal\n                                            Data will take place to an organization or a country unless there are\n                                            adequate controls in place including the security of your data and\n                                            other personal information."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Disclosure Of Data")]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Legal Requirements")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC may disclose your Personal Data in\n                                            the good faith belief that such action is necessary to:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("To comply with a legal obligation")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "To protect and defend the rights or property of Training and\n                                                Placement Cell, GNDEC"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "To prevent or investigate possible wrongdoing in connection with\n                                                the Service"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "To protect the personal safety of users of the Service or the\n                                                public"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("To protect against legal liability")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Security Of Data")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "The security of your data is important to us, but remember that no\n                                            method of transmission over the Internet, or method of electronic\n                                            storage is 100% secure. While we strive to use commercially acceptable\n                                            means to protect your Personal Data, we cannot guarantee its absolute\n                                            security."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Service Providers")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'We may employ third party companies and individuals to facilitate our\n                                            Service ("Service Providers"), to provide the Service on our behalf, to\n                                            perform Service-related services or to assist us in analyzing how our\n                                            Service is used.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "These third parties have access to your Personal Data only to perform\n                                            these tasks on our behalf and are obligated not to disclose or use it\n                                            for any other purpose."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Analytics")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "We may use third-party Service Providers to monitor and analyze the use\n                                            of our Service."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Google Analytics")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Google Analytics is a web analytics service offered by Google\n                                                    that tracks and reports website traffic. Google uses the data\n                                                    collected to track and monitor the use of our Service. This\n                                                    data is shared with other Google services. Google may use the\n                                                    collected data to contextualize and personalize the ads of its\n                                                    own advertising network."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "For more information on the privacy practices of Google, please\n                                                    visit the Google Privacy & Terms web page: "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "https://policies.google.com/privacy?hl=en"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "https://policies.google.com/privacy?hl=en"
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Links To Other Sites")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Our Service may contain links to other sites that are not operated by\n                                            us. If you click on a third party link, you will be directed to that\n                                            third party's site. We strongly advise you to review the Privacy Policy\n                                            of every site you visit."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "We have no control over and assume no responsibility for the content,\n                                            privacy policies or practices of any third party sites or services."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Children's Privacy")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Our Service does not address anyone under the age of 18 ("Children").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "We do not knowingly collect personally identifiable information from\n                                            anyone under the age of 18. If you are a parent or guardian and you are\n                                            aware that your Children has provided us with Personal Data, please\n                                            contact us. If we become aware that we have collected Personal Data\n                                            from children without verification of parental consent, we take steps\n                                            to remove that information from our servers."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Changes To This Privacy Policy")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "We may update our Privacy Policy from time to time. We will notify you\n                                            of any changes by posting the new Privacy Policy on this page."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'We will let you know via email and/or a prominent notice on our Service,\n                                            prior to the change becoming effective and update the "effective date"\n                                            at the top of this Privacy Policy.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "You are advised to review this Privacy Policy periodically for any\n                                            changes. Changes to this Privacy Policy are effective when they are\n                                            posted on this page."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Contact Us")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "If you have any questions about this Privacy Policy, please contact us:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("By email: gndectpo@gmail.com")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "By visiting this page on our website:\n                                                https://www.tnpgndec.com/privacy"
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane",
+                        attrs: { role: "tabpanel", id: "spanish" }
+                      },
+                      [
+                        _c("h1", [_vm._v("Política de privacidad")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Fecha efectiva: October 03, 2018")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Training and Placement Cell, GNDEC ("nosotros", "a nosotros", "nuestro")\n                                            opera el sitio web https://www.tnpgndec.com/ y la aplicación móvil\n                                            Training And Placement Cell (en adelante, el "Servicio").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Esta página le informa de nuestras políticas en materia de recopilación,\n                                            uso y divulgación de datos personales cuando utiliza nuestro Servicio y\n                                            de las opciones de las que dispone en relación con esos datos. "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href:
+                                  "https://www.freeprivacypolicy.com/free-privacy-policy-generator.php"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Política\n                                                de privacidad via Free Privacy Policy"
+                              )
+                            ]
+                          ),
+                          _vm._v(".")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Utilizamos sus datos para prestarle el Servicio y mejorarlo. Al utilizar\n                                            el Servicio, usted acepta la recopilación y el uso de información de\n                                            conformidad con esta política. A menos que esta Política de privacidad\n                                            defina lo contrario, los términos utilizados en ella tienen los mismos\n                                            significados que nuestros Términos y Condiciones."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Definiciones")]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Servicio")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Servicio significa el sitio web https://www.tnpgndec.com/ y la\n                                                    aplicación móvil Training And Placement Cell operados por\n                                                    Training and Placement Cell, GNDEC"
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Datos personales")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Datos personales significa los datos sobre una persona física\n                                                    viva que puede ser identificada a partir de esos datos (o con\n                                                    esos datos y otra información de la que dispongamos o\n                                                    probablemente podamos disponer)."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Datos de uso")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Datos de uso son los datos recopilados automáticamente,\n                                                    generados por el uso del Servicio o por la propia\n                                                    infraestructura del Servicio (por ejemplo, la duración de la\n                                                    visita a una página)."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Cookies")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Las cookies son pequeños archivos ialmacenados en su dispositivo\n                                                    (ordenador o dispositivo móvil)."
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [
+                          _vm._v("Recopilación y uso de la información")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Recopilamos diferentes tipos de información con diversas finalidades\n                                            para prestarle el\n                                            Servicio y mejorarlo."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Tipos de datos recopilados")]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Datos personales")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Cuando utilice nuestro Servicio, es posible que le pidamos que nos\n                                            proporcione determinada información personalmente identificable que\n                                            podrá ser utilizada para contactar con usted o para identificarle\n                                            ("Datos personales"). La información personalmente identificable puede\n                                            incluir, entre otras, la siguiente:'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Dirección de e-mail")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Nombre y apellidos")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Número de teléfono")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Dirección, localidad, provincia, código postal, ciudad"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Cookies y datos de uso")])
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Datos de uso")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'También podemos recopilar información que envía su dispositivo siempre\n                                            que visita nuestro Servicio o cuando usted accede al Servicio a través\n                                            de un dispositivo móvil ("Datos de uso").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Estos Datos de uso pueden incluir información como la dirección del\n                                            protocolo de Internet de su ordenador (por ejemplo, dirección IP), tipo\n                                            de navegador, versión del navegador, las páginas que visita de nuestro\n                                            Servicio, la hora y la fecha de su visita, el tiempo que pasa en esas\n                                            páginas, identificadores exclusivos de dispositivos y otros datos de\n                                            diagnóstico."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Cuando accede al Servicio econ un dispositivo móvil, estos Datos de uso\n                                            pueden incluir información como el tipo de dispositivo móvil que\n                                            utiliza, el identificador exclusivo de su dispositivo móvil, la\n                                            dirección de IP de su dispositivo móvil, el sistema operativo de su\n                                            dispositivo móvil, el tipo de navegador de Internet que utiliza su\n                                            dispositivo móvil, identificadores exclusivos de dispositivos y otros\n                                            datos de diagnóstico."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Datos de cookies y seguimiento")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Utilizamos cookies y tecnologías de seguimiento similares para rastrear\n                                            la actividad de nuestro Servicio y mantener determinada información."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Las cookies son archivos con una pequeña cantidad de datos que pueden\n                                            incluir un identificador exclusivo anónimo. Las cookies son enviadas a\n                                            su navegador desde un sitio web y se almacenan en su dispositivo. Otras\n                                            tecnologías de seguimiento también utilizadas son balizas, etiquetas y\n                                            scripts para recopilar y rastrear la información, así como para mejorar\n                                            y analizar nuestro Servicio."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Usted puede ordenar a su navegador que rechace todas las cookies o que\n                                            le avise cuando se envía una cookie. Sin embargo, si no acepta cookies,\n                                            es posible que no pueda utilizar algunas partes de nuestro Servicio."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("Ejemplos de Cookies que utilizamos:")
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookies de sesión.")]),
+                            _vm._v(
+                              " Utilizamos Cookies de sesión\n                                                para operar nuestro Servicio."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookies de preferencia.")]),
+                            _vm._v(
+                              " Utilizamos Cookies de\n                                                preferencia para recordar sus preferencias y diversos ajustes."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookies de seguridad.")]),
+                            _vm._v(
+                              " Utilizamos Cookies de\n                                                seguridad para fines de seguridad."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Uso de datos")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC utiliza los datos recopilados con\n                                            diversas finalidades:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("Suministrar y mantener nuestro Servicio")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Notificarle cambios en nuestro Servicio")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Permitirle participar en funciones interactivas de nuestro Servicio\n                                                cuando decida hacerlo"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Prestar asistencia al cliente")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Recopilar análisis o información valiosa que nos permitan mejorar\n                                                nuestro Servicio"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Controlar el uso de nuestro Servicio")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Detectar, evitar y abordar problemas técnicos"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Transferencia de datos")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Su información, incluyendo Datos personales, puede ser transferida a —y\n                                            mantenida en— ordenadores localizados fuera de su estado, provincia,\n                                            país u otra jurisdicción gubernamental donde las leyes de protección de\n                                            datos pueden diferir de las de su jurisdicción."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Si usted se encuentra fuera de India y decide facilitarnos información,\n                                            tenga en cuenta que nosotros transferimos los datos, incluyendo Datos\n                                            personales, a India y que los tratamos allí."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Su aceptación de esta Política de privacidad seguida de su envío de esta\n                                            información representa que está de acuerdo con dicha transferencia."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC emprenderá todas las medidas\n                                            razonables necesarias para garantizar que sus datos sean tratados de\n                                            forma segura y de conformidad con esta Política de privacidad y no se\n                                            realizará ninguna transferencia de sus Datos personales a una\n                                            organización o país, salvo que existan unos controles adecuados\n                                            establecidos incluyendo la seguridad de sus datos y otra información\n                                            personal."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Divulgación de datos")]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Requisitos legales")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC puede divulgar sus Datos personales\n                                            de buena fe cuando considere que esta acción es necesaria para lo\n                                            siguiente:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Cumplir una obligación legal")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Proteger y defender los derechos o bienes de Training and Placement\n                                                Cell, GNDEC"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Prevenir o investigar posibles infracciones en relación con el\n                                                Servicio"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Proteger la seguridad personal de usuarios del Servicio o del\n                                                público"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Protegerse frente a consecuencias legales")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Seguridad de los datos")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "La seguridad de sus datos es importante para nosotros, pero recuerde que\n                                            ningún método de transmisión por Internet o método de almacenamiento\n                                            electrónico resulta 100% seguro. A pesar de que nos esforzamos por\n                                            utilizar medios comercialmente aceptables para proteger sus Datos\n                                            personales, no podemos garantizar su seguridad absoluta."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Proveedores de servicios")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Podemos contratar a personas físicas y jurídicas terceras para facilitar\n                                            nuestro Servicio ("Proveedores de servicios"), para que presten el\n                                            Servicio en nuestro nombre, para que suministren servicios relacionados\n                                            con el Servicio o para que nos ayuden a analizar cómo se utiliza\n                                            nuestro Servicio.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Estos terceros tienen acceso a sus Datos personales únicamente para\n                                            realizar estas tareas en nuestro nombre y están obligados a no\n                                            divulgarlos ni utilizarlos con ningún otro fin."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Análisis")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Podemos utilizar Proveedores de servicios terceros para controlar y\n                                            analizar el uso de nuestro Servicio."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Google Analytics")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Google Analytics es un servicio de analítica web ofrecido por\n                                                    Google que rastrea e informa del tráfico de los sitios web.\n                                                    Google utiliza los datos recopilados para rastrear y controlar\n                                                    el uso de nuestro Servicio. Estos datos son compartidos con\n                                                    otros servicios de Google. Google puede utilizar los datos\n                                                    recopilados para contextualizar y personalizar los anuncios de\n                                                    su propia red de publicidad."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Para más información sobre las prácticas de privacidad de\n                                                    Google, visite la página web de Privacidad y Condiciones de\n                                                    Google: "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "https://policies.google.com/privacy?hl=en"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "https://policies.google.com/privacy?hl=en"
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Enlaces a otros sitios")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nuestro Servicio puede contener enlaces a otros sitios no operados por\n                                            nosotros. Si hace clic en el enlace de un tercero, será dirigido al\n                                            sitio de ese tercero. Le recomendamos encarecidamente que revise la\n                                            Política de privacidad de todos los sitios que visite."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "No tenemos ningún control ni asumimos responsabilidad alguna con\n                                            respecto al contenido, las políticas o prácticas de privacidad de\n                                            sitios o servicios de terceros."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Privacidad del menor")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Nuestro servicio no está dirigido a ningún menor de 18 años (en\n                                            adelante, "Menor").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "No recopilamos de forma consciente información personalmente\n                                            identificable de menores de 18 años. Si es usted un padre/madre o tutor\n                                            y tiene conocimiento de que su hijo nos ha facilitado Datos personales,\n                                            contacte con nosotros. Si tenemos conocimiento de que hemos recopilado\n                                            Datos personales de menores sin verificación del consentimiento\n                                            parental, tomamos medidas para eliminar esa información de nuestros\n                                            servidores."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [
+                          _vm._v("Cambios en esta Política de privacidad")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Podemos actualizar nuestra Política de privacidad periódicamente. Le\n                                            notificaremos cualquier cambio publicando la nueva Política de\n                                            privacidad en esta página."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Le informaremos a través del e-mail y/o de un aviso destacado sobre\n                                            nuestro Servicio antes de que el cambio entre en vigor y actualizaremos\n                                            la «fecha efectiva» en la parte superior de esta Política de\n                                            privacidad."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Le recomendamos que revise esta Política de privacidad periódicamente\n                                            para comprobar si se ha introducido algún cambio. Los cambios en esta\n                                            Política de privacidad entran en vigor cuando se publican en esta\n                                            página."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Contacte con nosotros")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Si tiene alguna pregunta sobre esta Política de privacidad, contacte con\n                                            nosotros: "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Por e-mail: gndectpo@gmail.com")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Visitando esta página en nuestro sitio web:\n                                                https://www.tnpgndec.com/privacy"
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane active",
+                        attrs: { role: "tabpanel", id: "french" }
+                      },
+                      [
+                        _c("h1", [_vm._v("Politique de Confidentialité")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("Date de prise d'effet: October 03, 2018")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Training and Placement Cell, GNDEC ("nous", "notre", "nos") exploite le\n                                            site web https://www.tnpgndec.com/ et l\'application mobile Training And\n                                            Placement Cell (ci-après désignés par le terme "Service").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Cette page vous explique nos politiques en matière de collecte,\n                                            d'utilisation et de communication des données à caractère personnel\n                                            lorsque vous utilisez notre Service ainsi que les choix qui s'offrent à\n                                            vous en ce qui concerne ces données. "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href:
+                                  "https://www.freeprivacypolicy.com/free-privacy-policy-generator.php"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Politique\n                                                de Confidentialité via Free Privacy Policy"
+                              )
+                            ]
+                          ),
+                          _vm._v(".")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous utilisons vos données pour fournir et améliorer le Service. En\n                                            utilisant le Service, vous consentez à la collecte et à l'utilisation\n                                            d'informations conformément à la présente politique. Sauf définition\n                                            contraire dans la présente Politique de Confidentialité, les termes\n                                            utilisés dans la présente Politique de Confidentialité ont la même\n                                            signification que dans nos Conditions Générales."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Définitions")]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Service")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Par Service on entend le site web https://www.tnpgndec.com/ et\n                                                    l'application mobile Training And Placement Cell exploités par\n                                                    Training and Placement Cell, GNDEC"
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [
+                                _vm._v("Données à caractère personnel")
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Données à Caractère Personnel désigne des données concernant un\n                                                    individu vivant qui peut être identifié à partir de ces données\n                                                    (ou à partir de ces données et d'autres informations en notre\n                                                    possession ou susceptibles d'entrer en notre possession)."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Données d'Utilisation")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Les Données d'Utilisation sont recueillies automatiquement et\n                                                    sont générées soit par l'utilisation du Service, soit par\n                                                    l'infrastructure du Service proprement dite (par exemple, durée\n                                                    de consultation d'une page)."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Cookies")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Les cookies sont de petits fichiers enregistrés sur votre\n                                                    dispositif (ordinateur ou dispositif mobile)."
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [
+                          _vm._v("Collecte et utilisation des données")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous recueillons plusieurs types de données à différentes fins en vue de\n                                            vous fournir notre Service et de l'améliorer."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Types de données recueillies")]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Données à Caractère Personnel")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Lorsque vous utilisez notre Service, il est possible que nous vous\n                                            demandions de nous fournir certaines données personnelles nominatives\n                                            qui peuvent servir à vous contacter ou à vous identifier ("Données à\n                                            Caractère Personnel"). Les données personnelles nominatives peuvent\n                                            comprendre, mais de manière non limitative:'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Adresse e-mail")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Prénom et nom de famille")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Numéro de téléphone")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Adresse, ville, province, état, code postal"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Cookies et Données d'Utilisation")])
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Données d'Utilisation")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous pouvons également recueillir les informations que votre navigateur\n                                            envoie chaque fois que vous consultez notre Service ou que vous accédez\n                                            au Service par le biais d'un dispositif mobile (\"Données\n                                            d'Utilisation\")."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Ces Données d'Utilisation peuvent comprendre des informations telles que\n                                            l'adresse de protocole Internet (c.-à-d. l'adresse IP) de votre\n                                            ordinateur, le type de navigateur, la version du navigateur, les pages\n                                            de notre Service que vous consultez, la date et l'heure de votre\n                                            visite, le temps passé sur ces pages, les identifiants uniques de\n                                            dispositifs ainsi que d'autres données de diagnostic."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Lorsque vous accédez au Service au moyen d'un dispositif mobile, ces\n                                            Données d'Utilisation peuvent comprendre des informations telles que le\n                                            type de dispositif mobile que vous utilisez, l'identifiant unique de\n                                            votre dispositif mobile, l'adresse IP de votre dispositif mobile, votre\n                                            système d'exploitation mobile, le type de navigateur Internet mobile\n                                            que vous utilisez, les identifiants uniques de dispositifs ainsi que\n                                            d'autres données de diagnostic."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Suivi et données de cookies")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous avons recours à des cookies et à d'autres technologies de suivi\n                                            similaires pour effectuer un suivi des activités effectuées dans notre\n                                            Service, et nous conservons certaines informations."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Les cookies sont des fichiers à faible volume de données pouvant\n                                            comporter un identifiant unique anonyme. Les cookies sont envoyés à\n                                            votre navigateur depuis un site web et sont stockés sur votre\n                                            dispositif. D'autres technologies de suivi telles que les pixels, les\n                                            balises et les scripts sont également utilisées pour recueillir et\n                                            suivre des informations et afin d'améliorer et d'analyser notre\n                                            Service."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Vous pouvez demander à votre navigateur de refuser tous les cookies ou\n                                            de vous avertir lorsqu'un cookie est envoyé. Toutefois, si vous\n                                            n'acceptez pas les cookies, il se peut que vous ne puissiez pas\n                                            utiliser certains éléments de notre Service."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("Exemples de cookies que nous utilisons :")
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookies de Session.")]),
+                            _vm._v(
+                              " Nous utilisons des Cookies de\n                                                Session pour faire fonctionner notre Service."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookies de Préférences.")]),
+                            _vm._v(
+                              " Nous utilisons des Cookies\n                                                de Préférences pour mémoriser vos préférences et vos différents\n                                                paramètres."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookies de Sécurité.")]),
+                            _vm._v(
+                              " Nous utilisons des Cookies de\n                                                Sécurité pour des raisons de sécurité."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Utilisation des données")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC utilise les données recueillies à des\n                                            fins diverses:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("Pour fournir et assurer notre Service")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Pour vous faire part des changements apportés à notre Service"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Pour vous permettre d'utiliser les fonctions interactives de notre\n                                                Service quand vous le souhaitez"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Pour assurer l'assistance client")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Pour recueillir des données précieuses ou d'analyses qui nous\n                                                permettront d'améliorer notre Service"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Pour contrôler l'utilisation de notre Service"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Pour détecter, prévenir et régler les problèmes techniques"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Transfert des données")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Les informations vous concernant, notamment vos Données à Caractère\n                                            Personnel, peuvent être transférées de votre région, province, pays, ou\n                                            autre division territoriale vers des ordinateurs – et stockées sur ces\n                                            derniers – situés à un endroit où la législation relative à la\n                                            protection des données diffère de celle du territoire où vous résidez."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Si vous résidez hors de/du India et que vous choisissez de nous\n                                            communiquer des informations, sachez que nous transférons les données,\n                                            y compris les Données à Caractère Personnel, vers le/la India et que\n                                            nous les y traitons."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "En acceptant la présente Politique de Confidentialité puis en soumettant\n                                            ces informations, vous consentez à ce transfert."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC prendra toutes les mesures\n                                            raisonnablement nécessaires pour faire en sorte que vos données soient\n                                            traitées de manière sécurisée et conformément à la présente Politique\n                                            de Confidentialité et vos Données à Caractère Personnel ne seront\n                                            transférées vers aucune organisation ni aucun pays à moins que des\n                                            contrôles adéquats ne soient en place, notamment en ce qui concerne la\n                                            sécurité de vos données et d'autres données personnelles."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Communication de données")]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Exigences légales")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC peut communiquer vos Données à\n                                            Caractère Personnel si elle estime de bonne foi que cela est nécessaire\n                                            pour:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("S'acquitter d'une obligation légale")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Protéger et défendre les droits ou les biens de Training and\n                                                Placement Cell, GNDEC"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Prévenir d'éventuels actes répréhensibles ou enquêter sur de tels\n                                                actes dans le cadre du Service "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Assurer la sécurité personnelle des utilisateurs du Service ou du\n                                                public"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Se protéger contre la responsabilité civile"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Sécurité des données")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "La sécurité de vos données nous tient à cœur. Toutefois, n'oubliez pas\n                                            qu'aucune méthode de transmission de données par Internet ou méthode de\n                                            stockage électronique n'est sûre à 100 %. Bien que nous nous efforcions\n                                            d'utiliser des méthodes commercialement acceptables pour protéger vos\n                                            Données à Caractère Personnel, nous ne pouvons pas leur garantir une\n                                            sécurité absolue."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Prestataires de services")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Nous pouvons faire appel à des sociétés tierces et à des tierces\n                                            personnes pour faciliter la prestation de notre Service ("Prestataires\n                                            de Services"), assurer le Service en notre nom, assurer des services\n                                            liés au Service ou nous aider à analyser la façon dont notre Service\n                                            est utilisé.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Ces tiers n'ont accès à vos Données à Caractère Personnel que pour\n                                            effectuer ces tâches en notre nom et il leur est interdit de les\n                                            communiquer ou de les utiliser à quelle qu'autre fin. "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Analyses")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous pouvons faire appel à des Prestataires de Services tiers pour\n                                            surveiller et analyser l'utilisation de notre Service."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Google Analytics")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Google Analytics est un service d'analyse web proposé par Google\n                                                    qui assure le suivi du trafic d'un site web et en rend compte.\n                                                    Google utilise les données recueillies pour suivre et\n                                                    surveiller l'utilisation de notre Service. Ces données sont\n                                                    partagées avec d'autres services Google. Google peut utiliser\n                                                    les données recueillies pour contextualiser et personnaliser\n                                                    les annonces de son propre réseau publicitaire."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Pour plus de précisions sur les pratiques de confidentialité de\n                                                    Google, merci de consulter la page web Protection de la vie\n                                                    privée et conditions de Google: "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "https://policies.google.com/privacy?hl=en"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "https://policies.google.com/privacy?hl=en"
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [
+                          _vm._v("Liens pointant vers d'autres sites")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Il se peut que notre Service contienne des liens pointant vers d'autres\n                                            sites que nous n'exploitons pas. Si vous cliquez sur un lien de tiers,\n                                            vous serez redirigé vers le site de ce tiers. Nous vous recommandons\n                                            vivement d'examiner la politique de confidentialité de chacun des sites\n                                            que vous consultez."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous n'avons aucun contrôle sur le contenu, les politiques ou pratiques\n                                            de confidentialité des sites ou services de tiers et déclinons toute\n                                            responsabilité en ce qui les concerne."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Vie privée des enfants")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Notre Service ne s\'adresse pas aux personnes de moins de 18 ans\n                                            ("Enfants").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous ne recueillons pas sciemment de données personnelles nominatives\n                                            auprès de personnes de moins de 18 ans. Si vous êtes un parent ou un\n                                            tuteur et que vous savez que votre Enfant nous a communiqué des Données\n                                            à Caractère Personnel, veuillez nous contacter. Si nous apprenons que\n                                            nous avons recueilli des Données à Caractère Personnel auprès d'enfants\n                                            sans vérifier s'il y a consentement parental, nous faisons le\n                                            nécessaire pour supprimer ces informations de nos serveurs."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [
+                          _vm._v(
+                            "Modifications de la présente Politique de Confidentialité"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous nous réservons le droit d'actualiser notre Politique de\n                                            Confidentialité de temps à autre. Nous vous informerons de toute\n                                            modification en publiant la nouvelle Politique de Confidentialité sur\n                                            cette page."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Avant que la modification ne prenne effet, nous vous en informerons par\n                                            e-mail et/ ou en plaçant un avis bien en vue dans notre Service et nous\n                                            actualiserons la "date de prise d\'effet" qui figure en haut de la\n                                            présente Politique de Confidentialité.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Nous vous conseillons de consulter la présente Politique de\n                                            Confidentialité périodiquement pour prendre connaissance de toute\n                                            modification. Les modifications apportées à la présente Politique de\n                                            Confidentialité prennent effet lorsqu'elles sont publiées sur cette\n                                            page."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Nous contacter")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Pour toute question relative à la présente Politique de Confidentialité,\n                                            veuillez nous contacter:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v(
+                              "Par courrier électronique: gndectpo@gmail.com"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "En consultant cette page sur notre site web:\n                                                https://www.tnpgndec.com/privacy"
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane ",
+                        attrs: { role: "tabpanel", id: "german" }
+                      },
+                      [
+                        _c("h1", [_vm._v("Datenschutz-Richtlinie")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("Datum des Inkrafttretens: October 03, 2018")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Training and Placement Cell, GNDEC ("wir", "uns", "unser" usw.) betreibt\n                                            die Website https://www.tnpgndec.com/ und die mobile App Training And\n                                            Placement Cell (nachstehend als "Dienst" bezeichnet).'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Diese Seite enthält Informationen zu der Art und Weise, auf welche wir\n                                            personenbezogene Daten erfassen, nutzen und offenlegen, wenn Sie\n                                            unseren Dienst nutzen, sowie zu den Optionen, die Ihnen im Zusammenhang\n                                            mit diesen Daten zur Verfügung stehen. "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href:
+                                  "https://www.freeprivacypolicy.com/free-privacy-policy-generator.php"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Datenschutz-Richtlinie\n                                                via Free Privacy Policy"
+                              )
+                            ]
+                          ),
+                          _vm._v(".")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir nutzen Ihre Daten zur Bereitstellung und Verbesserung unseres\n                                            Dienstes. Durch Inanspruchnahme des Dienstes erklären Sie sich mit der\n                                            Erfassung und Nutzung von Daten durch uns nach Maßgabe dieser\n                                            Richtlinie einverstanden. Soweit in dieser Datenschutz-Richtlinie nicht\n                                            jeweils etwas anderes angegeben ist, kommt den in dieser\n                                            Datenschutz-Richtlinie vorkommenden Begriffen jeweils dieselbe\n                                            Bedeutung zu, die diesen in unseren Allgemeinen Geschäftsbedingungen\n                                            (Terms and Conditions) zugewiesen wurde."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Begriffsbestimmungen")]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Dienst")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Der Dienst ist die von dem Training and Placement Cell, GNDEC\n                                                    betriebene Website https://www.tnpgndec.com/ und mobile App\n                                                    Training And Placement Cell."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Personenbezogene Daten")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Personenbezogene Daten sind Daten, die sich auf eine lebende\n                                                    Person beziehen, welche anhand dieser Daten (bzw. anhand dieser\n                                                    Daten in Kombination mit weiteren Informationen, die sich\n                                                    bereits in unserem Besitz befinden oder mit Wahrscheinlichkeit\n                                                    in unseren Besitz gelangen werden) identifizierbar ist."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Nutzungsdaten")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Nutzungsdaten sind Daten, die automatisch im Rahmen der Nutzung\n                                                    des Dienstes oder innerhalb der Dienstinfrastruktur selbst\n                                                    (beispielsweise für die Dauer eines Seitenbesuchs) erfasst\n                                                    werden."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Cookies")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Cookies sind kleine Dateien, die auf Ihrem Gerät (Computer oder\n                                                    mobiles Endgerät) gespeichert werden."
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Erfassung und Nutzung von Daten")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir erfassen verschiedene Arten von Daten für eine Reihe von Zwecken, um\n                                            den Dienst, den wir Ihnen zur Verfügung stellen, zu verbessern."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Arten der erfassten Daten")]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Personenbezogene Daten")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Im Rahmen der Nutzung unseres Dienstes bitten wir Sie gegebenenfalls um\n                                            die Zurverfügungstellung bestimmter persönlich identifizierbarer Daten,\n                                            die wir dazu nutzen, um Sie zu kontaktieren oder zu identifizieren\n                                            ("personenbezogene Daten"). Persönlich identifizierbare Daten umfassen\n                                            beispielsweise folgende Daten (sind jedoch nicht auf diese beschränkt):'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("E-Mail-Adresse")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Vorname und Nachname")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Telefonnummer")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Adresse, Staat, Provinz, Postleitzahl, Ort")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Cookies und Nutzungsdaten")])
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Nutzungsdaten")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Wie können außerdem solche Daten erfassen, die Ihr Browser jedes Mal\n                                            dann versendet, wenn Sie unseren Dienst besuchen oder mittels oder\n                                            anhand eines mobilen Endgeräts auf unseren Dienst zugreifen\n                                            ("Nutzungsdaten").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Diese Nutzungsdaten umfassen gegebenenfalls die\n                                            Internet-Protocol-Adresse (IP-Adresse) Ihres Computers, Ihren\n                                            Browsertyp, Ihre Browserversion, die von Ihnen innerhalb unseres\n                                            Dienstes besuchten Seiten, den Zeitpunkt und das Datum Ihres Besuchs,\n                                            die Gesamtverweildauer auf den betreffenden Seiten, individuelle\n                                            Geräteidentifikationsmerkmale und weitere Diagnostikdaten."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wenn Sie auf unseren Dienst mithilfe eines mobilen Endgeräts zugreifen,\n                                            umfassen diese Daten gegebenenfalls unter anderem den Typ des von Ihnen\n                                            genutzten mobilen Endgeräts, Ihre individuelle Geräteidentifikation,\n                                            die IP-Adresse Ihres mobilen Endgeräts, Ihr mobiles Betriebssystem, den\n                                            Typ des von Ihnen genutzten mobilen Internetbrowsers, individuelle\n                                            Geräteidentifikationsmerkmale und weitere Diagnostikdaten."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Tracking & Cookies")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir setzen Cookies und ähnliche Tracking-Technologien zur Überwachung\n                                            der Aktivität innerhalb unseres Dienstes ein und speichern in diesem\n                                            Zusammenhang bestimmte Daten."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Cookies sind Dateien mit einem geringen Datenumfang, wie zum Beispiel\n                                            anonyme einzigartige Identifikatoren. Cookies werden von einer Website\n                                            an Ihren Browser gesendet und auf Ihrem Gerät gespeichert. Die\n                                            sonstigen von uns eingesetzten Tracking-Technologien sind so genannte\n                                            Beacons, Tags und Scripts und dienen der Erfassung und Nachverfolgung\n                                            von Daten sowie der Verbesserung und Analyse unseres Dienstes."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Sie können in den Einstellungen Ihres Browsers bestimmen, ob Sie alle\n                                            Cookies ablehnen oder nur bestimmte Cookies akzeptieren möchten. Falls\n                                            Sie jedoch die Annahme von Cookies verweigern, können Sie\n                                            gegebenenfalls Teile unseres Dienstes nicht in Anspruch nehmen."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("Beispiele für von uns eingesetzte Cookies:")
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("strong", [_vm._v("Sitzungs-Cookies.")]),
+                            _vm._v(
+                              " Wir setzen Sitzungs-Cookies für\n                                                den Betrieb unseres Dienstes ein."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Präferenz-Cookies.")]),
+                            _vm._v(
+                              " Wir setzen Präferenz-Cookies\n                                                ein, um Ihre Präferenzen und verschiedenen Einstellungen zu\n                                                speichern."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Sicherheits-Cookies.")]),
+                            _vm._v(
+                              " Wir setzen\n                                                Sicherheits-Cookies für Sicherheitszwecke ein."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Datennutzung")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir bei Training and Placement Cell, GNDEC nutzen die erfassten Daten\n                                            für verschiedene Zwecke, beispielsweise um:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v(
+                              "Ihnen unseren Dienst zur Verfügung zu stellen und diesen aufrecht\n                                                zu erhalten;"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Ihnen Änderungen in Bezug auf unseren Dienst mitzuteilen;"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "es Ihnen auf Wunsch zu ermöglichen, an den interaktiven Teilen\n                                                unseres Dienstes teilzunehmen;"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Kundendienstleistungen zur Verfügung zu stellen;"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Analysedaten und sonstige wertvolle Daten zu erfassen, damit wir\n                                                unseren Dienst verbessern können;"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "die Nutzung unseres Dienstes zu überwachen;"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "technische Probleme zu erkennen, zu vermeiden und zu beheben;"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Übertragung von Daten")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Ihre Daten, einschließlich personenbezogener Daten, können auf Computer\n                                            übertragen – und auf solchen aufbewahrt – werden, die sich außerhalb\n                                            Ihres Heimatstaates, Ihrer Heimatprovinz, Ihres Heimatlandes oder einer\n                                            sonstigen Rechtsordnung befinden und somit Datenschutzgesetzen\n                                            unterliegen, die sich von den Datenschutzgesetzen in Ihrer\n                                            Rechtsordnung unterscheiden."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Falls Sie sich außerhalb von India befinden und sich dazu entscheiden,\n                                            Daten an uns zu übermitteln, müssen Sie zur Kenntnis nehmen, dass wir\n                                            Ihre Daten, einschließlich personenbezogener Daten, nach India\n                                            übertragen und diese dort verarbeiten."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Ihre Zustimmung zu dieser Datenschutz-Richtlinie und eine nachfolgende\n                                            Übermittlung von Daten Ihrerseits stellt eine Einverständniserklärung\n                                            Ihrerseits zu der genannten Übertragung dar."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC wird alle im zumutbaren Rahmen\n                                            erforderlichen Schritte unternehmen um sicherzustellen, dass Ihre Daten\n                                            auf sichere Weise sowie in Übereinstimmung mit dieser\n                                            Datenschutz-Richtlinie behandelt werden, und dass Ihre\n                                            personenbezogenen Daten nicht an Organisationen oder in Länder\n                                            übertragen werden, hinsichtlich welcher keine hinreichenden\n                                            Kontrollmechanismen in Bezug auf die Sicherheit Ihrer Daten und\n                                            sonstigen personenbezogenen Informationen vorliegen."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Offenlegung von Daten")]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Gesetzliche Anforderungen")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC kann Ihre personenbezogenen Daten\n                                            unter Umständen offenlegen, wenn es unter Beachtung der Grundsätze von\n                                            Treu und Glauben der Ansicht ist, dass dies zur Erreichung der\n                                            nachfolgenden Zielsetzungen erforderlich ist:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("zur Erfüllung einer gesetzlichen Pflicht")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "zum Schutz und zur Verteidigung der Rechte oder des Eigentums von\n                                                Training and Placement Cell, GNDEC"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "zur Vermeidung oder Untersuchung möglicher Fehlverhaltensweisen in\n                                                Bezug auf den Dienst "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "zum Schutz der persönlichen Sicherheit der Nutzer des Dienstes oder\n                                                der Öffentlichkeit"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("zur Vermeidung von Haftungsansprüchen")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Datensicherheit")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Die Sicherheit Ihrer Daten ist uns wichtig. Bitte vergessen Sie jedoch\n                                            nicht, dass es keine Übertragungsmethoden über das Internet und keine\n                                            elektronischen Speichermedien gibt, die 100 % sicher sind. Obwohl\n                                            wir stets bemüht sind, kommerziell annehmbare Maßnahmen zum Schutz\n                                            Ihrer personenbezogenen Daten umzusetzen, können wir eine absolute\n                                            Sicherheit nicht garantieren."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Leistungsanbieter")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Wir beauftragen gegebenenfalls dritte Unternehmen und Einzelpersonen\n                                            ("Leistungsanbieter") mit Unterstützungsleistungen zum einfacheren\n                                            Angebot unseres Dienstes, mit der Erbringung von Leistungen in unserem\n                                            Namen, mit der Erbringung von mit unserem Dienst verbundenen Leistungen\n                                            oder mit Unterstützungsleistungen zur Analyse der Art und Weise, auf\n                                            die unser Dienst in Anspruch genommen wird.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Diese Dritten können auf Ihre personenbezogenen Daten nur in dem Umfang\n                                            Zugriff nehmen, der für die Erfüllung der genannten Aufgaben in unserem\n                                            Namen erforderlich ist, und dürfen diese für keine sonstigen Zwecke\n                                            offenlegen oder nutzen."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Analytik")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir beauftragen gegebenenfalls dritte Leistungsanbieter mit der\n                                            Überwachung und Analyse der Nutzung unseres Dienstes."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Google Analytics")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Google Analytics ist ein von Google angebotener\n                                                    Web-Analytics-Dienst, der Zugriffe auf Websites nachverfolgt\n                                                    und meldet. Google nutzt die gewonnenen Daten zur\n                                                    Nachverfolgung und Überwachung der Nutzung unseres Dienstes.\n                                                    Diese Daten werden mit anderen Google-Diensten geteilt. Google\n                                                    kann die gewonnenen Daten zur Kontextualisierung und\n                                                    Personalisierung der Werbeanzeigen innerhalb seines eigenen\n                                                    Werbenetzwerks nutzen."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Weitere Informationen zu den Datenschutzmaßnahmen von Google\n                                                    können Sie auf Googles Webseite zu seinen\n                                                    Datenschutzbestimmungen (Privacy Terms) einsehen: "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "https://policies.google.com/privacy?hl=en"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "https://policies.google.com/privacy?hl=en"
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Links zu anderen Websites")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Unser Dienst kann Links zu anderen Websites enthalten, die nicht von uns\n                                            betrieben werden. Wenn Sie auf einen Drittlink klicken, werden Sie\n                                            direkt auf die Website des betreffenden Dritten weitergeleitet. Wir\n                                            empfehlen Ihnen dringend, sich jeweils die Datenschutz-Richtlinien\n                                            aller von Ihnen besuchten Websites durchzulesen."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir haben keine Kontrolle über die Inhalte, Datenschutzvorschriften und\n                                            -praktiken dritter Websites oder Dienste und übernehmen in diesem\n                                            Zusammenhang keine Haftung."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Privatsphäre Minderjähriger")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Unser Dienst richtet sich nicht an Personen, die das 18. Lebensjahr noch\n                                            nicht vollendet haben ("minderjährige Personen").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir erfassen wissentlich keine persönlich identifizierbaren Daten zu\n                                            minderjährigen Personen. Falls Sie ein Elternteil oder Vormund sind und\n                                            es Ihnen bekannt wird, dass eine Ihrer Aufsicht unterstehende\n                                            minderjährige Person uns personenbezogene Daten übermittelt hat, bitten\n                                            wir Sie, mit uns Kontakt aufzunehmen. Falls uns bekannt wird, dass wir\n                                            personenbezogene Daten einer minderjährigen Person ohne elterliche\n                                            Zustimmung erfasst haben, setzen wir Maßnahmen zur Entfernung dieser\n                                            Daten von unseren Servern um."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [
+                          _vm._v("Änderungen dieser Datenschutz-Richtlinie")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir können unsere Datenschutz-Richtlinie von Zeit zu Zeit aktualisieren.\n                                            Jegliche solcher Änderungen teilen wir Ihnen mit, indem wir die\n                                            aktualisierte Fassung auf dieser Seite veröffentlichen."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Wir werden Sie vor dem Inkrafttreten der betreffenden Änderung per\n                                            E-Mail und/oder mittels einer sonstigen sichtbaren Mitteilung innerhalb\n                                            unseres Dienstes informieren und das "Datum des Inkrafttretens" am\n                                            Beginn dieser Datenschutz-Richtlinie aktualisieren.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wir empfehlen Ihnen, diese Datenschutz-Richtlinie regelmäßig auf\n                                            Änderungen hin durchzusehen. Änderungen dieser Datenschutz-Richtlinie\n                                            werden im Zeitpunkt ihrer Veröffentlichung auf dieser Seite wirksam."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Kontaktaufnahme")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Falls Sie Fragen zu dieser Datenschutz-Richtlinie haben, können Sie wie\n                                            folgt Kontakt zu uns aufnehmen:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Per E-Mail: gndectpo@gmail.com")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Durch Besuch der folgenden Seite unserer Website:\n                                                https://www.tnpgndec.com/privacy"
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane ",
+                        attrs: { role: "tabpanel", id: "italian" }
+                      },
+                      [
+                        _c("h1", [_vm._v("Informativa sulla Privacy")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("Data di entrata in vigore: October 03, 2018")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Training and Placement Cell, GNDEC ("noi" o "nostro") gestisce il sito\n                                            web https://www.tnpgndec.com/ e l\'applicazione Training And Placement\n                                            Cell per dispositivi mobili (in appresso il "Servizio").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Questa pagina vi informa delle nostre politiche riguardanti la raccolta,\n                                            l'uso e la divulgazione dei dati personali quando usate il nostro\n                                            Servizio e le scelte che avete associato a quei dati. "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href:
+                                  "https://www.freeprivacypolicy.com/free-privacy-policy-generator.php"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Informativa\n                                                sulla Privacy via Free Privacy Policy"
+                              )
+                            ]
+                          ),
+                          _vm._v(".")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Utilizziamo i vostri dati per fornire e migliorare il Servizio.\n                                            Utilizzando il Servizio, accettate la raccolta e l'utilizzo delle\n                                            informazioni in conformità con questa informativa. Se non diversamente\n                                            definito nella presente Informativa sulla privacy, i termini utilizzati\n                                            nella presente Informativa hanno la stessa valenza dei nostri Termini e\n                                            condizioni."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Definizioni")]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Servizio")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Servizio significa il https://www.tnpgndec.com/ sito web e\n                                                    l'applicazione per dispositivi mobili Training And Placement\n                                                    Cell gestiti da Training and Placement Cell, GNDEC"
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Dati personali")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "I Dati personali sono i dati di un individuo vivente che può\n                                                    essere identificato da quei dati (o da quelli e altre\n                                                    informazioni in nostro possesso o che potrebbero venire in\n                                                    nostro possesso)."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Dati di utilizzo")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "I dati di utilizzo sono i dati raccolti automaticamente generati\n                                                    dall'utilizzo del Servizio o dall'infrastruttura del Servizio\n                                                    stesso (ad esempio, la durata della visita di una pagina)."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Cookies")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "I cookie sono piccoli file memorizzati sul vostro dispositivo\n                                                    (computer o dispositivo mobile)."
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Raccolta e uso delle informazioni")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Raccogliamo diversi tipi di informazioni per vari scopi, per fornire e\n                                            migliorare il nostro servizio."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Tipologie di Dati raccolti")]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Dati personali")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Durante l\'utilizzo del nostro Servizio, potremmo chiedervi di fornirci\n                                            alcune informazioni di identificazione personale che possono essere\n                                            utilizzate per contattarvi o identificarvi ("Dati personali"). Le\n                                            informazioni di identificazione personale possono includere, ma non\n                                            sono limitate a:'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Indirizzo email")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Nome e cognome")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Numero di telefono")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "AIndirizzo, stato, provincia, codice postale, città"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Cookie e dati di utilizzo")])
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Dati di utilizzo")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Possiamo anche raccogliere informazioni che il browser invia ogni volta\n                                            che si visita il nostro Servizio o quando si accede al servizio o\n                                            tramite un dispositivo mobile ("Dati di utilizzo").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Questi Dati di utilizzo possono includere informazioni quali l'indirizzo\n                                            del protocollo Internet del computer (ad es. Indirizzo IP), il tipo di\n                                            browser, la versione del browser, le pagine del nostro servizio che si\n                                            visita, l'ora e la data della visita, il tempo trascorso su tali\n                                            pagine, identificatore unico del dispositivo e altri dati diagnostici."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Quando si accede al Servizio attraverso un dispositivo mobile, questi\n                                            Dati di utilizzo possono includere informazioni quali il tipo di\n                                            dispositivo mobile che si utilizza, l'ID univoco del dispositivo\n                                            mobile, l'indirizzo IP del dispositivo mobile, il sistema operativo\n                                            mobile, il tipo di browser Internet mobile che utilizzate,\n                                            identificatori di dispositivo univoci e altri dati diagnostici."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Tracciamento; dati dei cookie")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Utilizziamo cookie e tecnologie di tracciamento simili per tracciare\n                                            l'attività sul nostro Servizio e conservare determinate informazioni."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "I cookie sono file con una piccola quantità di dati che possono\n                                            includere un identificatore univoco anonimo. I cookie vengono inviati\n                                            al vostro browser da un sito web e memorizzati sul vostro dispositivo.\n                                            Altre tecnologie di tracciamento utilizzate sono anche beacon, tag e\n                                            script per raccogliere e tenere traccia delle informazioni e per\n                                            migliorare e analizzare il nostro Servizio."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Potete chiedere al vostro browser di rifiutare tutti i cookie o di\n                                            indicare quando viene inviato un cookie. Tuttavia, se non si accettano\n                                            i cookie, potrebbe non essere possibile utilizzare alcune parti del\n                                            nostro Servizio."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Esempi di cookie che utilizziamo:")]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookie di sessione.")]),
+                            _vm._v(
+                              " Utilizziamo i cookie di\n                                                sessione per gestire il nostro servizio."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookie di preferenza.")]),
+                            _vm._v(
+                              " Utilizziamo i cookie di\n                                                preferenza per ricordare le vostre preferenze e varie impostazioni."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Cookie di sicurezza.")]),
+                            _vm._v(
+                              " Utilizziamo i cookie di\n                                                sicurezza per motivi di sicurezza."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Uso dei dati")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC utilizza i dati raccolti per vari\n                                            scopi:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("Per fornire e mantenere il nostro Servizio")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Per comunicare agli utenti variazioni apportate al servizio che\n                                                offriamo"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Per permettere agli utenti di fruire, a propria discrezione, di\n                                                funzioni interattive del nostro servizio"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Per fornire un servizio ai clienti")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Per raccogliere analisi o informazioni preziose in modo da poter\n                                                migliorare il nostro Servizio"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Per monitorare l'utilizzo del nostro Servizio"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Per rilevare, prevenire e affrontare problemi tecnici"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Trasferimento dei dati")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Le vostre informazioni, compresi i Dati personali, possono essere\n                                            trasferite a - e mantenute su - computer situati al di fuori del vostro\n                                            stato, provincia, nazione o altra giurisdizione governativa dove le\n                                            leggi sulla protezione dei dati possono essere diverse da quelle della\n                                            vostra giurisdizione."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Se ci si trova al di fuori di India e si sceglie di fornire informazioni\n                                            a noi, si ricorda che trasferiamo i dati, compresi i dati personali, in\n                                            India e li elaboriamo lì."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Il vostro consenso alla presente Informativa sulla privacy seguito\n                                            dall'invio di tali informazioni rappresenta il vostro consenso al\n                                            trasferimento."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC adotterà tutte le misure\n                                            ragionevolmente necessarie per garantire che i vostri dati siano\n                                            trattati in modo sicuro e in conformità con la presente Informativa\n                                            sulla privacy e nessun trasferimento dei vostri Dati Personali sarà\n                                            effettuato a un'organizzazione o a un paese a meno che non vi siano\n                                            controlli adeguati dei vostri dati e altre informazioni personali."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Divulgazione di dati")]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Prescrizioni di legge")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC può divulgare i vostri Dati personali\n                                            in buona fede, ritenendo che tale azione sia necessaria per:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Rispettare un obbligo legale")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Proteggere e difendere i diritti o la proprietà di Training and\n                                                Placement Cell, GNDEC"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Prevenire o investigare possibili illeciti in relazione al Servizio"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Proteggere la sicurezza personale degli utenti del Servizio o del\n                                                pubblico"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Proteggere contro la responsabilità legale")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Sicurezza dei dati")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "La sicurezza dei vostri dati è importante per noi, ma ricordate che\n                                            nessun metodo di trasmissione su Internet o metodo di archiviazione\n                                            elettronica è sicuro al 100%. Pertanto, anche se adotteremo ogni mezzo\n                                            commercialmente accettabile per proteggere i vostri Dati personali, non\n                                            possiamo garantirne la sicurezza assoluta."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Fornitori di servizi")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Potremmo impiegare società e individui di terze parti per facilitare il\n                                            nostro Servizio ("Fornitori di servizi"), per fornire il Servizio per\n                                            nostro conto, per eseguire servizi relativi ai Servizi o per aiutarci\n                                            ad analizzare come viene utilizzato il nostro Servizio.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Le terze parti hanno accesso ai vostri Dati personali solo per eseguire\n                                            queste attività per nostro conto e sono obbligate a non rivelarle o\n                                            utilizzarle per altri scopi."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Statistiche")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Potremmo utilizzare i Fornitori di servizi di terze parti per monitorare\n                                            e analizzare l'utilizzo del nostro servizio."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Google Analytics")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Google Analytics è un servizio di analisi web offerto da Google\n                                                    che tiene traccia e segnala il traffico del sito web. Google\n                                                    utilizza i dati raccolti per tracciare e monitorare l'utilizzo\n                                                    del nostro Servizio. Questi dati sono condivisi con altri\n                                                    servizi di Google. Google può utilizzare i dati raccolti per\n                                                    contestualizzare e personalizzare le inserzioni della propria\n                                                    rete pubblicitaria."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Per ulteriori informazioni sulle prassi relative alla privacy di\n                                                    Google, vi preghiamo di visitare la pagina web con i Termini\n                                                    della privacy di Google: "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "https://policies.google.com/privacy?hl=en"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "https://policies.google.com/privacy?hl=en"
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Link ad altri siti")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "OIl nostro servizio può contenere collegamenti ad altri siti non gestiti\n                                            da noi. Cliccando su un link di terze parti, sarete indirizzati al sito\n                                            di quella terza parte. Ti consigliamo vivamente di rivedere\n                                            l'Informativa sulla privacy di ogni sito che visiti."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Non abbiamo alcun controllo e non ci assumiamo alcuna responsabilità per\n                                            il contenuto, le politiche sulla privacy o le pratiche di qualsiasi\n                                            sito o servizio di terzi."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Privacy dei minori")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Il nostro servizio non si rivolge a minori di 18 anni ("Bambini").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Non raccogliamo consapevolmente informazioni personali relative a utenti\n                                            di età inferiore a 18 anni. Se siete un genitore o tutore e siete\n                                            consapevoli che vostro figlio ci ha fornito Dati personali, vi\n                                            preghiamo di contattarci. Se veniamo a conoscenza del fatto che abbiamo\n                                            raccolto Dati personali da minori senza la verifica del consenso dei\n                                            genitori, adotteremo provvedimenti per rimuovere tali informazioni dai\n                                            nostri server."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [
+                          _vm._v(
+                            "Modifiche alla presente informativa sulla privacy"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Potremmo aggiornare periodicamente la nostra Informativa sulla privacy.\n                                            Ti informeremo di eventuali modifiche pubblicando la nuova Informativa\n                                            sulla privacy in questa pagina."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Vi informeremo via e-mail e / o un avviso di rilievo sul nostro\n                                            Servizio, prima che la modifica diventi effettiva e aggiorneremo la\n                                            "data di validità" nella parte superiore di questa Informativa sulla\n                                            privacy.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Si consiglia di rivedere periodicamente la presente Informativa sulla\n                                            privacy per eventuali modifiche. Le modifiche a tale informativa sulla\n                                            privacy entrano in vigore nel momento in cui vengono pubblicate su\n                                            questa pagina."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Contattaci")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "In caso di domande sulla presente Informativa sulla privacy, si prega di\n                                            contattarci:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v("Tramite e-mail: gndectpo@gmail.com")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Visitando questa pagina sul nostro sito web:\n                                                https://www.tnpgndec.com/privacy"
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane ",
+                        attrs: { role: "tabpanel", id: "dutch" }
+                      },
+                      [
+                        _c("h1", [_vm._v("Privacybeleid")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Ingangsdatum: October 03, 2018")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Training and Placement Cell, GNDEC ("ons", "wij" of "onze") beheert de\n                                            https://www.tnpgndec.com/ website en de Training And Placement Cell\n                                            mobiele App ("hierna genoemd Dienst").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Deze pagina bevat informatie over ons beleid met betrekking tot de\n                                            verzameling, het gebruik en de openbaarmaking van uw persoonsgegevens\n                                            wanneer u onze Dienst gebruikt en de keuzes die u hebt met betrekking\n                                            tot die gegevens. "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href:
+                                  "https://www.freeprivacypolicy.com/free-privacy-policy-generator.php"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Privacybeleid\n                                                via Free Privacy Policy"
+                              )
+                            ]
+                          ),
+                          _vm._v(".")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wij gebruiken uw gegevens om de Dienst te leveren en te verbeteren.\n                                            Wanneer u de Dienst gebruikt, gaat u akkoord met de verzameling en het\n                                            gebruik van informatie in overeenstemming met dit beleid. Tenzij anders\n                                            bepaald in dit Privacybeleid heeft de terminologie die wordt gebruikt\n                                            in dit Privacybeleid dezelfde betekenis als in onze Algemene\n                                            voorwaarden."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Definities")]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Dienst")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Onder dienst verstaan wij de https://www.tnpgndec.com/ website\n                                                    en de Training And Placement Cell mobiele App beheerd door\n                                                    Training and Placement Cell, GNDEC"
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Gebruiksgegevens")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Onder gebruiksgegevens verstaan wij automatisch verzamelde\n                                                    gegevens die worden gegenereerd door het gebruik van de Dienst\n                                                    of van de infrastructuur van de Dienst zelf (bijvoorbeeld, de\n                                                    duur van het bezoek aan een pagina)."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Gebruiksgegevens")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Onder gebruiksgegevens verstaan wij automatisch verzamelde\n                                                    gegevens die worden gegenereerd door het gebruik van de Dienst\n                                                    of van de infrastructuur van de Dienst zelf (bijvoorbeeld, de\n                                                    duur van het bezoek aan een pagina)."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("p", [_c("strong", [_vm._v("Cookies")])]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Cookies zijn informatiebestandjes die worden opgeslagen op uw\n                                                    apparaat (computer of mobiele apparaat)."
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Gegevensverzameling en gebruik")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wij verzamelen verschillende soorten gegevens voor uiteenlopende\n                                            doeleinden om onze Dienst aan u te kunnen leveren en om hem te\n                                            verbeteren."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [
+                          _vm._v("Soorten gegevens die worden verzameld")
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Persoonsgegevens")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Wanneer u onze Dienst gebruikt, kunnen wij u vragen ons bepaalde\n                                            persoonlijk identificeerbare informatie te verstrekken die kan worden\n                                            gebruikt om contact op te nemen met u of om u te identificeren\n                                            ("Persoonsgegevens"). Deze persoonlijk identificeerbare informatie kan\n                                            omvatten maar is niet beperkt tot:'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("E-mailadres")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Voor- en achternaam")]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Telefoonnummer")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Adres, provincie, postcode, stad")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [_vm._v("Cookies en Gebruiksgegevens")])
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Gebruiksgegevens")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Wij kunnen ook gegevens verzamelen die uw browser verstuurt wanneer u\n                                            onze Dienst bezoekt of wanneer u toegang krijgt tot de Dienst met of\n                                            via een mobiele apparaat ("Gebruiksgegevens").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Deze Gebruiksgegevens kunnen informatie bevatten zoals het Internet\n                                            Protocol adres (IP-adres) van uw computer, het type browser, de versie\n                                            van de browser, de pagina's die u hebt bezocht op onze Dienst, het\n                                            tijdstip en de datum van uw bezoek, de tijd die u hebt doorgebracht op\n                                            die pagina's, unieke apparaat-ID en andere diagnostische gegevens."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wanneer u toegang krijgt tot de Dienst met een mobiel apparaat kunnen\n                                            deze Gebruiksgegevens informatie omvatten zoals het type mobiele\n                                            apparaat dat u gebruikt, de unieke ID van uw mobiele apparaat, het\n                                            IP-adres van uw mobiele apparaat, uw mobiel besturingssysteem, de\n                                            mobiele internetbrowser die u gebruikt, de unieke apparaat-ID en andere\n                                            diagnostische gegevens."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Tracking & cookiegegevens")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wij gebruiken cookies en soortgelijke volgtechnologieën om de activiteit\n                                            op onze Dienst te volgen en we bewaren bepaalde informatie."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Cookies zijn bestanden met een kleine hoeveelheid gegevens die een\n                                            anonieme unieke ID kunnen bevatten. Cookies worden van een website\n                                            verzonden naar uw browser en opgeslagen op uw apparaat. Er worden ook\n                                            andere volgtechnologieën gebruikt zoals beacons, tags en scripts om\n                                            gegevens te verzamelen en te volgen en om onze Dienst te verbeteren en\n                                            te analyseren."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "U kunt uw browser instellen om alle cookies te weigeren of om aan te\n                                            geven wanneer een cookie wordt verzonden. Maar als u geen cookies\n                                            aanvaardt, kunt u mogelijk niet alle functies van onze Dienst\n                                            gebruiken."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("Voorbeelden van cookies die wij gebruiken:")
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("strong", [_vm._v("Sessiecookies.")]),
+                            _vm._v(
+                              " Wij gebruiken Sessiecookies om onze\n                                                Dienst te beheren."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Voorkeurcookies.")]),
+                            _vm._v(
+                              " Wij gebruiken Voorkeurcookies om\n                                                uw voorkeuren en uiteenlopende instellingen bij te houden."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("strong", [_vm._v("Veiligheidscookies.")]),
+                            _vm._v(
+                              " Wij gebruiken\n                                                Veiligheidscookies voor veiligheidsdoeleinden."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Gebruik van gegevens")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC gebruikt de verzamelde gegevens voor\n                                            uiteenlopende doeleinden:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v(
+                              "Om onze Dienst te leveren en te onderhouden"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Om u wijzigingen in onze Dienst te melden")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Om u de mogelijkheid te bieden om, indien gewenst, deel te nemen\n                                                aan de interactieve functies van onze Dienst"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v("Om onze klanten steun te verlenen")
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Om analyse- of waardevolle gegevens te verzamelen die we kunnen\n                                                toepassen om onze Dienst te verbeteren"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Om toezicht te houden op het gebruik van onze Dienst"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Om technische problemen te detecteren, te voorkomen en te\n                                                behandelen"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Om u nieuws, speciale aanbiedingen en algemene informatie te bieden\n                                                over onze goederen, diensten en evenementen die gelijkaardig zijn\n                                                aan wat u in het verleden al gekocht hebt of waar u informatie over\n                                                hebt gevraagd, tenzij u hebt aangegeven dat u dergelijke informatie\n                                                niet wenst te ontvangen."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Overdracht van gegevens")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Uw gegevens, inclusief Persoonsgegevens, kunnen worden overgedragen naar\n                                            — en bewaard op — computers die zich buiten het rechtsgebied van uw\n                                            provincie, land of een andere overheidsinstantie bevinden waar de\n                                            wetgeving inzake gegevensbescherming kan verschillen van de wetgeving\n                                            in uw rechtsgebied."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Let erop dat, als u zich buiten India bevindt en u ons gegevens\n                                            verstrekt, wij deze gegevens, inclusief Persoonsgegevens, overdragen\n                                            naar India en ze daar verwerken."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Uw instemming met dit Privacybeleid gevolgd door uw indiening van\n                                            dergelijke gegevens geven aan dat u akkoord gaat met die overdracht."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC zal alle redelijkerwijs noodzakelijke\n                                            stappen ondernemen om ervoor te zorgen dat uw gegevens veilig en in\n                                            overeenstemming met dit Privacybeleid worden behandeld en dat uw\n                                            Persoonsgegevens nooit worden overgedragen aan een organisatie of een\n                                            land als er geen gepaste controles zijn ingesteld, inclusief de\n                                            veiligheid van uw gegevens en andere persoonsgegevens."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Openbaarmaking van gegevens")]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Wettelijke vereisten")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Training and Placement Cell, GNDEC kan uw Persoonsgegevens openbaar\n                                            maken als het te goeder trouw de mening is toegedaan dat een dergelijke\n                                            handeling noodzakelijk is:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _vm._v(
+                              "Om te voldoen aan een wettelijke verplichting"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Om de rechten en eigendom van Training and Placement Cell, GNDEC te\n                                                beschermen en te verdedigen"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Om mogelijke misstanden te voorkomen of te onderzoeken in verband\n                                                met de Dienst"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Om de persoonlijke veiligheid van gebruikers van de Dienst of het\n                                                publiek te beschermen"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Als bescherming tegen juridische aansprakelijkheid"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Veiligheid van gegevens")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "De veiligheid van uw gegevens is belangrijk voor ons, maar vergeet niet\n                                            dat geen enkele methode van verzending via het internet of\n                                            elektronische methode van opslag 100% veilig is. Hoewel wij ernaar\n                                            streven commercieel aanvaardbare middelen toe te passen om uw\n                                            Persoonsgegevens te beschermen, kunnen wij de absolute veiligheid niet\n                                            waarborgen."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Dienstverleners")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Wij kunnen externe bedrijven en personen aanstellen om onze Dienst\n                                            ("Dienstverleners") te vereenvoudigen, om de Dienst te leveren in onze\n                                            naam, om diensten uit te voeren in het kader van onze Dienst of om ons\n                                            te helpen bij de analyse van hoe onze Dienst wordt gebruikt.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Deze externe partijen hebben enkel toegang tot uw Persoonsgegevens om\n                                            deze taken uit te voeren in onze naam en zij mogen deze niet openbaar\n                                            maken aan anderen of ze gebruiken voor andere doeleinden."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h3", [_vm._v("Analytics")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wij kunnen beroep doen op externe Dienstverleners om het gebruik van\n                                            onze Dienst te volgen en te analyseren."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("p", [
+                              _c("strong", [_vm._v("Google Analytics")])
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Google Analytics is een webanalyse-service van Google die het\n                                                    websiteverkeer volgt en rapporteert. Google gebruikt de\n                                                    verzamelde gegevens om het gebruik van onze Dienst te volgen en\n                                                    bij te houden. Deze gegevens worden gedeeld met andere Google\n                                                    diensten. Google kan de verzamelde gegevens gebruiken om de\n                                                    advertenties van zijn eigen advertentienetwerk te\n                                                    contextualiseren en te personaliseren."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Voor meer informatie over de privacypraktijken van Google\n                                                    verwijzen wij u naar de internetpagina van Google Privacy en\n                                                    voorwaarden: "
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "https://policies.google.com/privacy?hl=en"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "https://policies.google.com/privacy?hl=en"
+                                  )
+                                ]
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Links naar andere sites")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Onze Dienst kan links bevatten naar andere sites die niet door ons\n                                            worden beheerd. Als u klikt op een link van een externe partij wordt u\n                                            naar de site van die externe partij gebracht. Wij raden u sterk aan het\n                                            Privacybeleid te verifiëren van elke site die u bezoekt."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wij hebben geen controle over en aanvaarden geen aansprakelijkheid met\n                                            betrekking tot de inhoud, het privacybeleid of de privacypraktijken van\n                                            de sites of diensten van een externe partij."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Privacy van kinderen")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Onze dienst richt zich niet op personen die jonger zijn dan 18\n                                            ("Kinderen").'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wij verzamelen nooit bewust persoonlijk identificeerbare informatie van\n                                            iemand die jonger is dan 18 jaar oud. Als u een ouder of voogd bent en\n                                            u stelt vast dat uw kind ons persoonsgegevens heeft geleverd, vragen\n                                            wij u contact op te nemen met ons. Als u vaststelt dat wij\n                                            persoonsgegevens hebben verzameld van kinderen zonder de verificatie\n                                            van ouderlijk toezicht zullen wij de nodige stappen ondernemen om die\n                                            informatie te verwijderen van onze servers."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Wijzigingen aan dit Privacybeleid")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wij kunnen ons Privacybeleid op gezette tijden bijwerken. Wij zullen u\n                                            op de hoogte brengen van eventuele wijzigingen door het nieuwe\n                                            Privacybeleid te publiceren op deze pagina."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Wij zullen u op de hoogte brengen via e-mail en/of een duidelijke\n                                            melding op onze Dienst voor de wijzigingen van kracht gaan en wij\n                                            zullen de "aanvangsdatum" bijwerken die vermeld staat bovenaan in dit\n                                            Privacybeleid.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Wij raden u aan dit Privacybeleid regelmatig te controleren op eventuele\n                                            wijzigingen. Wijzigingen aan dit Privacybeleid gaan van kracht op het\n                                            moment dat ze worden gepubliceerd op deze pagina."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h2", [_vm._v("Contact opnemen")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Als u vragen hebt over dit Privacybeleid kunt u contact opnemen met ons:"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [_vm._v("Via email: gndectpo@gmail.com")]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _vm._v(
+                              "Via deze pagina op onze website: https://www.tnpgndec.com/privacy"
+                            )
+                          ])
+                        ])
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0459cc3e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

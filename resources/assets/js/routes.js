@@ -16,6 +16,11 @@ let routes = [{
         name: 'genconian',
     },
     {
+        path: '/privacy',
+        component: require('./views/privacy/index.vue'),
+        name: 'privacy',
+    },
+    {
         path: '/view/:id',
         name: 'view',
         props: true,
