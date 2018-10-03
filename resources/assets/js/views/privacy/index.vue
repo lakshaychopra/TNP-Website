@@ -30,7 +30,7 @@
                         <div class="col-md-12">
 
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active">
+                                <li role="presentation" class="">
                                     <a href="#english" aria-controls="english" role="tab" data-toggle="tab"
                                         aria-expanded="false">English</a>
                                 </li>
@@ -81,7 +81,7 @@
                             <div class="content">
                                 <div class="page-tabs">
                                     <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane" id="english">
+                                        <div role="tabpanel" class="tab-pane active" id="english">
                                             <h1>Privacy Policy</h1>
 
 
@@ -171,7 +171,7 @@
                                             <ul>
                                                 <li>To provide and maintain the Service</li>
                                                 <li>To notify you about changes to our Service</li>
-                                                <li>To allow you to participate in interactive features of our Service
+                                                <li>To allow you to participate in inter features of our Service
                                                     when you choose to do so</li>
                                                 <li>To provide customer care and support</li>
                                                 <li>To provide analysis or valuable information so that we can improve
@@ -533,7 +533,7 @@
 
                                             </ul>
                                         </div>
-                                        <div role="tabpanel" class="tab-pane active" id="french">
+                                        <div role="tabpanel" class="tab-pane " id="french">
                                             <h1>Politique de Confidentialité</h1>
 
 
