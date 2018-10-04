@@ -10,9 +10,17 @@ use DB;
 use Exception;
 use Notification;
 use JWTAuth;
+use App\Services\AboutService;
+use App\Repositories\AboutRepository;
 
 class AboutController extends Controller
 {
+    public function __construct(AboutService $service,AboutRepository $repository)
+    {
+        $this->service = $service;
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
