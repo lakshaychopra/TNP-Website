@@ -185,50 +185,50 @@ class PostController extends Controller
     public function pushNotification(Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
         // \OneSignal::sendNotificationToAll("Test Message", $url = 'www.tnpgndec.com', $data = null, $buttons = null, $schedule = null);
-            // $post->title, 
-            // $url = "https://www.tnpgndec.com/view/".$post->id, 
-            // $data = "Click here to know more",
-            // $buttons = array(
+        // $post->title, 
+        // $url = "https://www.tnpgndec.com/view/".$post->id, 
+        // $data = "Click here to know more",
+        // $buttons = array(
             //     [
-            //         "id" => "home-button", 
-            //         "text"=> "Home", 
-            //         "icon"=> "/images/icons/other/home.png", 
-            //         "url"=> "https://www.tnpgndec.com"
-            //     ], 
-            //     [
-            //         "id"=> "about-button", 
-            //         "text"=> "About TnP", 
-            //         "icon"=> "/images/icons/other/about.png", 
-            //         "url"=> "https://www.tnpgndec.com/about"
-            //     ]
-            //     ),
-            //     $schedule = null
-            // );
-            }
-
-            public function getFirstID(Post $post){
-                $auth = JWTAuth::parseToken()->authenticate();
-                $post= Post::
-                orderBY('created_at', 'desc')->
-                pluck('id')->first();
-                return $this->respondData($post);
-            }
-            
-            public function HomePostSearch($term = null){
-                $auth = JWTAuth::parseToken()->authenticate();
-                if ($term != null) {
-                    $post['data'] = Post::where('title', 'like', '%'.$term.'%')
-                    ->get();
+                //         "id" => "home-button", 
+                //         "text"=> "Home", 
+                //         "icon"=> "/images/icons/other/home.png", 
+                //         "url"=> "https://www.tnpgndec.com"
+                //     ], 
+                //     [
+                    //         "id"=> "about-button", 
+                    //         "text"=> "About TnP", 
+                    //         "icon"=> "/images/icons/other/about.png", 
+                    //         "url"=> "https://www.tnpgndec.com/about"
+                    //     ]
+                    //     ),
+                    //     $schedule = null
+                    // );
+                }
+                
+                public function getFirstID(Post $post){
+                    $auth = JWTAuth::parseToken()->authenticate();
+                    $post= Post::
+                    orderBY('created_at', 'desc')->
+                    pluck('id')->first();
                     return $this->respondData($post);
                 }
-                $post= Post::orderBy('created_at', 'desc');
-                return $this->respondData($post);
+                
+                public function HomePostSearch($term = null){
+                    $auth = JWTAuth::parseToken()->authenticate();
+                    if ($term != null) {
+                        $post['data'] = Post::where('title', 'like', '%'.$term.'%')
+                        ->get();
+                        return $this->respondData($post);
+                    }
+                    $post= Post::orderBy('created_at', 'desc');
+                    return $this->respondData($post);
+                }
+                
+                public function viewPinned(Post $post)
+                {
+                    $auth = JWTAuth::parseToken()->authenticate();
+                    $post = Post::where('is_pinned', '=', true)->get();
+                    return $this->respondData($post);
+                }
             }
-            
-            public function viewPinned(Post $post)
-            {
-                $auth = JWTAuth::parseToken()->authenticate();
-                $post = Post::where('is_pinned', '=', true)->get();
-                return $this->respondData($post);
-            }
-        }
