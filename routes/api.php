@@ -73,5 +73,13 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::resource('/student/pe', 'PreviousEducationsController');
         //Home Controller
         Route::resource('/homepage', 'HomePageController');
+        //About Controller
+        Route::resource('/about', 'AboutController');
+        //TODO Admin Controller 
+        Route::post('todo','TodoController@store');
+        Route::get('/todo','TodoController@index');
+        Route::delete('/todo/{id}','TodoController@destroy');
+        Route::post('/todo/status','TodoController@toggleStatus');
     });
 });
+
