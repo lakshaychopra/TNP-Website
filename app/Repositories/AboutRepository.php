@@ -58,7 +58,7 @@ class AboutRepository
 			'body'				 => $payload['body'],
 			'username'	 	     => $payload['username'],
 			'user_id'	 	     => $payload['user_id'],
-			'post_link'	 	     => $payload['post_link'],
+			'url'	 	         => $payload['url'],
 			'image'	         	 => $payload['image'],
 			'image_path'       	 => $payload['image_path'],
 		];
