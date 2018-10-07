@@ -3916,7 +3916,8 @@ Login register and recover password Page
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: -webkit-fill-available;
+    height: -moz-available;
+    height: stretch;
     width: 100%;
     padding: 7% 0;
     position: fixed;

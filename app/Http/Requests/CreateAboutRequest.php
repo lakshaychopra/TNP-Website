@@ -28,7 +28,7 @@ class CreateAboutRequest extends FormRequest
             'body'                  => 'required|min:5',
             'username'              => 'required',
             'user_id'               => 'required',
-            'url'                   => 'nullable',
+            'url'                   => 'required',
             'image'                 => 'nullable|file|image|mimes:png,jpeg,jpg|max:2048',
             'image_path'            => 'nullable',
         ];
