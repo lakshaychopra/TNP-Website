@@ -34,3 +34,5 @@ export const storeStudentURL = '/api/dashboard/student';
 export const updateProfileURL = 'api/dashboard/student';
 
 export const viewPost = '/view/';
+
+export const addPageURL = '/api/dashboard/about';

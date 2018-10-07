@@ -8,9 +8,9 @@ use File;
 
 class AboutService
 {	
-	public function __construct( $respository)
+	public function __construct(AboutRepository $repository)
 	{
-		$this->respository = $respository;
+		$this->repository = $repository;
 	}
 	
 	public function createAbout(array $payload)

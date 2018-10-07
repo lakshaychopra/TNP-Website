@@ -7,9 +7,9 @@ use App\Repositories\UserRepository;
 
 class UserService
 {	
-	public function __construct(UserRepository $respository)
+	public function __construct(UserRepository $repository)
 	{
-		$this->repository = $respository;
+		$this->repository = $repository;
 	}
 
 	public function createUser(array $payload)

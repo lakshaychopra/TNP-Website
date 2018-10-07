@@ -7,9 +7,9 @@ use App\Repositories\PreviousEducationRepository;
 
 class PreviousEducationService
 {	
-	public function __construct(PreviousEducationRepository $respository)
+	public function __construct(PreviousEducationRepository $repository)
 	{
-		$this->repository = $respository;
+		$this->repository = $repository;
 	}
 	
 	public function createPreviousEducation(array $payload)

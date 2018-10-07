@@ -10,9 +10,9 @@ use JWTAuth;
 
 class LoginService
 {	
-	public function __construct(LoginRepository $respository)
+	public function __construct(LoginRepository $repository)
 	{
-		$this->respository = $respository;
+		$this->repository = $repository;
     }
     
     public function otpGenerated(){

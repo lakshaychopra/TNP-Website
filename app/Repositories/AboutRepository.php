@@ -33,14 +33,14 @@ class AboutRepository
     }
     
     
-    public function uploadPostImage(array $data)
+    public function uploadAboutImage(array $data)
 	{
         $data = $this->setPayload($data);
 		$extension = strtolower($data['image']->getClientOriginalExtension());
 		$filename = 'about_'.str_random().'.'.$extension;
 		$path =  public_path('images/about/images/');
 		$imageLocation = $data['image']->move($path, $filename);
-		$image_path = $path.$filename;
+		// $image_path = $path.$filename;
 		return $filename;
 	}
 

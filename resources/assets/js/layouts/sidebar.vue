@@ -16,6 +16,31 @@
                             <span class="hide-menu">Home</span>
                         </router-link>
                     </li>
+                     <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <i class="fa fa-file fa-fw" aria-hidden="true"></i>
+                            <span class="hide-menu">Pages
+                                <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">
+                                <strong>
+                                    <i class="fa fa-list fa-fw" aria-hidden="true"></i> Pages Menu
+                                </strong>
+                            </li>
+                            <li>
+                                <router-link to="/about/form" exact>
+                                    <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Page
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/about/manage" exact>
+                                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Pages
+                                </router-link>
+                            </li>
+                        </ul>
+                    </li>
                     <!-- <li>
                         <router-link to="#" exact>
                             <i class="fa fa-file-word-o fa-fw" aria-hidden="true"></i>
