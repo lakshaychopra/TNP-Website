@@ -2,10 +2,9 @@
 
 namespace App\Services;
 
-use App\Models\User;
+use App\Models\About;
 use App\Repositories\AboutRepository;
-use Carbon\Carbon;
-use JWTAuth;
+use File;
 
 class AboutService
 {	
@@ -28,10 +27,10 @@ class AboutService
 	{
 		if(Input::hasFile('image'))
 		{
-			$usersImage = public_path("images/about/images/{$about->image}"); 
-			if (File::exists($usersImage))
+			$aboutImage = public_path("images/about/images/{$about->image}"); 
+			if (File::exists($aboutImage))
 			{
-				File::delete($usersImage);
+				File::delete($aboutImage);
 			}
 		}
 	}
