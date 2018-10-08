@@ -23559,6 +23559,9 @@ var routes = [{
     props: true,
     component: __webpack_require__(109)
 }, {
+    path: '/about/temp',
+    component: __webpack_require__(330)
+}, {
     path: '/',
     component: __webpack_require__(114),
     meta: {
@@ -40148,7 +40151,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         updateURL: function updateURL() {
             // if(this.page.title.length>1){
-            this.page.url = '/' + this.page.title.replace(/\s+/g, '-').toLowerCase();
+            this.page.url = this.page.title.replace(/\s+/g, '-').toLowerCase();
             console.log(this.page.url);
             // }
         },
@@ -68611,6 +68614,366 @@ module.exports = SocialSharing;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(331)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(333)
+/* template */
+var __vue_template__ = __webpack_require__(334)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-8338e700"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\views\\about\\subPages.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-8338e700", Component.options)
+  } else {
+    hotAPI.reload("data-v-8338e700", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(332);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("5c2aab3a", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8338e700\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./subPages.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8338e700\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./subPages.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 332 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#mainNav[data-v-8338e700] {\r\n  position: absolute;\r\n  border-bottom: 1px solid #e9ecef;\r\n  background-color: white;\r\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\n#mainNav .navbar-brand[data-v-8338e700] {\r\n  font-weight: 800;\r\n  color: #343a40;\n}\n#mainNav .navbar-toggler[data-v-8338e700] {\r\n  font-size: 12px;\r\n  font-weight: 800;\r\n  padding: 13px;\r\n  text-transform: uppercase;\r\n  color: #343a40;\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700] {\r\n  font-size: 12px;\r\n  font-weight: 800;\r\n  letter-spacing: 1px;\r\n  text-transform: uppercase;\n}\n@media only screen and (min-width: 992px) {\n#mainNav[data-v-8338e700] {\r\n    border-bottom: 1px solid transparent;\r\n    background: transparent;\n}\n#mainNav .navbar-brand[data-v-8338e700] {\r\n    padding: 10px 20px;\r\n    color: #fff;\n}\n#mainNav .navbar-brand[data-v-8338e700]:focus, #mainNav .navbar-brand[data-v-8338e700]:hover {\r\n    color: rgba(255, 255, 255, 0.8);\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700] {\r\n    padding: 10px 20px;\r\n    color: #fff;\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700]:focus, #mainNav .navbar-nav > li.nav-item > a[data-v-8338e700]:hover {\r\n    color: rgba(255, 255, 255, 0.8);\n}\n}\n@media only screen and (min-width: 992px) {\n#mainNav[data-v-8338e700] {\r\n    -webkit-transition: background-color 0.2s;\r\n    transition: background-color 0.2s;\r\n    /* Force Hardware Acceleration in WebKit */\r\n    -webkit-transform: translate3d(0, 0, 0);\r\n    transform: translate3d(0, 0, 0);\r\n    -webkit-backface-visibility: hidden;\n}\n#mainNav.is-fixed[data-v-8338e700] {\r\n    /* when the user scrolls down, we hide the header right above the viewport */\r\n    position: fixed;\r\n    top: -67px;\r\n    -webkit-transition: -webkit-transform 0.2s;\r\n    transition: -webkit-transform 0.2s;\r\n    transition: transform 0.2s;\r\n    transition: transform 0.2s, -webkit-transform 0.2s;\r\n    border-bottom: 1px solid white;\r\n    background-color: rgba(255, 255, 255, 0.9);\n}\n#mainNav.is-fixed .navbar-brand[data-v-8338e700] {\r\n    color: #212529;\n}\n#mainNav.is-fixed .navbar-brand[data-v-8338e700]:focus, #mainNav.is-fixed .navbar-brand[data-v-8338e700]:hover {\r\n    color: #0085A1;\n}\n#mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700] {\r\n    color: #212529;\n}\n#mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700]:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700]:hover {\r\n    color: #0085A1;\n}\n#mainNav.is-visible[data-v-8338e700] {\r\n    /* if the user changes the scrolling direction, we show the header */\r\n    -webkit-transform: translate3d(0, 100%, 0);\r\n    transform: translate3d(0, 100%, 0);\n}\n}\nheader.masthead[data-v-8338e700] {\r\n  margin-bottom: 50px;\r\n  background: no-repeat center center;\r\n  background-color: #868e96;\r\n  background-attachment: scroll;\r\n  position: relative;\r\n  background-size: cover;\n}\nheader.masthead .overlay[data-v-8338e700] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  height: 100%;\r\n  width: 100%;\r\n  background-color: #212529;\r\n  opacity: 0.5;\n}\nheader.masthead .page-heading[data-v-8338e700],\r\nheader.masthead .post-heading[data-v-8338e700],\r\nheader.masthead .site-heading[data-v-8338e700] {\r\n  padding: 200px 0 150px;\r\n  color: white;\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .page-heading[data-v-8338e700],\r\n  header.masthead .post-heading[data-v-8338e700],\r\n  header.masthead .site-heading[data-v-8338e700] {\r\n    padding: 200px 0;\n}\n}\nheader.masthead .page-heading[data-v-8338e700],\r\nheader.masthead .site-heading[data-v-8338e700] {\r\n  text-align: center;\n}\nheader.masthead .page-heading h1[data-v-8338e700],\r\nheader.masthead .site-heading h1[data-v-8338e700] {\r\n  font-size: 50px;\r\n  margin-top: 0;\n}\nheader.masthead .page-heading .subheading[data-v-8338e700],\r\nheader.masthead .site-heading .subheading[data-v-8338e700] {\r\n  font-size: 24px;\r\n  font-weight: 300;\r\n  line-height: 1.1;\r\n  display: block;\r\n  margin: 10px 0 0;\r\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .page-heading h1[data-v-8338e700],\r\n  header.masthead .site-heading h1[data-v-8338e700] {\r\n    font-size: 80px;\n}\n}\nheader.masthead .post-heading h1[data-v-8338e700] {\r\n  font-size: 35px;\n}\nheader.masthead .post-heading .meta[data-v-8338e700],\r\nheader.masthead .post-heading .subheading[data-v-8338e700] {\r\n  line-height: 1.1;\r\n  display: block;\n}\nheader.masthead .post-heading .subheading[data-v-8338e700] {\r\n  font-size: 24px;\r\n  font-weight: 600;\r\n  margin: 10px 0 30px;\r\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\nheader.masthead .post-heading .meta[data-v-8338e700] {\r\n  font-size: 20px;\r\n  font-weight: 300;\r\n  font-style: italic;\r\n  /* font-family: 'Lora', 'Times New Roman', serif; */\n}\nheader.masthead .post-heading .meta a[data-v-8338e700] {\r\n  color: #fff;\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .post-heading h1[data-v-8338e700] {\r\n    font-size: 55px;\n}\nheader.masthead .post-heading .subheading[data-v-8338e700] {\r\n    font-size: 30px;\n}\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 333 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+$("body").on("input propertychange", ".floating-label-form-group", function (e) {
+  $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
+}).on("focus", ".floating-label-form-group", function () {
+  $(this).addClass("floating-label-form-group-with-focus");
+}).on("blur", ".floating-label-form-group", function () {
+  $(this).removeClass("floating-label-form-group-with-focus");
+});
+
+// Show the navbar when the page is scrolled up
+var MQL = 992;
+
+//primary navigation slide-in effect
+if ($(window).width() > MQL) {
+  var headerHeight = $('#mainNav').height();
+  $(window).on('scroll', {
+    previousTop: 0
+  }, function () {
+    var currentTop = $(window).scrollTop();
+    //check if user is scrolling up
+    if (currentTop < this.previousTop) {
+      //if scrolling up...
+      if (currentTop > 0 && $('#mainNav').hasClass('is-fixed')) {
+        $('#mainNav').addClass('is-visible');
+      } else {
+        $('#mainNav').removeClass('is-visible is-fixed');
+      }
+    } else if (currentTop > this.previousTop) {
+      //if scrolling down...
+      $('#mainNav').removeClass('is-visible');
+      if (currentTop > headerHeight && !$('#mainNav').hasClass('is-fixed')) $('#mainNav').addClass('is-fixed');
+    }
+    this.previousTop = currentTop;
+  });
+}
+
+/***/ }),
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "nav",
+      {
+        staticClass: "navbar navbar-expand-lg navbar-light fixed-top",
+        attrs: { id: "mainNav" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "container" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "navbar-brand d-none d-md-block",
+                attrs: { to: "/" }
+              },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "/logo.png",
+                    alt: "logo",
+                    height: "55px",
+                    width: "55px"
+                  }
+                }),
+                _vm._v(" "),
+                _c("strong", [_vm._v("Training & Placement Cell")])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand d-md-none", attrs: { to: "/" } },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "/logo.png",
+                    alt: "logo",
+                    height: "55px",
+                    width: "55px"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    { staticClass: "pull-right nav-link", attrs: { to: "/" } },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-long-arrow-left",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Back\r\n              ")
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
+          ],
+          1
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "header",
+      {
+        staticClass: "masthead",
+        staticStyle: { "background-image": "url('img/about-bg.jpg')" }
+      },
+      [
+        _c("div", { staticClass: "overlay" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-8 col-md-10 mx-auto" }, [
+              _c("div", { staticClass: "page-heading" }, [
+                _c("h1", [_vm._v("About Me")]),
+                _vm._v(" "),
+                _c("span", { staticClass: "subheading" }, [
+                  _vm._v("This is what I do.")
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-8 col-md-10 mx-auto" }, [
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!"
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-8338e700", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

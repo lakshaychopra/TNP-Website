@@ -122,7 +122,7 @@
         methods: {  
             updateURL: function(){
                 // if(this.page.title.length>1){
-                this.page.url = '/' + this.page.title.replace(/\s+/g, '-').toLowerCase();
+                this.page.url = this.page.title.replace(/\s+/g, '-').toLowerCase();
                 console.log(this.page.url);
                 // }
             },

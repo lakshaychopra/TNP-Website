@@ -27,6 +27,10 @@ let routes = [{
         component: require('./layouts/index/show.vue')
     },
     {
+        path: '/about/temp',
+        component: require('./views/about/subPages'),
+    },
+    {
         path: '/',
         component: require('./layouts/default-page'),
         meta: {
@@ -68,10 +72,10 @@ let routes = [{
                 path: '/about/form',
                 component: require('./views/about/addPage'),
             },
-             {
+            {
                  path: '/about/manage',
                  component: require('./views/about/managePage'),
-             },
+            },
             {
                 path: '/post/:id/edit',
                 component: require('./views/post/edit')
