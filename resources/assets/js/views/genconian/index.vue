@@ -150,7 +150,7 @@
                                     <p class="card-subtitle">Developer</p>
                                     <p class="card-text">He is a Genconian. He is a B.Tech student in Computer Science
                                         and Engineering of 2015-19 batch. He has been working day-night on T&amp;P
-                                        Cell's website for college students. He has worked as Developer on the SPA and
+                                        Cell's website. He has worked as Developer on the SPA and
                                         Vue.js part of <a href="https://www.tnpgndec.com">T&amp;P Cell's website</a>.
                                         He is not even a member of T&amp;P Cell and has contributed a lot to the
                                         website.</p>
