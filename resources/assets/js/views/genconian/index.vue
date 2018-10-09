@@ -31,7 +31,7 @@
                             <!--TESTIMONIAL 1 -->
                             <div class="item">
                                 <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <img class="img-responsive" src="/images/genconian/sodhi.jpg" alt="faculty member">
                                     <div class="item-details">
                                         <h5>Prof. G.S. Sodhi</h5>
                                         <p class="thanks-subtitle">T&amp;P Officer</p>
@@ -42,7 +42,7 @@
                             <!--TESTIMONIAL 2 -->
                             <div class="item">
                                 <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="faculty member">
                                     <div class="item-details">
                                         <h5>Dr. Sehijpal Singh</h5>
                                         <p class="thanks-subtitle">Principal, GNDEC</p>
@@ -53,7 +53,7 @@
                             <!--TESTIMONIAL 3 -->
                             <div class="item">
                                 <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="faculty member">
                                     <div class="item-details">
                                         <h5>Dr. K.S. Mann</h5>
                                         <p class="thanks-subtitle">T&amp;P Advisor</p>
@@ -64,7 +64,7 @@
                             <!--TESTIMONIAL 4 -->
                             <div class="item">
                                 <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="faculty member">
                                     <div class="item-details">
                                         <h5>Prof. J.S. Grewal</h5>
                                         <p class="thanks-subtitle">T&amp;P Advisor</p>
@@ -75,7 +75,7 @@
                             <!--TESTIMONIAL 5 -->
                             <div class="item">
                                 <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="">
+                                    <img class="img-responsive" src="/images/about/img/bg-image2.jpg" alt="faculty member">
                                     <div class="item-details">
                                         <h5>Prof. Sachin Bagga</h5>
                                         <p class="thanks-subtitle">T&amp;P FACULTY Cordinator</p>

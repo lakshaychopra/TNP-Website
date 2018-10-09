@@ -29582,7 +29582,10 @@ var staticRenderFns = [
                   _c("div", { staticClass: "shadow-effect" }, [
                     _c("img", {
                       staticClass: "img-responsive",
-                      attrs: { src: "/images/about/img/bg-image2.jpg", alt: "" }
+                      attrs: {
+                        src: "/images/genconian/sodhi.jpg",
+                        alt: "faculty member"
+                      }
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "item-details" }, [
@@ -29599,7 +29602,10 @@ var staticRenderFns = [
                   _c("div", { staticClass: "shadow-effect" }, [
                     _c("img", {
                       staticClass: "img-responsive",
-                      attrs: { src: "/images/about/img/bg-image2.jpg", alt: "" }
+                      attrs: {
+                        src: "/images/about/img/bg-image2.jpg",
+                        alt: "faculty member"
+                      }
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "item-details" }, [
@@ -29616,7 +29622,10 @@ var staticRenderFns = [
                   _c("div", { staticClass: "shadow-effect" }, [
                     _c("img", {
                       staticClass: "img-responsive",
-                      attrs: { src: "/images/about/img/bg-image2.jpg", alt: "" }
+                      attrs: {
+                        src: "/images/about/img/bg-image2.jpg",
+                        alt: "faculty member"
+                      }
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "item-details" }, [
@@ -29633,7 +29642,10 @@ var staticRenderFns = [
                   _c("div", { staticClass: "shadow-effect" }, [
                     _c("img", {
                       staticClass: "img-responsive",
-                      attrs: { src: "/images/about/img/bg-image2.jpg", alt: "" }
+                      attrs: {
+                        src: "/images/about/img/bg-image2.jpg",
+                        alt: "faculty member"
+                      }
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "item-details" }, [
@@ -29650,7 +29662,10 @@ var staticRenderFns = [
                   _c("div", { staticClass: "shadow-effect" }, [
                     _c("img", {
                       staticClass: "img-responsive",
-                      attrs: { src: "/images/about/img/bg-image2.jpg", alt: "" }
+                      attrs: {
+                        src: "/images/about/img/bg-image2.jpg",
+                        alt: "faculty member"
+                      }
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "item-details" }, [
