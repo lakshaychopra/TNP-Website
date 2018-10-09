@@ -110,7 +110,7 @@
                                             Cell's website.</a></p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/sanjampreet.singh1    ">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/sanjampreet.singh1">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
@@ -196,41 +196,38 @@
                 <h5 class="thanks-title h1">CONTRIBUTORS</h5>
                 <div class="row">
                     <!-- Team member -->
-                    <!-- <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/sanjam.jpeg" alt="card image"></p>
-                                    <h4 class="card-title">Sanjampreet Singh</h4>
-                                    <p class="card-subtitle">Developer</p>
-                                    <p class="card-text">He is a Genconian. He is a B.Tech student in Information
-                                        Technology of 2015-19 batch. He is Co-Cordinator of Training and Placement
-                                        Cell. He has been working day-night on T&amp;P Cell's website for college
-                                        students. He has worked as Developer on the PWA and Restful APIs of <a href="https://www.tnpgndec.com">T&amp;P
+                                    <p><img class=" img-fluid" src="/images/genconian/simranjeet.jpeg" alt="card image"></p>
+                                    <h4 class="card-title">Simranjeet Singh</h4>
+                                    <p class="card-subtitle">Media Consultant</p>
+                                    <p class="card-text">He is a Genconian. He is a B.Tech student in IT of 2015-19 batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in development of <a href="https://www.gndec.ac.in" target="blank">college's website</a>. He is also a film-maker and photographer, pursuing it from 1st years of his college. He contibuted as Media Consultant to <a href="https://www.tnpgndec.com">T&amp;P
                                             Cell's website.</a></p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/sanjampreet.singh1    ">
-                                                <i class="fa fa-facebook"></i>
+                                            <a class="social-icon" target="_blank" href="https://www.youtube.com/channel/UC7zjCjTbtIahCgRnakNNl0A">
+                                                <i class="fa fa-youtube"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://twitter.com/Itzrealsanjam">
-                                                <i class="fa fa-twitter"></i>
+                                            <a class="social-icon" target="_blank" href="https://vimeo.com/user89769786">
+                                                <i class="fa fa-vimeo"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/sanjampreetsingh/">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/simranjeet-singh-9495b7168/">
                                                 <i class="fa fa-linkedin"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/sanjampreetsingh_/">
+                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/sjsingh1010/">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto:sanjam531@gmail.com">
+                                            <a class="social-icon" target="_blank" href="mailto:simranjeetsingh@ieee.org">
                                                 <i class="fa fa-envelope"></i>
                                             </a>
                                         </li>
@@ -238,7 +235,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- ./Team member -->
 
                 </div>

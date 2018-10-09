@@ -29358,9 +29358,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     beforeCreate: function beforeCreate() {
@@ -29738,7 +29735,7 @@ var staticRenderFns = [
                             attrs: {
                               target: "_blank",
                               href:
-                                "https://www.facebook.com/sanjampreet.singh1    "
+                                "https://www.facebook.com/sanjampreet.singh1"
                             }
                           },
                           [_c("i", { staticClass: "fa fa-facebook" })]
@@ -29935,7 +29932,135 @@ var staticRenderFns = [
       _c("div", { staticClass: "container" }, [
         _c("h5", { staticClass: "thanks-title h1" }, [_vm._v("CONTRIBUTORS")]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" })
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-xs-12 col-sm-6 col-md-6" }, [
+            _c("div", { staticClass: "frontside" }, [
+              _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "card-body text-center" }, [
+                  _c("p", [
+                    _c("img", {
+                      staticClass: " img-fluid",
+                      attrs: {
+                        src: "/images/genconian/simranjeet.jpeg",
+                        alt: "card image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "card-title" }, [
+                    _vm._v("Simranjeet Singh")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-subtitle" }, [
+                    _vm._v("Media Consultant")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "He is a Genconian. He is a B.Tech student in IT of 2015-19 batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in development of "
+                    ),
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "https://www.gndec.ac.in",
+                          target: "blank"
+                        }
+                      },
+                      [_vm._v("college's website")]
+                    ),
+                    _vm._v(
+                      ". He is also a film-maker and photographer, pursuing it from 1st years of his college. He contibuted as Media Consultant to "
+                    ),
+                    _c("a", { attrs: { href: "https://www.tnpgndec.com" } }, [
+                      _vm._v(
+                        "T&P\n                                        Cell's website."
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    { staticClass: "list-inline", attrs: { id: "list-link" } },
+                    [
+                      _c("li", { staticClass: "list-inline-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "social-icon",
+                            attrs: {
+                              target: "_blank",
+                              href:
+                                "https://www.youtube.com/channel/UC7zjCjTbtIahCgRnakNNl0A"
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-youtube" })]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "list-inline-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "social-icon",
+                            attrs: {
+                              target: "_blank",
+                              href: "https://vimeo.com/user89769786"
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-vimeo" })]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "list-inline-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "social-icon",
+                            attrs: {
+                              target: "_blank",
+                              href:
+                                "https://www.linkedin.com/in/simranjeet-singh-9495b7168/"
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-linkedin" })]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "list-inline-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "social-icon",
+                            attrs: {
+                              target: "_blank",
+                              href: "https://www.instagram.com/sjsingh1010/"
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-instagram" })]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "list-inline-item" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "social-icon",
+                            attrs: {
+                              target: "_blank",
+                              href: "mailto:simranjeetsingh@ieee.org"
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-envelope" })]
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
       ])
     ])
   },
