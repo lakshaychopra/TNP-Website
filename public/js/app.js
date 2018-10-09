@@ -29603,7 +29603,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: "img-responsive",
                       attrs: {
-                        src: "/images/about/img/bg-image2.jpg",
+                        src: "/images/genconian/350x350.jpg",
                         alt: "faculty member"
                       }
                     }),
@@ -29623,7 +29623,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: "img-responsive",
                       attrs: {
-                        src: "/images/about/img/bg-image2.jpg",
+                        src: "/images/genconian/350x350.jpg",
                         alt: "faculty member"
                       }
                     }),
@@ -29643,7 +29643,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: "img-responsive",
                       attrs: {
-                        src: "/images/about/img/bg-image2.jpg",
+                        src: "/images/genconian/350x350.jpg",
                         alt: "faculty member"
                       }
                     }),
@@ -29663,7 +29663,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: "img-responsive",
                       attrs: {
-                        src: "/images/about/img/bg-image2.jpg",
+                        src: "/images/genconian/350x350.jpg",
                         alt: "faculty member"
                       }
                     }),
