@@ -198,7 +198,7 @@
                     <!-- Team member -->
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="frontside">
-                            <div class="card">
+                            <div class="card con-card">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="/images/genconian/simranjeet.jpg" alt="card image"></p>
                                     <h4 class="card-title">Simranjeet Singh</h4>
@@ -451,7 +451,7 @@
         overflow: hidden;
         top: 90px;
     }
-
+    
     /* 
     Our Team
      */
@@ -523,6 +523,12 @@
     .frontside .card .card-body img {
         width: 120px;
         border-radius: 50%;
+    }
+    
+    .con-card {
+        border: solid #038ed4;
+        border-radius: 20px;
+        background: #fafafa;
     }
 
     .card-subtitle {
