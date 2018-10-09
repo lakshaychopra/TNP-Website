@@ -25733,7 +25733,7 @@ var staticRenderFns = [
       _c("img", {
         attrs: {
           src: "/images/sodhi.jpg",
-          width: "60%",
+          width: "75%",
           alt: "Prof. G.S. Sodhi"
         }
       })
