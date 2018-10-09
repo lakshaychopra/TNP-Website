@@ -200,10 +200,10 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/simranjeet.jpeg" alt="card image"></p>
+                                    <p><img class=" img-fluid" src="/images/genconian/simranjeet.jpg" alt="card image"></p>
                                     <h4 class="card-title">Simranjeet Singh</h4>
                                     <p class="card-subtitle">Media Consultant</p>
-                                    <p class="card-text">He is a Genconian. He is a B.Tech student in IT of 2015-19 batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in development of <a href="https://www.gndec.ac.in" target="blank">college's website</a>. He is also a film-maker and photographer, pursuing it from 1st years of his college. He contibuted as Media Consultant to <a href="https://www.tnpgndec.com">T&amp;P
+                                    <p class="card-text">He is a Genconian. He is a B.Tech student in IT of 2015-19 batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in development of <a href="https://www.gndec.ac.in" target="blank">college's website</a>. He is also a film-maker and photographer, pursuing it from 1st years of his college. He contributed as Media Consultant to <a href="https://www.tnpgndec.com">T&amp;P
                                             Cell's website.</a></p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
