@@ -9,7 +9,7 @@
 
                     <div class="card-body">
                         <div class="office text-center">
-                            <img src="/images/sodhi.jpg" width="75%" alt="Prof. G.S. Sodhi">
+                            <img src="/images/sodhi.jpg" width="75%" alt="Prof. G.S. Sodhi" style="margin-bottom: 15px;">
                         </div>
                         <div class="row">
                             <div class="col-md-2">

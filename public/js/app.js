@@ -25731,6 +25731,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "office text-center" }, [
       _c("img", {
+        staticStyle: { "margin-bottom": "15px" },
         attrs: {
           src: "/images/sodhi.jpg",
           width: "75%",
