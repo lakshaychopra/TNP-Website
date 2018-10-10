@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Todo;
 use App\Http\Requests\CreateTodoRequest;
 use JWTAuth;
 use Validator;
@@ -22,7 +23,7 @@ class TodoController extends Controller
 
     public function store(CreateTodoRequest $request){
         $user = JWTAuth::parseToken()->authenticate();
-        $todo = new \App\Todo;
+        $todo = new Todo;
         $todo->fill(request()->all());
         $todo->user_id = $user->id;
         $todo->save();

@@ -64,10 +64,10 @@
                     </div> -->
                 </div>
             </div>
-            <!-- <div class="col-lg-6">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body b-b">
-                        <h4 class="card-title">My Todo</h4>
+                        <h4 class="card-title">Things to be done</h4>
                         <form @submit.prevent="storeTodo">
                             <div class="row">
                                 <div class="col-8">
@@ -108,7 +108,7 @@
                         <h6 class="card-subtitle" v-if="!todos.length">No todo found!</h6>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </template>
@@ -122,11 +122,11 @@
                 users_count: '',
                 // tasks_count: '',
                 // recent_incomplete_tasks: {},
-                // todos: [],
-                // todoForm: new Form({
-                    // 'todo': ''
-                // }),
-                // show_todo_status: ''
+                todos: [],
+                 todoForm: new Form({
+                    'todo': ''
+                }),
+                show_todo_status: ''
             }
         },
         components : { ClickConfirm },
@@ -136,40 +136,40 @@
                 // this.tasks_count = response.data.tasks_count;
                 // this.recent_incomplete_tasks = response.data.recent_incomplete_tasks;
             });
-            // this.getTodos();
+            this.getTodos();
         },
         methods: {
-            // getTodos(){
-            //     axios.get('/api/todo?show_todo_status='+this.show_todo_status).then(response =>  {
-            //         this.todos = response.data;
-            //     });
-            // },
-            // storeTodo(){
-            //     this.todoForm.post('/api/todo').then(response => {
-            //         toastr['success'](response.message);
-            //         this.todos.unshift(response.data)
-            //     }).catch(response => {
-            //         toastr['error'](response.message);
-            //     });
-            // },
-            // deleteTodo(todo){
-            //     axios.delete('/api/todo/'+todo.id).then(response => {
-            //         toastr['success'](response.data.message);
-            //         this.getTodos();
-            //     }).catch(error => {
-            //         toastr['error'](error.response.data.message);
-            //     });
-            // },
-            // toggleTodoStatus(todo){
-            //     axios.post('/api/todo/status',{id:todo.id}).then(response => {
-            //         todo.status = !todo.status;
-            //     }).catch(error => {
-            //         toastr['error'](error.response.message);
-            //     });
-            // },
-            // filterTodo(){
-            //     this.getTodos();
-            // },
+            getTodos(){
+                axios.get('/api/dashboard/todo?show_todo_status='+this.show_todo_status).then(response =>  {
+                    this.todos = response.data;
+                });
+            },
+            storeTodo(){
+                this.todoForm.post('/api/dashboard/todo').then(response => {
+                    toastr['success'](response.message);
+                    this.todos.unshift(response.data)
+                }).catch(response => {
+                    toastr['error'](response.message);
+                });
+            },
+            deleteTodo(todo){
+                axios.delete('/api/dashboard/todo/'+todo.id).then(response => {
+                    toastr['success'](response.data.message);
+                    this.getTodos();
+                }).catch(error => {
+                    toastr['error'](error.response.data.message);
+                });
+            },
+            toggleTodoStatus(todo){
+                axios.post('/api/dashboard/todo/status',{id:todo.id}).then(response => {
+                    todo.status = !todo.status;
+                }).catch(error => {
+                    toastr['error'](error.response.message);
+                });
+            },
+            filterTodo(){
+                this.getTodos();
+            },
             // getProgress(task){
             //     return 'width: '+task.progress+'%;';
             // },

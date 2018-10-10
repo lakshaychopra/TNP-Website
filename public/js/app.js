@@ -37646,14 +37646,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            users_count: ''
+            users_count: '',
             // tasks_count: '',
             // recent_incomplete_tasks: {},
-            // todos: [],
-            // todoForm: new Form({
-            // 'todo': ''
-            // }),
-            // show_todo_status: ''
+            todos: [],
+            todoForm: new Form({
+                'todo': ''
+            }),
+            show_todo_status: ''
         };
     },
 
@@ -37666,47 +37666,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // this.tasks_count = response.data.tasks_count;
             // this.recent_incomplete_tasks = response.data.recent_incomplete_tasks;
         });
-        // this.getTodos();
+        this.getTodos();
     },
 
     methods: {
-        // getTodos(){
-        //     axios.get('/api/todo?show_todo_status='+this.show_todo_status).then(response =>  {
-        //         this.todos = response.data;
-        //     });
-        // },
-        // storeTodo(){
-        //     this.todoForm.post('/api/todo').then(response => {
-        //         toastr['success'](response.message);
-        //         this.todos.unshift(response.data)
-        //     }).catch(response => {
-        //         toastr['error'](response.message);
-        //     });
-        // },
-        // deleteTodo(todo){
-        //     axios.delete('/api/todo/'+todo.id).then(response => {
-        //         toastr['success'](response.data.message);
-        //         this.getTodos();
-        //     }).catch(error => {
-        //         toastr['error'](error.response.data.message);
-        //     });
-        // },
-        // toggleTodoStatus(todo){
-        //     axios.post('/api/todo/status',{id:todo.id}).then(response => {
-        //         todo.status = !todo.status;
-        //     }).catch(error => {
-        //         toastr['error'](error.response.message);
-        //     });
-        // },
-        // filterTodo(){
-        //     this.getTodos();
-        // },
-        // getProgress(task){
-        //     return 'width: '+task.progress+'%;';
-        // },
-        // getProgressColor(task){
-        //     return helper.taskColor(task.progress);
-        // }
+        getTodos: function getTodos() {
+            var _this2 = this;
+
+            axios.get('/api/dashboard/todo?show_todo_status=' + this.show_todo_status).then(function (response) {
+                _this2.todos = response.data;
+            });
+        },
+        storeTodo: function storeTodo() {
+            var _this3 = this;
+
+            this.todoForm.post('/api/dashboard/todo').then(function (response) {
+                toastr['success'](response.message);
+                _this3.todos.unshift(response.data);
+            }).catch(function (response) {
+                toastr['error'](response.message);
+            });
+        },
+        deleteTodo: function deleteTodo(todo) {
+            var _this4 = this;
+
+            axios.delete('/api/dashboard/todo/' + todo.id).then(function (response) {
+                toastr['success'](response.data.message);
+                _this4.getTodos();
+            }).catch(function (error) {
+                toastr['error'](error.response.data.message);
+            });
+        },
+        toggleTodoStatus: function toggleTodoStatus(todo) {
+            axios.post('/api/dashboard/todo/status', { id: todo.id }).then(function (response) {
+                todo.status = !todo.status;
+            }).catch(function (error) {
+                toastr['error'](error.response.message);
+            });
+        },
+        filterTodo: function filterTodo() {
+            this.getTodos();
+        }
     },
     computed: {},
     filters: {
@@ -37752,6 +37752,229 @@ var render = function() {
             ])
           ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-6" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body b-b" }, [
+            _c("h4", { staticClass: "card-title" }, [
+              _vm._v("Things to be done")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.storeTodo($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.todoForm.todo,
+                          expression: "todoForm.todo"
+                        }
+                      ],
+                      staticClass: "form-control b-0",
+                      attrs: { placeholder: "Add new todo here..." },
+                      domProps: { value: _vm.todoForm.todo },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.todoForm, "todo", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm.todos.length
+              ? _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.show_todo_status,
+                        expression: "show_todo_status"
+                      }
+                    ],
+                    staticClass: "custom-select float-right",
+                    on: {
+                      change: [
+                        function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.show_todo_status = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        },
+                        _vm.filterTodo
+                      ]
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { selected: "", value: "" } }, [
+                      _vm._v("All")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "1" } }, [
+                      _vm._v("Completed")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "0" } }, [
+                      _vm._v("Incompleted")
+                    ])
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("h4", { staticClass: "card-title" }, [_vm._v("Todo list")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "clearfix" }),
+            _vm._v(" "),
+            _vm.todos.length
+              ? _c("div", { staticClass: "message-box" }, [
+                  _c("div", { staticClass: "message-widget message-scroll" }, [
+                    _c(
+                      "ul",
+                      {
+                        staticClass: "list-task todo-list list-group m-b-0",
+                        attrs: { "data-role": "tasklist" }
+                      },
+                      _vm._l(_vm.todos, function(todo) {
+                        return _c(
+                          "li",
+                          {
+                            key: todo.status,
+                            staticClass: "list-group-item",
+                            attrs: { "data-role": "task" }
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "checkbox checkbox-info" },
+                              [
+                                _c("input", {
+                                  attrs: {
+                                    type: "checkbox",
+                                    name: "inputCheckboxesBook"
+                                  },
+                                  domProps: { checked: todo.status },
+                                  on: {
+                                    change: function($event) {
+                                      _vm.toggleTodoStatus(todo)
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("label", { attrs: { for: "inputBook" } }, [
+                                  _c(
+                                    "span",
+                                    {
+                                      class: [
+                                        todo.status ? "strikethrough" : ""
+                                      ]
+                                    },
+                                    [_vm._v(_vm._s(todo.todo))]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  { staticClass: "float-right" },
+                                  [
+                                    _c(
+                                      "click-confirm",
+                                      {
+                                        attrs: {
+                                          "yes-class": "btn btn-success",
+                                          "no-class": "btn btn-danger"
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-danger btn-xs",
+                                            attrs: {
+                                              "data-toggle": "tooltip",
+                                              title: "Delete Todo"
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                $event.preventDefault()
+                                                _vm.deleteTodo(todo)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "fa fa-trash"
+                                            })
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "item-date float-right",
+                                staticStyle: { "margin-right": "20px" }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm._f("momentWithTime")(todo.created_at)
+                                  )
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      })
+                    )
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.todos.length
+              ? _c("h6", { staticClass: "card-subtitle" }, [
+                  _vm._v("No todo found!")
+                ])
+              : _vm._e()
+          ])
+        ])
       ])
     ])
   ])
@@ -37767,6 +37990,21 @@ var staticRenderFns = [
           _vm._v("Home")
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4 text-right" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-info btn-circle btn-lg",
+          attrs: { type: "submit" }
+        },
+        [_c("i", { staticClass: "fa fa-plus" })]
+      )
     ])
   }
 ]
