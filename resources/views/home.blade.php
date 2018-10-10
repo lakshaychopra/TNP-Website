@@ -76,6 +76,7 @@
             enable: false,
           },
         });
+        OneSignal.registerForPushNotifications();
       });
     </script>
     {{-- fb --}}

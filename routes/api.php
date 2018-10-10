@@ -16,7 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+// About Controller
+Route::get('/about/view/{pageURL?}', 'AboutController@showPage');
   
 Route::post('/send-notification', 'PostController@pushNotification');
 
