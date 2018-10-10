@@ -62,6 +62,24 @@
 
 </template>
 <script>
+export default {
+     data(){
+        return{
+            url: this.$route.params.url,
+            post: {},
+        }
+     },
+    created(){
+          axios.get('/api/about/view/' + this.url).then((response) => {
+                    this.pageData = response.data;
+                    console.log(response.data);
+          })
+          .catch((error) => console.log(error))
+    }  
+}
+</script>
+
+<script>
   $("body").on("input propertychange", ".floating-label-form-group", function(e) {
     $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
   }).on("focus", ".floating-label-form-group", function() {

@@ -144,4 +144,15 @@ class AboutController extends Controller
         $index= About::orderBy('created_at', 'desc')->get();
         return $this->respondSuccess('Deleted', $index);
     }
+
+    public function showPage($pageURL = null)
+    {
+        if ($pageURL != null) {
+            $page['data'] = About::where('url', '=', $pageURL)
+                ->get();
+            return $this->respondData($page);
+        }
+        $page = ['No Data - Invalid URL'];
+        return $this->respondData($page);
+    }
 }

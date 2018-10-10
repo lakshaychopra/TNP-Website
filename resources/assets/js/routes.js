@@ -21,10 +21,16 @@ let routes = [{
         name: 'privacy',
     },
     {
+        path: '/page/:url',
+        name: 'about',
+        props: true,
+        component: require('./views/about/subPages.vue'),
+    },
+    {
         path: '/view/:id',
         name: 'view',
         props: true,
-        component: require('./layouts/index/show.vue')
+        component: require('./layouts/index/show.vue'),
     },
     {
         path: '/about/temp',

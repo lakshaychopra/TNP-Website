@@ -193,7 +193,6 @@
                 pinned_posts: {},
                 showDropDown: false,
                 share: false,
-
             }
         },
         created() {
