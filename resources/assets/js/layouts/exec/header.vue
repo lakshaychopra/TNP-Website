@@ -28,14 +28,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <img src="../../../images/users/user.jpg" alt="user" class="profile-pic" />
+                            <img src="/images/user.jpg" alt="user" class="profile-pic" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <ul class="dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
                                         <div class="u-img">
-                                            <img src="../../../images/users/user.jpg" alt="user">
+                                            <img src="/images/user.jpg" alt="user">
                                         </div>
                                         <div class="u-text">
                                             <h4>{{getAuthUserFullName()}}</h4>
@@ -89,7 +89,7 @@
         },
         computed: {
             getAvatar() {
-                return '../../../images/users/user.jpg';
+                return '/images/user.jpg';
             }
         }
     }

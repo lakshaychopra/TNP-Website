@@ -11413,7 +11413,7 @@ Custom-select
 ******************/
 
 .custom-select {
-  background: url(/images/custom-select.png?7b31b5b2c0191a0224a87cc0ca9438dd) right 0.75rem center no-repeat;
+  background: url(/images/custom-select.png) right 0.75rem center no-repeat;
 }
 
 /*******************
@@ -15216,13 +15216,13 @@ Stylish tooltip
   margin: -7px 0 0 -15px;
   width: 30px;
   height: 20px;
-  background: url(/images/tooltip1.svg?cff6788cf85a5b85309e0ef42e0729db) no-repeat center center;
+  background: url(/images/tooltip1.svg) no-repeat center center;
   background-size: 100%;
 }
 
 .tooltip-content3 {
   position: absolute;
-  background: url(/images/shape1.svg?9b19214f790d930be6ed6a97b49f3330) no-repeat center bottom;
+  background: url(/images/shape1.svg) no-repeat center bottom;
   background-size: 100% 100%;
   z-index: 9999;
   width: 200px;

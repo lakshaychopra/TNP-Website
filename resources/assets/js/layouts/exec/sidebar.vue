@@ -3,7 +3,7 @@
         <div class="scroll-sidebar">
             <div class="user-profile">
                 <div class="profile-img">
-                    <img src="../../../images/users/user.jpg" alt="user" /> </div>
+                    <img src="/images/user.jpg" alt="user" /> </div>
                 <div class="profile-text">
                     <a href="#">{{getAuthUserFullName()}}</a>
                 </div>
