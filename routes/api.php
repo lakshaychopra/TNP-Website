@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 // About Controller
 Route::get('/about/view/{pageURL?}', 'AboutController@showPage');
+Route::get('/about/links', 'AboutController@linksPage');
   
 Route::post('/send-notification', 'PostController@pushNotification');
 
