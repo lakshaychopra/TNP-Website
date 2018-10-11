@@ -86,6 +86,13 @@
                                 <router-link to="/genconian">Developer and Contributers</router-link>
                             </p>
                         </div>
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#nav-carousel" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#nav-carousel" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -253,11 +260,7 @@ NAVBAR
             </div>
         </div>
 
-        <!--
-         ##########################
-         people for T&amp;P
-         ##########################
-         	-->
+        <!--  people for T&amp;P-->
         <div class="row mt-5">
             <div id="demo" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -300,160 +303,56 @@ NAVBAR
                 </a>
             </div>
         </div>
-        <!--
-         ##########################
-         social media
-         ##########################
-         -->
-        <div class="container">
-            <div class="row mb-5 ">
-                <div class="col-md-12  text-center  mt-5">
-                    <h2>
-                        <strong>Social Media</strong>
-                    </h2>
-                </div>
-            </div>
-            <div class="row mb-5">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/about/img/ccimage1.jpg" alt="image" width="100%" height="200px" />
-                        </div>
-                        <div class="card-title text-center mt-2">
-                            <h5>@T&amp;P</h5>
-                        </div>
-                        <div class="card-body text-justify">
-                            <p>Does embracing agile mean having to comprise on quality assurance? Gaurav Gupta, T&amp;P
-                                explains
-                                how AI and Machine. </p>
-                        </div>
+
+        <!-- Companies -->
+        <section class="testimonials pb-0 mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mt-5 mb-5">
+                        <h2>
+                            <strong>Companies Visiting Our Campus</strong>
+                        </h2>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/about/img/ccimage2.jpg" alt="image" width="100%" height="200px" />
-                        </div>
-                        <div class="card-title text-center mt-2">
-                            <h5>@T&amp;P</h5>
-                        </div>
-                        <div class="card-body text-justify">
-                            <p>#Business 4.0 technology pillars are all set to rewrite the playbook for managing
-                                existing downstream
-                                processes.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/about/img/ccimage3.jpg" alt="image" width="100%" height="200px" />
-                        </div>
-                        <div class="card-title text-center mt-2">
-                            <h5>@T&amp;P</h5>
-                        </div>
-                        <div class="card-body text-justify">
-                            <p>Learn how our partnership with @ABNAmro helped in its #digitaltransformation to Open.</p>
+                    <div class="col-sm-12">
+                        <div id="customers-testimonials" class="owl-carousel">
+                            <!--TESTIMONIAL 1 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
+                                    <div class="item-details">
+                                        <h3>Accneture</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 1 -->
+                            <!--TESTIMONIAL 2 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
+                                    <div class="item-details">
+                                        <h3>Infosys</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 2 -->
+                            <!--TESTIMONIAL 3 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
+                                    <div class="item-details">
+                                        <h3>Capegemini</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 3 -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-3  text-center mb-5">
-                <button class="btn btn-primary pt-2 pb-2 px-3">Load More</button>
-            </div>
-        </div>
+        </section>
+        <!-- END OF TESTIMONIALS -->
 
-        <div class="container">
-            <div class="row mb-5">
-                <div class="owl-carousel">
-
-                    <div>
-                        <div class="mb-5 mt-5">
-                            <h5>
-                                <strong>Placement Agencies</strong>
-                            </h5>
-                        </div>
-                        <div class="mb-5">
-                            <p>
-                                <strong>Become a business partner in T&amp;P' hunt for talented professionals.</strong>
-                            </p>
-                        </div>
-                        <div class="mb-5">
-                            <button class="btn btn-primary btn-block pt-2 pb-2 px-3">Login</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-5  mt-5">
-                            <h5>
-                                <strong>T&amp;P Alumni</strong>
-                            </h5>
-                        </div>
-                        <div class="mb-5">
-                            <p>
-                                <strong>Become a business partner in T&amp;P' hunt for talented professionals.</strong>
-                            </p>
-                        </div>
-                        <div class="mb-5">
-                            <button class="btn btn-primary btn-block pt-2 pb-2 px-3">Login</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-5 mt-5">
-                            <h5>
-                                <strong>BGC Agency</strong>
-                            </h5>
-                        </div>
-                        <div class="mb-5">
-                            <p>
-                                <strong>Become a business partner in T&amp;P' hunt for talented professionals.</strong>
-                            </p>
-                        </div>
-                        <div class="mb-5">
-                            <button class="btn btn-primary btn-block pt-2 pb-2 px-3">Login</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-5 mt-5">
-                            <h5>
-                                <strong>Academic Faculty</strong>
-                            </h5>
-                        </div>
-                        <div class="mb-5">
-                            <p>
-                                <strong>Manage your faculty account ,stay connected with T&amp;P and more.</strong>
-                            </p>
-                        </div>
-                        <div class="mb-5">
-                            <button class="btn btn-primary btn-block pt-2 pb-2 px-3">Login</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-5 mt-5">
-                            <h5>
-                                <strong>Training & Placement Officer</strong>
-                            </h5>
-                        </div>
-                        <div class="mb-5">
-                            <p>
-                                <strong>Manage your TPO account ,stay connected with T&amp;P and more.</strong>
-                            </p>
-                        </div>
-                        <div class="mb-5">
-                            <button class="btn btn-primary btn-block pt-2 pb-2 px-3">Login</button>
-                        </div>
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-        <!--
-         ##########################
-         footer
-         ##########################
-	-->
+        <!--footer-->
         <footer class="container-fluid footer mt-5" style="left:0">
             <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
                     </span> by
@@ -618,7 +517,6 @@ NAVBAR
 
     .text-color12 {
         color: #fff !important;
-        /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
     }
 
     .bgimage {
@@ -771,15 +669,116 @@ NAVBAR
         margin-bottom: 0;
     }
 
-    /* a {
-        color: #fff;
-        font-size: 17px;
-    } */
 
     #nav-carousel p {
         margin-bottom: 0;
         color: #fff;
         font-size: 14px;
+    }
+
+    #nav-carousel.carousel-indicators {
+        position: absolute;
+        top: 0;
+        left: -98px;
+        display: block;
+        margin-top: 200px;
+    }
+
+    #nav-carousel.carousel-indicators .active {
+        background-color: transparent;
+    }
+
+    #nav-carousel .carousel-indicators li {
+        height: 9px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: #017bfc;
+    }
+
+    #nav-carousel .carousel-indicators li.active {
+        border: 1px solid #000;
+        background-color: transparent;
+    }
+
+    section .thanks-title {
+        text-align: left;
+        color: #038ed4;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+    #customers-testimonials .testimonials {
+        background-color: #fff;
+        position: relative;
+        padding-top: 60px;
+    }
+
+    #customers-testimonials .testimonials:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 30%;
+        background-color: #f1f1f1;
+    }
+
+    #customers-testimonials .item-details {
+        background-color: #333333;
+        color: #fff;
+        padding: 20px 10px;
+        text-align: left;
+    }
+
+    #customers-testimonials .item-details h3 {
+        margin: 0 0 15px;
+        font-size: 18px;
+        line-height: 18px;
+        color: #fff;
+        text-align: center;
+    }
+
+
+    #customers-testimonials .item-details h3 span p {
+        font-size: 14px;
+    }
+
+    #customers-testimonials .item {
+        text-align: center;
+        /*  padding: 20px; */
+        margin-bottom: 80px;
+    }
+
+    #customers-testimonials .owl-carousel .owl-nav {
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+
+    #customers-testimonials .owl-carousel {
+        position: relative;
+    }
+
+    #customers-testimonials .owl-carousel .owl-next,
+    #customers-testimonials .owl-carousel .owl-prev {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        top: 30%;
+        font-size: 20px;
+        color: #fff;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    #customers-testimonials .owl-carousel .owl-prev {
+        left: -70px;
+    }
+
+    #customers-testimonials .owl-carousel .owl-next {
+        right: -70px;
     }
 </style>
 <script>
@@ -798,6 +797,7 @@ NAVBAR
                     autoWidth: true,
                     margin: 30,
                     stagePadding: 50,
+                    nav: true,
 
                 });
             }.bind(vm));
@@ -825,7 +825,31 @@ NAVBAR
 
                 });
             }.bind(vm));
-
+            Vue.nextTick(function () {
+                $('#customers-testimonials').owlCarousel({
+                    loop: true,
+                    center: true,
+                    items: 3,
+                    margin: 30,
+                    autoplay: true,
+                    dots: false,
+                    nav: false,
+                    autoplayTimeout: 8500,
+                    smartSpeed: 600,
+                    lazyLoad: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 2
+                        },
+                        1170: {
+                            items: 3
+                        }
+                    }
+                });
+            }.bind(vm));
         }
     }
 </script>
