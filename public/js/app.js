@@ -616,7 +616,7 @@ var _this = this;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return apiDomain; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return loginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return forgetURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return verifyURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return verifyURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return securityURL; });
 /* unused harmony export oauthURL */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return addPostURL; });
@@ -638,7 +638,7 @@ var _this = this;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return firstLoginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return statusChangeURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return storeStudentURL; });
-/* unused harmony export updateProfileURL */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return updateProfileURL; });
 /* unused harmony export viewPost */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return addPageURL; });
 var apiDomain = 'https://www.tnpgndec.com';
@@ -50195,7 +50195,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -50210,13 +50210,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tnc_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__tnc_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profileForm_vue__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profileForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__profileForm_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_helper__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__acadaemicsForm_vue__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__acadaemicsForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__acadaemicsForm_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_helper__ = __webpack_require__(3);
 //
 //
 //
 //
 //
 //
+//
+
 
 
 
@@ -50230,7 +50234,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     components: {
-        Tnc: __WEBPACK_IMPORTED_MODULE_0__tnc_vue___default.a, ProfileForm: __WEBPACK_IMPORTED_MODULE_1__profileForm_vue___default.a
+        Tnc: __WEBPACK_IMPORTED_MODULE_0__tnc_vue___default.a, ProfileForm: __WEBPACK_IMPORTED_MODULE_1__profileForm_vue___default.a, EducationForm: __WEBPACK_IMPORTED_MODULE_2__acadaemicsForm_vue___default.a
     },
     methods: {
         getAuthUser: function getAuthUser(name) {
@@ -50240,7 +50244,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        return __WEBPACK_IMPORTED_MODULE_2__services_helper__["a" /* default */].authUser().then(function (res) {
+        return __WEBPACK_IMPORTED_MODULE_3__services_helper__["a" /* default */].authUser().then(function (res) {
             if (res.type == "STUDENT") {
                 switch (res.student_form_step) {
                     case "N.A.":
@@ -50258,7 +50262,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     updated: function updated() {
         var _this2 = this;
 
-        return __WEBPACK_IMPORTED_MODULE_2__services_helper__["a" /* default */].authUser().then(function (res) {
+        return __WEBPACK_IMPORTED_MODULE_3__services_helper__["a" /* default */].authUser().then(function (res) {
             if (res.type == "STUDENT") {
                 switch (res.student_form_step) {
                     case "N.A.":
@@ -50948,12 +50952,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     created: function created() {
+        var _this = this;
+
         axios.get('/api/dashboard/student/' + this.$store.state.auth.username + '/edit').then(function (response) {
-            console.log(response);
-            if (response.status == 200) {}
+            // console.log(response.data.data[0]);
+            // if (response.status == 200) {
+
+            // }
+            _this.id.student = response.data.data[0];
         }).catch(function (error) {
             console.log(error);
         });
+        // console.log(this.id.student);
     },
 
     methods: {
@@ -50961,16 +50971,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.$store.getters.getAuthUser(name);
         },
         submit: function submit() {
-            console.log(this.$store.state.auth.username);
-            console.log('1');
-            // axios.post(firstLoginURL, this.id).then(response => {
-            //     console.log(response);
-            //     if (response.status == 200) {
+            // console.log(this.$store.state.auth.username);
+            // console.log('1');
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* updateProfileURL */], this.id).then(function (response) {
+                console.log(response);
+                // if (response.status == 200) {
 
-            //     }
-            // }).catch(error => {
-            //     console.log(error);
-            // });
+                // }
+            }).catch(function (error) {
+                console.log(error);
+            });
         }
     }
 });
@@ -51004,39 +51014,1143 @@ var render = function() {
                 }
               },
               [
-                _vm._m(0),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.name,
+                            expression: "id.student.name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "name",
+                          placeholder: "Name"
+                        },
+                        domProps: { value: _vm.id.student.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 col-form-label",
+                          attrs: { for: "" }
+                        },
+                        [_vm._v("Gender :  ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-2 md-radio md-radio-inline" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.id.student.gender,
+                                expression: "id.student.gender"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              name: "gender",
+                              id: "male",
+                              value: "MALE"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.id.student.gender, "MALE")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.$set(_vm.id.student, "gender", "MALE")
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "male" } }, [
+                            _vm._v("Male")
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-2 md-radio md-radio-inline" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.id.student.gender,
+                                expression: "id.student.gender"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              name: "gender",
+                              id: "female",
+                              value: "FEMALE"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.id.student.gender, "FEMALE")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.$set(_vm.id.student, "gender", "FEMALE")
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "female" } }, [
+                            _vm._v("Female")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.category,
+                              expression: "id.student.category"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "category" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "category",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Category")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "GEN" } }, [
+                            _vm._v("General")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "SC" } }, [
+                            _vm._v("SC")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "ST" } }, [
+                            _vm._v("ST")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "OBC" } }, [
+                            _vm._v("OBC")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.height,
+                            expression: "id.student.height"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "height",
+                          placeholder: "Height"
+                        },
+                        domProps: { value: _vm.id.student.height },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "height",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.weight,
+                            expression: "id.student.weight"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "weight",
+                          placeholder: "Weight"
+                        },
+                        domProps: { value: _vm.id.student.weight },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "weight",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.blood_group,
+                              expression: "id.student.blood_group"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "blood_group" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "blood_group",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Blood Group")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "O+" } }, [
+                            _vm._v("O+")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "O-" } }, [
+                            _vm._v("O-")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "AB+" } }, [
+                            _vm._v("AB+")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "AB-" } }, [
+                            _vm._v("AB-")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "A+" } }, [
+                            _vm._v("A+")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "A-" } }, [
+                            _vm._v("A-")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "B+" } }, [
+                            _vm._v("B+")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "B-" } }, [
+                            _vm._v("B-")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
                   _vm._v("Acadaemic Details")
                 ]),
                 _vm._v(" "),
-                _vm._m(3),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.univ_roll_no,
+                            expression: "id.student.univ_roll_no"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "uniRoll",
+                          placeholder: "University Roll No."
+                        },
+                        domProps: { value: _vm.id.student.univ_roll_no },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "univ_roll_no",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.class_roll_no,
+                            expression: "id.student.class_roll_no"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "classRoll",
+                          placeholder: "Class Roll No."
+                        },
+                        domProps: { value: _vm.id.student.class_roll_no },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "class_roll_no",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.living,
+                              expression: "id.student.living"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "living" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "living",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Hosteler / DayScholar")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "HOSTELER" } }, [
+                            _vm._v("Hosteler")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "DAYSCHOLAR" } }, [
+                            _vm._v("DayScholar")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(4),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.batch,
+                            expression: "id.student.batch"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "batch",
+                          placeholder: "Batch"
+                        },
+                        domProps: { value: _vm.id.student.batch },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "batch",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.branch_type,
+                              expression: "id.student.branch_type"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "branch" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "branch_type",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Branch")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "B.Tech." } }, [
+                            _vm._v("B.Tech")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "M.Tech." } }, [
+                            _vm._v("M.Tech")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "M.B.A." } }, [
+                            _vm._v("M.B.A.")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "M.C.A." } }, [
+                            _vm._v("M.C.A.")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.stream,
+                              expression: "id.student.stream"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "stream" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "stream",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Stream")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Civil Engineering")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Computer Science and Engineering")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Electrical Engineering")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Electronics and Communication Engineering ")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Information Technology")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Mechenical Engineering")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Production Engineering")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(5),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.section,
+                            expression: "id.student.section"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "section",
+                          placeholder: "Section"
+                        },
+                        domProps: { value: _vm.id.student.section },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "section",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.shift,
+                              expression: "id.student.shift"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "shift" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "shift",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { value: "null", disabled: "" } },
+                            [_vm._v("Shift")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "MORNING" } }, [
+                            _vm._v("Morning")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "EVENING" } }, [
+                            _vm._v("Evening")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-4 col-form-label",
+                          attrs: { for: "" }
+                        },
+                        [_vm._v("Training Semester :  ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-1 md-radio md-radio-inline" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.id.student.training_semester,
+                                expression: "id.student.training_semester"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              name: "t_sem",
+                              id: "7",
+                              value: "7"
+                            },
+                            domProps: {
+                              checked: _vm._q(
+                                _vm.id.student.training_semester,
+                                "7"
+                              )
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.$set(
+                                  _vm.id.student,
+                                  "training_semester",
+                                  "7"
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "7" } }, [_vm._v("7")])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-1 md-radio md-radio-inline" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.id.student.training_semester,
+                                expression: "id.student.training_semester"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              name: "t_sem",
+                              id: "8",
+                              value: "8"
+                            },
+                            domProps: {
+                              checked: _vm._q(
+                                _vm.id.student.training_semester,
+                                "8"
+                              )
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.$set(
+                                  _vm.id.student,
+                                  "training_semester",
+                                  "8"
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "8" } }, [_vm._v("8")])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
                   _vm._v("Parent Details")
                 ]),
                 _vm._v(" "),
-                _vm._m(6),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.father_name,
+                            expression: "id.student.father_name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "fname",
+                          placeholder: "Father's Name"
+                        },
+                        domProps: { value: _vm.id.student.father_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "father_name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.father_phone,
+                            expression: "id.student.father_phone"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "fphone",
+                          placeholder: "Father's Phone"
+                        },
+                        domProps: { value: _vm.id.student.father_phone },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "father_phone",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(7),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.mother_name,
+                            expression: "id.student.mother_name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "mname",
+                          placeholder: "Mother's Name"
+                        },
+                        domProps: { value: _vm.id.student.mother_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "mother_name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.mother_phone,
+                            expression: "id.student.mother_phone"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "mphone",
+                          placeholder: "Mother's Phone"
+                        },
+                        domProps: { value: _vm.id.student.mother_phone },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "mother_phone",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
                   _vm._v("Address Details")
                 ]),
                 _vm._v(" "),
-                _vm._m(8),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.address,
+                            expression: "id.student.address"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "address",
+                          placeholder: "Address"
+                        },
+                        domProps: { value: _vm.id.student.address },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "address",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.city,
+                            expression: "id.student.city"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "city",
+                          placeholder: "City"
+                        },
+                        domProps: { value: _vm.id.student.city },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "city",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(9),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.district,
+                            expression: "id.student.district"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "district",
+                          placeholder: "District"
+                        },
+                        domProps: { value: _vm.id.student.district },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "district",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.state,
+                            expression: "id.student.state"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "state",
+                          placeholder: "State"
+                        },
+                        domProps: { value: _vm.id.student.state },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "state",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.pincode,
+                            expression: "id.student.pincode"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "pincode",
+                          placeholder: "Pincode"
+                        },
+                        domProps: { value: _vm.id.student.pincode },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "pincode",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(10)
+                _vm._m(0)
               ]
             )
           ])
@@ -51046,428 +52160,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "name", placeholder: "Name" }
-          })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "label",
-            { staticClass: "col-md-2 col-form-label", attrs: { for: "" } },
-            [_vm._v("Gender :  ")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2 md-radio md-radio-inline" }, [
-            _c("input", {
-              attrs: { type: "radio", name: "gender", id: "male", checked: "" }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "male" } }, [_vm._v("Male")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2 md-radio md-radio-inline" }, [
-            _c("input", {
-              attrs: { type: "radio", name: "gender", id: "female" }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "female" } }, [_vm._v("Female")])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "select",
-            { staticClass: "form-control", attrs: { name: "category" } },
-            [
-              _c("option", { attrs: { selected: "", disabled: "" } }, [
-                _vm._v("Category")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("General")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("SC")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("ST")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("OBC")])
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "height", placeholder: "Height" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "weight", placeholder: "Weight" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "select",
-            { staticClass: "form-control", attrs: { name: "blood_group" } },
-            [
-              _c("option", { attrs: { selected: "", disabled: "" } }, [
-                _vm._v("Blood Group")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("O+")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("O-")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("AB+")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("AB-")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("A+")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("A-")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("B+")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("B-")])
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "uniRoll",
-              placeholder: "University Roll No."
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "classRoll",
-              placeholder: "Class Roll No."
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "select",
-            { staticClass: "form-control", attrs: { name: "living" } },
-            [
-              _c("option", { attrs: { selected: "", disabled: "" } }, [
-                _vm._v("Hosteller / Day Scholar")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("Hosteller")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("Day Scholar")])
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "batch", placeholder: "Batch" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "select",
-            { staticClass: "form-control", attrs: { name: "branch" } },
-            [
-              _c("option", { attrs: { selected: "", disabled: "" } }, [
-                _vm._v("Branch")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("B.Tech")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("M.Tech")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("M.B.A.")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("M.C.A.")])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "select",
-            { staticClass: "form-control", attrs: { name: "stream" } },
-            [
-              _c("option", { attrs: { selected: "", disabled: "" } }, [
-                _vm._v("Stream")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Civil Engineering")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Computer Science and Engineering")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Electrical Engineering")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Electronics and Communication Engineering ")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Information Technology")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Mechenical Engineering")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [
-                _vm._v("Production Engineering")
-              ])
-            ]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-3" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "section", placeholder: "Section" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-3" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "select",
-            { staticClass: "form-control", attrs: { name: "shift" } },
-            [
-              _c("option", { attrs: { selected: "", disabled: "" } }, [
-                _vm._v("Shift")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("Morning")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "" } }, [_vm._v("Evening")])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "label",
-            { staticClass: "col-md-4 col-form-label", attrs: { for: "" } },
-            [_vm._v("Training Semester :  ")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-1 md-radio md-radio-inline" }, [
-            _c("input", {
-              attrs: { type: "radio", name: "t_sem", id: "7", checked: "" }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "7" } }, [_vm._v("7")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-1 md-radio md-radio-inline" }, [
-            _c("input", { attrs: { type: "radio", name: "t_sem", id: "8" } }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "8" } }, [_vm._v("8")])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "fname", placeholder: "Father's Name" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "fphone",
-              placeholder: "Father's Phone"
-            }
-          })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "mname", placeholder: "Mother's Name" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "mphone",
-              placeholder: "Mother's Phone"
-            }
-          })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "address", placeholder: "Address" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "city", placeholder: "City" }
-          })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "district", placeholder: "District" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "state", placeholder: "State" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "pincode", placeholder: "Pincode" }
-          })
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -51503,7 +52195,15 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_vm.step == 1 ? _c("tnc") : _vm.step == 2 ? _c("profile-form") : _vm._e()],
+    [
+      _vm.step == 1
+        ? _c("tnc")
+        : _vm.step == 2
+          ? _c("profile-form")
+          : _vm.step == 3
+            ? _c("education-form")
+            : _vm._e()
+    ],
     1
   )
 }
@@ -53160,7 +53860,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["x" /* verifyURL */], _this.registerForm).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["y" /* verifyURL */], _this.registerForm).then(function (response) {
                         toastr['success'](response.data.message);
                         _this.authenticated = true;
                         _this.token = response.data.data.access_token;
@@ -69275,6 +69975,1635 @@ module.exports = SocialSharing;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(332)
+  __webpack_require__(334)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(336)
+/* template */
+var __vue_template__ = __webpack_require__(337)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-702dce87"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\views\\student\\acadaemicsForm.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-702dce87", Component.options)
+  } else {
+    hotAPI.reload("data-v-702dce87", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 332 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(333);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("0b5a3dd2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-702dce87\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./acadaemicsForm.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-702dce87\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./acadaemicsForm.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 333 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.text-primary[data-v-702dce87] {\n    color: #0185c2 !important;\n}\n.col-form-label[data-v-702dce87]{\n    padding-left: 0;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(335);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("51d09da6", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-702dce87\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./acadaemicsForm.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-702dce87\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./acadaemicsForm.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 335 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n@-webkit-keyframes ripple-data-v-702dce87 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n@keyframes ripple-data-v-702dce87 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n.md-radio[data-v-702dce87] {\n  margin: 16px 0;\n}\n.md-radio.md-radio-inline[data-v-702dce87] {\n    display: inline-block;\n}\n.md-radio input[type=\"radio\"][data-v-702dce87] {\n    display: none;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-702dce87]:before {\n      border-color: #337ab7;\n      -webkit-animation: ripple-data-v-702dce87 0.2s linear forwards;\n              animation: ripple-data-v-702dce87 0.2s linear forwards;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-702dce87]:after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n}\n.md-radio label[data-v-702dce87] {\n    display: inline-block;\n    height: 20px;\n    position: relative;\n    padding: 0 30px;\n    margin-bottom: 0;\n    cursor: pointer;\n    vertical-align: bottom;\n}\n.md-radio label[data-v-702dce87]:before, .md-radio label[data-v-702dce87]:after {\n      position: absolute;\n      content: '';\n      border-radius: 50%;\n      -webkit-transition: all .3s ease;\n      transition: all .3s ease;\n      -webkit-transition-property: border-color, -webkit-transform;\n      transition-property: border-color, -webkit-transform;\n      transition-property: transform, border-color;\n      transition-property: transform, border-color, -webkit-transform;\n}\n.md-radio label[data-v-702dce87]:before {\n      left: 0;\n      top: 0;\n      width: 20px;\n      height: 20px;\n      border: 2px solid rgba(0, 0, 0, 0.54);\n}\n.md-radio label[data-v-702dce87]:after {\n      top: 5px;\n      left: 5px;\n      width: 10px;\n      height: 10px;\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      background: #337ab7;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 336 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(4);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            id: {
+                'id': this.$store.state.auth.userid,
+                student: {}
+            },
+            profile: {
+                'univ_roll_no': this.$store.state.auth.username
+            }
+        };
+    },
+    created: function created() {
+        var _this = this;
+
+        axios.get('/api/dashboard/student/' + this.$store.state.auth.username + '/edit').then(function (response) {
+            // console.log(response.data.data[0]);
+            // if (response.status == 200) {
+
+            // }
+            _this.id.student = response.data.data[0];
+        }).catch(function (error) {
+            console.log(error);
+        });
+        // console.log(this.id.student);
+    },
+
+    methods: {
+        getAuthUser: function getAuthUser(name) {
+            return this.$store.getters.getAuthUser(name);
+        },
+        submit: function submit() {
+            // console.log(this.$store.state.auth.username);
+            // console.log('1');
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* updateProfileURL */], this.id).then(function (response) {
+                console.log(response);
+                // if (response.status == 200) {
+
+                // }
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 337 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c("div", { staticClass: "form-material card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
+              _vm._v("Profile Details")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                attrs: { method: "post" },
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.submit($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.name,
+                            expression: "id.student.name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "name",
+                          placeholder: "Name"
+                        },
+                        domProps: { value: _vm.id.student.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 col-form-label",
+                          attrs: { for: "" }
+                        },
+                        [_vm._v("Gender :  ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-2 md-radio md-radio-inline" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.id.student.gender,
+                                expression: "id.student.gender"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              name: "gender",
+                              id: "male",
+                              value: "MALE"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.id.student.gender, "MALE")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.$set(_vm.id.student, "gender", "MALE")
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "male" } }, [
+                            _vm._v("Male")
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-2 md-radio md-radio-inline" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.id.student.gender,
+                                expression: "id.student.gender"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              name: "gender",
+                              id: "female",
+                              value: "FEMALE"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.id.student.gender, "FEMALE")
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.$set(_vm.id.student, "gender", "FEMALE")
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "female" } }, [
+                            _vm._v("Female")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.category,
+                              expression: "id.student.category"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "category" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "category",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Category")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "GEN" } }, [
+                            _vm._v("General")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "SC" } }, [
+                            _vm._v("SC")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "ST" } }, [
+                            _vm._v("ST")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "OBC" } }, [
+                            _vm._v("OBC")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.height,
+                            expression: "id.student.height"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "height",
+                          placeholder: "Height"
+                        },
+                        domProps: { value: _vm.id.student.height },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "height",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.weight,
+                            expression: "id.student.weight"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "weight",
+                          placeholder: "Weight"
+                        },
+                        domProps: { value: _vm.id.student.weight },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "weight",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.blood_group,
+                              expression: "id.student.blood_group"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "blood_group" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "blood_group",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Blood Group")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "O+" } }, [
+                            _vm._v("O+")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "O-" } }, [
+                            _vm._v("O-")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "AB+" } }, [
+                            _vm._v("AB+")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "AB-" } }, [
+                            _vm._v("AB-")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "A+" } }, [
+                            _vm._v("A+")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "A-" } }, [
+                            _vm._v("A-")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "B+" } }, [
+                            _vm._v("B+")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "B-" } }, [
+                            _vm._v("B-")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
+                  _vm._v("Acadaemic Details")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.univ_roll_no,
+                            expression: "id.student.univ_roll_no"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "uniRoll",
+                          placeholder: "University Roll No."
+                        },
+                        domProps: { value: _vm.id.student.univ_roll_no },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "univ_roll_no",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.class_roll_no,
+                            expression: "id.student.class_roll_no"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "classRoll",
+                          placeholder: "Class Roll No."
+                        },
+                        domProps: { value: _vm.id.student.class_roll_no },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "class_roll_no",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.living,
+                              expression: "id.student.living"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "living" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "living",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Hosteler / DayScholar")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "HOSTELER" } }, [
+                            _vm._v("Hosteler")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "DAYSCHOLAR" } }, [
+                            _vm._v("DayScholar")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.batch,
+                            expression: "id.student.batch"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "batch",
+                          placeholder: "Batch"
+                        },
+                        domProps: { value: _vm.id.student.batch },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "batch",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.branch_type,
+                              expression: "id.student.branch_type"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "branch" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "branch_type",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Branch")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "B.Tech." } }, [
+                            _vm._v("B.Tech")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "M.Tech." } }, [
+                            _vm._v("M.Tech")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "M.B.A." } }, [
+                            _vm._v("M.B.A.")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "M.C.A." } }, [
+                            _vm._v("M.C.A.")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.stream,
+                              expression: "id.student.stream"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "stream" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "stream",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", value: "null" } },
+                            [_vm._v("Stream")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Civil Engineering")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Computer Science and Engineering")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Electrical Engineering")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Electronics and Communication Engineering ")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Information Technology")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Mechenical Engineering")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Production Engineering")
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.section,
+                            expression: "id.student.section"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "section",
+                          placeholder: "Section"
+                        },
+                        domProps: { value: _vm.id.student.section },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "section",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.id.student.shift,
+                              expression: "id.student.shift"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { name: "shift" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.id.student,
+                                "shift",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { value: "null", disabled: "" } },
+                            [_vm._v("Shift")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "MORNING" } }, [
+                            _vm._v("Morning")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "EVENING" } }, [
+                            _vm._v("Evening")
+                          ])
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-4 col-form-label",
+                          attrs: { for: "" }
+                        },
+                        [_vm._v("Training Semester :  ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-1 md-radio md-radio-inline" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.id.student.training_semester,
+                                expression: "id.student.training_semester"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              name: "t_sem",
+                              id: "7",
+                              value: "7"
+                            },
+                            domProps: {
+                              checked: _vm._q(
+                                _vm.id.student.training_semester,
+                                "7"
+                              )
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.$set(
+                                  _vm.id.student,
+                                  "training_semester",
+                                  "7"
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "7" } }, [_vm._v("7")])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-1 md-radio md-radio-inline" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.id.student.training_semester,
+                                expression: "id.student.training_semester"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              name: "t_sem",
+                              id: "8",
+                              value: "8"
+                            },
+                            domProps: {
+                              checked: _vm._q(
+                                _vm.id.student.training_semester,
+                                "8"
+                              )
+                            },
+                            on: {
+                              change: function($event) {
+                                _vm.$set(
+                                  _vm.id.student,
+                                  "training_semester",
+                                  "8"
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "8" } }, [_vm._v("8")])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
+                  _vm._v("Parent Details")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.father_name,
+                            expression: "id.student.father_name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "fname",
+                          placeholder: "Father's Name"
+                        },
+                        domProps: { value: _vm.id.student.father_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "father_name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.father_phone,
+                            expression: "id.student.father_phone"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "fphone",
+                          placeholder: "Father's Phone"
+                        },
+                        domProps: { value: _vm.id.student.father_phone },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "father_phone",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.mother_name,
+                            expression: "id.student.mother_name"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "mname",
+                          placeholder: "Mother's Name"
+                        },
+                        domProps: { value: _vm.id.student.mother_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "mother_name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.mother_phone,
+                            expression: "id.student.mother_phone"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "mphone",
+                          placeholder: "Mother's Phone"
+                        },
+                        domProps: { value: _vm.id.student.mother_phone },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "mother_phone",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
+                  _vm._v("Address Details")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.address,
+                            expression: "id.student.address"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "address",
+                          placeholder: "Address"
+                        },
+                        domProps: { value: _vm.id.student.address },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "address",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.city,
+                            expression: "id.student.city"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "city",
+                          placeholder: "City"
+                        },
+                        domProps: { value: _vm.id.student.city },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "city",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.district,
+                            expression: "id.student.district"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "district",
+                          placeholder: "District"
+                        },
+                        domProps: { value: _vm.id.student.district },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "district",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.state,
+                            expression: "id.student.state"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "state",
+                          placeholder: "State"
+                        },
+                        domProps: { value: _vm.id.student.state },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "state",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.id.student.pincode,
+                            expression: "id.student.pincode"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          name: "pincode",
+                          placeholder: "Pincode"
+                        },
+                        domProps: { value: _vm.id.student.pincode },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.id.student,
+                              "pincode",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            staticClass: "btn btn-info pull-right",
+            attrs: { type: "submit", value: "Submit" }
+          })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-702dce87", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
