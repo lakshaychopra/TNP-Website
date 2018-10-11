@@ -45,7 +45,7 @@ class HomeController extends Controller
     
     public function viewWidgets(HomePage $homePage)
     {
-        $homePage = HomePage::where('id', '=', '1')->get();
+        $homePage = HomePage::all();
         return $this->respondData($homePage);
     }
     
