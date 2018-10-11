@@ -34822,7 +34822,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n#mainNav[data-v-8338e700] {\r\n  position: absolute;\r\n  border-bottom: 1px solid #e9ecef;\r\n  background-color: white;\r\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\n#mainNav .navbar-brand[data-v-8338e700] {\r\n  font-weight: 800;\r\n  color: #343a40;\n}\n#mainNav .navbar-toggler[data-v-8338e700] {\r\n  font-size: 12px;\r\n  font-weight: 800;\r\n  padding: 13px;\r\n  text-transform: uppercase;\r\n  color: #343a40;\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700] {\r\n  font-size: 12px;\r\n  font-weight: 800;\r\n  letter-spacing: 1px;\r\n  text-transform: uppercase;\n}\n@media only screen and (min-width: 992px) {\n#mainNav[data-v-8338e700] {\r\n    border-bottom: 1px solid transparent;\r\n    background: transparent;\n}\n#mainNav .navbar-brand[data-v-8338e700] {\r\n    padding: 10px 20px;\r\n    color: #fff;\n}\n#mainNav .navbar-brand[data-v-8338e700]:focus, #mainNav .navbar-brand[data-v-8338e700]:hover {\r\n    color: rgba(255, 255, 255, 0.8);\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700] {\r\n    padding: 10px 20px;\r\n    color: #fff;\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700]:focus, #mainNav .navbar-nav > li.nav-item > a[data-v-8338e700]:hover {\r\n    color: rgba(255, 255, 255, 0.8);\n}\n}\n@media only screen and (min-width: 992px) {\n#mainNav[data-v-8338e700] {\r\n    -webkit-transition: background-color 0.2s;\r\n    transition: background-color 0.2s;\r\n    /* Force Hardware Acceleration in WebKit */\r\n    -webkit-transform: translate3d(0, 0, 0);\r\n    transform: translate3d(0, 0, 0);\r\n    -webkit-backface-visibility: hidden;\n}\n#mainNav.is-fixed[data-v-8338e700] {\r\n    /* when the user scrolls down, we hide the header right above the viewport */\r\n    position: fixed;\r\n    top: -67px;\r\n    -webkit-transition: -webkit-transform 0.2s;\r\n    transition: -webkit-transform 0.2s;\r\n    transition: transform 0.2s;\r\n    transition: transform 0.2s, -webkit-transform 0.2s;\r\n    border-bottom: 1px solid white;\r\n    background-color: rgba(255, 255, 255, 0.9);\n}\n#mainNav.is-fixed .navbar-brand[data-v-8338e700] {\r\n    color: #212529;\n}\n#mainNav.is-fixed .navbar-brand[data-v-8338e700]:focus, #mainNav.is-fixed .navbar-brand[data-v-8338e700]:hover {\r\n    color: #0085A1;\n}\n#mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700] {\r\n    color: #212529;\n}\n#mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700]:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700]:hover {\r\n    color: #0085A1;\n}\n#mainNav.is-visible[data-v-8338e700] {\r\n    /* if the user changes the scrolling direction, we show the header */\r\n    -webkit-transform: translate3d(0, 100%, 0);\r\n    transform: translate3d(0, 100%, 0);\n}\n}\nheader.masthead[data-v-8338e700] {\r\n  margin-bottom: 50px;\r\n  background: no-repeat center center;\r\n  background-color: #868e96;\r\n  background-attachment: scroll;\r\n  position: relative;\r\n  background-size: cover;\n}\nheader.masthead .overlay[data-v-8338e700] {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  height: 100%;\r\n  width: 100%;\r\n  background-color: #212529;\r\n  opacity: 0.5;\n}\nheader.masthead .page-heading[data-v-8338e700],\r\nheader.masthead .post-heading[data-v-8338e700],\r\nheader.masthead .site-heading[data-v-8338e700] {\r\n  padding: 200px 0 150px;\r\n  color: white;\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .page-heading[data-v-8338e700],\r\n  header.masthead .post-heading[data-v-8338e700],\r\n  header.masthead .site-heading[data-v-8338e700] {\r\n    padding: 200px 0;\n}\n}\nheader.masthead .page-heading[data-v-8338e700],\r\nheader.masthead .site-heading[data-v-8338e700] {\r\n  text-align: center;\n}\nheader.masthead .page-heading h1[data-v-8338e700],\r\nheader.masthead .site-heading h1[data-v-8338e700] {\r\n  font-size: 50px;\r\n  margin-top: 0;\n}\nheader.masthead .page-heading .subheading[data-v-8338e700],\r\nheader.masthead .site-heading .subheading[data-v-8338e700] {\r\n  font-size: 24px;\r\n  font-weight: 300;\r\n  line-height: 1.1;\r\n  display: block;\r\n  margin: 10px 0 0;\r\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .page-heading h1[data-v-8338e700],\r\n  header.masthead .site-heading h1[data-v-8338e700] {\r\n    font-size: 80px;\n}\n}\nheader.masthead .post-heading h1[data-v-8338e700] {\r\n  font-size: 35px;\n}\nheader.masthead .post-heading .meta[data-v-8338e700],\r\nheader.masthead .post-heading .subheading[data-v-8338e700] {\r\n  line-height: 1.1;\r\n  display: block;\n}\nheader.masthead .post-heading .subheading[data-v-8338e700] {\r\n  font-size: 24px;\r\n  font-weight: 600;\r\n  margin: 10px 0 30px;\r\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\nheader.masthead .post-heading .meta[data-v-8338e700] {\r\n  font-size: 20px;\r\n  font-weight: 300;\r\n  font-style: italic;\r\n  /* font-family: 'Lora', 'Times New Roman', serif; */\n}\nheader.masthead .post-heading .meta a[data-v-8338e700] {\r\n  color: #fff;\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .post-heading h1[data-v-8338e700] {\r\n    font-size: 55px;\n}\nheader.masthead .post-heading .subheading[data-v-8338e700] {\r\n    font-size: 30px;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n.bg-dark[data-v-8338e700] {\n        background-color: #038ed4 !important;\n}\n#mainNav[data-v-8338e700] {\n  position: absolute;\n  border-bottom: 1px solid #e9ecef;\n  background-color: white;\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\n#mainNav .navbar-brand[data-v-8338e700] {\n  font-weight: 800;\n  color: #343a40;\n}\n#mainNav .navbar-toggler[data-v-8338e700] {\n  font-size: 12px;\n  font-weight: 800;\n  padding: 13px;\n  text-transform: uppercase;\n  color: #343a40;\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700] {\n  font-size: 12px;\n  font-weight: 800;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n}\n@media only screen and (min-width: 992px) {\n#mainNav[data-v-8338e700] {\n    border-bottom: 1px solid transparent;\n    background: transparent;\n}\n#mainNav .navbar-brand[data-v-8338e700] {\n    padding: 10px 20px;\n    color: #fff;\n}\n#mainNav .navbar-brand[data-v-8338e700]:focus, #mainNav .navbar-brand[data-v-8338e700]:hover {\n    color: rgba(255, 255, 255, 0.8);\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700] {\n    padding: 10px 20px;\n    color: #fff;\n}\n#mainNav .navbar-nav > li.nav-item > a[data-v-8338e700]:focus, #mainNav .navbar-nav > li.nav-item > a[data-v-8338e700]:hover {\n    color: rgba(255, 255, 255, 0.8);\n}\n}\n@media only screen and (min-width: 992px) {\n#mainNav[data-v-8338e700] {\n    -webkit-transition: background-color 0.2s;\n    transition: background-color 0.2s;\n    /* Force Hardware Acceleration in WebKit */\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n    -webkit-backface-visibility: hidden;\n}\n#mainNav.is-fixed[data-v-8338e700] {\n    /* when the user scrolls down, we hide the header right above the viewport */\n    position: fixed;\n    top: -67px;\n    -webkit-transition: -webkit-transform 0.2s;\n    transition: -webkit-transform 0.2s;\n    transition: transform 0.2s;\n    transition: transform 0.2s, -webkit-transform 0.2s;\n    border-bottom: 1px solid white;\n    background-color: rgba(255, 255, 255, 0.9);\n}\n#mainNav.is-fixed .navbar-brand[data-v-8338e700] {\n    color: #212529;\n}\n#mainNav.is-fixed .navbar-brand[data-v-8338e700]:focus, #mainNav.is-fixed .navbar-brand[data-v-8338e700]:hover {\n    color: #0085A1;\n}\n#mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700] {\n    color: #212529;\n}\n#mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700]:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a[data-v-8338e700]:hover {\n    color: #0085A1;\n}\n#mainNav.is-visible[data-v-8338e700] {\n    /* if the user changes the scrolling direction, we show the header */\n    -webkit-transform: translate3d(0, 100%, 0);\n    transform: translate3d(0, 100%, 0);\n}\n}\nheader.masthead[data-v-8338e700] {\n  margin-bottom: 50px;\n  background: no-repeat center center;\n  background-color: #868e96;\n  background-attachment: scroll;\n  position: relative;\n  background-size: cover;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\nheader.masthead .overlay[data-v-8338e700] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background-color: #212529;\n  opacity: 0.5;\n}\nheader.masthead .page-heading[data-v-8338e700],\nheader.masthead .post-heading[data-v-8338e700],\nheader.masthead .site-heading[data-v-8338e700] {\n  padding: 200px 0 150px;\n  color: white;\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .page-heading[data-v-8338e700],\n  header.masthead .post-heading[data-v-8338e700],\n  header.masthead .site-heading[data-v-8338e700] {\n    padding: 200px 0;\n}\n}\nheader.masthead .page-heading[data-v-8338e700],\nheader.masthead .site-heading[data-v-8338e700] {\n  text-align: center;\n}\nheader.masthead .page-heading h1[data-v-8338e700],\nheader.masthead .site-heading h1[data-v-8338e700] {\n  font-size: 50px;\n  margin-top: 0;\n}\nheader.masthead .page-heading .subheading[data-v-8338e700],\nheader.masthead .site-heading .subheading[data-v-8338e700] {\n  font-size: 24px;\n  font-weight: 300;\n  line-height: 1.1;\n  display: block;\n  margin: 10px 0 0;\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .page-heading h1[data-v-8338e700],\n  header.masthead .site-heading h1[data-v-8338e700] {\n    font-size: 80px;\n}\n}\nheader.masthead .post-heading h1[data-v-8338e700] {\n  font-size: 35px;\n}\nheader.masthead .post-heading .meta[data-v-8338e700],\nheader.masthead .post-heading .subheading[data-v-8338e700] {\n  line-height: 1.1;\n  display: block;\n}\nheader.masthead .post-heading .subheading[data-v-8338e700] {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 10px 0 30px;\n  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */\n}\nheader.masthead .post-heading .meta[data-v-8338e700] {\n  font-size: 20px;\n  font-weight: 300;\n  font-style: italic;\n  /* font-family: 'Lora', 'Times New Roman', serif; */\n}\nheader.masthead .post-heading .meta a[data-v-8338e700] {\n  color: #fff;\n}\n@media only screen and (min-width: 768px) {\nheader.masthead .post-heading h1[data-v-8338e700] {\n    font-size: 55px;\n}\nheader.masthead .post-heading .subheading[data-v-8338e700] {\n    font-size: 30px;\n}\n}\n.list-inline[data-v-8338e700] {\n        padding-left: 0;\n        list-style: none;\n}\n.bg-gray[data-v-8338e700] {\n        background-color: #f1f1f1;\n}\n.color-main[data-v-8338e700] {\n        color: #038ed4;\n}\n#bg-trans[data-v-8338e700] {\n        background: -webkit-linear-gradient(#333, #fff);\n        background-clip: text;\n        -webkit-background-clip: text;\n        -webkit-text-fill-color: transparent;\n}\n.bg-dark[data-v-8338e700] {\n        background-color: #038ed4 !important;\n}\n#list-menu li a[data-v-8338e700] {\n        color: #f7fbff;\n        padding: 20px;\n        float: left;\n        border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-8338e700]:hover {\n        /* color: #0073BC; */\n        /* border-bottom: 4px solid #0073BC; */\n        background-color: #f1f1f1;\n        color: #038ed4;\n}\n.navbar[data-v-8338e700] {\n        padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-8338e700] {\n            width: 142px;\n}\n}\n.w-65[data-v-8338e700] {\n        width: 65%;\n}\n.fix[data-v-8338e700] {\n        overflow: hidden;\n        top: 90px;\n}\n", ""]);
 
 // exports
 
@@ -34833,11 +34833,6 @@ exports.push([module.i, "\n#mainNav[data-v-8338e700] {\r\n  position: absolute;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
 //
 //
 //
@@ -34914,11 +34909,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       console.log(this.url);
       axios.get('/api/about/view/' + this.url).then(function (response) {
-        _this.pageData = response.data;
-        console.log(response);
+        _this.pageData = response.data.data.data[0];
+        console.log(response.data.data.data[0]);
       }).catch(function (error) {
         return console.log(error);
       });
+      // console.log(this.pageData);
     }
   }
 });
@@ -34967,15 +34963,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c(
-      "nav",
-      {
-        staticClass: "navbar navbar-expand-lg navbar-light fixed-top",
-        attrs: { id: "mainNav" }
-      },
+      "div",
+      { staticClass: "sticky-top", staticStyle: { "z-index": "1022" } },
       [
         _c(
-          "div",
-          { staticClass: "container" },
+          "nav",
+          { staticClass: "navbar bg-dark navbar-dark" },
           [
             _c(
               "router-link",
@@ -35012,35 +35005,101 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    { staticClass: "pull-right nav-link", attrs: { to: "/" } },
-                    [
-                      _c("i", {
-                        staticClass: "fa fa-long-arrow-left",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Back\r\n              ")
-                    ]
-                  )
-                ],
-                1
-              )
-            ])
+            _c(
+              "ul",
+              { staticClass: "nav navbar-nav", attrs: { id: "list-menu" } },
+              [
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "pull-right nav-link",
+                        attrs: { to: "/" }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-long-arrow-left",
+                          attrs: { "aria-hidden": "true" }
+                        }),
+                        _vm._v(" Back\r\n                        ")
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]
+            )
           ],
           1
         )
       ]
     ),
     _vm._v(" "),
-    _vm._m(0),
+    _c(
+      "header",
+      {
+        staticClass: "masthead",
+        style: {
+          backgroundImage:
+            "url(../images/about/images/" + _vm.pageData.image + ")"
+        }
+      },
+      [_vm._m(0)]
+    ),
     _vm._v(" "),
-    _vm._m(1)
+    _c(
+      "div",
+      { staticClass: "container", staticStyle: { "padding-bottom": "90px" } },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-8 col-md-10 mx-auto" }, [
+            _c("h1", [_vm._v(_vm._s(_vm.pageData.title))])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", {
+            staticClass: "col-lg-8 col-md-10 mx-auto",
+            domProps: { innerHTML: _vm._s(_vm.pageData.body) }
+          })
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "footer",
+      {
+        staticClass: "container-fluid footer",
+        staticStyle: { left: "0", "margin-top": "50px" }
+      },
+      [
+        _c("p", { staticClass: "text-center" }, [
+          _c(
+            "small",
+            [
+              _vm._v("Developed with "),
+              _vm._m(1),
+              _vm._v(" by\r\n                    "),
+              _c("router-link", { attrs: { to: "/genconian" } }, [
+                _vm._v("Genconians")
+              ]),
+              _vm._v(" | © 2018 "),
+              _c(
+                "a",
+                {
+                  attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
+                },
+                [_vm._v("GNDEC,\r\n                        Ldh")]
+              )
+            ],
+            1
+          )
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -35048,57 +35107,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "header",
-      {
-        staticClass: "masthead",
-        staticStyle: { "background-image": "url('img/about-bg.jpg')" }
-      },
-      [
-        _c("div", { staticClass: "overlay" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-8 col-md-10 mx-auto" }, [
-              _c("div", { staticClass: "page-heading" }, [
-                _c("h1", [_vm._v("About Me")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "subheading" }, [
-                  _vm._v("This is what I do.")
-                ])
-              ])
-            ])
-          ])
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-8 col-md-10 mx-auto" }, [
+          _c("div", { staticClass: "page-heading" })
         ])
-      ]
-    )
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-8 col-md-10 mx-auto" }, [
-          _c("p", [
-            _vm._v(
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?"
-            )
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!"
-            )
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!"
-            )
-          ])
-        ])
-      ])
+    return _c("span", { staticClass: "text-danger" }, [
+      _c("i", { staticClass: "fa fa-heart", attrs: { "aria-hidden": "true" } })
     ])
   }
 ]

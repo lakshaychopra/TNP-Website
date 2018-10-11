@@ -1,47 +1,33 @@
 <template>
 <div>
-     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-         <router-link to="/" class="navbar-brand d-none d-md-block">
+  <div class="sticky-top" style="z-index:1022;">
+        <nav class="navbar bg-dark navbar-dark">
+                <!-- Brand -->
+                <router-link to="/" class="navbar-brand d-none d-md-block">
                     <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
                 </router-link>
                 <router-link to="/" class="navbar-brand d-md-none">
                     <img src="/logo.png" alt="logo" height="55px" width="55px">
                 </router-link>
-        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button> -->
-        <!-- <div class="collapse navbar-collapse" id="navbarResponsive"> -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <router-link to="/" class="pull-right nav-link">
-                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back
-              </router-link>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="post.html">Sample Post</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li> -->
-          </ul>
-        <!-- </div> -->
-      </div>
-    </nav>
 
+                <ul class="nav navbar-nav" id="list-menu">
+                    <li class="nav-item">
+                        <router-link to="/" class="pull-right nav-link">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back
+                        </router-link>
+                    </li>
+                </ul>
+            </nav>
+    </div>
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/about-bg.jpg')">
-      <div class="overlay"></div>
+    <header class="masthead" v-bind:style="{ backgroundImage : 'url(../images/about/images/'+ pageData.image +')' }">
+      <!-- <div class="overlay"></div> -->
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1>About Me</h1>
-              <span class="subheading">This is what I do.</span>
+              <!-- <h1>{{pageData.title}}</h1>
+              <span class="subheading">This is what I do.</span> -->
             </div>
           </div>
         </div>
@@ -49,15 +35,24 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
-      <div class="row">
+    <div class="container" style="padding-bottom: 90px;">
+        <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+            <h1>{{pageData.title}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto" v-html="pageData.body">
+               
         </div>
       </div>
     </div>
+    <footer class="container-fluid footer" style="left:0;     margin-top: 50px;">
+            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
+                    </span> by
+                    <router-link to="/genconian">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC,
+                        Ldh</a></small></p>
+        </footer>
 </div>
 
 </template>
@@ -76,10 +71,11 @@ export default {
             fetchData(){
               console.log(this.url);  
                   axios.get('/api/about/view/' + this.url).then((response) => {
-                        this.pageData = response.data;
-                        console.log(response);
+                        this.pageData = response.data.data.data[0];
+                        console.log(response.data.data.data[0]);
                   })
-                  .catch((error) => console.log(error))
+                  .catch((error) => console.log(error));
+                  // console.log(this.pageData);
             } 
     }
 }
@@ -120,6 +116,9 @@ $("body").on("input propertychange", ".floating-label-form-group", function(e) {
   }
 </script>
 <style scoped>
+    .bg-dark {
+        background-color: #038ed4 !important;
+    }
 #mainNav {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
@@ -214,6 +213,8 @@ header.masthead {
   background-attachment: scroll;
   position: relative;
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 header.masthead .overlay {
@@ -305,4 +306,63 @@ header.masthead .post-heading .meta a {
     font-size: 30px;
   }
 }
+
+
+
+    .list-inline {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .bg-gray {
+        background-color: #f1f1f1;
+    }
+
+    .color-main {
+        color: #038ed4;
+    }
+
+    #bg-trans {
+        background: -webkit-linear-gradient(#333, #fff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .bg-dark {
+        background-color: #038ed4 !important;
+    }
+
+    #list-menu li a {
+        color: #f7fbff;
+        padding: 20px;
+        float: left;
+        border-bottom: 4px solid rgba(255, 255, 255, 0);
+    }
+
+    #list-menu li a:hover {
+        /* color: #0073BC; */
+        /* border-bottom: 4px solid #0073BC; */
+        background-color: #f1f1f1;
+        color: #038ed4;
+    }
+
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .navbar-header {
+            width: 142px;
+        }
+    }
+
+    .w-65 {
+        width: 65%;
+    }
+
+    .fix {
+        overflow: hidden;
+        top: 90px;
+    }
 </style>
