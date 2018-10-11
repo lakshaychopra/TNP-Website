@@ -155,4 +155,11 @@ class AboutController extends Controller
         $page = ['No Data - Invalid URL'];
         return $this->respondData($page);
     }
+
+    public function linksPage()
+    {
+            $page['data'] = About::select('url','title')->get();
+            return $this->respondData($page);
+    }
+
 }
