@@ -82,4 +82,10 @@ class AboutWidgetController extends Controller
     {
         //
     }
+
+    public function aboutWidgets(AboutWidget $aboutWidget)
+    {
+        $aboutWidget = AboutWidget::all();
+        return $this->respondData($aboutWidget);
+    }
 }
