@@ -2,14 +2,14 @@
     <div class="col-md-3 px-1 d-none d-lg-block " id="sidebar">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card" v-for="off in office" :key="off.id">
                     <div class="card-header" id="office">
-                        <h4>T&P OFFICE</h4>
+                        <h4>{{ off.office_widget }}</h4>
                     </div>
 
                     <div class="card-body">
                         <div class="office text-center">
-                            <img src="/images/sodhi.jpg" width="75%" alt="Prof. G.S. Sodhi" style="margin-bottom: 15px;">
+                            <img v-bind:src="'/images/' + off.office_picture" width="75%" alt="Prof. G.S. Sodhi" style="margin-bottom: 15px;">
                         </div>
                         <div class="row">
                             <div class="col-md-2">
@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-md-10">
                                 <p class="mb-0">
-                                    <strong>{{ office.office_name }}</strong>
+                                    <strong>{{ off.office_name }}</strong>
                                 </p>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
 
                             </div>
                             <div class="col-md-10">
-                                <small>{{ office.office_position}}</small>
+                                <small>{{ off.office_position}}</small>
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-10">
                                 <small>
-                                    <a :href="'mailto:'+office.office_email" target="_blank">{{ office.office_email }}</a>
+                                    <a :href="'mailto:'+off.office_email" target="_blank">{{ off.office_email }}</a>
                                 </small>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="col-md-10">
                                 <small>
-                                    <a :href="'tel:'+office.office_phone" target="_blank">{{ office.office_phone }}</a>
+                                    <a :href="'tel:'+off.office_phone" target="_blank">{{ off.office_phone }}</a>
                                 </small>
                             </div>
                         </div>
@@ -136,10 +136,10 @@
         created() {
             axios.get(officeWidget)
                 .then((response) => {
-                    this.office = response.data.data[0];
+                    console.log(response.data.data);
+                    this.office = response.data.data;
                 })
                 .catch((error) => console.log(error))
-
             axios.get(aboutWidget)
                 .then((response) => {
                     this.about = response.data.data[0];

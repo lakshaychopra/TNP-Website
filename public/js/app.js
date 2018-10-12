@@ -547,7 +547,7 @@ var formstepChangeURL = '/api/dashboard/user/step/update';
 
 var firstLoginURL = '/api/dashboard/user/first/login';
 var statusChangeURL = '/api/dashboard/user/status/update';
-var storeStudentURL = '/api/dashboard/student';
+var storeStudentURL = '/api/dashboard/student/';
 
 var viewPost = '/view/';
 
@@ -25570,11 +25570,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["m" /* officeWidget */]).then(function (response) {
-            _this.office = response.data.data[0];
+            console.log(response.data.data);
+            _this.office = response.data.data;
         }).catch(function (error) {
             return console.log(error);
         });
-
         axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["a" /* aboutWidget */]).then(function (response) {
             _this.about = response.data.data[0];
         }).catch(function (error) {
@@ -25599,71 +25599,88 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "card" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._m(1),
+        _c(
+          "div",
+          { staticClass: "col-md-12" },
+          _vm._l(_vm.office, function(off) {
+            return _c("div", { key: off.id, staticClass: "card" }, [
+              _c(
+                "div",
+                { staticClass: "card-header", attrs: { id: "office" } },
+                [_c("h4", [_vm._v(_vm._s(off.office_widget))])]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-2" }),
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "office text-center" }, [
+                  _c("img", {
+                    staticStyle: { "margin-bottom": "15px" },
+                    attrs: {
+                      src: "/images/" + off.office_picture,
+                      width: "75%",
+                      alt: "Prof. G.S. Sodhi"
+                    }
+                  })
+                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-10" }, [
-                  _c("p", { staticClass: "mb-0" }, [
-                    _c("strong", [_vm._v(_vm._s(_vm.office.office_name))])
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-2" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-10" }, [
+                    _c("p", { staticClass: "mb-0" }, [
+                      _c("strong", [_vm._v(_vm._s(off.office_name))])
+                    ])
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-2" }),
+                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-10" }, [
-                  _c("small", [_vm._v(_vm._s(_vm.office.office_position))])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mt-2" }, [
-                _vm._m(2),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-10" }, [
-                  _c("small", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "mailto:" + _vm.office.office_email,
-                          target: "_blank"
-                        }
-                      },
-                      [_vm._v(_vm._s(_vm.office.office_email))]
-                    )
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-2" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-10" }, [
+                    _c("small", [_vm._v(_vm._s(off.office_position))])
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mt-1" }, [
-                _vm._m(3),
+                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-10" }, [
-                  _c("small", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "tel:" + _vm.office.office_phone,
-                          target: "_blank"
-                        }
-                      },
-                      [_vm._v(_vm._s(_vm.office.office_phone))]
-                    )
+                _c("div", { staticClass: "row mt-2" }, [
+                  _vm._m(0, true),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-10" }, [
+                    _c("small", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "mailto:" + off.office_email,
+                            target: "_blank"
+                          }
+                        },
+                        [_vm._v(_vm._s(off.office_email))]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-1" }, [
+                  _vm._m(1, true),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-10" }, [
+                    _c("small", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "tel:" + off.office_phone,
+                            target: "_blank"
+                          }
+                        },
+                        [_vm._v(_vm._s(off.office_phone))]
+                      )
+                    ])
                   ])
                 ])
               ])
             ])
-          ])
-        ])
+          })
+        )
       ]),
       _vm._v(" "),
       _c(
@@ -25675,9 +25692,9 @@ var render = function() {
         [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "card" }, [
-              _vm._m(4),
+              _vm._m(2),
               _vm._v(" "),
-              _vm._m(5),
+              _vm._m(3),
               _vm._v(" "),
               _c(
                 "div",
@@ -25687,7 +25704,7 @@ var render = function() {
                 },
                 [
                   _c("div", { staticClass: "row" }, [
-                    _vm._m(6),
+                    _vm._m(4),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-10" }, [
                       _c("small", [
@@ -25703,13 +25720,13 @@ var render = function() {
                         ),
                         _c("br"),
                         _vm._v(" "),
-                        _vm._m(7)
+                        _vm._m(5)
                       ])
                     ])
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row mt-2" }, [
-                    _vm._m(8),
+                    _vm._m(6),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-10" }, [
                       _c("small", [
@@ -25728,7 +25745,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row mt-2" }, [
-                    _vm._m(9),
+                    _vm._m(7),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-10" }, [
                       _c("small", [
@@ -25747,7 +25764,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row mt-2" }, [
-                    _vm._m(10),
+                    _vm._m(8),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-10" }, [
                       _c("small", [
@@ -25775,29 +25792,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header", attrs: { id: "office" } }, [
-      _c("h4", [_vm._v("T&P OFFICE")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "office text-center" }, [
-      _c("img", {
-        staticStyle: { "margin-bottom": "15px" },
-        attrs: {
-          src: "/images/sodhi.jpg",
-          width: "75%",
-          alt: "Prof. G.S. Sodhi"
-        }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -51046,6 +51040,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+
             id: {
                 'id': this.$store.state.auth.userid,
                 student: {}
@@ -51075,9 +51070,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.$store.getters.getAuthUser(name);
         },
         submit: function submit() {
-            // console.log(this.$store.state.auth.username);
+            console.log(this.id.id);
             // console.log('1');
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* storeStudentURL */], this.id).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* storeStudentURL */] + this.id.id, this.id).then(function (response) {
                 console.log(response);
                 // if (response.status == 200) {
 
