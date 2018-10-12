@@ -25612,14 +25612,16 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("div", { staticClass: "office text-center" }, [
-                  _c("img", {
-                    staticStyle: { "margin-bottom": "15px" },
-                    attrs: {
-                      src: "/images/" + off.office_picture,
-                      width: "75%",
-                      alt: "Picture"
-                    }
-                  })
+                  off.office_picture != null
+                    ? _c("img", {
+                        staticStyle: { "margin-bottom": "15px" },
+                        attrs: {
+                          src: "/images/" + off.office_picture,
+                          width: "75%",
+                          alt: off.office_widget
+                        }
+                      })
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
