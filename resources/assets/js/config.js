@@ -23,7 +23,8 @@ export const singleuserURL = '/api/dashboard/user/form/create';
 
 export const searchURL = '/api/home/post/search/';
 export const categoryURL = '/api/home/post/view/';
-export const rightWidget = '/api/home/page/view/widgets/';
+export const officeWidget = '/api/home/page/view/widgets/';
+export const aboutWidget = '/api/home/page/view/about/widgets/';
 
 export const formstepChangeURL = '/api/dashboard/user/step/update';
 

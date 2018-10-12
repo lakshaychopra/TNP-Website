@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePreviousMarksTable extends Migration
+class CreateMetricsMarksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePreviousMarksTable extends Migration
      */
     public function up()
     {
-        Schema::create('previous_education', function (Blueprint $table) {
+        Schema::create('metrics_education', function (Blueprint $table) {
             $table->increments('id');
             $table->string('univ_roll_no')->unique();
             $table->string('board')->nullable();
@@ -22,10 +22,8 @@ class CreatePreviousMarksTable extends Migration
             $table->integer('year')->nullable();
             $table->integer('obtained_marks')->nullable();
             $table->integer('max_marks')->nullable();
+            $table->enum('marks_type)',['CGPA','PERCENTAGE'])->nullable();
             $table->integer('percentage')->nullable();
-            $table->string('year_gap')->nullable();            
-            $table->string('jee_rank')->nullable();
-            $table->enum('education',['XII','DIPLOMA'])->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +35,6 @@ class CreatePreviousMarksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('previous_education');
+        Schema::dropIfExists('metrics_education');
     }
 }
