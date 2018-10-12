@@ -236,6 +236,7 @@
     export default {
         data() {
             return {
+                
                 id: {
                     'id': this.$store.state.auth.userid,
                     student:{}
@@ -263,9 +264,9 @@
                 return this.$store.getters.getAuthUser(name);
             },
             submit() {
-                // console.log(this.$store.state.auth.username);
+                console.log(this.id.id);
                 // console.log('1');
-                axios.post(storeStudentURL, this.id).then(response => {
+                axios.post(storeStudentURL+this.id.id, this.id).then(response => {
                     console.log(response);
                     // if (response.status == 200) {
                         
