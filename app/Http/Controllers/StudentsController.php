@@ -113,9 +113,9 @@ class StudentsController extends Controller
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            $data = $request->all();
             $id = $request->id;
             $student = Student::find($id);
+            $data = $request->all();
             $student->update($data);
             DB::commit();
             return $this->respondSuccess('Updated',$student);

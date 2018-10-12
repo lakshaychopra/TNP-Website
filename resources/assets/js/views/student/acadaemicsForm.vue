@@ -222,7 +222,7 @@
     </div>
 </template>
 <script>
-    import { updateProfileURL } from "../../config.js";
+    import { storeStudentURL } from "../../config.js";
     import { fetchProfileURL } from "../../config.js";
     export default {
         data() {
@@ -256,7 +256,7 @@
             submit() {
                 // console.log(this.$store.state.auth.username);
                 // console.log('1');
-                axios.post(updateProfileURL, this.id).then(response => {
+                axios.post(storeStudentURL, this.id).then(response => {
                     console.log(response);
                     // if (response.status == 200) {
                         

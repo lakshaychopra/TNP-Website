@@ -16,15 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-// About Controller
-Route::get('/about/view/{pageURL?}', 'AboutController@showPage');
-Route::get('/about/links', 'AboutController@linksPage');
-  
 Route::post('/send-notification', 'PostController@pushNotification');
 
 Route::get('/aaaa', 'StudentFilterController@filterStudents');
 Route::get('/bbbb', 'DashboardController@adminDashboard');
 
+// About Controller
+Route::get('/about/view/{pageURL?}', 'AboutController@showPage');
+Route::get('/about/links', 'AboutController@linksPage');
 // Login Controller
 Route::post('/login', 'LoginController@login');
 Route::post('/check', 'LoginController@check');
@@ -40,6 +39,8 @@ Route::get('/home/post/search/{term?}', 'HomeController@HomePostSearch');
 Route::get('/home/post/view/{category?}', 'HomeController@HomeCategoryView');
 Route::get('/home/page/view/pinned', 'HomeController@viewPinned');
 Route::get('/home/page/view/widgets', 'HomeController@viewWidgets');
+//AboutWidget Controller
+Route::get('/home/page/view/about/widgets', 'AboutWidgetController@aboutWidgets');
 //Protected routes
 Route::group(['middleware' => 'jwt.auth'], function() {
     // Login Controller

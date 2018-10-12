@@ -33,7 +33,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <select name="category" v-model="id.student.category" class="form-control">
-                                            <option  disabled value="null">Category</option>
+                                            <option  disabled selected value="">Category</option>
                                             <option value="GEN">General</option>
                                             <option value="SC">SC</option>
                                             <option value="ST">ST</option>
@@ -231,7 +231,7 @@
     </div>
 </template>
 <script>
-    import { updateProfileURL } from "../../config.js";
+    import { storeStudentURL } from "../../config.js";
     import { fetchProfileURL } from "../../config.js";
     export default {
         data() {
@@ -265,7 +265,7 @@
             submit() {
                 // console.log(this.$store.state.auth.username);
                 // console.log('1');
-                axios.post(updateProfileURL, this.id).then(response => {
+                axios.post(storeStudentURL, this.id).then(response => {
                     console.log(response);
                     // if (response.status == 200) {
                         
