@@ -35046,7 +35046,7 @@ var render = function() {
     _c(
       "header",
       {
-        staticClass: "masthead pt-5",
+        staticClass: "masthead pb-5 pt-5",
         style: {
           backgroundImage:
             "url(/images/about/images/" + _vm.pageData.image + ")"

@@ -20,7 +20,7 @@
       </nav>
     </div>
     <!-- Page Header -->
-    <header class="masthead pt-5" v-bind:style="{ backgroundImage : 'url(/images/about/images/'+ pageData.image +')' }">
+    <header class="masthead pb-5 pt-5" v-bind:style="{ backgroundImage : 'url(/images/about/images/'+ pageData.image +')' }">
       <!-- <div class="overlay"></div> -->
       <div class="container-fluid">
         <div class="row">
