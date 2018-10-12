@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="row align-self-start sticky-top" style="top:75px">
+        <div class="row align-self-start sticky-top" style="top:75px">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" id="about">
@@ -118,7 +118,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 <script>
@@ -140,11 +140,11 @@
                 })
                 .catch((error) => console.log(error))
 
-            // axios.get(aboutWidget)
-            //     .then((response) => {
-            //         this.about = response.data.data[0];
-            //     })
-            //     .catch((error) => console.log(error))
+            axios.get(aboutWidget)
+                .then((response) => {
+                    this.about = response.data.data[0];
+                })
+                .catch((error) => console.log(error))
         }
 
     }
