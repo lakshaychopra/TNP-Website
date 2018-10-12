@@ -9,7 +9,7 @@
 
                     <div class="card-body">
                         <div class="office text-center">
-                            <img v-bind:src="'/images/' + off.office_picture" width="75%" alt="Prof. G.S. Sodhi" style="margin-bottom: 15px;">
+                            <img v-bind:src="'/images/' + off.office_picture" width="75%" alt="Picture" style="margin-bottom: 15px;">
                         </div>
                         <div class="row">
                             <div class="col-md-2">

@@ -20,7 +20,7 @@
       </nav>
     </div>
     <!-- Page Header -->
-    <section class="masthead pt-5" v-bind:style="{ backgroundImage : 'url(/images/about/images/'+ pageData.image +')' }">
+    <header class="masthead pt-5" v-bind:style="{ backgroundImage : 'url(/images/about/images/'+ pageData.image +')' }">
       <!-- <div class="overlay"></div> -->
       <div class="container-fluid">
         <div class="row">
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </header>
 
     <!-- Main Content -->
     <div class="container" style="padding-bottom: 90px;">
@@ -221,7 +221,7 @@
     }
   }
 
-  section.masthead {
+  header.masthead {
     margin-bottom: 50px;
     background: no-repeat center center;
     background-color: #868e96;
@@ -232,7 +232,7 @@
     background-repeat: no-repeat;
   }
 
-  section.masthead .overlay {
+  header.masthead .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -242,35 +242,35 @@
     opacity: 0.5;
   }
 
-  section.masthead .page-heading,
-  section.masthead .post-heading,
-  section.masthead .site-heading {
+  header.masthead .page-heading,
+  header.masthead .post-heading,
+  header.masthead .site-heading {
     padding: 200px 0 150px;
     color: white;
   }
 
   @media only screen and (min-width: 768px) {
 
-    section.masthead .page-heading,
-    section.masthead .post-heading,
-    section.masthead .site-heading {
+    header.masthead .page-heading,
+    header.masthead .post-heading,
+    header.masthead .site-heading {
       padding: 200px 0;
     }
   }
 
-  section.masthead .page-heading,
-  section.masthead .site-heading {
+  header.masthead .page-heading,
+  header.masthead .site-heading {
     text-align: center;
   }
 
-  section.masthead .page-heading h1,
-  section.masthead .site-heading h1 {
+  header.masthead .page-heading h1,
+  header.masthead .site-heading h1 {
     font-size: 50px;
     margin-top: 0;
   }
 
-  section.masthead .page-heading .subheading,
-  section.masthead .site-heading .subheading {
+  header.masthead .page-heading .subheading,
+  header.masthead .site-heading .subheading {
     font-size: 24px;
     font-weight: 300;
     line-height: 1.1;
@@ -281,46 +281,46 @@
 
   @media only screen and (min-width: 768px) {
 
-    section.masthead .page-heading h1,
-    section.masthead .site-heading h1 {
+    header.masthead .page-heading h1,
+    header.masthead .site-heading h1 {
       font-size: 80px;
     }
   }
 
-  section.masthead .post-heading h1 {
+  header.masthead .post-heading h1 {
     font-size: 35px;
   }
 
-  section.masthead .post-heading .meta,
-  section.masthead .post-heading .subheading {
+  header.masthead .post-heading .meta,
+  header.masthead .post-heading .subheading {
     line-height: 1.1;
     display: block;
   }
 
-  section.masthead .post-heading .subheading {
+  header.masthead .post-heading .subheading {
     font-size: 24px;
     font-weight: 600;
     margin: 10px 0 30px;
     /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
   }
 
-  section.masthead .post-heading .meta {
+  header.masthead .post-heading .meta {
     font-size: 20px;
     font-weight: 300;
     font-style: italic;
     /* font-family: 'Lora', 'Times New Roman', serif; */
   }
 
-  section.masthead .post-heading .meta a {
+  header.masthead .post-heading .meta a {
     color: #fff;
   }
 
   @media only screen and (min-width: 768px) {
-    section.masthead .post-heading h1 {
+    header.masthead .post-heading h1 {
       font-size: 55px;
     }
 
-    section.masthead .post-heading .subheading {
+    header.masthead .post-heading .subheading {
       font-size: 30px;
     }
   }

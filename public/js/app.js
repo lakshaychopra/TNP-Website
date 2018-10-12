@@ -25617,7 +25617,7 @@ var render = function() {
                     attrs: {
                       src: "/images/" + off.office_picture,
                       width: "75%",
-                      alt: "Prof. G.S. Sodhi"
+                      alt: "Picture"
                     }
                   })
                 ]),
@@ -35044,7 +35044,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _c(
-      "section",
+      "header",
       {
         staticClass: "masthead pt-5",
         style: {
