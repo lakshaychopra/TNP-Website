@@ -261,48 +261,51 @@ NAVBAR
         </div>
 
         <!--  people for T&amp;P-->
-        <div class="row mt-5">
-            <div id="demo" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="ml-5 mar-top border-left" data-target="#demo" data-slide-to="0">
-                            <div>
-                                <strong>Prof. G. S. Sodhi</strong>
-                                <p>Officer</p>
-                                <p>Training &amp; Placement Cell</p>
-                            </div>
-                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
-                                width="100%">
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="ml-5 mar-top" data-target="#demo" data-slide-to="1">
-                            <strong>Dr. K. S. Mann</strong>
-                            <p>Advisor</p>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="mar-top" data-target="#demo" data-slide-to="0">
+                        <img src="images/about/img/sodhi.jpg" alt="Faculty Members of Training and Placement Cell"
+                            class="owl-img" width="100%">
+                        <div class="owl--text">
+                            <strong>Prof. G. S. Sodhi</strong>
+                            <p>Officer</p>
                             <p>Training &amp; Placement Cell</p>
-                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
-                                width="100%">
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="ml-5 mar-top" data-target="#demo" data-slide-to="2">
-                            <strong>Prof. Sachin Bagga</strong>
-                            <p>Faculty Co-ordinator</p>
-                            <p>Training &amp; Placement Cell</p>
-                            <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
-                                width="100%">
                         </div>
                     </div>
                 </div>
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
+                <div class="carousel-item">
+                    <div class="mar-top" data-target="#demo" data-slide-to="1">
+                        <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
+                            class="owl-img" width="100%">
+                        <div class="owl--text">
+                            <strong>Dr. K. S. Mann</strong>
+                            <p>Advisor</p>
+                            <p>Training &amp; Placement Cell</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="mar-top" data-target="#demo" data-slide-to="2">
+                        <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
+                            class="owl-img" width="100%">
+                        <div class="owl--text">
+                            <strong>Prof. Sachin Bagga</strong>
+                            <p>Faculty Co-ordinator</p>
+                            <p>Training &amp; Placement Cell</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
+
 
         <!-- Companies -->
         <section class="testimonials pb-0 mb-5">
@@ -568,8 +571,30 @@ NAVBAR
         margin-top: 200px;
     }
 
+    #demo .owl-img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #demo .owl-carousel {
+        position: relative;
+        height: 100%;
+    }
+
     #demo .carousel-indicators .active {
         background-color: transparent;
+    }
+
+    #demo .owl--text {
+        position: absolute;
+        bottom: 3em;
+        left: 2em;
+        width: 15em;
+        height: 6em;
+        padding: 1em;
+        background: rgba(255, 255, 255, .8);
+        border-radius: 4px;
     }
 
     #demo1 .carousel-indicators li {
@@ -633,7 +658,17 @@ NAVBAR
     }
 
 
-    @media screen and (max-width:425px) {
+    @media screen and (max-width:426px) {
+        #demo .owl--text {
+            position: absolute;
+            bottom: 0.5em;
+            left: 0.5em;
+            width: 14em;
+            height: 6em;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 4px;
+        }
+
         #demo .carousel-indicators {
             top: unset;
         }

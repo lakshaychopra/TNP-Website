@@ -67,7 +67,7 @@
         },
         computed: {
             getAvatar(){
-                return '/images/users/'+this.getAuthUser('avatar');
+                return '/images/user.jpg';
             }
         }
     }

@@ -33,7 +33,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <select name="category" v-model="id.student.category" class="form-control">
-                                            <option  disabled selected value="">Category</option>
+                                            <option  disabled selected value="null">Category</option>
                                             <option value="GEN">General</option>
                                             <option value="SC">SC</option>
                                             <option value="ST">ST</option>
@@ -239,7 +239,8 @@
                 
                 id: {
                     'id': this.$store.state.auth.userid,
-                    student:{}
+                    student:{},
+                    '_method': 'PUT'
                 },
                  profile: {
                     'univ_roll_no': this.$store.state.auth.username,
