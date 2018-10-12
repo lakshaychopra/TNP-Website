@@ -11,7 +11,24 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="name"  v-model="id.student.name"  placeholder="Name" class="form-control">
+                                        <input type="text" name="board"  v-model="id.student.name"  placeholder="Board" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                       <input type="text" name="institute_name"  v-model="id.student.weight" placeholder="Institute Name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" name="obtained"  v-model="id.student.height"  placeholder="Obtained Marks" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" name="max"  v-model="id.student.weight" placeholder="Max Marks" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -42,33 +59,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" name="height"  v-model="id.student.height"  placeholder="Height" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" name="weight"  v-model="id.student.weight" placeholder="Weight" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <select name="blood_group" v-model="id.student.blood_group" class="form-control">
-                                            <option disabled value="null">Blood Group</option>
-                                            <option value="O+">O+</option>
-                                            <option value="O-">O-</option>
-                                            <option value="AB+">AB+</option>
-                                            <option value="AB-">AB-</option>
-                                            <option value="A+">A+</option>
-                                            <option value="A-">A-</option>
-                                            <option value="B+">B+</option>
-                                            <option value="B-">B-</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+
 
 
                             <h2 class="card-title mt-3 text-primary">Acadaemic Details</h2>
