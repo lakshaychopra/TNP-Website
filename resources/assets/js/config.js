@@ -25,6 +25,7 @@ export const searchURL = '/api/home/post/search/';
 export const categoryURL = '/api/home/post/view/';
 export const officeWidget = '/api/home/page/view/widgets/';
 export const aboutWidget = '/api/home/page/view/about/widgets/';
+export const pageLinkWidget = '/api/about/links';
 
 export const formstepChangeURL = '/api/dashboard/user/step/update';
 

@@ -490,29 +490,30 @@ function applyToTag (styleElement, obj) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return apiDomain; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return loginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return forgetURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return verifyURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return securityURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return verifyURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return securityURL; });
 /* unused harmony export oauthURL */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return addPostURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return postIdGetURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return showPostURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return postIdGetURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return showPostURL; });
 /* unused harmony export notifyPostURL */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return pinPostURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return pinPostURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return addHomePostURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return pinnedPostURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return registerURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return setPasswordURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return pinnedPostURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return registerURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return setPasswordURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return downloadExcelURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return mailExcelURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return singleuserURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return searchURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return singleuserURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return searchURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return categoryURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return officeWidget; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return aboutWidget; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return pageLinkWidget; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return formstepChangeURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return firstLoginURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return statusChangeURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return storeStudentURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return statusChangeURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return storeStudentURL; });
 /* unused harmony export viewPost */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return addPageURL; });
 var apiDomain = 'https://www.tnpgndec.com';
@@ -542,6 +543,7 @@ var searchURL = '/api/home/post/search/';
 var categoryURL = '/api/home/post/view/';
 var officeWidget = '/api/home/page/view/widgets/';
 var aboutWidget = '/api/home/page/view/about/widgets/';
+var pageLinkWidget = '/api/about/links';
 
 var formstepChangeURL = '/api/dashboard/user/step/update';
 
@@ -24560,7 +24562,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getPinnedPosts: function getPinnedPosts() {
             var _this3 = this;
 
-            axios.get(__WEBPACK_IMPORTED_MODULE_3__config_js__["o" /* pinnedPostURL */]).then(function (response) {
+            axios.get(__WEBPACK_IMPORTED_MODULE_3__config_js__["p" /* pinnedPostURL */]).then(function (response) {
                 // var obj = JSON.parse(response.data);
                 // console.log(response);
                 _this3.pinned_posts = response.data.data;
@@ -24706,7 +24708,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             if (this.search.length >= 2) {
-                axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["r" /* searchURL */] + this.search).then(function (response) {
+                axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["s" /* searchURL */] + this.search).then(function (response) {
                     return _this.$parent.posts = response.data.data.data;
                 }, this.$parent.pinned_posts = undefined);
             } else {
@@ -25020,7 +25022,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -25108,16 +25110,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            page: {}
+        };
+    },
+    created: function created() {
+        var _this = this;
+
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["n" /* pageLinkWidget */]).then(function (response) {
+            _this.page = response.data.data.data;
+        }).catch(function (error) {
+            return console.log(error);
+        });
+    },
+
     methods: {
         searchby_category: function searchby_category(category) {
-            var _this = this;
+            var _this2 = this;
 
             if (category != "All") {
                 axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["f" /* categoryURL */] + category).then(function (response) {
-                    return _this.$parent.posts = response.data.data.data;
+                    return _this2.$parent.posts = response.data.data.data;
                 }, this.$parent.pinned_posts = undefined);
             } else {
                 this.$parent.getPosts();
@@ -25215,9 +25248,52 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c(
+          "div",
+          { staticClass: "card" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.page, function(pg) {
+              return _c(
+                "div",
+                {
+                  key: pg.id,
+                  staticClass: "card-body",
+                  staticStyle: {
+                    "padding-left": "10px",
+                    "padding-right": "10px"
+                  }
+                },
+                [
+                  _c("ul", { staticClass: "list-group list-group-flush" }, [
+                    _c(
+                      "li",
+                      { staticClass: "list-group-item" },
+                      [
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/page/" + pg.url } },
+                          [_vm._v(_vm._s(pg.title))]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]
+              )
+            })
+          ],
+          2
+        )
+      ])
+    ]),
     _vm._v(" "),
-    _vm._m(2)
+    _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3)
   ])
 }
 var staticRenderFns = [
@@ -25227,6 +25303,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header", attrs: { id: "filter" } }, [
       _c("h4", { staticClass: "mb-1" }, [_vm._v(" Filter By")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header", attrs: { id: "filter" } }, [
+      _c("h4", { staticClass: "mb-1" }, [_vm._v(" Explore")])
     ])
   },
   function() {
@@ -25422,7 +25506,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -25434,6 +25518,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config__ = __webpack_require__(3);
+//
 //
 //
 //
@@ -25570,7 +25655,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["m" /* officeWidget */]).then(function (response) {
-            console.log(response.data.data);
+            // console.log(response.data.data);
             _this.office = response.data.data;
         }).catch(function (error) {
             return console.log(error);
@@ -38657,7 +38742,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$validator.validateAll().then(function (result) {
                 if (result) {
                     // this.loading = true;
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["v" /* singleuserURL */], _this.user).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["w" /* singleuserURL */], _this.user).then(function (response) {
                         toastr['success'](response.data.message);
                         // this.loading = false;
                         // console.log(this.loading);
@@ -39710,7 +39795,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // if (response.status == "401") {
                 //   }
                 toastr['success'](response.data.message);
-                axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["p" /* postIdGetURL */]).then(function (res) {
+                axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["q" /* postIdGetURL */]).then(function (res) {
                     // console.log(res.data.data);
                     navigate.$router.push({ path: '/post/' + res.data.data });
                 }).catch(function (err) {
@@ -41977,7 +42062,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       setTimeout(function () {
         var vm = _this4;
-        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["n" /* pinPostURL */] + '?page=' + vm.page).then(function (response) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["o" /* pinPostURL */] + '?page=' + vm.page).then(function (response) {
           console.log(response.data.data.data.length);
           if (response.data.data.data.length == 0) {
             vm.busy = true;
@@ -41997,7 +42082,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this5 = this;
 
-    axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["n" /* pinPostURL */]).then(function (response) {
+    axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["o" /* pinPostURL */]).then(function (response) {
       // var obj = JSON.parse(response.data);
       // console.log(response);
       _this5.posts = response.data;
@@ -42408,7 +42493,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["u" /* showPostURL */] + this.id).then(function (response) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["v" /* showPostURL */] + this.id).then(function (response) {
             _this.post = response.data.data;
             console.log(response.data.data);
         }).catch(function (error) {
@@ -46953,7 +47038,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 // if (response.status == "401") {
                 //   }
                 toastr['success'](response.data.message);
-                axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["p" /* postIdGetURL */]).then(function (res) {
+                axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["q" /* postIdGetURL */]).then(function (res) {
                     // console.log(res.data.data);
                     navigate.$router.push({ path: '/exec/post/' + res.data.data });
                 }).catch(function (err) {
@@ -47764,7 +47849,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["u" /* showPostURL */] + this.id).then(function (response) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["v" /* showPostURL */] + this.id).then(function (response) {
             _this.post = response.data.data;
             console.log(response.data.data);
         }).catch(function (error) {
@@ -50589,14 +50674,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["h" /* firstLoginURL */], this.id).then(function (response) {
                 console.log(response);
                 if (response.status == 200) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["w" /* statusChangeURL */], _this.tnc).then(function (res) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* statusChangeURL */], _this.tnc).then(function (res) {
                         console.log(res);
                         if (res.status == 200) {
                             axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this.form_step).then(function (stat) {
                                 console.log(stat);
                                 if (stat.status == 200) {
                                     console.log(stat);
-                                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* storeStudentURL */], _this.username).then(function (resp) {
+                                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["y" /* storeStudentURL */], _this.username).then(function (resp) {
                                         if (resp.status == 200) {
                                             toastr['success']("User Added!!");
                                             // this.$router.push('/userlogin');
@@ -51115,7 +51200,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submit: function submit() {
             console.log(this.id.id);
             // console.log('1');
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* storeStudentURL */] + this.id.id, this.id).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["y" /* storeStudentURL */] + this.id.id, this.id).then(function (response) {
                 console.log(response);
                 // if (response.status == 200) {
 
@@ -52732,7 +52817,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submit: function submit() {
             // console.log(this.$store.state.auth.username);
             // console.log('1');
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* storeStudentURL */], this.id).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["y" /* storeStudentURL */], this.id).then(function (response) {
                 console.log(response);
                 // if (response.status == 200) {
 
@@ -54285,7 +54370,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // this.$validator.validate('otp').then((res) => {
             //     if(res){
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["s" /* securityURL */], this.security).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["t" /* securityURL */], this.security).then(function (response) {
                 console.log(response);
                 localStorage.setItem('token', _this2.token);
                 toastr['success'](response.data.message);
@@ -54921,7 +55006,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["q" /* registerURL */], _this.registerForm).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["r" /* registerURL */], _this.registerForm).then(function (response) {
                         toastr['success'](response.data.message);
                         _this.authenticated = true;
                         _this.token = response.data.data.access_token;
@@ -54938,7 +55023,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["t" /* setPasswordURL */], _this2.pswdUpdate).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["u" /* setPasswordURL */], _this2.pswdUpdate).then(function (response) {
                         toastr['success'](response.data.message);
                         // localStorage.setItem('token', this.token);
                         axios.defaults.headers.common['Authorization'] = null;
@@ -55575,7 +55660,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["y" /* verifyURL */], _this.registerForm).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["z" /* verifyURL */], _this.registerForm).then(function (response) {
                         toastr['success'](response.data.message);
                         _this.authenticated = true;
                         _this.token = response.data.data.access_token;

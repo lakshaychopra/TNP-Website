@@ -28,6 +28,22 @@
           <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    <div class="card-header" id="filter">
+                        <h4 class="mb-1"> Explore</h4>
+                    </div>
+                    <div class="card-body" v-for="pg in page" :key="pg.id" style="padding-left: 10px;padding-right: 10px;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <router-link v-bind:to="'/page/'+pg.url">{{ pg.title }}</router-link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="card">
                     <div class="card-header" id="downloads">
                         <h4 class="mb-1"> Downloads</h4>
                     </div>
@@ -76,9 +92,22 @@
 </template>
 <script>
     import {
-        categoryURL
+        categoryURL,
+        pageLinkWidget
     } from "../../config.js";
     export default {
+        data() {
+            return {
+                page: {},
+            }
+        },
+         created() {
+            axios.get(pageLinkWidget)
+                .then((response) => {
+                    this.page = response.data.data.data;
+                })
+                .catch((error) => console.log(error))
+        },
         methods: {
             searchby_category(category) {
                 if (category != "All") {
