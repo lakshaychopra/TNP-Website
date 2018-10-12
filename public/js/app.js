@@ -490,7 +490,7 @@ function applyToTag (styleElement, obj) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return apiDomain; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return loginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return forgetURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return verifyURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return verifyURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return securityURL; });
 /* unused harmony export oauthURL */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return addPostURL; });
@@ -512,7 +512,6 @@ function applyToTag (styleElement, obj) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return firstLoginURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return statusChangeURL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return storeStudentURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return updateProfileURL; });
 /* unused harmony export viewPost */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return addPageURL; });
 var apiDomain = 'https://www.tnpgndec.com';
@@ -547,8 +546,6 @@ var formstepChangeURL = '/api/dashboard/user/step/update';
 var firstLoginURL = '/api/dashboard/user/first/login';
 var statusChangeURL = '/api/dashboard/user/status/update';
 var storeStudentURL = '/api/dashboard/student';
-
-var updateProfileURL = 'api/dashboard/student';
 
 var viewPost = '/view/';
 
@@ -51066,7 +51063,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submit: function submit() {
             // console.log(this.$store.state.auth.username);
             // console.log('1');
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* updateProfileURL */], this.id).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["w" /* storeStudentURL */], this.id).then(function (response) {
                 console.log(response);
                 // if (response.status == 200) {
 
@@ -51265,7 +51262,9 @@ var render = function() {
                         [
                           _c(
                             "option",
-                            { attrs: { disabled: "", value: "null" } },
+                            {
+                              attrs: { disabled: "", selected: "", value: "" }
+                            },
                             [_vm._v("Category")]
                           ),
                           _vm._v(" "),
@@ -52686,7 +52685,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submit: function submit() {
             // console.log(this.$store.state.auth.username);
             // console.log('1');
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* updateProfileURL */], this.id).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["w" /* storeStudentURL */], this.id).then(function (response) {
                 console.log(response);
                 // if (response.status == 200) {
 
@@ -55573,7 +55572,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["y" /* verifyURL */], _this.registerForm).then(function (response) {
+                    axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["x" /* verifyURL */], _this.registerForm).then(function (response) {
                         toastr['success'](response.data.message);
                         _this.authenticated = true;
                         _this.token = response.data.data.access_token;
