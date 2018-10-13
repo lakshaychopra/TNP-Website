@@ -95,7 +95,7 @@ class StudentsController extends Controller
             $data = Student::where('univ_roll_no', '=' , $student)->get();
             return $this->respondData($data);
         }
-
+        
     }
     
     
@@ -115,10 +115,31 @@ class StudentsController extends Controller
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            $id = $request->id;
-            $student = Student::find($id);
             $data = $request->all();
-            $student->update($data);
+            $student->univ_roll_no=$request->univ_roll_no;
+            $student->class_roll_no=$request->class_roll_no;
+            $student->name=$request->name;
+            $student->batch=$request->batch;
+            $student->branch_type=$request->branch_type;
+            $student->stream=$request->stream;
+            $student->training_sem=$request->training_sem;
+            $student->shift=$request->shift;
+            $student->section=$request->section;
+            $student->gender=$request->gender;
+            $student->category=$request->category;
+            $student->blood_group=$request->blood_group;
+            $student->height=$request->height;
+            $student->weight=$request->weight;
+            $student->father_name=$request->father_name;
+            $student->father_phone_number=$request->father_phone_number;
+            $student->mother_name=$request->mother_name;
+            $student->mother_phone_number=$request->mother_phone_number;
+            $student->address=$request->address;
+            $student->city=$request->city;
+            $student->state=$request->state;
+            $student->district=$request->district;
+            $student->pincode=$request->pincode;
+            $student->save();
             DB::commit();
             return $this->respondSuccess('Updated',$student);
         } catch (Exception $e) {

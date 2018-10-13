@@ -268,7 +268,7 @@
             submit() {
                 console.log(this.id.id);
                 // console.log('1');
-                axios.post(storeStudentURL+this.id.id, this.id).then(response => {
+                axios.post(storeStudentURL+this.id.student.id, this.id).then(response => {
                     console.log(response);
                     // if (response.status == 200) {
                         
