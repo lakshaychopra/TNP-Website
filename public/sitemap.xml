@@ -35,4 +35,10 @@
    <changefreq>monthly</changefreq>
    <priority>1.0000</priority>
 </url>
+<url>
+   <loc>https://www.tnpgndec.com/genconian</loc>
+   <lastmod>2018-10-01T15:50:13+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>1.0000</priority>
+</url>
 </urlset>

