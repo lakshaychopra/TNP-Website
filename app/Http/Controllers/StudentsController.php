@@ -89,10 +89,13 @@ class StudentsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit(Student $student)
+    public function edit($student = null)
     {
-        $auth = JWTAuth::parseToken()->authenticate();
-        return $this->respondData($student);
+        if ($student != null) {
+            $data = Student::where('univ_roll_no', '=' , $student)->get();
+            return $this->respondData($data);
+        }
+
     }
     
     
