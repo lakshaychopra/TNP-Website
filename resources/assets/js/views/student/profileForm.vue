@@ -244,12 +244,13 @@
                 },
                  profile: {
                     'univ_roll_no': this.$store.state.auth.username,
+                    'id': this.$store.state.auth.userid,
                 },
             }
         },
          created(){
-            axios.get('/api/dashboard/student/' + this.$store.state.auth.username +'/edit').then(response => {
-                    // console.log(response.data.data[0]);
+            axios.get('/api/dashboard/student/' + this.$store.state.auth.userid +'/edit').then(response => {
+                    console.log(response.data.data[0]);
                     // if (response.status == 200) {
                         
                     // }

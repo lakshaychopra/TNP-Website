@@ -89,14 +89,12 @@ class StudentsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit($student = null)
+    public function edit(Student $student)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        if ($student != null) {
-            $data = Student::where('univ_roll_no', '=' , $student)->get();
-            return $this->respondData($data);
-        }
+        return $this->respondData($student);
     }
+    
     
     /**
     * Update the specified resource in storage.
@@ -105,6 +103,7 @@ class StudentsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
+    
     public function update(CreateStudentRequest $request, Student $student)
     {
         $auth = JWTAuth::parseToken()->authenticate();
