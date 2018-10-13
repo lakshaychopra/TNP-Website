@@ -24,7 +24,7 @@ class StudentRepository
 
     public function list($limit = false)
     {
-        $builder = Student::orderBy('created_at', 'desc');
+        $builder = User::orderBy('created_at', 'desc');
         if(!$limit) {
             return $builder->get();
         }
