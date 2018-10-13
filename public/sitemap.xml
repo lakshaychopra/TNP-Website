@@ -1,44 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	  	  
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+            <loc>https://www.tnpgndec.com</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/about</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/login</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/page/words-from-tpo</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/page/about-training-and-placement-cell</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/100</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/99</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/98</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/97</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/96</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/95</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/94</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/93</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/92</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/91</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/90</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/80</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/70</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/60</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/50</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/view/89</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/genconian</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/forgetPassword/student</loc>
+            <priority>0.5</priority>
+      </url>
 
-<url>
-   <loc>https://www.tnpgndec.com/</loc>
-   <lastmod>2018-07-31T15:50:13+00:00</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>1.0000</priority>
-</url>
-<url>
-   <loc>https://www.tnpgndec.com/humans.txt</loc>
-   <lastmod>2018-07-31T15:50:13+00:00</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>0.8000</priority>
-</url>
-<url>
-   <loc>https://www.tnpgndec.com/manifest.webmanifest</loc>
-   <lastmod>2018-07-27T14:34:32+00:00</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>0.8000</priority>
-</url>
-<url>
-   <loc>https://www.tnpgndec.com/login</loc>
-   <lastmod>2018-07-31T15:50:13+00:00</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>1.0000</priority>
-</url>
-<url>
-   <loc>https://www.tnpgndec.com/about</loc>
-   <lastmod>2018-07-31T15:50:13+00:00</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>1.0000</priority>
-</url>
-<url>
-   <loc>https://www.tnpgndec.com/genconian</loc>
-   <lastmod>2018-10-01T15:50:13+00:00</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>1.0000</priority>
-</url>
 </urlset>
