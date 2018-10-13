@@ -28,7 +28,7 @@
           <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header" id="filter">
+                    <div class="card-header" id="link">
                         <h4 class="mb-1"> Explore</h4>
                     </div>
                     <div class="card-body" v-for="pg in page" :key="pg.id" style="padding-left: 10px;padding-right: 10px;">
