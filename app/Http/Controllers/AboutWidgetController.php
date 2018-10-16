@@ -10,13 +10,13 @@ use Notification;
 use JWTAuth;
 use App\Http\Requests\CreatePostRequest;
 use App\Services\PostService;
-use App\Repositories\PostRepository;
+use App\Repositories\AboutRepository;
 
 
 class AboutWidgetController extends Controller
 {
 
-    public function __construct( $service, $repository)
+    public function __construct( $service,AboutRepository $repository)
     {
         $this->service = $service;
         $this->repository = $repository;
@@ -61,16 +61,15 @@ class AboutWidgetController extends Controller
                 return $this->respondError('Failed', 401); 
             }
             $data = $request->all();
-            $post->title = $request->title;
-            $post->body = $request->body;
-            $post->tag = $request->tag;
-            $post->category = $request->category;
+            $aboutWidget->title = $request->title;
+            $aboutWidget->body = $request->body;
+            $aboutWidget->category = $request->category;
             if ($request->hasFile('image')) {
-                $post['image'] = $this->service->uploadPostImageService($data);
+                $aboutWidget['image'] = $this->service->uploadAboutWidgetImageService($data);
             } 
-            $post->save(); 
+            $aboutWidget->save(); 
             DB::commit();
-            return $this->respondSuccess('Updated',$post);
+            return $this->respondSuccess('Updated',$aboutWidget);
         } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
