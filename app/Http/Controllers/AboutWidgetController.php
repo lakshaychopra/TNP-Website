@@ -4,40 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutWidget;
 use Illuminate\Http\Request;
+use DB;
+use Exception;
+use Notification;
+use JWTAuth;
+use App\Http\Requests\CreatePostRequest;
+use App\Services\PostService;
+use App\Repositories\PostRepository;
+
 
 class AboutWidgetController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function __construct( $service, $repository)
     {
-        //
+        $this->service = $service;
+        $this->repository = $repository;
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      *
@@ -46,7 +29,8 @@ class AboutWidgetController extends Controller
      */
     public function show(AboutWidget $aboutWidget)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        return $this->respondData($aboutWidget);
     }
 
     /**
@@ -57,7 +41,8 @@ class AboutWidgetController extends Controller
      */
     public function edit(AboutWidget $aboutWidget)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        return $this->respondData($aboutWidget);
     }
 
     /**
@@ -69,7 +54,27 @@ class AboutWidgetController extends Controller
      */
     public function update(Request $request, AboutWidget $aboutWidget)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if(!$auth){
+                return $this->respondError('Failed', 401); 
+            }
+            $data = $request->all();
+            $post->title = $request->title;
+            $post->body = $request->body;
+            $post->tag = $request->tag;
+            $post->category = $request->category;
+            if ($request->hasFile('image')) {
+                $post['image'] = $this->service->uploadPostImageService($data);
+            } 
+            $post->save(); 
+            DB::commit();
+            return $this->respondSuccess('Updated',$post);
+        } catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
 
     /**
@@ -78,11 +83,7 @@ class AboutWidgetController extends Controller
      * @param  \App\Models\AboutWidget  $aboutWidget
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AboutWidget $aboutWidget)
-    {
-        //
-    }
-
+   
     public function aboutWidgets(AboutWidget $aboutWidget)
     {
         $aboutWidget = AboutWidget::all();

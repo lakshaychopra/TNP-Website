@@ -34,15 +34,6 @@ class AboutController extends Controller
         return $this->respondData($posts);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -115,8 +106,7 @@ class AboutController extends Controller
             $data = $request->all();
             $about->title = $request->title;
             $about->body = $request->body;
-            $about->tag = $request->tag;
-            $about->category = $request->category;
+            $about->url = $request->url;
             if ($request->hasFile('image')) {
                 $about['image'] = $this->service->uploadAboutImageService($data);
             } 

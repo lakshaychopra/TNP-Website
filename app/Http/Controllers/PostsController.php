@@ -182,8 +182,34 @@ class PostController extends Controller
         }
     }
     
-    public function pushNotification(Post $post){
+    public function getFirstID(Post $post){
         $auth = JWTAuth::parseToken()->authenticate();
+        $post= Post::
+        orderBY('created_at', 'desc')->
+        pluck('id')->first();
+        return $this->respondData($post);
+    }
+    
+    public function HomePostSearch($term = null){
+        $auth = JWTAuth::parseToken()->authenticate();
+        if ($term != null) {
+            $post['data'] = Post::where('title', 'like', '%'.$term.'%')
+            ->get();
+            return $this->respondData($post);
+        }
+        $post= Post::orderBy('created_at', 'desc');
+        return $this->respondData($post);
+    }
+    
+    public function viewPinned(Post $post)
+    {
+        $auth = JWTAuth::parseToken()->authenticate();
+        $post = Post::where('is_pinned', '=', true)->get();
+        return $this->respondData($post);
+    }
+    
+    // public function pushNotification(Post $post){
+        // $auth = JWTAuth::parseToken()->authenticate();
         // \OneSignal::sendNotificationToAll("Test Message", $url = 'www.tnpgndec.com', $data = null, $buttons = null, $schedule = null);
         // $post->title, 
         // $url = "https://www.tnpgndec.com/view/".$post->id, 
@@ -204,31 +230,5 @@ class PostController extends Controller
                     //     ),
                     //     $schedule = null
                     // );
-                }
-                
-                public function getFirstID(Post $post){
-                    $auth = JWTAuth::parseToken()->authenticate();
-                    $post= Post::
-                    orderBY('created_at', 'desc')->
-                    pluck('id')->first();
-                    return $this->respondData($post);
-                }
-                
-                public function HomePostSearch($term = null){
-                    $auth = JWTAuth::parseToken()->authenticate();
-                    if ($term != null) {
-                        $post['data'] = Post::where('title', 'like', '%'.$term.'%')
-                        ->get();
-                        return $this->respondData($post);
-                    }
-                    $post= Post::orderBy('created_at', 'desc');
-                    return $this->respondData($post);
-                }
-                
-                public function viewPinned(Post $post)
-                {
-                    $auth = JWTAuth::parseToken()->authenticate();
-                    $post = Post::where('is_pinned', '=', true)->get();
-                    return $this->respondData($post);
-                }
-            }
+                // }
+}
