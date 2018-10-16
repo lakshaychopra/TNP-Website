@@ -51309,12 +51309,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            userid: this.$store.state.auth.userid,
+            student: {},
 
-            id: {
-                'id': this.$store.state.auth.userid,
-                student: {},
-                '_method': 'PUT'
-            },
             profile: {
                 'univ_roll_no': this.$store.state.auth.username
                 // 'id': this.$store.state.auth.userid,
@@ -51329,7 +51326,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // if (response.status == 200) {
 
             // }
-            _this.id.student = response.data.data[0];
+            _this.student = response.data.data[0];
         }).catch(function (error) {
             console.log(error);
         });
@@ -51341,9 +51338,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.$store.getters.getAuthUser(name);
         },
         submit: function submit() {
-            console.log(this.id.id);
+            var formData = new FormData();
+            formData.append('name', this.student.name);
+            formData.append('gender', this.student.gender);
+            formData.append('category', this.student.category);
+            formData.append('height', this.student.height);
+            formData.append('weight', this.student.weight);
+            formData.append('blood_group', this.student.blood_group);
+            formData.append('univ_roll_no', this.student.univ_roll_no);
+            formData.append('class_roll_no', this.student.class_roll_no);
+            formData.append('living', this.student.living);
+            formData.append('batch', this.student.batch);
+            formData.append('branch_type', this.student.branch_type);
+            formData.append('stream', this.student.stream);
+            formData.append('section', this.student.section);
+            formData.append('shift', this.student.shift);
+            formData.append('training_semester', this.student.training_semester);
+            formData.append('father_name', this.student.father_name);
+            formData.append('father_phone', this.student.father_phone);
+            formData.append('mother_name', this.student.mother_name);
+            formData.append('mother_phone', this.student.mother_phone);
+            formData.append('address', this.student.address);
+            formData.append('city', this.student.city);
+            formData.append('district', this.student.district);
+            formData.append('state', this.student.state);
+            formData.append('pincode', this.student.pincode);
+            formData.append('_method', 'PUT');
+            // console.log(this.id.id);
+            console.log(this.student.name + ' ' + this.student.gender + ' ' + this.student.category + ' ' + this.student.height + ' ' + this.student.weight + ' ' + this.student.blood_group + ' ' + this.student.univ_roll_no + ' ' + this.student.class_roll_no + ' ' + this.student.living + ' ' + this.student.batch + ' ' + this.student.branch_type + ' ' + this.student.stream + ' ' + this.student.section + ' ' + this.student.shift + ' ' + this.student.training_semester + ' ' + this.student.father_name + ' ' + this.student.father_phone + ' ' + this.student.mother_name + ' ' + this.student.mother_phone + ' ' + this.student.address + ' ' + this.student.city + ' ' + this.student.district + ' ' + this.student.state + ' ' + this.student.pincode);
             // console.log('1');
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["y" /* storeStudentURL */] + this.id.student.id, this.id).then(function (response) {
+            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["y" /* storeStudentURL */] + this.student.id, formData).then(function (response) {
                 console.log(response);
                 // if (response.status == 200) {
 
@@ -51392,8 +51416,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.name,
-                            expression: "id.student.name"
+                            value: _vm.student.name,
+                            expression: "student.name"
                           }
                         ],
                         staticClass: "form-control",
@@ -51402,17 +51426,13 @@ var render = function() {
                           name: "name",
                           placeholder: "Name"
                         },
-                        domProps: { value: _vm.id.student.name },
+                        domProps: { value: _vm.student.name },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(
-                              _vm.id.student,
-                              "name",
-                              $event.target.value
-                            )
+                            _vm.$set(_vm.student, "name", $event.target.value)
                           }
                         }
                       })
@@ -51441,8 +51461,8 @@ var render = function() {
                               {
                                 name: "model",
                                 rawName: "v-model",
-                                value: _vm.id.student.gender,
-                                expression: "id.student.gender"
+                                value: _vm.student.gender,
+                                expression: "student.gender"
                               }
                             ],
                             attrs: {
@@ -51452,11 +51472,11 @@ var render = function() {
                               value: "MALE"
                             },
                             domProps: {
-                              checked: _vm._q(_vm.id.student.gender, "MALE")
+                              checked: _vm._q(_vm.student.gender, "MALE")
                             },
                             on: {
                               change: function($event) {
-                                _vm.$set(_vm.id.student, "gender", "MALE")
+                                _vm.$set(_vm.student, "gender", "MALE")
                               }
                             }
                           }),
@@ -51476,8 +51496,8 @@ var render = function() {
                               {
                                 name: "model",
                                 rawName: "v-model",
-                                value: _vm.id.student.gender,
-                                expression: "id.student.gender"
+                                value: _vm.student.gender,
+                                expression: "student.gender"
                               }
                             ],
                             attrs: {
@@ -51487,11 +51507,11 @@ var render = function() {
                               value: "FEMALE"
                             },
                             domProps: {
-                              checked: _vm._q(_vm.id.student.gender, "FEMALE")
+                              checked: _vm._q(_vm.student.gender, "FEMALE")
                             },
                             on: {
                               change: function($event) {
-                                _vm.$set(_vm.id.student, "gender", "FEMALE")
+                                _vm.$set(_vm.student, "gender", "FEMALE")
                               }
                             }
                           }),
@@ -51513,8 +51533,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.id.student.category,
-                              expression: "id.student.category"
+                              value: _vm.student.category,
+                              expression: "student.category"
                             }
                           ],
                           staticClass: "form-control",
@@ -51530,7 +51550,7 @@ var render = function() {
                                   return val
                                 })
                               _vm.$set(
-                                _vm.id.student,
+                                _vm.student,
                                 "category",
                                 $event.target.multiple
                                   ? $$selectedVal
@@ -51581,8 +51601,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.height,
-                            expression: "id.student.height"
+                            value: _vm.student.height,
+                            expression: "student.height"
                           }
                         ],
                         staticClass: "form-control",
@@ -51591,17 +51611,13 @@ var render = function() {
                           name: "height",
                           placeholder: "Height"
                         },
-                        domProps: { value: _vm.id.student.height },
+                        domProps: { value: _vm.student.height },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(
-                              _vm.id.student,
-                              "height",
-                              $event.target.value
-                            )
+                            _vm.$set(_vm.student, "height", $event.target.value)
                           }
                         }
                       })
@@ -51615,8 +51631,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.weight,
-                            expression: "id.student.weight"
+                            value: _vm.student.weight,
+                            expression: "student.weight"
                           }
                         ],
                         staticClass: "form-control",
@@ -51625,17 +51641,13 @@ var render = function() {
                           name: "weight",
                           placeholder: "Weight"
                         },
-                        domProps: { value: _vm.id.student.weight },
+                        domProps: { value: _vm.student.weight },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(
-                              _vm.id.student,
-                              "weight",
-                              $event.target.value
-                            )
+                            _vm.$set(_vm.student, "weight", $event.target.value)
                           }
                         }
                       })
@@ -51651,8 +51663,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.id.student.blood_group,
-                              expression: "id.student.blood_group"
+                              value: _vm.student.blood_group,
+                              expression: "student.blood_group"
                             }
                           ],
                           staticClass: "form-control",
@@ -51668,7 +51680,7 @@ var render = function() {
                                   return val
                                 })
                               _vm.$set(
-                                _vm.id.student,
+                                _vm.student,
                                 "blood_group",
                                 $event.target.multiple
                                   ? $$selectedVal
@@ -51733,8 +51745,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.univ_roll_no,
-                            expression: "id.student.univ_roll_no"
+                            value: _vm.student.univ_roll_no,
+                            expression: "student.univ_roll_no"
                           }
                         ],
                         staticClass: "form-control",
@@ -51743,14 +51755,14 @@ var render = function() {
                           name: "uniRoll",
                           placeholder: "University Roll No."
                         },
-                        domProps: { value: _vm.id.student.univ_roll_no },
+                        domProps: { value: _vm.student.univ_roll_no },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "univ_roll_no",
                               $event.target.value
                             )
@@ -51767,8 +51779,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.class_roll_no,
-                            expression: "id.student.class_roll_no"
+                            value: _vm.student.class_roll_no,
+                            expression: "student.class_roll_no"
                           }
                         ],
                         staticClass: "form-control",
@@ -51777,14 +51789,14 @@ var render = function() {
                           name: "classRoll",
                           placeholder: "Class Roll No."
                         },
-                        domProps: { value: _vm.id.student.class_roll_no },
+                        domProps: { value: _vm.student.class_roll_no },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "class_roll_no",
                               $event.target.value
                             )
@@ -51803,8 +51815,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.id.student.living,
-                              expression: "id.student.living"
+                              value: _vm.student.living,
+                              expression: "student.living"
                             }
                           ],
                           staticClass: "form-control",
@@ -51820,7 +51832,7 @@ var render = function() {
                                   return val
                                 })
                               _vm.$set(
-                                _vm.id.student,
+                                _vm.student,
                                 "living",
                                 $event.target.multiple
                                   ? $$selectedVal
@@ -51857,8 +51869,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.batch,
-                            expression: "id.student.batch"
+                            value: _vm.student.batch,
+                            expression: "student.batch"
                           }
                         ],
                         staticClass: "form-control",
@@ -51867,17 +51879,13 @@ var render = function() {
                           name: "batch",
                           placeholder: "Batch"
                         },
-                        domProps: { value: _vm.id.student.batch },
+                        domProps: { value: _vm.student.batch },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(
-                              _vm.id.student,
-                              "batch",
-                              $event.target.value
-                            )
+                            _vm.$set(_vm.student, "batch", $event.target.value)
                           }
                         }
                       })
@@ -51893,8 +51901,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.id.student.branch_type,
-                              expression: "id.student.branch_type"
+                              value: _vm.student.branch_type,
+                              expression: "student.branch_type"
                             }
                           ],
                           staticClass: "form-control",
@@ -51910,7 +51918,7 @@ var render = function() {
                                   return val
                                 })
                               _vm.$set(
-                                _vm.id.student,
+                                _vm.student,
                                 "branch_type",
                                 $event.target.multiple
                                   ? $$selectedVal
@@ -51955,8 +51963,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.id.student.stream,
-                              expression: "id.student.stream"
+                              value: _vm.student.stream,
+                              expression: "student.stream"
                             }
                           ],
                           staticClass: "form-control",
@@ -51972,7 +51980,7 @@ var render = function() {
                                   return val
                                 })
                               _vm.$set(
-                                _vm.id.student,
+                                _vm.student,
                                 "stream",
                                 $event.target.multiple
                                   ? $$selectedVal
@@ -51988,31 +51996,31 @@ var render = function() {
                             [_vm._v("Stream")]
                           ),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "Civil" } }, [
                             _vm._v("Civil Engineering")
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "Computer" } }, [
                             _vm._v("Computer Science and Engineering")
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "Electrical" } }, [
                             _vm._v("Electrical Engineering")
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "Electronics" } }, [
                             _vm._v("Electronics and Communication Engineering ")
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "Information" } }, [
                             _vm._v("Information Technology")
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "Mechenical" } }, [
                             _vm._v("Mechenical Engineering")
                           ]),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "" } }, [
+                          _c("option", { attrs: { value: "Production" } }, [
                             _vm._v("Production Engineering")
                           ])
                         ]
@@ -52029,8 +52037,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.section,
-                            expression: "id.student.section"
+                            value: _vm.student.section,
+                            expression: "student.section"
                           }
                         ],
                         staticClass: "form-control",
@@ -52039,14 +52047,14 @@ var render = function() {
                           name: "section",
                           placeholder: "Section"
                         },
-                        domProps: { value: _vm.id.student.section },
+                        domProps: { value: _vm.student.section },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "section",
                               $event.target.value
                             )
@@ -52065,8 +52073,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.id.student.shift,
-                              expression: "id.student.shift"
+                              value: _vm.student.shift,
+                              expression: "student.shift"
                             }
                           ],
                           staticClass: "form-control",
@@ -52082,7 +52090,7 @@ var render = function() {
                                   return val
                                 })
                               _vm.$set(
-                                _vm.id.student,
+                                _vm.student,
                                 "shift",
                                 $event.target.multiple
                                   ? $$selectedVal
@@ -52130,8 +52138,8 @@ var render = function() {
                               {
                                 name: "model",
                                 rawName: "v-model",
-                                value: _vm.id.student.training_semester,
-                                expression: "id.student.training_semester"
+                                value: _vm.student.training_semester,
+                                expression: "student.training_semester"
                               }
                             ],
                             attrs: {
@@ -52142,17 +52150,13 @@ var render = function() {
                             },
                             domProps: {
                               checked: _vm._q(
-                                _vm.id.student.training_semester,
+                                _vm.student.training_semester,
                                 "7"
                               )
                             },
                             on: {
                               change: function($event) {
-                                _vm.$set(
-                                  _vm.id.student,
-                                  "training_semester",
-                                  "7"
-                                )
+                                _vm.$set(_vm.student, "training_semester", "7")
                               }
                             }
                           }),
@@ -52170,8 +52174,8 @@ var render = function() {
                               {
                                 name: "model",
                                 rawName: "v-model",
-                                value: _vm.id.student.training_semester,
-                                expression: "id.student.training_semester"
+                                value: _vm.student.training_semester,
+                                expression: "student.training_semester"
                               }
                             ],
                             attrs: {
@@ -52182,17 +52186,13 @@ var render = function() {
                             },
                             domProps: {
                               checked: _vm._q(
-                                _vm.id.student.training_semester,
+                                _vm.student.training_semester,
                                 "8"
                               )
                             },
                             on: {
                               change: function($event) {
-                                _vm.$set(
-                                  _vm.id.student,
-                                  "training_semester",
-                                  "8"
-                                )
+                                _vm.$set(_vm.student, "training_semester", "8")
                               }
                             }
                           }),
@@ -52216,8 +52216,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.father_name,
-                            expression: "id.student.father_name"
+                            value: _vm.student.father_name,
+                            expression: "student.father_name"
                           }
                         ],
                         staticClass: "form-control",
@@ -52226,14 +52226,14 @@ var render = function() {
                           name: "fname",
                           placeholder: "Father's Name"
                         },
-                        domProps: { value: _vm.id.student.father_name },
+                        domProps: { value: _vm.student.father_name },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "father_name",
                               $event.target.value
                             )
@@ -52250,8 +52250,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.father_phone,
-                            expression: "id.student.father_phone"
+                            value: _vm.student.father_phone,
+                            expression: "student.father_phone"
                           }
                         ],
                         staticClass: "form-control",
@@ -52260,14 +52260,14 @@ var render = function() {
                           name: "fphone",
                           placeholder: "Father's Phone"
                         },
-                        domProps: { value: _vm.id.student.father_phone },
+                        domProps: { value: _vm.student.father_phone },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "father_phone",
                               $event.target.value
                             )
@@ -52286,8 +52286,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.mother_name,
-                            expression: "id.student.mother_name"
+                            value: _vm.student.mother_name,
+                            expression: "student.mother_name"
                           }
                         ],
                         staticClass: "form-control",
@@ -52296,14 +52296,14 @@ var render = function() {
                           name: "mname",
                           placeholder: "Mother's Name"
                         },
-                        domProps: { value: _vm.id.student.mother_name },
+                        domProps: { value: _vm.student.mother_name },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "mother_name",
                               $event.target.value
                             )
@@ -52320,8 +52320,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.mother_phone,
-                            expression: "id.student.mother_phone"
+                            value: _vm.student.mother_phone,
+                            expression: "student.mother_phone"
                           }
                         ],
                         staticClass: "form-control",
@@ -52330,14 +52330,14 @@ var render = function() {
                           name: "mphone",
                           placeholder: "Mother's Phone"
                         },
-                        domProps: { value: _vm.id.student.mother_phone },
+                        domProps: { value: _vm.student.mother_phone },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "mother_phone",
                               $event.target.value
                             )
@@ -52360,8 +52360,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.address,
-                            expression: "id.student.address"
+                            value: _vm.student.address,
+                            expression: "student.address"
                           }
                         ],
                         staticClass: "form-control",
@@ -52370,14 +52370,14 @@ var render = function() {
                           name: "address",
                           placeholder: "Address"
                         },
-                        domProps: { value: _vm.id.student.address },
+                        domProps: { value: _vm.student.address },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "address",
                               $event.target.value
                             )
@@ -52394,8 +52394,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.city,
-                            expression: "id.student.city"
+                            value: _vm.student.city,
+                            expression: "student.city"
                           }
                         ],
                         staticClass: "form-control",
@@ -52404,17 +52404,13 @@ var render = function() {
                           name: "city",
                           placeholder: "City"
                         },
-                        domProps: { value: _vm.id.student.city },
+                        domProps: { value: _vm.student.city },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(
-                              _vm.id.student,
-                              "city",
-                              $event.target.value
-                            )
+                            _vm.$set(_vm.student, "city", $event.target.value)
                           }
                         }
                       })
@@ -52430,8 +52426,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.district,
-                            expression: "id.student.district"
+                            value: _vm.student.district,
+                            expression: "student.district"
                           }
                         ],
                         staticClass: "form-control",
@@ -52440,14 +52436,14 @@ var render = function() {
                           name: "district",
                           placeholder: "District"
                         },
-                        domProps: { value: _vm.id.student.district },
+                        domProps: { value: _vm.student.district },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "district",
                               $event.target.value
                             )
@@ -52464,8 +52460,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.state,
-                            expression: "id.student.state"
+                            value: _vm.student.state,
+                            expression: "student.state"
                           }
                         ],
                         staticClass: "form-control",
@@ -52474,17 +52470,13 @@ var render = function() {
                           name: "state",
                           placeholder: "State"
                         },
-                        domProps: { value: _vm.id.student.state },
+                        domProps: { value: _vm.student.state },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(
-                              _vm.id.student,
-                              "state",
-                              $event.target.value
-                            )
+                            _vm.$set(_vm.student, "state", $event.target.value)
                           }
                         }
                       })
@@ -52498,8 +52490,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.id.student.pincode,
-                            expression: "id.student.pincode"
+                            value: _vm.student.pincode,
+                            expression: "student.pincode"
                           }
                         ],
                         staticClass: "form-control",
@@ -52508,14 +52500,14 @@ var render = function() {
                           name: "pincode",
                           placeholder: "Pincode"
                         },
-                        domProps: { value: _vm.id.student.pincode },
+                        domProps: { value: _vm.student.pincode },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.id.student,
+                              _vm.student,
                               "pincode",
                               $event.target.value
                             )
