@@ -29423,6 +29423,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     beforeCreate: function beforeCreate() {
@@ -29599,7 +29609,7 @@ var render = function() {
                   },
                   [_vm._v("Genconians")]
                 ),
-                _vm._v(" | © 2018 "),
+                _vm._v("\n                | © 2018 "),
                 _c(
                   "a",
                   {
@@ -29895,13 +29905,15 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "He is a Genconian. He is a B.Tech student in Computer Science and Engineering of 2015-19 batch. He has worked day-night on Cell's website. He has worked as Developer on the SPA and Vue.js part of "
+                      "He is a Genconian. He is a B.Tech student in Computer Science\n                                    and Engineering of 2015-19 batch. He has worked day-night on Cell's website. He\n                                    has worked as Developer on the SPA and Vue.js part of "
                     ),
                     _c("a", { attrs: { href: "https://www.tnpgndec.com" } }, [
-                      _vm._v("T&P Cell's website")
+                      _vm._v(
+                        "T&P\n                                        Cell's website"
+                      )
                     ]),
                     _vm._v(
-                      ". He is not even T&P member and still contributed to the cell."
+                      ". He is not even T&P member and still contributed to\n                                    the cell."
                     )
                   ]),
                   _vm._v(" "),
@@ -30022,7 +30034,7 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "He is a Genconian. He is a B.Tech student in IT of 2015-19 batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in development of "
+                      "He is a Genconian. He is a B.Tech student in IT of 2015-19\n                                    batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in\n                                    development of "
                     ),
                     _c(
                       "a",
@@ -30032,10 +30044,14 @@ var staticRenderFns = [
                           target: "blank"
                         }
                       },
-                      [_vm._v("college's website")]
+                      [
+                        _vm._v(
+                          "college's\n                                        website"
+                        )
+                      ]
                     ),
                     _vm._v(
-                      ". He is also a film-maker and photographer, pursuing it from 1st years of his college. He contributed as Media Consultant to "
+                      ". He is also a film-maker and photographer, pursuing it from 1st\n                                    years of his college. He contributed as Media Consultant to "
                     ),
                     _c("a", { attrs: { href: "https://www.tnpgndec.com" } }, [
                       _vm._v(
@@ -50579,7 +50595,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -50591,6 +50607,45 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -50710,10 +50765,10 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-12" }, [
+      _c("div", { staticClass: "col-xs-12 col-lg-8 mx-auto" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-body" }, [
-            _c("h4", { staticClass: "card-title" }, [
+            _c("h5", { staticClass: "text-center" }, [
               _vm._v("Terms and Conditions")
             ]),
             _vm._v(" "),
@@ -50742,7 +50797,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row page-titles" }, [
-      _c("div", { staticClass: "col-md-6 col-8 align-self-center" })
+      _c("div", { staticClass: "col-xs-6 col-8 align-self-center" })
     ])
   },
   function() {
@@ -50750,13 +50805,107 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("input", {
-          attrs: { type: "checkbox", name: "terms", required: "required" }
-        }),
-        _vm._v(
-          " I Agree to the terms and conditions given above \n                                "
-        )
+      _c("div", { staticClass: "col-xs-12 col-md-11 mx-auto" }, [
+        _c("ol", [
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v("Students must fill all the details accurately.")
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "The credentials that you mention should match\n                                        with your original documents."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "No redundancy should be there in the\n                                        information provided."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "Students should make sure that their Email\n                                        id’s and Mobile numbers are filled accurately."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "Students should check the gazettes properly\n                                        before filling the semester details."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "Students must mention their height in\n                                        centimetres and weight in kgs."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "The format for Date of birth should be\n                                        (dd/mm/yyyy)."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v("Initials of name must be in Upper-case.")
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "The validity of category certificates should\n                                        be checked before filling."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "The year gap should be mentioned properly. For\n                                        eg. If you have dropped one year after your 12th or Diploma then the year\n                                        gap is ‘1’."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "Students should fill their Active and Passive\n                                        backlogs accurately."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "Active backlogs are the pending backlogs that\n                                        are yet to be cleared and the Passive backlogs are the one that has been\n                                        cleared."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v("For Active Backlogs put SGPA as 0.")
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "Students must fill their 10th CGPA or\n                                        Percentage depending upon their examination boards."
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticStyle: { "text-align": "justify" } }, [
+            _vm._v(
+              "Don’t forge the documents else strict\n                                        action will be taken against you."
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xs-12 col-lg-8 mx-auto form-group" }, [
+          _c("input", {
+            staticClass: "form-check-input",
+            attrs: { type: "checkbox", name: "terms", required: "required" }
+          }),
+          _vm._v(" "),
+          _c("strong", [
+            _vm._v(
+              " I Agree to the\n                                        terms and\n                                        conditions given above\n                                    "
+            )
+          ])
+        ])
       ])
     ])
   },
@@ -50765,8 +50914,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("input", { attrs: { type: "submit", value: "Submit" } })
+      _c("div", { staticClass: "col-xs-8 mx-auto text-center form-group" }, [
+        _c("input", {
+          staticClass: "btn btn-primary btn-block",
+          attrs: { type: "submit", value: "I Agree" }
+        })
       ])
     ])
   }
