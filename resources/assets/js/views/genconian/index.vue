@@ -149,11 +149,10 @@
                                     <h4 class="card-title">Karamveer Singh</h4>
                                     <p class="card-subtitle">Developer</p>
                                     <p class="card-text">He is a Genconian. He is a B.Tech student in Computer Science
-                                        and Engineering of 2015-19 batch. He has been working day-night on T&amp;P
-                                        Cell's website. He has worked as Developer on the SPA and
-                                        Vue.js part of <a href="https://www.tnpgndec.com">T&amp;P Cell's website</a>.
-                                        He is not even a member of T&amp;P Cell and has contributed a lot to the
-                                        website.</p>
+                                        and Engineering of 2015-19 batch. He has worked day-night on Cell's website. He
+                                        has worked as Developer on the SPA and Vue.js part of <a href="https://www.tnpgndec.com">T&amp;P
+                                            Cell's website</a>. He is not even T&amp;P member and still contributed to
+                                        the cell.</p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
                                             <a class="social-icon" target="_blank" href="https://www.facebook.com/loveforeverKM">
@@ -196,14 +195,18 @@
                 <h5 class="thanks-title h1">CONTRIBUTORS</h5>
                 <div class="row">
                     <!-- Team member -->
-                    <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="frontside">
                             <div class="card con-card">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="/images/genconian/simranjeet.jpg" alt="card image"></p>
                                     <h4 class="card-title">Simranjeet Singh</h4>
                                     <p class="card-subtitle">Media Consultant</p>
-                                    <p class="card-text">He is a Genconian. He is a B.Tech student in IT of 2015-19 batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in development of <a href="https://www.gndec.ac.in" target="blank">college's website</a>. He is also a film-maker and photographer, pursuing it from 1st years of his college. He contributed as Media Consultant to <a href="https://www.tnpgndec.com">T&amp;P
+                                    <p class="card-text">He is a Genconian. He is a B.Tech student in IT of 2015-19
+                                        batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in
+                                        development of <a href="https://www.gndec.ac.in" target="blank">college's
+                                            website</a>. He is also a film-maker and photographer, pursuing it from 1st
+                                        years of his college. He contributed as Media Consultant to <a href="https://www.tnpgndec.com">T&amp;P
                                             Cell's website.</a></p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
@@ -305,18 +308,20 @@
             <div class="container">
                 <h5 class="thanks-title h1">Have a query?</h5>
                 <p class="thanks-subtitle h3">Feel Free<br>Ask anything?</p>
-                    <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" class="mb-5">
-                        <div class="form-group">
-                            <label for="question" style="color:#038ed4">Query/Suggestion:</label>
-                            <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%">
-                        </div>
-                        <input type="submit" value="Send" class="btn btn-primary btn-block">
-                    </form>
+                <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" class="mb-5">
+                    <div class="form-group">
+                        <label for="question" style="color:#038ed4">Query/Suggestion:</label>
+                        <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%">
+                    </div>
+                    <input type="submit" value="Send" class="btn btn-primary btn-block">
+                </form>
             </div>
         </section>
 
         <footer class="container-fluid footer mt-3 bg-dark" style="left:0">
-            <p class="text-center" style="color:white"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i></span> by <router-link to="/genconian" style="color:white">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/" target="_blank" style="color:white">GNDEC, Ldh</a></small></p>
+            <p class="text-center" style="color:white"><small>Developed with <span class="text-danger"><i class="fa fa-heart"
+                            aria-hidden="true"></i></span> by <router-link to="/genconian" style="color:white">Genconians</router-link>
+                    | © 2018 <a href="https://www.gndec.ac.in/" target="_blank" style="color:white">GNDEC, Ldh</a></small></p>
         </footer>
     </div>
 </template>
@@ -326,8 +331,8 @@
             var vm = this;
             Vue.nextTick(function () {
                 $('#customers-testimonials').owlCarousel({
-                    loop: true,
-                    center: true,
+                    loop: false,
+                    center: false,
                     items: 3,
                     margin: 30,
                     autoplay: true,
@@ -352,7 +357,7 @@
             Vue.nextTick(function () {
                 $('#contact').owlCarousel({
                     loop: true,
-                    center: true,
+                    center: false,
                     items: 3,
                     margin: 30,
                     autoplay: true,
@@ -451,7 +456,7 @@
         overflow: hidden;
         top: 90px;
     }
-    
+
     /* 
     Our Team
      */
@@ -524,7 +529,7 @@
         width: 120px;
         border-radius: 50%;
     }
-    
+
     .con-card {
         border: solid #038ed4;
         border-radius: 20px;
