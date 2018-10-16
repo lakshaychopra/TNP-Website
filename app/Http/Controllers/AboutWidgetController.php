@@ -8,7 +8,7 @@ use DB;
 use Exception;
 use Notification;
 use JWTAuth;
-use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\CreateAboutWidgetRequest;
 use App\Services\PostService;
 use App\Repositories\AboutRepository;
 
@@ -52,7 +52,7 @@ class AboutWidgetController extends Controller
      * @param  \App\Models\AboutWidget  $aboutWidget
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AboutWidget $aboutWidget)
+    public function update(CreateAboutWidgetRequest $request, AboutWidget $aboutWidget)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {

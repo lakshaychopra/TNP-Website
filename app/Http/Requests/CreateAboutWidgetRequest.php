@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class HomePageRequest extends FormRequest
+class CreateAboutWidgetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,12 @@ class HomePageRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'about_address'   => 'bail|required',
+            'about_location'  => 'required',
+            'about_phone'     => 'nullable',
+            'about_website'   => 'nullable|url',
+            'about_email'     => 'nullable|email',
+            'about_fax'       => 'nullable',   
         ];
     }
 }
