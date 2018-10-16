@@ -9,49 +9,49 @@ use Exception;
 use Notification;
 use JWTAuth;
 use App\Http\Requests\CreateAboutWidgetRequest;
-use App\Services\PostService;
 use App\Repositories\AboutRepository;
+use App\Services\AboutWidgetService;
 
 
 class AboutWidgetController extends Controller
 {
-
-    public function __construct( $service,AboutRepository $repository)
+    
+    public function __construct(AboutWidgetService $service,AboutRepository $repository)
     {
         $this->service = $service;
         $this->repository = $repository;
     }
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\AboutWidget  $aboutWidget
-     * @return \Illuminate\Http\Response
-     */
+    * Display the specified resource.
+    *
+    * @param  \App\Models\AboutWidget  $aboutWidget
+    * @return \Illuminate\Http\Response
+    */
     public function show(AboutWidget $aboutWidget)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         return $this->respondData($aboutWidget);
     }
-
+    
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AboutWidget  $aboutWidget
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for editing the specified resource.
+    *
+    * @param  \App\Models\AboutWidget  $aboutWidget
+    * @return \Illuminate\Http\Response
+    */
     public function edit(AboutWidget $aboutWidget)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         return $this->respondData($aboutWidget);
     }
-
+    
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AboutWidget  $aboutWidget
-     * @return \Illuminate\Http\Response
-     */
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  \App\Models\AboutWidget  $aboutWidget
+    * @return \Illuminate\Http\Response
+    */
     public function update(CreateAboutWidgetRequest $request, AboutWidget $aboutWidget)
     {
         $auth = JWTAuth::parseToken()->authenticate();
@@ -75,14 +75,14 @@ class AboutWidgetController extends Controller
             return $this->respondException($e);
         }
     }
-
+    
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\AboutWidget  $aboutWidget
-     * @return \Illuminate\Http\Response
-     */
-   
+    * Remove the specified resource from storage.
+    *
+    * @param  \App\Models\AboutWidget  $aboutWidget
+    * @return \Illuminate\Http\Response
+    */
+    
     public function aboutWidgets(AboutWidget $aboutWidget)
     {
         $aboutWidget = AboutWidget::all();

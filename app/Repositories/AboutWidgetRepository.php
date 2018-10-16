@@ -47,14 +47,12 @@ class AboutWidgetRepository
     private function setPayload(array $payload)
 	{
 		return [
-			'title'              => $payload['title'],
-			'body'				 => $payload['body'],
-			'username'	 	     => $payload['username'],
-			'user_id'	 	     => $payload['user_id'],
-			'tag'	 	         => $payload['tag'],
-			'category'	 	     => $payload['category'],
-			'post_link'	 	     => $payload['post_link'],
-			'image'	         	 => $payload['image'],
+			'about_address'      => $payload['about_address'],
+			'about_location'	 => $payload['about_location'],
+			'about_phone'	 	 => $payload['about_phone'],
+			'about_website'	 	 => $payload['about_website'],
+			'about_email'	 	 => $payload['about_email'],
+			'about_fax'	 	     => $payload['about_fax'],
 		];
 	}
 }
