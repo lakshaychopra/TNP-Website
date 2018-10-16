@@ -24,8 +24,8 @@ class CreateStudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'univ_roll_no'            =>    'nullable',
-            'class_roll_no'           =>    'nullable',
+            'univ_roll_no'            =>    'required',
+            'class_roll_no'           =>    'required',
             'name'                    =>    'nullable',
             'batch'                   =>    'nullable',
             'branch_type'             =>    'nullable',

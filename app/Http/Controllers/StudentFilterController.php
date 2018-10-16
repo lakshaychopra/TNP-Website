@@ -25,14 +25,14 @@ class StudentFilterController extends Controller
                 // ["student_form_step", "=", "SUBMITTED"]
                 // ])
             return compact($user);
-                // return $aadhaar_no;
+                // return $univ_roll_no;
             // $student = Student::where([
-            //     "aadhaar_no", "=",$aadhaar_no->username
+            //     "univ_roll_no", "=",$univ_roll_no->username
             // ])->toArray();
             // for ($j=0; $j < 3; $j++) { 
 
             //     $pe = PreviousEducation::where([
-            //         "aadhaar_no", "=",$aadhaar_no->username
+            //         "univ_roll_no", "=",$univ_roll_no->username
             //     ])->toArray();
             // }
             // $data[] = [
