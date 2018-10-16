@@ -31,7 +31,6 @@ class StudentsController extends Controller
         $auth = JWTAuth::parseToken()->authenticate();
         $limit  = $request->input('limit') ?? 6;
         $students = $this->repository->list($limit);
-        // return \Fractal::collection($posts, new PostTransformer, 'post');
         return $this->respondData($students);
     }
     
