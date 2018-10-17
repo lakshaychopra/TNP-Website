@@ -50,13 +50,13 @@ class StudentsController extends Controller
     * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\Response
     */
-    public function store(CreateStudentRequest $request)
+    public function store(Request $request)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
             if (!$auth) {
-                return $this->respondUnauthorized('Post Failed');
+                return $this->respondUnauthorized('Failed');
             }
             $data = $request->only('univ_roll_no');
             $student = new Student;
