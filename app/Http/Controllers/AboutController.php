@@ -30,8 +30,8 @@ class AboutController extends Controller
     {
         $auth = JWTAuth::parseToken()->authenticate();
         $limit  = $request->input('limit') ?? 10;
-        $posts = $this->repository->list($limit);
-        return $this->respondData($posts);
+        $about = $this->repository->list($limit);
+        return $this->respondData($about);
     }
 
 
@@ -47,7 +47,7 @@ class AboutController extends Controller
         try {
             DB::beginTransaction();
             if (!$auth) {
-                return $this->respondUnauthorized('About Failed');
+                return $this->respondUnauthorized('Failed');
             }
             $about = $request->all();
             if ($request->hasFile('image')) {
@@ -95,7 +95,7 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateAbouttRequest $request,About $about)
+    public function update(CreateAboutRequest $request,About $about)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
@@ -128,8 +128,6 @@ class AboutController extends Controller
     public function destroy(About $about)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        // $post['image'] = $this->service->deletePostImage($post);
-        // $delete = Post::destroy($post->id);
         $delete = $this->repository->delete($about);
         $index= About::orderBy('created_at', 'desc')->get();
         return $this->respondSuccess('Deleted', $index);

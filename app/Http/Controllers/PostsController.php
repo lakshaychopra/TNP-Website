@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
-use App\Services\PostService;
-use App\Notifications\PostNotification;
 use DB;
 use Exception;
 use Notification;
 use JWTAuth;
+use App\Services\PostService;
 use App\Repositories\PostRepository;
-use App\Transformers\PostTransformer;
 
 class PostController extends Controller
 {
@@ -33,7 +31,6 @@ class PostController extends Controller
         $auth = JWTAuth::parseToken()->authenticate();
         $limit  = $request->input('limit') ?? 6;
         $posts = $this->repository->list($limit);
-        // return \Fractal::collection($posts, new PostTransformer, 'post');
         return $this->respondData($posts);
     }
     
@@ -49,7 +46,7 @@ class PostController extends Controller
         try {
             DB::beginTransaction();
             if (!$auth) {
-                return $this->respondUnauthorized('Post Failed');
+                return $this->respondUnauthorized('Failed');
             }
             $post = $request->all();
             if ($request->hasFile('image')) {
@@ -131,8 +128,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        // $post['image'] = $this->service->deletePostImage($post);
-        // $delete = Post::destroy($post->id);
         $delete = $this->repository->delete($post);
         $index= Post::orderBy('created_at', 'desc')->get();
         return $this->respondSuccess('Deleted', $index);
