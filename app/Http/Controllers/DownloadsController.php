@@ -12,6 +12,11 @@ use JWTAuth;
 
 class DownloadsController extends Controller
 {
+    public function __construct( $service, $repository)
+    {
+        $this->service = $service;
+        $this->repository = $repository;
+    }
     /**
     * Display a listing of the resource.
     *
@@ -26,16 +31,6 @@ class DownloadsController extends Controller
     }
     
     /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function create()
-    {
-        //
-    }
-    
-    /**
     * Store a newly created resource in storage.
     *
     * @param  \Illuminate\Http\Request  $request
@@ -47,16 +42,16 @@ class DownloadsController extends Controller
         try {
             DB::beginTransaction();
             if (!$auth) {
-                return $this->respondUnauthorized('Upload Failed');
+                return $this->respondUnauthorized('Failed');
             }
             $download = $request->all();
-            $ext = $download->getClientOriginalExtension();
-            $type = $this->getType($ext);
             if ($request->hasFile('file')) {
                 $download['file'] = $this->service->uploadDownloadService($download);
             }
-            DB::commit();
+            $ext = $download->getClientOriginalExtension();
+            $type = $this->getType($ext);
             $downloadCreate = $this->service->createDownload($download);
+            DB::commit();
             return $this->respondSuccess('Uploaded', $downloadCreate); 
         }
         catch (Exception $e) {
@@ -96,9 +91,29 @@ class DownloadsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, $id)
+    public function update(CreateDownloadRequest $request, Download $download)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if(!$auth){
+                return $this->respondError('Failed', 401); 
+            }
+            $data = $request->all();
+            if ($request->hasFile('file')) {
+                $download['file'] = $this->service->uploadDownloadService($download);
+            }
+            // $post->title = $request->title;
+            // $post->body = $request->body;
+            // $post->tag = $request->tag;
+            // $post->category = $request->category;
+            $download->save(); 
+            DB::commit();
+            return $this->respondSuccess('Updated',$download);
+        } catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
     
     /**
@@ -107,8 +122,17 @@ class DownloadsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function destroy($id)
+    public function destroy(Download $download)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $delete = $this->repository->delete($post);
+        $index= Download::orderBy('created_at', 'desc')->get();
+        return $this->respondSuccess('Deleted', $index);
+    }
+    
+    public function linksDownload()
+    {
+        $download['data'] = Download::select('file_link','title')->get();
+        return $this->respondData($download);
     }
 }
