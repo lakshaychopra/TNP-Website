@@ -98,22 +98,14 @@
             </nav>
         </div>
         <!--
-*************
 NAVBAR
-*************
 -->
-
-
-        <!--
-         ############
-         image
-         ############
-         -->
+        <!-- image   -->
         <div class="row mb-5 mx-0" style="position:relative">
             <div class="bgimage">
-                <div class="mb-5 ml-5 mr-5 bottom-left">
-                    <h1 class="text-color12">Training &amp; Placement Cell</h1>
-                    <h5 class="text-color12 text-justify">
+                <div class="mb-5 ml-3 mr-3 bottom-left bgimgtext">
+                    <h1>Training &amp; Placement Cell</h1>
+                    <h5 class="text-justify">
                         The goal of Training & Placement Cell is to provide students with a platform for using their
                         potential to gain valuable experience by working in industry ,it also acts as the interface
                         between various companies seeking talented young graduates and post graduates in various
@@ -123,13 +115,11 @@ NAVBAR
             </div>
         </div>
         <!--
-         ##########################
          career development
-         ##########################
          -->
         <div class="container">
             <div class="row mb-5 ">
-                <div class="col-md-12  text-center  mt-5  mb-5">
+                <div class="col-md-12 text-center mt-3 mb-3">
                     <h2>
                         <strong>Career Development</strong>
                     </h2>
@@ -178,31 +168,26 @@ NAVBAR
             </div>
         </div>
         <!--
-         ##########################
          our heritage and values
-         ##########################
          -->
-        <div class="row text-color12 text-center mb-5 mx-0">
+        <div class="col-md-12 text-center mb-3">
+            <h2>
+                <strong>Our Heritage and Values</strong>
+            </h2>
+        </div>
+        <div class="row text-center mb-5 mx-0">
             <div class="bgimage2">
                 <div class="p-top">
-                    <h2 class="text-color12">
-                        <strong>Our Heritage and Values</strong>
-                    </h2>
                     <h5 class="text-color12">
                         <strong>We're proud of our heritage and values based on creativity and innovation.Discover the
                             best platform
                             to solidify your career.</strong>
                     </h5>
-                    <div class="mt-3">
-                        <button class="btn btn-primary pt-2 pb-2 px-3">Discover</button>
-                    </div>
                 </div>
             </div>
         </div>
         <!--
-         ##########################
          news and highlights
-         ##########################
          -->
         <div class="container">
             <div class="row">
@@ -261,6 +246,11 @@ NAVBAR
         </div>
 
         <!--  people for T&amp;P-->
+        <div class="col-md-12 text-center mt-5 mb-5">
+            <h2>
+                <strong>Faculty Members</strong>
+            </h2>
+        </div>
         <div id="demo" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -287,11 +277,11 @@ NAVBAR
                 </div>
                 <div class="carousel-item">
                     <div class="mar-top" data-target="#demo" data-slide-to="2">
-                        <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
+                        <img src="images/about/img/bagga.jpeg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
                         <div class="owl--text">
                             <strong>Prof. Sachin Bagga</strong>
-                            <p>Faculty Co-ordinator</p>
+                            <p>Faculty Co Cordinator</p>
                             <p>Training &amp; Placement Cell</p>
                         </div>
                     </div>
@@ -525,14 +515,22 @@ NAVBAR
     .bgimage {
         background-image: url('/images/about/img/bg-img.jpg');
         width: 100%;
-        height: 100vh;
+        height: 75vh;
         background-size: cover;
+    }
+
+    .bgimgtext {
+        position: absolute;
+        background: rgba(255, 255, 255, .5);
+        border-radius: 5px;
+        padding: 1em;
     }
 
     .bottom-left {
         position: absolute;
         bottom: 8px;
     }
+
 
     .bgimage2 {
         background-image: url('/images/about/img/bgimg2.jpg');
@@ -832,7 +830,7 @@ NAVBAR
                     autoWidth: true,
                     margin: 30,
                     stagePadding: 50,
-                    nav: true,
+                    nav: false,
 
                 });
             }.bind(vm));
