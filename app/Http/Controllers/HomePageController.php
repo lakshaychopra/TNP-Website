@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\HomePage;
 use Illuminate\Http\Request;
-use App\Repositories\HomePageRepository;
-use App\Http\Requests\HomePageRequest;
+use App\Http\Requests\CreateHomePageRequest;
 use Exception;
 use Excel;
 use JWTAuth;
 use DB;
+use App\Services\HomePageService;
+use App\Repositories\HomePageRepository;
 
 class HomePageController extends Controller
 {
-    public function __construct(HomePageRepository $repository)
+    public function __construct(HomePageService $service,HomePageRepository $repository)
     {
+        $this->service = $service;
         $this->repository = $repository;
     }
     
@@ -24,11 +26,10 @@ class HomePageController extends Controller
     * @param  \App\Models\HomePage  $homePage
     * @return \Illuminate\Http\Response
     */
-    public function show($homePage = 1)
+    public function show(HomePage $homePage)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        $data = Student::where('id', '=' , $homePage)->get();
-        return $this->respondData($data);
+        return $this->respondData($homePage);
     }
     
     /**
@@ -37,11 +38,10 @@ class HomePageController extends Controller
     * @param  \App\Models\HomePage  $homePage
     * @return \Illuminate\Http\Response
     */
-    public function edit($homePage = 1)
+    public function edit(HomePage $homePage)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        $data = Student::where('id', '=' , $homePage)->get();
-        return $this->respondData($data);
+        return $this->respondData($homePage);
     }
     
     /**
@@ -51,7 +51,7 @@ class HomePageController extends Controller
     * @param  \App\Models\HomePage  $homePage
     * @return \Illuminate\Http\Response
     */
-    public function update(HomePageRequest $request, HomePage $homePage)
+    public function update(CreateHomePageRequest $request, HomePage $homePage)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
@@ -60,11 +60,16 @@ class HomePageController extends Controller
                 return $this->respondUnauthorized('Failed');
             }
             $data = $request->all();
-            $id = $request->id;
-            $homePage = HomePage::find($id);
+            $homePage->office_type = $request->office_type;
+            $homePage->office_widget = $request->office_widget;
+            $homePage->office_name = $request->office_name;
+            $homePage->office_position = $request->office_position;
+            $homePage->office_email = $request->office_email;
+            $homePage->office_phone = $request->office_phone;
             if ($request->hasFile('office_picture')) {
                 $data['office_picture'] = $this->repository->uploadOfficeImageService($data);
             } 
+
             $homePageUpdate = $homePage->update($data);
             DB::commit();
             return $this->respondSuccess('Updated', $homePageUpdate);
