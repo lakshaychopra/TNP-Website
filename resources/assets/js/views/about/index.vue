@@ -246,9 +246,9 @@ NAVBAR
         </div>
 
         <!--  people for T&amp;P-->
-        <div class="col-md-12 text-center mt-5 mb-5">
+        <div class="col-md-12 text-center mb-3">
             <h2>
-                <strong>Faculty Members</strong>
+                <strong>Our Faculty Members</strong>
             </h2>
         </div>
         <div id="demo" class="carousel slide" data-ride="carousel">
