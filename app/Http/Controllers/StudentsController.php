@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Student;
 use App\Repositories\StudentRepository;
 use App\Http\Requests\CreateStudentRequest;
+use App\Http\Requests\UpdateStudentRequest;
 use App\Services\StudentService;
 use DB;
 use Exception;
@@ -50,7 +51,7 @@ class StudentsController extends Controller
     * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\Response
     */
-    public function store(Request $request)
+    public function store(CreateStudentRequest $request)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
@@ -106,7 +107,7 @@ class StudentsController extends Controller
     * @return \Illuminate\Http\Response
     */
     
-    public function update(CreateStudentRequest $request, Student $student)
+    public function update(UpdateStudentRequest $request, Student $student)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
