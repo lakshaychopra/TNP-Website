@@ -4,19 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutWidget;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateAboutWidgetRequest;
 use DB;
 use Exception;
 use Notification;
 use JWTAuth;
-use App\Http\Requests\CreateAboutWidgetRequest;
-use App\Repositories\AboutRepository;
+use App\Repositories\AboutWidgetRepository;
 use App\Services\AboutWidgetService;
 
 
 class AboutWidgetController extends Controller
 {
     
-    public function __construct(AboutWidgetService $service,AboutRepository $repository)
+    public function __construct(AboutWidgetService $service,AboutWidgetRepository $repository)
     {
         $this->service = $service;
         $this->repository = $repository;
@@ -61,12 +61,12 @@ class AboutWidgetController extends Controller
                 return $this->respondError('Failed', 401); 
             }
             $data = $request->all();
-            $aboutWidget->title = $request->title;
-            $aboutWidget->body = $request->body;
-            $aboutWidget->category = $request->category;
-            if ($request->hasFile('image')) {
-                $aboutWidget['image'] = $this->service->uploadAboutWidgetImageService($data);
-            } 
+            $aboutWidget->about_address = $request->about_address;
+            $aboutWidget->about_location = $request->about_location;
+            $aboutWidget->about_phone = $request->about_phone;
+            $aboutWidget->about_website = $request->about_website;
+            $aboutWidget->about_email = $request->about_email;
+            $aboutWidget->about_fax = $request->about_fax;
             $aboutWidget->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$aboutWidget);
