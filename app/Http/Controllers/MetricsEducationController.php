@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\MetricsEducation;
+use Illuminate\Http\Request;
 use DB;
 use Exception;
 use Notification;
@@ -29,16 +29,6 @@ class MetricsEducationController extends Controller
         $limit  = $request->input('limit') ?? 6;
         $me = $this->repository->list($limit);
         return $this->respondData($me);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -74,9 +64,10 @@ class MetricsEducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(MetricsEducation $me)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        return $this->respondData($me);
     }
 
     /**
@@ -85,9 +76,10 @@ class MetricsEducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(MetricsEducation $me)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        return $this->respondData($me);
     }
 
     /**
@@ -97,9 +89,26 @@ class MetricsEducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, MetricsEducation $me)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if(!$auth){
+                return $this->respondError('Failed', 401); 
+            }
+            $data = $request->all();
+            $me->title = $request->title;
+            $me->body = $request->body;
+            $me->tag = $request->tag;
+            $me->category = $request->category;
+            $me->save(); 
+            DB::commit();
+            return $this->respondSuccess('Updated',$me);
+        } catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
 
     /**
