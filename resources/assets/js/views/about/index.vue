@@ -132,28 +132,9 @@
                 </div>
             </div>
         </div>
-        <!--
-         our heritage and values
-         -->
-        <!-- <div class="col-md-12 text-center mb-3">
-            <h2>
-                <strong>Our Heritage and Values</strong>
-            </h2>
-        </div>
-        <div class="row text-center mb-5 mx-0">
-            <div class="bgimage1">
-                <div class="p-top">
-                    <h5 class="text-color12">
-                        <strong>We're proud of our heritage and values based on creativity and innovation.Discover the
-                            best platform
-                            to solidify your career.</strong>
-                    </h5>
-                </div>
-            </div>
-        </div> -->
 
         <!--news and highlights-->
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 d-lg-none text-center">
             <h2>
                 <strong>News And Highlights</strong>
             </h2>
@@ -162,21 +143,24 @@
             <div class="row mb-5">
                 <div class="col-md-2 d-none d-lg-block">
                     <h1>News And Highlights</h1>
-                    <div id="bor-left" class="mb-3 mt-3">
+                    <div class="bor-left mb-3 mt-3">
                         <small>POSTS</small>
                     </div>
-                    <h5>Announcement</h5>
                 </div>
                 <div class="col-md-10 col-xs-12">
-                    <div class="col-md-4 float-left" v-for="post in posts" :key="post.id">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/about/img/cimage1.jpg" alt="image" width="100%" />
-                            </div>
-                            <div class="card-title text-center mt-2">
-                                <small>{{post.category}}</small>
-                                <h5>{{post.title}}</h5>
-                            </div>
+                    <div class="owl-carousel" id="news-testimonials">
+                        <div class="col-md-4 float-left item" v-for="post in posts" :key="post.id">
+                            <router-link v-bind:to="'/view/'+post.id">
+                                <div class="card">
+                                    <div class="card-news">
+                                        <img src="images/about/img/bgtnp.png" alt="image" width="100%" />
+                                    </div>
+                                    <div class="card-title text-center mt-2">
+                                        <small>{{post.category}}</small>
+                                        <h5>{{post.title}}</h5>
+                                    </div>
+                                </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -473,12 +457,6 @@
         padding-top: 400px;
     }
 
-    #bor-left {
-        border-left: 4px solid #ef7f11;
-        padding-left: 10px;
-    }
-
-
     #demo .carousel-indicators {
         position: absolute;
         top: 0;
@@ -600,9 +578,14 @@
         }
     }
 
+    .card-news {
+        border: solid #038ed4 2px;
+        border-radius: 15px;
+    }
+
     .bor-left {
-        border-left: 1px solid #fff;
-        height: 200px;
+        border-left: 4px solid #ef7f11;
+        padding-left: 10px;
     }
 
     .icons {
@@ -791,6 +774,31 @@
                 });
             }.bind(vm));
             Vue.nextTick(function () {
+                $("#news-testimonials").owlCarousel({
+                    loop: true,
+                    center: false,
+                    items: 3,
+                    margin: 10,
+                    autoplay: false,
+                    dots: false,
+                    nav: false,
+                    autoplayTimeout: 8500,
+                    smartSpeed: 600,
+                    lazyLoad: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 2
+                        },
+                        1170: {
+                            items: 3
+                        }
+                    }
+                });
+            }.bind(vm));
+           Vue.nextTick(function () {
                 $('#customers-testimonials').owlCarousel({
                     loop: true,
                     center: true,
