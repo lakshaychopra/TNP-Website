@@ -85,7 +85,7 @@
 
         <!--career development-->
         <div class="container">
-            <div class="row mb-5 mt-3">
+            <div class="row mb-3 mt-3">
                 <div class="col-md-12 text-center">
                     <h2>
                         <strong>Career Development</strong>
@@ -160,53 +160,22 @@
         </div>
         <section class="container">
             <div class="row mb-5">
-                <div class="col-md-2">
+                <div class="col-md-2 d-none d-lg-block">
                     <h1>News And Highlights</h1>
                     <div id="bor-left" class="mb-3 mt-3">
                         <small>POSTS</small>
                     </div>
                     <h5>Announcement</h5>
                 </div>
-                <div class="col-md-10">
-                    <div class="col-md-4 float-left">
+                <div class="col-md-10 col-xs-12">
+                    <div class="col-md-4 float-left" v-for="post in posts" :key="post.id">
                         <div class="card">
                             <div class="card-image">
                                 <img src="images/about/img/cimage1.jpg" alt="image" width="100%" />
                             </div>
                             <div class="card-title text-center mt-2">
-                                <small>CAMPAIGN</small>
-                                <h5>Hiring SAP Professionals!</h5>
-                            </div>
-                            <div class="card-body text-justify ">
-                                <p>Collaborate with our top banking customer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 float-right">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/about/img/cimage2.jpg" alt="image" width="100%" />
-                            </div>
-                            <div class="card-title text-center mt-2">
-                                <small>CAMPAIGN</small>
-                                <h5>Shape the Future</h5>
-                            </div>
-                            <div class="card-body text-justify">
-                                <p>Develop What's Next with T&amp;P BPS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 float-right">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/about/img/cimage3.jpg" alt="image" width="100%" />
-                            </div>
-                            <div class="card-title text-center mt-2">
-                                <small>CAMPAIGN</small>
-                                <h5>The most popular Global!</h5>
-                            </div>
-                            <div class="card-body text-justify">
-                                <p>Register for CodeVista Season 7 Now!</p>
+                                <small>{{post.category}}</small>
+                                <h5>{{post.title}}</h5>
                             </div>
                         </div>
                     </div>
@@ -763,13 +732,15 @@
     import 'owl.carousel2/dist/assets/owl.carousel.css';
     import 'owl.carousel2/dist/owl.carousel.min.js';
     import {
-        pageLinkWidget
+        pageLinkWidget,
+        addHomePostURL
     } from "../../config.js";
     export default {
         data() {
             return {
                 nav: false,
                 page: {},
+                posts: {},
             }
         },
         created() {
@@ -778,7 +749,13 @@
                     this.page = response.data.data.data;
                 })
                 .catch((error) => console.log(error))
+            axios.get(addHomePostURL)
+                .then((response) => {
+                    this.posts = response.data.data.data;
+                })
+                .catch((error) => console.log(error))
         },
+
         beforeCreate() {
             var vm = this;
             Vue.nextTick(function () {

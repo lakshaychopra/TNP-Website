@@ -134,7 +134,6 @@
         created() {
             axios.get(officeWidget)
                 .then((response) => {
-                    // console.log(response.data.data);
                     this.office = response.data.data;
                 })
                 .catch((error) => console.log(error))

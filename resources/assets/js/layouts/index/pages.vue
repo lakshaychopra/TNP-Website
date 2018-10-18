@@ -10,14 +10,16 @@
                     </div>
 
                     <div class="col" id="main">
-                        <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts" v-if="pinned_posts.length>0">
+                        <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts"
+                            v-if="pinned_posts.length>0">
                             <div class="col-md-12">
                                 <div class="card card-primary">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-md-1 d-none d-md-block">
                                                 <router-link to="/">
-                                                    <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
+                                                    <img class=" mt-2" src="/images/icons/120x120.png" width="48px"
+                                                        height="48px" alt="logo-tpo">
                                                 </router-link>
                                             </div>
                                             <div class="col-md-11 pl-4">
@@ -25,7 +27,8 @@
                                                     <div class="col-md-12">
 
                                                         <h2>
-                                                            <router-link :to="{ name: 'view', params: { id:pin.id }}" :searchbox="false">
+                                                            <router-link :to="{ name: 'view', params: { id:pin.id }}"
+                                                                :searchbox="false">
                                                                 <a href="#">{{pin.title}}</a>
                                                             </router-link>
                                                         </h2>
@@ -67,8 +70,8 @@
 
                                     <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
 
-                                    <div class="card-img-top" data-toggle="modal" v-if="pin.image != null" data-target="#exampleModal" :style="getImage(pin.image)"
-                                        :postImage="pin.image">
+                                    <div class="card-img-top" data-toggle="modal" v-if="pin.image != null" data-target="#exampleModal"
+                                        :style="getImage(pin.image)" :postImage="pin.image">
                                         <!-- <img :src="getImage(post.image_path)" alt=""> -->
                                     </div>
 
@@ -98,14 +101,16 @@
                                             <div class="mb-3 show-read-more" v-html="pin.body"></div>
                                         </span>
                                         <div class="clearfix"></div>
-                                       <div class="row" id="bt">
+                                        <div class="row" id="bt">
                                             <div class="col-md-6 col-xs-12" id="share-social">
                                                 <div class="post-share">
 
-                                                    <div class="post-meta col-xs-12" style="background-color: #038ed4;" v-if="!share_fn()">
+                                                    <div class="post-meta col-xs-12" style="background-color: #038ed4;"
+                                                        v-if="!share_fn()">
                                                         <a href="" @click.prevent="AndroidNativeShare(pin.title,pin.id,pin.category)">
                                                             <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
-                                                            <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div>
+                                                            <div style="color:#fff;" class="post-meta-text col-primary "
+                                                                data-toggle="tooltip"> Share</div>
                                                         </a>
 
 
@@ -166,7 +171,8 @@
                                         <div class="row">
                                             <div class="col-md-1 d-none d-md-block mr-2">
                                                 <router-link to="/">
-                                                    <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
+                                                    <img class=" mt-2" src="/images/icons/120x120.png" width="48px"
+                                                        height="48px" alt="logo-tpo">
                                                 </router-link>
                                             </div>
                                             <div class="col-md-10">
@@ -205,8 +211,8 @@
 
                                     <!-- <img class="card-img-top" src="/images/1.jpg" alt="Card image cap"> -->
 
-                                    <div class="card-img-top" data-toggle="modal" v-if="post.image != null" data-target="#exampleModal" :style="getImage(post.image)"
-                                        :postImage="post.image">
+                                    <div class="card-img-top" data-toggle="modal" v-if="post.image != null" data-target="#exampleModal"
+                                        :style="getImage(post.image)" :postImage="post.image">
                                         <!-- <img :src="getImage(post.image_path)" alt=""> -->
                                     </div>
 
@@ -230,10 +236,12 @@
                                             <div class="col-md-6 col-xs-12" id="share-social">
                                                 <div class="post-share">
 
-                                                    <div class="post-meta col-xs-12" style="background-color: #038ed4;" v-if="!share_fn()">
+                                                    <div class="post-meta col-xs-12" style="background-color: #038ed4;"
+                                                        v-if="!share_fn()">
                                                         <a href="" @click.prevent="AndroidNativeShare(post.title,post.id,post.category)">
                                                             <i class="fa fa-share-alt" style="color:#fff;" aria-hidden="true"></i>
-                                                            <div style="color:#fff;" class="post-meta-text col-primary " data-toggle="tooltip"> Share</div>
+                                                            <div style="color:#fff;" class="post-meta-text col-primary "
+                                                                data-toggle="tooltip"> Share</div>
                                                         </a>
 
 
@@ -278,7 +286,8 @@
 
                         </div> -->
                         </div>
-                        <div class="text-center" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+                        <div class="text-center" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy"
+                            infinite-scroll-distance="10">
                             <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px" v-if="loading"></i>
                         </div>
                     </div>
@@ -338,14 +347,7 @@
             this.getPinnedPosts();
         },
         methods: {
-            // searchby_category(category) {
-            //     if (category != "All") {
-            //         axios.get(categoryURL + category)
-            //             .then(response => this.$parent.posts = response.data.data.data)
-            //     } else {
-            //         this.$parent.getPosts();
-            //     }
-            // },
+
             getURL(id) {
                 return "https://www.tnpgndec.com/view/" + id;
             },
@@ -537,7 +539,7 @@
     #sidebar #filter h4:after {
         content: "\f0b0";
     }
-    
+
     #sidebar #link h4:after {
         content: "\f08e";
     }

@@ -24405,6 +24405,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -24449,14 +24458,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        // searchby_category(category) {
-        //     if (category != "All") {
-        //         axios.get(categoryURL + category)
-        //             .then(response => this.$parent.posts = response.data.data.data)
-        //     } else {
-        //         this.$parent.getPosts();
-        //     }
-        // },
         getURL: function getURL(id) {
             return "https://www.tnpgndec.com/view/" + id;
         },
@@ -25506,7 +25507,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -25652,7 +25653,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         axios.get(__WEBPACK_IMPORTED_MODULE_0__config__["m" /* officeWidget */]).then(function (response) {
-            // console.log(response.data.data);
             _this.office = response.data.data;
         }).catch(function (error) {
             return console.log(error);
@@ -27871,37 +27871,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -27910,7 +27879,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             nav: false,
-            page: {}
+            page: {},
+            posts: {}
         };
     },
     created: function created() {
@@ -27918,6 +27888,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         axios.get(__WEBPACK_IMPORTED_MODULE_2__config_js__["n" /* pageLinkWidget */]).then(function (response) {
             _this.page = response.data.data.data;
+        }).catch(function (error) {
+            return console.log(error);
+        });
+        axios.get(__WEBPACK_IMPORTED_MODULE_2__config_js__["b" /* addHomePostURL */]).then(function (response) {
+            _this.posts = response.data.data.data;
         }).catch(function (error) {
             return console.log(error);
         });
@@ -28339,13 +28314,39 @@ var render = function() {
     _vm._v(" "),
     _vm._m(6),
     _vm._v(" "),
-    _vm._m(7),
-    _vm._v(" "),
-    _vm._m(8),
+    _c("section", { staticClass: "container" }, [
+      _c("div", { staticClass: "row mb-5" }, [
+        _vm._m(7),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-md-10 col-xs-12" },
+          _vm._l(_vm.posts, function(post) {
+            return _c(
+              "div",
+              { key: post.id, staticClass: "col-md-4 float-left" },
+              [
+                _c("div", { staticClass: "card" }, [
+                  _vm._m(8, true),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-title text-center mt-2" }, [
+                    _c("small", [_vm._v(_vm._s(post.category))]),
+                    _vm._v(" "),
+                    _c("h5", [_vm._v(_vm._s(post.title))])
+                  ])
+                ])
+              ]
+            )
+          })
+        )
+      ])
+    ]),
     _vm._v(" "),
     _vm._m(9),
     _vm._v(" "),
     _vm._m(10),
+    _vm._v(" "),
+    _vm._m(11),
     _vm._v(" "),
     _c(
       "footer",
@@ -28359,7 +28360,7 @@ var render = function() {
             "small",
             [
               _vm._v("Developed with "),
-              _vm._m(11),
+              _vm._m(12),
               _vm._v(" by\n                "),
               _c("router-link", { attrs: { to: "/genconian" } }, [
                 _vm._v("Genconians")
@@ -28465,7 +28466,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row mb-5 mt-3" }, [
+      _c("div", { staticClass: "row mb-3 mt-3" }, [
         _c("div", { staticClass: "col-md-12 text-center" }, [
           _c("h2", [_c("strong", [_vm._v("Career Development")])])
         ]),
@@ -28562,92 +28563,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "container" }, [
-      _c("div", { staticClass: "row mb-5" }, [
-        _c("div", { staticClass: "col-md-2" }, [
-          _c("h1", [_vm._v("News And Highlights")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3 mt-3", attrs: { id: "bor-left" } }, [
-            _c("small", [_vm._v("POSTS")])
-          ]),
-          _vm._v(" "),
-          _c("h5", [_vm._v("Announcement")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-10" }, [
-          _c("div", { staticClass: "col-md-4 float-left" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "images/about/img/cimage1.jpg",
-                    alt: "image",
-                    width: "100%"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-title text-center mt-2" }, [
-                _c("small", [_vm._v("CAMPAIGN")]),
-                _vm._v(" "),
-                _c("h5", [_vm._v("Hiring SAP Professionals!")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body text-justify " }, [
-                _c("p", [_vm._v("Collaborate with our top banking customer")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4 float-right" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "images/about/img/cimage2.jpg",
-                    alt: "image",
-                    width: "100%"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-title text-center mt-2" }, [
-                _c("small", [_vm._v("CAMPAIGN")]),
-                _vm._v(" "),
-                _c("h5", [_vm._v("Shape the Future")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body text-justify" }, [
-                _c("p", [_vm._v("Develop What's Next with T&P BPS")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4 float-right" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "images/about/img/cimage3.jpg",
-                    alt: "image",
-                    width: "100%"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-title text-center mt-2" }, [
-                _c("small", [_vm._v("CAMPAIGN")]),
-                _vm._v(" "),
-                _c("h5", [_vm._v("The most popular Global!")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body text-justify" }, [
-                _c("p", [_vm._v("Register for CodeVista Season 7 Now!")])
-              ])
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "col-md-2 d-none d-lg-block" }, [
+      _c("h1", [_vm._v("News And Highlights")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3 mt-3", attrs: { id: "bor-left" } }, [
+        _c("small", [_vm._v("POSTS")])
+      ]),
+      _vm._v(" "),
+      _c("h5", [_vm._v("Announcement")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-image" }, [
+      _c("img", {
+        attrs: {
+          src: "images/about/img/cimage1.jpg",
+          alt: "image",
+          width: "100%"
+        }
+      })
     ])
   },
   function() {
