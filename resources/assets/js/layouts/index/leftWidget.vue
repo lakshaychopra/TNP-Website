@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-          <div class="row">
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" id="link">
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-          <div class="row">
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" id="downloads">
@@ -88,6 +88,15 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <a href='//www.microsoft.com/store/apps/9npc7f14c558?ocid=badge' target="_blank" rel="noopener">
+                        <img src='/images/ms-download.png' alt='Download badge for windows store' width='100%' />
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -101,7 +110,7 @@
                 page: {},
             }
         },
-         created() {
+        created() {
             axios.get(pageLinkWidget)
                 .then((response) => {
                     this.page = response.data.data.data;
