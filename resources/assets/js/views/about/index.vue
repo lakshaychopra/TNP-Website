@@ -33,7 +33,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="w-100 p-2 font bgcolor textcolor collapse" id="more">
+                <div class="w-100 p-2 bgcolor text-uppercase collapse" id="more">
                     <div class="owl-carousel" id="nav-carousel">
                         <div>
                             <p>
@@ -45,41 +45,10 @@
                                 <router-link to="/login">Login</router-link>
                             </p>
                         </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
-                        </div>
-                        <div>
-                            <p>HOME</p>
+                        <div v-for="pg in page" :key="pg.id">
+                            <p>
+                                <router-link v-bind:to="'/page/'+pg.url">{{ pg.title }}</router-link>
+                            </p>
                         </div>
                         <div>
                             <p>
@@ -97,10 +66,9 @@
                 </div>
             </nav>
         </div>
-        <!--
-NAVBAR
--->
-        <!-- image   -->
+        <!--NAVBAR-->
+
+        <!--  image   -->
         <div class="row mb-5 mx-0" style="position:relative">
             <div class="bgimage">
                 <div class="mb-5 ml-3 mr-3 bottom-left bgimgtext">
@@ -114,54 +82,51 @@ NAVBAR
                 </div>
             </div>
         </div>
-        <!--
-         career development
-         -->
+
+        <!--career development-->
         <div class="container">
-            <div class="row mb-5 ">
-                <div class="col-md-12 text-center mt-3 mb-3">
+            <div class="row mb-5 mt-3">
+                <div class="col-md-12 text-center">
                     <h2>
                         <strong>Career Development</strong>
                     </h2>
                 </div>
-                <div class="row mb-5">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/about/img/image1.jpg" alt="image" width="100%" />
-                            </div>
-                            <div class="card-title text-center mt-2">
-                                <h5>Experienced Professionals</h5>
-                            </div>
-                            <div class="card-body text-justify">
-                                <p>T&amp;P lets you draw upon its superlative treasure of experience.</p>
-                            </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/about/img/image1.jpg" alt="image" width="100%" />
+                        </div>
+                        <div class="card-title text-center mt-2">
+                            <h5>Experienced Professionals</h5>
+                        </div>
+                        <div class="card-body text-justify">
+                            <p>T&amp;P lets you draw upon its superlative treasure of experience.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/about/img/image2.jpg" alt="image" width="100%" />
-                            </div>
-                            <div class="card-title text-center mt-2">
-                                <h5>Entry Level Hiring</h5>
-                            </div>
-                            <div class="card-body text-justify">
-                                <p>Stay ahead of the race by giving your career a kickstart with T&amp;P.</p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/about/img/image1.jpg" alt="image" width="100%" />
+                        </div>
+                        <div class="card-title text-center mt-2">
+                            <h5>Entry Level Hiring</h5>
+                        </div>
+                        <div class="card-body text-justify">
+                            <p>Stay ahead of the race by giving your career a kickstart with T&amp;P.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/about/img/image3.jpg" alt="image" width="100%" />
-                            </div>
-                            <div class="card-title text-center mt-2">
-                                <h5>Campus Commune</h5>
-                            </div>
-                            <div class="card-body text-justify">
-                                <p>'Campus Meets Corporate' via digital channels to engage with T&amp;P.</p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/about/img/image1.jpg" alt="image" width="100%" />
+                        </div>
+                        <div class="card-title text-center mt-2">
+                            <h5>Campus Commune</h5>
+                        </div>
+                        <div class="card-body text-justify">
+                            <p>'Campus Meets Corporate' via digital channels to engage with T&amp;P.</p>
                         </div>
                     </div>
                 </div>
@@ -170,13 +135,13 @@ NAVBAR
         <!--
          our heritage and values
          -->
-        <div class="col-md-12 text-center mb-3">
+        <!-- <div class="col-md-12 text-center mb-3">
             <h2>
                 <strong>Our Heritage and Values</strong>
             </h2>
         </div>
         <div class="row text-center mb-5 mx-0">
-            <div class="bgimage2">
+            <div class="bgimage1">
                 <div class="p-top">
                     <h5 class="text-color12">
                         <strong>We're proud of our heritage and values based on creativity and innovation.Discover the
@@ -185,18 +150,22 @@ NAVBAR
                     </h5>
                 </div>
             </div>
+        </div> -->
+
+        <!--news and highlights-->
+        <div class="col-md-12 text-center">
+            <h2>
+                <strong>News And Highlights</strong>
+            </h2>
         </div>
-        <!--
-         news and highlights
-         -->
-        <div class="container">
-            <div class="row">
+        <section class="container">
+            <div class="row mb-5">
                 <div class="col-md-2">
                     <h1>News And Highlights</h1>
                     <div id="bor-left" class="mb-3 mt-3">
-                        <small>CAMPAIGN</small>
+                        <small>POSTS</small>
                     </div>
-                    <h6>Press Releases</h6>
+                    <h5>Announcement</h5>
                 </div>
                 <div class="col-md-10">
                     <div class="col-md-4 float-left">
@@ -243,10 +212,10 @@ NAVBAR
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!--  people for T&amp;P-->
-        <div class="col-md-12 text-center mb-3">
+        <div class="col-md-12 text-center ">
             <h2>
                 <strong>Our Faculty Members</strong>
             </h2>
@@ -254,7 +223,7 @@ NAVBAR
         <div id="demo" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="mar-top" data-target="#demo" data-slide-to="0">
+                    <div data-target="#demo" data-slide-to="0">
                         <img src="images/about/img/sodhi.jpg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
                         <div class="owl--text">
@@ -265,7 +234,7 @@ NAVBAR
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="mar-top" data-target="#demo" data-slide-to="1">
+                    <div data-target="#demo" data-slide-to="1">
                         <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
                         <div class="owl--text">
@@ -276,7 +245,7 @@ NAVBAR
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="mar-top" data-target="#demo" data-slide-to="2">
+                    <div data-target="#demo" data-slide-to="2">
                         <img src="images/about/img/bagga.jpeg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
                         <div class="owl--text">
@@ -298,10 +267,10 @@ NAVBAR
 
 
         <!-- Companies -->
-        <section class="testimonials pb-0 mb-5">
+        <section class="testimonials pb-0 mb-3 mt-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-center mt-5 mb-5">
+                    <div class="col-md-12 text-center mt-3">
                         <h2>
                             <strong>Companies Visiting Our Campus</strong>
                         </h2>
@@ -313,7 +282,7 @@ NAVBAR
                                 <div class="shadow-effect">
                                     <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
                                     <div class="item-details">
-                                        <h3>Accneture</h3>
+                                        <h3>Accenture</h3>
                                     </div>
                                 </div>
                             </div>
@@ -531,22 +500,6 @@ NAVBAR
         bottom: 8px;
     }
 
-
-    .bgimage2 {
-        background-image: url('/images/about/img/bgimg2.jpg');
-        width: 100%;
-        height: 580px;
-        background-size: cover;
-    }
-
-
-    .bgimage3 {
-        background-image: url('/images/about/img/bgimg3.jpg');
-        width: 100%;
-        height: 500px;
-        background-size: cover;
-    }
-
     .p-top {
         padding-top: 400px;
     }
@@ -556,10 +509,6 @@ NAVBAR
         padding-left: 10px;
     }
 
-    #bor-right {
-        border-right: 1px solid #000;
-        height: 164px;
-    }
 
     #demo .carousel-indicators {
         position: absolute;
@@ -613,10 +562,6 @@ NAVBAR
 
     .listt ul {
         list-style-type: none;
-    }
-
-    .mar-top {
-        margin-top: 50px;
     }
 
     /* CSS used here will be applied after bootstrap.css */
@@ -817,11 +762,22 @@ NAVBAR
 <script>
     import 'owl.carousel2/dist/assets/owl.carousel.css';
     import 'owl.carousel2/dist/owl.carousel.min.js';
+    import {
+        pageLinkWidget
+    } from "../../config.js";
     export default {
         data() {
             return {
                 nav: false,
+                page: {},
             }
+        },
+        created() {
+            axios.get(pageLinkWidget)
+                .then((response) => {
+                    this.page = response.data.data.data;
+                })
+                .catch((error) => console.log(error))
         },
         beforeCreate() {
             var vm = this;
@@ -831,7 +787,6 @@ NAVBAR
                     margin: 30,
                     stagePadding: 50,
                     nav: false,
-
                 });
             }.bind(vm));
             Vue.nextTick(function () {

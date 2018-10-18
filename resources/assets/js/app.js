@@ -14,8 +14,6 @@ import router from './routes'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-
-
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 

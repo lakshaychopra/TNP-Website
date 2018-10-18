@@ -27125,7 +27125,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n#more[data-v-0263ce66] {\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n}\n.col-primary[data-v-0263ce66] {\n    color: #304156;\n}\n.card-primary[data-v-0263ce66] {\n    background: #fff;\n}\n.btn-custom[data-v-0263ce66] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-0263ce66] {\n    margin-top: 3px;\n}\n#share[data-v-0263ce66] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-0263ce66] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.bg-gray[data-v-0263ce66] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0263ce66] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0263ce66] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i[data-v-0263ce66] {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-0263ce66] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-0263ce66] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-0263ce66] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-0263ce66]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0263ce66] {\n        width: 142px;\n}\n}\n.w-65[data-v-0263ce66] {\n    width: 65%;\n}\n.fix[data-v-0263ce66] {\n    overflow: hidden;\n    top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social[data-v-0263ce66] {\n        text-align: center;\n}\n}\n#bt[data-v-0263ce66] {\n    border-top: 1px solid #ecedee;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bg-img.jpg');\n    width: 100%;\n    height: 75vh;\n    background-size: cover;\n}\n.bgimgtext[data-v-0263ce66] {\n    position: absolute;\n    background: rgba(255, 255, 255, .5);\n    border-radius: 5px;\n    padding: 1em;\n}\n.bottom-left[data-v-0263ce66] {\n    position: absolute;\n    bottom: 8px;\n}\n.bgimage2[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg2.jpg');\n    width: 100%;\n    height: 580px;\n    background-size: cover;\n}\n.bgimage3[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg3.jpg');\n    width: 100%;\n    height: 500px;\n    background-size: cover;\n}\n.p-top[data-v-0263ce66] {\n    padding-top: 400px;\n}\n#bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#bor-right[data-v-0263ce66] {\n    border-right: 1px solid #000;\n    height: 164px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .owl-img[data-v-0263ce66] {\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n#demo .owl-carousel[data-v-0263ce66] {\n    position: relative;\n    height: 100%;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo .owl--text[data-v-0263ce66] {\n    position: absolute;\n    bottom: 3em;\n    left: 2em;\n    width: 15em;\n    height: 6em;\n    padding: 1em;\n    background: rgba(255, 255, 255, .8);\n    border-radius: 4px;\n}\n#demo1 .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo1 .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n.bgcolor3[data-v-0263ce66] {\n    background-color: #474747;\n}\n.listt ul[data-v-0263ce66] {\n    list-style-type: none;\n}\n.mar-top[data-v-0263ce66] {\n    margin-top: 50px;\n}\n\n/* CSS used here will be applied after bootstrap.css */\n.closeBtn[data-v-0263ce66]:focus {\n    outline: none;\n}\n.close[data-v-0263ce66] {\n    color: gray;\n}\n.wrapper[data-v-0263ce66] {\n    position: relative;\n    margin: 0 auto;\n    overflow: hidden;\n    padding: 5px;\n    height: 50px;\n}\n.list[data-v-0263ce66] {\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    min-width: 3500px;\n    margin-top: 0px;\n}\n.list li[data-v-0263ce66] {\n    display: table-cell;\n    position: relative;\n    text-align: center;\n    cursor: grab;\n    cursor: -webkit-grab;\n    color: #efefef;\n    vertical-align: middle;\n}\n@media screen and (max-width:426px) {\n#demo .owl--text[data-v-0263ce66] {\n        position: absolute;\n        bottom: 0.5em;\n        left: 0.5em;\n        width: 14em;\n        height: 6em;\n        background: rgba(255, 255, 255, 0.6);\n        border-radius: 4px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n.bgimage[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.bgimage2[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.mar-top[data-v-0263ce66] {\n        margin-top: 10px;\n}\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 1px solid #fff;\n    height: 200px;\n}\n.icons[data-v-0263ce66] {\n    border: 1px solid #fff;\n    padding: 12px;\n    border-radius: 50%;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\n#nav-carousel p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n#nav-carousel.carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#nav-carousel.carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#nav-carousel .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#nav-carousel .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\nsection .thanks-title[data-v-0263ce66] {\n    text-align: left;\n    color: #038ed4;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\n#customers-testimonials .testimonials[data-v-0263ce66] {\n    background-color: #fff;\n    position: relative;\n    padding-top: 60px;\n}\n#customers-testimonials .testimonials[data-v-0263ce66]:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    width: 100%;\n    height: 30%;\n    background-color: #f1f1f1;\n}\n#customers-testimonials .item-details[data-v-0263ce66] {\n    background-color: #333333;\n    color: #fff;\n    padding: 20px 10px;\n    text-align: left;\n}\n#customers-testimonials .item-details h3[data-v-0263ce66] {\n    margin: 0 0 15px;\n    font-size: 18px;\n    line-height: 18px;\n    color: #fff;\n    text-align: center;\n}\n#customers-testimonials .item-details h3 span p[data-v-0263ce66] {\n    font-size: 14px;\n}\n#customers-testimonials .item[data-v-0263ce66] {\n    text-align: center;\n    /*  padding: 20px; */\n    margin-bottom: 80px;\n}\n#customers-testimonials .owl-carousel .owl-nav[data-v-0263ce66] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n#customers-testimonials .owl-carousel[data-v-0263ce66] {\n    position: relative;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-0263ce66],\n#customers-testimonials .owl-carousel .owl-prev[data-v-0263ce66] {\n    width: 50px;\n    height: 50px;\n    line-height: 50px;\n    border-radius: 50%;\n    position: absolute;\n    top: 30%;\n    font-size: 20px;\n    color: #fff;\n    border: 1px solid #ddd;\n    text-align: center;\n}\n#customers-testimonials .owl-carousel .owl-prev[data-v-0263ce66] {\n    left: -70px;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-0263ce66] {\n    right: -70px;\n}\n", ""]);
+exports.push([module.i, "\n#more[data-v-0263ce66] {\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n}\n.col-primary[data-v-0263ce66] {\n    color: #304156;\n}\n.card-primary[data-v-0263ce66] {\n    background: #fff;\n}\n.btn-custom[data-v-0263ce66] {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head[data-v-0263ce66] {\n    margin-top: 3px;\n}\n#share[data-v-0263ce66] {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu[data-v-0263ce66] {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.bg-gray[data-v-0263ce66] {\n    background-color: #f1f1f1;\n}\n.color-main[data-v-0263ce66] {\n    color: #038ed4;\n}\n#bg-trans[data-v-0263ce66] {\n    background: -webkit-linear-gradient(#333, #fff);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.share i[data-v-0263ce66] {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-0263ce66] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-0263ce66] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-0263ce66] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-0263ce66]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-0263ce66]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-0263ce66] {\n        width: 142px;\n}\n}\n.w-65[data-v-0263ce66] {\n    width: 65%;\n}\n.fix[data-v-0263ce66] {\n    overflow: hidden;\n    top: 90px;\n}\n@media only screen and (max-width: 500px) {\n#share-social[data-v-0263ce66] {\n        text-align: center;\n}\n}\n#bt[data-v-0263ce66] {\n    border-top: 1px solid #ecedee;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bg-img.jpg');\n    width: 100%;\n    height: 75vh;\n    background-size: cover;\n}\n.bgimgtext[data-v-0263ce66] {\n    position: absolute;\n    background: rgba(255, 255, 255, .5);\n    border-radius: 5px;\n    padding: 1em;\n}\n.bottom-left[data-v-0263ce66] {\n    position: absolute;\n    bottom: 8px;\n}\n.p-top[data-v-0263ce66] {\n    padding-top: 400px;\n}\n#bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .owl-img[data-v-0263ce66] {\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n#demo .owl-carousel[data-v-0263ce66] {\n    position: relative;\n    height: 100%;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo .owl--text[data-v-0263ce66] {\n    position: absolute;\n    bottom: 3em;\n    left: 2em;\n    width: 15em;\n    height: 6em;\n    padding: 1em;\n    background: rgba(255, 255, 255, .8);\n    border-radius: 4px;\n}\n#demo1 .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo1 .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n.bgcolor3[data-v-0263ce66] {\n    background-color: #474747;\n}\n.listt ul[data-v-0263ce66] {\n    list-style-type: none;\n}\n\n/* CSS used here will be applied after bootstrap.css */\n.closeBtn[data-v-0263ce66]:focus {\n    outline: none;\n}\n.close[data-v-0263ce66] {\n    color: gray;\n}\n.wrapper[data-v-0263ce66] {\n    position: relative;\n    margin: 0 auto;\n    overflow: hidden;\n    padding: 5px;\n    height: 50px;\n}\n.list[data-v-0263ce66] {\n    position: absolute;\n    left: 0px;\n    top: 0px;\n    min-width: 3500px;\n    margin-top: 0px;\n}\n.list li[data-v-0263ce66] {\n    display: table-cell;\n    position: relative;\n    text-align: center;\n    cursor: grab;\n    cursor: -webkit-grab;\n    color: #efefef;\n    vertical-align: middle;\n}\n@media screen and (max-width:426px) {\n#demo .owl--text[data-v-0263ce66] {\n        position: absolute;\n        bottom: 0.5em;\n        left: 0.5em;\n        width: 14em;\n        height: 6em;\n        background: rgba(255, 255, 255, 0.6);\n        border-radius: 4px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n.bgimage[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.bgimage2[data-v-0263ce66] {\n        height: 645px;\n        overflow: hidden;\n}\n.mar-top[data-v-0263ce66] {\n        margin-top: 10px;\n}\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 1px solid #fff;\n    height: 200px;\n}\n.icons[data-v-0263ce66] {\n    border: 1px solid #fff;\n    padding: 12px;\n    border-radius: 50%;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\n#nav-carousel p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n#nav-carousel.carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#nav-carousel.carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#nav-carousel .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#nav-carousel .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\nsection .thanks-title[data-v-0263ce66] {\n    text-align: left;\n    color: #038ed4;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\n#customers-testimonials .testimonials[data-v-0263ce66] {\n    background-color: #fff;\n    position: relative;\n    padding-top: 60px;\n}\n#customers-testimonials .testimonials[data-v-0263ce66]:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    width: 100%;\n    height: 30%;\n    background-color: #f1f1f1;\n}\n#customers-testimonials .item-details[data-v-0263ce66] {\n    background-color: #333333;\n    color: #fff;\n    padding: 20px 10px;\n    text-align: left;\n}\n#customers-testimonials .item-details h3[data-v-0263ce66] {\n    margin: 0 0 15px;\n    font-size: 18px;\n    line-height: 18px;\n    color: #fff;\n    text-align: center;\n}\n#customers-testimonials .item-details h3 span p[data-v-0263ce66] {\n    font-size: 14px;\n}\n#customers-testimonials .item[data-v-0263ce66] {\n    text-align: center;\n    /*  padding: 20px; */\n    margin-bottom: 80px;\n}\n#customers-testimonials .owl-carousel .owl-nav[data-v-0263ce66] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n#customers-testimonials .owl-carousel[data-v-0263ce66] {\n    position: relative;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-0263ce66],\n#customers-testimonials .owl-carousel .owl-prev[data-v-0263ce66] {\n    width: 50px;\n    height: 50px;\n    line-height: 50px;\n    border-radius: 50%;\n    position: absolute;\n    top: 30%;\n    font-size: 20px;\n    color: #fff;\n    border: 1px solid #ddd;\n    text-align: center;\n}\n#customers-testimonials .owl-carousel .owl-prev[data-v-0263ce66] {\n    left: -70px;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-0263ce66] {\n    right: -70px;\n}\n", ""]);
 
 // exports
 
@@ -27140,6 +27140,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_owl_carousel2_dist_assets_owl_carousel_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_owl_carousel2_dist_assets_owl_carousel_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_owl_carousel2_dist_owl_carousel_min_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_js__ = __webpack_require__(3);
 //
 //
 //
@@ -27901,69 +27902,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            nav: false
+            nav: false,
+            page: {}
         };
+    },
+    created: function created() {
+        var _this = this;
+
+        axios.get(__WEBPACK_IMPORTED_MODULE_2__config_js__["n" /* pageLinkWidget */]).then(function (response) {
+            _this.page = response.data.data.data;
+        }).catch(function (error) {
+            return console.log(error);
+        });
     },
     beforeCreate: function beforeCreate() {
         var vm = this;
@@ -27973,7 +27930,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 margin: 30,
                 stagePadding: 50,
                 nav: false
-
             });
         }.bind(vm));
         Vue.nextTick(function () {
@@ -28285,7 +28241,7 @@ var render = function() {
                             staticClass: "fa fa-long-arrow-left",
                             attrs: { "aria-hidden": "true" }
                           }),
-                          _vm._v(" Back\n                            ")
+                          _vm._v(" Back\n                        ")
                         ]
                       ),
                       _vm._v(" "),
@@ -28300,7 +28256,7 @@ var render = function() {
             _c(
               "div",
               {
-                staticClass: "w-100 p-2 font bgcolor textcolor collapse",
+                staticClass: "w-100 p-2 bgcolor text-uppercase collapse",
                 attrs: { id: "more" }
               },
               [
@@ -28335,29 +28291,21 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _vm._m(4),
-                    _vm._v(" "),
-                    _vm._m(5),
-                    _vm._v(" "),
-                    _vm._m(6),
-                    _vm._v(" "),
-                    _vm._m(7),
-                    _vm._v(" "),
-                    _vm._m(8),
-                    _vm._v(" "),
-                    _vm._m(9),
-                    _vm._v(" "),
-                    _vm._m(10),
-                    _vm._v(" "),
-                    _vm._m(11),
-                    _vm._v(" "),
-                    _vm._m(12),
-                    _vm._v(" "),
-                    _vm._m(13),
+                    _vm._l(_vm.page, function(pg) {
+                      return _c("div", { key: pg.id }, [
+                        _c(
+                          "p",
+                          [
+                            _c(
+                              "router-link",
+                              { attrs: { to: "/page/" + pg.url } },
+                              [_vm._v(_vm._s(pg.title))]
+                            )
+                          ],
+                          1
+                        )
+                      ])
+                    }),
                     _vm._v(" "),
                     _c("div", [
                       _c(
@@ -28371,10 +28319,11 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(14),
+                    _vm._m(2),
                     _vm._v(" "),
-                    _vm._m(15)
-                  ]
+                    _vm._m(3)
+                  ],
+                  2
                 )
               ]
             )
@@ -28384,21 +28333,19 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(16),
+    _vm._m(4),
     _vm._v(" "),
-    _vm._m(17),
+    _vm._m(5),
     _vm._v(" "),
-    _vm._m(18),
+    _vm._m(6),
     _vm._v(" "),
-    _vm._m(19),
+    _vm._m(7),
     _vm._v(" "),
-    _vm._m(20),
+    _vm._m(8),
     _vm._v(" "),
-    _vm._m(21),
+    _vm._m(9),
     _vm._v(" "),
-    _vm._m(22),
-    _vm._v(" "),
-    _vm._m(23),
+    _vm._m(10),
     _vm._v(" "),
     _c(
       "footer",
@@ -28412,8 +28359,8 @@ var render = function() {
             "small",
             [
               _vm._v("Developed with "),
-              _vm._m(24),
-              _vm._v(" by\n                    "),
+              _vm._m(11),
+              _vm._v(" by\n                "),
               _c("router-link", { attrs: { to: "/genconian" } }, [
                 _vm._v("Genconians")
               ]),
@@ -28423,7 +28370,7 @@ var render = function() {
                 {
                   attrs: { href: "https://www.gndec.ac.in/", target: "_blank" }
                 },
-                [_vm._v("GNDEC,\n                        Ldh")]
+                [_vm._v("GNDEC,\n                    Ldh")]
               )
             ],
             1
@@ -28457,85 +28404,13 @@ var staticRenderFns = [
         attrs: { href: "#", "data-target": "#more", "data-toggle": "collapse" }
       },
       [
-        _vm._v("\n                                More "),
+        _vm._v("\n                            More "),
         _c("i", {
           staticClass: "fa fa-caret-down",
           attrs: { "aria-hidden": "true" }
         })
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("p", [_vm._v("HOME")])])
   },
   function() {
     var _vm = this
@@ -28577,7 +28452,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("h5", { staticClass: "text-justify" }, [
               _vm._v(
-                "\n                        The goal of Training & Placement Cell is to provide students with a platform for using their\n                        potential to gain valuable experience by working in industry ,it also acts as the interface\n                        between various companies seeking talented young graduates and post graduates in various\n                        disciplines.\n                    "
+                "\n                    The goal of Training & Placement Cell is to provide students with a platform for using their\n                    potential to gain valuable experience by working in industry ,it also acts as the interface\n                    between various companies seeking talented young graduates and post graduates in various\n                    disciplines.\n                "
               )
             ])
           ])
@@ -28590,86 +28465,84 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row mb-5 " }, [
-        _c("div", { staticClass: "col-md-12 text-center mt-3 mb-3" }, [
+      _c("div", { staticClass: "row mb-5 mt-3" }, [
+        _c("div", { staticClass: "col-md-12 text-center" }, [
           _c("h2", [_c("strong", [_vm._v("Career Development")])])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row mb-5" }, [
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "images/about/img/image1.jpg",
-                    alt: "image",
-                    width: "100%"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-title text-center mt-2" }, [
-                _c("h5", [_vm._v("Experienced Professionals")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body text-justify" }, [
-                _c("p", [
-                  _vm._v(
-                    "T&P lets you draw upon its superlative treasure of experience."
-                  )
-                ])
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-image" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/about/img/image1.jpg",
+                  alt: "image",
+                  width: "100%"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-title text-center mt-2" }, [
+              _c("h5", [_vm._v("Experienced Professionals")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body text-justify" }, [
+              _c("p", [
+                _vm._v(
+                  "T&P lets you draw upon its superlative treasure of experience."
+                )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "images/about/img/image2.jpg",
-                    alt: "image",
-                    width: "100%"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-title text-center mt-2" }, [
-                _c("h5", [_vm._v("Entry Level Hiring")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body text-justify" }, [
-                _c("p", [
-                  _vm._v(
-                    "Stay ahead of the race by giving your career a kickstart with T&P."
-                  )
-                ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-image" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/about/img/image1.jpg",
+                  alt: "image",
+                  width: "100%"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-title text-center mt-2" }, [
+              _c("h5", [_vm._v("Entry Level Hiring")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body text-justify" }, [
+              _c("p", [
+                _vm._v(
+                  "Stay ahead of the race by giving your career a kickstart with T&P."
+                )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "images/about/img/image3.jpg",
-                    alt: "image",
-                    width: "100%"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-title text-center mt-2" }, [
-                _c("h5", [_vm._v("Campus Commune")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body text-justify" }, [
-                _c("p", [
-                  _vm._v(
-                    "'Campus Meets Corporate' via digital channels to engage with T&P."
-                  )
-                ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-image" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/about/img/image1.jpg",
+                  alt: "image",
+                  width: "100%"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-title text-center mt-2" }, [
+              _c("h5", [_vm._v("Campus Commune")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body text-justify" }, [
+              _c("p", [
+                _vm._v(
+                  "'Campus Meets Corporate' via digital channels to engage with T&P."
+                )
               ])
             ])
           ])
@@ -28681,42 +28554,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 text-center mb-3" }, [
-      _c("h2", [_c("strong", [_vm._v("Our Heritage and Values")])])
+    return _c("div", { staticClass: "col-md-12 text-center" }, [
+      _c("h2", [_c("strong", [_vm._v("News And Highlights")])])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row text-center mb-5 mx-0" }, [
-      _c("div", { staticClass: "bgimage2" }, [
-        _c("div", { staticClass: "p-top" }, [
-          _c("h5", { staticClass: "text-color12" }, [
-            _c("strong", [
-              _vm._v(
-                "We're proud of our heritage and values based on creativity and innovation.Discover the\n                            best platform\n                            to solidify your career."
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
+    return _c("section", { staticClass: "container" }, [
+      _c("div", { staticClass: "row mb-5" }, [
         _c("div", { staticClass: "col-md-2" }, [
           _c("h1", [_vm._v("News And Highlights")]),
           _vm._v(" "),
           _c("div", { staticClass: "mb-3 mt-3", attrs: { id: "bor-left" } }, [
-            _c("small", [_vm._v("CAMPAIGN")])
+            _c("small", [_vm._v("POSTS")])
           ]),
           _vm._v(" "),
-          _c("h6", [_vm._v("Press Releases")])
+          _c("h5", [_vm._v("Announcement")])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-10" }, [
@@ -28799,7 +28654,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 text-center mb-3" }, [
+    return _c("div", { staticClass: "col-md-12 text-center " }, [
       _c("h2", [_c("strong", [_vm._v("Our Faculty Members")])])
     ])
   },
@@ -28818,10 +28673,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "carousel-item active" }, [
             _c(
               "div",
-              {
-                staticClass: "mar-top",
-                attrs: { "data-target": "#demo", "data-slide-to": "0" }
-              },
+              { attrs: { "data-target": "#demo", "data-slide-to": "0" } },
               [
                 _c("img", {
                   staticClass: "owl-img",
@@ -28846,10 +28698,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "carousel-item" }, [
             _c(
               "div",
-              {
-                staticClass: "mar-top",
-                attrs: { "data-target": "#demo", "data-slide-to": "1" }
-              },
+              { attrs: { "data-target": "#demo", "data-slide-to": "1" } },
               [
                 _c("img", {
                   staticClass: "owl-img",
@@ -28874,10 +28723,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "carousel-item" }, [
             _c(
               "div",
-              {
-                staticClass: "mar-top",
-                attrs: { "data-target": "#demo", "data-slide-to": "2" }
-              },
+              { attrs: { "data-target": "#demo", "data-slide-to": "2" } },
               [
                 _c("img", {
                   staticClass: "owl-img",
@@ -28924,10 +28770,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "testimonials pb-0 mb-5" }, [
+    return _c("section", { staticClass: "testimonials pb-0 mb-3 mt-5" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12 text-center mt-5 mb-5" }, [
+          _c("div", { staticClass: "col-md-12 text-center mt-3" }, [
             _c("h2", [_c("strong", [_vm._v("Companies Visiting Our Campus")])])
           ]),
           _vm._v(" "),
@@ -28950,7 +28796,7 @@ var staticRenderFns = [
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "item-details" }, [
-                      _c("h3", [_vm._v("Accneture")])
+                      _c("h3", [_vm._v("Accenture")])
                     ])
                   ])
                 ]),
