@@ -23655,6 +23655,9 @@ var routes = [{
         path: '/about/manage',
         component: __webpack_require__(167)
     }, {
+        path: '/about/:id/edit',
+        component: __webpack_require__(157)
+    }, {
         path: '/post/:id/edit',
         component: __webpack_require__(172)
     }, {
@@ -40412,7 +40415,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.line[data-v-2e50a1e0]{\n  text-align: center;\n}\n.files input[data-v-2e50a1e0] {\n    outline: 2px dashed #92b0b3;\n    outline-offset: -10px;\n    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    padding: 120px 0px 85px 35%;\n    text-align: center !important;\n    margin: 0;\n    width: 100% !important;\n}\n/* .files img{\n  height :100px;\n  width:100px;\n} */\n.files input[data-v-2e50a1e0]:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;\n    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;\n}\n.files[data-v-2e50a1e0]{ position:relative\n}\n.files[data-v-2e50a1e0]:after {  pointer-events: none;\n    position: absolute;\n    top: 60px;\n    left: 0;\n    width: 50px;\n    right: 0;\n    height: 56px;\n    content: \"\";\n    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);\n    display: block;\n    margin: 0 auto;\n    background-size: 100%;\n    background-repeat: no-repeat;\n}\n.color input[data-v-2e50a1e0]{ background-color:#f1f1f1;\n}\n.files[data-v-2e50a1e0]:before {\n    position: absolute;\n    bottom: 10px;\n    left: 0;  pointer-events: none;\n    width: 100%;\n    right: 0;\n    height: 57px;\n    content: \" or drag it here. \";\n    display: block;\n    margin: 0 auto;\n    color: #2ea591;\n    font-weight: 600;\n    text-transform: capitalize;\n    text-align: center;\n}\n.vue-tags-input[data-v-36b6250a][data-v-2e50a1e0]{\n  max-width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.line[data-v-2e50a1e0] {\n    text-align: center;\n}\n.files input[data-v-2e50a1e0] {\n    outline: 2px dashed #92b0b3;\n    outline-offset: -10px;\n    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    padding: 120px 0px 85px 35%;\n    text-align: center !important;\n    margin: 0;\n    width: 100% !important;\n}\n.files input[data-v-2e50a1e0]:focus {\n    outline: 2px dashed #92b0b3;\n    outline-offset: -10px;\n    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    border: 1px solid #92b0b3;\n}\n.files[data-v-2e50a1e0] {\n    position: relative\n}\n.files[data-v-2e50a1e0]:after {\n    pointer-events: none;\n    position: absolute;\n    top: 60px;\n    left: 0;\n    width: 50px;\n    right: 0;\n    height: 56px;\n    content: \"\";\n    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);\n    display: block;\n    margin: 0 auto;\n    background-size: 100%;\n    background-repeat: no-repeat;\n}\n.color input[data-v-2e50a1e0] {\n    background-color: #f1f1f1;\n}\n.files[data-v-2e50a1e0]:before {\n    position: absolute;\n    bottom: 10px;\n    left: 0;\n    pointer-events: none;\n    width: 100%;\n    right: 0;\n    height: 57px;\n    content: \" or drag it here. \";\n    display: block;\n    margin: 0 auto;\n    color: #2ea591;\n    font-weight: 600;\n    text-transform: capitalize;\n    text-align: center;\n}\n.vue-tags-input[data-v-36b6250a][data-v-2e50a1e0] {\n    max-width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -40482,80 +40485,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
-// import { VueEditor } from 'vue2-editor'
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            // taskForm: new Form({
-            //     'title' : '',
-            //     'description' : '',
-            //     'start_date' : '',
-            //     'due_date' : '',
-            //     'progress' : 0
-            // }),
             image_change: false,
             img_preview: '',
             page: {
                 title: '',
-                // region: '',
-
-                // date1: '',
                 url: '',
-                // date2: '',
-                // delivery: false,
-                // type: [],
-                // resource: '',
-                // desc: '',
                 content: '',
                 imagePath: '',
-                // tags: ['gndec','tnp'],
-                // category: '' ,
                 imageUrl: ''
             }
         };
     },
 
-    components: { InputTag: __WEBPACK_IMPORTED_MODULE_3_vue_input_tag___default.a, 'editor': __WEBPACK_IMPORTED_MODULE_2__tinymce_tinymce_vue__["a" /* default */] },
+    components: {
+        InputTag: __WEBPACK_IMPORTED_MODULE_3_vue_input_tag___default.a,
+        'editor': __WEBPACK_IMPORTED_MODULE_2__tinymce_tinymce_vue__["a" /* default */]
+    },
     props: ['id'],
     mounted: function mounted() {
-        // console.log(this.id);
         if (this.id) this.getPosts();
     },
 
     methods: {
         updateURL: function updateURL() {
-            // if(this.page.title.length>1){
             this.page.url = this.page.title.replace(/\s+/g, '-').toLowerCase();
-            console.log(this.page.url);
-            // }
         },
         updateData: function updateData(data) {
             this.page.content = data;
@@ -40564,14 +40526,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.image_change = true;
             this.page.imageUrl = e.target.files[0];
             this.img_preview = URL.createObjectURL(this.page.imageUrl);
-
-            console.log(this.page.imageUrl);
         },
         proceed: function proceed() {
             var _this = this;
 
-            // this.taskForm.start_date = moment(this.taskForm.start_date).format('YYYY-MM-DD');
-            // this.taskForm.due_date = moment(this.taskForm.due_date).format('YYYY-MM-DD');
             this.$validator.validateAll().then(function (result) {
                 if (result) {
                     if (_this.id) _this.updatePost();else _this.storePost();
@@ -40581,15 +40539,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         storePost: function storePost() {
             var navigate = this;
             var postData = {
-                // usertype : 'EXECUTIVE_MEMBER',
                 title: this.page.title,
                 body: this.page.content,
                 username: this.$store.getters.getAuthUserFullName,
                 user_id: this.$store.getters.getAuthUserId,
                 image_path: 'images/about/images/',
-                // tag:this.page.tags.toString(),
                 url: this.page.url,
-                // category:this.page.category,
                 image: this.page.imageUrl
             };
             var formData = new FormData();
@@ -40599,55 +40554,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             formData.append('username', postData.username);
             formData.append('user_id', postData.user_id);
             formData.append('image_path', postData.image_path);
-            // formData.append('tag', postData.tag);
-            // formData.append('category', postData.category);
             formData.append('url', postData.url);
-            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["c" /* addPageURL */], formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
-                // console.log(response);
-                // if (response.status == "200") {
-                //   // window.location = "/dashboard";
-                //     router.push({name:'security'});
-
-                // }
-                // if (response.status == "401") {
-                //   }
+            axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["c" /* addPageURL */], formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(function (response) {
                 toastr['success'](response.data.message);
-                // axios.post(postIdGetURL).then(function(res){
-                //     // console.log(res.data.data);
-                //         navigate.$router.push({path:'/post/'+res.data.data});
-                // })
-                // .catch(function(err) {
-                // console.log(err);
-                // });
-
-
-                // console.log(response.data.data.postCreate.id);
             }).catch(function (error) {
                 console.log(error);
             });
-            // this.taskForm.post('/api/task')
-            // .then(response => {
-            //     toastr['success'](response.message);
-            //     this.$emit('completed',response.task)
-            // })
-            // .catch(response => {
-            //     toastr['error'](response.message);
-            // });
             this.page.title = '';
             this.page.content = '';
-            // this.page.tags= ['gndec','tnp'];
-            // this.page.category= '' ;
             this.page.imageUrl = '';
             this.page.url = '';
         },
         getPosts: function getPosts() {
             var _this2 = this;
 
-            axios.get('/api/dashboard/post/' + this.id + '/edit').then(function (response) {
+            axios.get('/api/dashboard/about/' + this.id + '/edit').then(function (response) {
                 _this2.page.title = response.data.data.title;
                 _this2.page.content = response.data.data.body;
-                // this.page.tags = response.data.data.tag.split(',');
-                // this.page.category = response.data.data.category;
                 _this2.page.imageUrl = '';
                 _this2.page.url = response.data.data.url;
             }).catch(function (response) {
@@ -40658,17 +40585,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this3 = this;
 
             var postData = {
-                // usertype : 'EXECUTIVE_MEMBER',
                 title: this.page.title,
                 body: this.page.content,
                 username: this.$store.getters.getAuthUserFullName,
                 user_id: this.$store.getters.getAuthUserId,
                 image_path: 'images/about/images/',
-
-                // tag:this.page.tags.toString(),
-
                 url: this.page.url,
-                // category:this.page.category,
                 image: this.page.imageUrl
             };
             var formData = new FormData();
@@ -40678,29 +40600,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             formData.append('username', postData.username);
             formData.append('user_id', postData.user_id);
             formData.append('image_path', postData.image_path);
-
-            // formData.append('tag', postData.tag);
-            // formData.append('category', postData.category);
             formData.append('url', postData.url);
             formData.append('_method', 'PUT');
 
-            axios.post('/api/dashboard/about/' + this.id, formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
+            axios.post('/api/dashboard/about/' + this.id, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(function (response) {
                 console.log(response);
-                // if(response.type == 'error')
-                //     toastr['error'](response.message);
-                // else {
-                //     this.$router.push('/task');
-                // }
                 toastr['success'](response.data.message);
                 console.log(_this3.$store.getters.getAuthUserType);
-                // if (this.$store.getters.getAuthUserType == "ADMIN") {
-                //     this.$router.push('/about/'+response.data.data.id);
-                // }
-                // else if(this.$store.getters.getAuthUserType == "EXECUTIVE_MEMBER")
-                // {
-                //     this.$router.push('/exec/post/'+response.data.data.id);
-                // }
-
             }).catch(function (response) {
                 toastr['error'](response.message);
             });
@@ -41069,7 +40979,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -41177,6 +41087,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (error) {
                 return console.log(error);
             });
+        },
+        editPages: function editPages(ab) {
+            this.$router.push('/about/' + ab.id + '/edit');
+        },
+        deletePages: function deletePages(ab) {
+            var _this = this;
+
+            axios.delete('/api/dashboard/about/' + ab.id).then(function (response) {
+                toastr['success'](response.data.message);
+                _this.getPages();
+            }).catch(function (error) {
+                toastr['error'](error.response.data.message);
+            });
         }
     }
 });
@@ -41225,7 +41148,9 @@ var render = function() {
           { staticClass: "text-center" },
           _vm._l(_vm.about, function(ab) {
             return _c("tr", { key: ab.id }, [
-              _c("td", { attrs: { scope: "row" } }, [_vm._v(_vm._s(_vm.sno))]),
+              _c("td", { attrs: { scope: "row" } }, [
+                _vm._v(_vm._s(++_vm.sno))
+              ]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(ab.title))]),
               _vm._v(" "),
@@ -41238,6 +41163,7 @@ var render = function() {
                     on: {
                       click: function($event) {
                         $event.preventDefault()
+                        _vm.editPages(ab)
                       }
                     }
                   },
@@ -41252,6 +41178,7 @@ var render = function() {
                     on: {
                       click: function($event) {
                         $event.preventDefault()
+                        _vm.deletePages(ab)
                       }
                     }
                   },

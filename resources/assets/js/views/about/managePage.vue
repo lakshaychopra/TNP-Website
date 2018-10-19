@@ -25,13 +25,13 @@
             </thead>
             <tbody class="text-center">
                 <tr v-for="ab in about" :key="ab.id">
-                    <td scope="row">{{ sno }}</td>
+                    <td scope="row">{{++sno}}</td>
                     <td>{{ab.title}}</td>
                     <td>
-                        <button class="btn btn-info btn-sm" @click.prevent="" data-toggle="tooltip" title="Edit Task">
+                        <button class="btn btn-info btn-sm" @click.prevent="editPages(ab)" data-toggle="tooltip" title="Edit Task">
                             <i class="fa fa-pencil"></i>
                         </button>
-                        <button class="btn btn-danger btn-sm" @click.prevent="" data-toggle="tooltip" title="Delete task">
+                        <button class="btn btn-danger btn-sm" @click.prevent="deletePages(ab)" data-toggle="tooltip" title="Delete task">
                             <i class="fa fa-trash"></i>
                         </button>
                     </td>
@@ -62,7 +62,7 @@
         data() {
             return {
                 about: {},
-                sno: 0,
+                sno:0,
                 page: 1,
             }
         },
@@ -95,7 +95,18 @@
 
                     })
                     .catch((error) => console.log(error));
-            }
+            },
+            editPages(ab){
+                this.$router.push('/about/'+ab.id+'/edit');
+            },
+            deletePages(ab){
+                axios.delete('/api/dashboard/about/'+ab.id).then(response => {
+                    toastr['success'](response.data.message);
+                    this.getPages();
+                }).catch(error => {
+                    toastr['error'](error.response.data.message);
+                });
+            },
         }
     }
 </script>
