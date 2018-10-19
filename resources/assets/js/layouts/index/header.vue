@@ -1,6 +1,6 @@
 <template>
     <div class="sticky-top" style="z-index:1022;">
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark">
             <!-- Brand -->
             <router-link to="/" class="navbar-brand d-none d-md-block">
                 <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
@@ -29,9 +29,6 @@
                     <form class="form-inline" action="/" method="GET">
                         <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost"
                             autocomplete="on" id="search">
-                        <!-- <button class="btn btn-info" type="submit">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </button> -->
                     </form>
                 </div>
                 <ul class="nav navbar-nav" id="list-menu">
@@ -133,9 +130,9 @@
     #search {
         background-color: #fff;
         border-color: #0073BC;
-        width: 83%;
+        width: 100%;
         color: #0073BC;
-        border-radius: 0;
+        border-radius: 25px;
     }
 
     #search::placeholder {

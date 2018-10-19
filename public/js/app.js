@@ -24618,7 +24618,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.list-inline[data-v-1f00e349] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-1f00e349] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-1f00e349] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-1f00e349] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-1f00e349] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-1f00e349] {\n    color: #f7fbff;\n    padding: 10px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-1f00e349]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-1f00e349] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 83%;\n    color: #0073BC;\n    border-radius: 0;\n}\n#search[data-v-1f00e349]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-1f00e349] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-1f00e349] {\n        width: 142px;\n}\n}\n.w-65[data-v-1f00e349] {\n    width: 65%;\n}\n.fix[data-v-1f00e349] {\n    overflow: hidden;\n    top: 90px;\n}\n", ""]);
+exports.push([module.i, "\n.list-inline[data-v-1f00e349] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-1f00e349] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-1f00e349] {\n    background-color: #eee;\n    padding: 10px;\n}\n.btn[data-v-1f00e349] {\n    line-height: 1.5 !important;\n}\n#mr-btm-10[data-v-1f00e349] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-1f00e349] {\n    color: #f7fbff;\n    padding: 10px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-1f00e349]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-1f00e349] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 100%;\n    color: #0073BC;\n    border-radius: 25px;\n}\n#search[data-v-1f00e349]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-1f00e349] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-1f00e349] {\n        width: 142px;\n}\n}\n.w-65[data-v-1f00e349] {\n    width: 65%;\n}\n.fix[data-v-1f00e349] {\n    overflow: hidden;\n    top: 90px;\n}\n", ""]);
 
 // exports
 
@@ -24630,9 +24630,6 @@ exports.push([module.i, "\n.list-inline[data-v-1f00e349] {\n    padding-left: 0;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(4);
-//
-//
-//
 //
 //
 //
@@ -24738,7 +24735,7 @@ var render = function() {
     [
       _c(
         "nav",
-        { staticClass: "navbar navbar-expand-lg bg-dark navbar-dark" },
+        { staticClass: "navbar navbar-expand-xl bg-dark navbar-dark" },
         [
           _c(
             "router-link",
