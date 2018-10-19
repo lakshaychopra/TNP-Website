@@ -24,7 +24,7 @@ class CreateTableUsers extends Migration
             $table->string('provider_unique_id')->nullable();
             $table->enum('status',['ENABLED','DISABLED'])->default('ENABLED');
             $table->enum('form_status',['N.A.','PENDING','SUBMITTED','VERIFIED'])->default('N.A.');
-            $table->enum('student_form_step',['N.A.','TC','PROFILE','PREVIOUS_EDUCATION','DEGREE','SUBMITTED'])->default('N.A.');
+            $table->enum('student_form_step',['N.A.','TC','PROFILE', 'METRICS_EDUCATION', 'PREVIOUS_EDUCATION','DEGREE','SUBMITTED'])->default('N.A.');
             $table->boolean('is_mailed')->default(false);
             $table->boolean('is_active')->default(false);
             $table->boolean('is_verified')->default(false);
