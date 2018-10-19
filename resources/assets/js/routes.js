@@ -79,8 +79,8 @@ let routes = [{
                 component: require('./views/about/addPage'),
             },
             {
-                 path: '/about/manage',
-                 component: require('./views/about/managePage'),
+                path: '/about/manage',
+                component: require('./views/about/managePage'),
             },
             {
                 path: '/post/:id/edit',

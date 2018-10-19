@@ -60,6 +60,7 @@ class PreviousEducationRepository
             'year'           => $payload['year'],
             'obtained_marks' => $payload['obtained_marks'],
             'max_marks'      => $payload['max_marks'],
+            'percentage'     => $payload['percentage'],
             'institute'      => $payload['institute'],
             'year_gap'       => $payload['year_gap'],
             'jee_rank'       => $payload['jee_rank'],

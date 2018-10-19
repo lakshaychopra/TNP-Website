@@ -109,9 +109,11 @@ class PreviousEducationsController extends Controller
             $pe->year = $request->year;
             $pe->obtained_marks = $request->obtained_marks;
             $pe->max_marks = $request->max_marks;
-            $pe->marks_type = $request->marks_type;
+            $pe->education = $request->education;
+            $pe->year_gap = $request->year_gap;
+            $pe->jee_rank = $request->jee_rank;
             $pe->percentage = $request->percentage;
-            $pe->update($data); 
+            $pe->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$pe);
         } catch (Exception $e) {

@@ -32,6 +32,8 @@ export const formstepChangeURL = '/api/dashboard/user/step/update';
 export const firstLoginURL = '/api/dashboard/user/first/login';
 export const statusChangeURL = '/api/dashboard/user/status/update';
 export const storeStudentURL = '/api/dashboard/student/';
+export const storeStudentMeURL = '/api/dashboard/student/me/';
+export const storeStudentPeURL = '/api/dashboard/student/pe/';
 
 export const viewPost = '/view/';
 

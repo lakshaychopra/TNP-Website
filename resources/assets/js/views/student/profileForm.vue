@@ -11,21 +11,23 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="name"  v-model="student.name"  placeholder="Name" class="form-control">
+                                        <input type="text" name="md-radio-inlinename" v-model="student.name"
+                                            placeholder="Name" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="" class="col-md-2 col-form-label">Gender :  </label>
+                                        <label for="" class="col-md-2 col-form-label">Gender : </label>
                                         <div class="col-md-2 md-radio md-radio-inline">
-                                            <input type="radio" name="gender" v-model="student.gender"  id="male" value="MALE" >       
+                                            <input type="radio" name="gender" v-model="student.gender" id="male" value="MALE">
                                             <label for="male">Male</label>
 
                                         </div>
                                         <div class="col-md-2 md-radio md-radio-inline">
-                                            <input type="radio" name="gender" v-model="student.gender"  id="female" value="FEMALE" >     
+                                            <input type="radio" name="gender" v-model="student.gender" id="female"
+                                                value="FEMALE">
                                             <label for="female">Female</label>
                                         </div>
                                     </div>
@@ -33,7 +35,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <select name="category" v-model="student.category" class="form-control">
-                                            <option  disabled selected value="null">Category</option>
+                                            <option disabled selected value="null">Category</option>
                                             <option value="GEN">General</option>
                                             <option value="SC">SC</option>
                                             <option value="ST">ST</option>
@@ -45,12 +47,14 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="height"  v-model="student.height"  placeholder="Height" class="form-control">
+                                        <input type="text" name="height" v-model="student.height" placeholder="Height"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="weight"  v-model="student.weight" placeholder="Weight" class="form-control">
+                                        <input type="text" name="weight" v-model="student.weight" placeholder="Weight"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -76,12 +80,14 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="uniRoll" v-model="student.univ_roll_no"  placeholder="University Roll No." class="form-control">
+                                        <input type="text" name="uniRoll" v-model="student.univ_roll_no" placeholder="University Roll No."
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="classRoll" v-model="student.class_roll_no"  placeholder="Class Roll No." class="form-control">
+                                        <input type="text" name="classRoll" v-model="student.class_roll_no" placeholder="Class Roll No."
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -97,7 +103,8 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="batch" v-model="student.batch"  placeholder="Batch" class="form-control">
+                                        <input type="text" name="batch" v-model="student.batch" placeholder="Batch"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -115,11 +122,12 @@
                                     <div class="form-group">
                                         <!-- <input type="text" name="name"  placeholder="Stream" class="form-control"> -->
                                         <select name="stream" v-model="student.stream" class="form-control">
-                                            <option disabled  value="null">Stream</option>
+                                            <option disabled value="null">Stream</option>
                                             <option value="Civil">Civil Engineering</option>
                                             <option value="Computer">Computer Science and Engineering</option>
                                             <option value="Electrical">Electrical Engineering</option>
-                                            <option value="Electronics">Electronics and Communication Engineering </option>
+                                            <option value="Electronics">Electronics and Communication Engineering
+                                            </option>
                                             <option value="Information">Information Technology</option>
                                             <option value="Mechenical">Mechenical Engineering</option>
                                             <option value="Production">Production Engineering</option>
@@ -131,27 +139,30 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <input type="text" name="section"  v-model="student.section"  placeholder="Section" class="form-control">
+                                        <input type="text" name="section" v-model="student.section" placeholder="Section"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <select name="shift" v-model="student.shift" class="form-control">
-                                            <option value="null" disabled >Shift</option>
+                                            <option value="null" disabled>Shift</option>
                                             <option value="MORNING">Morning</option>
                                             <option value="EVENING">Evening</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                     <div class="form-group">
-                                        <label for="" class="col-md-4 col-form-label">Training Semester :  </label>
+                                    <div class="form-group">
+                                        <label for="" class="col-md-4 col-form-label">Training Semester : </label>
                                         <div class="col-md-1 md-radio md-radio-inline">
-                                            <input type="radio" name="t_sem" id="7" v-model="student.training_semester" value="7" >       
+                                            <input type="radio" name="t_sem" id="7" v-model="student.training_semester"
+                                                value="7">
                                             <label for="7">7</label>
                                         </div>
                                         <div class="col-md-1 md-radio md-radio-inline">
-                                            <input type="radio" name="t_sem" id="8" v-model="student.training_semester" value="8">     
+                                            <input type="radio" name="t_sem" id="8" v-model="student.training_semester"
+                                                value="8">
                                             <label for="8">8</label>
                                         </div>
                                     </div>
@@ -163,24 +174,28 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="fname"  v-model="student.father_name"  placeholder="Father's Name" class="form-control">
+                                        <input type="text" name="fname" v-model="student.father_name" placeholder="Father's Name"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="fphone"  v-model="student.father_phone"  placeholder="Father's Phone" class="form-control">
+                                        <input type="text" name="fphone" v-model="student.father_phone" placeholder="Father's Phone"
+                                            class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="mname" v-model="student.mother_name"  placeholder="Mother's Name" class="form-control">
+                                        <input type="text" name="mname" v-model="student.mother_name" placeholder="Mother's Name"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="mphone" v-model="student.mother_phone"  placeholder="Mother's Phone" class="form-control">
+                                        <input type="text" name="mphone" v-model="student.mother_phone" placeholder="Mother's Phone"
+                                            class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -190,29 +205,33 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
-                                        <input type="text" name="address"  v-model="student.address"  placeholder="Address" class="form-control">
+                                        <input type="text" name="address" v-model="student.address" placeholder="Address"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="city"  v-model="student.city"  placeholder="City" class="form-control">
+                                        <input type="text" name="city" v-model="student.city" placeholder="City" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="district"  v-model="student.district"  placeholder="District" class="form-control">
+                                        <input type="text" name="district" v-model="student.district" placeholder="District"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="state"  v-model="student.state" placeholder="State" class="form-control">
+                                        <input type="text" name="state" v-model="student.state" placeholder="State"
+                                            class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="pincode"  v-model="student.pincode"  placeholder="Pincode" class="form-control">
+                                        <input type="text" name="pincode" v-model="student.pincode" placeholder="Pincode"
+                                            class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -231,32 +250,41 @@
     </div>
 </template>
 <script>
-    import { storeStudentURL } from "../../config.js";
-    import { fetchProfileURL } from "../../config.js";
+    import {
+        storeStudentURL,
+        formstepChangeURL
+    } from "../../config.js";
+    import {
+        fetchProfileURL
+    } from "../../config.js";
     export default {
         data() {
             return {
                 userid: this.$store.state.auth.userid,
-                student:{},
+                student: {},
 
-                 profile: {
+                profile: {
                     'univ_roll_no': this.$store.state.auth.username,
                     // 'id': this.$store.state.auth.userid,
                 },
+                statusChange: {
+                    'student_form_step': 'METRICS_EDUCATION',
+                    'id': this.$store.state.auth.userid,
+                },
             }
         },
-         created(){
-            axios.get('/api/dashboard/student/' + this.$store.state.auth.username +'/edit').then(response => {
-                    console.log(response.data.data[0]);
-                    // if (response.status == 200) {
-                        
-                    // }
-                    this.student = response.data.data[0];
-                }).catch(error => {
-                    console.log(error);
-                });
-                // console.log(this.id.student);
-         },
+        created() {
+            axios.get('/api/dashboard/student/' + this.$store.state.auth.username + '/edit').then(response => {
+                console.log(response.data.data[0]);
+                // if (response.status == 200) {
+
+                // }
+                this.student = response.data.data[0];
+            }).catch(error => {
+                console.log(error);
+            });
+            // console.log(this.id.student);
+        },
         methods: {
 
             getAuthUser(name) {
@@ -288,14 +316,31 @@
                 formData.append('district', this.student.district);
                 formData.append('state', this.student.state);
                 formData.append('pincode', this.student.pincode);
-                formData.append('_method','PUT');
+                formData.append('_method', 'PUT');
                 // console.log(this.id.id);
-                console.log(this.student.name+' '+this.student.gender+' '+this.student.category+' '+this.student.height+' '+this.student.weight+' '+this.student.blood_group+' '+this.student.univ_roll_no+' '+this.student.class_roll_no+' '+this.student.living+' '+this.student.batch+' '+this.student.branch_type+' '+this.student.stream+' '+this.student.section+' '+this.student.shift+' '+this.student.training_semester+' '+this.student.father_name+' '+this.student.father_phone+' '+this.student.mother_name+' '+this.student.mother_phone+' '+this.student.address+' '+this.student.city+' '+this.student.district+' '+this.student.state+' '+this.student.pincode);
+                console.log(this.student.name + ' ' + this.student.gender + ' ' + this.student.category + ' ' + this.student
+                    .height + ' ' + this.student.weight + ' ' + this.student.blood_group + ' ' + this.student.univ_roll_no +
+                    ' ' + this.student.class_roll_no + ' ' + this.student.living + ' ' + this.student.batch + ' ' +
+                    this.student.branch_type + ' ' + this.student.stream + ' ' + this.student.section + ' ' + this.student
+                    .shift + ' ' + this.student.training_semester + ' ' + this.student.father_name + ' ' + this.student
+                    .father_phone + ' ' + this.student.mother_name + ' ' + this.student.mother_phone + ' ' + this.student
+                    .address + ' ' + this.student.city + ' ' + this.student.district + ' ' + this.student.state +
+                    ' ' + this.student.pincode);
                 // console.log('1');
-                axios.post(storeStudentURL+this.student.id, formData).then(response => {
+                axios.post(storeStudentURL + this.student.id, formData).then(response => {
+                    axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
+                        if (statusresponse.status == 200) {
+                            // toastr['success']("User Added!!");
+                            // this.$router.push('/userlogin');
+                            this.$parent.step = 3;
+
+                        }
+                    }).catch(errors => {
+                        console.log(errors);
+                    });
                     console.log(response);
                     // if (response.status == 200) {
-                        
+
                     // }
                 }).catch(error => {
                     console.log(error);
@@ -308,28 +353,31 @@
     .text-primary {
         color: #0185c2 !important;
     }
-    .col-form-label{
+
+    .col-form-label {
         padding-left: 0;
     }
 </style>
 <style lang="scss" scoped>
-
     $md-radio-checked-color: rgb(51, 122, 183);
     $md-radio-border-color: rgba(0, 0, 0, 0.54);
     $md-radio-size: 20px;
     $md-radio-checked-size: 10px;
     $md-radio-ripple-size: 15px;
-@keyframes ripple {
-  0% {
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);
-  }
-  50% { 
-    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
-  }
-}
+
+    @keyframes ripple {
+        0% {
+            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);
+        }
+
+        50% {
+            box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
+        }
+
+        100% {
+            box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
+        }
+    }
 
     .md-radio {
         margin: 16px 0;
@@ -340,10 +388,12 @@
 
         input[type="radio"] {
             display: none;
+
             &:checked+label:before {
                 border-color: $md-radio-checked-color;
                 animation: ripple 0.2s linear forwards;
             }
+
             &:checked+label:after {
                 transform: scale(1);
             }
@@ -357,6 +407,7 @@
             margin-bottom: 0;
             cursor: pointer;
             vertical-align: bottom;
+
             &:before,
             &:after {
                 position: absolute;
@@ -365,6 +416,7 @@
                 transition: all .3s ease;
                 transition-property: transform, border-color;
             }
+
             &:before {
                 left: 0;
                 top: 0;
@@ -372,6 +424,7 @@
                 height: $md-radio-size;
                 border: 2px solid $md-radio-border-color;
             }
+
             &:after {
                 top: $md-radio-size / 2 - $md-radio-checked-size / 2;
                 left: $md-radio-size / 2 - $md-radio-checked-size / 2;

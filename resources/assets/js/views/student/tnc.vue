@@ -51,7 +51,7 @@
                                         <li style="text-align: justify;">Don&rsquo;t forge the documents else strict
                                             action will be taken against you.</li>
                                     </ol>
-                            <br>
+                                    <br>
 
                                     <div class="col-xs-12 col-lg-8 mx-auto form-group">
                                         <input type="checkbox" class="form-check-input" name="terms" required="required">
@@ -76,15 +76,11 @@
 </template>
 <script>
     import {
-        firstLoginURL
-    } from "../../config.js";
-    import {
-        statusChangeURL
-    } from "../../config.js";
-    import {
-        storeStudentURL
-    } from "../../config.js";
-    import {
+        firstLoginURL,
+        statusChangeURL,
+        storeStudentURL,
+        storeStudentMeURL,
+        storeStudentPeURL,
         formstepChangeURL
     } from "../../config.js";
     export default {
@@ -124,10 +120,34 @@
                                         console.log(stat);
                                         axios.post(storeStudentURL, this.username).then(resp => {
                                             if (resp.status == 200) {
-                                                toastr['success']("User Added!!");
-                                                // this.$router.push('/userlogin');
-                                                this.$parent.step = 2;
+                                                axios.post(storeStudentMeURL, this.username)
+                                                    .then(meresponse => {
+                                                        axios.post(
+                                                            storeStudentPeURL,
+                                                            this.username).then(
+                                                            peresponse => {
+                                                                if (peresponse.status ==
+                                                                    200) {
+                                                                    toastr[
+                                                                        'success'
+                                                                    ](
+                                                                        "User Added!!"
+                                                                    );
+                                                                    // this.$router.push('/userlogin');
+                                                                    this.$parent
+                                                                        .step =
+                                                                        2;
 
+                                                                }
+                                                            }).catch(peerrors => {
+                                                            console.log(
+                                                                peerrors
+                                                            );
+                                                        });
+                                                    }).catch(errors => {
+                                                        console.log(errors);
+                                                    });
+                                                // this.$router.push('/userlogin');
                                             }
                                         }).catch(er => {
                                             console.log(er);
