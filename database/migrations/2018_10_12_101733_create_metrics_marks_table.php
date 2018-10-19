@@ -22,7 +22,7 @@ class CreateMetricsMarksTable extends Migration
             $table->integer('year')->nullable();
             $table->integer('obtained_marks')->nullable();
             $table->integer('max_marks')->nullable();
-            $table->enum('marks_type)',['CGPA','PERCENTAGE'])->nullable();
+            $table->enum('marks_type',['CGPA','PERCENTAGE'])->nullable();
             $table->integer('percentage')->nullable();
             $table->timestamps();
         });
