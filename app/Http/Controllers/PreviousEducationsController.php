@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\PreviousEducation;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreatePreviousEducationRequest;
+use App\Http\Requests\UpdatePreviousEducationRequest;
 use DB;
 use Exception;
 use Notification;
@@ -37,7 +39,7 @@ class PreviousEducationsController extends Controller
     * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\Response
     */
-    public function store(Request $request)
+    public function store(CreatePreviousEducationRequest $request)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
@@ -45,9 +47,11 @@ class PreviousEducationsController extends Controller
             if (!$auth) {
                 return $this->respondUnauthorized('Failed');
             }
-            $peCreate = $this->service->createPreviousEducation($pe);
+            $data = $request->only('univ_roll_no');
+            $pe = new PreviousEducation;
+            $pe->create($data);
             DB::commit();
-            return $this->respondSuccess('Inserted');
+            return $this->respondSuccess('Inserted',$pe);
         }
         catch (Exception $e) {
             DB::rollback();
@@ -73,10 +77,13 @@ class PreviousEducationsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function edit(PreviousEducation $pe)
+    public function edit($pe = null)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        return $this->respondData($pe);
+        if ($pe != null) {
+            $data = PreviousEducation::where('univ_roll_no', '=' , $pe)->get();
+            return $this->respondData($data);
+        }
     }
     
     /**
@@ -86,7 +93,7 @@ class PreviousEducationsController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, PreviousEducation $pe)
+    public function update(UpdatePreviousEducationRequest $request, PreviousEducation $pe)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
@@ -94,9 +101,16 @@ class PreviousEducationsController extends Controller
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            $data = $request->all();
-            $id = $request->id;
-            $pe = PreviousEducation::find($id);
+            // $data = $request->all();
+            $pe->univ_roll_no = $request->univ_roll_no;
+            $pe->board = $request->board;
+            $pe->institute = $request->institute;
+            $pe->month = $request->month;
+            $pe->year = $request->year;
+            $pe->obtained_marks = $request->obtained_marks;
+            $pe->max_marks = $request->max_marks;
+            $pe->marks_type = $request->marks_type;
+            $pe->percentage = $request->percentage;
             $pe->update($data); 
             DB::commit();
             return $this->respondSuccess('Updated',$pe);
