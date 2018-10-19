@@ -27,18 +27,18 @@ class CreateStudentsTable extends Migration
             $table->enum('gender',['MALE', 'FEMALE'])->nullable();
             $table->string('blood_group')->nullable();
             $table->enum('category',['OBC', 'SC', 'ST', 'GEN'])->nullable();
-            $table->integer('height')->comment('in cm')->nullable();
-            $table->integer('weight')->comment('in kg')->nullable();
+            $table->string('height')->comment('in cm')->nullable();
+            $table->string('weight')->comment('in kg')->nullable();
             $table->enum('living',['HOSTELER','DAYSCHOLAR'])->nullable();
             $table->string('father_name')->nullable();
-            $table->integer('father_phone')->nullable();
+            $table->string('father_phone')->nullable();
             $table->string('mother_name')->nullable();
-            $table->integer('mother_phone')->nullable();
+            $table->string('mother_phone')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('district')->nullable();
-            $table->integer('pincode')->nullable();
+            $table->string('pincode')->nullable();
             $table->timestamps();
         });
     }

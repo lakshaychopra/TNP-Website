@@ -19,10 +19,10 @@ class CreatePreviousMarksTable extends Migration
             $table->string('board')->nullable();
             $table->string('institute')->nullable();
             $table->string('month')->nullable();
-            $table->integer('year')->nullable();
-            $table->integer('obtained_marks')->nullable();
-            $table->integer('max_marks')->nullable();
-            $table->integer('percentage')->nullable();
+            $table->string('year')->nullable();
+            $table->string('obtained_marks')->nullable();
+            $table->string('max_marks')->nullable();
+            $table->string('percentage')->nullable();
             $table->string('year_gap')->nullable();            
             $table->string('jee_rank')->nullable();
             $table->enum('education',['XII','DIPLOMA'])->nullable();
