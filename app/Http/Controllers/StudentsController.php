@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Student;
-use App\Repositories\StudentRepository;
 use App\Http\Requests\CreateStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
-use App\Services\StudentService;
 use DB;
 use Exception;
 use Notification;
 use JWTAuth;
+use App\Repositories\StudentRepository;
+use App\Services\StudentService;
 
 class StudentsController extends Controller
 {
@@ -33,16 +33,6 @@ class StudentsController extends Controller
         $limit  = $request->input('limit') ?? 6;
         $students = $this->repository->list($limit);
         return $this->respondData($students);
-    }
-    
-    /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function create()
-    {
-        //
     }
     
     /**
@@ -91,11 +81,11 @@ class StudentsController extends Controller
     */
     public function edit($student = null)
     {
+        $auth = JWTAuth::parseToken()->authenticate();
         if ($student != null) {
             $data = Student::where('univ_roll_no', '=' , $student)->get();
             return $this->respondData($data);
         }
-        
     }
     
     

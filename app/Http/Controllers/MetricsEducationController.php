@@ -8,11 +8,12 @@ use DB;
 use Exception;
 use Notification;
 use JWTAuth;
-
+use App\Services\MetricsEducationService;
+use App\Repositories\MetricsEducationRepository;
 
 class MetricsEducationController extends Controller
 {
-    public function __construct( $service, $repository)
+    public function __construct(MetricsEducationService $service,MetricsEducationRepository $repository)
     {
         $this->service = $service;
         $this->repository = $repository;
@@ -76,10 +77,13 @@ class MetricsEducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(MetricsEducation $me)
+    public function edit($me = null)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        return $this->respondData($me);
+        if ($me != null) {
+            $data = MetricsEducation::where('univ_roll_no', '=' , $me)->get();
+            return $this->respondData($data);
+        }
     }
 
     /**
@@ -98,10 +102,15 @@ class MetricsEducationController extends Controller
                 return $this->respondError('Failed', 401); 
             }
             $data = $request->all();
-            $me->title = $request->title;
-            $me->body = $request->body;
-            $me->tag = $request->tag;
-            $me->category = $request->category;
+            $me->univ_roll_no = $request->univ_roll_no;
+            $me->board = $request->board;
+            $me->institute = $request->institute;
+            $me->month = $request->month;
+            $me->year = $request->year;
+            $me->obtained_marks = $request->obtained_marks;
+            $me->max_marks = $request->max_marks;
+            $me->marks_type = $request->marks_type;
+            $me->percentage = $request->percentage;
             $me->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$me);
@@ -117,8 +126,11 @@ class MetricsEducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(MetricsEducation $me)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $delete = $this->repository->delete($me);
+        $index= MetricsEducation::orderBy('created_at', 'desc')->get();
+        return $this->respondSuccess('Deleted', $index);
     }
 }
