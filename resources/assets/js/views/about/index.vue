@@ -33,35 +33,22 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="w-100 p-2 bgcolor text-uppercase collapse" id="more">
-                    <div class="owl-carousel" id="nav-carousel">
+                    <div class="owl-carousel" id="nav">
                         <div>
-                            <p>
-                                <router-link to="/">Home</router-link>
-                            </p>
+                            <router-link to="/">Home</router-link>
                         </div>
                         <div>
-                            <p>
-                                <router-link to="/login">Login</router-link>
-                            </p>
+                            <router-link to="/login">Login</router-link>
                         </div>
                         <div v-for="pg in page" :key="pg.id">
-                            <p>
-                                <router-link v-bind:to="'/page/'+pg.url">{{ pg.title }}</router-link>
-                            </p>
+                            <router-link v-bind:to="'/page/'+pg.url">{{ pg.title }}</router-link>
                         </div>
                         <div>
-                            <p>
-                                <router-link to="/genconian">Developer and Contributers</router-link>
-                            </p>
+                            <router-link to="/genconian">Developer and Contributers</router-link>
                         </div>
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#nav-carousel" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#nav-carousel" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
+
                     </div>
                 </div>
             </nav>
@@ -107,7 +94,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-image">
-                            <img src="images/about/img/image1.jpg" alt="image" width="100%" />
+                            <img src="images/about/img/image2.jpg" alt="image" width="100%" />
                         </div>
                         <div class="card-title text-center mt-2">
                             <h5>Entry Level Hiring</h5>
@@ -120,7 +107,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-image">
-                            <img src="images/about/img/image1.jpg" alt="image" width="100%" />
+                            <img src="images/about/img/image3.jpg" alt="image" width="100%" />
                         </div>
                         <div class="card-title text-center mt-2">
                             <h5>Campus Commune</h5>
@@ -148,7 +135,7 @@
                     </div>
                 </div>
                 <div class="col-md-10 col-xs-12">
-                    <div class="owl-carousel" id="news-testimonials">
+                    <div class="owl-carousel" id="news">
                         <div class="col-md-4 float-left item" v-for="post in posts" :key="post.id">
                             <router-link v-bind:to="'/view/'+post.id">
                                 <div class="card">
@@ -283,66 +270,6 @@
         border-top-right-radius: 10px;
     }
 
-    .col-primary {
-        color: #304156;
-    }
-
-    .card-primary {
-        background: #fff;
-    }
-
-    .btn-custom {
-        background-color: #fff;
-        color: #212426;
-        padding: 1px 4px;
-        border-radius: 14px;
-        border-color: #b3b6b9;
-        font-size: 14px;
-        margin-right: 4px;
-    }
-
-    .sub-head {
-        margin-top: 3px;
-    }
-
-    #share {
-        position: absolute;
-        top: -22px;
-        padding: 12px;
-        right: 20px;
-        background: #038ed4;
-        border: 5px solid;
-        border-radius: 50%;
-        color: #fff;
-    }
-
-    #menu {
-        margin-left: 10px;
-        vertical-align: middle;
-    }
-
-    .bg-gray {
-        background-color: #f1f1f1;
-    }
-
-    .color-main {
-        color: #038ed4;
-    }
-
-    #bg-trans {
-        background: -webkit-linear-gradient(#333, #fff);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .share i {
-        margin-top: 14px;
-        font-size: 22px;
-        color: #6b6b6b;
-        margin-right: 6px;
-    }
-
     .list-inline {
         padding-left: 0;
         list-style: none;
@@ -352,17 +279,8 @@
         background-color: #038ed4 !important;
     }
 
-    .bg-col-grey {
-        background-color: #eee;
-        padding: 10px;
-    }
-
     .btn {
         line-height: 1.5 !important;
-    }
-
-    #mr-btm-10 {
-        margin-bottom: 10px;
     }
 
     #list-menu li a {
@@ -379,46 +297,10 @@
         color: #038ed4;
     }
 
-    #search {
-        background-color: #fff;
-        border-color: #0073BC;
-        width: 83%;
-        color: #0073BC;
-        border-radius: 0;
-    }
-
-    #search::placeholder {
-        color: #0073BC;
-    }
-
     .navbar {
         padding: 0 1rem;
     }
 
-    @media (min-width: 768px) {
-        .navbar-header {
-            width: 142px;
-        }
-    }
-
-    .w-65 {
-        width: 65%;
-    }
-
-    .fix {
-        overflow: hidden;
-        top: 90px;
-    }
-
-    @media only screen and (max-width: 500px) {
-        #share-social {
-            text-align: center;
-        }
-    }
-
-    #bt {
-        border-top: 1px solid #ecedee;
-    }
 
     .btn-primary {
         color: #fff;
@@ -451,10 +333,6 @@
     .bottom-left {
         position: absolute;
         bottom: 8px;
-    }
-
-    .p-top {
-        padding-top: 400px;
     }
 
     #demo .carousel-indicators {
@@ -491,62 +369,17 @@
         border-radius: 4px;
     }
 
-    #demo1 .carousel-indicators li {
+    #demo .carousel-indicators li {
         height: 9px;
         width: 10px;
         border-radius: 50%;
         background-color: #017bfc;
     }
 
-    #demo1 .carousel-indicators li.active {
+    #demo .carousel-indicators li.active {
         border: 1px solid #000;
         background-color: transparent;
     }
-
-    .bgcolor3 {
-        background-color: #474747;
-    }
-
-    .listt ul {
-        list-style-type: none;
-    }
-
-    /* CSS used here will be applied after bootstrap.css */
-
-    .closeBtn:focus {
-        outline: none;
-    }
-
-    .close {
-        color: gray;
-    }
-
-    .wrapper {
-        position: relative;
-        margin: 0 auto;
-        overflow: hidden;
-        padding: 5px;
-        height: 50px;
-    }
-
-    .list {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        min-width: 3500px;
-        margin-top: 0px;
-    }
-
-    .list li {
-        display: table-cell;
-        position: relative;
-        text-align: center;
-        cursor: grab;
-        cursor: -webkit-grab;
-        color: #efefef;
-        vertical-align: middle;
-    }
-
 
     @media screen and (max-width:426px) {
         #demo .owl--text {
@@ -568,14 +401,6 @@
             overflow: hidden;
         }
 
-        .bgimage2 {
-            height: 645px;
-            overflow: hidden;
-        }
-
-        .mar-top {
-            margin-top: 10px;
-        }
     }
 
     .card-news {
@@ -588,25 +413,18 @@
         padding-left: 10px;
     }
 
-    .icons {
-        border: 1px solid #fff;
-        padding: 12px;
-        border-radius: 50%;
-    }
-
-
     #demo p {
         margin-bottom: 0;
     }
 
 
-    #nav-carousel p {
+    #nav p {
         margin-bottom: 0;
         color: #fff;
         font-size: 14px;
     }
 
-    #nav-carousel.carousel-indicators {
+    #nav .carousel-indicators {
         position: absolute;
         top: 0;
         left: -98px;
@@ -614,28 +432,22 @@
         margin-top: 200px;
     }
 
-    #nav-carousel.carousel-indicators .active {
+    #nav .carousel-indicators .active {
         background-color: transparent;
     }
 
-    #nav-carousel .carousel-indicators li {
+    #nav .carousel-indicators li {
         height: 9px;
         width: 10px;
         border-radius: 50%;
         background-color: #017bfc;
     }
 
-    #nav-carousel .carousel-indicators li.active {
+    #nav .carousel-indicators li.active {
         border: 1px solid #000;
         background-color: transparent;
     }
 
-    section .thanks-title {
-        text-align: left;
-        color: #038ed4;
-        margin-bottom: 50px;
-        text-transform: uppercase;
-    }
 
     #customers-testimonials .testimonials {
         background-color: #fff;
@@ -742,39 +554,14 @@
         beforeCreate() {
             var vm = this;
             Vue.nextTick(function () {
-                $("#nav-carousel").owlCarousel({
+                $("#nav").owlCarousel({
                     autoWidth: true,
                     margin: 30,
                     stagePadding: 50,
-                    nav: false,
                 });
             }.bind(vm));
             Vue.nextTick(function () {
-                $(".owl-carousel").owlCarousel({
-                    margin: 10,
-                    nav: false,
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 5000,
-                    responsiveClass: true,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: false
-                        },
-                        480: {
-                            items: 3,
-                        },
-                        768: {
-                            items: 3,
-                            loop: false
-                        }
-                    }
-
-                });
-            }.bind(vm));
-            Vue.nextTick(function () {
-                $("#news-testimonials").owlCarousel({
+                $("#news").owlCarousel({
                     loop: true,
                     center: false,
                     items: 3,
@@ -798,7 +585,7 @@
                     }
                 });
             }.bind(vm));
-           Vue.nextTick(function () {
+            Vue.nextTick(function () {
                 $('#customers-testimonials').owlCarousel({
                     loop: true,
                     center: true,
