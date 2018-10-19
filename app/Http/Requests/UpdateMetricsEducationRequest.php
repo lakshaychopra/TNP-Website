@@ -24,15 +24,15 @@ class UpdateMetricsEducationRequest extends FormRequest
     public function rules()
     {
         return [
-            'univ_roll_no'    =>  "bail|required|numeric|min:6|exists:metrics_education,univ_roll_no"
-            'board'           =>  "required"
-            'institute'       =>  "required"
-            'month'           =>  "required"
-            'year'            =>  "required"
-            'obtained_marks'  =>  "required"
-            'max_marks'       =>  "required"
-            'marks_type'      =>  "required"
-            'percentage'      =>  "required"
+            'univ_roll_no'    =>  "bail|required|numeric|min:6|exists:metrics_education,univ_roll_no",
+            'board'           =>  "required",
+            'institute'       =>  "required",
+            'month'           =>  "required",
+            'year'            =>  "required",
+            'obtained_marks'  =>  "required",
+            'max_marks'       =>  "required",
+            'marks_type'      =>  "required",
+            'percentage'      =>  "required",
         ];
     }
 }

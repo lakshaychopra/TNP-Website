@@ -24,15 +24,15 @@ class CreateMetricsEducationRequest extends FormRequest
     public function rules()
     {
         return [
-            'univ_roll_no'    =>  "nullable"
-            'board'           =>  "nullable"
-            'institute'       =>  "nullable"
-            'month'           =>  "nullable"
-            'year'            =>  "nullable"
-            'obtained_marks'  =>  "nullable"
-            'max_marks'       =>  "nullable"
-            'marks_type'      =>  "nullable"
-            'percentage'      =>  "nullable"
+            'univ_roll_no'    =>  "nullable",
+            'board'           =>  "nullable",
+            'institute'       =>  "nullable",
+            'month'           =>  "nullable",
+            'year'            =>  "nullable",
+            'obtained_marks'  =>  "nullable",
+            'max_marks'       =>  "nullable",
+            'marks_type'      =>  "nullable",
+            'percentage'      =>  "nullable",
         ];
     }
 }
