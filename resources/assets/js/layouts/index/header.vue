@@ -10,7 +10,7 @@
             </router-link>
             <div class="navbar-header">
                 <!-- Navbar links -->
-                <div class="navbar-text d-lg-none">
+                <div class="navbar-text d-xl-none">
                     <ul class="navbar-nav list-inline">
                         <li class="nav-item ">
                             <a class="nav-link" href="#" @click="search_input = !search_input">
@@ -25,7 +25,7 @@
 
             </div>
             <div class="navbar-collapse collapse" id="collapsibleNavbar">
-                <div class="mr-auto d-none d-lg-block w-65" v-if="this.searchbox=true">
+                <div class="mr-auto d-none d-xl-block w-65" v-if="this.searchbox=true">
                     <form class="form-inline" action="/" method="GET">
                         <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost"
                             autocomplete="on" id="search">
@@ -41,10 +41,10 @@
                     </li>
                     <li class="nav-item">
                         <router-link to="/login" class="nav-link float-right">
-                            <a  v-if="this.$store.state.auth.username">
+                            <a v-if="this.$store.state.auth.username">
                                 <i class="fa fa-home" aria-hidden="true"></i> Profile
                             </a>
-                            <a  v-else>
+                            <a v-else>
                                 <i class="fa fa-sign-in" aria-hidden="true"></i> Login
                             </a>
                         </router-link>
@@ -52,11 +52,11 @@
                 </ul>
             </div>
         </nav>
-        <form action="/" method="GET" v-on:submit.prevent v-if="search_input" class="d-lg-none">
-            <div class="row bg-col-grey">
-                <div class="col-md-12">
-                    <input id="mr-btm-10" class="form-control" type="text" v-model="search" @keyup="searchPost"
-                        autocomplete="on" placeholder="Search">
+        <form action="/" method="GET" v-on:submit.prevent v-if="search_input" class="d-xl-none">
+            <div class="col-md-12">
+                <div class="row bg-col-grey">
+                    <input class="form-control mr-btm-10" type="text" v-model="search" @keyup="searchPost"
+                        autocomplete="on" placeholder="Search" id="search">
                 </div>
             </div>
         </form>
@@ -101,7 +101,7 @@
     }
 
     .bg-col-grey {
-        background-color: #eee;
+        background-color: rgba(238, 238, 238, 0.116);
         padding: 10px;
     }
 
@@ -109,7 +109,7 @@
         line-height: 1.5 !important;
     }
 
-    #mr-btm-10 {
+    .mr-btm-10 {
         margin-bottom: 10px;
     }
 
