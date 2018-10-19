@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\MetricsEducation;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateMetricsEducationRequest;
+use App\Http\Requests\UpdateMetricsEducationRequest;
 use DB;
 use Exception;
 use Notification;
@@ -38,7 +40,7 @@ class MetricsEducationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateMetricsEducationRequest $request)
     {
         
         $auth = JWTAuth::parseToken()->authenticate();
@@ -93,7 +95,7 @@ class MetricsEducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MetricsEducation $me)
+    public function update(UpdateMetricsEducationRequest $request, MetricsEducation $me)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
@@ -101,7 +103,7 @@ class MetricsEducationController extends Controller
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            $data = $request->all();
+            // $data = $request->all();
             $me->univ_roll_no = $request->univ_roll_no;
             $me->board = $request->board;
             $me->institute = $request->institute;

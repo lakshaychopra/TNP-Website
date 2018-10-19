@@ -24,7 +24,7 @@ class CreateMetricsEducationRequest extends FormRequest
     public function rules()
     {
         return [
-            'univ_roll_no'    =>  "bail|nullable"
+            'univ_roll_no'    =>  "nullable"
             'board'           =>  "nullable"
             'institute'       =>  "nullable"
             'month'           =>  "nullable"
