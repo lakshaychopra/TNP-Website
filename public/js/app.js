@@ -24832,7 +24832,7 @@ var render = function() {
           _c("div", { staticClass: "navbar-header" }, [
             _c("div", { staticClass: "navbar-text d-xl-none" }, [
               _c("ul", { staticClass: "navbar-nav list-inline" }, [
-                _c("li", { staticClass: "nav-item " }, [
+                _c("li", { staticClass: "nav-item" }, [
                   _c(
                     "a",
                     {
@@ -24982,7 +24982,7 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "col-md-12" }, [
-                _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "row px-3 py-2" }, [
                   _c("input", {
                     directives: [
                       {

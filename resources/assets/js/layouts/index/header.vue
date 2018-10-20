@@ -12,7 +12,7 @@
                 <!-- Navbar links -->
                 <div class="navbar-text d-xl-none">
                     <ul class="navbar-nav list-inline">
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a class="nav-link" href="#" @click="search_input = !search_input">
                                 <i class="fa fa-search"></i>
                             </a>
@@ -54,7 +54,7 @@
         </nav>
         <form action="/" method="GET" v-on:submit.prevent v-if="search_input" class="d-xl-none">
             <div class="col-md-12">
-                <div class="row">
+                <div class="row px-3 py-2">
                     <input class="form-control" type="text" v-model="search" @keyup="searchPost"
                         autocomplete="on" placeholder="Search" id="search">
                 </div>
