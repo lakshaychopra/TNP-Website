@@ -24120,7 +24120,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.post-meta {\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    width: 100%;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n    font-weight: 450;\n}\n.post-meta i {\n    font-size: 20px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n    margin-top: 2px;\n    font-weight: bold;\n}\n.pin {\n    position: absolute;\n    right: 18px;\n    top: 8px;\n    -webkit-transform: rotate(20deg);\n    transform: rotate(20deg);\n}\n.post-meta-text {\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4 {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4:after {\n    content: \"\\F0B0\";\n}\n#sidebar #link h4:after {\n    content: \"\\F08E\";\n}\n#sidebar #downloads h4:after {\n    content: \"\\F019\";\n}\n#sidebar .card-header h4:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary {\n    color: #304156;\n}\n.card-primary {\n    background: #fff;\n}\n#posts .card {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a:hover {\n    color: #038ed4;\n}\n#bt {\n    border-top: 1px solid #ecedee;\n}\n#posts .post-share {\n    padding-top: 20px;\n}\n#posts .card-footer {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix {\n    margin-bottom: 20px;\n}\n.sub-menu {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head {\n    margin-top: 3px;\n}\n#share {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.bg-gray {\n    background-color: #f1f1f1;\n}\n.color-main {\n    color: #038ed4;\n}\n.share i {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n@media only screen and (max-width: 500px) {\n#share-social {\n        text-align: center;\n}\n}\n", ""]);
+exports.push([module.i, "\n.post-meta {\n    margin-bottom: 5px;\n    margin-top: 5px;\n    float: left;\n    width: 100%;\n    padding: 10px;\n    border: 1px solid #e4e6e8;\n    background-color: #f6f6f6;\n    font-size: 12px;\n    text-transform: uppercase;\n    font-weight: 450;\n}\n.post-meta i {\n    font-size: 20px;\n    float: left;\n    margin-right: 10px;\n    color: #a3a9b0;\n    margin-top: 2px;\n    font-weight: bold;\n}\n.pin {\n    position: absolute;\n    right: 18px;\n    top: 8px;\n    -webkit-transform: rotate(20deg);\n    transform: rotate(20deg);\n}\n.post-meta-text {\n    font-size: 12px;\n    padding-top: 3px;\n    margin-left: 5px;\n}\n#sidebar .card-header {\n    background-color: #fff;\n    border-bottom: 0;\n    padding-bottom: 0;\n    z-index: 1;\n}\n#sidebar .card-header h4 {\n    border-bottom: 2px solid #ecedee;\n    margin-bottom: 20px;\n    line-height: 28px;\n    padding-bottom: 10px;\n    position: relative;\n}\n#sidebar .card-header h4:before {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    width: 28px;\n    background-color: #2f3c4e;\n    bottom: -2px;\n    left: 0;\n}\n#sidebar #about h4:after {\n    content: \"\\F0C0\";\n}\n#sidebar #office h4:after {\n    content: \"\\F1AD\";\n}\n#sidebar #filter h4:after {\n    content: \"\\F0B0\";\n}\n#sidebar #link h4:after {\n    content: \"\\F08E\";\n}\n#sidebar #downloads h4:after {\n    content: \"\\F019\";\n}\n#sidebar .card-header h4:after {\n    display: block;\n    float: left;\n    background-color: #2f3c4e;\n    font-family: FontAwesome;\n    height: 28px;\n    width: 28px;\n    line-height: 28px;\n    font-size: 14px;\n    text-align: center;\n    margin-right: 10px;\n    color: #fff;\n}\n#sidebar .card-header i {\n    float: left;\n    margin-right: 9px;\n    padding: 5px 7px;\n    background-color: #2f3c4e;\n    color: #fff;\n    border-radius: 3px;\n}\n#sidebar .card-body {\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n    padding-top: 0;\n}\n#sidebar .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#sidebar .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.col-primary {\n    color: #304156;\n}\n.card-primary {\n    background: #fff;\n}\n#posts .card {\n    border-radius: 1px;\n    margin-bottom: 25px;\n    /* border-top: 4px solid #038ed4; */\n}\n#posts .card-header {\n    background-color: #fff;\n    padding: 0.62rem 1.15rem;\n    margin-top: 6px;\n}\n#posts .card-header h2 a {\n    float: left;\n    color: #2f3c4e;\n    text-transform: uppercase;\n    font-weight: 400;\n}\n#posts .card-header h2 a:hover {\n    color: #038ed4;\n}\n#bt {\n    border-top: 1px solid #ecedee;\n}\n#posts .post-share {\n    padding-top: 20px;\n}\n#posts .card-footer {\n    padding: 0.40rem 0.40rem;\n    background-color: #038ed4;\n}\n#posts .card-body {\n    padding: 30px;\n    font-size: 16px;\n    position: relative;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n            box-shadow: 0 0 5px 0 #e2e3e4;\n}\n#posts .card-body:before {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 2px;\n    left: 0;\n    position: absolute;\n}\n#posts .card-body:after {\n    content: \"\";\n    height: 1px;\n    width: 100%;\n    background-color: #FFF;\n    border-bottom: 1px solid #d3d5d7;\n    -webkit-box-shadow: 0 0 5px 0 #e2e3e4;\n    box-shadow: 0 0 5px 0 #e2e3e4;\n    bottom: 5px;\n    left: 0;\n    position: absolute;\n}\n.clearfix {\n    margin-bottom: 20px;\n}\n.sub-menu {\n    background-color: #696969;\n    width: 150px;\n    list-style-type: none;\n}\n#posts .card-img-top {\n    height: 200px;\n    border-radius: 0;\n    /* border-top: 1px solid #000; */\n    /* background: url('/images/1.jpg') center no-repeat; */\n    background-size: cover;\n}\n.btn-custom {\n    background-color: #fff;\n    color: #212426;\n    padding: 1px 4px;\n    border-radius: 14px;\n    border-color: #b3b6b9;\n    font-size: 14px;\n    margin-right: 4px;\n}\n.sub-head {\n    margin-top: 3px;\n}\n#share {\n    position: absolute;\n    top: -22px;\n    padding: 12px;\n    right: 20px;\n    background: #038ed4;\n    border: 5px solid;\n    border-radius: 50%;\n    color: #fff;\n}\n#menu {\n    margin-left: 10px;\n    vertical-align: middle;\n}\n.bg-gray {\n    background-color: #f1f1f1;\n}\n.color-main {\n    color: #038ed4;\n}\n.share i {\n    margin-top: 14px;\n    font-size: 22px;\n    color: #6b6b6b;\n    margin-right: 6px;\n}\n@media only screen and (max-width: 500px) {\n#share-social {\n        text-align: center;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -24170,8 +24170,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__leftWidget_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__leftWidget_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rightWidget_vue__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rightWidget_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__rightWidget_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_helper_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__smoothscroll_vue__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__smoothscroll_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__smoothscroll_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_helper_js__ = __webpack_require__(3);
 //
 //
 //
@@ -24472,6 +24474,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -24483,7 +24486,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: {
         AppHeader: __WEBPACK_IMPORTED_MODULE_0__header_vue___default.a,
         WidgetLeft: __WEBPACK_IMPORTED_MODULE_1__leftWidget_vue___default.a,
-        WidgetRight: __WEBPACK_IMPORTED_MODULE_2__rightWidget_vue___default.a
+        WidgetRight: __WEBPACK_IMPORTED_MODULE_2__rightWidget_vue___default.a,
+        SmoothScroll: __WEBPACK_IMPORTED_MODULE_3__smoothscroll_vue___default.a
     },
     data: function data() {
         return {
@@ -24495,7 +24499,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             pinned_posts: {},
             showDropDown: false,
             share: false
-
         };
     },
     created: function created() {
@@ -24578,7 +24581,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             vm.getallpost();
         },
         setDateFormat: function setDateFormat(date) {
-            return __WEBPACK_IMPORTED_MODULE_4__services_helper_js__["a" /* default */].formatDateTime(date);
+            return __WEBPACK_IMPORTED_MODULE_5__services_helper_js__["a" /* default */].formatDateTime(date);
         },
 
         getallpost: function getallpost() {
@@ -24608,7 +24611,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getPosts: function getPosts() {
             var _this2 = this;
 
-            axios.get(__WEBPACK_IMPORTED_MODULE_3__config_js__["b" /* addHomePostURL */]).then(function (response) {
+            axios.get(__WEBPACK_IMPORTED_MODULE_4__config_js__["b" /* addHomePostURL */]).then(function (response) {
                 // var obj = JSON.parse(response.data);
                 // console.log(response);
                 _this2.getrecord(response);
@@ -24621,7 +24624,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getPinnedPosts: function getPinnedPosts() {
             var _this3 = this;
 
-            axios.get(__WEBPACK_IMPORTED_MODULE_3__config_js__["p" /* pinnedPostURL */]).then(function (response) {
+            axios.get(__WEBPACK_IMPORTED_MODULE_4__config_js__["p" /* pinnedPostURL */]).then(function (response) {
                 // var obj = JSON.parse(response.data);
                 // console.log(response);
                 _this3.pinned_posts = response.data.data;
@@ -24672,7 +24675,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.list-inline[data-v-1f00e349] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-1f00e349] {\n    background-color: #038ed4 !important;\n}\n.bg-col-grey[data-v-1f00e349] {\n    background-color: rgba(238, 238, 238, 0.116);\n    padding: 10px;\n}\n.btn[data-v-1f00e349] {\n    line-height: 1.5 !important;\n}\n.mr-btm-10[data-v-1f00e349] {\n    margin-bottom: 10px;\n}\n#list-menu li a[data-v-1f00e349] {\n    color: #f7fbff;\n    padding: 10px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-1f00e349]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-1f00e349] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 100%;\n    color: #0073BC;\n    border-radius: 25px;\n}\n#search[data-v-1f00e349]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-1f00e349] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-1f00e349] {\n        width: 142px;\n}\n}\n.w-65[data-v-1f00e349] {\n    width: 65%;\n}\n.fix[data-v-1f00e349] {\n    overflow: hidden;\n    top: 90px;\n}\n", ""]);
+exports.push([module.i, "\n.list-inline[data-v-1f00e349] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-dark[data-v-1f00e349] {\n    background-color: #038ed4 !important;\n}\n.btn[data-v-1f00e349] {\n    line-height: 1.5 !important;\n}\n#list-menu li a[data-v-1f00e349] {\n    color: #f7fbff;\n    padding: 10px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-1f00e349]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#search[data-v-1f00e349] {\n    background-color: #fff;\n    border-color: #0073BC;\n    width: 100%;\n    color: #0073BC;\n    border-radius: 25px;\n}\n#search[data-v-1f00e349]::-webkit-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]:-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]::-ms-input-placeholder {\n    color: #0073BC;\n}\n#search[data-v-1f00e349]::placeholder {\n    color: #0073BC;\n}\n.navbar[data-v-1f00e349] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-1f00e349] {\n        width: 142px;\n}\n}\n.w-65[data-v-1f00e349] {\n    width: 65%;\n}\n.fix[data-v-1f00e349] {\n    overflow: hidden;\n    top: 90px;\n}\n", ""]);
 
 // exports
 
@@ -24979,7 +24982,7 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "col-md-12" }, [
-                _c("div", { staticClass: "row bg-col-grey" }, [
+                _c("div", { staticClass: "row" }, [
                   _c("input", {
                     directives: [
                       {
@@ -24989,7 +24992,7 @@ var render = function() {
                         expression: "search"
                       }
                     ],
-                    staticClass: "form-control mr-btm-10",
+                    staticClass: "form-control",
                     attrs: {
                       type: "text",
                       autocomplete: "on",
@@ -26150,6 +26153,8 @@ var render = function() {
                 [_c("widget-left")],
                 1
               ),
+              _vm._v(" "),
+              _c("smooth-scroll"),
               _vm._v(" "),
               _c(
                 "div",
@@ -71457,6 +71462,198 @@ module.exports = SocialSharing;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(346)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(348)
+/* template */
+var __vue_template__ = __webpack_require__(349)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-45f370b7"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\layouts\\index\\smoothscroll.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-45f370b7", Component.options)
+  } else {
+    hotAPI.reload("data-v-45f370b7", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 346 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(347);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("2361dd90", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-45f370b7\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./smoothscroll.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-45f370b7\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./smoothscroll.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#go-top[data-v-45f370b7] {\n    position: fixed;\n    bottom: 10px;\n    left: 10px;\n    z-index: 1022;\n    display: block;\n    border: #007bff8a solid;\n    border-radius: 100%;\n    background: #007bff8a;\n}\n#go-top a[data-v-45f370b7],\n#go-top a[data-v-45f370b7]:visited {\n    text-decoration: none;\n    height: 60px;\n    width: 60px;\n    text-align: center;\n    border-radius: 100%;\n    color: #ffffff;\n    -webkit-transition: all 0.3s ease-in-out;\n    transition: all 0.3s ease-in-out;\n}\n#go-top a i[data-v-45f370b7],\n#go-top a:visited i[data-v-45f370b7] {\n    font-size: 20px;\n    line-height: inherit;\n    color: #ffffff;\n}\n#go-top a[data-v-45f370b7]:hover,\n#go-top a[data-v-45f370b7]:focus,\n#go-top a:hover i[data-v-45f370b7],\n#go-top a:focus i[data-v-45f370b7] {\n    color: #007bff;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 348 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            scrollDuration: 800, // smoothscroll duration
+            pxShow: 500, // height on which the button will show
+            fadeInTime: 400, // how slow/fast you want the button to show
+            fadeOutTime: 400, // how slow/fast you want the button to hide
+            scrollSpeed: 300, // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+            goTopButton: "#go-top"
+
+        };
+    },
+
+
+    methods: {
+        BackToTop: function BackToTop() {
+            if ($(window).scrollTop() >= this.pxShow) {
+                this.goTopButton.fadeIn(this.fadeInTime);
+            } else {
+                this.goTopButton.fadeOut(this.fadeOutTime);
+            }
+        },
+
+
+        /* Smooth Scrolling*/
+        SmoothScroll: function SmoothScroll() {
+            $('.smoothscroll').on('click', function (e) {
+                var target = this.hash,
+                    $target = $(target);
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                $('html, body').animate({
+                    'scrollTop': $target.offset().top
+                }, this.scrollDuration, 'swing', function () {
+                    window.location.hash = target;
+                });
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-xs-12 px-1 d-lg-none", attrs: { id: "go-top" } },
+      [
+        _c("a", { staticClass: "smoothscroll", attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fa fa-arrow-up" })
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-45f370b7", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

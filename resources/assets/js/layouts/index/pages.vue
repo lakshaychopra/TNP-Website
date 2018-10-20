@@ -8,7 +8,8 @@
                     <div class="col-2 px-1 d-none d-lg-block" id="sidebar">
                         <widget-left></widget-left>
                     </div>
-
+                    <smooth-scroll></smooth-scroll>
+ 
                     <div class="col" id="main">
                         <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts"
                             v-if="pinned_posts.length>0">
@@ -292,7 +293,6 @@
                         </div>
                     </div>
                     <widget-right></widget-right>
-
                 </div>
             </div>
         </div>
@@ -302,6 +302,7 @@
     import AppHeader from './header.vue'
     import WidgetLeft from './leftWidget.vue'
     import WidgetRight from './rightWidget.vue'
+    import SmoothScroll from './smoothscroll.vue'
     import {
         addHomePostURL,
         apiDomain,
@@ -315,7 +316,8 @@
         components: {
             AppHeader,
             WidgetLeft,
-            WidgetRight
+            WidgetRight,
+            SmoothScroll
         },
         data() {
             return {
@@ -327,7 +329,6 @@
                 pinned_posts: {},
                 showDropDown: false,
                 share: false,
-
             }
         },
         created() {
@@ -347,7 +348,7 @@
             this.getPinnedPosts();
         },
         methods: {
-
+           
             getURL(id) {
                 return "https://www.tnpgndec.com/view/" + id;
             },
@@ -754,4 +755,5 @@
             text-align: center;
         }
     }
+
 </style>
