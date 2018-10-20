@@ -4,6 +4,7 @@ Author: Themedesigner
 Email: niravjoshi87@gmail.com
 File: scss
 */
+
 @import './../plugins/bootstrap/sass/bootstrap.scss';
 @import 'variable';
 @import 'app';
@@ -11,11 +12,11 @@ File: scss
 @import 'sidebar';
 @import 'widgets';
 @import 'grid';
-@import 'responsive'; 
+@import 'responsive';
 @import 'spinners.css';
 @import 'animate.css';
+@import 'micons.css';
 @import './../plugins/font-awesome/scss/font-awesome.scss';
 @import './../plugins/toastr/toastr.min.css';
 @import 'color';
 @import 'custom';
-   

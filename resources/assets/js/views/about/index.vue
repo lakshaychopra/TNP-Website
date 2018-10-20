@@ -59,24 +59,85 @@
         <div class="row mb-5 mx-0" style="position:relative">
             <div class="bgimage">
                 <div class="mb-5 ml-3 mr-3 bottom-left bgimgtext">
-                    <h1>Training &amp; Placement Cell</h1>
-                    <h5 class="text-justify">
-                        The goal of Training & Placement Cell is to provide students with a platform for using their
-                        potential to gain valuable experience by working in industry ,it also acts as the interface
-                        between various companies seeking talented young graduates and post graduates in various
-                        disciplines.
+                    <h1>Welcome to Training &amp; Placement Cell</h1>
+                    <h5 class="text-justify lead">
+                        A family that takes initiatives.
                     </h5>
                 </div>
             </div>
         </div>
 
+        <!-- about -->
+        <section id="about" class="container">
+            <div class="col-md-12 mb-3">
+                <div class="row about-intro">
+                    <div class="col-md-4 text-center">
+                        <h1 class="intro-header">About Us</h1>
+                        <img src="/images/icons/256x256.png" alt="logo">
+                    </div>
+                    <div class="col-md-8">
+                        <p class="text-justify lead">
+                            The goal of Training & Placement Cell is to provide students with a platform for using
+                            their
+                            potential to gain valuable experience by working in industry ,it also acts as the interface
+                            between various companies seeking talented young graduates and post graduates in various
+                            disciplines. The Cell is well equipped with ample infrastructure in Terms of Testing halls,
+                            Consultancy Hall,Conference room, for Pre Placement Talk, Presentations etc and Computer
+                            labs
+                            for online tests also the cell has video conference facility available for the students.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mt-3 about-features">
+                <div class="row about-intro">
+                    <div class="col-md-4 mt-3 mb-3">
+                        <span class="icon"><i class="icon-window"></i></span>
+                        <h2>Training</h2>
+                        <p class="text-justify lead">The cell arranges training for students in industries for 6 weeks
+                            at the end of 4th
+                            Semester and for 6 months in 7th or 8th Semester. All the Engineering Department
+                            students undergo minimum 12 weeks for industrial training and minimum 6 weeks for
+                            software training for this 6 months of training.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 mt-3 mb-3">
+
+                        <span class="icon"><i class="icon-image"></i></span>
+
+                        <h2>Placements</h2>
+
+                        <p class="text-justify lead">All the reputed organizations including MNCs come to the College
+                            for campus recruitment.
+                            To achieve its goal, the Training & Placement Cell works towards recognizing the core
+                            competencies of students.
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-4 mt-3 mb-3">
+
+                        <span class="icon"><i class="icon-paint-brush"></i></span>
+
+                        <h2>Additional Activities</h2>
+
+                        <p class="text-justify lead">In addition to the above-mentioned activities, the cell arranges
+                            expert lectures of
+                            Corporate Managers in both Technical and HRD streams for the students and faculty of
+                            the Institute. There are various Workshops and Seminars organised for the benefit of
+                            students regarding the latest trend and technology in the industry.
+                        </p>
+                    </div>
+                </div> <!-- end features-list -->
+            </div> <!-- end about-features -->
+        </section> <!-- end about -->
+
         <!--career development-->
         <div class="container">
-            <div class="row mb-3 mt-3">
-                <div class="col-md-12 text-center">
-                    <h2>
-                        <strong>Career Development</strong>
-                    </h2>
+            <div class="row mb-5 mt-5 about-intro">
+                <div class="col-md-12 mb-3 text-center">
+                    <h1 class="intro-header">Career Development</h1>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
@@ -84,10 +145,10 @@
                             <img src="images/about/img/image1.jpg" alt="image" width="100%" />
                         </div>
                         <div class="card-title text-center mt-2">
-                            <h5>Experienced Professionals</h5>
+                            <h3>Experience Professionalism</h3>
                         </div>
                         <div class="card-body text-justify">
-                            <p>T&amp;P lets you draw upon its superlative treasure of experience.</p>
+                            <p class="lead">T&amp;P lets you draw upon its superlative treasure of experience.</p>
                         </div>
                     </div>
                 </div>
@@ -97,10 +158,10 @@
                             <img src="images/about/img/image2.jpg" alt="image" width="100%" />
                         </div>
                         <div class="card-title text-center mt-2">
-                            <h5>Entry Level Hiring</h5>
+                            <h3>Knowledge Entry Level Hiring</h3>
                         </div>
                         <div class="card-body text-justify">
-                            <p>Stay ahead of the race by giving your career a kickstart with T&amp;P.</p>
+                            <p class="lead">Stay ahead of the race by giving your career a kickstart with T&amp;P.</p>
                         </div>
                     </div>
                 </div>
@@ -110,10 +171,10 @@
                             <img src="images/about/img/image3.jpg" alt="image" width="100%" />
                         </div>
                         <div class="card-title text-center mt-2">
-                            <h5>Campus Commune</h5>
+                            <h3>Campus Communes</h3>
                         </div>
                         <div class="card-body text-justify">
-                            <p>'Campus Meets Corporate' via digital channels to engage with T&amp;P.</p>
+                            <p class="lead">'Campus Meets Corporate' via channels to engage with T&amp;P.</p>
                         </div>
                     </div>
                 </div>
@@ -121,13 +182,11 @@
         </div>
 
         <!--news and highlights-->
-        <div class="col-md-12 d-lg-none text-center">
-            <h2>
-                <strong>News And Highlights</strong>
-            </h2>
+        <div class="col-md-12 mb-5 d-lg-none text-center">
+            <h1 class="intro-header">News And Highlights</h1>
         </div>
         <section class="container">
-            <div class="row mb-5">
+            <div class="row about-intro mb-5">
                 <div class="col-md-2 d-none d-lg-block">
                     <h1>News And Highlights</h1>
                     <div class="bor-left mb-3 mt-3">
@@ -154,13 +213,93 @@
             </div>
         </section>
 
+        <section class="col-md-12">
+            <div class="container">
+                <div class="row">
+                    <div class="row about-intro about-how">
+                        <h1 class="intro-header text-center">How T&amp;P Cell Works?</h1>
+                        <div class="about-how-content">
+                            <div class="about-how-steps">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6 step" data-item="1">
+                                            <h2>Database Formation</h2>
+                                            <p class="text-justify lead">Collects the record of students of particular
+                                                year and forms database
+                                                that MNCs demand
+                                                as a record from the institution.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6 step" data-item="2">
+                                            <h2>Finding Contacts</h2>
+                                            <p class="text-justify lead">Fetches contacts of Human Resource Managers of
+                                                different Companies to
+                                                get information
+                                                regarding job offering for students by their organisations.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6 step" data-item="3">
+                                            <h2>Getting Confirmations</h2>
+                                            <p class="text-justify lead">Training and Placement cell gets confirmation
+                                                from HRs for conducting
+                                                placement
+                                                drive on
+                                                particular dates as per directed and arranging hospitality services and
+                                                venue.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6 step" data-item="4">
+                                            <h2>Placement Drives</h2>
+                                            <p class="text-justify lead">Smoothly conducts placement drive for the
+                                                students by different MNCs.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end about-how-content -->
+                    </div> <!-- end about-how -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Words from TPO-->
+        <section id="testimonials" class="container about-intro">
+            <div class="row mb-5 mt-5">
+                <div class="col-md-12">
+                    <h1 class="intro-header"> Words From Training And Placement Officer</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div id="testimonial-slider">
+                    <p class="lead text-center">
+                        "The Training and Placement Cell, GNDEC apart from giving an outstanding placement
+                        record provides the platform for students to gain most from the personality development
+                        and marketing experience program. We focus on not just creating engineers but pioneers
+                        and leaders for the future development of our nation. The Training & Placement Cell
+                        looks after the interests of the students and the recruiting organizations by acting as
+                        a channel of communication between them."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="images/about/img/tpo.jpg" alt="Author image">
+                        <div class="author-info">
+                            Prof. G.S. Sodhi
+                            <span class="position"> Training And Placement Officer </span>
+                        </div>
+                    </div>
+                </div> <!-- end testimonial-slider -->
+            </div> <!-- end flex-container -->
+        </section> <!-- end testimonials -->
+
         <!--  people for T&amp;P-->
-        <div class="col-md-12 text-center ">
-            <h2>
-                <strong>Our Faculty Members</strong>
-            </h2>
+        <div class="col-md-12 mt-5 mb-5 text-center ">
+            <h1 class="intro-header"> Our Faculty Members</h1>
         </div>
-        <div id="demo" class="carousel slide" data-ride="carousel">
+        <div id="demo" class="carousel slide about-intro" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div data-target="#demo" data-slide-to="0">
@@ -173,11 +312,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <!-- <div class="carousel-item">
                     <div data-target="#demo" data-slide-to="1">
                         <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
-                        <div class="owl--text">
+                        <div class="owltext">
                             <strong>Dr. K. S. Mann</strong>
                             <p>Advisor</p>
                             <p>Training &amp; Placement Cell</p>
@@ -188,13 +327,13 @@
                     <div data-target="#demo" data-slide-to="2">
                         <img src="images/about/img/bagga.jpeg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
-                        <div class="owl--text">
+                        <div class="owltext">
                             <strong>Prof. Sachin Bagga</strong>
                             <p>Faculty Co Cordinator</p>
                             <p>Training &amp; Placement Cell</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -209,18 +348,16 @@
         <!-- Companies -->
         <section class="testimonials pb-0 mb-3 mt-5">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center mt-3">
-                        <h2>
-                            <strong>Companies Visiting Our Campus</strong>
-                        </h2>
+                <div class="row about-intro">
+                    <div class="col-md-12 text-center mt-3 mb-3">
+                        <h1 class="intro-header">Companies Visiting Our Campus</h1>
                     </div>
                     <div class="col-sm-12">
                         <div id="customers-testimonials" class="owl-carousel">
                             <!--TESTIMONIAL 1 -->
                             <div class="item">
                                 <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
+                                    <img class="img-responsive" src="/images/companies/accenture.png" alt="faculty member">
                                     <div class="item-details">
                                         <h3>Accenture</h3>
                                     </div>
@@ -230,7 +367,7 @@
                             <!--TESTIMONIAL 2 -->
                             <div class="item">
                                 <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
+                                    <img class="img-responsive" src="/images/companies/infosys.jpg" alt="faculty member">
                                     <div class="item-details">
                                         <h3>Infosys</h3>
                                     </div>
@@ -240,9 +377,9 @@
                             <!--TESTIMONIAL 3 -->
                             <div class="item">
                                 <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
+                                    <img class="img-responsive" src="/images/companies/cummins.png" alt="faculty member">
                                     <div class="item-details">
-                                        <h3>Capegemini</h3>
+                                        <h3>Cummins</h3>
                                     </div>
                                 </div>
                             </div>
@@ -521,6 +658,342 @@
 
     #customers-testimonials .owl-carousel .owl-next {
         right: -70px;
+    }
+
+    /* ===================================================================
+ * about - (_layout.scss)
+  ------------------------------------------------------------------- */
+
+    #about {
+        min-height: 786px;
+        background: #ffffff;
+        overflow: hidden;
+    }
+
+    .about-intro {
+        padding-bottom: 3.6rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+
+    .about-features .icon {
+        margin-bottom: 1.5rem;
+        display: inline-block;
+    }
+
+    .about-features .icon i {
+        color: #038ed4;
+        font-size: 4.8rem;
+    }
+
+    .about-features h3 {
+        font-size: 1.9rem;
+        color: #151515;
+        margin-bottom: 3rem;
+    }
+
+
+    h1.intro-header {
+        text-align: center;
+    }
+
+    h1.intro-header::before {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    .about-how-content {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        min-height: 300px;
+        margin-top: 3.2rem;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+    }
+
+    .about-how-content::before,
+    .about-how-content::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 0;
+    }
+
+    .about-how-content::before {
+        left: 0;
+    }
+
+    .about-how-content::after {
+        left: 50%;
+    }
+
+    .about-how-content .about-how-steps {
+        width: 100%;
+    }
+
+    .about-how-content .step {
+        padding: 0 40px 1.5rem 60px;
+        position: relative;
+        min-height: 240px;
+    }
+
+    .about-how-content .step h3 {
+        margin-bottom: 2.4rem;
+    }
+
+    .about-how-content .step::before {
+        display: block;
+        font-size: 2rem;
+        content: attr(data-item);
+        color: #ffffff;
+        height: 54px;
+        width: 54px;
+        line-height: 54px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #038ed4;
+        box-shadow: 0 0 0 15px #ffffff;
+        z-index: 500;
+        position: absolute;
+        top: -12px;
+        left: -27px;
+    }
+
+    .about-bottom-image img {
+        vertical-align: bottom;
+    }
+
+
+    /* ------------------------------------------------------------------- 
+ * responsive:
+ * about 
+ * ------------------------------------------------------------------- */
+
+    @media only screen and (max-width: 1200px) {
+        .about-how-content {
+            max-width: 800px;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .about-intro {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .about-intro h1::before {
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        .about-intro [class*="col-"] {
+            width: 100% !important;
+            float: none !important;
+            clear: both !important;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .about-how-content {
+            max-width: 700px;
+        }
+    }
+
+    @media only screen and (max-width: 850px) {
+        .about-how-content {
+            max-width: 550px;
+        }
+
+        .about-how-content::after {
+            display: none;
+        }
+
+        .about-how-content .step {
+            width: 100% !important;
+            float: none !important;
+            clear: both !important;
+            margin-left: 0;
+            margin-right: 0;
+            padding-right: 18px;
+            min-height: auto;
+            padding: 0 40px .9rem 60px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .about-features .icon i {
+            font-size: 4.4rem;
+        }
+
+        .about-features h3 {
+            font-size: 1.8rem;
+        }
+
+        .about-how h3 {
+            font-size: 1.9rem;
+        }
+
+        .about-how-content::before {
+            left: 30px;
+        }
+
+        .about-how-content .step {
+            padding: 0 10px 0 80px;
+        }
+
+        .about-how-content .step::before {
+            font-size: 1.6rem;
+            height: 45px;
+            width: 45px;
+            line-height: 45px;
+            top: -9px;
+            left: 7.5px;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        .about-features {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .about-features {
+            width: 100% !important;
+            float: none !important;
+            clear: both !important;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 4.5rem;
+        }
+
+        .about-features h3 {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @media only screen and (max-width: 400px) {
+        .about-how-content {
+            text-align: center;
+        }
+
+        .about-how-content::before {
+            display: none;
+        }
+
+        .about-how-content .step {
+            padding: 60px 0 0 0;
+        }
+
+        .about-how-content .step::before {
+            top: 0;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+    }
+
+    .lead {
+        font-size: 1.5rem;
+    }
+
+    /* ===================================================================
+ *  testimonials - (_layout.scss)
+ ------------------------------------------------------------------- */
+
+    #testimonials {
+        background: #FFFFFF;
+        text-align: center;
+        min-height: 600px;
+    }
+
+    #testimonials h1::before {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    #testimonials .owl-wrap {
+        width: 80%;
+        max-width: 900px;
+        margin: 4.2rem auto 0;
+    }
+
+    #testimonial-slider {
+        margin: 0 0 3rem 0;
+        position: relative;
+    }
+
+    #testimonial-slider .testimonial-author {
+        margin-top: 3.2rem;
+    }
+
+    #testimonial-slider .testimonial-author img {
+        width: 7.4rem;
+        height: 7.4rem;
+        margin: 0 auto 1.2rem auto;
+        display: block;
+        border-radius: 50%;
+    }
+
+    #testimonial-slider .testimonial-author .author-info {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.9rem;
+        color: #151515;
+    }
+
+    #testimonial-slider .testimonial-author .author-info span {
+        display: block;
+        font-size: 1.6rem;
+        line-height: 1.313;
+        letter-spacing: 0;
+        text-transform: none;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+
+    /* ------------------------------------------------------------------- 
+ * testimonials
+ * ------------------------------------------------------------------- */
+
+
+    @media only screen and (max-width: 768px) {
+        #testimonial-slider .testimonial-author img {
+            width: 6.6rem;
+            height: 6.6rem;
+        }
+
+        #testimonial-slider .testimonial-author .author-info {
+            font-size: 1.8rem;
+        }
+
+        #testimonial-slider .testimonial-author .author-info span {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        #testimonials .owl-wrap {
+            width: 90%;
+        }
+    }
+
+    @media only screen and (max-width: 400px) {
+        #testimonials .owl-wrap {
+            width: 100%;
+        }
     }
 </style>
 <script>

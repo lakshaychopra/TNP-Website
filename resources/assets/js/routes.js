@@ -6,9 +6,9 @@ let routes = [{
         name: 'index',
     },
     {
-        path: '/hid',
+        path: '/about',
         component: require('./views/about/index.vue'),
-        name: 'hid',
+        name: 'about',
     },
     {
         path: '/genconian',
