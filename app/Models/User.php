@@ -58,20 +58,20 @@ class User extends Authenticatable implements JWTSubject
      * 
      * @return Object
      */
-    public function profile()
-    {        
-        switch ($this->type) {
-            case self::USER_TYPE_STUDENT:
-                return $this->hasOne(Student::class);
-                break;
-            case self::USER_TYPE_ADMIN:
-                return $this->hasOne(Admin::class);
-                break;
-            default:
-                return $this->hasOne(Member::class);
-                break;
-        }
-    }
+    // public function profile()
+    // {        
+    //     switch ($this->type) {
+    //         case self::USER_TYPE_STUDENT:
+    //             return $this->hasOne(Student::class);
+    //             break;
+    //         case self::USER_TYPE_ADMIN:
+    //             return $this->hasOne(Admin::class);
+    //             break;
+    //         default:
+    //             return $this->hasOne(Member::class);
+    //             break;
+    //     }
+    // }
 
     // public function profile() {
     //     if($this->type == 'STUADMINDENT') {

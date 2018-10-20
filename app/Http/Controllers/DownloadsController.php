@@ -9,10 +9,12 @@ use DB;
 use Exception;
 use Notification;
 use JWTAuth;
+use App\Services\DownloadService;
+use App\Repositories\DownloadRepository;
 
 class DownloadsController extends Controller
 {
-    public function __construct( $service, $repository)
+    public function __construct(DownloadService $service,DownloadRepository $repository)
     {
         $this->service = $service;
         $this->repository = $repository;
@@ -103,10 +105,10 @@ class DownloadsController extends Controller
             if ($request->hasFile('file')) {
                 $download['file'] = $this->service->uploadDownloadService($download);
             }
-            // $post->title = $request->title;
-            // $post->body = $request->body;
-            // $post->tag = $request->tag;
-            // $post->category = $request->category;
+            // $download->title = $request->title;
+            // $download->body = $request->body;
+            // $download->tag = $request->tag;
+            // $download->category = $request->category;
             $download->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$download);
@@ -125,7 +127,7 @@ class DownloadsController extends Controller
     public function destroy(Download $download)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        $delete = $this->repository->delete($post);
+        $delete = $this->repository->delete($download);
         $index= Download::orderBy('created_at', 'desc')->get();
         return $this->respondSuccess('Deleted', $index);
     }

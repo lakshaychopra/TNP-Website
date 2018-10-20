@@ -6,15 +6,15 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Events\UserCreatedEvent;
 use App\Events\UserSingleCreateEvent;
-use App\Http\Requests\CreateUserExcelRequest;
 use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\CreateUserExcelRequest;
 use Exception;
 use Excel;
 use JWTAuth;
 use DB;
 use Carbon\Carbon;
-use App\Repositories\UserRepository;
 use App\Services\UserService;
+use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
@@ -35,16 +35,6 @@ class UsersController extends Controller
         $limit  = $request->input('limit') ?? 20;
         $user = $this->repository->list($limit);
         return $this->respondData($user);
-    }
-    
-    /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function create()
-    {
-        //
     }
     
     /**

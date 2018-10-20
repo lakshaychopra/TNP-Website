@@ -24,7 +24,17 @@ class UpdatePreviousEducationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'univ_roll_no'    =>  "nullable",
+            'board'           =>  "nullable",
+            'institute'       =>  "nullable",
+            'month'           =>  "nullable",
+            'year'            =>  "nullable",
+            'obtained_marks'  =>  "nullable",
+            'max_marks'       =>  "nullable",
+            'year_gap'        =>  "nullable",
+            'percentage'      =>  "nullable",
+            'jee_rank'        =>  "nullable",
+            'education'       =>  "nullable",
         ];
     }
 }

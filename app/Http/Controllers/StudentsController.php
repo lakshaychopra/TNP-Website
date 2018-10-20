@@ -11,8 +11,8 @@ use DB;
 use Exception;
 use Notification;
 use JWTAuth;
-use App\Repositories\StudentRepository;
 use App\Services\StudentService;
+use App\Repositories\StudentRepository;
 
 class StudentsController extends Controller
 {
