@@ -71,8 +71,8 @@
         <section id="about" class="container">
             <div class="col-md-12 mb-3">
                 <div class="row about-intro">
-                    <div class="col-md-4 text-center">
-                        <h1 class="intro-header">About Us</h1>
+                    <div class="col-md-4 mb-4 text-center">
+                        <h1 class="intro-header">About T&amp;P Cell</h1>
                         <img src="/images/icons/256x256.png" alt="logo">
                     </div>
                     <div class="col-md-8">
@@ -135,8 +135,8 @@
 
         <!--career development-->
         <div class="container">
-            <div class="row mb-5 mt-5 about-intro">
-                <div class="col-md-12 mb-3 text-center">
+            <div class="row mb-3 mt-5 about-intro">
+                <div class="col-md-12 mb-3 pb-0 text-center">
                     <h1 class="intro-header">Career Development</h1>
                 </div>
                 <div class="col-md-4">
@@ -215,84 +215,80 @@
 
         <section class="col-md-12">
             <div class="container">
-                <div class="row">
-                    <div class="row about-intro about-how">
-                        <h1 class="intro-header text-center">How T&amp;P Cell Works?</h1>
-                        <div class="about-how-content">
-                            <div class="about-how-steps">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-6 step" data-item="1">
-                                            <h2>Database Formation</h2>
-                                            <p class="text-justify lead">Collects the record of students of particular
-                                                year and forms database
-                                                that MNCs demand
-                                                as a record from the institution.
-                                            </p>
-                                        </div>
-                                        <div class="col-md-6 step" data-item="2">
-                                            <h2>Finding Contacts</h2>
-                                            <p class="text-justify lead">Fetches contacts of Human Resource Managers of
-                                                different Companies to
-                                                get information
-                                                regarding job offering for students by their organisations.
-                                            </p>
-                                        </div>
+                <div class="about-intro about-how">
+                    <h1 class="intro-header">How T&amp;P Cell Works?</h1>
+                    <div class="about-how-content">
+                        <div class="about-how-steps">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6 step" data-item="1">
+                                        <h2>Database Formation</h2>
+                                        <p class="text-justify lead">Collects the record of students of particular
+                                            year and forms database
+                                            that MNCs demand
+                                            as a record from the institution.
+                                        </p>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-6 step" data-item="3">
-                                            <h2>Getting Confirmations</h2>
-                                            <p class="text-justify lead">Training and Placement cell gets confirmation
-                                                from HRs for conducting
-                                                placement
-                                                drive on
-                                                particular dates as per directed and arranging hospitality services and
-                                                venue.
-                                            </p>
-                                        </div>
-                                        <div class="col-md-6 step" data-item="4">
-                                            <h2>Placement Drives</h2>
-                                            <p class="text-justify lead">Smoothly conducts placement drive for the
-                                                students by different MNCs.
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6 step" data-item="2">
+                                        <h2>Finding Contacts</h2>
+                                        <p class="text-justify lead">Fetches contacts of Human Resource Managers of
+                                            different Companies to
+                                            get information
+                                            regarding job offering for students by their organisations.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                        </div> <!-- end about-how-content -->
-                    </div> <!-- end about-how -->
-                </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6 step" data-item="3">
+                                        <h2>Getting Confirmations</h2>
+                                        <p class="text-justify lead">Training and Placement cell gets confirmation
+                                            from HRs for conducting
+                                            placement
+                                            drive on
+                                            particular dates as per directed and arranging hospitality services and
+                                            venue.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6 step" data-item="4">
+                                        <h2>Placement Drives</h2>
+                                        <p class="text-justify lead">Smoothly conducts placement drive for the
+                                            students by different MNCs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end about-how-content -->
+                </div> <!-- end about-how -->
             </div>
         </section>
 
         <!-- Words from TPO-->
-        <section id="testimonials" class="container about-intro">
-            <div class="row mb-5 mt-5">
-                <div class="col-md-12">
+        <section id="testimonials" class="container pb-0 about-intro">
+            <div class="col-md-12">
+                <div class="mb-5 mt-5">
                     <h1 class="intro-header"> Words From Training And Placement Officer</h1>
                 </div>
             </div>
-            <div class="row">
-                <div id="testimonial-slider">
-                    <p class="lead text-center">
-                        "The Training and Placement Cell, GNDEC apart from giving an outstanding placement
-                        record provides the platform for students to gain most from the personality development
-                        and marketing experience program. We focus on not just creating engineers but pioneers
-                        and leaders for the future development of our nation. The Training & Placement Cell
-                        looks after the interests of the students and the recruiting organizations by acting as
-                        a channel of communication between them."
-                    </p>
-                    <div class="testimonial-author">
-                        <img src="images/about/img/tpo.jpg" alt="Author image">
-                        <div class="author-info">
-                            Prof. G.S. Sodhi
-                            <span class="position"> Training And Placement Officer </span>
-                        </div>
+            <div id="testimonial-slider">
+                <p class="lead text-center">
+                    "The Training and Placement Cell, GNDEC apart from giving an outstanding placement
+                    record provides the platform for students to gain most from the personality development
+                    and marketing experience program. We focus on not just creating engineers but pioneers
+                    and leaders for the future development of our nation. The Training &amp; Placement Cell
+                    looks after the interests of the students and the recruiting organizations by acting as
+                    a channel of communication between them."
+                </p>
+                <div class="testimonial-author">
+                    <img src="images/about/img/tpo.jpg" alt="Author image">
+                    <div class="author-info">
+                        Prof. G.S. Sodhi
+                        <span class="position"> Training And Placement Officer </span>
                     </div>
-                </div> <!-- end testimonial-slider -->
-            </div> <!-- end flex-container -->
+                </div>
+            </div> <!-- end testimonial-slider -->
         </section> <!-- end testimonials -->
 
         <!--  people for T&amp;P-->
@@ -392,7 +388,7 @@
         <!-- END OF TESTIMONIALS -->
 
         <!--footer-->
-        <footer class="container-fluid footer mt-5" style="left:0">
+        <footer class="container-fluid footer mt-3" style="left:0">
             <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
                     </span> by
                     <router-link to="/genconian">Genconians</router-link> | © 2018 <a href="https://www.gndec.ac.in/"
@@ -532,12 +528,6 @@
         #demo .carousel-indicators {
             top: unset;
         }
-
-        .bgimage {
-            height: 645px;
-            overflow: hidden;
-        }
-
     }
 
     .card-news {

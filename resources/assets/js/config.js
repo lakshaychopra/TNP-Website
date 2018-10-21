@@ -36,5 +36,5 @@ export const storeStudentMeURL = '/api/dashboard/student/me/';
 export const storeStudentPeURL = '/api/dashboard/student/pe/';
 
 export const viewPost = '/view/';
-
 export const addPageURL = '/api/dashboard/about';
+export const aboutWidgetURL = '/api/dashboard/about/widget';

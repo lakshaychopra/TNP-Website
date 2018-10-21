@@ -14,7 +14,7 @@
             <div class="navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-md-0 ">
                     <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
-                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="icon-arrow-left-circle"></i></a> </li>
+                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-arrow-circle-o-left"></i></a> </li>
                 </ul>
                 <ul class="navbar-nav my-lg-0">
                     <li class="nav-item dropdown">

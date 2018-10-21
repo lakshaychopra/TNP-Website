@@ -2,7 +2,7 @@
 	<div>
         <div class="row page-titles">
             <div class="col-md-6 col-8 align-self-center">
-                <h3 class="text-themecolor m-b-0 m-t-0">Edit Post</h3>
+                <h3 class="text-themecolor m-b-0 m-t-0">Edit Page</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><router-link to="/admin">Home</router-link></li>
                     <li class="breadcrumb-item"><router-link to="/about">Page</router-link></li>
@@ -15,7 +15,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Edit Post</h4>
+                        <h4 class="card-title">Edit Page</h4>
                         <about-form :id="id"></about-form>
                     </div>
                 </div>
