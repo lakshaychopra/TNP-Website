@@ -9,25 +9,24 @@
                         <widget-left></widget-left>
                     </div>
                     <smooth-scroll></smooth-scroll>
-    
-                    <div class="col" id="main" v-if="load">
-                        <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card card-primary px-3 pb-3 pt-3 " v-for="index in 3" :key="index">
-                                            <content-placeholders>
-                                                <content-placeholders-heading :img="true" />
-                                                <content-placeholders-img />
-                                                <content-placeholders-text :lines="3"/>
-                                            </content-placeholders> 
-                                </div>
+                    <div class="col" id="main">
+                         <div class="row" v-if="fakeload">
+                            <div class="col-md-12">
+                                <div class="card card-primary px-3 pb-3 pt-3 " v-for="index in 3" :key="index">
+                                                        <content-placeholders>
+                                                            <content-placeholders-heading :img="true" />
+                                                            <content-placeholders-img />
+                                                            <content-placeholders-text :lines="3"/>
+                                                        </content-placeholders> 
+                                    </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col" id="main" v-else>
+                        <div>
                         <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts"
                             v-if="pinned_posts.length>0">
                             <div class="col-md-12">
+                                
                                 <div class="card card-primary">
                                     <div class="card-header">
                                         <div class="row">
@@ -169,7 +168,7 @@
 
                         </div> -->
                         </div>
-
+                            
                         <div class="row justify-content-center" id="posts" v-if="posts.length==0">
                             <div class="col-md-12">
                                 <div class="card">
@@ -180,7 +179,7 @@
                             </div>
                         </div>
                         <div class="row justify-content-center" v-for="post in posts" :key="post.id" id="posts" v-else>
-                            <div class="col-md-12">
+                            <div class="col-md-12">   
                                 <div class="card card-primary">
                                     <div class="card-header">
                                         <div class="row">
@@ -305,6 +304,7 @@
                             infinite-scroll-distance="10">
                             <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px" v-if="loading"></i>
                         </div>
+                        </div>
                     </div>
                     <widget-right></widget-right>
                 </div>
@@ -343,7 +343,7 @@
                 pinned_posts: {},
                 showDropDown: false,
                 share: false,
-                load:true,
+                fakeload:true,
             }
         },
         created() {
@@ -453,9 +453,11 @@
             getPosts() {
                 axios.get(addHomePostURL)
                     .then((response) => {
+                        const vm =this;
                         // var obj = JSON.parse(response.data);
                         // console.log(response);
                         this.getrecord(response);
+                        vm.fakeload=false;
                         // this.posts = response.data.data;
                         // console.log(response.data.data);
 
@@ -468,7 +470,7 @@
                         // var obj = JSON.parse(response.data);
                         // console.log(response);
                         this.pinned_posts = response.data.data;
-                        this.load =false;
+                        // this.fakeload =1;
                         // this.posts = response.data.data;
                         // console.log(response.data.data);
 
