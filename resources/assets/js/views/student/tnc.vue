@@ -87,18 +87,18 @@
         data() {
             return {
                 id: {
-                    'id': this.$store.state.auth.userid,
+                    'id': this.$parent.id,
                 },
                 tnc: {
                     'form_status': 'pending',
-                    'id': this.$store.state.auth.userid,
+                    'id': this.$parent.id,
                 },
                 username: {
-                    'univ_roll_no': this.$store.state.auth.username,
+                    'univ_roll_no': this.$parent.username,
                 },
                 form_step: {
                     'student_form_step': 'TC',
-                    'id': this.$store.state.auth.userid,
+                    'id':this.$parent.id,
                 }
             }
         },
@@ -107,7 +107,6 @@
                 return this.$store.getters.getAuthUser(name);
             },
             submit() {
-                console.log(this.username.univ_roll_no);
                 axios.post(firstLoginURL, this.id).then(response => {
                     console.log(response);
                     if (response.status == 200) {
@@ -133,10 +132,10 @@
                                                                     ](
                                                                         "User Added!!"
                                                                     );
-                                                                    // this.$router.push('/userlogin');
                                                                     this.$parent
                                                                         .step =
                                                                         2;
+                                                                    // this.$router.push('/req');
 
                                                                 }
                                                             }).catch(peerrors => {

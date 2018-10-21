@@ -53,10 +53,10 @@
             </div>
         </nav>
         <form action="/" method="GET" v-on:submit.prevent v-if="search_input" class="d-xl-none">
-            <div class="col-md-12">
+            <div class="col-md-12 BGWhite">
                 <div class="row px-3 py-2">
-                    <input class="form-control" type="text" v-model="search" @keyup="searchPost"
-                        autocomplete="on" placeholder="Search" id="search">
+                    <input class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on"
+                        placeholder="Search" id="search">
                 </div>
             </div>
         </form>
@@ -104,6 +104,10 @@
         line-height: 1.5 !important;
     }
 
+    .BGWhite {
+        background-color: #fff !important;
+    }
+
     #list-menu li a {
         color: #f7fbff;
         padding: 10px;
@@ -120,7 +124,7 @@
 
     #search {
         background-color: #fff;
-        border-color: #0073BC;
+        border:solid #038ed4;
         width: 100%;
         color: #0073BC;
         border-radius: 25px;

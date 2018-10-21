@@ -268,13 +268,13 @@
                     // 'id': this.$store.state.auth.userid,
                 },
                 statusChange: {
-                    'student_form_step': 'METRICS_EDUCATION',
-                    'id': this.$store.state.auth.userid,
+                    'student_form_step': 'PROFILE',
+                    'id': this.$parent.id,
                 },
             }
         },
-        created() {
-            axios.get('/api/dashboard/student/' + this.$store.state.auth.username + '/edit').then(response => {
+        beforeCreate() {
+            axios.get('/api/dashboard/student/' + this.$parent.username + '/edit').then(response => {
                 console.log(response.data.data[0]);
                 // if (response.status == 200) {
 
@@ -331,8 +331,8 @@
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
                         if (statusresponse.status == 200) {
                             // toastr['success']("User Added!!");
-                            // this.$router.push('/userlogin');
                             this.$parent.step = 3;
+                            // this.$router.push('/req');
 
                         }
                     }).catch(errors => {

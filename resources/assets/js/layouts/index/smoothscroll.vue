@@ -53,11 +53,10 @@
 <style scoped>
     #go-top {
         position: fixed;
-        bottom: 10px;
-        left: 10px;
+        bottom: 20px;
+        left: 20px;
         z-index: 1022;
         display: block;
-        border: #007bff8a solid;
         border-radius: 100%;
         background: #007bff8a;
     }
@@ -65,8 +64,8 @@
     #go-top a,
     #go-top a:visited {
         text-decoration: none;
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
         text-align: center;
         border-radius: 100%;
         color: #ffffff;
@@ -75,7 +74,7 @@
 
     #go-top a i,
     #go-top a:visited i {
-        font-size: 20px;
+        font-size: 18px;
         line-height: inherit;
         color: #ffffff;
     }

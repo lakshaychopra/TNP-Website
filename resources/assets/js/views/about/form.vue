@@ -33,17 +33,17 @@
                 <div class="form-group files">
                     <label for="">Image<span class="input-required text-danger">*</span></label>
                     <input type="file" v-validate="'mimes:image/*'" class="form-control" ref="file" name="file" id="imageUrl"
-                        @change="handleChange">
+                        @change="handleChange" >
                     <small class="text-danger">{{ errors.first('file') }}</small>
 
                 </div>
             </div>
         </div>
 
-        <div class="row" v-if="page.imageUrl !=null">
+        <div class="row" v-if="page.image !=null">
             <div class="col-md-12">
                 <img v-if="image_change == true " class="img-fluid" :src="img_preview" alt="Image">
-                <img v-else class="img-fluid" :src="'/images/posts/images/'+page.imageUrl" alt="Image">
+                <img v-else class="img-fluid" :src="'/images/about/images/'+page.image" alt="Image">
             </div>
         </div>
         <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">
@@ -72,7 +72,7 @@
                     url: '',
                     content: '',
                     imagePath: '',
-                    imageUrl: '',
+                    image: '',
                 },
             };
         },
@@ -83,7 +83,7 @@
         props: ['id'],
         mounted() {
             if (this.id)
-                this.getPosts();
+                this.getPage();
         },
         methods: {
             updateURL: function () {
@@ -94,20 +94,20 @@
             },
             handleChange(e) {
                 this.image_change = true;
-                this.page.imageUrl = e.target.files[0];
-                this.img_preview = URL.createObjectURL(this.page.imageUrl);
+                this.page.image = e.target.files[0];
+                this.img_preview = URL.createObjectURL(this.page.image);
             },
             proceed() {
                 this.$validator.validateAll().then((result) => {
                     if (result) {
                         if (this.id)
-                            this.updatePost();
+                            this.updatePage();
                         else
-                            this.storePost();
+                            this.storePage();
                     }
                 });
             },
-            storePost() {
+            storePage() {
                 var navigate = this;
                 const postData = {
                     title: this.page.title,
@@ -116,7 +116,7 @@
                     user_id: this.$store.getters.getAuthUserId,
                     image_path: 'images/about/images/',
                     url: this.page.url,
-                    image: this.page.imageUrl
+                    image: this.page.image
                 };
                 let formData = new FormData();
                 formData.append('image', postData.image);
@@ -138,23 +138,24 @@
                         console.log(error);
                     });
                 this.page.title = '';
-                this.page.content = '';
-                this.page.imageUrl = '';
+                this.page.body = '';
+                this.page.image = '';
                 this.page.url = '';
             },
-            getPosts() {
+            getPage() {
                 axios.get('/api/dashboard/about/' + this.id + '/edit')
                     .then(response => {
                         this.page.title = response.data.data.title;
                         this.page.content = response.data.data.body;
-                        this.page.imageUrl = '';
+                        this.page.image = response.data.data.image;
                         this.page.url = response.data.data.url;
                     })
                     .catch(response => {
                         toastr['error'](response.message);
                     });
             },
-            updatePost() {
+            updatePage() {
+                console.log(this.page.content);
                 const postData = {
                     title: this.page.title,
                     body: this.page.content,
@@ -162,7 +163,7 @@
                     user_id: this.$store.getters.getAuthUserId,
                     image_path: 'images/about/images/',
                     url: this.page.url,
-                    image: this.page.imageUrl
+                    image: this.page.image
                 };
                 let formData = new FormData();
                 formData.append('image', postData.image);
@@ -182,6 +183,7 @@
                     .then(response => {
                         console.log(response);
                         toastr['success'](response.data.message);
+                        this.$router.push('../../page/'+this.page.url);
                         console.log(this.$store.getters.getAuthUserType);
                     })
                     .catch(response => {

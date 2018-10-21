@@ -17,6 +17,8 @@
         data() {
             return {
                 step: null,
+                id:'',
+                username:'',
             }
         },
         components: {
@@ -30,8 +32,11 @@
                 return this.$store.getters.getAuthUser(name);
             },
         },
+
         created() {
             return helper.authUser().then(res => {
+               this.id = res.id;
+               this.username = res.username;
                 if (res.type == "STUDENT") {
                     switch (res.student_form_step) {
                         case "N.A.":

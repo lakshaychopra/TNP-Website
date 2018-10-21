@@ -84,7 +84,7 @@ let routes = [{
             },
             {
                 path: '/about/:id/edit',
-                component: require('./views/about/addPage')
+                component: require('./views/about/edit')
             },
             {
                 path: '/post/:id/edit',

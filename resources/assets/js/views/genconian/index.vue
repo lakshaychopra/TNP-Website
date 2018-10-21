@@ -304,24 +304,49 @@
                 </div>
             </div>
         </section>
-        <section class="testimonials mb-5">
+        <!-- download -->
+        <section id="download">
+            <div class="container text-center">
+                    <div class="row">
+
+                        <h1 class="intro-header">Download Our App Today!</h1>
+
+                        <p class="lead">
+                            Training &amp; Placement Cell’s app helps you throughout your placement years. With easy to
+                            use, intuitive features, you can instantly see updates for placement drives, or internship
+                            drives.
+                        </p>
+
+                        <ul class="download-badges">
+                            <li>
+                                <a href='//www.microsoft.com/store/apps/9npc7f14c558?ocid=badge' target="_blank" rel="noopener">
+                                    <img src='/images/ms-download.png' alt='Download badge for windows store' width='100%' />
+                                </a>
+                            </li>
+                            <!-- <li><a href="#" title="" class="badge-googleplay">Play Store</a></li> -->
+                        </ul>
+                </div>
+            </div>
+        </section> <!-- end download -->
+
+        <section id="team" class="testimonials mb-5">
             <div class="container">
-                <h5 class="thanks-title h1">Have a query?</h5>
-                <p class="thanks-subtitle h3">Feel Free<br>Ask anything?</p>
+                <h5 class="section-title h1">Have a query?</h5>
+                <p class="section-subtitle h3">Feel Free<br>Ask anything?</p>
                 <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" class="mb-5">
                     <div class="form-group">
-                        <label for="question" style="color:#038ed4">Query/Suggestion:</label>
-                        <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%">
+                        <label for="question" style="color:#fff">Query/Suggestion:</label>
+                        <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%" style="color:#038ed4">
                     </div>
                     <input type="submit" value="Send" class="btn btn-primary btn-block">
                 </form>
             </div>
         </section>
 
-        <footer class="container-fluid footer mt-3 bg-dark" style="left:0">
-            <p class="text-center" style="color:white"><small>Developed with <span class="text-danger"><i class="fa fa-heart"
-                            aria-hidden="true"></i></span> by <router-link to="/genconian" style="color:white">Genconians</router-link>
-                    | © 2018 <a href="https://www.gndec.ac.in/" target="_blank" style="color:white">GNDEC, Ldh</a></small></p>
+        <footer class="container-fluid footer mt-3 color-main" style="left:0">
+            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart"
+                            aria-hidden="true"></i></span> by <router-link to="/genconian">Genconians</router-link>
+                    | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC, Ldh</a></small></p>
         </footer>
     </div>
 </template>
@@ -448,10 +473,6 @@
         }
     }
 
-    .w-65 {
-        width: 65%;
-    }
-
     .fix {
         overflow: hidden;
         top: 90px;
@@ -476,6 +497,7 @@
         color: #fff;
         background-color: #038ed4;
         border-color: #038ed4;
+        border: #fff solid;
     }
 
     section {
@@ -636,5 +658,82 @@
 
     #customers-testimonials .owl-carousel .owl-next {
         right: -70px;
+    }
+
+    /* ===================================================================
+ *  14. download - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- */
+
+    #download {
+        background: #fff;
+        color: #038ed4;
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+        text-align: center;
+    }
+
+    #download h1 {
+        color: #038ed4;
+    }
+
+    #download h1::before {
+        background-color: #fff;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    #download .lead {
+        color: #038ed4;
+        margin-top: 4.8rem;
+    }
+
+    #download .row {
+        max-width: 800px;
+    }
+
+    #download .download-badges {
+        list-style: none;
+        margin: 0;
+        text-align: center;
+    }
+
+    #download .download-badges li {
+        display: inline-block;
+        margin: 0 7.5px;
+        padding-left: 0;
+    }
+
+    #download .download-badges li a {
+        display: block;
+        width: 230px;
+        height: 71px;
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 230px 71px;
+    }
+
+
+    #download .download-badges li a.badge-googleplay {
+        background-image: url("/images/genconian/google-play.png");
+    }
+
+
+    /* ------------------------------------------------------------------- 
+ * responsive:
+ * download
+ * ------------------------------------------------------------------- */
+
+    @media only screen and (max-width: 768px) {
+        #download .download-badges li a {
+            width: 194px;
+            height: 60px;
+            background-size: 194px 60px;
+        }
     }
 </style>

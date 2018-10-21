@@ -102,21 +102,21 @@
             return {
                 student: {},
                 percent: 0,
-                id: this.$store.state.auth.userid,
+                id: this.$parent.id,
                 monthYear: '',
                 month: '',
                 year: '',
                 profile: {
-                    'univ_roll_no': this.$store.state.auth.username,
+                    'univ_roll_no': this.$parent.username,
                 },
                 statusChange: {
-                    'student_form_step': 'DEGREE',
-                    'id': this.$store.state.auth.userid,
+                    'student_form_step': 'PREVIOUS_EDUCATION',
+                    'id': this.$parent.id,
                 },
             }
         },
         created() {
-            axios.get('/api/dashboard/student/pe/' + this.$store.state.auth.username + '/edit').then(response => {
+            axios.get('/api/dashboard/student/pe/' + this.$parent.username + '/edit').then(response => {
                 console.log(response.data.data[0]);
                 this.student = response.data.data[0];
                 this.monthYear = response.data.data[0].year + '-' + response.data.data[0].month;
@@ -168,8 +168,8 @@
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
                         if (statusresponse.status == 200) {
                             // toastr['success']("User Added!!");
-                            // this.$router.push('/userlogin');
                             this.$parent.step = 5;
+                            // this.$router.push('/req');
 
                         }
                     }).catch(errors => {
