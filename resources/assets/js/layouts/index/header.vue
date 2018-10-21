@@ -1,5 +1,5 @@
 <template>
-    <div class="sticky-top" style="z-index:1022;">
+    <div class="sticky-top">
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark">
             <!-- Brand -->
             <router-link to="/" class="navbar-brand d-none d-md-block">
@@ -124,7 +124,7 @@
 
     #search {
         background-color: #fff;
-        border:solid #038ed4;
+        border: solid #038ed4;
         width: 100%;
         color: #0073BC;
         border-radius: 25px;

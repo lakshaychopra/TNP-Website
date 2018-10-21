@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="sticky-top" style="z-index:1022;">
+    <div class="bg-white">
+        <div class="sticky-top">
             <nav class="navbar bg-dark navbar-dark">
                 <!-- Brand -->
                 <router-link class="navbar-brand d-none d-md-block" to="/">
@@ -89,8 +89,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 mt-3 about-features">
-                <div class="row about-intro">
+            <div class="col-md-12 mt-3 mb-3 pb-0 about-features">
+                <div class="row pb-0 about-intro">
                     <div class="col-md-4 mt-3 mb-3">
                         <span class="icon"><i class="icon-window"></i></span>
                         <h2>Training</h2>
@@ -135,7 +135,7 @@
 
         <!--career development-->
         <div class="container">
-            <div class="row mb-3 mt-5 about-intro">
+            <div class="row mb-5 pb-0 about-intro">
                 <div class="col-md-12 mb-3 pb-0 text-center">
                     <h1 class="intro-header">Career Development</h1>
                 </div>
@@ -186,7 +186,7 @@
             <h1 class="intro-header">News And Highlights</h1>
         </div>
         <section class="container">
-            <div class="row about-intro mb-5">
+            <div class="row about-intro pb-0 mb-3">
                 <div class="col-md-2 d-none d-lg-block">
                     <h1>News And Highlights</h1>
                     <div class="bor-left mb-3 mt-3">
@@ -406,6 +406,10 @@
     .list-inline {
         padding-left: 0;
         list-style: none;
+    }
+
+    .bg-white {
+        background-color: #fff !important;
     }
 
     .bg-dark {

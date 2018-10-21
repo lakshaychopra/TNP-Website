@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="sticky-top" style="z-index:1022;">
+  <div class="bg-white">
+    <div class="sticky-top">
       <nav class="navbar bg-dark navbar-dark">
         <!-- Brand -->
         <router-link to="/" class="navbar-brand d-none d-md-block">
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto" v-html="pageData.body">
+        <div class="col-lg-8 col-md-10 text-justify mx-auto" v-html="pageData.body">
 
         </div>
       </div>
@@ -332,8 +332,8 @@
     list-style: none;
   }
 
-  .bg-gray {
-    background-color: #f1f1f1;
+  .bg-white {
+    background-color: #fff;
   }
 
   .color-main {
@@ -373,14 +373,5 @@
     .navbar-header {
       width: 142px;
     }
-  }
-
-  .w-65 {
-    width: 65%;
-  }
-
-  .fix {
-    overflow: hidden;
-    top: 90px;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
-    <div class="sticky-top" style="z-index:1022;">
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark">
             <!-- Brand -->
             <router-link to="/" class="navbar-brand d-none d-md-block">
                <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
@@ -121,7 +121,7 @@
 
 
                                     <div class="card-body">
-                                        <div class="mb-3" v-html="post.body"></div>
+                                        <div class="mb-3 text-justify" v-html="post.body"></div>
                                         <div class="clearfix"></div>
 
                                         <div class="row" id="bt">

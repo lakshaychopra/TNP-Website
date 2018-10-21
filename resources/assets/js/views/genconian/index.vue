@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="sticky-top" style="z-index:1022;">
+    <div class="bg-white">
+        <div class="sticky-top">
             <nav class="navbar bg-dark navbar-dark">
                 <!-- Brand -->
                 <router-link to="/" class="navbar-brand d-none d-md-block">
@@ -306,8 +306,7 @@
         </section>
         <!-- download -->
         <section id="download">
-            <div class="container text-center">
-                    <div class="row">
+            <div class="container text-center">         
 
                         <h1 class="intro-header">Download Our App Today!</h1>
 
@@ -317,7 +316,7 @@
                             drives.
                         </p>
 
-                        <ul class="download-badges">
+                        <ul class="download-badges px-auto pt-5">
                             <li>
                                 <a href='//www.microsoft.com/store/apps/9npc7f14c558?ocid=badge' target="_blank" rel="noopener">
                                     <img src='/images/ms-download.png' alt='Download badge for windows store' width='100%' />
@@ -325,7 +324,7 @@
                             </li>
                             <!-- <li><a href="#" title="" class="badge-googleplay">Play Store</a></li> -->
                         </ul>
-                </div>
+               
             </div>
         </section> <!-- end download -->
 
@@ -407,28 +406,28 @@
     }
 </script>
 <style scoped>
+     h1.intro-header {
+        text-align: center;
+    }
+
+    h1.intro-header::before {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
     ul.list-inline li {
         padding: 0;
         list-style: none;
     }
 
-    .mar-top {
-        margin-top: 50px;
-    }
-
-    .bg-gray {
-        background-color: #f1f1f1;
+    .bg-white {
+        background-color: #fff;
     }
 
     .color-main {
         color: #038ed4;
-    }
-
-    #bg-trans {
-        background: -webkit-linear-gradient(#333, #fff);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
 
     .bg-dark {
@@ -660,16 +659,11 @@
         right: -70px;
     }
 
-    /* ===================================================================
- *  14. download - (_layout.scss)
- *
- * ------------------------------------------------------------------- */
+    /* download */
 
     #download {
         background: #fff;
         color: #038ed4;
-        padding-top: 12rem;
-        padding-bottom: 12rem;
         text-align: center;
     }
 
@@ -687,16 +681,12 @@
 
     #download .lead {
         color: #038ed4;
-        margin-top: 4.8rem;
-    }
-
-    #download .row {
-        max-width: 800px;
+        margin-top: 2.5rem;
     }
 
     #download .download-badges {
         list-style: none;
-        margin: 0;
+        margin: 1px;
         text-align: center;
     }
 
