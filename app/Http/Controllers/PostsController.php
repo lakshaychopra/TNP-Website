@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use DB;
 use Exception;
 use Notification;
@@ -94,7 +95,7 @@ class PostController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(CreatePostRequest $request,Post $post)
+    public function update(UpdatePostRequest $request,Post $post)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
