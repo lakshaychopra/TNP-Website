@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Edit About Widget</h4>
-                        <about-form :id="id"></about-form>
+                        <about-widget-form :id="id"></about-widget-form>
                     </div>
                 </div>
             </div>

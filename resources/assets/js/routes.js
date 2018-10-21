@@ -87,6 +87,14 @@ let routes = [{
                 component: require('./views/about/edit')
             },
             {
+                path: '/widget/about/manage',
+                component: require('./views/aboutWidget/manageAboutWidget'),
+            },
+            {
+                path: '/widget/about/:id/edit',
+                component: require('./views/aboutWidget/edit')
+            },
+            {
                 path: '/post/:id/edit',
                 component: require('./views/post/edit')
             },

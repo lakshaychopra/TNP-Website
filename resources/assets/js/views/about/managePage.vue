@@ -25,7 +25,7 @@
             </thead>
             <tbody class="text-center">
                 <tr v-for="ab in about" :key="ab.id">
-                    <td scope="row">{{++sno}}</td>
+                    <td scope="row">{{ab.id}}</td>
                     <td>{{ab.title}}</td>
                     <td>
                         <button class="btn btn-info btn-sm" @click.prevent="editPages(ab)" data-toggle="tooltip" title="Edit Task">

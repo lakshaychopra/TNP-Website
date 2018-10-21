@@ -71,8 +71,8 @@
         <section id="about" class="container">
             <div class="col-md-12 mb-3">
                 <div class="row about-intro">
-                    <div class="col-md-4 text-center">
-                        <h1 class="intro-header">About Us</h1>
+                    <div class="col-md-4 mb-4 text-center">
+                        <h1 class="intro-header">About T&amp;P Cell</h1>
                         <img src="/images/icons/256x256.png" alt="logo">
                     </div>
                     <div class="col-md-8">
@@ -135,8 +135,8 @@
 
         <!--career development-->
         <div class="container">
-            <div class="row mb-5 mt-5 about-intro">
-                <div class="col-md-12 mb-3 text-center">
+            <div class="row mb-3 mt-5 about-intro">
+                <div class="col-md-12 mb-3 pb-0 text-center">
                     <h1 class="intro-header">Career Development</h1>
                 </div>
                 <div class="col-md-4">
@@ -216,8 +216,8 @@
         <section class="col-md-12">
             <div class="container">
                 <div class="row">
-                    <div class="row about-intro about-how">
-                        <h1 class="intro-header text-center">How T&amp;P Cell Works?</h1>
+                    <div class="about-intro about-how">
+                        <h1 class="intro-header">How T&amp;P Cell Works?</h1>
                         <div class="about-how-content">
                             <div class="about-how-steps">
                                 <div class="col-md-12">
@@ -268,31 +268,33 @@
         </section>
 
         <!-- Words from TPO-->
-        <section id="testimonials" class="container about-intro">
-            <div class="row mb-5 mt-5">
-                <div class="col-md-12">
+        <section id="testimonials" class="container pb-0 about-intro">
+            <div class="col-md-12">
+                <div class="row mb-5 mt-5">
                     <h1 class="intro-header"> Words From Training And Placement Officer</h1>
                 </div>
             </div>
-            <div class="row">
-                <div id="testimonial-slider">
-                    <p class="lead text-center">
-                        "The Training and Placement Cell, GNDEC apart from giving an outstanding placement
-                        record provides the platform for students to gain most from the personality development
-                        and marketing experience program. We focus on not just creating engineers but pioneers
-                        and leaders for the future development of our nation. The Training & Placement Cell
-                        looks after the interests of the students and the recruiting organizations by acting as
-                        a channel of communication between them."
-                    </p>
-                    <div class="testimonial-author">
-                        <img src="images/about/img/tpo.jpg" alt="Author image">
-                        <div class="author-info">
-                            Prof. G.S. Sodhi
-                            <span class="position"> Training And Placement Officer </span>
+            <div class="col-md-12">
+                <div class="row">
+                    <div id="testimonial-slider">
+                        <p class="lead text-center">
+                            "The Training and Placement Cell, GNDEC apart from giving an outstanding placement
+                            record provides the platform for students to gain most from the personality development
+                            and marketing experience program. We focus on not just creating engineers but pioneers
+                            and leaders for the future development of our nation. The Training & Placement Cell
+                            looks after the interests of the students and the recruiting organizations by acting as
+                            a channel of communication between them."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="images/about/img/tpo.jpg" alt="Author image">
+                            <div class="author-info">
+                                Prof. G.S. Sodhi
+                                <span class="position"> Training And Placement Officer </span>
+                            </div>
                         </div>
-                    </div>
-                </div> <!-- end testimonial-slider -->
-            </div> <!-- end flex-container -->
+                    </div> <!-- end testimonial-slider -->
+                </div> <!-- end flex-container -->
+            </div>
         </section> <!-- end testimonials -->
 
         <!--  people for T&amp;P-->
@@ -531,11 +533,6 @@
 
         #demo .carousel-indicators {
             top: unset;
-        }
-
-        .bgimage {
-            height: 645px;
-            overflow: hidden;
         }
 
     }

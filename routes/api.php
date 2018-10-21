@@ -81,7 +81,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         //About Controller
         Route::resource('/about', 'AboutController');
         //About Widget Controller
-        Route::resource('/about/widget', 'AboutWidgetController');
+        Route::resource('/widget/about', 'AboutWidgetController');
         //TODO Admin Controller 
         Route::post('todo','TodoController@store');
         Route::get('/todo','TodoController@index');

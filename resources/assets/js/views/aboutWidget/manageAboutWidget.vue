@@ -26,9 +26,9 @@
             <tbody class="text-center">
                 <tr v-for="ab in about" :key="ab.id">
                     <td scope="row">{{++sno}}</td>
-                    <td>{{ab.title}}</td>
+                    <td>{{ab.about_address}}</td>
                     <td>
-                        <button class="btn btn-info btn-sm" @click.prevent="editPages(ab)" data-toggle="tooltip" title="Edit Task">
+                        <button class="btn btn-info btn-sm" @click.prevent="editAboutWidget(ab)" data-toggle="tooltip" title="Edit Task">
                             <i class="fa fa-pencil"></i>
                         </button>
                     </td>
@@ -47,13 +47,13 @@
             }
         },
         created() {
-            this.getPages();
+            this.getAboutWidget();
         },
         methods: {
             getrecord(record) {
                 this.about = record.data.data.data;
             },
-            getPages() {
+            getAboutWidget() {
                 const vm = this;
                 axios.get('/api/dashboard/about/widget?page=' + vm.page)
                     .then(function (response) {
@@ -61,7 +61,7 @@
                     })
                     .catch((error) => console.log(error));
             },
-            editPages(ab){
+            editAboutWidget(ab){
                 this.$router.push('/about/widget/'+ab.id+'/edit');
             },
         }
