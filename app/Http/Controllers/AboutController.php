@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\About;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateAboutRequest;
+use App\Http\Requests\UpdateAboutRequest;
 use DB;
 use Exception;
 use Notification;
@@ -95,7 +96,7 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateAboutRequest $request,About $about)
+    public function update(UpdateAboutRequest $request,About $about)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
