@@ -20,7 +20,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)">
-                            <i class="icon-arrow-left-circle"></i>
+                            <i class="fa fa-arrow-circle-o-left"></i>
                         </a>
                     </li>
                 </ul>

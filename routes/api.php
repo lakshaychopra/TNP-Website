@@ -80,6 +80,8 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::resource('/homepage', 'HomePageController');
         //About Controller
         Route::resource('/about', 'AboutController');
+        //About Widget Controller
+        Route::resource('/about/widget', 'AboutWidgetController');
         //TODO Admin Controller 
         Route::post('todo','TodoController@store');
         Route::get('/todo','TodoController@index');
