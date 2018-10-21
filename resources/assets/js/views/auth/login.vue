@@ -32,8 +32,13 @@
 
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
-                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Next
-                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">
+                                    <span v-if="!load">Next
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                    <span v-else>
+                                        <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                                    </span> 
                                 </button>
                             </div>
                         </div>
@@ -122,7 +127,8 @@
                 },
                 security:{
                     token_2fa:'',
-                }
+                },
+                load:false
             }
         },
         components:{
@@ -152,6 +158,7 @@
         },
         methods: {
             submit(e) {
+                this.load=true;
                 this.$validator.validateAll().then((result) => {
                     if(result){
                     axios.post(loginURL, this.loginForm).then(response => {
@@ -171,10 +178,11 @@
                             // console.log(this.authenticated);
                             // this.$router.push('/login');
                             // this.$router.push('/home')
-
+                            
                         }
                     }).catch(error => {
-                        console.log(error.response)
+                        console.log(error.response);
+                        this.load = false;
                         var obj = JSON.parse(error.response.request.responseText);
                         if (error.response.status == "401") {
                             toastr['error'](obj['message']);

@@ -9,8 +9,22 @@
                         <widget-left></widget-left>
                     </div>
                     <smooth-scroll></smooth-scroll>
- 
-                    <div class="col" id="main">
+    
+                    <div class="col" id="main" v-if="load">
+                        <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card card-primary px-3 pb-3 pt-3 " v-for="index in 3" :key="index">
+                                            <content-placeholders>
+                                                <content-placeholders-heading :img="true" />
+                                                <content-placeholders-img />
+                                                <content-placeholders-text :lines="3"/>
+                                            </content-placeholders> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col" id="main" v-else>
                         <div class="row justify-content-center" v-for="pin in pinned_posts" :key="pin.id" id="posts"
                             v-if="pinned_posts.length>0">
                             <div class="col-md-12">
@@ -329,6 +343,7 @@
                 pinned_posts: {},
                 showDropDown: false,
                 share: false,
+                load:true,
             }
         },
         created() {
@@ -453,6 +468,7 @@
                         // var obj = JSON.parse(response.data);
                         // console.log(response);
                         this.pinned_posts = response.data.data;
+                        this.load =false;
                         // this.posts = response.data.data;
                         // console.log(response.data.data);
 

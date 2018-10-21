@@ -52,9 +52,26 @@
         </nav>
     </div>
         <div class="bg-gray mb-5">
+            <!-- <content-placeholders :rounded="true">
+                <content-placeholders-img />
+                <content-placeholders-heading />
+            </content-placeholders> -->
             <div class="container py-4">
-                <div class="row">
-                    <div class="col-lg-9 col-xs-12" id="main">
+                <div class="row" >
+                    <div class="col-lg-9 col-xs-12" id="main" v-if="load">
+                        <div class="row" id="posts">
+                            <div class="col-md-12">
+                                <div class="card card-primary px-3 pb-3 pt-3 ">
+                                    <content-placeholders>
+                                        <content-placeholders-heading :img="true" />
+                                        <content-placeholders-img />
+                                        <content-placeholders-text :lines="3"/>
+                                    </content-placeholders> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-xs-12" id="main" v-else>
                         <div class="row justify-content-center" id="posts">
                             <div class="col-md-12">
 
@@ -62,7 +79,7 @@
 
                                     <div class="card-header">
                                         <div class="row">
-                                            <div class="col-md-1 d-none d-md-block mr-1">
+                                            <div class="col-md-1 d-none d-md-block mr-1">                                         
                                                 <router-link to="/">
                                                     <img class=" mt-2" src="/images/icons/120x120.png" width="48px" height="48px" alt="logo-tpo">
                                                 </router-link>
@@ -89,9 +106,7 @@
                                                             <!-- <small> -->
                                                             <i class="fa fa-flag" aria-hidden="true"></i>
                                                             <div class="post-meta-text col-primary float-right ">
-
                                                                 {{post.category}}
-
                                                             </div>
                                                         </div>
                                                     </div>
@@ -155,7 +170,7 @@
                     <widget-right></widget-right>
 
                 </div>
-            </div>
+            </div>P
         </div>
          <footer class="container-fluid footer mt-5 " style="left:0">
             <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>
@@ -193,6 +208,7 @@
                 pinned_posts: {},
                 showDropDown: false,
                 share: false,
+                load:true,
             }
         },
         created() {
@@ -210,6 +226,7 @@
             this.loading = 0;
             axios.get('/api/home/view/' + this.id).then((response) => {
                     this.post = response.data.data.data[0];
+                    setTimeout(() => this.load=false ,1000);
                     
                 })
                 .catch((error) => console.log(error))

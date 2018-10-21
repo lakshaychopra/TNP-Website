@@ -26,6 +26,9 @@ Vue.use(swal);
 import OwlCarousel from 'owl.carousel2';
 Vue.use(OwlCarousel);
 
+import VueContentPlaceholders from 'vue-content-placeholders'
+Vue.use(VueContentPlaceholders);
+
 import SocialSharing from 'vue-social-sharing';
 Vue.use(SocialSharing);
 
