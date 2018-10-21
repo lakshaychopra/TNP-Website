@@ -1,0 +1,39 @@
+<template>
+	<div>
+        <div class="row page-titles">
+            <div class="col-md-6 col-8 align-self-center">
+                <h3 class="text-themecolor m-b-0 m-t-0">Edit About Widget</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><router-link to="/admin">Home</router-link></li>
+                    <li class="breadcrumb-item"><router-link to="/about/widget">About</router-link></li>
+                    <li class="breadcrumb-item active">Edit Widget</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Edit About Widget</h4>
+                        <about-widget-form :id="id"></about-widget-form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import AboutWidgetForm from './form'
+    import helper from '../../services/helper'
+
+    export default {
+        components : { AboutWidgetForm },
+        data() {
+            return {
+                id:this.$route.params.id
+            }
+        }
+    }
+</script>
