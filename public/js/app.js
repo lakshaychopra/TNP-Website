@@ -27138,7 +27138,7 @@ var render = function() {
                                                 staticClass:
                                                   "mb-3 text-justify show-read-more",
                                                 staticStyle: {
-                                                  padding: "10px",
+                                                  padding: "5px",
                                                   "padding-bottom": "0",
                                                   "background-color": "#fff"
                                                 },
