@@ -89,7 +89,7 @@
                                         <!-- <img :src="getImage(post.image_path)" alt=""> -->
                                     </div>
 
-                                    <div class="card-body">
+                                    <div class="card-body text-justify">
                                         <!-- <div>
                                         <span class="pull-right share-button">
                                             <a href="#">
@@ -230,7 +230,7 @@
                                         <!-- <img :src="getImage(post.image_path)" alt=""> -->
                                     </div>
 
-                                    <div class="card-body">
+                                    <div class="card-body text-justify">
 
                                         <span v-if="post.body.length>800">
                                             <div class="mb-3 text-justify show-read-more" v-html="gethtml(post.body)" style="padding:5px; padding-bottom:0; background-color: #fff;"></div>

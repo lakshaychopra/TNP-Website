@@ -26612,310 +26612,326 @@ var render = function() {
                                         })
                                       : _vm._e(),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "card-body" }, [
-                                      pin.body.length > 800
-                                        ? _c(
-                                            "span",
-                                            [
+                                    _c(
+                                      "div",
+                                      { staticClass: "card-body text-justify" },
+                                      [
+                                        pin.body.length > 800
+                                          ? _c(
+                                              "span",
+                                              [
+                                                _c("div", {
+                                                  staticClass:
+                                                    "mb-3 text-justify show-read-more",
+                                                  staticStyle: {
+                                                    padding: "5px",
+                                                    "background-color": "#fff"
+                                                  },
+                                                  domProps: {
+                                                    innerHTML: _vm._s(
+                                                      _vm.gethtml(pin.body)
+                                                    )
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "router-link",
+                                                  {
+                                                    attrs: {
+                                                      to: {
+                                                        name: "view",
+                                                        params: { id: pin.id }
+                                                      },
+                                                      searchbox: false
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "button",
+                                                      {
+                                                        staticClass:
+                                                          "btn btn-block btn-default text-center",
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            _vm.gethtml(
+                                                              pin.body
+                                                            )
+                                                          }
+                                                        }
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            staticStyle: {
+                                                              color: "#333"
+                                                            },
+                                                            attrs: { href: "" }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "Read More\n                                                    "
+                                                            ),
+                                                            _c("i", {
+                                                              staticClass:
+                                                                "fa fa-plus"
+                                                            })
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          : _c("span", [
                                               _c("div", {
                                                 staticClass:
-                                                  "mb-3 text-justify show-read-more",
-                                                staticStyle: {
-                                                  padding: "5px",
-                                                  "background-color": "#fff"
-                                                },
+                                                  "mb-3 show-read-more",
                                                 domProps: {
-                                                  innerHTML: _vm._s(
-                                                    _vm.gethtml(pin.body)
-                                                  )
+                                                  innerHTML: _vm._s(pin.body)
                                                 }
-                                              }),
-                                              _vm._v(" "),
-                                              _c(
-                                                "router-link",
-                                                {
-                                                  attrs: {
-                                                    to: {
-                                                      name: "view",
-                                                      params: { id: pin.id }
-                                                    },
-                                                    searchbox: false
-                                                  }
-                                                },
-                                                [
-                                                  _c(
-                                                    "button",
-                                                    {
-                                                      staticClass:
-                                                        "btn btn-block btn-default text-center",
-                                                      on: {
-                                                        click: function(
-                                                          $event
-                                                        ) {
-                                                          _vm.gethtml(pin.body)
-                                                        }
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticStyle: {
-                                                            color: "#333"
-                                                          },
-                                                          attrs: { href: "" }
-                                                        },
-                                                        [
-                                                          _vm._v(
-                                                            "Read More\n                                                    "
-                                                          ),
-                                                          _c("i", {
+                                              })
+                                            ]),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "clearfix" }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "row",
+                                            attrs: { id: "bt" }
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "col-md-6 col-xs-12",
+                                                attrs: { id: "share-social" }
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "post-share" },
+                                                  [
+                                                    !_vm.share_fn()
+                                                      ? _c(
+                                                          "div",
+                                                          {
                                                             staticClass:
-                                                              "fa fa-plus"
-                                                          })
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ],
-                                            1
-                                          )
-                                        : _c("span", [
-                                            _c("div", {
-                                              staticClass:
-                                                "mb-3 show-read-more",
-                                              domProps: {
-                                                innerHTML: _vm._s(pin.body)
-                                              }
-                                            })
-                                          ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "clearfix" }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass: "row",
-                                          attrs: { id: "bt" }
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass: "col-md-6 col-xs-12",
-                                              attrs: { id: "share-social" }
-                                            },
-                                            [
-                                              _c(
-                                                "div",
-                                                { staticClass: "post-share" },
-                                                [
-                                                  !_vm.share_fn()
-                                                    ? _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "post-meta col-xs-12",
-                                                          staticStyle: {
-                                                            "background-color":
-                                                              "#038ed4"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "a",
-                                                            {
-                                                              attrs: {
-                                                                href: ""
-                                                              },
-                                                              on: {
-                                                                click: function(
-                                                                  $event
-                                                                ) {
-                                                                  $event.preventDefault()
-                                                                  _vm.AndroidNativeShare(
-                                                                    pin.title,
-                                                                    pin.id,
-                                                                    pin.category
-                                                                  )
-                                                                }
-                                                              }
-                                                            },
-                                                            [
-                                                              _c("i", {
-                                                                staticClass:
-                                                                  "fa fa-share-alt",
-                                                                staticStyle: {
-                                                                  color: "#fff"
-                                                                },
+                                                              "post-meta col-xs-12",
+                                                            staticStyle: {
+                                                              "background-color":
+                                                                "#038ed4"
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "a",
+                                                              {
                                                                 attrs: {
-                                                                  "aria-hidden":
-                                                                    "true"
+                                                                  href: ""
+                                                                },
+                                                                on: {
+                                                                  click: function(
+                                                                    $event
+                                                                  ) {
+                                                                    $event.preventDefault()
+                                                                    _vm.AndroidNativeShare(
+                                                                      pin.title,
+                                                                      pin.id,
+                                                                      pin.category
+                                                                    )
+                                                                  }
                                                                 }
-                                                              }),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
+                                                              },
+                                                              [
+                                                                _c("i", {
                                                                   staticClass:
-                                                                    "post-meta-text col-primary ",
+                                                                    "fa fa-share-alt",
                                                                   staticStyle: {
                                                                     color:
                                                                       "#fff"
                                                                   },
                                                                   attrs: {
-                                                                    "data-toggle":
-                                                                      "tooltip"
+                                                                    "aria-hidden":
+                                                                      "true"
                                                                   }
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    " Share"
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    : _vm._e(),
-                                                  _vm._v(" "),
-                                                  _vm.share_fn()
-                                                    ? _c(
-                                                        "span",
-                                                        {
-                                                          staticClass: "share"
-                                                        },
-                                                        [
-                                                          _c("social-sharing", {
-                                                            attrs: {
-                                                              url: _vm.getURL(
-                                                                pin.id
-                                                              )
-                                                            },
-                                                            inlineTemplate: {
-                                                              render: function() {
-                                                                var _vm = this
-                                                                var _h =
-                                                                  _vm.$createElement
-                                                                var _c =
-                                                                  _vm._self
-                                                                    ._c || _h
-                                                                return _c(
+                                                                }),
+                                                                _vm._v(" "),
+                                                                _c(
                                                                   "div",
+                                                                  {
+                                                                    staticClass:
+                                                                      "post-meta-text col-primary ",
+                                                                    staticStyle: {
+                                                                      color:
+                                                                        "#fff"
+                                                                    },
+                                                                    attrs: {
+                                                                      "data-toggle":
+                                                                        "tooltip"
+                                                                    }
+                                                                  },
                                                                   [
-                                                                    _c(
-                                                                      "network",
-                                                                      {
-                                                                        attrs: {
-                                                                          network:
-                                                                            "facebook"
-                                                                        }
-                                                                      },
-                                                                      [
-                                                                        _c(
-                                                                          "i",
-                                                                          {
-                                                                            staticClass:
-                                                                              "fa fa-fw fa-facebook mr-3"
-                                                                          }
-                                                                        )
-                                                                      ]
-                                                                    ),
-                                                                    _vm._v(" "),
-                                                                    _c(
-                                                                      "network",
-                                                                      {
-                                                                        attrs: {
-                                                                          network:
-                                                                            "linkedin"
-                                                                        }
-                                                                      },
-                                                                      [
-                                                                        _c(
-                                                                          "i",
-                                                                          {
-                                                                            staticClass:
-                                                                              "fa fa-fw fa-linkedin mr-3"
-                                                                          }
-                                                                        )
-                                                                      ]
-                                                                    ),
-                                                                    _vm._v(" "),
-                                                                    _c(
-                                                                      "network",
-                                                                      {
-                                                                        attrs: {
-                                                                          network:
-                                                                            "twitter"
-                                                                        }
-                                                                      },
-                                                                      [
-                                                                        _c(
-                                                                          "i",
-                                                                          {
-                                                                            staticClass:
-                                                                              "fa fa-fw fa-twitter"
-                                                                          }
-                                                                        )
-                                                                      ]
+                                                                    _vm._v(
+                                                                      " Share"
                                                                     )
-                                                                  ],
-                                                                  1
+                                                                  ]
                                                                 )
-                                                              },
-                                                              staticRenderFns: []
-                                                            }
-                                                          })
-                                                        ],
-                                                        1
-                                                      )
-                                                    : _vm._e()
-                                                ]
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "col-md-6 col-xs-12 mt-3 d-none d-sm-block"
-                                            },
-                                            [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass: "post-meta",
-                                                  staticStyle: {
-                                                    float: "right"
-                                                  }
-                                                },
-                                                [
-                                                  _c("i", {
-                                                    staticClass: "fa fa-tags",
-                                                    attrs: {
-                                                      "aria-hidden": "true"
+                                                              ]
+                                                            )
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _vm.share_fn()
+                                                      ? _c(
+                                                          "span",
+                                                          {
+                                                            staticClass: "share"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "social-sharing",
+                                                              {
+                                                                attrs: {
+                                                                  url: _vm.getURL(
+                                                                    pin.id
+                                                                  )
+                                                                },
+                                                                inlineTemplate: {
+                                                                  render: function() {
+                                                                    var _vm = this
+                                                                    var _h =
+                                                                      _vm.$createElement
+                                                                    var _c =
+                                                                      _vm._self
+                                                                        ._c ||
+                                                                      _h
+                                                                    return _c(
+                                                                      "div",
+                                                                      [
+                                                                        _c(
+                                                                          "network",
+                                                                          {
+                                                                            attrs: {
+                                                                              network:
+                                                                                "facebook"
+                                                                            }
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "i",
+                                                                              {
+                                                                                staticClass:
+                                                                                  "fa fa-fw fa-facebook mr-3"
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        ),
+                                                                        _vm._v(
+                                                                          " "
+                                                                        ),
+                                                                        _c(
+                                                                          "network",
+                                                                          {
+                                                                            attrs: {
+                                                                              network:
+                                                                                "linkedin"
+                                                                            }
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "i",
+                                                                              {
+                                                                                staticClass:
+                                                                                  "fa fa-fw fa-linkedin mr-3"
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        ),
+                                                                        _vm._v(
+                                                                          " "
+                                                                        ),
+                                                                        _c(
+                                                                          "network",
+                                                                          {
+                                                                            attrs: {
+                                                                              network:
+                                                                                "twitter"
+                                                                            }
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "i",
+                                                                              {
+                                                                                staticClass:
+                                                                                  "fa fa-fw fa-twitter"
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        )
+                                                                      ],
+                                                                      1
+                                                                    )
+                                                                  },
+                                                                  staticRenderFns: []
+                                                                }
+                                                              }
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      : _vm._e()
+                                                  ]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "col-md-6 col-xs-12 mt-3 d-none d-sm-block"
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass: "post-meta",
+                                                    staticStyle: {
+                                                      float: "right"
                                                     }
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "post-meta-text col-primary "
-                                                    },
-                                                    [_vm._v(_vm._s(pin.tag))]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ])
+                                                  },
+                                                  [
+                                                    _c("i", {
+                                                      staticClass: "fa fa-tags",
+                                                      attrs: {
+                                                        "aria-hidden": "true"
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "post-meta-text col-primary "
+                                                      },
+                                                      [_vm._v(_vm._s(pin.tag))]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
                                   ]
                                 )
                               ])
@@ -27129,311 +27145,327 @@ var render = function() {
                                         })
                                       : _vm._e(),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "card-body" }, [
-                                      post.body.length > 800
-                                        ? _c(
-                                            "span",
-                                            [
+                                    _c(
+                                      "div",
+                                      { staticClass: "card-body text-justify" },
+                                      [
+                                        post.body.length > 800
+                                          ? _c(
+                                              "span",
+                                              [
+                                                _c("div", {
+                                                  staticClass:
+                                                    "mb-3 text-justify show-read-more",
+                                                  staticStyle: {
+                                                    padding: "5px",
+                                                    "padding-bottom": "0",
+                                                    "background-color": "#fff"
+                                                  },
+                                                  domProps: {
+                                                    innerHTML: _vm._s(
+                                                      _vm.gethtml(post.body)
+                                                    )
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "router-link",
+                                                  {
+                                                    attrs: {
+                                                      to: {
+                                                        name: "view",
+                                                        params: { id: post.id }
+                                                      },
+                                                      searchbox: false
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "button",
+                                                      {
+                                                        staticClass:
+                                                          "btn btn-block btn-default text-center",
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            _vm.gethtml(
+                                                              post.body
+                                                            )
+                                                          }
+                                                        }
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            staticStyle: {
+                                                              color: "#333"
+                                                            },
+                                                            attrs: { href: "" }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "Read More\n                                                    "
+                                                            ),
+                                                            _c("i", {
+                                                              staticClass:
+                                                                "fa fa-plus"
+                                                            })
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          : _c("span", [
                                               _c("div", {
                                                 staticClass:
-                                                  "mb-3 text-justify show-read-more",
-                                                staticStyle: {
-                                                  padding: "5px",
-                                                  "padding-bottom": "0",
-                                                  "background-color": "#fff"
-                                                },
+                                                  "mb-3 show-read-more",
                                                 domProps: {
-                                                  innerHTML: _vm._s(
-                                                    _vm.gethtml(post.body)
-                                                  )
+                                                  innerHTML: _vm._s(post.body)
                                                 }
-                                              }),
-                                              _vm._v(" "),
-                                              _c(
-                                                "router-link",
-                                                {
-                                                  attrs: {
-                                                    to: {
-                                                      name: "view",
-                                                      params: { id: post.id }
-                                                    },
-                                                    searchbox: false
-                                                  }
-                                                },
-                                                [
-                                                  _c(
-                                                    "button",
-                                                    {
-                                                      staticClass:
-                                                        "btn btn-block btn-default text-center",
-                                                      on: {
-                                                        click: function(
-                                                          $event
-                                                        ) {
-                                                          _vm.gethtml(post.body)
-                                                        }
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticStyle: {
-                                                            color: "#333"
-                                                          },
-                                                          attrs: { href: "" }
-                                                        },
-                                                        [
-                                                          _vm._v(
-                                                            "Read More\n                                                    "
-                                                          ),
-                                                          _c("i", {
+                                              })
+                                            ]),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "clearfix" }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "row",
+                                            attrs: { id: "bt" }
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "col-md-6 col-xs-12",
+                                                attrs: { id: "share-social" }
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "post-share" },
+                                                  [
+                                                    !_vm.share_fn()
+                                                      ? _c(
+                                                          "div",
+                                                          {
                                                             staticClass:
-                                                              "fa fa-plus"
-                                                          })
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ],
-                                            1
-                                          )
-                                        : _c("span", [
-                                            _c("div", {
-                                              staticClass:
-                                                "mb-3 show-read-more",
-                                              domProps: {
-                                                innerHTML: _vm._s(post.body)
-                                              }
-                                            })
-                                          ]),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "clearfix" }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass: "row",
-                                          attrs: { id: "bt" }
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass: "col-md-6 col-xs-12",
-                                              attrs: { id: "share-social" }
-                                            },
-                                            [
-                                              _c(
-                                                "div",
-                                                { staticClass: "post-share" },
-                                                [
-                                                  !_vm.share_fn()
-                                                    ? _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "post-meta col-xs-12",
-                                                          staticStyle: {
-                                                            "background-color":
-                                                              "#038ed4"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "a",
-                                                            {
-                                                              attrs: {
-                                                                href: ""
-                                                              },
-                                                              on: {
-                                                                click: function(
-                                                                  $event
-                                                                ) {
-                                                                  $event.preventDefault()
-                                                                  _vm.AndroidNativeShare(
-                                                                    post.title,
-                                                                    post.id,
-                                                                    post.category
-                                                                  )
-                                                                }
-                                                              }
-                                                            },
-                                                            [
-                                                              _c("i", {
-                                                                staticClass:
-                                                                  "fa fa-share-alt",
-                                                                staticStyle: {
-                                                                  color: "#fff"
-                                                                },
+                                                              "post-meta col-xs-12",
+                                                            staticStyle: {
+                                                              "background-color":
+                                                                "#038ed4"
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "a",
+                                                              {
                                                                 attrs: {
-                                                                  "aria-hidden":
-                                                                    "true"
+                                                                  href: ""
+                                                                },
+                                                                on: {
+                                                                  click: function(
+                                                                    $event
+                                                                  ) {
+                                                                    $event.preventDefault()
+                                                                    _vm.AndroidNativeShare(
+                                                                      post.title,
+                                                                      post.id,
+                                                                      post.category
+                                                                    )
+                                                                  }
                                                                 }
-                                                              }),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
+                                                              },
+                                                              [
+                                                                _c("i", {
                                                                   staticClass:
-                                                                    "post-meta-text col-primary ",
+                                                                    "fa fa-share-alt",
                                                                   staticStyle: {
                                                                     color:
                                                                       "#fff"
                                                                   },
                                                                   attrs: {
-                                                                    "data-toggle":
-                                                                      "tooltip"
+                                                                    "aria-hidden":
+                                                                      "true"
                                                                   }
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    " Share"
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    : _vm._e(),
-                                                  _vm._v(" "),
-                                                  _vm.share_fn()
-                                                    ? _c(
-                                                        "span",
-                                                        {
-                                                          staticClass: "share"
-                                                        },
-                                                        [
-                                                          _c("social-sharing", {
-                                                            attrs: {
-                                                              url: _vm.getURL(
-                                                                post.id
-                                                              )
-                                                            },
-                                                            inlineTemplate: {
-                                                              render: function() {
-                                                                var _vm = this
-                                                                var _h =
-                                                                  _vm.$createElement
-                                                                var _c =
-                                                                  _vm._self
-                                                                    ._c || _h
-                                                                return _c(
+                                                                }),
+                                                                _vm._v(" "),
+                                                                _c(
                                                                   "div",
+                                                                  {
+                                                                    staticClass:
+                                                                      "post-meta-text col-primary ",
+                                                                    staticStyle: {
+                                                                      color:
+                                                                        "#fff"
+                                                                    },
+                                                                    attrs: {
+                                                                      "data-toggle":
+                                                                        "tooltip"
+                                                                    }
+                                                                  },
                                                                   [
-                                                                    _c(
-                                                                      "network",
-                                                                      {
-                                                                        attrs: {
-                                                                          network:
-                                                                            "facebook"
-                                                                        }
-                                                                      },
-                                                                      [
-                                                                        _c(
-                                                                          "i",
-                                                                          {
-                                                                            staticClass:
-                                                                              "fa fa-fw fa-facebook mr-3"
-                                                                          }
-                                                                        )
-                                                                      ]
-                                                                    ),
-                                                                    _vm._v(" "),
-                                                                    _c(
-                                                                      "network",
-                                                                      {
-                                                                        attrs: {
-                                                                          network:
-                                                                            "linkedin"
-                                                                        }
-                                                                      },
-                                                                      [
-                                                                        _c(
-                                                                          "i",
-                                                                          {
-                                                                            staticClass:
-                                                                              "fa fa-fw fa-linkedin mr-3"
-                                                                          }
-                                                                        )
-                                                                      ]
-                                                                    ),
-                                                                    _vm._v(" "),
-                                                                    _c(
-                                                                      "network",
-                                                                      {
-                                                                        attrs: {
-                                                                          network:
-                                                                            "twitter"
-                                                                        }
-                                                                      },
-                                                                      [
-                                                                        _c(
-                                                                          "i",
-                                                                          {
-                                                                            staticClass:
-                                                                              "fa fa-fw fa-twitter"
-                                                                          }
-                                                                        )
-                                                                      ]
+                                                                    _vm._v(
+                                                                      " Share"
                                                                     )
-                                                                  ],
-                                                                  1
+                                                                  ]
                                                                 )
-                                                              },
-                                                              staticRenderFns: []
-                                                            }
-                                                          })
-                                                        ],
-                                                        1
-                                                      )
-                                                    : _vm._e()
-                                                ]
-                                              )
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "col-md-6 col-xs-12 mt-3 d-none d-sm-block"
-                                            },
-                                            [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass: "post-meta",
-                                                  staticStyle: {
-                                                    float: "right"
-                                                  }
-                                                },
-                                                [
-                                                  _c("i", {
-                                                    staticClass: "fa fa-tags",
-                                                    attrs: {
-                                                      "aria-hidden": "true"
+                                                              ]
+                                                            )
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _vm.share_fn()
+                                                      ? _c(
+                                                          "span",
+                                                          {
+                                                            staticClass: "share"
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "social-sharing",
+                                                              {
+                                                                attrs: {
+                                                                  url: _vm.getURL(
+                                                                    post.id
+                                                                  )
+                                                                },
+                                                                inlineTemplate: {
+                                                                  render: function() {
+                                                                    var _vm = this
+                                                                    var _h =
+                                                                      _vm.$createElement
+                                                                    var _c =
+                                                                      _vm._self
+                                                                        ._c ||
+                                                                      _h
+                                                                    return _c(
+                                                                      "div",
+                                                                      [
+                                                                        _c(
+                                                                          "network",
+                                                                          {
+                                                                            attrs: {
+                                                                              network:
+                                                                                "facebook"
+                                                                            }
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "i",
+                                                                              {
+                                                                                staticClass:
+                                                                                  "fa fa-fw fa-facebook mr-3"
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        ),
+                                                                        _vm._v(
+                                                                          " "
+                                                                        ),
+                                                                        _c(
+                                                                          "network",
+                                                                          {
+                                                                            attrs: {
+                                                                              network:
+                                                                                "linkedin"
+                                                                            }
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "i",
+                                                                              {
+                                                                                staticClass:
+                                                                                  "fa fa-fw fa-linkedin mr-3"
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        ),
+                                                                        _vm._v(
+                                                                          " "
+                                                                        ),
+                                                                        _c(
+                                                                          "network",
+                                                                          {
+                                                                            attrs: {
+                                                                              network:
+                                                                                "twitter"
+                                                                            }
+                                                                          },
+                                                                          [
+                                                                            _c(
+                                                                              "i",
+                                                                              {
+                                                                                staticClass:
+                                                                                  "fa fa-fw fa-twitter"
+                                                                              }
+                                                                            )
+                                                                          ]
+                                                                        )
+                                                                      ],
+                                                                      1
+                                                                    )
+                                                                  },
+                                                                  staticRenderFns: []
+                                                                }
+                                                              }
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      : _vm._e()
+                                                  ]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "col-md-6 col-xs-12 mt-3 d-none d-sm-block"
+                                              },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass: "post-meta",
+                                                    staticStyle: {
+                                                      float: "right"
                                                     }
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "post-meta-text col-primary "
-                                                    },
-                                                    [_vm._v(_vm._s(post.tag))]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ])
+                                                  },
+                                                  [
+                                                    _c("i", {
+                                                      staticClass: "fa fa-tags",
+                                                      attrs: {
+                                                        "aria-hidden": "true"
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "post-meta-text col-primary "
+                                                      },
+                                                      [_vm._v(_vm._s(post.tag))]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
                                   ]
                                 )
                               ])
