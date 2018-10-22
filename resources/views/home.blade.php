@@ -147,7 +147,7 @@
     </div>
     <script type="text/javascript" src="/js/bundle.min.js"></script>
     <script type="text/javascript" src="service-worker.js"></script>
-    <script type="text/javascript" src="js/a2h.js"></script>
+    {{-- <script type="text/javascript" src="js/a2h.js"></script> --}}
 
 </body>
 
