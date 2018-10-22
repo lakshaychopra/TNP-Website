@@ -31,7 +31,7 @@
                     <div class="card-header" id="link">
                         <h4 class="mb-1"> Explore</h4>
                     </div>
-                    <div class="card-body" v-for="pg in page" :key="pg.id" style="padding-left: 10px;padding-right: 10px;">
+                    <div class="card-body py-1" v-for="pg in page" :key="pg.id" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <router-link v-bind:to="'/page/'+pg.url">{{ pg.title }}</router-link>

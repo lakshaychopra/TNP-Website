@@ -25361,7 +25361,7 @@ var render = function() {
                 "div",
                 {
                   key: pg.id,
-                  staticClass: "card-body",
+                  staticClass: "card-body py-1",
                   staticStyle: {
                     "padding-left": "10px",
                     "padding-right": "10px"
