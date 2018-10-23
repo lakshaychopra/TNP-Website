@@ -170,7 +170,7 @@
                     <widget-right></widget-right>
 
                 </div>
-            </div>P
+            </div>
         </div>
          <footer class="container-fluid footer mt-5 " style="left:0">
             <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i>

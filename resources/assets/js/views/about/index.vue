@@ -141,7 +141,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-image">
-                            <img src="images/about/img/image1.jpg" alt="image" width="100%" />
+                            <img src="/images/about/img/image1.jpg" alt="image" width="100%" />
                         </div>
                         <div class="card-title text-center mt-2">
                             <h3>Experience Professionalism</h3>
@@ -154,7 +154,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-image">
-                            <img src="images/about/img/image2.jpg" alt="image" width="100%" />
+                            <img src="/images/about/img/image2.jpg" alt="image" width="100%" />
                         </div>
                         <div class="card-title text-center mt-2">
                             <h3>Knowledge Entry Level Hiring</h3>
@@ -167,7 +167,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-image">
-                            <img src="images/about/img/image3.jpg" alt="image" width="100%" />
+                            <img src="/images/about/img/image3.jpg" alt="image" width="100%" />
                         </div>
                         <div class="card-title text-center mt-2">
                             <h3>Campus Communes</h3>
@@ -184,6 +184,7 @@
         <div class="col-md-12 mb-5 d-lg-none text-center">
             <h1 class="intro-header">News And Highlights</h1>
         </div>
+
         <section class="container">
             <div class="row about-intro pb-0 mb-3">
                 <div class="col-md-2 d-none d-lg-block">
@@ -192,21 +193,21 @@
                         <small>POSTS</small>
                     </div>
                 </div>
-                <div class="col-md-10 col-xs-12">
-                    <div class="owl-carousel" id="news">
-                        <div class="col-md-4 float-left item" v-for="post in posts" :key="post.id">
+                <div class="col-md-10">
+                    <div id="alumni" class="owl-carousel">
+                        <!-- contact info -->
+                        <div class="item col-md-4 float-left" v-for="post in posts" :key="post.id">
                             <router-link v-bind:to="'/view/'+post.id">
                                 <div class="card">
-                                    <div class="card-news">
-                                        <img src="images/about/img/bgtnp.png" alt="image" width="100%" />
-                                    </div>
-                                    <div class="card-title text-center mt-2">
-                                        <small>{{post.category}}</small>
-                                        <h5>{{post.title}}</h5>
+                                    <div class="card-body text-center">
+                                        <img src="/images/about/img/bgtnp.png" alt="image" width="100%" />
+                                        <small class="text-uppercase mb-2">{{post.category}}</small>
+                                        <p>{{post.title}}</p>
                                     </div>
                                 </div>
                             </router-link>
                         </div>
+                        <!-- ./contact info -->
                     </div>
                 </div>
             </div>
@@ -281,7 +282,7 @@
                     a channel of communication between them."
                 </p>
                 <div class="testimonial-author">
-                    <img src="images/about/img/tpo.jpg" alt="Author image">
+                    <img src="/images/about/img/tpo.jpg" alt="Author image">
                     <div class="author-info">
                         Prof. G.S. Sodhi
                         <span class="position"> Training And Placement Officer </span>
@@ -298,7 +299,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div data-target="#demo" data-slide-to="0">
-                        <img src="images/about/img/sodhi.jpg" alt="Faculty Members of Training and Placement Cell"
+                        <img src="/images/about/img/sodhi.jpg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
                         <div class="owl--text">
                             <strong>Prof. G. S. Sodhi</strong>
@@ -309,7 +310,7 @@
                 </div>
                 <!-- <div class="carousel-item">
                     <div data-target="#demo" data-slide-to="1">
-                        <img src="images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
+                        <img src="/images/about/img/bg-image2.jpg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
                         <div class="owltext">
                             <strong>Dr. K. S. Mann</strong>
@@ -320,7 +321,7 @@
                 </div>
                 <div class="carousel-item">
                     <div data-target="#demo" data-slide-to="2">
-                        <img src="images/about/img/bagga.jpeg" alt="Faculty Members of Training and Placement Cell"
+                        <img src="/images/about/img/bagga.jpeg" alt="Faculty Members of Training and Placement Cell"
                             class="owl-img" width="100%">
                         <div class="owltext">
                             <strong>Prof. Sachin Bagga</strong>
@@ -533,9 +534,24 @@
         }
     }
 
-    .card-news {
-        border: solid #038ed4 2px;
-        border-radius: 15px;
+
+    #alumni .card:hover a,
+    #alumni .card:hover h4 {
+        color: #038ed4;
+    }
+
+    .card-text {
+        text-align: justify;
+    }
+
+    #alumni .card {
+        border: solid #038ed4;
+        border-radius: 20px;
+        background: #ffffff;
+    }
+
+    .card-body {
+        padding-bottom: 0px;
     }
 
     .bor-left {
@@ -546,7 +562,6 @@
     #demo p {
         margin-bottom: 0;
     }
-
 
     #nav p {
         margin-bottom: 0;
@@ -1027,17 +1042,16 @@
                 });
             }.bind(vm));
             Vue.nextTick(function () {
-                $("#news").owlCarousel({
+                $('#alumni').owlCarousel({
                     loop: true,
                     center: false,
                     items: 3,
-                    margin: 10,
-                    autoplay: false,
+                    margin: 30,
+                    autoplay: true,
                     dots: false,
                     nav: false,
                     autoplayTimeout: 8500,
-                    smartSpeed: 600,
-                    lazyLoad: true,
+                    smartSpeed: 450,
                     responsive: {
                         0: {
                             items: 1
