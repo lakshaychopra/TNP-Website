@@ -1,14 +1,21 @@
 var deferredPrompt;
+document.getElementById("pwaPrompt").onclick = an();
 
-window.addEventListener('beforeinstallprompt', function(e) {
-    // Prevent Chrome 67 and earlier from automatically showing the prompt
-    e.preventDefault();
-    // Stash the event so it can be triggered later.
-    deferredPrompt = e;
+function an() {
+    console.log('aaa');
 
-    showAddToHomeScreen();
+}
 
-});
+// window.addEventListener('beforeinstallprompt', function(e) {
+//     // Prevent Chrome 67 and earlier from automatically showing the prompt
+//     e.preventDefault();
+//     // Stash the event so it can be triggered later.
+//     deferredPrompt = e;
+
+//     showAddToHomeScreen();
+
+// })
+
 
 function showAddToHomeScreen() {
 

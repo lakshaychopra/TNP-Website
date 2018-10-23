@@ -46,9 +46,8 @@
                             <router-link v-bind:to="'/page/'+pg.url">{{ pg.title }}</router-link>
                         </div>
                         <div>
-                            <router-link to="/genconian">Developer and Contributers</router-link>
+                            <router-link to="/genconian">Genconians</router-link>
                         </div>
-
                     </div>
                 </div>
             </nav>

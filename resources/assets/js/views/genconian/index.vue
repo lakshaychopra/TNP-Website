@@ -20,8 +20,132 @@
             </nav>
         </div>
 
-        <!--Thanks-->
-        <!-- TESTIMONIALS -->
+        <!-- Contact us blue -->
+        <section class="testimonials">
+            <div class="container">
+                <h5 class="thanks-title h1" style="margin-bottom: 15px;">Alumni Connect</h5>
+                <p class="thanks-subtitle h3">Join Your Family<br>Alumni are the basic constituent and important
+                    stakeholders of any higher educational institute.</p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="alumni" class="owl-carousel">
+                            <!-- contact info -->
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <a href="https://www.linkedin.com/in/training-placement-cell-gndec-ludhiana-723967147/"
+                                            target="_blank" rel="noopener">
+                                            <i class="fa fa-linkedin fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">connect</h4>
+                                            <p>Connect with Linkedin</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8BNPvcl-IU4IGn64sN3qDnwaXpHDcDrqrRks6qhbncdhAiQ/viewform"
+                                            target="_blank" rel="noopener">
+                                            <i class="fa fa-graduation-cap fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">Contact US</h4>
+                                            <address>Alumni Assistance Form</address>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <a href="/files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">
+                                            <i class="fa fa-file-pdf-o fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">Download</h4>
+                                            <address>Placement Broucher</address>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./contact info -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end Contact us -->
+
+        <!-- Contact us blue -->
+        <section id="team" class="testimonials">
+            <div class="container">
+                <h5 class="section-title h1" style="margin-bottom: 15px;">CONTACT US</h5>
+                <p class="section-subtitle h3">Get in Touch<br>We're always standing by and eager to help.</p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="contact" class="owl-carousel">
+                            <!-- contact info -->
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <a href="tel:+91-81980-77793">
+                                            <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">call us</h4>
+                                            <p>+91-81980-77793</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank" rel="noopener">
+                                            <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">office location</h4>
+                                            <address>GNDEC Gill Park 141006 Ludhiana</address>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <a href="https://gndec.ac.in/" target="_blank" rel="noopener">
+                                            <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">College Website</h4>
+                                            <address>https://gndec.ac.in/</address>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <a href="mailto:tpo@gndec.ac.in">
+                                            <i class="fa fa-envelope fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">email</h4>
+                                            <p>tpo@gndec.ac.in</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <a href="/files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">
+                                            <i class="fa fa-file-pdf-o fa-5x mb-3" aria-hidden="true"></i>
+                                            <h4 class="text-uppercase mb-2">Download</h4>
+                                            <address>Placement Broucher</address>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./contact info -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end Contact us -->
+
+        <!-- Thanks Faculty white-->
         <section class="testimonials pb-0">
             <div class="container">
                 <h5 class="thanks-title h1">THANKS TO FACULTY MEMBERS</h5>
@@ -62,7 +186,7 @@
                             </div>
                             <!--END OF TESTIMONIAL 3 -->
                             <!--TESTIMONIAL 4 -->
-                            <div class="item">
+                            <!-- <div class="item">
                                 <div class="shadow-effect">
                                     <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
                                     <div class="item-details">
@@ -70,7 +194,7 @@
                                         <p class="thanks-subtitle">T&amp;P Advisor</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--END OF TESTIMONIAL 4 -->
                             <!--TESTIMONIAL 5 -->
                             <div class="item">
@@ -88,9 +212,9 @@
                 </div>
             </div>
         </section>
-        <!-- END OF TESTIMONIALS -->
+        <!-- END OF Thanks Faculty -->
 
-        <!-- Team -->
+        <!-- Team  blue-->
         <section id="team" class="mb-5">
             <div class="container">
                 <h5 class="section-title h1">THE TEAM</h5>
@@ -190,6 +314,7 @@
         </section>
         <!-- Team -->
 
+        <!-- Contributions white -->
         <section class="testimonials mb-5">
             <div class="container">
                 <h5 class="thanks-title h1">CONTRIBUTORS</h5>
@@ -240,94 +365,57 @@
                         </div>
                     </div>
                     <!-- ./Team member -->
-
-                </div>
-            </div>
-        </section>
-        <!-- END OF TESTIMONIALS -->
-
-        <section id="team" class="testimonials">
-            <div class="container">
-                <h5 class="section-title h1" style="margin-bottom: 15px;">CONTACT US</h5>
-                <p class="section-subtitle h3">Get in Touch<br>We're always standing by and eager to help.</p>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="contact" class="owl-carousel">
-                            <!-- contact info -->
-                            <div class="item">
-                                <div class="card border-0">
-                                    <div class="card-body text-center">
-                                        <a href="tel:+91-81980-77793">
-                                            <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">call us</h4>
-                                            <p>+91-81980-77793</p>
-                                        </a>
-                                    </div>
+                    <!-- Team member -->
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="frontside">
+                            <div class="card con-card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/images/genconian/talwinder.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Talwinder Singh</h4>
+                                    <p class="card-subtitle">Web Designer</p>
+                                    <p class="card-text">He is a Genconian. He is a B.Tech student in CSE of 2015-19
+                                        batch. He is Media Head of Training and Placement
+                                        Cell. He has designed Placement Broucher. He is a freelance Web Developer and Photoshop Designer too. He has contributed design of <a
+                                            href="https://www.tnpgndec.com/about">About Page</a> for <a href="https://www.tnpgndec.com">T&amp;P
+                                            Cell's website.</a></p>
+                                    <ul class="list-inline" id="list-link">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/Daman.Gumber">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/simranjeet-singh-9495b7168/">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/talwinder-singh-837130106/">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="mailto: talwindergumber@gmail.com">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="card border-0">
-                                    <div class="card-body text-center">
-                                        <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank" rel="noopener">
-                                            <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">office location</h4>
-                                            <address>GNDEC Gill Park 141006 Ludhiana</address>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card border-0">
-                                    <div class="card-body text-center">
-                                        <a href="https://gndec.ac.in/" target="_blank" rel="noopener">
-                                            <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">College Website</h4>
-                                            <address>https://gndec.ac.in/</address>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card border-0">
-                                    <div class="card-body text-center">
-                                        <a href="mailto:tpo@gndec.ac.in">
-                                            <i class="fa fa-envelope fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">email</h4>
-                                            <p>tpo@gndec.ac.in</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ./contact info -->
                         </div>
                     </div>
+                    <!-- ./Team member -->
                 </div>
             </div>
         </section>
-        <!-- download -->
-        <section id="download">
-            <div class="container text-center">         
+        <!-- END OF Contributions -->
 
-                        <h1 class="intro-header">Download Our App Today!</h1>
-
-                        <p class="lead">
-                            Training &amp; Placement Cell’s app helps you throughout your placement years. With easy to
-                            use, intuitive features, you can instantly see updates for placement drives, or internship
-                            drives.
-                        </p>
-
-                        <ul class="download-badges px-auto pt-5">
-                            <li>
-                                <a href='//www.microsoft.com/store/apps/9npc7f14c558?ocid=badge' target="_blank" rel="noopener">
-                                    <img src='/images/ms-download.png' alt='Download badge for windows store' width='100%' />
-                                </a>
-                            </li>
-                            <!-- <li><a href="#" title="" class="badge-googleplay">Play Store</a></li> -->
-                        </ul>
-               
-            </div>
-        </section> <!-- end download -->
-
+        <!--Query Page  -->
         <section id="team" class="testimonials mb-5">
             <div class="container">
                 <h5 class="section-title h1">Have a query?</h5>
@@ -335,19 +423,51 @@
                 <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" class="mb-5">
                     <div class="form-group">
                         <label for="question" style="color:#fff">Query/Suggestion:</label>
-                        <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%" style="color:#038ed4">
+                        <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%"
+                            style="color:#038ed4">
                     </div>
                     <input type="submit" value="Send" class="btn btn-primary btn-block">
                 </form>
             </div>
         </section>
+        <!-- End Query Page  -->
+
+        <!-- download white -->
+        <section id="download" class="mb-5">
+            <div class="container text-center">
+
+                <h1 class="intro-header text-uppercase">Download Our App Today!</h1>
+
+                <p class="lead">
+                    Training &amp; Placement Cell’s app helps you throughout your placement years. With easy to
+                    use, intuitive features, you can instantly see updates for placement drives, or internship
+                    drives.
+                </p>
+
+                <ul class="download-badges px-auto pt-5">
+                    <li class="my-3">
+                        <a href='//www.microsoft.com/store/apps/9npc7f14c558?ocid=badge' target="_blank" rel="noopener">
+                            <img src='/images/ms-download.png' alt='Download badge for windows store' width='100%' />
+                        </a>
+                    </li>
+                    <li class="my-3">
+                        <a href='#'>
+                            <img src='/images/pwa-download.png' id="pwaPrompt" alt='Download badge for pwa' width='100%' />
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+        <!-- end download -->
 
         <footer class="container-fluid footer mt-3 color-main" style="left:0">
-            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart"
-                            aria-hidden="true"></i></span> by <router-link to="/genconian">Genconians</router-link>
+            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i></span>
+                    by <router-link to="/genconian">Genconians</router-link>
                     | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC, Ldh</a></small></p>
         </footer>
     </div>
+
 </template>
 <script>
     export default {
@@ -402,11 +522,35 @@
                     }
                 });
             }.bind(vm));
+            Vue.nextTick(function () {
+                $('#alumni').owlCarousel({
+                    loop: true,
+                    center: false,
+                    items: 3,
+                    margin: 30,
+                    autoplay: true,
+                    dots: false,
+                    nav: false,
+                    autoplayTimeout: 8500,
+                    smartSpeed: 450,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 2
+                        },
+                        1170: {
+                            items: 3
+                        }
+                    }
+                });
+            }.bind(vm));
         }
     }
 </script>
 <style scoped>
-     h1.intro-header {
+    h1.intro-header {
         text-align: center;
     }
 
@@ -526,6 +670,7 @@
         text-align: justify;
     }
 
+    #alumni .card,
     #team .card {
         border: solid #038ed4;
         border-radius: 20px;
@@ -681,7 +826,7 @@
 
     #download .lead {
         color: #038ed4;
-        margin-top: 2.5rem;
+        margin-top: 3.5rem;
     }
 
     #download .download-badges {
@@ -698,14 +843,11 @@
 
     #download .download-badges li a {
         display: block;
-        width: 230px;
-        height: 71px;
         font: 0/0 a;
         text-shadow: none;
         color: transparent;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 230px 71px;
     }
 
 

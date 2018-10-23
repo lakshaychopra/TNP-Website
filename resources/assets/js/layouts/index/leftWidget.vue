@@ -44,11 +44,33 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    <div class="card-header" id="about">
+                        <h4 class="mb-1"> Contact Us</h4>
+                    </div>
+                    <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                 <a href="../../files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">Placement Broucher</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8BNPvcl-IU4IGn64sN3qDnwaXpHDcDrqrRks6qhbncdhAiQ/viewform" target="_blank" rel="noopener">Alumni Assistance Form</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
                     <div class="card-header" id="downloads">
                         <h4 class="mb-1"> Downloads</h4>
                     </div>
-                    <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
+                    <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
+                             <li class="list-group-item">
+                                <a href="../../files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">Placement Broucher</a>
+                            </li>
                             <li class="list-group-item">
                                 <a href="../../files/Evaluation.pdf" download="Evaluation.pdf">Evaluation Performa</a>
                             </li>
@@ -62,7 +84,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -96,6 +118,15 @@
                 <div class="card">
                     <a href='//www.microsoft.com/store/apps/9npc7f14c558?ocid=badge' target="_blank" rel="noopener">
                         <img src='/images/ms-download.png' alt='Download badge for windows store' width='100%' />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <a href='#'>
+                        <img src='/images/pwa-download.png'  id="pwaPrompt" alt='Download badge for pwa' width='100%' />
                     </a>
                 </div>
             </div>
