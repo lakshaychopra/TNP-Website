@@ -4,27 +4,34 @@ namespace App\Http\Controllers;
 
 use App\Models\SemesterMarks;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateSemesterMarksRequest;
+use App\Http\Requests\UpdateSemesterMarksRequest;
+use DB;
+use Exception;
+use Notification;
+use JWTAuth;
+use App\Services\MetricsEducationService;
+use App\Repositories\MetricsEducationRepository;
 
 class SemesterMarksController extends Controller
 {
+    public function __construct(MetricsEducationService $service,MetricsEducationRepository $repository)
+    {
+        $this->service = $service;
+        $this->repository = $repository;
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $limit  = $request->input('limit') ?? 6;
+        $semesterMarks = $this->repository->list($limit);
+        return $this->respondData($semesterMarks);
     }
 
     /**
@@ -33,9 +40,24 @@ class SemesterMarksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSemesterMarksRequest $request)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if (!$auth) {
+                return $this->respondUnauthorized('Failed');
+            }
+            $data = $request->only('univ_roll_no');
+            $semesterMarks = new MetricsEducation;
+            $semesterMarks->create($data);
+            DB::commit();
+            return $this->respondSuccess('Inserted',$semesterMarks);
+        }
+        catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
 
     /**
@@ -46,7 +68,8 @@ class SemesterMarksController extends Controller
      */
     public function show(SemesterMarks $semesterMarks)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        return $this->respondData($semesterMarks);
     }
 
     /**
@@ -55,9 +78,13 @@ class SemesterMarksController extends Controller
      * @param  \App\Models\SemesterMarks  $semesterMarks
      * @return \Illuminate\Http\Response
      */
-    public function edit(SemesterMarks $semesterMarks)
+    public function edit($semesterMarks = null)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        if ($semesterMarks != null) {
+            $data = MetricsEducation::where('univ_roll_no', '=' , $semesterMarks)->get();
+            return $this->respondData($data);
+        }
     }
 
     /**
@@ -67,9 +94,31 @@ class SemesterMarksController extends Controller
      * @param  \App\Models\SemesterMarks  $semesterMarks
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SemesterMarks $semesterMarks)
+    public function update(UpdateSemesterMarksRequest $request, SemesterMarks $semesterMarks)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if(!$auth){
+                return $this->respondError('Failed', 401); 
+            }
+            // $data = $request->all();
+            $semesterMarks->univ_roll_no = $request->univ_roll_no;
+            $semesterMarks->board = $request->board;
+            $semesterMarks->institute = $request->institute;
+            $semesterMarks->month = $request->month;
+            $semesterMarks->year = $request->year;
+            $semesterMarks->obtained_marks = $request->obtained_marks;
+            $semesterMarks->max_marks = $request->max_marks;
+            $semesterMarks->marks_type = $request->marks_type;
+            $semesterMarks->percentage = $request->percentage;
+            $semesterMarks->save(); 
+            DB::commit();
+            return $this->respondSuccess('Updated',$semesterMarks);
+        } catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
     }
 
     /**
@@ -80,6 +129,9 @@ class SemesterMarksController extends Controller
      */
     public function destroy(SemesterMarks $semesterMarks)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $delete = $this->repository->delete($semesterMarks);
+        $index= MetricsEducation::orderBy('created_at', 'desc')->get();
+        return $this->respondSuccess('Deleted', $index);
     }
 }
