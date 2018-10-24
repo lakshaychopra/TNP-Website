@@ -102,6 +102,7 @@ class SemesterMarksController extends Controller
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
+            $data = $request->only('semester_status');
             $semesterMarks->univ_roll_no = $request->univ_roll_no;
             $semesterMarks->semester = $request->semester;
             $semesterMarks->obtained_marks = $request->obtained_marks;
@@ -111,7 +112,7 @@ class SemesterMarksController extends Controller
             $semesterMarks->passive_backlog = $request->passive_backlog;
             $semesterMarks->marks_type = $request->marks_type;
             $semesterMarks->percentage = $request->percentage;
-            $semesterMarks->semester_status = $request->semester_status;
+            $semesterMarks->semester_status = $data++;
             $semesterMarks->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$semesterMarks);
@@ -134,4 +135,5 @@ class SemesterMarksController extends Controller
         $index= SemesterMarks::orderBy('created_at', 'desc')->get();
         return $this->respondSuccess('Deleted', $index);
     }
+
 }
