@@ -10,12 +10,12 @@ use DB;
 use Exception;
 use Notification;
 use JWTAuth;
-use App\Services\MetricsEducationService;
+use App\Services\SemesterMarksService;
 use App\Repositories\SemesterMarksRepository;
 
 class SemesterMarksController extends Controller
 {
-    public function __construct(MetricsEducationService $service,SemesterMarksRepository $repository)
+    public function __construct(SemesterMarksService $service,SemesterMarksRepository $repository)
     {
         $this->service = $service;
         $this->repository = $repository;
