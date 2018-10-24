@@ -34,6 +34,7 @@ export const statusChangeURL = '/api/dashboard/user/status/update';
 export const storeStudentURL = '/api/dashboard/student/';
 export const storeStudentMeURL = '/api/dashboard/student/me/';
 export const storeStudentPeURL = '/api/dashboard/student/pe/';
+export const storeStudentDegreeURL = '/api/dashboard/student/sem/';
 
 export const viewPost = '/view/';
 export const addPageURL = '/api/dashboard/about';

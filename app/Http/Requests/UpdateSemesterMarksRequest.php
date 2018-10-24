@@ -31,7 +31,6 @@ class UpdateSemesterMarksRequest extends FormRequest
             'credits'          =>  'nullable',
             'active_backlog'   =>  'nullable',
             'passive_backlog'  =>  'nullable',
-            'stream'           =>  'nullable',
             'marks_type'       =>  'nullable',
             'percentage'       =>  'nullable',
             'semester_status'  =>  'nullable',

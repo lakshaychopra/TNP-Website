@@ -4,6 +4,7 @@
         <profile-form v-else-if="step == 2"></profile-form>
         <matrics-form v-else-if="step == 3"></matrics-form>
         <previous-education v-else-if="step == 4"></previous-education>
+        <degree-education v-else-if="step == 5"></degree-education>
     </div>
 </template>
 <script>
@@ -11,6 +12,7 @@
     import ProfileForm from './profileForm.vue'
     import MatricsForm from './matricsForm.vue'
     import PreviousEducation from './previousEducation.vue'
+    import DegreeEducation from './degree.vue'
     import helper from './../../services/helper'
 
     export default {
@@ -25,7 +27,8 @@
             Tnc,
             ProfileForm,
             MatricsForm,
-            PreviousEducation
+            PreviousEducation,
+            DegreeEducation
         },
         methods: {
             getAuthUser(name) {

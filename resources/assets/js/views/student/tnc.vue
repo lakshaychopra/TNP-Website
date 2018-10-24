@@ -81,6 +81,7 @@
         storeStudentURL,
         storeStudentMeURL,
         storeStudentPeURL,
+        storeStudentDegreeURL,
         formstepChangeURL
     } from "../../config.js";
     export default {
@@ -99,6 +100,16 @@
                 form_step: {
                     'student_form_step': 'TC',
                     'id':this.$parent.id,
+                },
+                sem_create:{
+                    'univ_roll_no': this.$parent.username,
+                    'semester': '1,2,3,4,5,6,7,8',
+                    'obtained_marks': '0,0,0,0,0,0,0,0',
+                    'max_marks': '0,0,0,0,0,0,0,0',
+                    'credits': '0,0,0,0,0,0,0,0',
+                    'active_backlog': '0,0,0,0,0,0,0,0',
+                    'passive_backlog': '0,0,0,0,0,0,0,0',
+                    'semester_status': '1',
                 }
             }
         },
@@ -127,15 +138,28 @@
                                                             peresponse => {
                                                                 if (peresponse.status ==
                                                                     200) {
-                                                                    toastr[
-                                                                        'success'
-                                                                    ](
-                                                                        "User Added!!"
-                                                                    );
-                                                                    this.$parent
-                                                                        .step =
-                                                                        2;
-                                                                    // this.$router.push('/req');
+                                                                     axios.post(
+                                                                        storeStudentDegreeURL,
+                                                                        this.sem_create).then(
+                                                                        deresponse => {
+                                                                            if (deresponse.status ==
+                                                                                200) {
+                                                                                toastr[
+                                                                                    'success'
+                                                                                ](
+                                                                                    "User Added!!"
+                                                                                );
+                                                                                this.$parent
+                                                                                    .step =
+                                                                                    2;
+                                                                                // this.$router.push('/req');
+
+                                                                            }
+                                                                        }).catch(deerrors => {
+                                                                        console.log(
+                                                                            deerrors
+                                                                        );
+                                                                    });                                                                    // this.$router.push('/req');
 
                                                                 }
                                                             }).catch(peerrors => {

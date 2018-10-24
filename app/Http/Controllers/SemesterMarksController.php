@@ -49,7 +49,7 @@ class SemesterMarksController extends Controller
                 return $this->respondUnauthorized('Failed');
             }
             $data = $request->all();
-            $semesterMarks = new MetricsEducation;
+            $semesterMarks = new SemesterMarks;
             $semesterMarks->create($data);
             DB::commit();
             return $this->respondSuccess('Inserted',$semesterMarks);
@@ -82,7 +82,7 @@ class SemesterMarksController extends Controller
     {
         $auth = JWTAuth::parseToken()->authenticate();
         if ($semesterMarks != null) {
-            $data = MetricsEducation::where('univ_roll_no', '=' , $semesterMarks)->get();
+            $data = SemesterMarks::where('univ_roll_no', '=' , $semesterMarks)->get();
             return $this->respondData($data);
         }
     }
@@ -131,7 +131,7 @@ class SemesterMarksController extends Controller
     {
         $auth = JWTAuth::parseToken()->authenticate();
         $delete = $this->repository->delete($semesterMarks);
-        $index= MetricsEducation::orderBy('created_at', 'desc')->get();
+        $index= SemesterMarks::orderBy('created_at', 'desc')->get();
         return $this->respondSuccess('Deleted', $index);
     }
 }
