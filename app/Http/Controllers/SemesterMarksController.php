@@ -11,11 +11,11 @@ use Exception;
 use Notification;
 use JWTAuth;
 use App\Services\MetricsEducationService;
-use App\Repositories\MetricsEducationRepository;
+use App\Repositories\SemesterMarksRepository;
 
 class SemesterMarksController extends Controller
 {
-    public function __construct(MetricsEducationService $service,MetricsEducationRepository $repository)
+    public function __construct(MetricsEducationService $service,SemesterMarksRepository $repository)
     {
         $this->service = $service;
         $this->repository = $repository;
