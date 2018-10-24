@@ -48,7 +48,7 @@ class SemesterMarksController extends Controller
             if (!$auth) {
                 return $this->respondUnauthorized('Failed');
             }
-            $data = $request->only('univ_roll_no');
+            $data = $request->all();
             $semesterMarks = new MetricsEducation;
             $semesterMarks->create($data);
             DB::commit();
