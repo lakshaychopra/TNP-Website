@@ -9,14 +9,14 @@ use Exception;
 use Excel;
 use JWTAuth;
 use DB;
-use App\Services\HomePageService;
+// use App\Services\HomePageService;
 use App\Repositories\HomePageRepository;
 
 class HomePageController extends Controller
 {
-    public function __construct(HomePageService $service,HomePageRepository $repository)
+    public function __construct(HomePageRepository $repository)
     {
-        $this->service = $service;
+        // $this->service = $service;
         $this->repository = $repository;
     }
     

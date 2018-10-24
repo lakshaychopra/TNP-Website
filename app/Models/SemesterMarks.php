@@ -9,6 +9,6 @@ class SemesterMarks extends Model
     protected $table = 'semester_marks';
     
     protected $fillable = [
-        'univ_roll_no','semester','obtained_marks','max_marks','credits','active_backlog','passive_backlog','stream','marks_type','percentage','semester_status'
+        'univ_roll_no','semester','obtained_marks','max_marks','credits','active_backlog','passive_backlog','marks_type','percentage','semester_status'
     ];
 }

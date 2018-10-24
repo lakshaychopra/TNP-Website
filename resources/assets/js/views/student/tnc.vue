@@ -109,6 +109,7 @@
                     'credits': '0,0,0,0,0,0,0,0',
                     'active_backlog': '0,0,0,0,0,0,0,0',
                     'passive_backlog': '0,0,0,0,0,0,0,0',
+                    'percentage': '0,0,0,0,0,0,0,0',
                     'semester_status': '1',
                 }
             }
