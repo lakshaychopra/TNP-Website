@@ -11,8 +11,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="number" name="semester" v-model="student.semester_status" placeholder="Semester"
-                                            class="form-control" disabled>
+                                        <input type="number" name="semester" v-model="student.semester_status"
+                                            placeholder="Semester" class="form-control" disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -38,33 +38,35 @@
                                         <input type="number" name="obtained" min="0" max="10" step="0.1" v-model="update_marks.obtained_marks"
                                             placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
                                             v-if="this.student.marks_type=='CGPA'">
-                                        <input type="text" name="obtained" v-model="update_marks.obtained_marks" placeholder="Obtained Marks"
-                                            class="form-control" v-on:input="percentCalculate()" v-else>
+                                        <input type="text" name="obtained" v-model="update_marks.obtained_marks"
+                                            placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
+                                            v-else>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                       <input type="number" name="max" v-model="update_marks.max_marks" class="form-control"
+                                        <input type="number" name="max" v-model="update_marks.max_marks" class="form-control"
                                             placeholder="10" value="10" v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="max" v-model="update_marks.max_marks" placeholder="Max Marks"
                                             class="form-control" v-on:input="percentCalculate()" v-else>
-                                        <small id="percent" class="form-text text-muted">Percent = {{ update_marks.percent }}%
+                                        <small id="percent" class="form-text text-muted">Percent = {{
+                                            update_marks.percent }}%
                                         </small>
 
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" step="1" min="0" value="0" name="credits" v-model="update_marks.credits" class="form-control"
-                                            placeholder="Credits">
+                                        <input type="number" step="1" min="0" value="0" name="credits" v-model="update_marks.credits"
+                                            class="form-control" placeholder="Credits">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="number" name="active_backlog" v-model="update_marks.active_backlog" class="form-control" step="1" min="0" value="0"
-                                            placeholder="Active Backlog">
+                                        <input type="number" name="active_backlog" v-model="update_marks.active_backlog"
+                                            class="form-control" step="1" min="0" value="0" placeholder="Active Backlog">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -99,13 +101,13 @@
         data() {
             return {
                 student: {},
-                
-                update_marks:{
-                    obtained_marks:0,
-                    max_marks:0,
-                    credits:0,
-                    active_backlog:0,
-                    passive_backlog:0,
+
+                update_marks: {
+                    obtained_marks: 0,
+                    max_marks: 0,
+                    credits: 0,
+                    active_backlog: 0,
+                    passive_backlog: 0,
                     percent: 0,
                 },
                 id: this.$parent.id,
@@ -126,26 +128,25 @@
                 console.log(response.data.data[0]);
                 this.student = response.data.data[0];
 
-                this.update_marks.obtained_marks = this.splitarray(this.student.obtained_marks,this.student.semester_status);
-                this.update_marks.max_marks = this.splitarray(this.student.max_marks,this.student.semester_status);
-                this.update_marks.credits = this.splitarray(this.student.credits,this.student.semester_status);
-                this.update_marks.active_backlog = this.splitarray(this.student.active_backlog,this.student.semester_status);
-                this.update_marks.passive_backlog = this.splitarray(this.student.passive_backlog,this.student.semester_status);
-                this.update_marks.percent = this.splitarray(this.student.percentage,this.student.semester_status);
+                this.update_marks.obtained_marks = this.splitarray(this.student.obtained_marks, this.student.semester_status);
+                this.update_marks.max_marks = this.splitarray(this.student.max_marks, this.student.semester_status);
+                this.update_marks.credits = this.splitarray(this.student.credits, this.student.semester_status);
+                this.update_marks.active_backlog = this.splitarray(this.student.active_backlog, this.student.semester_status);
+                this.update_marks.passive_backlog = this.splitarray(this.student.passive_backlog, this.student.semester_status);
+                this.update_marks.percent = this.splitarray(this.student.percentage, this.student.semester_status);
             }).catch(error => {
                 console.log(error);
             });
             // console.log(this.id.student);
         },
         methods: {
-            splitarray(arr,index){
-                 return arr.split(',')[index-1];   
+            splitarray(arr, index) {
+                return arr.split('-')[index - 1];
             },
-            changeValue(old,newVal,index){
-                var arr =  old.split(',');
-                var ind = parseInt(index)
-                arr.splice(index-1, 1 ,newVal);
-                return arr.join();   
+            changeValue(old, newVal, index) {
+                var arr = old.split('-');
+                arr.splice(index - 1, 1, newVal);
+                return arr.join('-');
             },
             resetmarks() {
                 this.percent = 0;
@@ -156,10 +157,11 @@
                     this.update_marks.max_marks = undefined;
                 }
             },
-             percentCalculate() {
+            percentCalculate() {
                 if (this.student.marks_type == 'CGPA') {
                     // console.log(this.student.max_marks);
-                    if (this.update_marks.obtained_marks != undefined && (this.update_marks.max_marks != undefined || this.update_marks
+                    if (this.update_marks.obtained_marks != undefined && (this.update_marks.max_marks != undefined ||
+                            this.update_marks
                             .max_marks != '')) {
                         this.update_marks.percent = this.update_marks.obtained_marks * 9.5;
                     } else {
@@ -167,7 +169,8 @@
                     }
                 } else {
                     if (this.update_marks.obtained_marks != undefined && this.update_marks.max_marks != undefined) {
-                        this.update_marks.percent = (this.update_marks.obtained_marks / this.update_marks.max_marks) * 100;
+                        this.update_marks.percent = (this.update_marks.obtained_marks / this.update_marks.max_marks) *
+                            100;
                     } else {
                         this.update_marks.percent = 0;
                     }
@@ -177,18 +180,19 @@
             getAuthUser(name) {
                 return this.$store.getters.getAuthUser(name);
             },
-            splitMonthYear(monthYear) {
-                this.student.month = monthYear.split('-')[1];
-                this.student.year = monthYear.split('-')[0];
-            },
             submit() {
-                this.student.obtained_marks = this.changeValue(this.student.obtained_marks,this.update_marks.obtained_marks,this.student.semester_status);
-                                this.student.max_marks = this.changeValue(this.student.max_marks,this.update_marks.max_marks,this.student.semester_status);
-                                this.student.credits = this.changeValue(this.student.credits,this.update_marks.credits,this.student.semester_status);
-                                this.student.active_backlog = this.changeValue(this.student.active_backlog,this.update_marks.active_backlog,this.student.semester_status);
-                                this.student.passive_backlog = this.changeValue(this.student.passive_backlog,this.update_marks.passive_backlog,this.student.semester_status);
-                                this.student.percentage = this.changeValue(this.student.percentage,this.update_marks.percent,this.student.semester_status);
-                                this.student.semester_status = parseInt(this.student.semester_status) +1;
+                this.student.obtained_marks = this.changeValue(this.student.obtained_marks, this.update_marks.obtained_marks,
+                    this.student.semester_status);
+                this.student.max_marks = this.changeValue(this.student.max_marks, this.update_marks.max_marks, this.student
+                    .semester_status);
+                this.student.credits = this.changeValue(this.student.credits, this.update_marks.credits, this.student.semester_status);
+                this.student.active_backlog = this.changeValue(this.student.active_backlog, this.update_marks.active_backlog,
+                    this.student.semester_status);
+                this.student.passive_backlog = this.changeValue(this.student.passive_backlog, this.update_marks.passive_backlog,
+                    this.student.semester_status);
+                this.student.percentage = this.changeValue(this.student.percentage, this.update_marks.percent, this.student
+                    .semester_status);
+                this.student.semester_status = parseInt(this.student.semester_status) + 1;
 
                 let formData = new FormData();
                 formData.append('univ_roll_no', this.student.univ_roll_no);
@@ -198,14 +202,15 @@
                 formData.append('active_backlog', this.student.active_backlog);
                 formData.append('passive_backlog', this.student.passive_backlog);
                 formData.append('credits', this.student.credits);
-                formData.append('semester_status',this.student.semester_status );
+                formData.append('semester_status', this.student.semester_status);
                 formData.append('percentage', this.student.percentage);
                 formData.append('marks_type', this.student.marks_type);
                 formData.append('_method', 'PUT');
                 // console.log(this.$store.state.auth.username);
                 // console.log('1');
                 console.log(this.student);
-                axios.post(storeStudentDegreeURL+ this.student.id, formData).then(response => {
+                axios.post(storeStudentDegreeURL + this.student.id, formData).then(response => {
+                    console.log(response);
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
                         if (statusresponse.status == 200) {
                             // toastr['success']("User Added!!");

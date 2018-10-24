@@ -103,13 +103,13 @@
                 },
                 sem_create:{
                     'univ_roll_no': this.$parent.username,
-                    'semester': '1,2,3,4,5,6,7,8',
-                    'obtained_marks': '0,0,0,0,0,0,0,0',
-                    'max_marks': '0,0,0,0,0,0,0,0',
-                    'credits': '0,0,0,0,0,0,0,0',
-                    'active_backlog': '0,0,0,0,0,0,0,0',
-                    'passive_backlog': '0,0,0,0,0,0,0,0',
-                    'percentage': '0,0,0,0,0,0,0,0',
+                    'semester': '1-2-3-4-5-6-7-8',
+                    'obtained_marks': '0-0-0-0-0-0-0-0',
+                    'max_marks': '0-0-0-0-0-0-0-0',
+                    'credits': '0-0-0-0-0-0-0-0',
+                    'active_backlog': '0-0-0-0-0-0-0-0',
+                    'passive_backlog': '0-0-0-0-0-0-0-0',
+                    'percentage': '0-0-0-0-0-0-0-0',
                     'semester_status': '1',
                 }
             }

@@ -24,7 +24,7 @@ class UpdateSemesterMarksRequest extends FormRequest
     public function rules()
     {
         return [
-            'univ_roll_no'     =>  'nullable',
+            'univ_roll_no'     =>  'required',
             'semester'         =>  'nullable',
             'obtained_marks'   =>  'nullable',
             'max_marks'        =>  'nullable',

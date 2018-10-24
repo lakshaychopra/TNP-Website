@@ -114,7 +114,8 @@ class SemesterMarksController extends Controller
             $semesterMarks->marks_type = $request->marks_type;
             $semesterMarks->percentage = $request->percentage;
             $semesterMarks->semester_status = $request->semester_status;
-
+            \Log::info($semesterMarks->semester);
+            
             $semesterMarks->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$semesterMarks);
