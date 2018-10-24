@@ -102,16 +102,16 @@ class SemesterMarksController extends Controller
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            // $data = $request->all();
             $semesterMarks->univ_roll_no = $request->univ_roll_no;
-            $semesterMarks->board = $request->board;
-            $semesterMarks->institute = $request->institute;
-            $semesterMarks->month = $request->month;
-            $semesterMarks->year = $request->year;
+            $semesterMarks->semester = $request->semester;
             $semesterMarks->obtained_marks = $request->obtained_marks;
             $semesterMarks->max_marks = $request->max_marks;
+            $semesterMarks->credits = $request->credits;
+            $semesterMarks->active_backlog = $request->active_backlog;
+            $semesterMarks->passive_backlog = $request->passive_backlog;
             $semesterMarks->marks_type = $request->marks_type;
             $semesterMarks->percentage = $request->percentage;
+            $semesterMarks->semester_status = $request->semester_status;
             $semesterMarks->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$semesterMarks);

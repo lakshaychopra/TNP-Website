@@ -22,7 +22,6 @@ class CreateStudentSemesterMarksTable extends Migration
             $table->string('credits')->nullable();
             $table->string('active_backlog')->nullable();
             $table->string('passive_backlog')->nullable();
-            $table->string('stream')->comment('Stream/Course type')->nullable();
             $table->enum('marks_type',['CGPA','PERCENTAGE'])->default('CGPA');
             $table->string('percentage')->nullable();
             $table->string('semester_status')->nullable();
