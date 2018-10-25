@@ -102,8 +102,7 @@ class SemesterMarksController extends Controller
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            $data = $request->all();
-            \Log::info($data);
+            // $data = $request->all();
             $semesterMarks->univ_roll_no = $request->univ_roll_no;
             $semesterMarks->semester = $request->semester;
             $semesterMarks->obtained_marks = $request->obtained_marks;
@@ -114,8 +113,6 @@ class SemesterMarksController extends Controller
             $semesterMarks->marks_type = $request->marks_type;
             $semesterMarks->percentage = $request->percentage;
             $semesterMarks->semester_status = $request->semester_status;
-            \Log::info($semesterMarks->semester);
-            
             $semesterMarks->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$semesterMarks);
