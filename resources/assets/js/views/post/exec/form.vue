@@ -36,6 +36,7 @@
                                               <option value="Internship">Internship</option>
                                               <option value="Placement" >Placement</option>
                                               <option value="Announcement" >Announcement</option>
+                                              <option value="Selected" >Selected</option>
                                             </select>
                                             <small class="text-danger">{{ errors.first('category') }}</small>
 

@@ -593,7 +593,6 @@
         background-color: transparent;
     }
 
-
     #customers-testimonials .testimonials {
         background-color: #fff;
         position: relative;

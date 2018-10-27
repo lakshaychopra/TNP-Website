@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" id="filter">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -135,7 +135,7 @@
 </template>
 <script>
     import {
-        categoryURL,
+        // categoryURL,
         pageLinkWidget
     } from "../../config.js";
     export default {
@@ -152,16 +152,16 @@
                 .catch((error) => console.log(error))
         },
         methods: {
-            searchby_category(category) {
-                if (category != "All") {
-                    axios.get(categoryURL + category)
-                        .then(response => this.$parent.posts = response.data.data.data, this.$parent.pinned_posts =
-                            undefined)
-                } else {
-                    this.$parent.getPosts();
-                    this.$parent.getPinnedPosts();
-                }
-            }
+            // searchby_category(category) {
+            //     if (category != "All") {
+            //         axios.get(categoryURL + category)
+            //             .then(response => this.$parent.posts = response.data.data.data, this.$parent.pinned_posts =
+            //                 undefined)
+            //     } else {
+            //         this.$parent.getPosts();
+            //         this.$parent.getPinnedPosts();
+            //     }
+            // }
         }
     }
 </script>
