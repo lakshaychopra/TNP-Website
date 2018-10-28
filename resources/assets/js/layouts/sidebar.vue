@@ -16,7 +16,7 @@
                             <span class="hide-menu">Home</span>
                         </router-link>
                     </li>
-                     <li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-file fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Pages
@@ -41,12 +41,12 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- <li>
+                    <li>
                         <router-link to="#" exact>
                             <i class="fa fa-file-word-o fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Notice Maker</span>
                         </router-link>
-                    </li> -->
+                    </li>
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-file fa-fw" aria-hidden="true"></i>
@@ -77,7 +77,7 @@
                             </li>
                         </ul>
                     </li>
-                   <li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-user fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">User
@@ -107,7 +107,27 @@
                             </li>
                         </ul>
                     </li>
-                   <!-- <li class="dropdown">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
+                            <span class="hide-menu">Widget
+                                <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">
+                                <strong>
+                                    <i class="fa fa-list fa-fw" aria-hidden="true"></i> Students Menu
+                                </strong>
+                            </li>
+                            <li>
+                                <router-link to="#" exact>
+                                    <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Students
+                                </router-link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Students
@@ -146,7 +166,7 @@
                                 </router-link>
                             </li>
                         </ul>
-                    </li> -->
+                    </li>
                 </ul>
             </nav>
         </div>

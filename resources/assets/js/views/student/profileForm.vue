@@ -13,6 +13,7 @@
                                     <div class="form-group">
                                         <input type="text" name="md-radio-inlinename" v-model="student.name"
                                             placeholder="Name" class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Name</small>
                                     </div>
                                 </div>
                             </div>
@@ -23,7 +24,6 @@
                                         <div class="col-md-2 md-radio md-radio-inline">
                                             <input type="radio" name="gender" v-model="student.gender" id="male" value="MALE">
                                             <label for="male">Male</label>
-
                                         </div>
                                         <div class="col-md-2 md-radio md-radio-inline">
                                             <input type="radio" name="gender" v-model="student.gender" id="female"
@@ -41,25 +41,29 @@
                                             <option value="ST">ST</option>
                                             <option value="OBC">OBC</option>
                                         </select>
+                                        <small class="form-text text-primary text-uppercase">Category</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="height" v-model="student.height" placeholder="Height"
+                                        <input type="number" min="0" name="height" v-model="student.height" placeholder="Height"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Height</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="weight" v-model="student.weight" placeholder="Weight"
+                                        <input type="number" min="0" name="weight" v-model="student.weight" placeholder="Weight"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Weight</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <select name="blood_group" v-model="student.blood_group" class="form-control">
+                                            <small class="form-text text-primary text-uppercase">Weight</small>
                                             <option disabled value="null">Blood Group</option>
                                             <option value="O+">O+</option>
                                             <option value="O-">O-</option>
@@ -70,33 +74,36 @@
                                             <option value="B+">B+</option>
                                             <option value="B-">B-</option>
                                         </select>
+                                        <small class="form-text text-primary text-uppercase">Blood Group</small>
                                     </div>
                                 </div>
                             </div>
 
-
-                            <h2 class="card-title mt-3 text-primary">Acadaemic Details</h2>
+                            <h2 class="card-title mt-3 text-primary">Academic Details</h2>
 
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="uniRoll" v-model="student.univ_roll_no" placeholder="University Roll No."
-                                            class="form-control">
+                                        <input type="number" min="0" name="uniRoll" v-model="student.univ_roll_no"
+                                            placeholder="University Roll No." class="form-control">
+                                        <small class="form-text text-primary text-uppercase">University Roll No.</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="classRoll" v-model="student.class_roll_no" placeholder="Class Roll No."
-                                            class="form-control">
+                                        <input type="number" min="0" name="classRoll" v-model="student.class_roll_no"
+                                            placeholder="Class Roll No." class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Class Roll No.</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <select name="living" v-model="student.living" class="form-control">
-                                            <option disabled value="null">Hosteler / DayScholar</option>
+                                            <option disabled value="null">Hosteler / Day Scholar</option>
                                             <option value="HOSTELER">Hosteler</option>
-                                            <option value="DAYSCHOLAR">DayScholar</option>
+                                            <option value="DAYSCHOLAR">Day Scholar</option>
                                         </select>
+                                        <small class="form-text text-primary text-uppercase">Hosteler / Day Scholar</small>
                                     </div>
                                 </div>
                             </div>
@@ -105,6 +112,7 @@
                                     <div class="form-group">
                                         <input type="text" name="batch" v-model="student.batch" placeholder="Batch"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Batch</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -116,11 +124,11 @@
                                             <option value="M.B.A.">M.B.A.</option>
                                             <option value="M.C.A.">M.C.A.</option>
                                         </select>
+                                        <small class="form-text text-primary text-uppercase">Branch</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <!-- <input type="text" name="name"  placeholder="Stream" class="form-control"> -->
                                         <select name="stream" v-model="student.stream" class="form-control">
                                             <option disabled value="null">Stream</option>
                                             <option value="Civil">Civil Engineering</option>
@@ -132,6 +140,7 @@
                                             <option value="Mechenical">Mechenical Engineering</option>
                                             <option value="Production">Production Engineering</option>
                                         </select>
+                                        <small class="form-text text-primary text-uppercase">Stream</small>
                                     </div>
                                 </div>
                             </div>
@@ -141,6 +150,7 @@
                                     <div class="form-group">
                                         <input type="text" name="section" v-model="student.section" placeholder="Section"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Section</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -150,6 +160,7 @@
                                             <option value="MORNING">Morning</option>
                                             <option value="EVENING">Evening</option>
                                         </select>
+                                        <small class="form-text text-primary text-uppercase">Shift</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -176,12 +187,14 @@
                                     <div class="form-group">
                                         <input type="text" name="fname" v-model="student.father_name" placeholder="Father's Name"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Father's Name</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="fphone" v-model="student.father_phone" placeholder="Father's Phone"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Father's Phone Number</small>
                                     </div>
                                 </div>
                             </div>
@@ -190,28 +203,32 @@
                                     <div class="form-group">
                                         <input type="text" name="mname" v-model="student.mother_name" placeholder="Mother's Name"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Mother's Name</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="mphone" v-model="student.mother_phone" placeholder="Mother's Phone"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Mother's Phone Number</small>
                                     </div>
                                 </div>
                             </div>
 
-
                             <h2 class="card-title mt-3 text-primary">Address Details</h2>
+
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <input type="text" name="address" v-model="student.address" placeholder="Address"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Address</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="text" name="city" v-model="student.city" placeholder="City" class="form-control">
+                                        <small class="form-text text-primary text-uppercase">City</small>
                                     </div>
                                 </div>
                             </div>
@@ -220,18 +237,21 @@
                                     <div class="form-group">
                                         <input type="text" name="district" v-model="student.district" placeholder="District"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">District</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="text" name="state" v-model="student.state" placeholder="State"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">State</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="pincode" v-model="student.pincode" placeholder="Pincode"
+                                        <input type="number" min="0" name="pincode" v-model="student.pincode" placeholder="Pincode"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Pincode</small>
                                     </div>
                                 </div>
                             </div>

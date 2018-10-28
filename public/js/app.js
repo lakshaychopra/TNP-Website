@@ -38662,6 +38662,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -38771,6 +38791,23 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: "#", exact: "" } }, [
+                _c("i", {
+                  staticClass: "fa fa-file-word-o fa-fw",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "hide-menu" }, [
+                  _vm._v("Notice Maker")
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
           _c("li", { staticClass: "dropdown" }, [
             _vm._m(3),
             _vm._v(" "),
@@ -38877,6 +38914,84 @@ var render = function() {
                         attrs: { "aria-hidden": "true" }
                       }),
                       _vm._v(" Manage Users\n                            ")
+                    ])
+                  ],
+                  1
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "dropdown" }, [
+            _vm._m(7),
+            _vm._v(" "),
+            _c(
+              "ul",
+              { staticClass: "dropdown-menu", attrs: { role: "menu" } },
+              [
+                _vm._m(8),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-cogs fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Manage Students\n                            ")
+                    ])
+                  ],
+                  1
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "dropdown" }, [
+            _vm._m(9),
+            _vm._v(" "),
+            _c(
+              "ul",
+              { staticClass: "dropdown-menu", attrs: { role: "menu" } },
+              [
+                _vm._m(10),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-cogs fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Manage Students\n                            ")
+                    ])
+                  ],
+                  1
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "dropdown" }, [
+            _vm._m(11),
+            _vm._v(" "),
+            _c(
+              "ul",
+              { staticClass: "dropdown-menu", attrs: { role: "menu" } },
+              [
+                _vm._m(12),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
+                      _c("i", {
+                        staticClass: "fa fa-cogs fa-fw",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Manage Companies\n                            ")
                     ])
                   ],
                   1
@@ -39053,6 +39168,105 @@ var staticRenderFns = [
           attrs: { "aria-hidden": "true" }
         }),
         _vm._v(" User Menu\n                            ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
+      _c("i", {
+        staticClass: "fa fa-graduation-cap fa-fw",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "hide-menu" }, [
+        _vm._v("Widget\n                            "),
+        _c("i", {
+          staticClass: "fa fa-caret-down fa-fw",
+          attrs: { "aria-hidden": "true" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-header" }, [
+      _c("strong", [
+        _c("i", {
+          staticClass: "fa fa-list fa-fw",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" Students Menu\n                            ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
+      _c("i", {
+        staticClass: "fa fa-graduation-cap fa-fw",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "hide-menu" }, [
+        _vm._v("Students\n                            "),
+        _c("i", {
+          staticClass: "fa fa-caret-down fa-fw",
+          attrs: { "aria-hidden": "true" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-header" }, [
+      _c("strong", [
+        _c("i", {
+          staticClass: "fa fa-list fa-fw",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" Students Menu\n                            ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
+      _c("i", {
+        staticClass: "fa fa-building fa-fw",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "hide-menu" }, [
+        _vm._v("Companies\n                            "),
+        _c("i", {
+          staticClass: "fa fa-caret-down fa-fw",
+          attrs: { "aria-hidden": "true" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-header" }, [
+      _c("strong", [
+        _c("i", {
+          staticClass: "fa fa-list fa-fw",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" Companies Menu\n                            ")
       ])
     ])
   }
@@ -54361,6 +54575,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -54508,7 +54742,15 @@ var render = function() {
                             _vm.$set(_vm.student, "name", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Name")]
+                      )
                     ])
                   ])
                 ]),
@@ -54661,6 +54903,14 @@ var render = function() {
                             _vm._v("OBC")
                           ])
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Category")]
                       )
                     ])
                   ])
@@ -54680,7 +54930,8 @@ var render = function() {
                         ],
                         staticClass: "form-control",
                         attrs: {
-                          type: "text",
+                          type: "number",
+                          min: "0",
                           name: "height",
                           placeholder: "Height"
                         },
@@ -54693,7 +54944,15 @@ var render = function() {
                             _vm.$set(_vm.student, "height", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Height")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -54710,7 +54969,8 @@ var render = function() {
                         ],
                         staticClass: "form-control",
                         attrs: {
-                          type: "text",
+                          type: "number",
+                          min: "0",
                           name: "weight",
                           placeholder: "Weight"
                         },
@@ -54723,7 +54983,15 @@ var render = function() {
                             _vm.$set(_vm.student, "weight", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Weight")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -54764,6 +55032,15 @@ var render = function() {
                         },
                         [
                           _c(
+                            "small",
+                            {
+                              staticClass:
+                                "form-text text-primary text-uppercase"
+                            },
+                            [_vm._v("Weight")]
+                          ),
+                          _vm._v(" "),
+                          _c(
                             "option",
                             { attrs: { disabled: "", value: "null" } },
                             [_vm._v("Blood Group")]
@@ -54801,13 +55078,21 @@ var render = function() {
                             _vm._v("B-")
                           ])
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Blood Group")]
                       )
                     ])
                   ])
                 ]),
                 _vm._v(" "),
                 _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
-                  _vm._v("Acadaemic Details")
+                  _vm._v("Academic Details")
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
@@ -54824,7 +55109,8 @@ var render = function() {
                         ],
                         staticClass: "form-control",
                         attrs: {
-                          type: "text",
+                          type: "number",
+                          min: "0",
                           name: "uniRoll",
                           placeholder: "University Roll No."
                         },
@@ -54841,7 +55127,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("University Roll No.")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -54858,7 +55152,8 @@ var render = function() {
                         ],
                         staticClass: "form-control",
                         attrs: {
-                          type: "text",
+                          type: "number",
+                          min: "0",
                           name: "classRoll",
                           placeholder: "Class Roll No."
                         },
@@ -54875,7 +55170,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Class Roll No.")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -54918,7 +55221,7 @@ var render = function() {
                           _c(
                             "option",
                             { attrs: { disabled: "", value: "null" } },
-                            [_vm._v("Hosteler / DayScholar")]
+                            [_vm._v("Hosteler / Day Scholar")]
                           ),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "HOSTELER" } }, [
@@ -54926,9 +55229,17 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "DAYSCHOLAR" } }, [
-                            _vm._v("DayScholar")
+                            _vm._v("Day Scholar")
                           ])
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Hosteler / Day Scholar")]
                       )
                     ])
                   ])
@@ -54961,7 +55272,15 @@ var render = function() {
                             _vm.$set(_vm.student, "batch", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Batch")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -55023,6 +55342,14 @@ var render = function() {
                             _vm._v("M.C.A.")
                           ])
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Branch")]
                       )
                     ])
                   ]),
@@ -55099,6 +55426,14 @@ var render = function() {
                             _vm._v("Production Engineering")
                           ])
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Stream")]
                       )
                     ])
                   ])
@@ -55135,7 +55470,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Section")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -55189,6 +55532,14 @@ var render = function() {
                             _vm._v("Evening")
                           ])
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Shift")]
                       )
                     ])
                   ]),
@@ -55314,7 +55665,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Father's Name")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -55348,7 +55707,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Father's Phone Number")]
+                      )
                     ])
                   ])
                 ]),
@@ -55384,7 +55751,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Mother's Name")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -55418,7 +55793,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Mother's Phone Number")]
+                      )
                     ])
                   ])
                 ]),
@@ -55458,7 +55841,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Address")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -55488,7 +55879,15 @@ var render = function() {
                             _vm.$set(_vm.student, "city", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("City")]
+                      )
                     ])
                   ])
                 ]),
@@ -55524,7 +55923,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("District")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -55554,7 +55961,15 @@ var render = function() {
                             _vm.$set(_vm.student, "state", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("State")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -55571,7 +55986,8 @@ var render = function() {
                         ],
                         staticClass: "form-control",
                         attrs: {
-                          type: "text",
+                          type: "number",
+                          min: "0",
                           name: "pincode",
                           placeholder: "Pincode"
                         },
@@ -55588,7 +56004,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Pincode")]
+                      )
                     ])
                   ])
                 ]),
@@ -56617,6 +57041,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -56768,7 +57193,16 @@ var render = function() {
                             _vm.$set(_vm.student, "board", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase",
+                          attrs: { id: "percent" }
+                        },
+                        [_vm._v("Board")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),

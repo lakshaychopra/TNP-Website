@@ -13,6 +13,7 @@
                                     <div class="form-group">
                                         <input type="text" name="board" v-model="student.board" placeholder="Board"
                                             class="form-control">
+                                        <small id="percent" class="form-text text-primary text-uppercase">Board</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
