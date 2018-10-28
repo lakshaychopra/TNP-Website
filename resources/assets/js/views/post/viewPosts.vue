@@ -1,36 +1,5 @@
 <template>
   <div class="container">
-    <div class="row card-primary mb-3 py-3">
-      <div class="col-md-12">
-        <form class="form-inline" action="/" method="GET">
-          <input class="form-control" type="text" placeholder="Search" v-model="search" @keyup="searchPost"
-            autocomplete="on" id="search">
-          <a class="nav-link float-right" href="javascript:void(0)" data-target="#more" id="caret" data-toggle="collapse">
-            <i class="fa fa-caret-down" aria-hidden="true"></i>
-          </a>
-          <div class="bgcolor w-90 text-uppercase collapse" id="more">
-            <div class="owl-carousel" id="nav">
-              <div class="ml-4">
-                <a href="javascript:void(0) " @click="searchby_category('All')">All</a>
-              </div>
-              <div>
-                <a href="javascript:void(0) " @click="searchby_category('Announcement')">Announcement</a>
-              </div>
-              <div>
-                <a href="javascript:void(0) " @click="searchby_category('Internship')">Internship</a>
-              </div>
-              <div>
-                <a href="javascript:void(0) " @click="searchby_category('Placement')">Placement</a>
-              </div>
-              <div>
-                <a href="javascript:void(0) " @click="searchby_category('Selected')">Selected</a>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-
     <div class="row justify-content-center">
       <div class="col-md-12">
         <div class="card card-primary shadow-sm" v-for="post in posts" :key="post.id">
@@ -42,19 +11,19 @@
                 <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                 <div class="dropdown-menu">
                   <router-link v-bind:to="{ path:'/post/'+post.id +'/edit'}">
-                    <a class="dropdown-item" href="javascript:void(0)">
+                    <a class="dropdown-item" href="#">
                       <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
                   </router-link>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)" @click.prevent="delPost(post.id)">
+                  <a class="dropdown-item" href="" @click.prevent="delPost(post.id)">
                     <i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                   <div class="dropdown-divider"></div>
-                  <a v-if="post.is_pinned == 0" class="dropdown-item" href="javascript:void(0)" @click.prevent="pinPost(post.id)">
+                  <a v-if="post.is_pinned == 0" class="dropdown-item" href="#" @click.prevent="pinPost(post.id)">
                     <i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
-                  <a v-else class="dropdown-item" href="javascript:void(0)" @click.prevent="unpinPost(post.id)">
+                  <a v-else class="dropdown-item" href="#" @click.prevent="unpinPost(post.id)">
                     <i class="fa fa-thumb-tack" aria-hidden="true"></i> Unpin </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)" @click.prevent="notifyPost(post.id,post.title)">
+                    <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="" @click.prevent="notifyPost(post.id,post.title)">
                     <i class="fa fa-share" aria-hidden="true"></i> Notify</a>
                 </div>
               </div>
@@ -75,18 +44,17 @@
             <!-- <ul class="list-group">
                           <li class="list-group-item"></li>
                         </ul> -->
-            <span class="text-justify" v-html="post.body"></span>
+            <span v-html="post.body"></span>
           </div>
           <div class="card-footer">
             <span class="pull-right">
-              <button class="btn btn-custom shadow-sm" v-for="tag in post.tag.split(',')" :key="tag">{{
-                tag.toUpperCase() }}</button>
+              <button class="btn btn-custom shadow-sm" v-for="tag in post.tag.split(',')" :key="tag">{{ tag.toUpperCase() }}</button>
             </span>
           </div>
         </div>
-        <div class="text-center" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
-          <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px" v-if="loading"></i>
-        </div>
+         <div class="text-center" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+                            <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px" v-if="loading"></i>
+          </div>
       </div>
     </div>
     <modal></modal>
@@ -96,33 +64,28 @@
 <script>
   import modal from "./modal";
   import {
-    addPostURL,
-    categoryURL,
-    searchURL
+    addPostURL
   } from "../../config.js";
   export default {
-    props: ['searchbox'],
     components: {
       modal,
     },
     data() {
       return {
-        loading: 1,
+         loading: 1,
         page: 2,
         busy: false,
         postEdit: {},
         posts: {},
         showDropDown: false,
-        search_input: false,
-        search: '',
       }
     },
     methods: {
       loadMore: function () {
-        const vm = this;
-        vm.loading = 1;
-        vm.busy = true;
-        vm.getallpost();
+                const vm = this;
+                vm.loading = 1;
+                vm.busy = true;
+                vm.getallpost();
       },
       refreshPost(record) {
         this.posts = record.data;
@@ -156,7 +119,7 @@
           }
         })
       },
-      notifyPost(id, title) {
+      notifyPost(id,title) {
         this.$swal({
           title: 'Are you sure to notify post?',
           text: "You won't be able to revert this!",
@@ -169,7 +132,7 @@
           if (result.value) {
             axios.post('/api/dashboard/post/notifyme', {
                 id: id,
-                title: title,
+                title:title,
                 _method: 'POST'
               }).then((response) => {
                 // console.log(response.data);
@@ -227,50 +190,28 @@
         // })
         // .catch((error) => console.log(error))
       },
-      getallpost: function () {
-        setTimeout(() => {
-          const vm = this;
-          vm.page = vm.page + 1;
-          axios.get('/api/dashboard/post?page=' + vm.page)
-            .then(function (response) {
-              // console.log(response.data.data.data);
-              if (response.data.data.data.length == 0) {
-                vm.busy = true;
-              } else {
-                vm.busy = false;
-              }
-              for (var i = 0; i < response.data.data.data.length; i++) {
-                // console.log(response.data.data.data[i]);
-                vm.posts.push(response.data.data.data[i]);
-              }
-              vm.loading = 0;
+        getallpost: function () {
+                setTimeout(() => {
+                  const vm = this;
+                  vm.page = vm.page + 1;
+                    axios.get('/api/dashboard/post?page=' + vm.page)
+                        .then(function (response) {
+                            // console.log(response.data.data.data);
+                            if (response.data.data.data.length == 0) {
+                                vm.busy = true;
+                            } else {
+                                vm.busy = false;
+                            }
+                            for (var i = 0; i < response.data.data.data.length; i++) {
+                                // console.log(response.data.data.data[i]);
+                                vm.posts.push(response.data.data.data[i]);
+                            }
+                            vm.loading = 0;
 
-            })
-            .catch(function (error) {});
-        }, 2000);
-      },
-      searchPost() {
-        if (this.search.length >= 2) {
-          axios.get(searchURL + this.search)
-            .then(response => this.$parent.posts = response.data.data.data,
-
-              this.$parent.pinned_posts = undefined
-            )
-        } else {
-          this.$parent.getPosts();
-          this.$parent.getPinnedPosts();
-        }
-      },
-      searchby_category(category) {
-        if (category != "All") {
-          axios.get(categoryURL + category)
-            .then(response => this.$parent.posts = response.data.data.data, this.$parent.pinned_posts =
-              undefined)
-        } else {
-          this.$parent.getPosts();
-          this.$parent.getPinnedPosts();
-        }
-      }
+                        })
+                        .catch(function (error) {});
+                }, 2000);
+            }
     },
     created() {
       axios.get(addPostURL)
@@ -282,16 +223,6 @@
 
         })
         .catch((error) => console.log(error))
-    },
-    beforeCreate() {
-      var vm = this;
-      Vue.nextTick(function () {
-        $("#nav").owlCarousel({
-          autoWidth: true,
-          margin: 45,
-          stagePadding: 50,
-        });
-      }.bind(vm))
     }
   }
 </script>
@@ -382,58 +313,5 @@
 
   .dropdown-item i {
     margin-right: 10px;
-  }
-
-  #caret {
-    color: #038ed4 !important;
-    padding: 10px;
-    border-bottom: 4px solid rgba(255, 255, 255, 0);
-  }
-
-  #caret :hover {
-    background-color: #038ed4 !important;
-    color: #ffffff !important;
-  }
-
-  #search {
-    background-color: #fff;
-    border: solid #038ed4;
-    width: 90%;
-    color: #0073BC;
-    border-radius: 25px;
-  }
-
-  #search :placeholder {
-    color: #0073BC;
-  }
-
-  #nav {
-    margin-bottom: 0;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  #nav a {
-    color: #038ed4 !important;
-  }
-
-  #nav a:hover {
-    background-color: #f1f1f1 !important;
-    color: #038ed4 !important;
-  }
-
-  #more {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-bottom: -2px;
-  }
-
-  .bgcolor {
-    background-color: #000;
-  }
-
-  .w-90 {
-    width: 90%;
   }
 </style>

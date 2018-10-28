@@ -2,14 +2,14 @@
     <header class="topbar">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
              <div class="navbar-header">
-                <router-link to="/" class="navbar-brand">
+                <a class="navbar-brand" href="/">
                     <b>
                         <img src="/images/icons/60x60.png" height="35px" width="35px" alt="home" class="dark-logo" />
                     </b>
                     <span>
                         <b>T&P Cell</b>
                     </span>
-                </router-link>
+                </a>
             </div>
             <div class="navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-md-0 ">
