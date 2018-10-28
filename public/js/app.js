@@ -38241,20 +38241,45 @@ var render = function() {
       "nav",
       { staticClass: "navbar top-navbar navbar-expand-md navbar-light" },
       [
-        _vm._m(0),
+        _c(
+          "div",
+          { staticClass: "navbar-header" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              [
+                _c("b", [
+                  _c("img", {
+                    staticClass: "dark-logo",
+                    attrs: {
+                      src: "/images/icons/60x60.png",
+                      height: "35px",
+                      width: "35px",
+                      alt: "home"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("span", [_c("b", [_vm._v("T&P Cell")])])
+              ]
+            )
+          ],
+          1
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "navbar-collapse" }, [
-          _vm._m(1),
+          _vm._m(0),
           _vm._v(" "),
           _c("ul", { staticClass: "navbar-nav my-lg-0" }, [
             _c("li", { staticClass: "nav-item dropdown" }, [
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c("div", { staticClass: "dropdown-menu dropdown-menu-right" }, [
                 _c("ul", { staticClass: "dropdown-user" }, [
                   _c("li", [
                     _c("div", { staticClass: "dw-user-box" }, [
-                      _vm._m(3),
+                      _vm._m(2),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -38345,28 +38370,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-        _c("b", [
-          _c("img", {
-            staticClass: "dark-logo",
-            attrs: {
-              src: "/images/icons/60x60.png",
-              height: "35px",
-              width: "35px",
-              alt: "home"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("span", [_c("b", [_vm._v("T&P Cell")])])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -45265,7 +45268,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.col-primary[data-v-45fe741f] {\n  color: #304156;\n}\n.card-primary[data-v-45fe741f] {\n  background: #fff;\n}\n.card[data-v-45fe741f] {\n  border-radius: 0;\n  margin-bottom: 30px;\n  border-top: 3px solid #00a7d0;\n}\n.card-header[data-v-45fe741f] {\n  background-color: #fff;\n  padding: 0.62rem 1.15rem;\n  margin-top: 6px;\n}\n.card-header h3[data-v-45fe741f] {\n  float: left;\n}\n.card-footer[data-v-45fe741f] {\n  background-color: #e4e4e4;\n}\n.card-body[data-v-45fe741f] {\n  padding: 1.15rem;\n  font-size: 16px;\n  position: relative;\n}\n.sub-menu[data-v-45fe741f] {\n  background-color: #696969;\n  width: 150px;\n  list-style-type: none;\n}\n.card-img-top[data-v-45fe741f] {\n  height: 200px;\n  /* background: url('/images/1.jpg') center no-repeat; */\n  background-size: cover;\n}\n.btn-custom[data-v-45fe741f] {\n  background-color: #b3b6b9;\n  color: #696969;\n  padding: 1px 4px;\n  border-radius: 0;\n  border-color: #b3b6b9;\n  font-size: 14px;\n  margin-right: 4px;\n}\n.sub-head[data-v-45fe741f] {\n  margin-top: 3px;\n}\n#share[data-v-45fe741f] {\n  position: absolute;\n  top: -22px;\n  padding: 12px;\n  right: 20px;\n  background: #304156;\n  border: 5px solid;\n  border-radius: 50%;\n  color: #fff;\n}\n#menu[data-v-45fe741f] {\n  margin-left: 10px;\n  vertical-align: middle;\n}\n.dropdown[data-v-45fe741f] {\n  float: right;\n}\n.dropdown-menu[data-v-45fe741f] {\n  -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n          transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-45fe741f] {\n  margin-right: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.col-primary[data-v-45fe741f] {\n  color: #304156;\n}\n.card-primary[data-v-45fe741f] {\n  background: #fff;\n}\n.card[data-v-45fe741f] {\n  border-radius: 0;\n  margin-bottom: 30px;\n  border-top: 3px solid #00a7d0;\n}\n.card-header[data-v-45fe741f] {\n  background-color: #fff;\n  padding: 0.62rem 1.15rem;\n  margin-top: 6px;\n}\n.card-header h3[data-v-45fe741f] {\n  float: left;\n}\n.card-footer[data-v-45fe741f] {\n  background-color: #e4e4e4;\n}\n.card-body[data-v-45fe741f] {\n  padding: 1.15rem;\n  font-size: 16px;\n  position: relative;\n}\n.sub-menu[data-v-45fe741f] {\n  background-color: #696969;\n  width: 150px;\n  list-style-type: none;\n}\n.card-img-top[data-v-45fe741f] {\n  height: 200px;\n  /* background: url('/images/1.jpg') center no-repeat; */\n  background-size: cover;\n}\n.btn-custom[data-v-45fe741f] {\n  background-color: #b3b6b9;\n  color: #696969;\n  padding: 1px 4px;\n  border-radius: 0;\n  border-color: #b3b6b9;\n  font-size: 14px;\n  margin-right: 4px;\n}\n.sub-head[data-v-45fe741f] {\n  margin-top: 3px;\n}\n#share[data-v-45fe741f] {\n  position: absolute;\n  top: -22px;\n  padding: 12px;\n  right: 20px;\n  background: #304156;\n  border: 5px solid;\n  border-radius: 50%;\n  color: #fff;\n}\n#menu[data-v-45fe741f] {\n  margin-left: 10px;\n  vertical-align: middle;\n}\n.dropdown[data-v-45fe741f] {\n  float: right;\n}\n.dropdown-menu[data-v-45fe741f] {\n  -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n          transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-45fe741f] {\n  margin-right: 10px;\n}\n#caret[data-v-45fe741f] {\n  color: #038ed4 !important;\n  padding: 10px;\n  border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#caret[data-v-45fe741f] :hover {\n  background-color: #038ed4 !important;\n  color: #ffffff !important;\n}\n#search[data-v-45fe741f] {\n  background-color: #fff;\n  border: solid #038ed4;\n  width: 90%;\n  color: #0073BC;\n  border-radius: 25px;\n}\n#search[data-v-45fe741f] :placeholder {\n  color: #0073BC;\n}\n#nav[data-v-45fe741f] {\n  margin-bottom: 0;\n  color: #fff;\n  font-size: 14px;\n  font-weight: 500;\n}\n#nav a[data-v-45fe741f] {\n  color: #038ed4 !important;\n}\n#nav a[data-v-45fe741f]:hover {\n  background-color: #f1f1f1 !important;\n  color: #038ed4 !important;\n}\n#more[data-v-45fe741f] {\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  margin-bottom: -2px;\n}\n.bgcolor[data-v-45fe741f] {\n  background-color: #000;\n}\n.w-90[data-v-45fe741f] {\n  width: 90%;\n}\n", ""]);
 
 // exports
 
@@ -45342,10 +45345,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['searchbox'],
   components: {
     modal: __WEBPACK_IMPORTED_MODULE_0__modal___default.a
   },
@@ -45356,7 +45392,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       busy: false,
       postEdit: {},
       posts: {},
-      showDropDown: false
+      showDropDown: false,
+      search_input: false,
+      search: ''
     };
   },
 
@@ -45490,19 +45528,53 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           vm.loading = 0;
         }).catch(function (error) {});
       }, 2000);
+    },
+    searchPost: function searchPost() {
+      var _this6 = this;
+
+      if (this.search.length >= 2) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["s" /* searchURL */] + this.search).then(function (response) {
+          return _this6.$parent.posts = response.data.data.data;
+        }, this.$parent.pinned_posts = undefined);
+      } else {
+        this.$parent.getPosts();
+        this.$parent.getPinnedPosts();
+      }
+    },
+    searchby_category: function searchby_category(category) {
+      var _this7 = this;
+
+      if (category != "All") {
+        axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["f" /* categoryURL */] + category).then(function (response) {
+          return _this7.$parent.posts = response.data.data.data;
+        }, this.$parent.pinned_posts = undefined);
+      } else {
+        this.$parent.getPosts();
+        this.$parent.getPinnedPosts();
+      }
     }
   },
   created: function created() {
-    var _this6 = this;
+    var _this8 = this;
 
     axios.get(__WEBPACK_IMPORTED_MODULE_1__config_js__["d" /* addPostURL */]).then(function (response) {
       // var obj = JSON.parse(response.data);
       // console.log(response);
-      _this6.posts = response.data.data.data;
+      _this8.posts = response.data.data.data;
       // console.log(response.data.data.data);
     }).catch(function (error) {
       return console.log(error);
     });
+  },
+  beforeCreate: function beforeCreate() {
+    var vm = this;
+    Vue.nextTick(function () {
+      $("#nav").owlCarousel({
+        autoWidth: true,
+        margin: 45,
+        stagePadding: 50
+      });
+    }.bind(vm));
   }
 });
 
@@ -45741,6 +45813,139 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
+      _c("div", { staticClass: "row card-primary mb-3 py-3" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c(
+            "form",
+            {
+              staticClass: "form-inline",
+              attrs: { action: "/", method: "GET" }
+            },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  placeholder: "Search",
+                  autocomplete: "on",
+                  id: "search"
+                },
+                domProps: { value: _vm.search },
+                on: {
+                  keyup: _vm.searchPost,
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "bgcolor w-90 text-uppercase collapse",
+                  attrs: { id: "more" }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "owl-carousel", attrs: { id: "nav" } },
+                    [
+                      _c("div", { staticClass: "ml-4" }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "javascript:void(0) " },
+                            on: {
+                              click: function($event) {
+                                _vm.searchby_category("All")
+                              }
+                            }
+                          },
+                          [_vm._v("All")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "javascript:void(0) " },
+                            on: {
+                              click: function($event) {
+                                _vm.searchby_category("Announcement")
+                              }
+                            }
+                          },
+                          [_vm._v("Announcement")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "javascript:void(0) " },
+                            on: {
+                              click: function($event) {
+                                _vm.searchby_category("Internship")
+                              }
+                            }
+                          },
+                          [_vm._v("Internship")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "javascript:void(0) " },
+                            on: {
+                              click: function($event) {
+                                _vm.searchby_category("Placement")
+                              }
+                            }
+                          },
+                          [_vm._v("Placement")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "javascript:void(0) " },
+                            on: {
+                              click: function($event) {
+                                _vm.searchby_category("Selected")
+                              }
+                            }
+                          },
+                          [_vm._v("Selected")]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "row justify-content-center" }, [
         _c(
           "div",
@@ -45785,7 +45990,7 @@ var render = function() {
                                   "a",
                                   {
                                     staticClass: "dropdown-item",
-                                    attrs: { href: "#" }
+                                    attrs: { href: "javascript:void(0)" }
                                   },
                                   [
                                     _c("i", {
@@ -45804,7 +46009,7 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "dropdown-item",
-                                attrs: { href: "" },
+                                attrs: { href: "javascript:void(0)" },
                                 on: {
                                   click: function($event) {
                                     $event.preventDefault()
@@ -45828,7 +46033,7 @@ var render = function() {
                                   "a",
                                   {
                                     staticClass: "dropdown-item",
-                                    attrs: { href: "#" },
+                                    attrs: { href: "javascript:void(0)" },
                                     on: {
                                       click: function($event) {
                                         $event.preventDefault()
@@ -45848,7 +46053,7 @@ var render = function() {
                                   "a",
                                   {
                                     staticClass: "dropdown-item",
-                                    attrs: { href: "#" },
+                                    attrs: { href: "javascript:void(0)" },
                                     on: {
                                       click: function($event) {
                                         $event.preventDefault()
@@ -45871,7 +46076,7 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "dropdown-item",
-                                attrs: { href: "" },
+                                attrs: { href: "javascript:void(0)" },
                                 on: {
                                   click: function($event) {
                                     $event.preventDefault()
@@ -45913,7 +46118,10 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("span", { domProps: { innerHTML: _vm._s(post.body) } })
+                    _c("span", {
+                      staticClass: "text-justify",
+                      domProps: { innerHTML: _vm._s(post.body) }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-footer" }, [
@@ -45969,7 +46177,31 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link float-right",
+        attrs: {
+          href: "javascript:void(0)",
+          "data-target": "#more",
+          id: "caret",
+          "data-toggle": "collapse"
+        }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-caret-down",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -50630,7 +50862,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.col-primary[data-v-0ddf6f02] {\n  color: #304156;\n}\n.card-primary[data-v-0ddf6f02] {\n  background: #fff;\n}\n.card[data-v-0ddf6f02] {\n  border-radius: 0;\n  margin-bottom: 30px;\n  border-top: 3px solid #00a7d0;\n}\n.card-header[data-v-0ddf6f02] {\n  background-color: #fff;\n  padding: 0.62rem 1.15rem;\n  margin-top: 6px;\n}\n.card-header h3[data-v-0ddf6f02] {\n  float: left;\n}\n.card-footer[data-v-0ddf6f02] {\n  background-color: #e4e4e4;\n}\n.card-body[data-v-0ddf6f02] {\n  padding: 1.15rem;\n  font-size: 16px;\n  position: relative;\n}\n.sub-menu[data-v-0ddf6f02] {\n  background-color: #696969;\n  width: 150px;\n  list-style-type: none;\n}\n.card-img-top[data-v-0ddf6f02] {\n  height: 200px;\n  /* background: url('/images/1.jpg') center no-repeat; */\n  background-size: cover;\n}\n.btn-custom[data-v-0ddf6f02] {\n  background-color: #b3b6b9;\n  color: #696969;\n  padding: 1px 4px;\n  border-radius: 0;\n  border-color: #b3b6b9;\n  font-size: 14px;\n  margin-right: 4px;\n}\n.sub-head[data-v-0ddf6f02] {\n  margin-top: 3px;\n}\n#share[data-v-0ddf6f02] {\n  position: absolute;\n  top: -22px;\n  padding: 12px;\n  right: 20px;\n  background: #304156;\n  border: 5px solid;\n  border-radius: 50%;\n  color: #fff;\n}\n#menu[data-v-0ddf6f02] {\n  margin-left: 10px;\n  vertical-align: middle;\n}\n.dropdown[data-v-0ddf6f02] {\n  float: right;\n}\n.dropdown-menu[data-v-0ddf6f02] {\n  -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n          transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-0ddf6f02] {\n  margin-right: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.col-primary[data-v-0ddf6f02] {\n  color: #304156;\n}\n.card-primary[data-v-0ddf6f02] {\n  background: #fff;\n}\n.card[data-v-0ddf6f02] {\n  border-radius: 0;\n  margin-bottom: 30px;\n  border-top: 3px solid #00a7d0;\n}\n.card-header[data-v-0ddf6f02] {\n  background-color: #fff;\n  padding: 0.62rem 1.15rem;\n  margin-top: 6px;\n}\n.card-header h3[data-v-0ddf6f02] {\n  float: left;\n}\n.card-footer[data-v-0ddf6f02] {\n  background-color: #e4e4e4;\n}\n.card-body[data-v-0ddf6f02] {\n  padding: 1.15rem;\n  font-size: 16px;\n  position: relative;\n}\n.sub-menu[data-v-0ddf6f02] {\n  background-color: #696969;\n  width: 150px;\n  list-style-type: none;\n}\n.card-img-top[data-v-0ddf6f02] {\n  height: 200px;\n  /* background: url('/images/1.jpg') center no-repeat; */\n  background-size: cover;\n}\n.btn-custom[data-v-0ddf6f02] {\n  background-color: #b3b6b9;\n  color: #696969;\n  padding: 1px 4px;\n  border-radius: 0;\n  border-color: #b3b6b9;\n  font-size: 14px;\n  margin-right: 4px;\n}\n.sub-head[data-v-0ddf6f02] {\n  margin-top: 3px;\n}\n#share[data-v-0ddf6f02] {\n  position: absolute;\n  top: -22px;\n  padding: 12px;\n  right: 20px;\n  background: #304156;\n  border: 5px solid;\n  border-radius: 50%;\n  color: #fff;\n}\n#menu[data-v-0ddf6f02] {\n  margin-left: 10px;\n  vertical-align: middle;\n}\n.dropdown[data-v-0ddf6f02] {\n  float: right;\n}\n.dropdown-menu[data-v-0ddf6f02] {\n  -webkit-transform: translate3d(-118px, 23px, 0px) !important;\n          transform: translate3d(-118px, 23px, 0px) !important;\n}\n.dropdown-item i[data-v-0ddf6f02] {\n  margin-right: 10px;\n}\n#caret[data-v-0ddf6f02] {\n  color: #038ed4 !important;\n  padding: 10px;\n  border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#caret[data-v-0ddf6f02] :hover {\n  background-color: #038ed4 !important;\n  color: #ffffff !important;\n}\n#search[data-v-0ddf6f02] {\n  background-color: #fff;\n  border: solid #038ed4;\n  width: 90%;\n  color: #0073BC;\n  border-radius: 25px;\n}\n#search[data-v-0ddf6f02] :placeholder {\n  color: #0073BC;\n}\n#nav[data-v-0ddf6f02] {\n  margin-bottom: 0;\n  color: #fff;\n  font-size: 14px;\n  font-weight: 500;\n}\n#nav a[data-v-0ddf6f02] {\n  color: #038ed4 !important;\n}\n#nav a[data-v-0ddf6f02]:hover {\n  background-color: #f1f1f1 !important;\n  color: #038ed4 !important;\n}\n#more[data-v-0ddf6f02] {\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  margin-bottom: -2px;\n}\n.bgcolor[data-v-0ddf6f02] {\n  background-color: #000;\n}\n.w-90[data-v-0ddf6f02] {\n  width: 90%;\n}\n", ""]);
 
 // exports
 
@@ -50705,10 +50937,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // import modal from "./modal";
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['searchbox'],
   components: {
     // modal,
   },
@@ -50719,7 +50984,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       busy: false,
       postEdit: {},
       posts: {},
-      showDropDown: false
+      showDropDown: false,
+      search_input: false,
+      search: ''
     };
   },
 
@@ -50852,19 +51119,53 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           vm.loading = 0;
         }).catch(function (error) {});
       }, 2000);
+    },
+    searchPost: function searchPost() {
+      var _this6 = this;
+
+      if (this.search.length >= 2) {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["s" /* searchURL */] + this.search).then(function (response) {
+          return _this6.$parent.posts = response.data.data.data;
+        }, this.$parent.pinned_posts = undefined);
+      } else {
+        this.$parent.getPosts();
+        this.$parent.getPinnedPosts();
+      }
+    },
+    searchby_category: function searchby_category(category) {
+      var _this7 = this;
+
+      if (category != "All") {
+        axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["f" /* categoryURL */] + category).then(function (response) {
+          return _this7.$parent.posts = response.data.data.data;
+        }, this.$parent.pinned_posts = undefined);
+      } else {
+        this.$parent.getPosts();
+        this.$parent.getPinnedPosts();
+      }
     }
   },
   created: function created() {
-    var _this6 = this;
+    var _this8 = this;
 
     axios.get(__WEBPACK_IMPORTED_MODULE_0__config_js__["d" /* addPostURL */]).then(function (response) {
       // var obj = JSON.parse(response.data);
       // console.log(response);
-      _this6.posts = response.data.data.data;
+      _this8.posts = response.data.data.data;
       // console.log(response.data.data.data);
     }).catch(function (error) {
       return console.log(error);
     });
+  },
+  beforeCreate: function beforeCreate() {
+    var vm = this;
+    Vue.nextTick(function () {
+      $("#nav").owlCarousel({
+        autoWidth: true,
+        margin: 45,
+        stagePadding: 50
+      });
+    }.bind(vm));
   }
 });
 
@@ -50877,6 +51178,136 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row card-primary mb-3 py-3" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c(
+          "form",
+          { staticClass: "form-inline", attrs: { action: "/", method: "GET" } },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.search,
+                  expression: "search"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                placeholder: "Search",
+                autocomplete: "on",
+                id: "search"
+              },
+              domProps: { value: _vm.search },
+              on: {
+                keyup: _vm.searchPost,
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.search = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "bgcolor w-90 text-uppercase collapse",
+                attrs: { id: "more" }
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "owl-carousel", attrs: { id: "nav" } },
+                  [
+                    _c("div", { staticClass: "ml-4" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "javascript:void(0) " },
+                          on: {
+                            click: function($event) {
+                              _vm.searchby_category("All")
+                            }
+                          }
+                        },
+                        [_vm._v("All")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "javascript:void(0) " },
+                          on: {
+                            click: function($event) {
+                              _vm.searchby_category("Announcement")
+                            }
+                          }
+                        },
+                        [_vm._v("Announcement")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "javascript:void(0) " },
+                          on: {
+                            click: function($event) {
+                              _vm.searchby_category("Internship")
+                            }
+                          }
+                        },
+                        [_vm._v("Internship")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "javascript:void(0) " },
+                          on: {
+                            click: function($event) {
+                              _vm.searchby_category("Placement")
+                            }
+                          }
+                        },
+                        [_vm._v("Placement")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "javascript:void(0) " },
+                          on: {
+                            click: function($event) {
+                              _vm.searchby_category("Selected")
+                            }
+                          }
+                        },
+                        [_vm._v("Selected")]
+                      )
+                    ])
+                  ]
+                )
+              ]
+            )
+          ]
+        )
+      ])
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "row justify-content-center" }, [
       _c(
         "div",
@@ -50921,7 +51352,7 @@ var render = function() {
                                 "a",
                                 {
                                   staticClass: "dropdown-item",
-                                  attrs: { href: "#" }
+                                  attrs: { href: "javascript:void(0)" }
                                 },
                                 [
                                   _c("i", {
@@ -50940,7 +51371,7 @@ var render = function() {
                             "a",
                             {
                               staticClass: "dropdown-item",
-                              attrs: { href: "" },
+                              attrs: { href: "javascript:void(0)" },
                               on: {
                                 click: function($event) {
                                   $event.preventDefault()
@@ -50964,7 +51395,7 @@ var render = function() {
                                 "a",
                                 {
                                   staticClass: "dropdown-item",
-                                  attrs: { href: "#" },
+                                  attrs: { href: "javascript:void(0)" },
                                   on: {
                                     click: function($event) {
                                       $event.preventDefault()
@@ -50984,7 +51415,7 @@ var render = function() {
                                 "a",
                                 {
                                   staticClass: "dropdown-item",
-                                  attrs: { href: "#" },
+                                  attrs: { href: "javascript:void(0)" },
                                   on: {
                                     click: function($event) {
                                       $event.preventDefault()
@@ -51007,7 +51438,7 @@ var render = function() {
                             "a",
                             {
                               staticClass: "dropdown-item",
-                              attrs: { href: "" },
+                              attrs: { href: "javascript:void(0)" },
                               on: {
                                 click: function($event) {
                                   $event.preventDefault()
@@ -51049,7 +51480,10 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("span", { domProps: { innerHTML: _vm._s(post.body) } })
+                  _c("span", {
+                    staticClass: "text-justify",
+                    domProps: { innerHTML: _vm._s(post.body) }
+                  })
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-footer" }, [
@@ -51101,7 +51535,31 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link float-right",
+        attrs: {
+          href: "javascript:void(0)",
+          "data-target": "#more",
+          id: "caret",
+          "data-toggle": "collapse"
+        }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-caret-down",
+          attrs: { "aria-hidden": "true" }
+        })
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -51350,6 +51808,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -51393,10 +51852,45 @@ var render = function() {
       "nav",
       { staticClass: "navbar top-navbar navbar-expand-md navbar-light" },
       [
-        _vm._m(0),
+        _c(
+          "div",
+          { staticClass: "navbar-header" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              [
+                _c("b", [
+                  _c("img", {
+                    staticClass: "dark-logo",
+                    attrs: { src: "/images/logo-icon.png", alt: "home" }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "light-logo",
+                    attrs: { src: "/images/logo-light-icon.png", alt: "home" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("span", [
+                  _c("img", {
+                    staticClass: "dark-logo",
+                    attrs: { src: "/images/logo-text.png", alt: "home" }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "light-logo",
+                    attrs: { src: "/images/logo-light-text.png", alt: "home" }
+                  })
+                ])
+              ]
+            )
+          ],
+          1
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "navbar-collapse" }, [
-          _vm._m(1),
+          _vm._m(0),
           _vm._v(" "),
           _c("ul", { staticClass: "navbar-nav my-lg-0" }, [
             _c("li", { staticClass: "nav-item dropdown" }, [
@@ -51518,38 +52012,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-        _c("b", [
-          _c("img", {
-            staticClass: "dark-logo",
-            attrs: { src: "/images/logo-icon.png", alt: "home" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "light-logo",
-            attrs: { src: "/images/logo-light-icon.png", alt: "home" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("span", [
-          _c("img", {
-            staticClass: "dark-logo",
-            attrs: { src: "/images/logo-text.png", alt: "home" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "light-logo",
-            attrs: { src: "/images/logo-light-text.png", alt: "home" }
-          })
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -52435,7 +52897,32 @@ var render = function() {
       "nav",
       { staticClass: "navbar top-navbar navbar-expand-md navbar-light" },
       [
-        _vm._m(0),
+        _c(
+          "div",
+          { staticClass: "navbar-header" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              [
+                _c("b", [
+                  _c("img", {
+                    staticClass: "dark-logo",
+                    attrs: {
+                      src: "/images/icons/60x60.png",
+                      height: "35px",
+                      width: "35px",
+                      alt: "home"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("span", [_c("b", [_vm._v("T&P Cell")])])
+              ]
+            )
+          ],
+          1
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "navbar-collapse" }, [
           _c("ul", { staticClass: "navbar-nav mr-auto mt-md-0 " }),
@@ -52559,30 +53046,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-        _c("b", [
-          _c("img", {
-            staticClass: "dark-logo",
-            attrs: {
-              src: "/images/icons/60x60.png",
-              height: "35px",
-              width: "35px",
-              alt: "home"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("span", [_c("b", [_vm._v("T&P Cell")])])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
