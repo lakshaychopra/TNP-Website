@@ -174,7 +174,7 @@
                 toastr['success'](response.data.message);
                 axios.post(postIdGetURL).then(function(res){
                     // console.log(res.data.data);
-                        navigate.$router.push({path:'/exec/post/'+res.data.data});
+                        navigate.$router.push({path:'/'});
                 })
                 .catch(function(err) {
                 console.log(err);
@@ -248,9 +248,6 @@
                     // }
                     toastr['success'](response.data.message);
                     this.$router.push('/exec/post/'+response.data.data.id);
-
-
-
                 })
                 .catch(response => {
                     toastr['error'](response.message);
