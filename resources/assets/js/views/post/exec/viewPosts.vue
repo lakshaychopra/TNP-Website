@@ -8,7 +8,7 @@
           <a class="nav-link float-right" href="javascript:void(0)" data-target="#more" id="caret" data-toggle="collapse">
             <i class="fa fa-caret-down" aria-hidden="true"></i>
           </a>
-          <div class="bgcolor w-90 text-uppercase collapse" id="more">
+          <div class="bgcolor w-90 text-uppercase collapse py-1" id="more">
             <div class="owl-carousel" id="nav">
               <div class="ml-4">
                 <a href="javascript:void(0) " @click="searchby_category('All')">All</a>
@@ -397,7 +397,7 @@
   #search {
     background-color: #fff;
     border: solid #038ed4;
-    width: 90%;
+    width: 96%;
     color: #0073BC;
     border-radius: 25px;
   }
@@ -409,7 +409,7 @@
   #nav {
     margin-bottom: 0;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
   }
 
@@ -423,9 +423,7 @@
   }
 
   #more {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-bottom: -2px;
+    border-radius: 25px;
   }
 
   .bgcolor {
@@ -433,6 +431,6 @@
   }
 
   .w-90 {
-    width: 90%;
+    width: 96%;
   }
 </style>
