@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="">Body</label>
-                    <editor v-model="page.content" :init="{height: 300, paste_as_text: true, toolbar: 'mybutton | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen',browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code'}"></editor>
+                    <editor v-model="page.content" :init="{height: 300, paste_as_text: true, toolbar: 'example | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen',browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code, example'}"></editor>
 
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 <div class="form-group files">
                     <label for="">Image<span class="input-required text-danger">*</span></label>
                     <input type="file" v-validate="'mimes:image/*'" class="form-control" ref="file" name="file" id="imageUrl"
-                        @change="handleChange" >
+                        @change="handleChange">
                     <small class="text-danger">{{ errors.first('file') }}</small>
 
                 </div>
@@ -60,6 +60,7 @@
         apiDomain
     } from "../../config.js";
     import Editor from '@tinymce/tinymce-vue';
+    import '@tinymce/tinymce-vue/plugins/example/plugin.js';
     import InputTag from 'vue-input-tag'
 
     export default {
@@ -183,7 +184,7 @@
                     .then(response => {
                         console.log(response);
                         toastr['success'](response.data.message);
-                        this.$router.push('../../page/'+this.page.url);
+                        this.$router.push('../../page/' + this.page.url);
                         console.log(this.$store.getters.getAuthUserType);
                     })
                     .catch(response => {

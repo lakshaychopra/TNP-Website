@@ -14,9 +14,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="">Body</label>
-                    <editor v-model="post.content" :init="{height: 300, paste_as_text: true, toolbar: 'mybutton | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen',browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code',setup:function (editor) {editor.addButton('mybutton', { text: 'Add PDF Link from Google Drive',icon: false, onclick: function () {  
-                         editor.insertContent('&nbsp;<b>It\'s my button!</b>&nbsp;'); 
-                    }});}}"></editor>
+                    <editor v-model="post.content" :init="{height: 300, paste_as_text: true, toolbar: 'example | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen',browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code,example'}"></editor>
                 </div>
             </div>
         </div>
@@ -85,6 +83,7 @@
     } from "../../config.js";
     // import { VueEditor } from 'vue2-editor'
     import Editor from '@tinymce/tinymce-vue';
+    import '@tinymce/tinymce-vue/plugins/example/plugin.js';
     import InputTag from 'vue-input-tag'
 
     export default {
