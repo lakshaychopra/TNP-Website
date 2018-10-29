@@ -334,12 +334,12 @@
                                         years of his college. He contributed as Media Consultant to <a href="https://www.tnpgndec.com">T&amp;P
                                             Cell's website.</a></p>
                                     <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
+                                        <li class="list-inline-item mr-0">
                                             <a class="social-icon" target="_blank" href="https://www.youtube.com/channel/UC7zjCjTbtIahCgRnakNNl0A">
                                                 <i class="fa fa-youtube"></i>
                                             </a>
                                         </li>
-                                        <li class="list-inline-item">
+                                        <li class="list-inline-item mr-0">
                                             <a class="social-icon" target="_blank" href="https://vimeo.com/user89769786">
                                                 <i class="fa fa-vimeo"></i>
                                             </a>
@@ -375,8 +375,9 @@
                                     <p class="card-subtitle">Web Designer</p>
                                     <p class="card-text">He is a Genconian. He is a B.Tech student in CSE of 2015-19
                                         batch. He is Media Head of Training and Placement
-                                        Cell. He has designed Placement Broucher. He is a freelance Web Developer and Photoshop Designer too. He has contributed design of <a
-                                            href="https://www.tnpgndec.com/about">About Page</a> for <a href="https://www.tnpgndec.com">T&amp;P
+                                        Cell. He has designed Placement Broucher. He is a freelance Web Developer and
+                                        Photoshop Designer too. He has contributed design of <a href="https://www.tnpgndec.com/about">About
+                                            Page</a> for <a href="https://www.tnpgndec.com">T&amp;P
                                             Cell's website.</a></p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
@@ -586,8 +587,6 @@
     }
 
     #list-menu li a:hover {
-        /* color: #0073BC; */
-        /* border-bottom: 4px solid #0073BC; */
         background-color: #f1f1f1;
         color: #038ed4;
     }
@@ -600,8 +599,6 @@
     }
 
     #list-link li a:hover {
-        /* color: #0073BC; */
-        /* border-bottom: 4px solid #0073BC; */
         background-color: #038ed4;
         color: #f1f1f1;
     }
@@ -621,9 +618,8 @@
         top: 90px;
     }
 
-    /* 
-    Our Team
-     */
+    /*   Our Team  */
+
     #team {
         background: #038ed4 !important;
     }
@@ -762,7 +758,6 @@
         color: #fff;
     }
 
-
     #customers-testimonials .item-details h5 span p {
         font-size: 14px;
     }
@@ -850,16 +845,11 @@
         background-position: center;
     }
 
-
     #download .download-badges li a.badge-googleplay {
         background-image: url("/images/genconian/google-play.png");
     }
 
-
-    /* ------------------------------------------------------------------- 
- * responsive:
- * download
- * ------------------------------------------------------------------- */
+    /*  responsive: download */
 
     @media only screen and (max-width: 768px) {
         #download .download-badges li a {

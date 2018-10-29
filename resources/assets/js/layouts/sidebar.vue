@@ -41,12 +41,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <router-link to="#" exact>
-                            <i class="fa fa-file-word-o fa-fw" aria-hidden="true"></i>
-                            <span class="hide-menu">Notice Maker</span>
-                        </router-link>
-                    </li>
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="fa fa-file fa-fw" aria-hidden="true"></i>
@@ -126,6 +120,12 @@
                                 </router-link>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <router-link to="#" exact>
+                            <i class="fa fa-file-word-o fa-fw" aria-hidden="true"></i>
+                            <span class="hide-menu">Notice Maker</span>
+                        </router-link>
                     </li>
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown">

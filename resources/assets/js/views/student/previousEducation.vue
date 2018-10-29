@@ -20,6 +20,7 @@
                                     <div class="form-group">
                                         <input type="text" name="institute_name" v-model="student.institute"
                                             placeholder="Institute Name" class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Institute Name</small>
                                     </div>
                                 </div>
 
@@ -27,6 +28,7 @@
                                     <div class="form-group">
                                         <input type="month" name="month" v-model="monthYear" placeholder="Month" class="form-control"
                                             v-on:change="splitMonthYear(monthYear)">
+                                        <small class="form-text text-primary text-uppercase">Month and Year of Passing</small>
                                     </div>
                                 </div>
                             </div>
@@ -51,15 +53,16 @@
                                     <div class="form-group">
                                         <input type="number" name="obtained" min="0" v-model="student.obtained_marks"
                                             placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()">
+                                        <small class="form-text text-primary text-uppercase">Obtained Marks</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <input type="number" name="max" v-model="student.max_marks" class="form-control"
                                             placeholder="Max Marks" v-on:input="percentCalculate()">
-                                        <small id="percent" class="form-text text-muted">Percent = {{ percent }}%
-                                        </small>
-
+                                        <span class="small text-primary text-uppercase">Max Marks</span>
+                                        <span id="percent" class="small text-muted pull-right">Percent = {{ percent }}%
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -68,13 +71,14 @@
                                     <div class="form-group">
                                         <input type="number" name="jee" v-model="student.jee_rank" class="form-control"
                                             placeholder="Jee Rank">
+                                        <small class="form-text text-primary text-uppercase">Jee Rank</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <input type="number" name="gap" step="1" min="0" value="0" v-model="student.year_gap"
                                             class="form-control" placeholder="Year Gap">
-
+                                        <small class="form-text text-primary text-uppercase">Year Gap</small>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +139,7 @@
             },
             percentCalculate() {
                 if (this.student.obtained_marks != undefined && this.student.max_marks != undefined) {
-                    this.percent = (this.student.obtained_marks / this.student.max_marks) * 100;
+                    this.percent = parseFloat((this.student.obtained_marks / this.student.max_marks) * 100).toFixed(3);
                 } else {
                     this.percent = 0;
                 }

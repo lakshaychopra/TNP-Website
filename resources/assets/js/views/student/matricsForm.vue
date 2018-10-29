@@ -13,12 +13,14 @@
                                     <div class="form-group">
                                         <input type="text" name="board" v-model="student.board" placeholder="Board"
                                             class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Board</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="text" name="institute_name" v-model="student.institute"
                                             placeholder="Institute Name" class="form-control">
+                                        <small class="form-text text-primary text-uppercase">Institute Name</small>
                                     </div>
                                 </div>
 
@@ -26,6 +28,7 @@
                                     <div class="form-group">
                                         <input type="month" name="month" v-model="monthYear" placeholder="Month" class="form-control"
                                             v-on:change="splitMonthYear(monthYear)">
+                                        <small class="form-text text-primary text-uppercase">Month and Year of Passing</small>
                                     </div>
                                 </div>
                             </div>
@@ -53,6 +56,7 @@
                                             v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="obtained" v-model="student.obtained_marks" placeholder="Obtained Marks"
                                             class="form-control" v-on:input="percentCalculate()" v-else>
+                                        <small class="form-text text-primary text-uppercase">Obtained Marks</small>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -61,9 +65,9 @@
                                             placeholder="10" value="10" disabled v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="max" v-model="student.max_marks" placeholder="Max Marks"
                                             class="form-control" v-on:input="percentCalculate()" v-else>
-                                        <small id="percent" class="form-text text-muted">Percent = {{ percent }}%
-                                        </small>
-
+                                        <span class="small text-primary text-uppercase">Max Marks</span>
+                                        <span id="percent" class="small text-muted pull-right">Percent = {{ percent }}%
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -132,13 +136,14 @@
                     console.log(this.student.max_marks);
                     if (this.student.obtained_marks != undefined && (this.student.max_marks != undefined || this.student
                             .max_marks != '')) {
-                        this.percent = this.student.obtained_marks * 9.5;
+                        this.percent = parseFloat(this.student.obtained_marks * 9.5).toFixed(3);
                     } else {
                         this.percent = 0;
                     }
                 } else {
                     if (this.student.obtained_marks != undefined && this.student.max_marks != undefined) {
-                        this.percent = (this.student.obtained_marks / this.student.max_marks) * 100;
+                        this.percent = parseFloat((this.student.obtained_marks / this.student.max_marks) * 100).toFixed(
+                            3);
                     } else {
                         this.percent = 0;
                     }
@@ -173,7 +178,7 @@
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
                         if (statusresponse.status == 200) {
                             // toastr['success']("User Added!!");
-                            this.$parent.step =4;
+                            this.$parent.step = 4;
                             // this.$router.push('/req');
 
                         }

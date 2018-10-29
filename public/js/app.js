@@ -30315,7 +30315,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\nh1.intro-header[data-v-56786506] {\n       text-align: center;\n}\nh1.intro-header[data-v-56786506]::before {\n       left: 50%;\n       -webkit-transform: translateX(-50%);\n       transform: translateX(-50%);\n}\nul.list-inline li[data-v-56786506] {\n       padding: 0;\n       list-style: none;\n}\n.bg-white[data-v-56786506] {\n       background-color: #fff;\n}\n.color-main[data-v-56786506] {\n       color: #038ed4;\n}\n.bg-dark[data-v-56786506] {\n       background-color: #038ed4 !important;\n}\n#list-menu li a[data-v-56786506] {\n       color: #f1f1f1;\n       padding: 20px;\n       float: left;\n       border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-56786506]:hover {\n       /* color: #0073BC; */\n       /* border-bottom: 4px solid #0073BC; */\n       background-color: #f1f1f1;\n       color: #038ed4;\n}\n#list-link li a[data-v-56786506] {\n       color: #038ed4;\n       padding: 20px;\n       float: left;\n       border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-link li a[data-v-56786506]:hover {\n       /* color: #0073BC; */\n       /* border-bottom: 4px solid #0073BC; */\n       background-color: #038ed4;\n       color: #f1f1f1;\n}\n.navbar[data-v-56786506] {\n       padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-56786506] {\n           width: 142px;\n}\n}\n.fix[data-v-56786506] {\n       overflow: hidden;\n       top: 90px;\n}\n\n   /* \n   Our Team\n    */\n#team[data-v-56786506] {\n       background: #038ed4 !important;\n}\n.btn-primary[data-v-56786506]:hover,\n   .btn-primary[data-v-56786506]:focus {\n       background-color: #038ed4;\n       border-color: #ffffff;\n       -webkit-box-shadow: none;\n               box-shadow: none;\n       outline: none;\n}\n.btn-primary[data-v-56786506] {\n       color: #fff;\n       background-color: #038ed4;\n       border-color: #038ed4;\n       border: #fff solid;\n}\nsection[data-v-56786506] {\n       padding: 60px 0;\n}\nsection .section-title[data-v-56786506] {\n       text-align: justify;\n       color: #ffffff;\n       margin-bottom: 50px;\n       text-transform: uppercase;\n}\nsection .section-subtitle[data-v-56786506] {\n       text-align: left;\n       color: #ffffff;\n       margin-bottom: 25px;\n       text-transform: uppercase;\n}\n#contact .card:hover i[data-v-56786506],\n   #contact .card:hover h4[data-v-56786506] {\n       color: #038ed4;\n}\n.card-text[data-v-56786506] {\n       text-align: justify;\n}\n#alumni .card[data-v-56786506],\n   #team .card[data-v-56786506] {\n       border: solid #038ed4;\n       border-radius: 20px;\n       background: #ffffff;\n}\n.frontside .card[data-v-56786506] {\n       min-height: 312px;\n}\n.frontside .card .card-title[data-v-56786506] {\n       color: #038ed4 !important;\n       font-variant: small-caps;\n       font-size: 25px;\n}\n.card-body[data-v-56786506] {\n       padding-bottom: 0px;\n}\n.frontside .card .card-body img[data-v-56786506] {\n       width: 120px;\n       border-radius: 50%;\n}\n.con-card[data-v-56786506] {\n       border: solid #038ed4;\n       border-radius: 20px;\n       background: #fafafa;\n}\n.card-subtitle[data-v-56786506] {\n       color: rgb(66, 66, 66);\n}\n.social-icon[data-v-56786506] {\n       font-size: 22px;\n}\n\n   /* thanks */\nsection .thanks-title[data-v-56786506] {\n       text-align: left;\n       color: #038ed4;\n       margin-bottom: 50px;\n       text-transform: uppercase;\n}\nsection .thanks-subtitle[data-v-56786506] {\n       text-align: left;\n       color: #038ed4;\n       margin-bottom: 25px;\n       text-transform: uppercase;\n}\n#customers-testimonials .thanks-subtitle[data-v-56786506] {\n       color: #fff;\n       text-transform: uppercase;\n}\n#customers-testimonials .testimonials[data-v-56786506] {\n       background-color: #fff;\n       position: relative;\n       padding-top: 60px;\n}\n#customers-testimonials .testimonials[data-v-56786506]:after {\n       content: '';\n       position: absolute;\n       bottom: 0;\n       left: 0;\n       right: 0;\n       width: 100%;\n       height: 30%;\n       background-color: #f1f1f1;\n}\n#customers-testimonials .item-details[data-v-56786506] {\n       background-color: #333333;\n       color: #fff;\n       padding: 20px 10px;\n       text-align: left;\n}\n#customers-testimonials .item-details h5[data-v-56786506] {\n       margin: 0 0 15px;\n       font-size: 18px;\n       line-height: 18px;\n       color: #fff;\n}\n#customers-testimonials .item-details h5 span p[data-v-56786506] {\n       font-size: 14px;\n}\n#customers-testimonials .item[data-v-56786506] {\n       text-align: center;\n       /*  padding: 20px; */\n       margin-bottom: 80px;\n}\n#customers-testimonials .owl-carousel .owl-nav[data-v-56786506] {\n       -webkit-transition: all .3s ease;\n       transition: all .3s ease;\n}\n#customers-testimonials .owl-carousel[data-v-56786506] {\n       position: relative;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-56786506],\n   #customers-testimonials .owl-carousel .owl-prev[data-v-56786506] {\n       width: 50px;\n       height: 50px;\n       line-height: 50px;\n       border-radius: 50%;\n       position: absolute;\n       top: 30%;\n       font-size: 20px;\n       color: #fff;\n       border: 1px solid #ddd;\n       text-align: center;\n}\n#customers-testimonials .owl-carousel .owl-prev[data-v-56786506] {\n       left: -70px;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-56786506] {\n       right: -70px;\n}\n\n   /* download */\n#download[data-v-56786506] {\n       background: #fff;\n       color: #038ed4;\n       text-align: center;\n}\n#download h1[data-v-56786506] {\n       color: #038ed4;\n}\n#download h1[data-v-56786506]::before {\n       background-color: #fff;\n       left: 50%;\n       -webkit-transform: translateX(-50%);\n       transform: translateX(-50%);\n}\n#download .lead[data-v-56786506] {\n       color: #038ed4;\n       margin-top: 3.5rem;\n}\n#download .download-badges[data-v-56786506] {\n       list-style: none;\n       margin: 1px;\n       text-align: center;\n}\n#download .download-badges li[data-v-56786506] {\n       display: inline-block;\n       margin: 0 7.5px;\n       padding-left: 0;\n}\n#download .download-badges li a[data-v-56786506] {\n       display: block;\n       font: 0/0 a;\n       text-shadow: none;\n       color: transparent;\n       background-repeat: no-repeat;\n       background-position: center;\n}\n#download .download-badges li a.badge-googleplay[data-v-56786506] {\n       background-image: url(\"/images/genconian/google-play.png\");\n}\n\n\n   /* ------------------------------------------------------------------- \n* responsive:\n* download\n* ------------------------------------------------------------------- */\n@media only screen and (max-width: 768px) {\n#download .download-badges li a[data-v-56786506] {\n           width: 194px;\n           height: 60px;\n           background-size: 194px 60px;\n}\n}\n", ""]);
+exports.push([module.i, "\nh1.intro-header[data-v-56786506] {\n    text-align: center;\n}\nh1.intro-header[data-v-56786506]::before {\n    left: 50%;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n}\nul.list-inline li[data-v-56786506] {\n    padding: 0;\n    list-style: none;\n}\n.bg-white[data-v-56786506] {\n    background-color: #fff;\n}\n.color-main[data-v-56786506] {\n    color: #038ed4;\n}\n.bg-dark[data-v-56786506] {\n    background-color: #038ed4 !important;\n}\n#list-menu li a[data-v-56786506] {\n    color: #f1f1f1;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-56786506]:hover {\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n#list-link li a[data-v-56786506] {\n    color: #038ed4;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-link li a[data-v-56786506]:hover {\n    background-color: #038ed4;\n    color: #f1f1f1;\n}\n.navbar[data-v-56786506] {\n    padding: 0 1rem;\n}\n@media (min-width: 768px) {\n.navbar-header[data-v-56786506] {\n        width: 142px;\n}\n}\n.fix[data-v-56786506] {\n    overflow: hidden;\n    top: 90px;\n}\n\n/*   Our Team  */\n#team[data-v-56786506] {\n    background: #038ed4 !important;\n}\n.btn-primary[data-v-56786506]:hover,\n.btn-primary[data-v-56786506]:focus {\n    background-color: #038ed4;\n    border-color: #ffffff;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    outline: none;\n}\n.btn-primary[data-v-56786506] {\n    color: #fff;\n    background-color: #038ed4;\n    border-color: #038ed4;\n    border: #fff solid;\n}\nsection[data-v-56786506] {\n    padding: 60px 0;\n}\nsection .section-title[data-v-56786506] {\n    text-align: justify;\n    color: #ffffff;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\nsection .section-subtitle[data-v-56786506] {\n    text-align: left;\n    color: #ffffff;\n    margin-bottom: 25px;\n    text-transform: uppercase;\n}\n#contact .card:hover i[data-v-56786506],\n#contact .card:hover h4[data-v-56786506] {\n    color: #038ed4;\n}\n.card-text[data-v-56786506] {\n    text-align: justify;\n}\n#alumni .card[data-v-56786506],\n#team .card[data-v-56786506] {\n    border: solid #038ed4;\n    border-radius: 20px;\n    background: #ffffff;\n}\n.frontside .card[data-v-56786506] {\n    min-height: 312px;\n}\n.frontside .card .card-title[data-v-56786506] {\n    color: #038ed4 !important;\n    font-variant: small-caps;\n    font-size: 25px;\n}\n.card-body[data-v-56786506] {\n    padding-bottom: 0px;\n}\n.frontside .card .card-body img[data-v-56786506] {\n    width: 120px;\n    border-radius: 50%;\n}\n.con-card[data-v-56786506] {\n    border: solid #038ed4;\n    border-radius: 20px;\n    background: #fafafa;\n}\n.card-subtitle[data-v-56786506] {\n    color: rgb(66, 66, 66);\n}\n.social-icon[data-v-56786506] {\n    font-size: 22px;\n}\n\n/* thanks */\nsection .thanks-title[data-v-56786506] {\n    text-align: left;\n    color: #038ed4;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\nsection .thanks-subtitle[data-v-56786506] {\n    text-align: left;\n    color: #038ed4;\n    margin-bottom: 25px;\n    text-transform: uppercase;\n}\n#customers-testimonials .thanks-subtitle[data-v-56786506] {\n    color: #fff;\n    text-transform: uppercase;\n}\n#customers-testimonials .testimonials[data-v-56786506] {\n    background-color: #fff;\n    position: relative;\n    padding-top: 60px;\n}\n#customers-testimonials .testimonials[data-v-56786506]:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    width: 100%;\n    height: 30%;\n    background-color: #f1f1f1;\n}\n#customers-testimonials .item-details[data-v-56786506] {\n    background-color: #333333;\n    color: #fff;\n    padding: 20px 10px;\n    text-align: left;\n}\n#customers-testimonials .item-details h5[data-v-56786506] {\n    margin: 0 0 15px;\n    font-size: 18px;\n    line-height: 18px;\n    color: #fff;\n}\n#customers-testimonials .item-details h5 span p[data-v-56786506] {\n    font-size: 14px;\n}\n#customers-testimonials .item[data-v-56786506] {\n    text-align: center;\n    /*  padding: 20px; */\n    margin-bottom: 80px;\n}\n#customers-testimonials .owl-carousel .owl-nav[data-v-56786506] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n#customers-testimonials .owl-carousel[data-v-56786506] {\n    position: relative;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-56786506],\n#customers-testimonials .owl-carousel .owl-prev[data-v-56786506] {\n    width: 50px;\n    height: 50px;\n    line-height: 50px;\n    border-radius: 50%;\n    position: absolute;\n    top: 30%;\n    font-size: 20px;\n    color: #fff;\n    border: 1px solid #ddd;\n    text-align: center;\n}\n#customers-testimonials .owl-carousel .owl-prev[data-v-56786506] {\n    left: -70px;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-56786506] {\n    right: -70px;\n}\n\n/* download */\n#download[data-v-56786506] {\n    background: #fff;\n    color: #038ed4;\n    text-align: center;\n}\n#download h1[data-v-56786506] {\n    color: #038ed4;\n}\n#download h1[data-v-56786506]::before {\n    background-color: #fff;\n    left: 50%;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n}\n#download .lead[data-v-56786506] {\n    color: #038ed4;\n    margin-top: 3.5rem;\n}\n#download .download-badges[data-v-56786506] {\n    list-style: none;\n    margin: 1px;\n    text-align: center;\n}\n#download .download-badges li[data-v-56786506] {\n    display: inline-block;\n    margin: 0 7.5px;\n    padding-left: 0;\n}\n#download .download-badges li a[data-v-56786506] {\n    display: block;\n    font: 0/0 a;\n    text-shadow: none;\n    color: transparent;\n    background-repeat: no-repeat;\n    background-position: center;\n}\n#download .download-badges li a.badge-googleplay[data-v-56786506] {\n    background-image: url(\"/images/genconian/google-play.png\");\n}\n\n/*  responsive: download */\n@media only screen and (max-width: 768px) {\n#download .download-badges li a[data-v-56786506] {\n        width: 194px;\n        height: 60px;\n        background-size: 194px 60px;\n}\n}\n", ""]);
 
 // exports
 
@@ -30326,6 +30326,7 @@ exports.push([module.i, "\nh1.intro-header[data-v-56786506] {\n       text-align
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -31702,7 +31703,7 @@ var staticRenderFns = [
                     "ul",
                     { staticClass: "list-inline", attrs: { id: "list-link" } },
                     [
-                      _c("li", { staticClass: "list-inline-item" }, [
+                      _c("li", { staticClass: "list-inline-item mr-0" }, [
                         _c(
                           "a",
                           {
@@ -31717,7 +31718,7 @@ var staticRenderFns = [
                         )
                       ]),
                       _vm._v(" "),
-                      _c("li", { staticClass: "list-inline-item" }, [
+                      _c("li", { staticClass: "list-inline-item mr-0" }, [
                         _c(
                           "a",
                           {
@@ -31804,12 +31805,16 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "He is a Genconian. He is a B.Tech student in CSE of 2015-19\n                                    batch. He is Media Head of Training and Placement\n                                    Cell. He has designed Placement Broucher. He is a freelance Web Developer and Photoshop Designer too. He has contributed design of "
+                      "He is a Genconian. He is a B.Tech student in CSE of 2015-19\n                                    batch. He is Media Head of Training and Placement\n                                    Cell. He has designed Placement Broucher. He is a freelance Web Developer and\n                                    Photoshop Designer too. He has contributed design of "
                     ),
                     _c(
                       "a",
                       { attrs: { href: "https://www.tnpgndec.com/about" } },
-                      [_vm._v("About Page")]
+                      [
+                        _vm._v(
+                          "About\n                                        Page"
+                        )
+                      ]
                     ),
                     _vm._v(" for "),
                     _c("a", { attrs: { href: "https://www.tnpgndec.com" } }, [
@@ -38844,23 +38849,6 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c(
-            "li",
-            [
-              _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                _c("i", {
-                  staticClass: "fa fa-file-word-o fa-fw",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "hide-menu" }, [
-                  _vm._v("Notice Maker")
-                ])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
           _c("li", { staticClass: "dropdown" }, [
             _vm._m(3),
             _vm._v(" "),
@@ -39000,6 +38988,23 @@ var render = function() {
               ]
             )
           ]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: "#", exact: "" } }, [
+                _c("i", {
+                  staticClass: "fa fa-file-word-o fa-fw",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "hide-menu" }, [
+                  _vm._v("Notice Maker")
+                ])
+              ])
+            ],
+            1
+          ),
           _vm._v(" "),
           _c("li", { staticClass: "dropdown" }, [
             _vm._m(9),
@@ -56353,6 +56358,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -56402,13 +56411,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.student.marks_type == 'CGPA') {
                 console.log(this.student.max_marks);
                 if (this.student.obtained_marks != undefined && (this.student.max_marks != undefined || this.student.max_marks != '')) {
-                    this.percent = this.student.obtained_marks * 9.5;
+                    this.percent = parseFloat(this.student.obtained_marks * 9.5).toFixed(3);
                 } else {
                     this.percent = 0;
                 }
             } else {
                 if (this.student.obtained_marks != undefined && this.student.max_marks != undefined) {
-                    this.percent = this.student.obtained_marks / this.student.max_marks * 100;
+                    this.percent = parseFloat(this.student.obtained_marks / this.student.max_marks * 100).toFixed(3);
                 } else {
                     this.percent = 0;
                 }
@@ -56516,7 +56525,15 @@ var render = function() {
                             _vm.$set(_vm.student, "board", $event.target.value)
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Board")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -56550,7 +56567,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Institute Name")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -56583,7 +56608,15 @@ var render = function() {
                             _vm.monthYear = $event.target.value
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Month and Year of Passing")]
+                      )
                     ])
                   ])
                 ]),
@@ -56762,7 +56795,15 @@ var render = function() {
                                 }
                               ]
                             }
-                          })
+                          }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Obtained Marks")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -56836,9 +56877,15 @@ var render = function() {
                           }),
                       _vm._v(" "),
                       _c(
-                        "small",
+                        "span",
+                        { staticClass: "small text-primary text-uppercase" },
+                        [_vm._v("Max Marks")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
                         {
-                          staticClass: "form-text text-muted",
+                          staticClass: "small text-muted pull-right",
                           attrs: { id: "percent" }
                         },
                         [
@@ -57121,6 +57168,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -57163,7 +57214,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         percentCalculate: function percentCalculate() {
             if (this.student.obtained_marks != undefined && this.student.max_marks != undefined) {
-                this.percent = this.student.obtained_marks / this.student.max_marks * 100;
+                this.percent = parseFloat(this.student.obtained_marks / this.student.max_marks * 100).toFixed(3);
             } else {
                 this.percent = 0;
             }
@@ -57315,7 +57366,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Institute Name")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -57348,7 +57407,15 @@ var render = function() {
                             _vm.monthYear = $event.target.value
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Month and Year of Passing")]
+                      )
                     ])
                   ])
                 ]),
@@ -57483,7 +57550,15 @@ var render = function() {
                             }
                           ]
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Obtained Marks")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -57525,9 +57600,15 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c(
-                        "small",
+                        "span",
+                        { staticClass: "small text-primary text-uppercase" },
+                        [_vm._v("Max Marks")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
                         {
-                          staticClass: "form-text text-muted",
+                          staticClass: "small text-muted pull-right",
                           attrs: { id: "percent" }
                         },
                         [
@@ -57573,7 +57654,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Jee Rank")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -57610,7 +57699,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Year Gap")]
+                      )
                     ])
                   ])
                 ]),
