@@ -35,8 +35,15 @@
                 <div class="w-100 px-4 p-2 bgcolor text-uppercase collapse" id="more">
                     <div id="nav" class="owl-carousel">
                         <router-link to="/">Home</router-link>
-                        <router-link to="/login">Login</router-link>
+                        <router-link to="/page/words-from-tpo">Words from TPO</router-link>
+                        <router-link to="/page/invitation">Invitation</router-link>
+                        <router-link to="/page/about-training-and-placement-cell">About Training and Placement Cell</router-link>
                         <router-link to="/genconian">Genconians</router-link>
+                        <router-link to="/page/final-year-members">Final Year Members</router-link>
+                        <router-link to="/page/executive-members">Executive Members</router-link>
+                        <router-link to="/page/placement-broucher">Placement Broucher</router-link>
+                        <router-link to="/page/placement-record">Placement Record</router-link>
+                        <router-link to="/login">Login</router-link>
                     </div>
                 </div>
             </nav>
@@ -551,34 +558,20 @@
         margin-bottom: 0;
     }
 
-    #nav p {
+    #nav {
         margin-bottom: 0;
         color: #fff;
         font-size: 14px;
+        font-weight: 500;
     }
 
-    #nav .carousel-indicators {
-        position: absolute;
-        top: 0;
-        left: -98px;
-        display: block;
-        margin-top: 200px;
+    #nav a{
+        color: #038ed4 !important;
     }
 
-    #nav .carousel-indicators .active {
-        background-color: transparent;
-    }
-
-    #nav .carousel-indicators li {
-        height: 9px;
-        width: 10px;
-        border-radius: 50%;
-        background-color: #017bfc;
-    }
-
-    #nav .carousel-indicators li.active {
-        border: 1px solid #000;
-        background-color: transparent;
+    #nav a:hover {
+        background-color: #f1f1f1 !important;
+        color: #038ed4 !important;
     }
 
     #customers-testimonials .testimonials {
@@ -684,6 +677,9 @@
         margin-bottom: 3rem;
     }
 
+    .w-100 {
+        width: 100%;
+    }
 
     h1.intro-header {
         text-align: center;
@@ -981,6 +977,7 @@
 <script>
     import 'owl.carousel2/dist/assets/owl.carousel.css';
     import 'owl.carousel2/dist/owl.carousel.min.js';
+    // import '../../packages/owl-json.js';
     import {
         pageLinkWidget,
         addHomePostURL
@@ -991,6 +988,10 @@
                 nav: false,
                 pages: [],
                 posts: [],
+                i: 0,
+                url: null,
+                title: null,
+                content: null
             }
         },
 
@@ -1011,8 +1012,28 @@
             var vm = this;
             Vue.nextTick(function () {
                 $("#nav").owlCarousel({
-                    jsonPath: 'localhost:8000/api/about/links',
-                    jsonSuccess: this.customDataSuccess
+                    autoWidth: true,
+                    margin: 45,
+                    stagePadding: 30,
+                    loop:true,
+                    // path: 'https://www.tnpgndec.com/api/about/links',
+                    // onSuccess: function (data) {
+                    //     console.log('1');
+                    //     var content =
+                    //         '<router-link to="/">Home</router-link><router-link to="/login">Login</router-link><router-link to="/genconian">Genconians</router-link> ';
+                    //     for (var i in data["data"]) {
+
+                    //         var url = data["data"][i].url;
+                    //         var title = data["data"][i].title;
+                    //         OC.trigger('add.owl.carousel', content +=
+                    //             '<router-link v-bind:to="/page/' + url + '">' + title +
+                    //             '</router-link>')
+                    //     }
+                    //     OC.trigger('refresh.owl.carousel')
+                    // },
+                    // onError: function (r) {
+                    //     console.error(r);
+                    // }
                 });
             }.bind(vm));
             Vue.nextTick(function () {
@@ -1064,21 +1085,6 @@
                     }
                 });
             }.bind(vm));
-        },
-        methods: {
-            customDataSuccess(data) {
-                var content =
-                    '<router-link to="/">Home</router-link><router-link to="/login">Login</router-link><router-link to="/genconian">Genconians</router-link> ';
-                for (var i in data["data"]) {
-
-                    var url = data["data"][i].url;
-                    var title = data["data"][i].title;
-                    console.log(url);
-
-                    content += '<router-link v-bind:to="/page/' + url + '">' + title + '</router-link>'
-                }
-                $("#nav-div").html(content);
-            }
         }
     }
 </script>

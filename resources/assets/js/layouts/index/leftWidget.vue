@@ -147,7 +147,7 @@
         created() {
             axios.get(pageLinkWidget)
                 .then((response) => {
-                    this.page = response.data.data.data;
+                    this.page = response.data.data;
                 })
                 .catch((error) => console.log(error))
         },
