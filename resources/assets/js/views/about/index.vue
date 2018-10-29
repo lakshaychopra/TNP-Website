@@ -189,7 +189,7 @@
                         <small>POSTS</small>
                     </div>
                 </div>
-                <div class="col-md-10">
+                <div id="alumni" class="col-md-10">
                         <!-- contact info -->
                         <div class="item col-md-4 float-left" v-for="post in posts.slice(0, 3)" :key="post.id">
                             <router-link v-bind:to="'/view/'+post.id">
@@ -1031,30 +1031,6 @@
                     // onError: function (r) {
                     //     console.error(r);
                     // }
-                });
-            }.bind(vm));
-            Vue.nextTick(function () {
-                $('#alumni').owlCarousel({
-                    loop: true,
-                    center: false,
-                    items: 3,
-                    margin: 30,
-                    autoplay: true,
-                    dots: false,
-                    nav: false,
-                    autoplayTimeout: 8500,
-                    smartSpeed: 450,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        768: {
-                            items: 2
-                        },
-                        1170: {
-                            items: 3
-                        }
-                    }
                 });
             }.bind(vm));
             Vue.nextTick(function () {
