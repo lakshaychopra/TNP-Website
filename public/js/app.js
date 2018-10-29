@@ -28159,7 +28159,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n#more[data-v-0263ce66] {\n        border-top-left-radius: 10px;\n        border-top-right-radius: 10px;\n}\n.list-inline[data-v-0263ce66] {\n        padding-left: 0;\n        list-style: none;\n}\n.bg-white[data-v-0263ce66] {\n        background-color: #fff !important;\n}\n.bg-dark[data-v-0263ce66] {\n        background-color: #038ed4 !important;\n}\n.btn[data-v-0263ce66] {\n        line-height: 1.5 !important;\n}\n#list-menu li a[data-v-0263ce66] {\n        color: #f7fbff;\n        padding: 20px;\n        float: left;\n        border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n        /* color: #0073BC; */\n        /* border-bottom: 4px solid #0073BC; */\n        background-color: #f1f1f1;\n        color: #038ed4;\n}\n.navbar[data-v-0263ce66] {\n        padding: 0 1rem;\n}\n.btn-primary[data-v-0263ce66] {\n        color: #fff;\n        background-color: #007bff;\n        border-color: #007bff;\n}\n.bgcolor[data-v-0263ce66] {\n        background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n        color: #fff !important;\n}\n.bgimage[data-v-0263ce66] {\n        background-image: url('/images/about/img/bgimg.jpg');\n        width: 100%;\n        height: 75vh;\n        background-size: cover;\n}\n.bgimgtext[data-v-0263ce66] {\n        position: absolute;\n        background: rgba(255, 255, 255, .5);\n        border-radius: 5px;\n        padding: 1em;\n}\n.bottom-left[data-v-0263ce66] {\n        position: absolute;\n        bottom: 8px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n        position: absolute;\n        top: 0;\n        left: -98px;\n        display: block;\n        margin-top: 200px;\n}\n#demo .owl-img[data-v-0263ce66] {\n        background-repeat: no-repeat;\n        background-size: cover;\n        background-position: center;\n}\n#demo .owl-carousel[data-v-0263ce66] {\n        position: relative;\n        height: 100%;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n        background-color: transparent;\n}\n#demo .owl--text[data-v-0263ce66] {\n        position: absolute;\n        bottom: 3em;\n        left: 2em;\n        width: 15em;\n        height: 6em;\n        padding: 1em;\n        background: rgba(255, 255, 255, .8);\n        border-radius: 4px;\n}\n#demo .carousel-indicators li[data-v-0263ce66] {\n        height: 9px;\n        width: 10px;\n        border-radius: 50%;\n        background-color: #017bfc;\n}\n#demo .carousel-indicators li.active[data-v-0263ce66] {\n        border: 1px solid #000;\n        background-color: transparent;\n}\n@media screen and (max-width:426px) {\n#demo .owl--text[data-v-0263ce66] {\n            position: absolute;\n            bottom: 0.5em;\n            left: 0.5em;\n            width: 14em;\n            height: 6em;\n            background: rgba(255, 255, 255, 0.6);\n            border-radius: 4px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n            top: unset;\n}\n}\n#alumni .card:hover a[data-v-0263ce66],\n    #alumni .card:hover h4[data-v-0263ce66] {\n        color: #038ed4;\n}\n.card-text[data-v-0263ce66] {\n        text-align: justify;\n}\n#alumni .card[data-v-0263ce66] {\n        border: solid #038ed4;\n        border-radius: 20px;\n        background: #ffffff;\n}\n.card-body[data-v-0263ce66] {\n        padding-bottom: 0px;\n}\n.bor-left[data-v-0263ce66] {\n        border-left: 4px solid #ef7f11;\n        padding-left: 10px;\n}\n#demo p[data-v-0263ce66] {\n        margin-bottom: 0;\n}\n#nav p[data-v-0263ce66] {\n        margin-bottom: 0;\n        color: #fff;\n        font-size: 14px;\n}\n#nav .carousel-indicators[data-v-0263ce66] {\n        position: absolute;\n        top: 0;\n        left: -98px;\n        display: block;\n        margin-top: 200px;\n}\n#nav .carousel-indicators .active[data-v-0263ce66] {\n        background-color: transparent;\n}\n#nav .carousel-indicators li[data-v-0263ce66] {\n        height: 9px;\n        width: 10px;\n        border-radius: 50%;\n        background-color: #017bfc;\n}\n#nav .carousel-indicators li.active[data-v-0263ce66] {\n        border: 1px solid #000;\n        background-color: transparent;\n}\n#customers-testimonials .testimonials[data-v-0263ce66] {\n        background-color: #fff;\n        position: relative;\n        padding-top: 60px;\n}\n#customers-testimonials .testimonials[data-v-0263ce66]:after {\n        content: '';\n        position: absolute;\n        bottom: 0;\n        left: 0;\n        right: 0;\n        width: 100%;\n        height: 30%;\n        background-color: #f1f1f1;\n}\n#customers-testimonials .item-details[data-v-0263ce66] {\n        background-color: #333333;\n        color: #fff;\n        padding: 20px 10px;\n        text-align: left;\n}\n#customers-testimonials .item-details h3[data-v-0263ce66] {\n        margin: 0 0 15px;\n        font-size: 18px;\n        line-height: 18px;\n        color: #fff;\n        text-align: center;\n}\n#customers-testimonials .item-details h3 span p[data-v-0263ce66] {\n        font-size: 14px;\n}\n#customers-testimonials .item[data-v-0263ce66] {\n        text-align: center;\n        /*  padding: 20px; */\n        margin-bottom: 80px;\n}\n#customers-testimonials .owl-carousel .owl-nav[data-v-0263ce66] {\n        -webkit-transition: all .3s ease;\n        transition: all .3s ease;\n}\n#customers-testimonials .owl-carousel[data-v-0263ce66] {\n        position: relative;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-0263ce66],\n    #customers-testimonials .owl-carousel .owl-prev[data-v-0263ce66] {\n        width: 50px;\n        height: 50px;\n        line-height: 50px;\n        border-radius: 50%;\n        position: absolute;\n        top: 30%;\n        font-size: 20px;\n        color: #fff;\n        border: 1px solid #ddd;\n        text-align: center;\n}\n#customers-testimonials .owl-carousel .owl-prev[data-v-0263ce66] {\n        left: -70px;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-0263ce66] {\n        right: -70px;\n}\n\n    /* ===================================================================\n * about - (_layout.scss)\n  ------------------------------------------------------------------- */\n#about[data-v-0263ce66] {\n        min-height: 786px;\n        background: #ffffff;\n        overflow: hidden;\n}\n.about-intro[data-v-0263ce66] {\n        padding-bottom: 3.6rem;\n        border-bottom: 1px solid rgba(0, 0, 0, 0.07);\n}\n.about-features .icon[data-v-0263ce66] {\n        margin-bottom: 1.5rem;\n        display: inline-block;\n}\n.about-features .icon i[data-v-0263ce66] {\n        color: #038ed4;\n        font-size: 4.8rem;\n}\n.about-features h3[data-v-0263ce66] {\n        font-size: 1.9rem;\n        color: #151515;\n        margin-bottom: 3rem;\n}\nh1.intro-header[data-v-0263ce66] {\n        text-align: center;\n}\nh1.intro-header[data-v-0263ce66]::before {\n        left: 50%;\n        -webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\n}\n.about-how-content[data-v-0263ce66] {\n        position: relative;\n        width: 100%;\n        max-width: 1000px;\n        min-height: 300px;\n        margin-top: 3.2rem;\n        margin-left: auto;\n        margin-right: auto;\n        clear: both;\n}\n.about-how-content[data-v-0263ce66]::before,\n    .about-how-content[data-v-0263ce66]::after {\n        content: \"\";\n        display: block;\n        width: 1px;\n        height: 100%;\n        background-color: rgba(0, 0, 0, 0.1);\n        position: absolute;\n        top: 0;\n}\n.about-how-content[data-v-0263ce66]::before {\n        left: 0;\n}\n.about-how-content[data-v-0263ce66]::after {\n        left: 50%;\n}\n.about-how-content .about-how-steps[data-v-0263ce66] {\n        width: 100%;\n}\n.about-how-content .step[data-v-0263ce66] {\n        padding: 0 40px 1.5rem 60px;\n        position: relative;\n        min-height: 240px;\n}\n.about-how-content .step h3[data-v-0263ce66] {\n        margin-bottom: 2.4rem;\n}\n.about-how-content .step[data-v-0263ce66]::before {\n        display: block;\n        font-size: 2rem;\n        content: attr(data-item);\n        color: #ffffff;\n        height: 54px;\n        width: 54px;\n        line-height: 54px;\n        text-align: center;\n        border-radius: 50%;\n        background-color: #038ed4;\n        -webkit-box-shadow: 0 0 0 15px #ffffff;\n                box-shadow: 0 0 0 15px #ffffff;\n        z-index: 500;\n        position: absolute;\n        top: -12px;\n        left: -27px;\n}\n.about-bottom-image img[data-v-0263ce66] {\n        vertical-align: bottom;\n}\n\n    /* responsive: about */\n@media only screen and (max-width: 1200px) {\n.about-how-content[data-v-0263ce66] {\n            max-width: 800px;\n}\n}\n@media only screen and (max-width: 1024px) {\n.about-intro[data-v-0263ce66] {\n            max-width: 800px;\n            text-align: center;\n}\n.about-intro h1[data-v-0263ce66]::before {\n            left: 50%;\n            -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n}\n.about-intro [class*=\"col-\"][data-v-0263ce66] {\n            width: 100% !important;\n            float: none !important;\n            clear: both !important;\n            margin-left: 0;\n            margin-right: 0;\n}\n.about-how-content[data-v-0263ce66] {\n            max-width: 700px;\n}\n}\n@media only screen and (max-width: 850px) {\n.about-how-content[data-v-0263ce66] {\n            max-width: 550px;\n}\n.about-how-content[data-v-0263ce66]::after {\n            display: none;\n}\n.about-how-content .step[data-v-0263ce66] {\n            width: 100% !important;\n            float: none !important;\n            clear: both !important;\n            margin-left: 0;\n            margin-right: 0;\n            padding-right: 18px;\n            min-height: auto;\n            padding: 0 40px .9rem 60px;\n}\n}\n@media only screen and (max-width: 768px) {\n.about-features .icon i[data-v-0263ce66] {\n            font-size: 4.4rem;\n}\n.about-features h3[data-v-0263ce66] {\n            font-size: 1.8rem;\n}\n.about-how h3[data-v-0263ce66] {\n            font-size: 1.9rem;\n}\n.about-how-content[data-v-0263ce66]::before {\n            left: 30px;\n}\n.about-how-content .step[data-v-0263ce66] {\n            padding: 0 10px 0 80px;\n}\n.about-how-content .step[data-v-0263ce66]::before {\n            font-size: 1.6rem;\n            height: 45px;\n            width: 45px;\n            line-height: 45px;\n            top: -9px;\n            left: 7.5px;\n}\n}\n@media only screen and (max-width: 650px) {\n.about-features[data-v-0263ce66] {\n            max-width: 600px;\n            text-align: center;\n}\n.about-features[data-v-0263ce66] {\n            width: 100% !important;\n            float: none !important;\n            clear: both !important;\n            margin-left: 0;\n            margin-right: 0;\n            margin-bottom: 4.5rem;\n}\n.about-features h3[data-v-0263ce66] {\n            margin-bottom: 1.5rem;\n}\n}\n@media only screen and (max-width: 400px) {\n.about-how-content[data-v-0263ce66] {\n            text-align: center;\n}\n.about-how-content[data-v-0263ce66]::before {\n            display: none;\n}\n.about-how-content .step[data-v-0263ce66] {\n            padding: 60px 0 0 0;\n}\n.about-how-content .step[data-v-0263ce66]::before {\n            top: 0;\n            left: 50%;\n            -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n}\n}\n.lead[data-v-0263ce66] {\n        font-size: 1.5rem;\n}\n\n/* testimonials */\n#testimonials[data-v-0263ce66] {\n        background: #FFFFFF;\n        text-align: center;\n        min-height: 600px;\n}\n#testimonials h1[data-v-0263ce66]::before {\n        left: 50%;\n        -webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\n}\n#testimonials .owl-wrap[data-v-0263ce66] {\n        width: 80%;\n        max-width: 900px;\n        margin: 4.2rem auto 0;\n}\n#testimonial-slider[data-v-0263ce66] {\n        margin: 0 0 3rem 0;\n        position: relative;\n}\n#testimonial-slider .testimonial-author[data-v-0263ce66] {\n        margin-top: 3.2rem;\n}\n#testimonial-slider .testimonial-author img[data-v-0263ce66] {\n        width: 7.4rem;\n        height: 7.4rem;\n        margin: 0 auto 1.2rem auto;\n        display: block;\n        border-radius: 50%;\n}\n#testimonial-slider .testimonial-author .author-info[data-v-0263ce66] {\n        display: inline-block;\n        vertical-align: middle;\n        text-align: center;\n        font-size: 1.9rem;\n        color: #151515;\n}\n#testimonial-slider .testimonial-author .author-info span[data-v-0263ce66] {\n        display: block;\n        font-size: 1.6rem;\n        line-height: 1.313;\n        letter-spacing: 0;\n        text-transform: none;\n        color: rgba(0, 0, 0, 0.5);\n}\n\n/* testimonials */\n@media only screen and (max-width: 768px) {\n#testimonial-slider .testimonial-author img[data-v-0263ce66] {\n            width: 6.6rem;\n            height: 6.6rem;\n}\n#testimonial-slider .testimonial-author .author-info[data-v-0263ce66] {\n            font-size: 1.8rem;\n}\n#testimonial-slider .testimonial-author .author-info span[data-v-0263ce66] {\n            font-size: 1.5rem;\n}\n}\n@media only screen and (max-width: 600px) {\n#testimonials .owl-wrap[data-v-0263ce66] {\n            width: 90%;\n}\n}\n@media only screen and (max-width: 400px) {\n#testimonials .owl-wrap[data-v-0263ce66] {\n            width: 100%;\n}\n}\n", ""]);
+exports.push([module.i, "\n#more[data-v-0263ce66] {\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n}\n.list-inline[data-v-0263ce66] {\n    padding-left: 0;\n    list-style: none;\n}\n.bg-white[data-v-0263ce66] {\n    background-color: #fff !important;\n}\n.bg-dark[data-v-0263ce66] {\n    background-color: #038ed4 !important;\n}\n.btn[data-v-0263ce66] {\n    line-height: 1.5 !important;\n}\n#list-menu li a[data-v-0263ce66] {\n    color: #f7fbff;\n    padding: 20px;\n    float: left;\n    border-bottom: 4px solid rgba(255, 255, 255, 0);\n}\n#list-menu li a[data-v-0263ce66]:hover {\n    /* color: #0073BC; */\n    /* border-bottom: 4px solid #0073BC; */\n    background-color: #f1f1f1;\n    color: #038ed4;\n}\n.navbar[data-v-0263ce66] {\n    padding: 0 1rem;\n}\n.btn-primary[data-v-0263ce66] {\n    color: #fff;\n    background-color: #007bff;\n    border-color: #007bff;\n}\n.bgcolor[data-v-0263ce66] {\n    background-color: #000;\n}\n.text-color12[data-v-0263ce66] {\n    color: #fff !important;\n}\n.bgimage[data-v-0263ce66] {\n    background-image: url('/images/about/img/bgimg.jpg');\n    width: 100%;\n    height: 75vh;\n    background-size: cover;\n}\n.bgimgtext[data-v-0263ce66] {\n    position: absolute;\n    background: rgba(255, 255, 255, .5);\n    border-radius: 5px;\n    padding: 1em;\n}\n.bottom-left[data-v-0263ce66] {\n    position: absolute;\n    bottom: 8px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#demo .owl-img[data-v-0263ce66] {\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n#demo .owl-carousel[data-v-0263ce66] {\n    position: relative;\n    height: 100%;\n}\n#demo .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#demo .owl--text[data-v-0263ce66] {\n    position: absolute;\n    bottom: 3em;\n    left: 2em;\n    width: 15em;\n    height: 6em;\n    padding: 1em;\n    background: rgba(255, 255, 255, .8);\n    border-radius: 4px;\n}\n#demo .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#demo .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n@media screen and (max-width:426px) {\n#demo .owl--text[data-v-0263ce66] {\n        position: absolute;\n        bottom: 0.5em;\n        left: 0.5em;\n        width: 14em;\n        height: 6em;\n        background: rgba(255, 255, 255, 0.6);\n        border-radius: 4px;\n}\n#demo .carousel-indicators[data-v-0263ce66] {\n        top: unset;\n}\n}\n#alumni .card:hover a[data-v-0263ce66],\n#alumni .card:hover h4[data-v-0263ce66] {\n    color: #038ed4;\n}\n.card-text[data-v-0263ce66] {\n    text-align: justify;\n}\n#alumni .card[data-v-0263ce66] {\n    border: solid #038ed4;\n    border-radius: 20px;\n    background: #ffffff;\n}\n.card-body[data-v-0263ce66] {\n    padding-bottom: 0px;\n}\n.bor-left[data-v-0263ce66] {\n    border-left: 4px solid #ef7f11;\n    padding-left: 10px;\n}\n#demo p[data-v-0263ce66] {\n    margin-bottom: 0;\n}\n#nav p[data-v-0263ce66] {\n    margin-bottom: 0;\n    color: #fff;\n    font-size: 14px;\n}\n#nav .carousel-indicators[data-v-0263ce66] {\n    position: absolute;\n    top: 0;\n    left: -98px;\n    display: block;\n    margin-top: 200px;\n}\n#nav .carousel-indicators .active[data-v-0263ce66] {\n    background-color: transparent;\n}\n#nav .carousel-indicators li[data-v-0263ce66] {\n    height: 9px;\n    width: 10px;\n    border-radius: 50%;\n    background-color: #017bfc;\n}\n#nav .carousel-indicators li.active[data-v-0263ce66] {\n    border: 1px solid #000;\n    background-color: transparent;\n}\n#customers-testimonials .testimonials[data-v-0263ce66] {\n    background-color: #fff;\n    position: relative;\n    padding-top: 60px;\n}\n#customers-testimonials .testimonials[data-v-0263ce66]:after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    width: 100%;\n    height: 30%;\n    background-color: #f1f1f1;\n}\n#customers-testimonials .item-details[data-v-0263ce66] {\n    background-color: #333333;\n    color: #fff;\n    padding: 20px 10px;\n    text-align: left;\n}\n#customers-testimonials .item-details h3[data-v-0263ce66] {\n    margin: 0 0 15px;\n    font-size: 18px;\n    line-height: 18px;\n    color: #fff;\n    text-align: center;\n}\n#customers-testimonials .item-details h3 span p[data-v-0263ce66] {\n    font-size: 14px;\n}\n#customers-testimonials .item[data-v-0263ce66] {\n    text-align: center;\n    /*  padding: 20px; */\n    margin-bottom: 80px;\n}\n#customers-testimonials .owl-carousel .owl-nav[data-v-0263ce66] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n#customers-testimonials .owl-carousel[data-v-0263ce66] {\n    position: relative;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-0263ce66],\n#customers-testimonials .owl-carousel .owl-prev[data-v-0263ce66] {\n    width: 50px;\n    height: 50px;\n    line-height: 50px;\n    border-radius: 50%;\n    position: absolute;\n    top: 30%;\n    font-size: 20px;\n    color: #fff;\n    border: 1px solid #ddd;\n    text-align: center;\n}\n#customers-testimonials .owl-carousel .owl-prev[data-v-0263ce66] {\n    left: -70px;\n}\n#customers-testimonials .owl-carousel .owl-next[data-v-0263ce66] {\n    right: -70px;\n}\n\n/*  about  */\n#about[data-v-0263ce66] {\n    min-height: 786px;\n    background: #ffffff;\n    overflow: hidden;\n}\n.about-intro[data-v-0263ce66] {\n    padding-bottom: 3.6rem;\n    border-bottom: 1px solid rgba(0, 0, 0, 0.07);\n}\n.about-features .icon[data-v-0263ce66] {\n    margin-bottom: 1.5rem;\n    display: inline-block;\n}\n.about-features .icon i[data-v-0263ce66] {\n    color: #038ed4;\n    font-size: 4.8rem;\n}\n.about-features h3[data-v-0263ce66] {\n    font-size: 1.9rem;\n    color: #151515;\n    margin-bottom: 3rem;\n}\nh1.intro-header[data-v-0263ce66] {\n    text-align: center;\n}\nh1.intro-header[data-v-0263ce66]::before {\n    left: 50%;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n}\n.about-how-content[data-v-0263ce66] {\n    position: relative;\n    width: 100%;\n    max-width: 1000px;\n    min-height: 300px;\n    margin-top: 3.2rem;\n    margin-left: auto;\n    margin-right: auto;\n    clear: both;\n}\n.about-how-content[data-v-0263ce66]::before,\n.about-how-content[data-v-0263ce66]::after {\n    content: \"\";\n    display: block;\n    width: 1px;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.1);\n    position: absolute;\n    top: 0;\n}\n.about-how-content[data-v-0263ce66]::before {\n    left: 0;\n}\n.about-how-content[data-v-0263ce66]::after {\n    left: 50%;\n}\n.about-how-content .about-how-steps[data-v-0263ce66] {\n    width: 100%;\n}\n.about-how-content .step[data-v-0263ce66] {\n    padding: 0 40px 1.5rem 60px;\n    position: relative;\n    min-height: 240px;\n}\n.about-how-content .step h3[data-v-0263ce66] {\n    margin-bottom: 2.4rem;\n}\n.about-how-content .step[data-v-0263ce66]::before {\n    display: block;\n    font-size: 2rem;\n    content: attr(data-item);\n    color: #ffffff;\n    height: 54px;\n    width: 54px;\n    line-height: 54px;\n    text-align: center;\n    border-radius: 50%;\n    background-color: #038ed4;\n    -webkit-box-shadow: 0 0 0 15px #ffffff;\n            box-shadow: 0 0 0 15px #ffffff;\n    z-index: 500;\n    position: absolute;\n    top: -12px;\n    left: -27px;\n}\n.about-bottom-image img[data-v-0263ce66] {\n    vertical-align: bottom;\n}\n\n/* responsive: about */\n@media only screen and (max-width: 1200px) {\n.about-how-content[data-v-0263ce66] {\n        max-width: 800px;\n}\n}\n@media only screen and (max-width: 1024px) {\n.about-intro[data-v-0263ce66] {\n        max-width: 800px;\n        text-align: center;\n}\n.about-intro h1[data-v-0263ce66]::before {\n        left: 50%;\n        -webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\n}\n.about-intro [class*=\"col-\"][data-v-0263ce66] {\n        width: 100% !important;\n        float: none !important;\n        clear: both !important;\n        margin-left: 0;\n        margin-right: 0;\n}\n.about-how-content[data-v-0263ce66] {\n        max-width: 700px;\n}\n}\n@media only screen and (max-width: 850px) {\n.about-how-content[data-v-0263ce66] {\n        max-width: 550px;\n}\n.about-how-content[data-v-0263ce66]::after {\n        display: none;\n}\n.about-how-content .step[data-v-0263ce66] {\n        width: 100% !important;\n        float: none !important;\n        clear: both !important;\n        margin-left: 0;\n        margin-right: 0;\n        padding-right: 18px;\n        min-height: auto;\n        padding: 0 40px .9rem 60px;\n}\n}\n@media only screen and (max-width: 768px) {\n.about-features .icon i[data-v-0263ce66] {\n        font-size: 4.4rem;\n}\n.about-features h3[data-v-0263ce66] {\n        font-size: 1.8rem;\n}\n.about-how h3[data-v-0263ce66] {\n        font-size: 1.9rem;\n}\n.about-how-content[data-v-0263ce66]::before {\n        left: 30px;\n}\n.about-how-content .step[data-v-0263ce66] {\n        padding: 0 10px 0 80px;\n}\n.about-how-content .step[data-v-0263ce66]::before {\n        font-size: 1.6rem;\n        height: 45px;\n        width: 45px;\n        line-height: 45px;\n        top: -9px;\n        left: 7.5px;\n}\n}\n@media only screen and (max-width: 650px) {\n.about-features[data-v-0263ce66] {\n        max-width: 600px;\n        text-align: center;\n}\n.about-features[data-v-0263ce66] {\n        width: 100% !important;\n        float: none !important;\n        clear: both !important;\n        margin-left: 0;\n        margin-right: 0;\n        margin-bottom: 4.5rem;\n}\n.about-features h3[data-v-0263ce66] {\n        margin-bottom: 1.5rem;\n}\n}\n@media only screen and (max-width: 400px) {\n.about-how-content[data-v-0263ce66] {\n        text-align: center;\n}\n.about-how-content[data-v-0263ce66]::before {\n        display: none;\n}\n.about-how-content .step[data-v-0263ce66] {\n        padding: 60px 0 0 0;\n}\n.about-how-content .step[data-v-0263ce66]::before {\n        top: 0;\n        left: 50%;\n        -webkit-transform: translateX(-50%);\n        transform: translateX(-50%);\n}\n}\n.lead[data-v-0263ce66] {\n    font-size: 1.5rem;\n}\n\n/* testimonials */\n#testimonials[data-v-0263ce66] {\n    background: #FFFFFF;\n    text-align: center;\n    min-height: 600px;\n}\n#testimonials h1[data-v-0263ce66]::before {\n    left: 50%;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n}\n#testimonials .owl-wrap[data-v-0263ce66] {\n    width: 80%;\n    max-width: 900px;\n    margin: 4.2rem auto 0;\n}\n#testimonial-slider[data-v-0263ce66] {\n    margin: 0 0 3rem 0;\n    position: relative;\n}\n#testimonial-slider .testimonial-author[data-v-0263ce66] {\n    margin-top: 3.2rem;\n}\n#testimonial-slider .testimonial-author img[data-v-0263ce66] {\n    width: 7.4rem;\n    height: 7.4rem;\n    margin: 0 auto 1.2rem auto;\n    display: block;\n    border-radius: 50%;\n}\n#testimonial-slider .testimonial-author .author-info[data-v-0263ce66] {\n    display: inline-block;\n    vertical-align: middle;\n    text-align: center;\n    font-size: 1.9rem;\n    color: #151515;\n}\n#testimonial-slider .testimonial-author .author-info span[data-v-0263ce66] {\n    display: block;\n    font-size: 1.6rem;\n    line-height: 1.313;\n    letter-spacing: 0;\n    text-transform: none;\n    color: rgba(0, 0, 0, 0.5);\n}\n\n/* testimonials */\n@media only screen and (max-width: 768px) {\n#testimonial-slider .testimonial-author img[data-v-0263ce66] {\n        width: 6.6rem;\n        height: 6.6rem;\n}\n#testimonial-slider .testimonial-author .author-info[data-v-0263ce66] {\n        font-size: 1.8rem;\n}\n#testimonial-slider .testimonial-author .author-info span[data-v-0263ce66] {\n        font-size: 1.5rem;\n}\n}\n@media only screen and (max-width: 600px) {\n#testimonials .owl-wrap[data-v-0263ce66] {\n        width: 90%;\n}\n}\n@media only screen and (max-width: 400px) {\n#testimonials .owl-wrap[data-v-0263ce66] {\n        width: 100%;\n}\n}\n", ""]);
 
 // exports
 
@@ -29155,19 +29155,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -29176,7 +29163,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             nav: false,
-            page: [],
+            pages: [],
             posts: []
         };
     },
@@ -29184,23 +29171,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         axios.get(__WEBPACK_IMPORTED_MODULE_2__config_js__["n" /* pageLinkWidget */]).then(function (response) {
-            _this.page = response.data.data.data;
+            _this.pages = response.data.data.data;
         }).catch(function (error) {
             return console.log(error);
         });
-        axios.get(__WEBPACK_IMPORTED_MODULE_2__config_js__["b" /* addHomePostURL */]).then(function (response) {
-            _this.posts = response.data.data.data;
-        }).catch(function (error) {
-            return console.log(error);
+        axios.get(__WEBPACK_IMPORTED_MODULE_2__config_js__["b" /* addHomePostURL */]).then(function (res) {
+            _this.posts = res.data.data.data;
+        }).catch(function (err) {
+            return console.log(err);
         });
     },
     beforeCreate: function beforeCreate() {
         var vm = this;
         Vue.nextTick(function () {
             $("#nav").owlCarousel({
-                autoWidth: true,
-                margin: 30,
-                stagePadding: 50
+                jsonPath: 'localhost:8000/api/about/links',
+                jsonSuccess: this.customDataSuccess
             });
         }.bind(vm));
         Vue.nextTick(function () {
@@ -29252,6 +29238,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             });
         }.bind(vm));
+    },
+
+    methods: {
+        customDataSuccess: function customDataSuccess(data) {
+            var content = '<router-link to="/">Home</router-link><router-link to="/login">Login</router-link><router-link to="/genconian">Genconians</router-link> ';
+            for (var i in data["data"]) {
+
+                var url = data["data"][i].url;
+                var title = data["data"][i].title;
+                console.log(url);
+
+                content += '<router-link v-bind:to="/page/' + url + '">' + title + '</router-link>';
+            }
+            $("#nav-div").html(content);
+        }
     }
 });
 
@@ -29524,7 +29525,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "w-100 p-2 bgcolor text-uppercase collapse",
+              staticClass: "w-100 px-4 p-2 bgcolor text-uppercase collapse",
               attrs: { id: "more" }
             },
             [
@@ -29532,52 +29533,17 @@ var render = function() {
                 "div",
                 { staticClass: "owl-carousel", attrs: { id: "nav" } },
                 [
-                  _c(
-                    "div",
-                    [
-                      _c("router-link", { attrs: { to: "/" } }, [
-                        _vm._v("Home")
-                      ])
-                    ],
-                    1
-                  ),
+                  _c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    [
-                      _c("router-link", { attrs: { to: "/login" } }, [
-                        _vm._v("Login")
-                      ])
-                    ],
-                    1
-                  ),
+                  _c("router-link", { attrs: { to: "/login" } }, [
+                    _vm._v("Login")
+                  ]),
                   _vm._v(" "),
-                  _vm._l(_vm.page, function(pg) {
-                    return _c(
-                      "div",
-                      { key: pg.id },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/page/" + pg.url } },
-                          [_vm._v(_vm._s(pg.title))]
-                        )
-                      ],
-                      1
-                    )
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    [
-                      _c("router-link", { attrs: { to: "/genconian" } }, [
-                        _vm._v("Genconians")
-                      ])
-                    ],
-                    1
-                  )
+                  _c("router-link", { attrs: { to: "/genconian" } }, [
+                    _vm._v("Genconians")
+                  ])
                 ],
-                2
+                1
               )
             ]
           )

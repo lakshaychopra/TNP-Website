@@ -19,9 +19,7 @@
                     </div>
                 </div>
                 <div class="navbar">
-                    <div class="mr-auto d-none d-md-block w-65">
-
-                    </div>
+                    <div class="mr-auto d-none d-md-block w-65"></div>
                     <ul class="nav navbar-nav" id="list-menu">
                         <li class="nav-item">
                             <router-link to="/" class="pull-right nav-link">
@@ -34,20 +32,11 @@
                     </ul>
                 </div>
 
-                <div class="w-100 p-2 bgcolor text-uppercase collapse" id="more">
-                    <div class="owl-carousel" id="nav">
-                        <div>
-                            <router-link to="/">Home</router-link>
-                        </div>
-                        <div>
-                            <router-link to="/login">Login</router-link>
-                        </div>
-                        <div v-for="pg in page" :key="pg.id">
-                            <router-link v-bind:to="'/page/'+pg.url">{{ pg.title }}</router-link>
-                        </div>
-                        <div>
-                            <router-link to="/genconian">Genconians</router-link>
-                        </div>
+                <div class="w-100 px-4 p-2 bgcolor text-uppercase collapse" id="more">
+                    <div id="nav" class="owl-carousel">
+                        <router-link to="/">Home</router-link>
+                        <router-link to="/login">Login</router-link>
+                        <router-link to="/genconian">Genconians</router-link>
                     </div>
                 </div>
             </nav>
@@ -666,9 +655,7 @@
         right: -70px;
     }
 
-    /* ===================================================================
- * about - (_layout.scss)
-  ------------------------------------------------------------------- */
+    /*  about  */
 
     #about {
         min-height: 786px;
@@ -907,7 +894,7 @@
         font-size: 1.5rem;
     }
 
-/* testimonials */
+    /* testimonials */
 
     #testimonials {
         background: #FFFFFF;
@@ -962,7 +949,7 @@
         color: rgba(0, 0, 0, 0.5);
     }
 
-/* testimonials */
+    /* testimonials */
 
     @media only screen and (max-width: 768px) {
         #testimonial-slider .testimonial-author img {
@@ -1002,31 +989,30 @@
         data() {
             return {
                 nav: false,
-                page: [],
+                pages: [],
                 posts: [],
             }
         },
-        
+
         created() {
             axios.get(pageLinkWidget)
                 .then((response) => {
-                    this.page = response.data.data.data;
+                    this.pages = response.data.data.data;
                 })
                 .catch((error) => console.log(error))
             axios.get(addHomePostURL)
-                .then((response) => {
-                    this.posts = response.data.data.data;
+                .then((res) => {
+                    this.posts = res.data.data.data;
                 })
-                .catch((error) => console.log(error))
+                .catch((err) => console.log(err))
         },
 
         beforeCreate() {
             var vm = this;
             Vue.nextTick(function () {
                 $("#nav").owlCarousel({
-                    autoWidth: true,
-                    margin: 30,
-                    stagePadding: 50,
+                    jsonPath: 'localhost:8000/api/about/links',
+                    jsonSuccess: this.customDataSuccess
                 });
             }.bind(vm));
             Vue.nextTick(function () {
@@ -1078,6 +1064,21 @@
                     }
                 });
             }.bind(vm));
+        },
+        methods: {
+            customDataSuccess(data) {
+                var content =
+                    '<router-link to="/">Home</router-link><router-link to="/login">Login</router-link><router-link to="/genconian">Genconians</router-link> ';
+                for (var i in data["data"]) {
+
+                    var url = data["data"][i].url;
+                    var title = data["data"][i].title;
+                    console.log(url);
+
+                    content += '<router-link v-bind:to="/page/' + url + '">' + title + '</router-link>'
+                }
+                $("#nav-div").html(content);
+            }
         }
     }
 </script>

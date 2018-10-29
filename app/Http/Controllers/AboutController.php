@@ -147,7 +147,7 @@ class AboutController extends Controller
 
     public function linksPage()
     {
-            $page['data'] = About::select('url','title')->get();
+            $page = About::select('url','title')->get();
             return $this->respondData($page);
     }
 
