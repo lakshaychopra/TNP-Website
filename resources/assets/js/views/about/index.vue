@@ -190,7 +190,6 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    <div id="alumni" class="owl-carousel">
                         <!-- contact info -->
                         <div class="item col-md-4 float-left" v-for="post in posts.slice(0, 3)" :key="post.id">
                             <router-link v-bind:to="'/view/'+post.id">
@@ -204,7 +203,6 @@
                             </router-link>
                         </div>
                         <!-- ./contact info -->
-                    </div>
                 </div>
             </div>
         </section>
@@ -768,7 +766,6 @@
 
     @media only screen and (max-width: 1024px) {
         .about-intro {
-            max-width: 800px;
             text-align: center;
         }
 
