@@ -183,13 +183,13 @@
 
         <section class="container">
             <div class="row about-intro pb-0 mb-3">
-                <div class="col-md-2 d-none d-lg-block">
+                <div class="col-lg-2 d-none d-lg-block">
                     <h1>News And Highlights</h1>
                     <div class="bor-left mb-3 mt-3">
                         <small>POSTS</small>
                     </div>
                 </div>
-                <div id="alumni" class="col-md-10">
+                <div id="alumni" class="col-lg-10 col-md-12">
                         <!-- contact info -->
                         <div class="item col-md-4 float-left" v-for="post in posts.slice(0, 3)" :key="post.id">
                             <router-link v-bind:to="'/view/'+post.id">
