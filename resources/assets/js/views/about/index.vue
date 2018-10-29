@@ -776,14 +776,6 @@
             transform: translateX(-50%);
         }
 
-        .about-intro [class*="col-"] {
-            width: 100% !important;
-            float: none !important;
-            clear: both !important;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
         .about-how-content {
             max-width: 700px;
         }
