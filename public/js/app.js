@@ -57979,6 +57979,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -58172,7 +58173,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Semester")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -58182,7 +58191,7 @@ var render = function() {
                         "label",
                         {
                           staticClass: "col-md-2 col-form-label",
-                          attrs: { for: "" }
+                          attrs: { for: "Marks Type" }
                         },
                         [_vm._v("Marks Type : ")]
                       ),
@@ -58355,7 +58364,15 @@ var render = function() {
                                 }
                               ]
                             }
-                          })
+                          }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Obtained Marks")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -58428,16 +58445,22 @@ var render = function() {
                           }),
                       _vm._v(" "),
                       _c(
-                        "small",
+                        "span",
+                        { staticClass: "small text-primary text-uppercase" },
+                        [_vm._v("Max Marks")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
                         {
-                          staticClass: "form-text text-muted",
+                          staticClass: "small text-muted pull-right",
                           attrs: { id: "percent" }
                         },
                         [
                           _vm._v(
                             "Percent = " +
                               _vm._s(_vm.update_marks.percent) +
-                              "%\n                                    "
+                              "% "
                           )
                         ]
                       )
@@ -58477,7 +58500,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Credits")]
+                      )
                     ])
                   ])
                 ]),
@@ -58516,7 +58547,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Active Backlog")]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -58553,7 +58592,15 @@ var render = function() {
                             )
                           }
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [_vm._v("Passive Backlog")]
+                      )
                     ])
                   ])
                 ]),

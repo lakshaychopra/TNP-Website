@@ -13,11 +13,12 @@
                                     <div class="form-group">
                                         <input type="number" name="semester" v-model="student.semester_status"
                                             placeholder="Semester" class="form-control" disabled>
+                                        <small class="form-text text-primary text-uppercase">Semester</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="" class="col-md-2 col-form-label">Marks Type : </label>
+                                        <label for="Marks Type" class="col-md-2 col-form-label">Marks Type : </label>
                                         <div class="col-md-2 md-radio md-radio-inline">
                                             <input type="radio" name="marks_type" id="CGPA" v-model="student.marks_type"
                                                 value="CGPA" v-on:change="resetmarks()">
@@ -30,7 +31,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
@@ -41,6 +41,7 @@
                                         <input type="text" name="obtained" v-model="update_marks.obtained_marks"
                                             placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
                                             v-else>
+                                        <small class="form-text text-primary text-uppercase">Obtained Marks</small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -49,16 +50,15 @@
                                             placeholder="10" value="10" v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="max" v-model="update_marks.max_marks" placeholder="Max Marks"
                                             class="form-control" v-on:input="percentCalculate()" v-else>
-                                        <small id="percent" class="form-text text-muted">Percent = {{
-                                            update_marks.percent }}%
-                                        </small>
-
+                                        <span class="small text-primary text-uppercase">Max Marks</span>
+                                        <span id="percent" class="small text-muted pull-right">Percent = {{update_marks.percent }}% </span>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="number" step="1" min="0" value="0" name="credits" v-model="update_marks.credits"
                                             class="form-control" placeholder="Credits">
+                                        <small class="form-text text-primary text-uppercase">Credits</small>
                                     </div>
                                 </div>
                             </div>
@@ -67,13 +67,14 @@
                                     <div class="form-group">
                                         <input type="number" name="active_backlog" v-model="update_marks.active_backlog"
                                             class="form-control" step="1" min="0" value="0" placeholder="Active Backlog">
+                                        <small class="form-text text-primary text-uppercase">Active Backlog</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="number" name="passive_backlog" step="1" min="0" value="0" v-model="update_marks.passive_backlog"
                                             class="form-control" placeholder="Passive Backlog">
-
+                                        <small class="form-text text-primary text-uppercase">Passive Backlog</small>
                                     </div>
                                 </div>
                             </div>
