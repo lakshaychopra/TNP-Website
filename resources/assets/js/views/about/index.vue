@@ -3,10 +3,10 @@
         <div class="sticky-top">
             <nav class="navbar bg-dark navbar-dark">
                 <!-- Brand -->
-                <router-link class="navbar-brand d-none d-md-block" to="/">
+                <router-link class="navbar-brand d-none d-lg-block" to="/">
                     <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
                 </router-link>
-                <router-link class="navbar-brand d-md-none" to="/">
+                <router-link class="navbar-brand d-lg-none" to="/">
                     <img src="/logo.png" alt="logo" height="55px" width="55px">
                 </router-link>
                 <div class="navbar-header">

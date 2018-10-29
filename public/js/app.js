@@ -29425,7 +29425,7 @@ var render = function() {
           _c(
             "router-link",
             {
-              staticClass: "navbar-brand d-none d-md-block",
+              staticClass: "navbar-brand d-none d-lg-block",
               attrs: { to: "/" }
             },
             [
@@ -29444,7 +29444,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "router-link",
-            { staticClass: "navbar-brand d-md-none", attrs: { to: "/" } },
+            { staticClass: "navbar-brand d-lg-none", attrs: { to: "/" } },
             [
               _c("img", {
                 attrs: {
