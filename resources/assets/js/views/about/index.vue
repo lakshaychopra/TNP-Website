@@ -196,7 +196,7 @@
                 <div class="col-md-10">
                     <div id="alumni" class="owl-carousel">
                         <!-- contact info -->
-                        <div class="item col-md-4 float-left" v-for="post in posts" :key="post.id">
+                        <div class="item col-md-4 float-left" v-for="post in posts.slice(0, 3)" :key="post.id">
                             <router-link v-bind:to="'/view/'+post.id">
                                 <div class="card">
                                     <div class="card-body text-center">
@@ -534,7 +534,6 @@
         }
     }
 
-
     #alumni .card:hover a,
     #alumni .card:hover h4 {
         color: #038ed4;
@@ -682,7 +681,6 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     }
 
-
     .about-features .icon {
         margin-bottom: 1.5rem;
         display: inline-block;
@@ -777,11 +775,7 @@
         vertical-align: bottom;
     }
 
-
-    /* ------------------------------------------------------------------- 
- * responsive:
- * about 
- * ------------------------------------------------------------------- */
+    /* responsive: about */
 
     @media only screen and (max-width: 1200px) {
         .about-how-content {
@@ -913,9 +907,7 @@
         font-size: 1.5rem;
     }
 
-    /* ===================================================================
- *  testimonials - (_layout.scss)
- ------------------------------------------------------------------- */
+/* testimonials */
 
     #testimonials {
         background: #FFFFFF;
@@ -970,11 +962,7 @@
         color: rgba(0, 0, 0, 0.5);
     }
 
-
-    /* ------------------------------------------------------------------- 
- * testimonials
- * ------------------------------------------------------------------- */
-
+/* testimonials */
 
     @media only screen and (max-width: 768px) {
         #testimonial-slider .testimonial-author img {
@@ -1014,10 +1002,11 @@
         data() {
             return {
                 nav: false,
-                page: {},
-                posts: {},
+                page: [],
+                posts: [],
             }
         },
+        
         created() {
             axios.get(pageLinkWidget)
                 .then((response) => {
