@@ -1,40 +1,16 @@
 <template>
     <div>
-        <!-- <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header" id="filter">
-                        <h4 class="mb-1"> Filter By</h4>
-                    </div>
-                    <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" @click="searchby_category('All')">All</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="#" @click="searchby_category('Placement')">Placement</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="#" @click="searchby_category('Announcement')">Announcement</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="#" @click="searchby_category('Internship')">Internship</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header" id="link">
-                        <h4 class="mb-1"> Explore</h4>
+                    <div class="card-header" id="about">
+                        <h4 class="mb-1"> Alumni</h4>
                     </div>
-                    <div class="card-body py-1" v-for="pg in page" :key="pg.id" style="padding-left: 10px;padding-right: 10px;">
+                    <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <router-link v-bind:to="'/page/'+pg.url">{{ pg.title }}</router-link>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8BNPvcl-IU4IGn64sN3qDnwaXpHDcDrqrRks6qhbncdhAiQ/viewform"
+                                    target="_blank" rel="noopener">Alumni Assistance Form</a>
                             </li>
                         </ul>
                     </div>
@@ -44,16 +20,35 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header" id="about">
-                        <h4 class="mb-1"> Contact Us</h4>
+                    <div class="card-header" id="link">
+                        <h4 class="mb-1"> Explore</h4>
                     </div>
                     <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                 <a href="../../files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">Placement Broucher</a>
+                                <router-link to="/page/words-from-tpo">Words from TPO</router-link>
                             </li>
                             <li class="list-group-item">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8BNPvcl-IU4IGn64sN3qDnwaXpHDcDrqrRks6qhbncdhAiQ/viewform" target="_blank" rel="noopener">Alumni Assistance Form</a>
+                                <router-link to="/page/invitation">Invitation</router-link>
+                            </li>
+                            <li class="list-group-item">
+                                <router-link to="/page/about-training-and-placement-cell">About Training and Placement
+                                    Cell</router-link>
+                            </li>
+                            <li class="list-group-item">
+                                <router-link to="/genconian">Genconians</router-link>
+                            </li>
+                            <li class="list-group-item">
+                                <router-link to="/page/final-year-members">Final Year Members</router-link>
+                            </li>
+                            <li class="list-group-item">
+                                <router-link to="/page/executive-members">Executive Members</router-link>
+                            </li>
+                            <li class="list-group-item">
+                                <router-link to="/page/placement-broucher">Placement Broucher</router-link>
+                            </li>
+                            <li class="list-group-item">
+                                <router-link to="/page/placement-record">Placement Record</router-link>
                             </li>
                         </ul>
                     </div>
@@ -68,8 +63,9 @@
                     </div>
                     <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
-                             <li class="list-group-item">
-                                <a href="../../files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">Placement Broucher</a>
+                            <li class="list-group-item">
+                                <a href="../../files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">Placement
+                                    Broucher</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="../../files/Evaluation.pdf" download="Evaluation.pdf">Evaluation Performa</a>
@@ -84,7 +80,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -125,45 +121,70 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <a href='#'>
-                        <img src='/images/pwa-download.png'  id="pwaPrompt" alt='Download badge for pwa' width='100%' />
+                    <a href='javascript:void(0)'>
+                        <img src='/images/pwa-download.png' id="pwaPrompt" alt='Download badge for pwa' width='100%' />
                     </a>
                 </div>
             </div>
         </div>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" id="filter">
+                        <h4 class="mb-1"> Filter By</h4>
+                    </div>
+                    <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" @click="searchby_category('All')">All</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" @click="searchby_category('Placement')">Placement</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" @click="searchby_category('Announcement')">Announcement</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" @click="searchby_category('Internship')">Internship</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
 </template>
 <script>
-    import {
-        // categoryURL,
-        pageLinkWidget
-    } from "../../config.js";
-    export default {
-        data() {
-            return {
-                page: {},
-            }
-        },
-        created() {
-            axios.get(pageLinkWidget)
-                .then((response) => {
-                    this.page = response.data.data;
-                })
-                .catch((error) => console.log(error))
-        },
-        methods: {
-            // searchby_category(category) {
-            //     if (category != "All") {
-            //         axios.get(categoryURL + category)
-            //             .then(response => this.$parent.posts = response.data.data.data, this.$parent.pinned_posts =
-            //                 undefined)
-            //     } else {
-            //         this.$parent.getPosts();
-            //         this.$parent.getPinnedPosts();
-            //     }
-            // }
-        }
-    }
+    // import {
+    // categoryURL,
+    //     pageLinkWidget
+    // } from "../../config.js";
+    // export default {
+    // data() {
+    // return {
+    // page: {},
+    // }
+    // },
+    // created() {
+    // axios.get(pageLinkWidget)
+    //     .then((response) => {
+    //         this.page = response.data.data;
+    //     })
+    //     .catch((error) => console.log(error))
+    // },
+    // methods: {
+    // searchby_category(category) {
+    //     if (category != "All") {
+    //         axios.get(categoryURL + category)
+    //             .then(response => this.$parent.posts = response.data.data.data, this.$parent.pinned_posts =
+    //                 undefined)
+    //     } else {
+    //         this.$parent.getPosts();
+    //         this.$parent.getPinnedPosts();
+    //     }
+    // }
+    // }
+    // }
 </script>
 <style scoped>
 </style>
