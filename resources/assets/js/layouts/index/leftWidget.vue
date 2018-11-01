@@ -12,6 +12,9 @@
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8BNPvcl-IU4IGn64sN3qDnwaXpHDcDrqrRks6qhbncdhAiQ/viewform"
                                     target="_blank" rel="noopener">Alumni Assistance Form</a>
                             </li>
+                            <li class="list-group-item">
+                                <router-link to="/page/placement-broucher">Placement Broucher</router-link>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -43,9 +46,6 @@
                             </li>
                             <li class="list-group-item">
                                 <router-link to="/page/executive-members">Executive Members</router-link>
-                            </li>
-                            <li class="list-group-item">
-                                <router-link to="/page/placement-broucher">Placement Broucher</router-link>
                             </li>
                             <li class="list-group-item">
                                 <router-link to="/page/placement-record">Placement Record</router-link>
