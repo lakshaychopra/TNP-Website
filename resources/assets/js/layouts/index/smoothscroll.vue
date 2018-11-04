@@ -1,6 +1,6 @@
 <template>
     <div class="col-xs-12 px-1 d-lg-none" id="go-top">
-        <a class="smoothscroll" href="#">
+        <a class="smoothscroll" href="javascript:void(0)">
             <i class="fa fa-arrow-up"></i>
         </a>
     </div>

@@ -137,16 +137,16 @@
                     <div class="card-body" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <a href="#" @click="searchby_category('All')">All</a>
+                                <a href="javascript:void(0)" @click="searchby_category('All')">All</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="#" @click="searchby_category('Placement')">Placement</a>
+                                <a href="javascript:void(0)" @click="searchby_category('Placement')">Placement</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="#" @click="searchby_category('Announcement')">Announcement</a>
+                                <a href="javascript:void(0)" @click="searchby_category('Announcement')">Announcement</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="#" @click="searchby_category('Internship')">Internship</a>
+                                <a href="javascript:void(0)" @click="searchby_category('Internship')">Internship</a>
                             </li>
                         </ul>
                     </div>

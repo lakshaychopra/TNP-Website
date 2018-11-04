@@ -30,7 +30,7 @@
                     </span>
                 </div> -->
             <button type="submit">Login</button>
-            <p class="message">Not registered? <a href="#"><router-link :to="'reg'">Create an account</router-link></a></p>
+            <p class="message">Not registered? <a href="javascript:void(0)"><router-link :to="'reg'">Create an account</router-link></a></p>
         </form>
         </div>
 

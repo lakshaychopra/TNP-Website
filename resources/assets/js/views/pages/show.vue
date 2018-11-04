@@ -18,7 +18,7 @@
                                     <div class="col-md-12">
                                         <h2>
                                             <router-link :to="{ name: 'view', params: { id:post.id }}">
-                                                <a href="#">{{post.title}}</a>
+                                                <a href="javascript:void(0)">{{post.title}}</a>
                                             </router-link>
                                         </h2>
                                     </div>
@@ -35,7 +35,7 @@
                                             <!-- <small> -->
                                             <i class="fa fa-flag" aria-hidden="true"></i>
                                             <div class="post-meta-text col-primary ">
-                                                <a href="#" @click="$children[1].searchby_category(post.category)">
+                                                <a href="javascript:void(0)" @click="$children[1].searchby_category(post.category)">
                                                     {{post.category}}
                                                 </a>
                                             </div>

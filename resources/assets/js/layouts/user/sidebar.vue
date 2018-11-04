@@ -3,7 +3,7 @@
         <div class="scroll-sidebar">
             <div class="user-profile">
                 <div class="profile-img"> <img :src="getAvatar" alt="user" /> </div>
-                <div class="profile-text"><a href="#">{{getAuthUserFullName()}}</a>
+                <div class="profile-text"><a href="javascript:void(0)">{{getAuthUserFullName()}}</a>
                 </div>
             </div>
             <nav class="sidebar-nav">

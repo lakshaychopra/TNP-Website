@@ -27034,9 +27034,14 @@ var staticRenderFns = [
       "div",
       { staticClass: "col-xs-12 px-1 d-lg-none", attrs: { id: "go-top" } },
       [
-        _c("a", { staticClass: "smoothscroll", attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fa fa-arrow-up" })
-        ])
+        _c(
+          "a",
+          {
+            staticClass: "smoothscroll",
+            attrs: { href: "javascript:void(0)" }
+          },
+          [_c("i", { staticClass: "fa fa-arrow-up" })]
+        )
       ]
     )
   }
@@ -29867,7 +29872,11 @@ var staticRenderFns = [
       "a",
       {
         staticClass: "nav-link float-right",
-        attrs: { href: "#", "data-target": "#more", "data-toggle": "collapse" }
+        attrs: {
+          href: "javascript:void(0)",
+          "data-target": "#more",
+          "data-toggle": "collapse"
+        }
       },
       [
         _vm._v("\n                            More "),
@@ -32045,7 +32054,10 @@ var staticRenderFns = [
                           "a",
                           {
                             staticClass: "social-icon",
-                            attrs: { target: "_blank", href: "#" }
+                            attrs: {
+                              target: "_blank",
+                              href: "javascript:void(0)"
+                            }
                           },
                           [_c("i", { staticClass: "fa fa-twitter" })]
                         )
@@ -37804,7 +37816,11 @@ var render = function() {
                                             [
                                               _c(
                                                 "a",
-                                                { attrs: { href: "#" } },
+                                                {
+                                                  attrs: {
+                                                    href: "javascript:void(0)"
+                                                  }
+                                                },
                                                 [_vm._v(_vm._s(_vm.post.title))]
                                               )
                                             ]
@@ -38572,7 +38588,7 @@ var render = function() {
                     _c(
                       "a",
                       {
-                        attrs: { href: "#" },
+                        attrs: { href: "javascript:void(0)" },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -38946,7 +38962,7 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "profile-text" }, [
-          _c("a", { attrs: { href: "#" } }, [
+          _c("a", { attrs: { href: "javascript:void(0)" } }, [
             _vm._v(_vm._s(_vm.getAuthUserFullName()))
           ])
         ])
@@ -39117,13 +39133,17 @@ var render = function() {
                 _c(
                   "li",
                   [
-                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-cogs fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Manage Users\n                            ")
-                    ])
+                    _c(
+                      "router-link",
+                      { attrs: { to: "javascript:void(0)", exact: "" } },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-cogs fa-fw",
+                          attrs: { "aria-hidden": "true" }
+                        }),
+                        _vm._v(" Manage Users\n                            ")
+                      ]
+                    )
                   ],
                   1
                 )
@@ -39143,13 +39163,17 @@ var render = function() {
                 _c(
                   "li",
                   [
-                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-cogs fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Manage Students\n                            ")
-                    ])
+                    _c(
+                      "router-link",
+                      { attrs: { to: "javascript:void(0)", exact: "" } },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-cogs fa-fw",
+                          attrs: { "aria-hidden": "true" }
+                        }),
+                        _vm._v(" Manage Students\n                            ")
+                      ]
+                    )
                   ],
                   1
                 )
@@ -39160,16 +39184,20 @@ var render = function() {
           _c(
             "li",
             [
-              _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                _c("i", {
-                  staticClass: "fa fa-file-word-o fa-fw",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "hide-menu" }, [
-                  _vm._v("Notice Maker")
-                ])
-              ])
+              _c(
+                "router-link",
+                { attrs: { to: "javascript:void(0)", exact: "" } },
+                [
+                  _c("i", {
+                    staticClass: "fa fa-file-word-o fa-fw",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "hide-menu" }, [
+                    _vm._v("Notice Maker")
+                  ])
+                ]
+              )
             ],
             1
           ),
@@ -39186,13 +39214,17 @@ var render = function() {
                 _c(
                   "li",
                   [
-                    _c("router-link", { attrs: { to: "#", exact: "" } }, [
-                      _c("i", {
-                        staticClass: "fa fa-cogs fa-fw",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Manage Students\n                            ")
-                    ])
+                    _c(
+                      "router-link",
+                      { attrs: { to: "javascript:void(0)", exact: "" } },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-cogs fa-fw",
+                          attrs: { "aria-hidden": "true" }
+                        }),
+                        _vm._v(" Manage Students\n                            ")
+                      ]
+                    )
                   ],
                   1
                 )
@@ -39302,20 +39334,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-file fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("Pages\n                            "),
+    return _c(
+      "a",
+      { attrs: { href: "javascript:void(0)", "data-toggle": "dropdown" } },
+      [
         _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
+          staticClass: "fa fa-file fa-fw",
           attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "hide-menu" }, [
+          _vm._v("Pages\n                            "),
+          _c("i", {
+            staticClass: "fa fa-caret-down fa-fw",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -39335,20 +39371,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-file fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("Post\n                            "),
+    return _c(
+      "a",
+      { attrs: { href: "javascript:void(0)", "data-toggle": "dropdown" } },
+      [
         _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
+          staticClass: "fa fa-file fa-fw",
           attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "hide-menu" }, [
+          _vm._v("Post\n                            "),
+          _c("i", {
+            staticClass: "fa fa-caret-down fa-fw",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -39368,20 +39408,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-user fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("User\n                            "),
+    return _c(
+      "a",
+      { attrs: { href: "javascript:void(0)", "data-toggle": "dropdown" } },
+      [
         _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
+          staticClass: "fa fa-user fa-fw",
           attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "hide-menu" }, [
+          _vm._v("User\n                            "),
+          _c("i", {
+            staticClass: "fa fa-caret-down fa-fw",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -39401,20 +39445,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-graduation-cap fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("Widget\n                            "),
+    return _c(
+      "a",
+      { attrs: { href: "javascript:void(0)", "data-toggle": "dropdown" } },
+      [
         _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
+          staticClass: "fa fa-graduation-cap fa-fw",
           attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "hide-menu" }, [
+          _vm._v("Widget\n                            "),
+          _c("i", {
+            staticClass: "fa fa-caret-down fa-fw",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -39434,20 +39482,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-graduation-cap fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("Students\n                            "),
+    return _c(
+      "a",
+      { attrs: { href: "javascript:void(0)", "data-toggle": "dropdown" } },
+      [
         _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
+          staticClass: "fa fa-graduation-cap fa-fw",
           attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "hide-menu" }, [
+          _vm._v("Students\n                            "),
+          _c("i", {
+            staticClass: "fa fa-caret-down fa-fw",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -39467,20 +39519,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-building fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("Companies\n                            "),
+    return _c(
+      "a",
+      { attrs: { href: "javascript:void(0)", "data-toggle": "dropdown" } },
+      [
         _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
+          staticClass: "fa fa-building fa-fw",
           attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "hide-menu" }, [
+          _vm._v("Companies\n                            "),
+          _c("i", {
+            staticClass: "fa fa-caret-down fa-fw",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -45100,7 +45156,7 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "dropdown-item",
-                                attrs: { href: "#" }
+                                attrs: { href: "javascript:void(0)" }
                               },
                               [
                                 _c("i", {
@@ -45143,7 +45199,7 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "dropdown-item",
-                                attrs: { href: "#" },
+                                attrs: { href: "javascript:void(0)" },
                                 on: {
                                   click: function($event) {
                                     $event.preventDefault()
@@ -45163,7 +45219,7 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "dropdown-item",
-                                attrs: { href: "#" },
+                                attrs: { href: "javascript:void(0)" },
                                 on: {
                                   click: function($event) {
                                     $event.preventDefault()
@@ -45519,7 +45575,7 @@ var render = function() {
                   _c("div", { staticClass: "row" }, [
                     _c("div", { staticClass: "col-md-12" }, [
                       _c("h2", [
-                        _c("a", { attrs: { href: "#" } }, [
+                        _c("a", { attrs: { href: "javascript:void(0)" } }, [
                           _vm._v(_vm._s(_vm.post.title))
                         ])
                       ])
@@ -48992,7 +49048,7 @@ var render = function() {
                     _c(
                       "a",
                       {
-                        attrs: { href: "#" },
+                        attrs: { href: "javascript:void(0)" },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -49267,7 +49323,7 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "profile-text" }, [
-          _c("a", { attrs: { href: "#" } }, [
+          _c("a", { attrs: { href: "javascript:void(0)" } }, [
             _vm._v(_vm._s(_vm.getAuthUserFullName()))
           ])
         ])
@@ -49437,20 +49493,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#", "data-toggle": "dropdown" } }, [
-      _c("i", {
-        staticClass: "fa fa-file fa-fw",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "hide-menu" }, [
-        _vm._v("Post\n                                "),
+    return _c(
+      "a",
+      { attrs: { href: "javascript:void(0)", "data-toggle": "dropdown" } },
+      [
         _c("i", {
-          staticClass: "fa fa-caret-down fa-fw",
+          staticClass: "fa fa-file fa-fw",
           attrs: { "aria-hidden": "true" }
-        })
-      ])
-    ])
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "hide-menu" }, [
+          _vm._v("Post\n                                "),
+          _c("i", {
+            staticClass: "fa fa-caret-down fa-fw",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -51129,7 +51189,7 @@ var render = function() {
                   _c("div", { staticClass: "row" }, [
                     _c("div", { staticClass: "col-md-12" }, [
                       _c("h2", [
-                        _c("a", { attrs: { href: "#" } }, [
+                        _c("a", { attrs: { href: "javascript:void(0)" } }, [
                           _vm._v(_vm._s(_vm.post.title))
                         ])
                       ])
@@ -52470,7 +52530,7 @@ var render = function() {
                     _c(
                       "a",
                       {
-                        attrs: { href: "#" },
+                        attrs: { href: "javascript:void(0)" },
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -52676,7 +52736,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "profile-text" }, [
-          _c("a", { attrs: { href: "#" } }, [
+          _c("a", { attrs: { href: "javascript:void(0)" } }, [
             _vm._v(_vm._s(_vm.getAuthUserFullName()))
           ])
         ])
@@ -53505,7 +53565,7 @@ var render = function() {
                     _c(
                       "a",
                       {
-                        attrs: { href: "#" },
+                        attrs: { href: "javascript:void(0)" },
                         on: {
                           click: function($event) {
                             $event.preventDefault()

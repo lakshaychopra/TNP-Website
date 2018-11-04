@@ -386,7 +386,7 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="#">
+                                            <a class="social-icon" target="_blank" href="javascript:void(0)">
                                                 <i class="fa fa-twitter"></i>
                                             </a>
                                         </li>

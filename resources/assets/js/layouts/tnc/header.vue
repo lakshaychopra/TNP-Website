@@ -34,7 +34,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><router-link to="/configuration"><i class="fa fa-cogs"></i> Configuration</router-link></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#" @click.prevent="logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                                <li><a href="javascript:void(0)" @click.prevent="logout"><i class="fa fa-power-off"></i> Logout</a></li>
                             </ul>
                         </div>
                     </li>

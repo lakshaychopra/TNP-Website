@@ -56,7 +56,7 @@
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="#" @click.prevent="logout">
+                                    <a href="javascript:void(0)" @click.prevent="logout">
                                         <i class="fa fa-power-off"></i> Logout</a>
                                 </li>
                             </ul>

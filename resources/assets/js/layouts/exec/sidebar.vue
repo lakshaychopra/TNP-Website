@@ -5,7 +5,7 @@
                 <div class="profile-img">
                     <img src="/images/user.jpg" alt="user" /> </div>
                 <div class="profile-text">
-                    <a href="#">{{getAuthUserFullName()}}</a>
+                    <a href="javascript:void(0)">{{getAuthUserFullName()}}</a>
                 </div>
             </div>
             <nav class="sidebar-nav">
@@ -17,7 +17,7 @@
                         </router-link>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown">
                             <i class="fa fa-file fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Post
                                 <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>

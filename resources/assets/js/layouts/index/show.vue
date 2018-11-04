@@ -89,7 +89,7 @@
                                                     <div class="col-md-12">
                                                         <h2>
                                                             <router-link :to="{ name: 'view', params: { id:post.id }}">
-                                                                <a href="#">{{post.title}}</a>
+                                                                <a href="javascript:void(0)">{{post.title}}</a>
                                                             </router-link>
                                                         </h2>
                                                     </div>

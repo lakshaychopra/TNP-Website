@@ -11,16 +11,16 @@
                 <i id="menu" class="fa fa-ellipsis-h fa-2x" data-toggle="dropdown" aria-hidden="true"></i>
                 <div class="dropdown-menu">
                   <router-link v-bind:to="{ path:'/exec/post/'+post.id +'/edit'}">
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="javascript:void(0)">
                       <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
                   </router-link>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="" @click.prevent="delPost(post.id)">
                     <i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
                   <div class="dropdown-divider"></div>
-                  <a v-if="post.is_pinned == 0" class="dropdown-item" href="#" @click.prevent="pinPost(post.id)">
+                  <a v-if="post.is_pinned == 0" class="dropdown-item" href="javascript:void(0)" @click.prevent="pinPost(post.id)">
                     <i class="fa fa-thumb-tack" aria-hidden="true"></i> Pin To Top</a>
-                  <a v-else class="dropdown-item" href="#" @click.prevent="unpinPost(post.id)">
+                  <a v-else class="dropdown-item" href="javascript:void(0)" @click.prevent="unpinPost(post.id)">
                     <i class="fa fa-thumb-tack" aria-hidden="true"></i> Unpin </a>
                 </div>
               </div>

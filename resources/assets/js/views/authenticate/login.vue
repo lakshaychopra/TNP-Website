@@ -29,7 +29,7 @@
                     </span> -->
                 </div>
             <button type="submit">Next</button>
-            <p class="message"><a href="#">Forgot password?</a></p>
+            <p class="message"><a href="javascript:void(0)">Forgot password?</a></p>
         </form>
         </div>
     </div>

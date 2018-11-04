@@ -5,7 +5,7 @@
                 <div class="profile-img">
                     <img src="/images/user.jpg" alt="user" /> </div>
                 <div class="profile-text">
-                    <a href="#">{{getAuthUserFullName()}}</a>
+                    <a href="javascript:void(0)">{{getAuthUserFullName()}}</a>
                 </div>
             </div>
             <nav class="sidebar-nav">
@@ -17,7 +17,7 @@
                         </router-link>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown">
                             <i class="fa fa-file fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Pages
                                 <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
@@ -42,7 +42,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown">
                             <i class="fa fa-file fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Post
                                 <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
@@ -72,7 +72,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown">
                             <i class="fa fa-user fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">User
                                 <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
@@ -95,14 +95,14 @@
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="#" exact>
+                                <router-link to="javascript:void(0)" exact>
                                     <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Users
                                 </router-link>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown">
                             <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Widget
                                 <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
@@ -115,20 +115,20 @@
                                 </strong>
                             </li>
                             <li>
-                                <router-link to="#" exact>
+                                <router-link to="javascript:void(0)" exact>
                                     <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Students
                                 </router-link>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <router-link to="#" exact>
+                        <router-link to="javascript:void(0)" exact>
                             <i class="fa fa-file-word-o fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Notice Maker</span>
                         </router-link>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown">
                             <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Students
                                 <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
@@ -141,14 +141,14 @@
                                 </strong>
                             </li>
                             <li>
-                                <router-link to="#" exact>
+                                <router-link to="javascript:void(0)" exact>
                                     <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Students
                                 </router-link>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown">
                             <i class="fa fa-building fa-fw" aria-hidden="true"></i>
                             <span class="hide-menu">Companies
                                 <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>

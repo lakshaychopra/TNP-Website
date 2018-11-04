@@ -34,7 +34,7 @@
 
                                     <div class="col-md-12">
                                         <h2>
-                                            <a href="#">{{post.title}}</a>
+                                            <a href="javascript:void(0)">{{post.title}}</a>
                                         </h2>
                                     </div>
                                 </div>

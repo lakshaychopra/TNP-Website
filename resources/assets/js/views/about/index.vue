@@ -25,7 +25,7 @@
                             <router-link to="/" class="pull-right nav-link">
                                 <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back
                             </router-link>
-                            <a class="nav-link float-right" href="#" data-target="#more" data-toggle="collapse">
+                            <a class="nav-link float-right" href="javascript:void(0)" data-target="#more" data-toggle="collapse">
                                 More <i class="fa fa-caret-down" aria-hidden="true"></i>
                             </a>
                         </li>
