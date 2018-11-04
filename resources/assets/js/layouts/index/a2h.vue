@@ -123,7 +123,7 @@ var deferredPrompt;
         methods: {
 
             an() {
-                console.log('an worked');
+                // console.log('an worked');
                 window.addEventListener('beforeinstallprompt', function (e) {
                     // Prevent Chrome 67 and earlier from automatically showing the prompt
                     e.preventDefault();
@@ -143,7 +143,7 @@ var deferredPrompt;
             },
 
             addToHomeScreen: function() {
-                console.log(deferredPrompt);
+                // console.log(deferredPrompt);
                 var a2hsBtn = document.querySelector(".ad2hs-prompt");
 
                 // hide our user interface that shows our A2HS button

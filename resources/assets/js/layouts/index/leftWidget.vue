@@ -121,9 +121,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <!-- <a href='javascript:void(0)'> -->
-                        <img src='/images/pwa-download.png' id="pwaPrompt" v-on:click="this.an()" alt='Download badge for pwa' width='100%' />
-                    <!-- </a> --> 
+                    <a href="javascript:void(0)">
+                        <img src='/images/pwa-download.png' id="pwaPrompt" v-on:click="installed" alt='Download badge for pwa'
+                            width='100%' />
+                    </a>
                 </div>
             </div>
         </div>
@@ -155,7 +156,18 @@
     </div>
 </template>
 <script>
-
+    export default {
+        methods: {
+            installed(event) {
+                // if (window.matchMedia('(display-mode: standalone)').matches) {
+                alert('Already installed!!')
+                // }
+                // else{
+                //     this.an();
+                // }
+            }
+        }
+    }
     // import {
     // categoryURL,
     //     pageLinkWidget
@@ -188,4 +200,5 @@
     // }
 </script>
 <style scoped>
+
 </style>

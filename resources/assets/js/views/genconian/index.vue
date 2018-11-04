@@ -452,8 +452,9 @@
                         </a>
                     </li>
                     <li class="my-3">
-                        <a href='#'>
-                            <img src='/images/pwa-download.png' id="pwaPrompt" alt='Download badge for pwa' width='100%' />
+                        <a href="javascript:void(0)">
+                            <img src='/images/pwa-download.png' id="pwaPrompt" v-on:click="installed" alt='Download badge for pwa'
+                                width='100%' />
                         </a>
                     </li>
 
@@ -547,6 +548,16 @@
                     }
                 });
             }.bind(vm));
+        },
+        methods: {
+            installed(event) {
+                // if (window.matchMedia('(display-mode: standalone)').matches) {
+                alert('Already installed!!')
+                // }
+                // else{
+                //     this.an();
+                // }
+            }
         }
     }
 </script>
