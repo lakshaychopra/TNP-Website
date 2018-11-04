@@ -43,7 +43,7 @@
                                                             <h2>
                                                                 <router-link :to="{ name: 'view', params: { id:pin.id }}"
                                                                     :searchbox="false">
-                                                                    <a href="#">{{pin.title}}</a>
+                                                                    <a href="javascript:void(0)">{{pin.title}}</a>
                                                                 </router-link>
                                                             </h2>
                                                         </div>
@@ -63,7 +63,7 @@
                                                                 <!-- <small> -->
                                                                 <i class="fa fa-flag" aria-hidden="true"></i>
                                                                 <div class="post-meta-text col-primary float-right ">
-                                                                    <a href="#" @click="searchby_category(pin.category)">
+                                                                    <a href="javascript:void(0)" @click="searchby_category(pin.category)">
                                                                         {{pin.category}}
                                                                     </a>
                                                                 </div>
@@ -93,7 +93,7 @@
                                         <div class="card-body text-justify">
                                             <!-- <div>
                                         <span class="pull-right share-button">
-                                            <a href="#">
+                                            <a href="javascript:void(0)">
                                                 <i id="share" class="fa fa-share-alt fa-2x" aria-hidden="true"></i>
                                             </a>
                                         </span>
@@ -107,7 +107,7 @@
                                                     style="padding: 5px;background-color: #fff;"></div>
                                                 <router-link :to="{ name: 'view', params: { id:pin.id }}" :searchbox="false">
                                                     <button class="btn btn-block btn-default text-center" @click="gethtml(pin.body)">
-                                                        <a href="" style="color: #333;">Read More
+                                                        <a href="javascript:void(0)" style="color: #333;background-color:#e6e6e6;">Read More
                                                             <i class="fa fa-plus"></i>
                                                         </a>
                                                     </button>
@@ -198,7 +198,7 @@
                                                         <div class="col-md-12">
                                                             <h2>
                                                                 <router-link :to="{ name: 'view', params: { id:post.id }}">
-                                                                    <a href="#">{{post.title}}</a>
+                                                                    <a href="javascript:void(0)">{{post.title}}</a>
                                                                 </router-link>
                                                             </h2>
                                                         </div>
@@ -216,7 +216,7 @@
                                                                 <!-- <small> -->
                                                                 <i class="fa fa-flag" aria-hidden="true"></i>
                                                                 <div class="post-meta-text float-right col-primary ">
-                                                                    <a href="#" @click="searchby_category(post.category)">
+                                                                    <a href="javascript:void(0)" @click="searchby_category(post.category)">
                                                                         {{post.category}}
                                                                     </a>
                                                                 </div>
@@ -242,7 +242,7 @@
                                                     style="padding:5px; padding-bottom:0; background-color: #fff;"></div>
                                                 <router-link :to="{ name: 'view', params: { id:post.id }}" :searchbox="false">
                                                     <button class="btn btn-block btn-default text-center" @click="gethtml(post.body)">
-                                                        <a href="" style="color: #333;">Read More
+                                                        <a href="javascript:void(0)" style="color: #333; background-color:#e6e6e6;">Read More
                                                             <i class="fa fa-plus"></i>
                                                         </a>
                                                     </button>

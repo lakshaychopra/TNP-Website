@@ -121,9 +121,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <a href='javascript:void(0)'>
-                        <img src='/images/pwa-download.png' id="pwaPrompt" alt='Download badge for pwa' width='100%' />
-                    </a>
+                    <!-- <a href='javascript:void(0)'> -->
+                        <img src='/images/pwa-download.png' id="pwaPrompt" v-on:click="this.an()" alt='Download badge for pwa' width='100%' />
+                    <!-- </a> --> 
                 </div>
             </div>
         </div>
@@ -155,6 +155,7 @@
     </div>
 </template>
 <script>
+
     // import {
     // categoryURL,
     //     pageLinkWidget

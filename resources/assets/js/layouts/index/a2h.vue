@@ -6,7 +6,7 @@
                     <h1>Add T&amp;P To Your Homescreen!</h1>
                 </div>
                 <div class="col">
-                    <button class="btn btn-block py-3 my-3">Add To Your Homescreen</button>
+                    <button class="btn btn-block py-3 my-3" @click="addToHomeScreen">Add To Your Homescreen</button>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
         outline: 0;
         text-decoration: none;
         text-align: center;
-        background:#1952ab;
+        background: #1952ab;
     }
 
     .ad2hs-prompt {
@@ -106,5 +106,71 @@
 </style>
 
 <script>
+var deferredPrompt;
+    export default {
+        data() {
+            return {
+                deferredPrompt: null,            }
+        },
+        created() {
+            // this.$nextTick(function() {
+            this.$nextTick(function () {
+                // window.addEventListener('beforeinstallprompt', this.showAddToHomeScreen());
+                this.an();
+            });
+            // })
+        },
+        methods: {
 
+            an() {
+                console.log('an worked');
+                window.addEventListener('beforeinstallprompt', function (e) {
+                    // Prevent Chrome 67 and earlier from automatically showing the prompt
+                    e.preventDefault();
+                    // Stash the event so it can be triggered later.
+                    deferredPrompt = e;
+                    // this.demo =1;
+                    //    this.showAddToHomeScreen();
+                    // console.log();
+
+                    var a2hsBtn = document.querySelector(".ad2hs-prompt");
+
+                    a2hsBtn.style.display = "initial";
+
+                    //   this.addToHomeScreen(deferredPrompt);  
+
+                })
+            },
+
+            addToHomeScreen: function() {
+                console.log(deferredPrompt);
+                var a2hsBtn = document.querySelector(".ad2hs-prompt");
+
+                // hide our user interface that shows our A2HS button
+                a2hsBtn.style.display = 'none';
+
+                if (deferredPrompt) {
+                    // Show the prompt
+                    deferredPrompt.prompt();
+
+                    // Wait for the user to respond to the prompt
+                    deferredPrompt.userChoice
+                        .then(function (choiceResult) {
+
+                            if (choiceResult.outcome === 'accepted') {
+                                console.log('User accepted the A2HS prompt');
+                            } else {
+                                console.log('User dismissed the A2HS prompt');
+                            }
+
+                           deferredPrompt = null;
+
+                        });
+
+                }
+
+            },
+
+        }
+    }
 </script>
