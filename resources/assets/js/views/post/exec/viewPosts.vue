@@ -54,7 +54,7 @@
                   <a v-else class="dropdown-item" href="javascript:void(0)" @click.prevent="unpinPost(post.id)">
                     <i class="fa fa-thumb-tack" aria-hidden="true"></i> Unpin </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)" @click.prevent="notifyPost(post.id)">
+                  <a class="dropdown-item" href="https://onesignal.com/apps/c2c76dab-8872-40fc-a694-ac0a73e1b6b2/templates"  target="_blank" rel="noopener">
                     <i class="fa fa-share" aria-hidden="true"></i> Notify</a>
                 </div>
               </div>

@@ -46598,26 +46598,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("div", { staticClass: "dropdown-divider" }),
                             _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "javascript:void(0)" },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    _vm.notifyPost(post.id, post.title)
-                                  }
-                                }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "fa fa-share",
-                                  attrs: { "aria-hidden": "true" }
-                                }),
-                                _vm._v(" Notify")
-                              ]
-                            )
+                            _vm._m(1, true)
                           ],
                           1
                         )
@@ -46724,6 +46705,30 @@ var staticRenderFns = [
           staticClass: "fa fa-caret-down",
           attrs: { "aria-hidden": "true" }
         })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "dropdown-item",
+        attrs: {
+          href:
+            "https://onesignal.com/apps/c2c76dab-8872-40fc-a694-ac0a73e1b6b2/templates",
+          target: "_blank",
+          rel: "noopener"
+        }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-share",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" Notify")
       ]
     )
   }
@@ -51980,26 +51985,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "dropdown-divider" }),
                           _vm._v(" "),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "dropdown-item",
-                              attrs: { href: "javascript:void(0)" },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  _vm.notifyPost(post.id)
-                                }
-                              }
-                            },
-                            [
-                              _c("i", {
-                                staticClass: "fa fa-share",
-                                attrs: { "aria-hidden": "true" }
-                              }),
-                              _vm._v(" Notify")
-                            ]
-                          )
+                          _vm._m(1, true)
                         ],
                         1
                       )
@@ -52102,6 +52088,30 @@ var staticRenderFns = [
           staticClass: "fa fa-caret-down",
           attrs: { "aria-hidden": "true" }
         })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "dropdown-item",
+        attrs: {
+          href:
+            "https://onesignal.com/apps/c2c76dab-8872-40fc-a694-ac0a73e1b6b2/templates",
+          target: "_blank",
+          rel: "noopener"
+        }
+      },
+      [
+        _c("i", {
+          staticClass: "fa fa-share",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" Notify")
       ]
     )
   }
