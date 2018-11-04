@@ -105,9 +105,9 @@
                                             <span v-if="pin.body.length>800">
                                                 <div class="mb-3 text-justify show-read-more" v-html="gethtml(pin.body)"
                                                     style="padding: 5px;background-color: #fff;"></div>
-                                                <router-link :to="{ name: 'view', params: { id:pin.id }}" :searchbox="false">
+                                                <router-link :to="{ name: 'view', params: { id:pin.id }}" :searchbox="false" style="background-color:rgb(223, 219, 219);">
                                                     <button class="btn btn-block btn-default text-center" @click="gethtml(pin.body)">
-                                                        <a href="javascript:void(0)" style="color: #333;background-color:#e6e6e6;">Read More
+                                                        <a href="javascript:void(0)" style="color: #333;">Read More
                                                             <i class="fa fa-plus"></i>
                                                         </a>
                                                     </button>
@@ -240,9 +240,9 @@
                                             <span v-if="post.body.length>800">
                                                 <div class="mb-3 text-justify show-read-more" v-html="gethtml(post.body)"
                                                     style="padding:5px; padding-bottom:0; background-color: #fff;"></div>
-                                                <router-link :to="{ name: 'view', params: { id:post.id }}" :searchbox="false">
-                                                    <button class="btn btn-block btn-default text-center" @click="gethtml(post.body)">
-                                                        <a href="javascript:void(0)" style="color: #333; background-color:#e6e6e6;">Read More
+                                                <router-link :to="{ name: 'view', params: { id:post.id }}" :searchbox="false" style="background-color:rgb(223, 219, 219);">
+                                                    <button class="btn btn-block btn-default text-center " @click="gethtml(post.body)">
+                                                        <a href="javascript:void(0)" style="color: #333;">Read More
                                                             <i class="fa fa-plus"></i>
                                                         </a>
                                                     </button>

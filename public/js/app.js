@@ -27357,6 +27357,10 @@ var render = function() {
                                                 _c(
                                                   "router-link",
                                                   {
+                                                    staticStyle: {
+                                                      "background-color":
+                                                        "rgb(223, 219, 219)"
+                                                    },
                                                     attrs: {
                                                       to: {
                                                         name: "view",
@@ -27386,9 +27390,7 @@ var render = function() {
                                                           "a",
                                                           {
                                                             staticStyle: {
-                                                              color: "#333",
-                                                              "background-color":
-                                                                "#e6e6e6"
+                                                              color: "#333"
                                                             },
                                                             attrs: {
                                                               href:
@@ -27898,6 +27900,10 @@ var render = function() {
                                                 _c(
                                                   "router-link",
                                                   {
+                                                    staticStyle: {
+                                                      "background-color":
+                                                        "rgb(223, 219, 219)"
+                                                    },
                                                     attrs: {
                                                       to: {
                                                         name: "view",
@@ -27911,7 +27917,7 @@ var render = function() {
                                                       "button",
                                                       {
                                                         staticClass:
-                                                          "btn btn-block btn-default text-center",
+                                                          "btn btn-block btn-default text-center ",
                                                         on: {
                                                           click: function(
                                                             $event
@@ -27927,9 +27933,7 @@ var render = function() {
                                                           "a",
                                                           {
                                                             staticStyle: {
-                                                              color: "#333",
-                                                              "background-color":
-                                                                "#e6e6e6"
+                                                              color: "#333"
                                                             },
                                                             attrs: {
                                                               href:
