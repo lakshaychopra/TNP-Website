@@ -217,14 +217,12 @@
                             // toastr['success']("User Added!!");
                             this.$parent.step = 5;
                             // this.$router.push('/req');
-
                         }
                     }).catch(errors => {
                         console.log(errors);
                     });
                     console.log(response);
-                    //                                                               if (response.status == 200) {
-
+                    // if (response.status == 200) {
                     // }
                 }).catch(error => {
                     console.log(error);

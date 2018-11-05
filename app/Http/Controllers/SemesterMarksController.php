@@ -22,10 +22,10 @@ class SemesterMarksController extends Controller
     }
     
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function index(Request $request)
     {
         $auth = JWTAuth::parseToken()->authenticate();
@@ -33,13 +33,13 @@ class SemesterMarksController extends Controller
         $semesterMarks = $this->repository->list($limit);
         return $this->respondData($semesterMarks);
     }
-
+    
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
     public function store(CreateSemesterMarksRequest $request)
     {
         $auth = JWTAuth::parseToken()->authenticate();
@@ -59,25 +59,25 @@ class SemesterMarksController extends Controller
             return $this->respondException($e);
         }
     }
-
+    
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\SemesterMarks  $semesterMarks
-     * @return \Illuminate\Http\Response
-     */
+    * Display the specified resource.
+    *
+    * @param  \App\Models\SemesterMarks  $semesterMarks
+    * @return \Illuminate\Http\Response
+    */
     public function show(SemesterMarks $semesterMarks)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         return $this->respondData($semesterMarks);
     }
-
+    
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\SemesterMarks  $semesterMarks
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for editing the specified resource.
+    *
+    * @param  \App\Models\SemesterMarks  $semesterMarks
+    * @return \Illuminate\Http\Response
+    */
     public function edit($semesterMarks = null)
     {
         $auth = JWTAuth::parseToken()->authenticate();
@@ -86,54 +86,56 @@ class SemesterMarksController extends Controller
             return $this->respondData($data);
         }
     }
-
+    
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SemesterMarks  $semesterMarks
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateSemesterMarksRequest $request, SemesterMarks $semesterMarks)
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  \App\Models\SemesterMarks  $semesterMarks
+    * @return \Illuminate\Http\Response
+    */
+    public function update(UpdateSemesterMarksRequest $request,SemesterMarks $semesterMarks)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
-            DB::beginTransaction();
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            // $data = $request->all();
-            $semesterMarks->univ_roll_no = $request->univ_roll_no;
-            $semesterMarks->semester = $request->semester;
-            $semesterMarks->obtained_marks = $request->obtained_marks;
-            $semesterMarks->max_marks = $request->max_marks;
-            $semesterMarks->credits = $request->credits;
-            $semesterMarks->active_backlog = $request->active_backlog;
-            $semesterMarks->passive_backlog = $request->passive_backlog;
-            $semesterMarks->marks_type = $request->marks_type;
-            $semesterMarks->percentage = $request->percentage;
-            $semesterMarks->semester_status = $request->semester_status;
-            $semesterMarks->save(); 
-            DB::commit();
-            return $this->respondSuccess('Updated',$semesterMarks);
-        } catch (Exception $e) {
-            DB::rollback();
-            return $this->respondException($e);
+            DB::beginTransaction();
+            $uid = SemesterMarks::pluck('id');
+            $updateData = DB::table('semester_marks')->where('id', $uid)
+            ->update([
+                'semester'  => $request->semester,
+                'obtained_marks'  => $request->obtained_marks,
+                'max_marks'  => $request->max_marks,
+                'credits'  => $request->credits,
+                'active_backlog'  => $request->active_backlog,
+                'passive_backlog'  => $request->passive_backlog,
+                'marks_type'  => $request->marks_type,
+                'percentage'  => $request->percentage,
+                'semester_status'  => $request->semester_status,
+                ]);
+                DB::commit();
+                return $this->respondSuccess('Updated',$updateData);
+            } catch (Exception $e) {
+                DB::rollback();
+                return $this->respondException($e);
+            }
         }
+        
+        /**
+        * Remove the specified resource from storage.
+        *
+        * @param  \App\Models\SemesterMarks  $semesterMarks
+        * @return \Illuminate\Http\Response
+        */
+        public function destroy(SemesterMarks $semesterMarks)
+        {
+            $auth = JWTAuth::parseToken()->authenticate();
+            $delete = $this->repository->delete($semesterMarks);
+            $index= SemesterMarks::orderBy('created_at', 'desc')->get();
+            return $this->respondSuccess('Deleted', $index);
+        }
+        
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\SemesterMarks  $semesterMarks
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(SemesterMarks $semesterMarks)
-    {
-        $auth = JWTAuth::parseToken()->authenticate();
-        $delete = $this->repository->delete($semesterMarks);
-        $index= SemesterMarks::orderBy('created_at', 'desc')->get();
-        return $this->respondSuccess('Deleted', $index);
-    }
-
-}
+    
