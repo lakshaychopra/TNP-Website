@@ -22,34 +22,42 @@
     <script type='application/ld+json'>
         {
             "@context": "http://schema.org/",
-            "@type": "CollegeOrUniversity",
+            "@type": "Organisation",
+            "url": "https://www.tnpgndec.com",
+            "logo": "https://www.tnpgndec.com/images/icons/300x300.png",
             "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "India",
                 "addressLocality": "Ludhiana, Punjab",
-                "addressRegion": "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006",
-                "postOfficeBoxNumber ": "141006 ",
-                "postalCode ": "141006 ",
-                "streetAddress ": "Guru Nanak Dev Engineering College Gill Park Ludhiana 141006 ",
-                "email ": "tpo@gndec.ac.in ",
-                "faxNumber ": " + 911612501106 ",
-                "telephone ": " + 9101615064510 ",
+                "addressRegion": "Guru Nanak Dev Engineering College Gill Park Ludhiana",
+                "postOfficeBoxNumber ": "141006",
+                "postalCode ": "141006",
+                "streetAddress ": "Guru Nanak Dev Engineering College Gill Park",
+                "email ": "tpo@gndec.ac.in",
+                "faxNumber ": "0161-2501106",
+                "telephone ": "0161-5064510",
                 "alternateName ": "T&P Cell, GNDEC",
                 "description": "This is official application of Training and Placement Cell, GNDEC, Ludhiana.",
                 "disambiguatingDescription": "Training and Placement Cell, GNDEC",
                 "name": "Training and Placement Cell, GNDEC"
             },
+            "contactPoint": [{
+                "@type": "ContactPoint",
+                "telephone": "+91-98722-19178",
+                "contactType": "TPO",
+                "areaServed": "IN"
+              }]
             "mainEntityOfPage": "https://www.tnpgndec.com",
             "brand": "https://www.tnpgndec.com",
             "email": "tpo@gndec.ac.in",
-            "faxNumber": "+911612501106 ",
+            "faxNumber": "01612501106",
             "foundingDate": "1956",
             "globalLocationNumber": "+91",
-            "telephone": "+919872219178",
-            "alternateName": "T&P Cell,GNDEC ",
-            "description ": "This is official application of Training and Placement Cell, GNDEC,Ludhiana.",
-            "disambiguatingDescription ": "Training and Placement Cell, GNDEC ",
-            "name ": "Training and Placement Cell, GNDEC "
+            "telephone": "9872219178",
+            "alternateName": "T&P Cell, GNDEC",
+            "description ": "This is official application of Training and Placement Cell, GNDEC, Ludhiana.",
+            "disambiguatingDescription ": "Training and Placement Cell, GNDEC",
+            "name ": "Training and Placement Cell, GNDEC"
         }
     </script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=6g1ocyfhfb8feorgc0xhm55uck1b2gj3uyizkrcl13qii61m"></script>
