@@ -23,6 +23,30 @@
             <priority>0.5</priority>
       </url>
       <url>
+            <loc>https://www.tnpgndec.com/page/invitation</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/genconian</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/page/final-year-members</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/page/executive-members</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/page/placement-record</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
+            <loc>https://www.tnpgndec.com/page/placement-broucher</loc>
+            <priority>0.5</priority>
+      </url>
+      <url>
             <loc>https://www.tnpgndec.com/view/100</loc>
             <priority>0.5</priority>
       </url>
