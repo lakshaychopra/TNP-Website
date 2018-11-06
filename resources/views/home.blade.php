@@ -46,7 +46,7 @@
                 "telephone": "+91-98722-19178",
                 "contactType": "TPO",
                 "areaServed": "IN"
-              }]
+            }],
             "mainEntityOfPage": "https://www.tnpgndec.com",
             "brand": "https://www.tnpgndec.com",
             "email": "tpo@gndec.ac.in",
