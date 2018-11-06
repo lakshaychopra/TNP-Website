@@ -22,7 +22,7 @@
     <script type='application/ld+json'>
         {
             "@context": "http://schema.org/",
-            "@type": "Organisation",
+            "@type": "Organization",
             "url": "https://www.tnpgndec.com",
             "logo": "https://www.tnpgndec.com/images/icons/300x300.png",
             "address": {
@@ -44,7 +44,7 @@
             "contactPoint": [{
                 "@type": "ContactPoint",
                 "telephone": "+91-98722-19178",
-                "contactType": "TPO",
+                "contactType": "technical support",
                 "areaServed": "IN"
             }],
             "mainEntityOfPage": "https://www.tnpgndec.com",
