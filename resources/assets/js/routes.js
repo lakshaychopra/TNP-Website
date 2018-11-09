@@ -229,10 +229,10 @@ let routes = [{
                 path: '/req',
                 component: require('./views/student/req')
             },
-            //  {
-            //      path: '/profileForm',
-            //      component: require('./views/student/profileForm')
-            //  },
+            {
+                path: '/aggregate',
+                component: require('./views/student/aggregate')
+            },
         ]
     },
 
