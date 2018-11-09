@@ -20825,7 +20825,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import auth from './packages/auth/auth'
 
 /**
- * Nex;t, we will create a fresh Vue application instance and attach it to
+ * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
@@ -58340,13 +58340,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             formData.append('percentage', this.student.percentage);
             formData.append('semester_status', this.student.semester_status);
             formData.append('_method', 'PUT');
-            // console.log(this.$store.state.auth.username);
-            // console.log('1');
             console.log(this.student);
             axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["z" /* storeStudentDegreeURL */] + this.student.id, formData).then(function (response) {
                 console.log(response);
                 axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this2.statusChange).then(function (statusresponse) {
-                    if (statusresponse.status == 200) {
+                    if (statusresponse.status == 200 && _this2.student.semester_status == 9) {
                         // toastr['success']("User Added!!");
                         _this2.$parent.step = 6;
                         // this.$router.push('/req');
@@ -77008,9 +77006,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -77126,7 +77121,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this2.statusChange).then(function (statusresponse) {
                     if (statusresponse.status == 200) {
                         // toastr['success']("User Added!!");
-                        _this2.$parent.step = 5;
+                        // this.$parent.step = 5;
                         // this.$router.push('/req');
                     }
                 }).catch(function (errors) {
@@ -77156,7 +77151,7 @@ var render = function() {
         _c("div", { staticClass: "form-material card" }, [
           _c("div", { staticClass: "card-body" }, [
             _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
-              _vm._v("Degree Details")
+              _vm._v("Aggregate")
             ]),
             _vm._v(" "),
             _c(
@@ -77172,48 +77167,7 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.student.semester_status,
-                            expression: "student.semester_status"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "number",
-                          name: "semester",
-                          placeholder: "Semester",
-                          disabled: ""
-                        },
-                        domProps: { value: _vm.student.semester_status },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.student,
-                              "semester_status",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "small",
-                        {
-                          staticClass: "form-text text-primary text-uppercase"
-                        },
-                        [_vm._v("Semester")]
-                      )
-                    ])
-                  ]),
+                  _vm._m(0),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("div", { staticClass: "form-group" }, [
@@ -77635,7 +77589,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(0)
+                _vm._m(1)
               ]
             )
           ])
@@ -77645,6 +77599,14 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("div", { staticClass: "form-group" })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

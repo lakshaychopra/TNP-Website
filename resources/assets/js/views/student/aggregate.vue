@@ -4,16 +4,13 @@
             <div class="col-sm-12">
                 <div class="form-material card">
                     <div class="card-body">
-                        <h2 class="card-title mt-3 text-primary">Degree Details</h2>
+                        <h2 class="card-title mt-3 text-primary">Aggregate</h2>
 
                         <!-- <post-form :id="id"></post-form> -->
                         <form method="post" @submit.prevent="submit">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="number" name="semester" v-model="student.semester_status"
-                                            placeholder="Semester" class="form-control" disabled>
-                                        <small class="form-text text-primary text-uppercase">Semester</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -215,7 +212,7 @@
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
                         if (statusresponse.status == 200) {
                             // toastr['success']("User Added!!");
-                            this.$parent.step = 5;
+                            // this.$parent.step = 5;
                             // this.$router.push('/req');
                         }
                     }).catch(errors => {

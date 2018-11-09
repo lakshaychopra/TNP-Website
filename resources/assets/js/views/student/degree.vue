@@ -207,13 +207,11 @@
                 formData.append('percentage', this.student.percentage);
                 formData.append('semester_status', this.student.semester_status);
                 formData.append('_method', 'PUT');
-                // console.log(this.$store.state.auth.username);
-                // console.log('1');
                 console.log(this.student);
                 axios.post(storeStudentDegreeURL + this.student.id, formData).then(response => {
                     console.log(response);
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
-                        if (statusresponse.status == 200) {
+                        if (statusresponse.status == 200 && this.student.semester_status == 9) {
                             // toastr['success']("User Added!!");
                             this.$parent.step = 6;
                             // this.$router.push('/req');
