@@ -82,6 +82,7 @@
         storeStudentMeURL,
         storeStudentPeURL,
         storeStudentDegreeURL,
+        storeStudentAggregateURL,
         formstepChangeURL
     } from "../../config.js";
     export default {
@@ -120,73 +121,48 @@
             },
             submit() {
                 axios.post(firstLoginURL, this.id).then(response => {
-                    console.log(response);
-                    if (response.status == 200) {
-                        axios.post(statusChangeURL, this.tnc).then(res => {
-                            console.log(res);
-                            if (res.status == 200) {
-                                axios.post(formstepChangeURL, this.form_step).then(stat => {
-                                    console.log(stat);
-                                    if (stat.status == 200) {
-                                        console.log(stat);
-                                        axios.post(storeStudentURL, this.username).then(resp => {
-                                            if (resp.status == 200) {
-                                                axios.post(storeStudentMeURL, this.username)
-                                                    .then(meresponse => {
-                                                        axios.post(
-                                                            storeStudentPeURL,
-                                                            this.username).then(
-                                                            peresponse => {
-                                                                if (peresponse.status ==
-                                                                    200) {
-                                                                     axios.post(
-                                                                        storeStudentDegreeURL,
-                                                                        this.sem_create).then(
-                                                                        deresponse => {
-                                                                            if (deresponse.status ==
-                                                                                200) {
-                                                                                toastr[
-                                                                                    'success'
-                                                                                ](
-                                                                                    "User Added!!"
-                                                                                );
-                                                                                this.$parent
-                                                                                    .step =
-                                                                                    2;
-                                                                                // this.$router.push('/req');
-
-                                                                            }
-                                                                        }).catch(deerrors => {
-                                                                        console.log(
-                                                                            deerrors
-                                                                        );
-                                                                    });                                                                    // this.$router.push('/req');
-
-                                                                }
-                                                            }).catch(peerrors => {
-                                                            console.log(
-                                                                peerrors
-                                                            );
-                                                        });
-                                                    }).catch(errors => {
-                                                        console.log(errors);
-                                                    });
-                                                // this.$router.push('/userlogin');
-                                            }
-                                        }).catch(er => {
-                                            console.log(er);
-                                        });
-                                        // toastr['success']("User Added!!");
-                                        // this.$router.push('/userlogin');
-                                    }
-                                }).catch(erro => {
-                                    console.log(erro);
-                                });
-                            }
-                        }).catch(err => {
-                            console.log(err);
-                        });
-                    }
+                if (response.status == 200) {
+                    axios.post(statusChangeURL, this.tnc).then(res => {
+                if (res.status == 200) {
+                    axios.post(formstepChangeURL, this.form_step).then(stat => {
+                if (stat.status == 200) {
+                    axios.post(storeStudentURL, this.username).then(resp => {
+                if (resp.status == 200) {
+                    axios.post(storeStudentMeURL, this.username).then(meresponse => {
+                    axios.post(storeStudentPeURL, this.username).then(peresponse => {
+                if (peresponse.status == 200) {
+                    axios.post(storeStudentDegreeURL, this.sem_create).then( deresponse => {
+                if (deresponse.status == 200) {
+                    axios.post(storeStudentAggregateURL, this.username).then( aggresponse => {
+                    toastr['success']( "User Added!!" );
+                    this.$parent.step =2;
+                }).catch(aggerrors => {
+                    console.log(aggerrors);
+                });
+                }
+                }).catch(deerrors => {
+                    console.log(deerrors);
+                });                                                                    
+                }
+                }).catch(peerrors => {
+                    console.log(peerrors);
+                });
+                }).catch(errors => {
+                    console.log(errors);
+                });
+                }
+                }).catch(er => {
+                    console.log(er);
+                });
+                }
+                }).catch(erro => {
+                    console.log(erro);
+                });
+                }
+                }).catch(err => {
+                    console.log(err);
+                });
+                }
                 }).catch(error => {
                     console.log(error);
                 });

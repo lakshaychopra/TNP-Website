@@ -5,6 +5,7 @@
         <matrics-form v-else-if="step == 3"></matrics-form>
         <previous-education v-else-if="step == 4"></previous-education>
         <degree-education v-else-if="step == 5"></degree-education>
+        <aggregate-education v-else-if="step == 6"></aggregate-education>
     </div>
 </template>
 <script>
@@ -13,6 +14,7 @@
     import MatricsForm from './matricsForm.vue'
     import PreviousEducation from './previousEducation.vue'
     import DegreeEducation from './degree.vue'
+    import AggregateEducation from './aggregate.vue'
     import helper from './../../services/helper'
 
     export default {
@@ -28,7 +30,8 @@
             ProfileForm,
             MatricsForm,
             PreviousEducation,
-            DegreeEducation
+            DegreeEducation,
+            AggregateEducation
         },
         methods: {
             getAuthUser(name) {
@@ -59,9 +62,11 @@
                             break;
                         case "DEGREE":
                             this.step = 6;
+                            break;    
+                        case "Aggregate":
+                            this.step = 7;
                             break;
                         default:
-
                             break;
                     }
                 }
@@ -89,6 +94,9 @@
                             break;
                         case "DEGREE":
                             this.step = 6;
+                            break;
+                        case "Aggregate":
+                            this.step = 7;
                             break;
                         default:
                             break;

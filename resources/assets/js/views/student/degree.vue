@@ -119,7 +119,7 @@
                     'univ_roll_no': this.$parent.username,
                 },
                 statusChange: {
-                    'student_form_step': 'PREVIOUS_EDUCATION',
+                    'student_form_step': 'AGGREGATE',
                     'id': this.$parent.id,
                 },
             }
