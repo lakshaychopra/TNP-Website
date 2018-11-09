@@ -125,7 +125,7 @@
             }
         },
         created() {
-            axios.get('/api/dashboard/student/sem/' + this.$parent.username + '/edit').then(response => {
+            axios.get('/api/dashboard/student/aggregate/' + this.$parent.username + '/edit').then(response => {
                 console.log(response.data.data[0]);
                 this.student = response.data.data[0];
 
@@ -210,7 +210,7 @@
                 // console.log(this.$store.state.auth.username);
                 // console.log('1');
                 console.log(this.student);
-                axios.post(storeStudentDegreeURL + this.student.id, formData).then(response => {
+                axios.post(storeStudentAggregateURL + this.student.id, formData).then(response => {
                     console.log(response);
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
                         if (statusresponse.status == 200) {
