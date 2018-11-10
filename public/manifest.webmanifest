@@ -188,6 +188,11 @@
             "sizes": "2208x1242"
         },
         {
+            "src": "/images/icons/1242x2208.png",
+            "type": "image/png",
+            "sizes": "1242x2208"
+        },
+        {
             "src": "/images/icons/1024x1024.png",
             "sizes": "1024x1024",
             "type": "image/png"
