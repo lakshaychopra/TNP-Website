@@ -110,7 +110,7 @@
     <link type="text/plain" rel="author" href="{{asset('humans.txt')}}" />
     <link href="/css/style.css" rel="stylesheet">
     <link rel="manifest" href="{{asset('manifest.webmanifest')}}">
-  
+    <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.7/pwacompat.min.js" integrity="sha384-ptgwb3/v69WGur7IwSnWOowVxE7hcRB3DG/EiHdejrw2sFNwUHynFbiRMPxc4hdS" crossorigin="anonymous"></script>
     <meta name="msvalidate.01" content="12764669904A814D6F82E14D5B9DCD1E" />
     <meta name="robots" content="INDEX,FOLLOW">
     {{-- apple --}}
