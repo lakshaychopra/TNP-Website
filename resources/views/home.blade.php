@@ -115,7 +115,7 @@
     <meta name="robots" content="INDEX,FOLLOW">
     {{-- apple --}}
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="apple-mobile-web-app-title" content="T&P">
     {{--  <!-- iPhone X (1125px x 2436px) -->  --}}
     <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="{{asset('/images/icons/1125x2436.png')}}">
