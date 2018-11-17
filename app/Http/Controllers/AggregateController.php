@@ -103,7 +103,7 @@ class AggregateController extends Controller
             }
             DB::beginTransaction();
             $uid = Aggregate::pluck('id');
-            $updateData = DB::table('semester_marks')->where('id', $uid)
+            $updateData = DB::table('aggregate')->where('id', $uid)
             ->update([
                 'semester'  => $request->semester,
                 'obtained_marks'  => $request->obtained_marks,
