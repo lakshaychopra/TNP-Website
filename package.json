@@ -31,6 +31,7 @@
         "owl.carousel2": "^2.2.1",
         "vee-validate": "^2.1.0-beta.7",
         "vue": "^2.5.16",
+        "vue-content-placeholder": "^1.1.1",
         "vue-content-placeholders": "^0.2.1",
         "vue-infinite-scroll": "^2.0.2",
         "vue-input-tag": "^1.0.4",

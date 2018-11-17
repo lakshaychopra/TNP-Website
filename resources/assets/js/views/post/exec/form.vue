@@ -82,7 +82,7 @@
         apiDomain
     } from "../../../config.js";
     import Editor from '@tinymce/tinymce-vue';
-    import '@tinymce/tinymce-vue/plugins/example/plugin.js';
+    require('../../../services/plugin.js');
     import InputTag from 'vue-input-tag'
     export default {
         data() {
