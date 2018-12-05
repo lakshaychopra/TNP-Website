@@ -10313,9 +10313,6 @@ body {
   overflow-x: hidden;
   color: #54667a;
   font-weight: 300;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
 }
 
 html {
