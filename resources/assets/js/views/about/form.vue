@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="">Body</label>
-                    <editor v-model="page.content" :init="{height: 300, paste_as_text: true, toolbar: 'example | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen',browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code, example'}"></editor>
+                    <editor v-model="page.content" :init="{height: 300, paste_as_text: true, toolbar: 'addpdf | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen',browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code, addpdf'}"></editor>
 
                 </div>
             </div>
@@ -60,7 +60,7 @@
         apiDomain
     } from "../../config.js";
     import Editor from '@tinymce/tinymce-vue';
-    require('../../services/plugin');
+    require('../../services/editor/addpdf.js');
     import InputTag from 'vue-input-tag'
 
     export default {

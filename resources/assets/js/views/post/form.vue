@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="">Body</label>
-                    <editor v-model="post.content" :init="{height: 300, paste_as_text: true, toolbar: 'example | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen',browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code,example'}"></editor>
+                    <editor v-model="post.content" :init="{height: 300, paste_as_text: true, toolbar: 'addpdf | placementPost | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen',browser_spellcheck: true,preview:true, plugins: 'autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code,addpdf,placementPost'}"></editor>
                 </div>
             </div>
         </div>
@@ -81,21 +81,14 @@
         postIdGetURL,
         apiDomain
     } from "../../config.js";
-    // import { VueEditor } from 'vue2-editor'
     import Editor from '@tinymce/tinymce-vue';
-    require('../../services/plugin.js');
+    require('../../services/editor/addpdf.js');
+    require('../../services/editor/placementpost.js');
     import InputTag from 'vue-input-tag'
 
     export default {
         data() {
             return {
-                // taskForm: new Form({
-                //     'title' : '',
-                //     'description' : '',
-                //     'start_date' : '',
-                //     'due_date' : '',
-                //     'progress' : 0
-                // }),
                 image_change: false,
                 img_preview: '',
                 post: {
@@ -121,7 +114,6 @@
         },
         props: ['id'],
         mounted() {
-            // console.log(this.id);
             if (this.id)
                 this.getPosts();
         },
@@ -137,8 +129,6 @@
                 console.log(this.post.imageUrl);
             },
             proceed() {
-                // this.taskForm.start_date = moment(this.taskForm.start_date).format('YYYY-MM-DD');
-                // this.taskForm.due_date = moment(this.taskForm.due_date).format('YYYY-MM-DD');
                 this.$validator.validateAll().then((result) => {
                     if (result) {
                         if (this.id)
@@ -151,7 +141,6 @@
             storePost() {
                 var navigate = this;
                 const postData = {
-                    // usertype : 'EXECUTIVE_MEMBER',
                     title: this.post.title,
                     body: this.post.content,
                     username: this.$store.getters.getAuthUserFullName,
@@ -176,17 +165,8 @@
                         }
                     })
                     .then(function (response) {
-                        // console.log(response);
-                        // if (response.status == "200") {
-                        //   // window.location = "/dashboard";
-                        //     router.push({name:'security'});
-
-                        // }
-                        // if (response.status == "401") {
-                        //   }
                         toastr['success'](response.data.message);
                         axios.post(postIdGetURL).then(function (res) {
-                                // console.log(res.data.data);
                                 navigate.$router.push({
                                     path: '/'
                                 });
@@ -194,21 +174,10 @@
                             .catch(function (err) {
                                 console.log(err);
                             });
-
-
-                        // console.log(response.data.data.postCreate.id);
                     })
                     .catch(function (error) {
                         console.log(error);
                     });
-                // this.taskForm.post('/api/task')
-                // .then(response => {
-                //     toastr['success'](response.message);
-                //     this.$emit('completed',response.task)
-                // })
-                // .catch(response => {
-                //     toastr['error'](response.message);
-                // });
                 this.post.title = '';
                 this.post.content = '';
                 this.post.tags = ['gndec', 'tnp'];
@@ -232,7 +201,6 @@
             },
             updatePost() {
                 const postData = {
-                    // usertype : 'EXECUTIVE_MEMBER',
                     title: this.post.title,
                     body: this.post.content,
                     username: this.$store.getters.getAuthUserFullName,
@@ -260,11 +228,6 @@
                     })
                     .then(response => {
                         console.log(response);
-                        // if(response.type == 'error')
-                        //     toastr['error'](response.message);
-                        // else {
-                        //     this.$router.push('/task');
-                        // }
                         toastr['success'](response.data.message);
                         console.log(this.$store.getters.getAuthUserType);
                         if (this.$store.getters.getAuthUserType == "ADMIN") {
@@ -296,10 +259,6 @@
         width: 100% !important;
     }
 
-    /* .files img{
-  height :100px;
-  width:100px;
-} */
     .files input:focus {
         outline: 2px dashed #92b0b3;
         outline-offset: -10px;

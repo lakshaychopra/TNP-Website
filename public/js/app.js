@@ -16647,55 +16647,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-tinymce.PluginManager.add('example', function (editor, url) {
-
-    // Add a button that opens a window
-    editor.addButton('example', {
-        text: 'ADD PDF FROM Google Drive Link',
-        icon: false,
-        onclick: function onclick() {
-            // Open window
-            editor.windowManager.open({
-                title: 'ADD PDF FROM Google Drive Link',
-                body: [{ type: 'textbox', name: 'title', label: 'Title' }],
-                onsubmit: function onsubmit(e) {
-                    // Insert content when the window form is submitted
-                    editor.insertContent('<div class="embed-responsive embed-responsive-16by9" style="padding-bottom: 141.42%; text-align: center;"><iframe class="embed-responsive-item" src=" ' + e.data.title + '"></iframe></div>');
-                }
-            });
-        }
-    });
-
-    // Adds a menu item to the tools menu
-    editor.addMenuItem('example', {
-        text: 'ADD PDF FROM Google Drive Link',
-        context: 'tools',
-        onclick: function onclick() {
-            // Open window with a specific url
-            editor.windowManager.open({
-                title: 'ADD PDF FROM Google Drive Link',
-                body: [{ type: 'textbox', name: 'title', label: 'Title' }],
-                onsubmit: function onsubmit(e) {
-                    // Insert content when the window form is submitted
-                    editor.insertContent('<div class="embed-responsive embed-responsive-16by9" style="padding-bottom: 141.42%; text-align: center;"><iframe class="embed-responsive-item" src=" ' + e.data.title + '"></iframe></div>');
-                }
-            });
-        }
-    });
-
-    return {
-        getMetadata: function getMetadata() {
-            return {
-                name: "ADD PDF FROM Google Drive Link"
-            };
-        }
-    };
-});
-
-/***/ }),
+/* 13 */,
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41853,7 +41805,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.line[data-v-6cd9d163] {\n        text-align: center;\n}\n.files input[data-v-6cd9d163] {\n        outline: 2px dashed #92b0b3;\n        outline-offset: -10px;\n        -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;\n        transition: outline-offset .15s ease-in-out, background-color .15s linear;\n        padding: 120px 0px 85px 35%;\n        text-align: center !important;\n        margin: 0;\n        width: 100% !important;\n}\n\n    /* .files img{\n  height :100px;\n  width:100px;\n} */\n.files input[data-v-6cd9d163]:focus {\n        outline: 2px dashed #92b0b3;\n        outline-offset: -10px;\n        -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;\n        transition: outline-offset .15s ease-in-out, background-color .15s linear;\n        border: 1px solid #92b0b3;\n}\n.files[data-v-6cd9d163] {\n        position: relative\n}\n.files[data-v-6cd9d163]:after {\n        pointer-events: none;\n        position: absolute;\n        top: 60px;\n        left: 0;\n        width: 50px;\n        right: 0;\n        height: 56px;\n        content: \"\";\n        background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);\n        display: block;\n        margin: 0 auto;\n        background-size: 100%;\n        background-repeat: no-repeat;\n}\n.color input[data-v-6cd9d163] {\n        background-color: #f1f1f1;\n}\n.files[data-v-6cd9d163]:before {\n        position: absolute;\n        bottom: 10px;\n        left: 0;\n        pointer-events: none;\n        width: 100%;\n        right: 0;\n        height: 57px;\n        content: \" or drag it here. \";\n        display: block;\n        margin: 0 auto;\n        color: #2ea591;\n        font-weight: 600;\n        text-transform: capitalize;\n        text-align: center;\n}\n.vue-tags-input[data-v-36b6250a][data-v-6cd9d163] {\n        max-width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.line[data-v-6cd9d163] {\n    text-align: center;\n}\n.files input[data-v-6cd9d163] {\n    outline: 2px dashed #92b0b3;\n    outline-offset: -10px;\n    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    padding: 120px 0px 85px 35%;\n    text-align: center !important;\n    margin: 0;\n    width: 100% !important;\n}\n.files input[data-v-6cd9d163]:focus {\n    outline: 2px dashed #92b0b3;\n    outline-offset: -10px;\n    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    transition: outline-offset .15s ease-in-out, background-color .15s linear;\n    border: 1px solid #92b0b3;\n}\n.files[data-v-6cd9d163] {\n    position: relative\n}\n.files[data-v-6cd9d163]:after {\n    pointer-events: none;\n    position: absolute;\n    top: 60px;\n    left: 0;\n    width: 50px;\n    right: 0;\n    height: 56px;\n    content: \"\";\n    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);\n    display: block;\n    margin: 0 auto;\n    background-size: 100%;\n    background-repeat: no-repeat;\n}\n.color input[data-v-6cd9d163] {\n    background-color: #f1f1f1;\n}\n.files[data-v-6cd9d163]:before {\n    position: absolute;\n    bottom: 10px;\n    left: 0;\n    pointer-events: none;\n    width: 100%;\n    right: 0;\n    height: 57px;\n    content: \" or drag it here. \";\n    display: block;\n    margin: 0 auto;\n    color: #2ea591;\n    font-weight: 600;\n    text-transform: capitalize;\n    text-align: center;\n}\n.vue-tags-input[data-v-36b6250a][data-v-6cd9d163] {\n    max-width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -41948,21 +41900,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-// import { VueEditor } from 'vue2-editor'
 
-__webpack_require__(13);
+__webpack_require__(392);
+__webpack_require__(393);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            // taskForm: new Form({
-            //     'title' : '',
-            //     'description' : '',
-            //     'start_date' : '',
-            //     'due_date' : '',
-            //     'progress' : 0
-            // }),
             image_change: false,
             img_preview: '',
             post: {
@@ -41989,7 +41934,6 @@ __webpack_require__(13);
     },
     props: ['id'],
     mounted: function mounted() {
-        // console.log(this.id);
         if (this.id) this.getPosts();
     },
 
@@ -42007,8 +41951,6 @@ __webpack_require__(13);
         proceed: function proceed() {
             var _this = this;
 
-            // this.taskForm.start_date = moment(this.taskForm.start_date).format('YYYY-MM-DD');
-            // this.taskForm.due_date = moment(this.taskForm.due_date).format('YYYY-MM-DD');
             this.$validator.validateAll().then(function (result) {
                 if (result) {
                     if (_this.id) _this.updatePost();else _this.storePost();
@@ -42018,7 +41960,6 @@ __webpack_require__(13);
         storePost: function storePost() {
             var navigate = this;
             var postData = {
-                // usertype : 'EXECUTIVE_MEMBER',
                 title: this.post.title,
                 body: this.post.content,
                 username: this.$store.getters.getAuthUserFullName,
@@ -42042,36 +41983,17 @@ __webpack_require__(13);
                     'Content-Type': 'multipart/form-data'
                 }
             }).then(function (response) {
-                // console.log(response);
-                // if (response.status == "200") {
-                //   // window.location = "/dashboard";
-                //     router.push({name:'security'});
-
-                // }
-                // if (response.status == "401") {
-                //   }
                 toastr['success'](response.data.message);
                 axios.post(__WEBPACK_IMPORTED_MODULE_1__config_js__["q" /* postIdGetURL */]).then(function (res) {
-                    // console.log(res.data.data);
                     navigate.$router.push({
                         path: '/'
                     });
                 }).catch(function (err) {
                     console.log(err);
                 });
-
-                // console.log(response.data.data.postCreate.id);
             }).catch(function (error) {
                 console.log(error);
             });
-            // this.taskForm.post('/api/task')
-            // .then(response => {
-            //     toastr['success'](response.message);
-            //     this.$emit('completed',response.task)
-            // })
-            // .catch(response => {
-            //     toastr['error'](response.message);
-            // });
             this.post.title = '';
             this.post.content = '';
             this.post.tags = ['gndec', 'tnp'];
@@ -42097,7 +42019,6 @@ __webpack_require__(13);
             var _this3 = this;
 
             var postData = {
-                // usertype : 'EXECUTIVE_MEMBER',
                 title: this.post.title,
                 body: this.post.content,
                 username: this.$store.getters.getAuthUserFullName,
@@ -42124,11 +42045,6 @@ __webpack_require__(13);
                 }
             }).then(function (response) {
                 console.log(response);
-                // if(response.type == 'error')
-                //     toastr['error'](response.message);
-                // else {
-                //     this.$router.push('/task');
-                // }
                 toastr['success'](response.data.message);
                 console.log(_this3.$store.getters.getAuthUserType);
                 if (_this3.$store.getters.getAuthUserType == "ADMIN") {
@@ -42403,11 +42319,11 @@ var render = function() {
                     height: 300,
                     paste_as_text: true,
                     toolbar:
-                      "example | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen",
+                      "addpdf | placementPost | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen",
                     browser_spellcheck: true,
                     preview: true,
                     plugins:
-                      "autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code,example"
+                      "autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code,addpdf,placementPost"
                   }
                 },
                 model: {
@@ -42945,7 +42861,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__webpack_require__(13);
+__webpack_require__(392);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43159,11 +43075,11 @@ var render = function() {
                     height: 300,
                     paste_as_text: true,
                     toolbar:
-                      "example | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen",
+                      "addpdf | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code |preview | fullscreen",
                     browser_spellcheck: true,
                     preview: true,
                     plugins:
-                      "autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code, example"
+                      "autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code, addpdf"
                   }
                 },
                 model: {
@@ -50255,7 +50171,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__webpack_require__(13);
+__webpack_require__(392);
+__webpack_require__(393);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -50514,11 +50431,11 @@ var render = function() {
                     height: 300,
                     paste_as_text: true,
                     toolbar:
-                      "example | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code | preview | fullscreen",
+                      "addpdf | placementPost | insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link | code | preview | fullscreen",
                     browser_spellcheck: true,
                     preview: true,
                     plugins:
-                      "autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code,example"
+                      "autolink,fullscreen,insertdatetime,searchreplace,preview,wordcount,paste,table,lists,link,code,addpdf,placementPost"
                   }
                 },
                 model: {
@@ -77545,6 +77462,115 @@ module.exports = SocialSharing;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */
+/***/ (function(module, exports) {
+
+tinymce.PluginManager.add('addpdf', function (editor, url) {
+
+    // Add a button that opens a window
+    editor.addButton('addpdf', {
+        text: 'Add PDF from Google Drive',
+        icon: false,
+        onclick: function onclick() {
+            // Open window
+            editor.windowManager.open({
+                title: 'Add PDF from Google Drive',
+                body: [{ type: 'textbox', name: 'link', label: 'Link' }, { type: 'textbox', name: 'height', label: 'Height (0 - 100) in %' }],
+                onsubmit: function onsubmit(e) {
+                    // Insert content when the window form is submitted
+                    editor.insertContent('<div class="embed-responsive embed-responsive-16by9" style="padding-bottom: ' + e.data.height + '%; text-align: center;"><iframe class="embed-responsive-item" src=" ' + e.data.link + '"></iframe></div>');
+                }
+            });
+        }
+    });
+
+    // Adds a menu item to the tools menu
+    editor.addMenuItem('addpdf', {
+        text: 'Add PDF from Google Drive',
+        context: 'tools',
+        onclick: function onclick() {
+            // Open window with a specific url
+            editor.windowManager.open({
+                title: 'Add PDF from Google Drive',
+                body: [{ type: 'textbox', name: 'link', label: 'Link' }, { type: 'textbox', name: 'height', label: 'Height (0 - 100) in %' }],
+                onsubmit: function onsubmit(e) {
+                    // Insert content when the window form is submitted
+                    editor.insertContent('<div class="embed-responsive embed-responsive-16by9" style="padding-bottom: ' + e.data.height + '%; text-align: center;"><iframe class="embed-responsive-item" src=" ' + e.data.link + '"></iframe></div>');
+                }
+            });
+        }
+    });
+
+    return {
+        getMetadata: function getMetadata() {
+            return {
+                name: "Add PDF from Google Drive"
+            };
+        }
+    };
+});
+
+/***/ }),
+/* 393 */
+/***/ (function(module, exports) {
+
+tinymce.PluginManager.add('placementPost', function (editor, url) {
+
+    // Add a button that opens a window
+    editor.addButton('placementPost', {
+        text: 'Placement Post Form',
+        icon: false,
+        onclick: function onclick() {
+            // Open window
+            editor.windowManager.open({
+                title: 'Placement Post Form',
+                body: [{ type: 'textbox', name: 'cname', label: 'Company Name' }, { type: 'textbox', name: 'branch', label: 'Branch (i.e. B.Tech(CSE/IT) and MCA)' }, { type: 'textbox', name: 'batch', label: 'Batch (i.e. year, Example - 2018)' }, { type: 'textbox', name: 'dated', label: 'Date of drive (Example - 20th August 2018 (i.e.Monday))' }, { type: 'textbox', name: 'venued', label: 'Venue (T&P Conference Hall)' }, { type: 'textbox', name: 'linkd', label: 'Registration Link' }, { type: 'textbox', name: 'rdate', label: 'Last Registration Date and Time (Example - 7/10/2018 (i.e. Sunday) 4 PM)' }, { type: 'textbox', name: 'jloc', label: 'Job Location' }, { type: 'textbox', name: 'jprof', label: 'Job Profile' }],
+                onsubmit: function onsubmit(e) {
+                    // Insert content when the window form is submitted
+                    editor.insertContent('<p style="text-align: justify;">This is to inform <strong>' + e.data.branch + '(' + e.data.branch + 'passing out batch)</strong> that <strong>' + e.data.cname + '</strong> is going to conduct a <strong>Campus Placement Drive</strong>. The details are as follows:</p> <p style = "text-align: justify;"> <strong> Name of company: </strong>&nbsp;' + e.data.cname + '</p><p style = "text-align: justify;"> <strong> About the company: </strong>Add some text here&nbsp;</p><p style="text-align: justify;"><strong>Date of Drive:</strong>' + e.data.dated + '</p><p style="text-align: justify;"><strong>Reporting Time: </strong>' + e.data.timed + ' (Sharp)</p><p style="text-align: justify;"><strong>Venue:</strong> ' + e.data.venued + '</p><p style="text-align: justify;"><strong>Recruitment Process:</strong></p><ol style="text-align: justify;"><li>Add Here</li><li>Add Here</li></ol><p style="text-align: justify;"><strong>Eligibility Criteria:</strong></p><ul style="text-align: justify;"><li><strong>Qualifications</strong>: Full-time graduates from ' + e.data.branch + '&ndash;' + e.data.branch + ' year of passing.</li><li><strong>Marks Criteria</strong>: <ul><li style="text-align: justify;">60% or above in 10th&nbsp;</li><li style="text-align: justify;">60% or above in 12th (if applicable)</li><li style="text-align: justify;">60% or above in diploma (if applicable)</li><li style="text-align: justify;">60% or above in UG</li><li style="text-align: justify;">60% or above in PG</li></ul><li><strong>Backlog Criteria</strong>: No active backlog allowed at the time of appearing for the test.</li><li><strong>Gap Criteria</strong>: Zero gap year in the academics.</li></ul><p style="text-align: justify;"><strong>Registration Link:&nbsp;<a href=" ' + e.data.linkd + '" target="_blank" rel="noopener">' + e.data.linkd + '</a></strong></p><p style="text-align: justify;"><strong>Designation:</strong>' + e.data.jprof + '</p><p style="text-align: justify;"><strong>Job Location:</strong>' + e.data.jloc + '</p> <p style = "text-align: justify;"> <strong> Cost to Company(CTC): </strong></p><ul style = "text-align: justify;"><li> Stipend Rs.xyz / PM for Six Months </li> <li> Post Confirmation CTC Rs.xyz LPA </li></ul><p style="text-align: justify;"><strong>**IMPORTANT DETAILS:</strong></p><ul><li style="text-align: justify;">Eligible students are required to fill the given form by <strong>' + e.data.rdate + '</strong>:<a href="' + e.data.linkd + '" target="_blank" rel="noopener">Register Here!</a></li></ul><p style = "text-align: justify;"><strong>NOTE</strong>: </p><ul><li style="text-align: justify;">Eligible students are required to fill the given form by <strong>' + e.data.rdate + '</strong>:<a href="' + e.data.linkd + '" target="_blank" rel="noopener">Register Here!</a></li><li style = "text-align: justify;"> Students must carry one hard copy of Mark Sheets, Resume, 3 - 4 Recent Passport size photographs and Photo ID Card(Driving License/Passport/Voter ID/College ID) </li><li style="text-align: justify;">Formal attire is mandatory.</li><li style = "text-align: justify;"> All the students are required to carry all their qualification documents starting from Matriculation. </li></ul> ');
+                }
+            });
+        }
+    });
+
+    // Adds a menu item to the tools menu
+    editor.addMenuItem('placementPost', {
+        text: 'Placement Post Form',
+        context: 'tools',
+        onclick: function onclick() {
+            // Open window with a specific url
+            editor.windowManager.open({
+                title: 'Placement Post Form',
+                body: [{ type: 'textbox', name: 'cname', label: 'Company Name' }, { type: 'textbox', name: 'branch', label: 'Branch (i.e. B.Tech(CSE/IT) and MCA)' }, { type: 'textbox', name: 'batch', label: 'Batch (i.e. year, Example - 2018)' }, { type: 'textbox', name: 'dated', label: 'Date of drive (Example - 20th August 2018 (i.e.Monday))' }, { type: 'textbox', name: 'venued', label: 'Venue (T&P Conference Hall)' }, { type: 'textbox', name: 'linkd', label: 'Registration Link' }, { type: 'textbox', name: 'rdate', label: 'Last Registration Date and Time (Example - 7/10/2018 (i.e. Sunday) 4 PM)' }, { type: 'textbox', name: 'jloc', label: 'Job Location' }, { type: 'textbox', name: 'jprof', label: 'Job Profile' }],
+                onsubmit: function onsubmit(e) {
+                    // Insert content when the window form is submitted
+                    editor.insertContent('<p style="text-align: justify;">This is to inform <strong>' + e.data.branch + '(' + e.data.branch + 'passing out batch)</strong> that <strong>' + e.data.cname + '</strong> is going to conduct a <strong>Campus Placement Drive</strong>. The details are as follows:</p> <p style = "text-align: justify;"> <strong> Name of company: </strong>&nbsp;' + e.data.cname + '</p><p style = "text-align: justify;"> <strong> About the company: </strong>Add some text here&nbsp;</p><p style="text-align: justify;"><strong>Date of Drive:</strong>' + e.data.dated + '</p><p style="text-align: justify;"><strong>Reporting Time: </strong>' + e.data.timed + ' (Sharp)</p><p style="text-align: justify;"><strong>Venue:</strong> ' + e.data.venued + '</p><p style="text-align: justify;"><strong>Recruitment Process:</strong></p><ol style="text-align: justify;"><li>Add Here</li><li>Add Here</li></ol><p style="text-align: justify;"><strong>Eligibility Criteria:</strong></p><ul style="text-align: justify;"><li><strong>Qualifications</strong>: Full-time graduates from ' + e.data.branch + '&ndash;' + e.data.branch + ' year of passing.</li><li><strong>Marks Criteria</strong>: <ul><li style="text-align: justify;">60% or above in 10th&nbsp;</li><li style="text-align: justify;">60% or above in 12th (if applicable)</li><li style="text-align: justify;">60% or above in diploma (if applicable)</li><li style="text-align: justify;">60% or above in UG</li><li style="text-align: justify;">60% or above in PG</li></ul><li><strong>Backlog Criteria</strong>: No active backlog allowed at the time of appearing for the test.</li><li><strong>Gap Criteria</strong>: Zero gap year in the academics.</li></ul><p style="text-align: justify;"><strong>Registration Link:&nbsp;<a href=" ' + e.data.linkd + '" target="_blank" rel="noopener">' + e.data.linkd + '</a></strong></p><p style="text-align: justify;"><strong>Designation:</strong>' + e.data.jprof + '</p><p style="text-align: justify;"><strong>Job Location:</strong>' + e.data.jloc + '</p> <p style = "text-align: justify;"> <strong> Cost to Company(CTC): </strong></p><ul style = "text-align: justify;"><li> Stipend Rs.xyz / PM for Six Months </li> <li> Post Confirmation CTC Rs.xyz LPA </li></ul><p style="text-align: justify;"><strong>**IMPORTANT DETAILS:</strong></p><ul><li style="text-align: justify;">Eligible students are required to fill the given form by <strong>' + e.data.rdate + '</strong>:<a href="' + e.data.linkd + '" target="_blank" rel="noopener">Register Here!</a></li></ul><p style = "text-align: justify;"><strong>NOTE</strong>: </p><ul><li style="text-align: justify;">Eligible students are required to fill the given form by <strong>' + e.data.rdate + '</strong>:<a href="' + e.data.linkd + '" target="_blank" rel="noopener">Register Here!</a></li><li style = "text-align: justify;"> Students must carry one hard copy of Mark Sheets, Resume, 3 - 4 Recent Passport size photographs and Photo ID Card(Driving License/Passport/Voter ID/College ID) </li><li style="text-align: justify;">Formal attire is mandatory.</li><li style = "text-align: justify;"> All the students are required to carry all their qualification documents starting from Matriculation. </li></ul> ');
+                }
+            });
+        }
+    });
+
+    return {
+        getMetadata: function getMetadata() {
+            return {
+                name: "Placement Post Form"
+            };
+        }
+    };
+});
 
 /***/ })
 /******/ ]);
