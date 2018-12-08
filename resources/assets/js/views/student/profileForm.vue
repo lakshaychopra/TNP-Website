@@ -7,13 +7,15 @@
                         <h2 class="card-title mt-3 text-primary">Profile Details</h2>
 
                         <!-- <post-form :id="id"></post-form> -->
-                        <form method="post" @submit.prevent="submit">
+                        <form method="post" @submit.prevent="validateForm">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="md-radio-inlinename" v-model="student.name"
+                                        <input type="text" v-validate="'required'" name="name" v-model="student.name"
                                             placeholder="Name" class="form-control">
-                                        <small class="form-text text-primary text-uppercase">Name</small>
+                                        <small class="form-text text-primary text-uppercase">Name <span class="text-danger pull-right">{{
+                                                errors.first('name') }}</span>
+                                        </small>
                                     </div>
                                 </div>
                             </div>
@@ -22,7 +24,8 @@
                                     <div class="form-group">
                                         <label for="" class="col-md-2 col-form-label">Gender : </label>
                                         <div class="col-md-2 md-radio md-radio-inline">
-                                            <input type="radio" name="gender" v-model="student.gender" id="male" value="MALE">
+                                            <input type="radio" v-validate="'required'" name="gender" v-model="student.gender"
+                                                id="male" value="MALE">
                                             <label for="male">Male</label>
                                         </div>
                                         <div class="col-md-2 md-radio md-radio-inline">
@@ -30,6 +33,8 @@
                                                 value="FEMALE">
                                             <label for="female">Female</label>
                                         </div>
+                                        <small class="text-danger text-uppercase">{{ errors.first('gender') }}</small>
+
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -119,8 +124,8 @@
                                     <div class="form-group">
                                         <select name="branch" v-model="student.branch_type" class="form-control">
                                             <option disabled value="null">Branch</option>
-                                            <option value="B.Tech.">B.Tech</option>
-                                            <option value="M.Tech.">M.Tech</option>
+                                            <option value="B.TECH.">B.Tech.</option>
+                                            <option value="M.TECH.">M.Tech.</option>
                                             <option value="M.B.A.">M.B.A.</option>
                                             <option value="M.C.A.">M.C.A.</option>
                                         </select>
@@ -131,14 +136,16 @@
                                     <div class="form-group">
                                         <select name="stream" v-model="student.stream" class="form-control">
                                             <option disabled value="null">Stream</option>
-                                            <option value="Civil">Civil Engineering</option>
-                                            <option value="Computer">Computer Science and Engineering</option>
-                                            <option value="Electrical">Electrical Engineering</option>
-                                            <option value="Electronics">Electronics and Communication Engineering
+                                            <option value="CIVIL ENGINEERING">Civil Engineering</option>
+                                            <option value="COMPUTER SCIENCE AND ENGINEERING">Computer Science and
+                                                Engineering</option>
+                                            <option value="ELECTRICAL ENGINEERING">Electrical Engineering</option>
+                                            <option value="ELECTRONICS AND COMMUNICATION ENGINEERING">Electronics and
+                                                Communication Engineering
                                             </option>
-                                            <option value="Information">Information Technology</option>
-                                            <option value="Mechenical">Mechenical Engineering</option>
-                                            <option value="Production">Production Engineering</option>
+                                            <option value="INFORMATION TECHNOLOGY">Information Technology</option>
+                                            <option value="MECHANICAL ENGINEERING">Mechenical Engineering</option>
+                                            <option value="PRODUCTION ENGINEERING">Production Engineering</option>
                                         </select>
                                         <small class="form-text text-primary text-uppercase">Stream</small>
                                     </div>
@@ -249,8 +256,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" min="0" name="pincode" v-model="student.pincode" placeholder="Pincode"
-                                            class="form-control">
+                                        <input type="number" min="0" name="pincode" v-model="student.pincode"
+                                            placeholder="Pincode" class="form-control">
                                         <small class="form-text text-primary text-uppercase">Pincode</small>
                                     </div>
                                 </div>
@@ -306,13 +313,19 @@
             // console.log(this.id.student);
         },
         methods: {
-
+            validateForm() {
+                this.$validator.validateAll().then((result) => {
+                    if (result) {
+                        this.submit();
+                    }
+                });
+            },
             getAuthUser(name) {
                 return this.$store.getters.getAuthUser(name);
             },
             submit() {
                 let formData = new FormData();
-                formData.append('name', this.student.name);
+                formData.append('name', this.student.name.toUpperCase());
                 formData.append('gender', this.student.gender);
                 formData.append('category', this.student.category);
                 formData.append('height', this.student.height);
@@ -323,29 +336,21 @@
                 formData.append('living', this.student.living);
                 formData.append('batch', this.student.batch);
                 formData.append('branch_type', this.student.branch_type);
-                formData.append('stream', this.student.stream);
-                formData.append('section', this.student.section);
+                formData.append('stream', this.student.stream.toUpperCase());
+                formData.append('section', this.student.section.toUpperCase());
                 formData.append('shift', this.student.shift);
                 formData.append('training_semester', this.student.training_semester);
-                formData.append('father_name', this.student.father_name);
+                formData.append('father_name', this.student.father_name.toUpperCase());
                 formData.append('father_phone', this.student.father_phone);
-                formData.append('mother_name', this.student.mother_name);
+                formData.append('mother_name', this.student.mother_name.toUpperCase());
                 formData.append('mother_phone', this.student.mother_phone);
-                formData.append('address', this.student.address);
-                formData.append('city', this.student.city);
-                formData.append('district', this.student.district);
-                formData.append('state', this.student.state);
+                formData.append('address', this.student.address.toUpperCase());
+                formData.append('city', this.student.city.toUpperCase());
+                formData.append('district', this.student.district.toUpperCase());
+                formData.append('state', this.student.state.toUpperCase());
                 formData.append('pincode', this.student.pincode);
                 formData.append('_method', 'PUT');
                 // console.log(this.id.id);
-                console.log(this.student.name + ' ' + this.student.gender + ' ' + this.student.category + ' ' + this.student
-                    .height + ' ' + this.student.weight + ' ' + this.student.blood_group + ' ' + this.student.univ_roll_no +
-                    ' ' + this.student.class_roll_no + ' ' + this.student.living + ' ' + this.student.batch + ' ' +
-                    this.student.branch_type + ' ' + this.student.stream + ' ' + this.student.section + ' ' + this.student
-                    .shift + ' ' + this.student.training_semester + ' ' + this.student.father_name + ' ' + this.student
-                    .father_phone + ' ' + this.student.mother_name + ' ' + this.student.mother_phone + ' ' + this.student
-                    .address + ' ' + this.student.city + ' ' + this.student.district + ' ' + this.student.state +
-                    ' ' + this.student.pincode);
                 // console.log('1');
                 axios.post(storeStudentURL + this.student.id, formData).then(response => {
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
@@ -358,7 +363,7 @@
                     }).catch(errors => {
                         console.log(errors);
                     });
-                    console.log(response);
+                    // console.log(response);
                     // if (response.status == 200) {
 
                     // }

@@ -61,13 +61,14 @@ class UsersController extends Controller
                     foreach ($user as $key => $value)
                     {
                         $type= implode(' ',$input);
-                        $password=str_random(6);
                         $data[] = [
-                            'username'     =>  $value->username,
+                            'username'     =>  $value->rollno,
                             'email'        =>  $value->email,
-                            'phone_number' =>  $value->phone_number,
+                            'phone_number' =>  $value->phone,
+                            'password'     =>  bcrypt($value->dob),
                             'type'         =>  $type,
-                            'password'     =>  bcrypt($password),
+                            'is_verified'  =>  true,
+                            'is_active'    =>  true,
                             'created_at'   =>  Carbon::now(),
                             'updated_at'   =>  Carbon::now(),
                         ];

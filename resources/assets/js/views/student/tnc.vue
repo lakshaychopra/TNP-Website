@@ -1,25 +1,13 @@
 <template>
     <div>
-        <div class="row page-titles">
-            <div class="col-xs-6 col-8 align-self-center">
-                <!-- <h3 class="text-themecolor m-b-0 m-t-0">Terms and Conditions</h3> -->
-                <!-- <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><router-link to="/home">Home</router-link></li>
-                    <li class="breadcrumb-item"><router-link to="/task">Post</router-link></li>
-                    <li class="breadcrumb-item active">Edit Post</li>
-                </ol> -->
-            </div>
-        </div>
-
         <div class="row">
-            <div class="col-xs-12 col-lg-8 mx-auto">
+            <div class="col-lg-12 mx-auto">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">Terms and Conditions</h5>
-                        <!-- <post-form :id="id"></post-form> -->
-                        <form method="post" @submit.prevent="submit">
+                        <h3 class="text-center text-themecolor m-b-0 m-t-0">Terms and Conditions</h3>
+                        <form method="post" @submit.prevent="nextStep">
                             <div class="row">
-                                <div class="col-xs-12 col-md-11 mx-auto">
+                                <div class="col-lg-12 mx-auto">
                                     <ol>
                                         <li style="text-align: justify;">Students must fill all the details accurately.</li>
                                         <li style="text-align: justify;">The credentials that you mention should match
@@ -51,20 +39,18 @@
                                         <li style="text-align: justify;">Don&rsquo;t forge the documents else strict
                                             action will be taken against you.</li>
                                     </ol>
-                                    <br>
-
-                                    <div class="col-xs-12 col-lg-8 mx-auto form-group">
-                                        <input type="checkbox" class="form-check-input" name="terms" required="required">
-                                        <strong> I Agree to the
-                                            terms and
-                                            conditions given above
-                                        </strong>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8 mx-auto text-center form-group">
-                                    <input type="submit" class="btn btn-primary btn-block" value="I Agree">
+                                <div class="col-lg-11 pull-left mx-auto form-group">
+                                    <label for="checkbox">
+                                        <input type="checkbox" name="terms" v-validate="'required'" class="form-check-input">
+                                        <strong> I Agree to the terms and conditions given above.
+                                        </strong>
+                                        <span class="text-danger pull-right" v-show="errors.has('terms')">{{
+                                            errors.first('terms') }}</span>
+                                    </label>
+                                    <div class="text-center">
+                                        <input type="submit" class="btn btn-lg btn-primary" value="I Agree">
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -100,9 +86,9 @@
                 },
                 form_step: {
                     'student_form_step': 'TC',
-                    'id':this.$parent.id,
+                    'id': this.$parent.id,
                 },
-                sem_create:{
+                sem_create: {
                     'univ_roll_no': this.$parent.username,
                     'semester': '1-2-3-4-5-6-7-8',
                     'obtained_marks': '0-0-0-0-0-0-0-0',
@@ -116,53 +102,104 @@
             }
         },
         methods: {
+            nextStep() {
+                this.$validator.validateAll().then((result) => {
+                    if (result) {
+                        this.submit();
+                        return;
+                    }
+                });
+            },
             getAuthUser(name) {
                 return this.$store.getters.getAuthUser(name);
             },
             submit() {
                 axios.post(firstLoginURL, this.id).then(response => {
-                if (response.status == 200) {
-                    axios.post(statusChangeURL, this.tnc).then(res => {
-                if (res.status == 200) {
-                    axios.post(formstepChangeURL, this.form_step).then(stat => {
-                if (stat.status == 200) {
-                    axios.post(storeStudentURL, this.username).then(resp => {
-                if (resp.status == 200) {
-                    axios.post(storeStudentMeURL, this.username).then(meresponse => {
-                    axios.post(storeStudentPeURL, this.username).then(peresponse => {
-                if (peresponse.status == 200) {
-                    axios.post(storeStudentDegreeURL, this.sem_create).then( deresponse => {
-                if (deresponse.status == 200) {
-                    axios.post(storeStudentAggregateURL, this.username).then( aggresponse => {
-                    toastr['success']( "User Added!!" );
-                    this.$parent.step =2;
-                }).catch(aggerrors => {
-                    console.log(aggerrors);
-                });
-                }
-                }).catch(deerrors => {
-                    console.log(deerrors);
-                });                                                                    
-                }
-                }).catch(peerrors => {
-                    console.log(peerrors);
-                });
-                }).catch(errors => {
-                    console.log(errors);
-                });
-                }
-                }).catch(er => {
-                    console.log(er);
-                });
-                }
-                }).catch(erro => {
-                    console.log(erro);
-                });
-                }
-                }).catch(err => {
-                    console.log(err);
-                });
-                }
+                    if (response.status == 200) {
+                        axios.post(statusChangeURL, this.tnc).then(res => {
+                            if (res.status == 200) {
+                                axios.post(formstepChangeURL, this.form_step).then(stat => {
+                                    if (stat.status == 200) {
+                                        axios.post(storeStudentURL, this.username).then(resp => {
+                                            if (resp.status == 200) {
+                                                axios.post(storeStudentMeURL, this.username)
+                                                    .then(meresponse => {
+                                                        axios.post(
+                                                            storeStudentPeURL,
+                                                            this.username).then(
+                                                            peresponse => {
+                                                                if (peresponse.status ==
+                                                                    200) {
+                                                                    axios.post(
+                                                                        storeStudentDegreeURL,
+                                                                        this
+                                                                        .sem_create
+                                                                    ).then(
+                                                                        deresponse => {
+                                                                            if (
+                                                                                deresponse
+                                                                                .status ==
+                                                                                200
+                                                                            ) {
+                                                                                axios
+                                                                                    .post(
+                                                                                        storeStudentAggregateURL,
+                                                                                        this
+                                                                                        .username
+                                                                                    )
+                                                                                    .then(
+                                                                                        aggresponse => {
+                                                                                            toastr
+                                                                                                [
+                                                                                                    'success'
+                                                                                                ]
+                                                                                                (
+                                                                                                    "User Added!!"
+                                                                                                );
+                                                                                            this
+                                                                                                .$parent
+                                                                                                .step =
+                                                                                                2;
+                                                                                        }
+                                                                                    )
+                                                                                    .catch(
+                                                                                        aggerrors => {
+                                                                                            console
+                                                                                                .log(
+                                                                                                    aggerrors
+                                                                                                );
+                                                                                        }
+                                                                                    );
+                                                                            }
+                                                                        }).catch(
+                                                                        deerrors => {
+                                                                            console
+                                                                                .log(
+                                                                                    deerrors
+                                                                                );
+                                                                        });
+                                                                }
+                                                            }).catch(peerrors => {
+                                                            console.log(
+                                                                peerrors
+                                                            );
+                                                        });
+                                                    }).catch(errors => {
+                                                        console.log(errors);
+                                                    });
+                                            }
+                                        }).catch(er => {
+                                            console.log(er);
+                                        });
+                                    }
+                                }).catch(erro => {
+                                    console.log(erro);
+                                });
+                            }
+                        }).catch(err => {
+                            console.log(err);
+                        });
+                    }
                 }).catch(error => {
                     console.log(error);
                 });
