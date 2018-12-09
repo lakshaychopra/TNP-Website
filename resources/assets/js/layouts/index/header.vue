@@ -1,5 +1,5 @@
 <template>
-    <div class="sticky-top">
+    <div class="fixed-top">
         <nav class="navbar navbar-expand-xl bg-dark navbar-dark">
             <!-- Brand -->
             <router-link to="/" class="navbar-brand d-none d-md-block">

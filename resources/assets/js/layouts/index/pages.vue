@@ -1,9 +1,9 @@
 <template>
     <div>
         <app-header :searchbox="true"></app-header>
-        <div class="bg-gray">
-            <div class="container py-4">
-                <div class="row">
+        <div class="bg-gray pt-5">
+            <div class="container">
+                <div class="row pt-5">
 
                     <div class="col-2 px-1 d-none d-lg-block" id="sidebar">
                         <widget-left></widget-left>
