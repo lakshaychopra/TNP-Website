@@ -54221,7 +54221,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -54295,104 +54295,126 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            id: {
-                'id': this.$parent.id
-            },
-            tnc: {
-                'form_status': 'pending',
-                'id': this.$parent.id
-            },
-            username: {
-                'univ_roll_no': this.$parent.username
-            },
-            form_step: {
-                'student_form_step': 'TC',
-                'id': this.$parent.id
-            },
-            sem_create: {
-                'univ_roll_no': this.$parent.username,
-                'semester': '1-2-3-4-5-6-7-8',
-                'obtained_marks': '0-0-0-0-0-0-0-0',
-                'max_marks': '0-0-0-0-0-0-0-0',
-                'credits': '0-0-0-0-0-0-0-0',
-                'active_backlog': '0-0-0-0-0-0-0-0',
-                'passive_backlog': '0-0-0-0-0-0-0-0',
-                'percentage': '0-0-0-0-0-0-0-0',
-                'semester_status': '1'
-            }
-        };
-    },
+  data: function data() {
+    return {
+      id: {
+        id: this.$parent.id
+      },
 
-    methods: {
-        nextStep: function nextStep() {
-            var _this = this;
+      tnc: {
+        form_status: "pending",
 
-            this.$validator.validateAll().then(function (result) {
-                if (result) {
-                    _this.submit();
-                    return;
-                }
-            });
-        },
-        getAuthUser: function getAuthUser(name) {
-            return this.$store.getters.getAuthUser(name);
-        },
-        submit: function submit() {
-            var _this2 = this;
+        id: this.$parent.id
+      },
 
-            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["h" /* firstLoginURL */], this.id).then(function (response) {
-                if (response.status == 200) {
-                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* statusChangeURL */], _this2.tnc).then(function (res) {
-                        if (res.status == 200) {
-                            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this2.form_step).then(function (stat) {
-                                if (stat.status == 200) {
-                                    axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["C" /* storeStudentURL */], _this2.username).then(function (resp) {
-                                        if (resp.status == 200) {
-                                            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["A" /* storeStudentMeURL */], _this2.username).then(function (meresponse) {
-                                                axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["B" /* storeStudentPeURL */], _this2.username).then(function (peresponse) {
-                                                    if (peresponse.status == 200) {
-                                                        axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["z" /* storeStudentDegreeURL */], _this2.sem_create).then(function (deresponse) {
-                                                            if (deresponse.status == 200) {
-                                                                axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["y" /* storeStudentAggregateURL */], _this2.username).then(function (aggresponse) {
-                                                                    toastr['success']("User Added!!");
-                                                                    _this2.$parent.step = 2;
-                                                                }).catch(function (aggerrors) {
-                                                                    console.log(aggerrors);
-                                                                });
-                                                            }
-                                                        }).catch(function (deerrors) {
-                                                            console.log(deerrors);
-                                                        });
-                                                    }
-                                                }).catch(function (peerrors) {
-                                                    console.log(peerrors);
-                                                });
-                                            }).catch(function (errors) {
-                                                console.log(errors);
-                                            });
-                                        }
-                                    }).catch(function (er) {
-                                        console.log(er);
-                                    });
-                                }
-                            }).catch(function (erro) {
-                                console.log(erro);
-                            });
-                        }
-                    }).catch(function (err) {
-                        console.log(err);
-                    });
-                }
-            }).catch(function (error) {
-                console.log(error);
-            });
+      username: {
+        univ_roll_no: this.$parent.username
+      },
+
+      form_step: {
+        student_form_step: "TC",
+
+        id: this.$parent.id
+      },
+
+      sem_create: {
+        univ_roll_no: this.$parent.username,
+        semester: "1-2-3-4-5-6-7-8",
+        obtained_marks: "0-0-0-0-0-0-0-0",
+        max_marks: "0-0-0-0-0-0-0-0",
+        credits: "0-0-0-0-0-0-0-0",
+        active_backlog: "0-0-0-0-0-0-0-0",
+        passive_backlog: "0-0-0-0-0-0-0-0",
+        percentage: "0-0-0-0-0-0-0-0",
+        semester_status: "1"
+      }
+    };
+  },
+
+
+  methods: {
+    nextStep: function nextStep() {
+      var _this = this;
+
+      this.$validator.validateAll().then(function (result) {
+        if (result) {
+          _this.submit();
+          return;
         }
+      });
+    },
+    getAuthUser: function getAuthUser(name) {
+      return this.$store.getters.getAuthUser(name);
+    },
+    submit: function submit() {
+      var _this2 = this;
+
+      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["h" /* firstLoginURL */], this.id).then(function (response) {
+        if (response.status == 200) {
+          axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["x" /* statusChangeURL */], _this2.tnc).then(function (res) {
+            if (res.status == 200) {
+              axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this2.form_step).then(function (stat) {
+                if (stat.status == 200) {
+                  axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["C" /* storeStudentURL */], _this2.username).then(function (resp) {
+                    if (resp.status == 200) {
+                      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["A" /* storeStudentMeURL */], _this2.username).then(function (meresponse) {
+                        axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["B" /* storeStudentPeURL */], _this2.username).then(function (peresponse) {
+                          if (peresponse.status == 200) {
+                            axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["z" /* storeStudentDegreeURL */], _this2.sem_create).then(function (deresponse) {
+                              if (deresponse.status == 200) {
+                                axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["y" /* storeStudentAggregateURL */], _this2.username).then(function (aggresponse) {
+                                  toastr["success"]("User Added!!");
+
+                                  _this2.$parent.step = 2;
+                                }).catch(function (aggerrors) {
+                                  console.log(aggerrors);
+                                });
+                              }
+                            }).catch(function (deerrors) {
+                              console.log(deerrors);
+                            });
+                          }
+                        }).catch(function (peerrors) {
+                          console.log(peerrors);
+                        });
+                      }).catch(function (errors) {
+                        console.log(errors);
+                      });
+                    }
+                  }).catch(function (er) {
+                    console.log(er);
+                  });
+                }
+              }).catch(function (erro) {
+                console.log(erro);
+              });
+            }
+          }).catch(function (err) {
+            console.log(err);
+          });
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
     }
+  }
 });
 
 /***/ }),
@@ -54449,7 +54471,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("strong", [
                           _vm._v(
-                            " I Agree to the terms and conditions given above.\n                                    "
+                            "I Agree to the terms and conditions given above."
                           )
                         ]),
                         _vm._v(" "),
@@ -54466,7 +54488,13 @@ var render = function() {
                             ],
                             staticClass: "text-danger pull-right"
                           },
-                          [_vm._v(_vm._s(_vm.errors.first("terms")))]
+                          [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(_vm.errors.first("terms")) +
+                                "\n                  "
+                            )
+                          ]
                         )
                       ]),
                       _vm._v(" "),
@@ -54495,38 +54523,34 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "The credentials that you mention should match\n                                        with your original documents."
+            "The credentials that you mention should match with your original documents."
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticStyle: { "text-align": "justify" } }, [
+          _vm._v("No redundancy should be there in the information provided.")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticStyle: { "text-align": "justify" } }, [
+          _vm._v(
+            "Students should make sure that their Email id’s and Mobile numbers are filled accurately."
           )
         ]),
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "No redundancy should be there in the\n                                        information provided."
+            "Students should check the gazettes properly before filling the\n                    semester details."
           )
         ]),
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "Students should make sure that their Email\n                                        id’s and Mobile numbers are filled accurately."
+            "Students must mention their height in centimetres and weight in\n                    kgs."
           )
         ]),
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
-          _vm._v(
-            "Students should check the gazettes properly\n                                        before filling the semester details."
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticStyle: { "text-align": "justify" } }, [
-          _vm._v(
-            "Students must mention their height in\n                                        centimetres and weight in kgs."
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticStyle: { "text-align": "justify" } }, [
-          _vm._v(
-            "The format for Date of birth should be\n                                        (dd/mm/yyyy)."
-          )
+          _vm._v("The format for Date of birth should be (dd/mm/yyyy).")
         ]),
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
@@ -54535,25 +54559,25 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "The validity of category certificates should\n                                        be checked before filling."
+            "The validity of category certificates should be checked before\n                    filling."
           )
         ]),
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "The year gap should be mentioned properly. For\n                                        eg. If you have dropped one year after your 12th or Diploma then the year\n                                        gap is ‘1’."
+            "The year gap should be mentioned properly. For eg. If you have\n                    dropped one year after your 12th or Diploma then the year gap is ‘1’."
           )
         ]),
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "Students should fill their Active and Passive\n                                        backlogs accurately."
+            "Students should fill their Active and Passive backlogs accurately."
           )
         ]),
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "Active backlogs are the pending backlogs that\n                                        are yet to be cleared and the Passive backlogs are the one that has been\n                                        cleared."
+            "Active backlogs are the pending backlogs that are yet to be\n                    cleared and the Passive backlogs are the one that has been cleared."
           )
         ]),
         _vm._v(" "),
@@ -54563,13 +54587,13 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "Students must fill their 10th CGPA or\n                                        Percentage depending upon their examination boards."
+            "Students must fill their 10th CGPA or Percentage depending upon\n                    their examination boards."
           )
         ]),
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "Don’t forge the documents else strict\n                                        action will be taken against you."
+            "Don’t forge the documents else strict action will be taken\n                    against you."
           )
         ])
       ])
