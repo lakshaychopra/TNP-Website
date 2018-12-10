@@ -192,10 +192,20 @@ let routes = [{
                 path: '/user',
                 component: require('./views/user/index')
             },
+            {
+                path: '/exec/about/form',
+                component: require('./views/about/addPage'),
+            },
+            {
+                path: '/exec/about/manage',
+                component: require('./views/about/managePage'),
+            },
+            {
+                path: '/exec/about/:id/edit',
+                component: require('./views/about/edit')
+            },
         ]
     },
-
-
 
     {
         path: '/',
@@ -394,7 +404,7 @@ router.beforeEach((to, from, next) => {
                         //         break;
                         //     case "TC":
 
-                        //         break;    
+                        //         break;
                         //     default:
                         //         break;
                         // }

@@ -184,7 +184,7 @@
                     .then(response => {
                         console.log(response);
                         toastr['success'](response.data.message);
-                        this.$router.push('../../page/' + this.page.url);
+                        this.$router.push('/page/' + this.page.url);
                         console.log(this.$store.getters.getAuthUserType);
                     })
                     .catch(response => {

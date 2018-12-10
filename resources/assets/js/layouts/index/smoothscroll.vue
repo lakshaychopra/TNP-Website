@@ -1,6 +1,6 @@
 <template>
-    <div class="col-xs-12 px-1 d-lg-none" id="go-top">
-        <a class="smoothscroll" href="javascript:void(0)">
+    <div class="col-xs-12 px-1" id="go-top">
+        <a class="smoothscroll" href="#">
             <i class="fa fa-arrow-up"></i>
         </a>
     </div>
@@ -11,8 +11,8 @@
             return {
                 scrollDuration: 800, // smoothscroll duration
                 pxShow: 500, // height on which the button will show
-                fadeInTime: 400, // how slow/fast you want the button to show
-                fadeOutTime: 400, // how slow/fast you want the button to hide
+                fadeInTime: 500, // how slow/fast you want the button to show
+                fadeOutTime: 500, // how slow/fast you want the button to hide
                 scrollSpeed: 300, // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
                 goTopButton: "#go-top"
 

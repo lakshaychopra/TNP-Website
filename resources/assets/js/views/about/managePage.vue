@@ -15,7 +15,7 @@
         <h4 class="card-title mb-4">Pages List</h4>
         <!-- <h6 class="card-subtitle" v-if="tasks.total">Total {{tasks.total}} result found!</h6> -->
         <!-- <h6 class="card-subtitle" v-else>No result found!</h6> -->
-        <table class="table table-responsive table-bordered table-hover" style="background:#ffffff">
+        <table class="table table-bordered table-hover" style="background:#ffffff">
             <thead class='thead-light text-center'>
                 <tr>
                     <th scope="col">S.No.</th>
