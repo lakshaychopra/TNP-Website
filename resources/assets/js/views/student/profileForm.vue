@@ -40,7 +40,7 @@
                   <div class="form-group">
                     <select name="category" v-model="student.category" class="form-control">
                       <option disabled selected value="null">Category</option>
-                      <option value="GEN ">General</option>
+                      <option value="GENERAL">GENERAL</option>
                       <option value="SC">SC</option>
                       <option value="ST">ST</option>
                       <option value="OBC">OBC</option>
@@ -131,8 +131,8 @@
                   <div class="form-group">
                     <select name="branch" v-model="student.branch_type" class="form-control">
                       <option disabled value="null">Branch</option>
-                      <option value="B.Tech.">B.Tech.</option>
-                      <option value="M.Tech.">M.Tech.</option>
+                      <option value="B.TECH.">B.TECH.</option>
+                      <option value="M.TECH.">M.TECH.</option>
                       <option value="M.B.A.">M.B.A.</option>
                       <option value="M.C.A.">M.C.A.</option>
                     </select>
@@ -183,11 +183,11 @@
                     <label for="" class="col-md-4 col-form-label">Training Semester : </label>
                     <div class="col-md-1 md-radio md-radio-inline">
                       <input type="radio" name="t_sem" id="7" v-model="student.training_semester" value="7">
-                      <label for="7">7</label>
+                      <label for="7">7th</label>
                     </div>
                     <div class="col-md-1 md-radio md-radio-inline">
                       <input type="radio" name="t_sem" id="8" v-model="student.training_semester" value="8">
-                      <label for="8">8</label>
+                      <label for="8">8th</label>
                     </div>
                   </div>
                 </div>
@@ -285,7 +285,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-info btn-lg pull-right">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-lg pull-right">
                   </div>
                 </div>
               </div>

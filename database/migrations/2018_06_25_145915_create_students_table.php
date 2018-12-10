@@ -19,17 +19,17 @@ class CreateStudentsTable extends Migration
             $table->string('class_roll_no')->unique()->nullable();
             $table->string('name')->nullable();
             $table->string('batch')->comment('Year of Addmission and Year of Passout')->nullable();
-            $table->enum('branch_type',['B.Tech.', 'M.B.A.', 'M.C.A.', 'M.Tech.'])->nullable();
+            $table->string('branch_type')->nullable();
             $table->string('stream')->comment('Stream/Course type')->nullable();
             $table->string('section')->comment('Class Section')->nullable();
-            $table->enum('shift',['MORNING', 'EVENING'])->nullable();
-            $table->enum('training_semester',['7','8'])->nullable();
-            $table->enum('gender',['MALE', 'FEMALE'])->nullable();
+            $table->string('shift')->nullable();
+            $table->string('training_semester')->nullable();
+            $table->string('gender')->nullable();
             $table->string('blood_group')->nullable();
-            $table->enum('category',['OBC', 'SC', 'ST', 'GEN'])->nullable();
+            $table->string('category')->nullable();
             $table->string('height')->comment('in cm')->nullable();
             $table->string('weight')->comment('in kg')->nullable();
-            $table->enum('living',['HOSTELER','DAYSCHOLAR'])->nullable();
+            $table->string('living')->nullable();
             $table->string('father_name')->nullable();
             $table->string('father_phone')->nullable();
             $table->string('mother_name')->nullable();
@@ -42,7 +42,7 @@ class CreateStudentsTable extends Migration
             $table->timestamps();
         });
     }
-    
+
     /**
     * Reverse the migrations.
     *
