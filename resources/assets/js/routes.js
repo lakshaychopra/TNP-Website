@@ -119,6 +119,10 @@ let routes = [{
                 component: require('./views/task/edit')
             },
             {
+                path: '/notice',
+                component: require('./views/notice/index')
+            },
+            {
                 path: '/user',
                 component: require('./views/user/index')
             },
@@ -203,6 +207,10 @@ let routes = [{
             {
                 path: '/exec/about/:id/edit',
                 component: require('./views/about/edit')
+            },
+            {
+                path: '/exec/notice',
+                component: require('./views/notice/index')
             },
         ]
     },

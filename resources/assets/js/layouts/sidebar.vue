@@ -122,7 +122,7 @@
             </ul>
           </li>
           <li>
-            <router-link to="javascript:void(0)" exact>
+            <router-link to="/notice" exact>
               <i class="fa fa-file-word-o fa-fw" aria-hidden="true"></i>
               <span class="hide-menu">Notice Maker</span>
             </router-link>

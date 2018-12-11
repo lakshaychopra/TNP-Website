@@ -2,7 +2,7 @@ tinymce.PluginManager.add('addpdf', function(editor, url) {
 
     // Add a button that opens a window
     editor.addButton('addpdf', {
-        text: 'Add PDF from Google Drive',
+        text: 'Add PDF',
         icon: false,
         onclick: function() {
             // Open window
@@ -22,7 +22,7 @@ tinymce.PluginManager.add('addpdf', function(editor, url) {
 
     // Adds a menu item to the tools menu
     editor.addMenuItem('addpdf', {
-        text: 'Add PDF from Google Drive',
+        text: 'Add PDF',
         context: 'tools',
         onclick: function() {
             // Open window with a specific url
@@ -43,7 +43,7 @@ tinymce.PluginManager.add('addpdf', function(editor, url) {
     return {
         getMetadata: function() {
             return {
-                name: "Add PDF from Google Drive",
+                name: "Add PDF",
             };
         }
     };
