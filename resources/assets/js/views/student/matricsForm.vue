@@ -1,284 +1,303 @@
 <template>
-    <div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="form-material card">
-                    <div class="card-body">
-                        <h2 class="card-title mt-3 text-primary">Matriculation Education details</h2>
+  <div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-material card">
+          <div class="card-body">
+            <h2 class="card-title mt-3 text-primary">Matriculation Education Details</h2>
 
-                        <!-- <post-form :id="id"></post-form> -->
-                        <form method="post" @submit.prevent="submit">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" name="board" v-model="student.board" placeholder="Board"
-                                            class="form-control">
-                                        <small class="form-text text-primary text-uppercase">Board</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" name="institute_name" v-model="student.institute"
-                                            placeholder="Institute Name" class="form-control">
-                                        <small class="form-text text-primary text-uppercase">Institute Name</small>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="month" name="month" v-model="monthYear" placeholder="Month" class="form-control"
-                                            v-on:change="splitMonthYear(monthYear)">
-                                        <small class="form-text text-primary text-uppercase">Month and Year of Passing</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="" class="col-md-2 col-form-label">Marks Type : </label>
-                                        <div class="col-md-2 md-radio md-radio-inline">
-                                            <input type="radio" name="marks_type" id="CGPA" v-model="student.marks_type"
-                                                value="CGPA" v-on:change="resetmarks()">
-                                            <label for="CGPA">CGPA</label>
-                                        </div>
-                                        <div class="col-md-2 md-radio md-radio-inline">
-                                            <input type="radio" name="marks_type" id="PERCENTAGE" v-model="student.marks_type"
-                                                value="PERCENTAGE" v-on:change="resetmarks()">
-                                            <label for="PERCENTAGE">PERCENTAGE</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <input type="number" name="obtained" min="0" max="10" step="0.1" v-model="student.obtained_marks"
-                                            placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
-                                            v-if="this.student.marks_type=='CGPA'">
-                                        <input type="text" name="obtained" v-model="student.obtained_marks" placeholder="Obtained Marks"
-                                            class="form-control" v-on:input="percentCalculate()" v-else>
-                                        <small class="form-text text-primary text-uppercase">Obtained Marks</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <input type="number" name="max" v-model="student.max_marks" class="form-control"
-                                            placeholder="10" value="10" disabled v-if="this.student.marks_type=='CGPA'">
-                                        <input type="text" name="max" v-model="student.max_marks" placeholder="Max Marks"
-                                            class="form-control" v-on:input="percentCalculate()" v-else>
-                                        <span class="small text-primary text-uppercase">Max Marks</span>
-                                        <span id="percent" class="small text-muted pull-right">Percent = {{ percent }}%
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="submit" value="Submit" class="btn btn-info pull-right">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+            <form method="post" @submit.prevent="validateForm">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input v-validate="'required'" type="text" name="board" v-model="student.board" placeholder="Board" class="form-control text-uppercase">
+                    <small class="form-text text-primary text-uppercase">Board
+                      <span class="text-danger pull-right">{{errors.first('board')}}</span>
+                    </small>
+                  </div>
                 </div>
-            </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input v-validate="'required'" type="text" name="institute name" v-model="student.institute" placeholder="Institute Name"
+                      class="form-control text-capitalize">
+                    <small class="form-text text-primary text-uppercase">Institute Name
+                      <span class="text-danger pull-right">{{errors.first('institute name')}}</span>
+                    </small>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input v-validate="'required'" type="month" name="Month and Year of Passing" v-model="monthYear" placeholder="Month" class="form-control"
+                      v-on:change="splitMonthYear(monthYear)">
+                    <small class="form-text text-primary text-uppercase">Month and Year of Passing
+                      <span class="text-danger pull-right">{{errors.first('Month and Year of Passing')}}</span>
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="" class="col-md-2 col-form-label">Marks Type : </label>
+                    <div class="col-md-2 md-radio md-radio-inline">
+                      <input v-validate="'required'" type="radio" name="marks type" id="CGPA" v-model="student.marks_type" value="CGPA"
+                        v-on:change="resetmarks()">
+                      <label for="CGPA">CGPA</label>
+                    </div>
+                    <div class="col-md-2 md-radio md-radio-inline">
+                      <input type="radio" name="marks_type" id="PERCENTAGE" v-model="student.marks_type" value="PERCENTAGE"
+                        v-on:change="resetmarks()">
+                      <label for="PERCENTAGE">PERCENTAGE</label>
+                    </div>
+                      <span class="text-danger pull-right">{{errors.first('marks type')}}</span>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input v-validate="'required'" type="number" name="obtained marks" min="0" max="10" step="0.1" v-model="student.obtained_marks"
+                      placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()" v-if="this.student.marks_type=='CGPA'">
+                    <input v-validate="'required'" type="text" name="obtained marks" v-model="student.obtained_marks" placeholder="Obtained Marks"
+                      class="form-control" v-on:input="percentCalculate()" v-else>
+                    <small class="form-text text-primary text-uppercase">Obtained Marks
+                      <span class="text-danger pull-right">{{errors.first('obtained marks')}}</span>
+                    </small>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input v-validate="'required'" type="number" name="max marks" v-model="student.max_marks" class="form-control" placeholder="10"
+                      value="10" disabled v-if="this.student.marks_type=='CGPA'">
+                    <input v-validate="'required'" type="text" name="max marks" v-model="student.max_marks" placeholder="Max Marks" class="form-control"
+                      v-on:input="percentCalculate()" v-else>
+                    <span class="small text-primary text-uppercase">Max Marks</span>
+                    <span id="percent" class="small text-muted pull-right">Percent = {{ percent }}%
+                    </span>
+                  </div>
+                      <span class="text-danger pull-right">{{errors.first('max marks')}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-info pull-right">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 <script>
-    import {
-        storeStudentMeURL,
-        formstepChangeURL,
-        fetchProfileURL
-    } from "../../config.js";
-    export default {
-        data() {
-            return {
-                student: {
-                    marks_type: 'CGPA',
-                },
-                percent: 0,
-                id: this.$parent.id,
-                monthYear: '',
-                month: '',
-                year: '',
-                profile: {
-                    'univ_roll_no': this.$parent.username,
-                },
-                statusChange: {
-                    'student_form_step': 'METRICS_EDUCATION',
-                    'id': this.$parent.id,
-                },
-            }
+  import {
+    storeStudentMeURL,
+    formstepChangeURL,
+    fetchProfileURL
+  } from "../../config.js";
+  export default {
+    data() {
+      return {
+        student: {
+          marks_type: 'CGPA',
         },
-        created() {
-            axios.get('/api/dashboard/student/me/' + this.$parent.username + '/edit').then(response => {
-                console.log(response.data.data[0]);
-                this.student = response.data.data[0];
-                this.monthYear = response.data.data[0].year + '-' + response.data.data[0].month;
-                this.percent = response.data.data[0].percentage;
-            }).catch(error => {
-                console.log(error);
-            });
+        percent: 0,
+        id: this.$parent.id,
+        monthYear: '',
+        month: '',
+        year: '',
+        profile: {
+          'univ_roll_no': this.$parent.username,
         },
-        methods: {
-            resetmarks() {
-                this.percent = 0;
-                this.student.obtained_marks = undefined;
-                if (this.student.marks_type == 'CGPA') {
-                    this.student.max_marks = 10;
-                } else {
-                    this.student.max_marks = undefined;
-                }
-            },
-            percentCalculate() {
-                if (this.student.marks_type == 'CGPA') {
-                    console.log(this.student.max_marks);
-                    if (this.student.obtained_marks != undefined && (this.student.max_marks != undefined || this.student
-                            .max_marks != '')) {
-                        this.percent = parseFloat(this.student.obtained_marks * 9.5).toFixed(3);
-                    } else {
-                        this.percent = 0;
-                    }
-                } else {
-                    if (this.student.obtained_marks != undefined && this.student.max_marks != undefined) {
-                        this.percent = parseFloat((this.student.obtained_marks / this.student.max_marks) * 100).toFixed(
-                            3);
-                    } else {
-                        this.percent = 0;
-                    }
-
-                }
-            },
-            getAuthUser(name) {
-                return this.$store.getters.getAuthUser(name);
-            },
-            splitMonthYear(monthYear) {
-                this.student.month = monthYear.split('-')[1];
-                this.student.year = monthYear.split('-')[0];
-            },
-            submit() {
-                let formData = new FormData();
-                formData.append('univ_roll_no', this.student.univ_roll_no);
-                formData.append('board', this.student.board);
-                formData.append('institute', this.student.institute);
-                formData.append('month', this.student.month);
-                formData.append('year', this.student.year);
-                formData.append('obtained_marks', this.student.obtained_marks);
-                formData.append('max_marks', this.student.max_marks);
-                formData.append('marks_type', this.student.marks_type);
-                formData.append('percentage', this.percent);
-                formData.append('_method', 'PUT');
-                console.log(this.student.month);
-                console.log(this.student.year);
-                // console.log(this.$store.state.auth.username);
-                // console.log('1');
-                axios.post(storeStudentMeURL + this.student.id, formData).then(response => {
-                    console.log(response);
-                    axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
-                        if (statusresponse.status == 200) {
-                            // toastr['success']("User Added!!");
-                            this.$parent.step = 4;
-                            // this.$router.push('/req');
-
-                        }
-                    }).catch(errors => {
-                        console.log(errors);
-                    });
-                    //                                                               if (response.status == 200) {
-
-                    // }
-                }).catch(error => {
-                    console.log(error);
-                });
-            }
+        statusChange: {
+          'student_form_step': 'METRICS_EDUCATION',
+          'id': this.$parent.id,
+        },
+      }
+    },
+    created() {
+      axios.get('/api/dashboard/student/me/' + this.$parent.username + '/edit').then(response => {
+        console.log(response.data.data[0]);
+        this.student = response.data.data[0];
+        this.monthYear = response.data.data[0].year + '-' + response.data.data[0].month;
+        this.percent = response.data.data[0].percentage;
+      }).catch(error => {
+        console.log(error);
+      });
+    },
+    methods: {
+      resetmarks() {
+        this.percent = 0;
+        this.student.obtained_marks = undefined;
+        if (this.student.marks_type == 'CGPA') {
+          this.student.max_marks = 10;
+        } else {
+          this.student.max_marks = undefined;
         }
+      },
+      validateForm() {
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            this.submit();
+          }
+          else{
+            alert('Please enter missing details.');
+          }
+        });
+      },
+      percentCalculate() {
+        if (this.student.marks_type == 'CGPA') {
+          console.log(this.student.max_marks);
+          if (this.student.obtained_marks != undefined && (this.student.max_marks != undefined || this.student
+              .max_marks != '')) {
+            this.percent = parseFloat(this.student.obtained_marks * 9.5).toFixed(3);
+          } else {
+            this.percent = 0;
+          }
+        } else {
+          if (this.student.obtained_marks != undefined && this.student.max_marks != undefined) {
+            this.percent = parseFloat((this.student.obtained_marks / this.student.max_marks) * 100).toFixed(
+              3);
+          } else {
+            this.percent = 0;
+          }
+
+        }
+      },
+      getAuthUser(name) {
+        return this.$store.getters.getAuthUser(name);
+      },
+      splitMonthYear(monthYear) {
+        this.student.month = monthYear.split('-')[1];
+        this.student.year = monthYear.split('-')[0];
+      },
+      submit() {
+        let formData = new FormData();
+        formData.append('univ_roll_no', this.student.univ_roll_no);
+        formData.append('board', this.student.board.toUpperCase());
+        formData.append('institute', this.student.institute.toUpperCase());
+        formData.append('month', this.student.month);
+        formData.append('year', this.student.year);
+        formData.append('obtained_marks', this.student.obtained_marks);
+        formData.append('max_marks', this.student.max_marks);
+        formData.append('marks_type', this.student.marks_type);
+        formData.append('percentage', this.percent);
+        formData.append('_method', 'PUT');
+        console.log(this.student.month);
+        console.log(this.student.year);
+        // console.log(this.$store.state.auth.username);
+        // console.log('1');
+        axios.post(storeStudentMeURL + this.student.id, formData).then(response => {
+          console.log(response);
+          axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
+            if (statusresponse.status == 200) {
+              // toastr['success']("User Added!!");
+              this.$parent.step = 4;
+              // this.$router.push('/req');
+
+            }
+          }).catch(errors => {
+            console.log(errors);
+          });
+          //  if (response.status == 200) {
+          // }
+        }).catch(error => {
+          console.log(error);
+        });
+      }
     }
+  }
+
 </script>
 <style scoped>
-    .text-primary {
-        color: #0185c2 !important;
-    }
+  .text-primary {
+    color: #0185c2 !important;
+  }
 
-    .col-form-label {
-        padding-left: 0;
-    }
+  .col-form-label {
+    padding-left: 0;
+  }
+
 </style>
 <style lang="scss" scoped>
-    $md-radio-checked-color: rgb(51, 122, 183);
-    $md-radio-border-color: rgba(0, 0, 0, 0.54);
-    $md-radio-size: 20px;
-    $md-radio-checked-size: 10px;
-    $md-radio-ripple-size: 15px;
+  $md-radio-checked-color: rgb(51, 122, 183);
+  $md-radio-border-color: rgba(0, 0, 0, 0.54);
+  $md-radio-size: 20px;
+  $md-radio-checked-size: 10px;
+  $md-radio-ripple-size: 15px;
 
-    @keyframes ripple {
-        0% {
-            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);
-        }
-
-        50% {
-            box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
-        }
-
-        100% {
-            box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
-        }
+  @keyframes ripple {
+    0% {
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);
     }
 
-    .md-radio {
-        margin: 16px 0;
-
-        &.md-radio-inline {
-            display: inline-block;
-        }
-
-        input[type="radio"] {
-            display: none;
-
-            &:checked+label:before {
-                border-color: $md-radio-checked-color;
-                animation: ripple 0.2s linear forwards;
-            }
-
-            &:checked+label:after {
-                transform: scale(1);
-            }
-        }
-
-        label {
-            display: inline-block;
-            height: $md-radio-size;
-            position: relative;
-            padding: 0 ($md-radio-size + 10px);
-            margin-bottom: 0;
-            cursor: pointer;
-            vertical-align: bottom;
-
-            &:before,
-            &:after {
-                position: absolute;
-                content: '';
-                border-radius: 50%;
-                transition: all .3s ease;
-                transition-property: transform, border-color;
-            }
-
-            &:before {
-                left: 0;
-                top: 0;
-                width: $md-radio-size;
-                height: $md-radio-size;
-                border: 2px solid $md-radio-border-color;
-            }
-
-            &:after {
-                top: $md-radio-size / 2 - $md-radio-checked-size / 2;
-                left: $md-radio-size / 2 - $md-radio-checked-size / 2;
-                width: $md-radio-checked-size;
-                height: $md-radio-checked-size;
-                transform: scale(0);
-                background: $md-radio-checked-color;
-            }
-        }
+    50% {
+      box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
     }
+
+    100% {
+      box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
+    }
+  }
+
+  .md-radio {
+    margin: 16px 0;
+
+    &.md-radio-inline {
+      display: inline-block;
+    }
+
+    input[type="radio"] {
+      display: none;
+
+      &:checked+label:before {
+        border-color: $md-radio-checked-color;
+        animation: ripple 0.2s linear forwards;
+      }
+
+      &:checked+label:after {
+        transform: scale(1);
+      }
+    }
+
+    label {
+      display: inline-block;
+      height: $md-radio-size;
+      position: relative;
+      padding: 0 ($md-radio-size + 10px);
+      margin-bottom: 0;
+      cursor: pointer;
+      vertical-align: bottom;
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        border-radius: 50%;
+        transition: all .3s ease;
+        transition-property: transform, border-color;
+      }
+
+      &:before {
+        left: 0;
+        top: 0;
+        width: $md-radio-size;
+        height: $md-radio-size;
+        border: 2px solid $md-radio-border-color;
+      }
+
+      &:after {
+        top: $md-radio-size / 2 - $md-radio-checked-size / 2;
+        left: $md-radio-size / 2 - $md-radio-checked-size / 2;
+        width: $md-radio-checked-size;
+        height: $md-radio-checked-size;
+        transform: scale(0);
+        background: $md-radio-checked-color;
+      }
+    }
+  }
+
 </style>

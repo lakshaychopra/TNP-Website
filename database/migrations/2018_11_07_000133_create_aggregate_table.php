@@ -22,7 +22,7 @@ class CreateAggregateTable extends Migration
             $table->string('credits')->nullable();
             $table->string('active_backlog')->nullable();
             $table->string('passive_backlog')->nullable();
-            $table->enum('marks_type',['CGPA','PERCENTAGE'])->nullable();
+            $table->string('marks_type')->nullable();
             $table->string('percentage')->nullable();
             $table->string('semester_status')->nullable();
             $table->timestamps();
@@ -36,6 +36,6 @@ class CreateAggregateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Aggregate');
+        Schema::dropIfExists('aggregate');
     }
 }
