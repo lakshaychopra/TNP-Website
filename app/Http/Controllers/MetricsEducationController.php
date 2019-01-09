@@ -42,7 +42,7 @@ class MetricsEducationController extends Controller
      */
     public function store(CreateMetricsEducationRequest $request)
     {
-        
+
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -101,7 +101,7 @@ class MetricsEducationController extends Controller
         try {
             DB::beginTransaction();
             if(!$auth){
-                return $this->respondError('Failed', 401); 
+                return $this->respondError('Failed', 401);
             }
             // $data = $request->all();
             $me->univ_roll_no = $request->univ_roll_no;
@@ -113,7 +113,7 @@ class MetricsEducationController extends Controller
             $me->max_marks = $request->max_marks;
             $me->marks_type = $request->marks_type;
             $me->percentage = $request->percentage;
-            $me->save(); 
+            $me->save();
             DB::commit();
             return $this->respondSuccess('Updated',$me);
         } catch (Exception $e) {
