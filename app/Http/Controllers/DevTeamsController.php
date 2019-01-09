@@ -8,7 +8,6 @@ use App\Repositories\DevTeamsRepository;
 use App\Services\DevTeamsService;
 use App\Http\Requests\CreateDevTeamsRequest;
 use App\Http\Requests\UpdateDevTeamsRequest;
-use App\Model\DevTeam;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use DB;
 use Exception;
@@ -123,7 +122,7 @@ class DevTeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(DevTeam $devTeam)
     {
       $auth = JWTAuth::parseToken()->authenticate();
       $delete = $this->repository->delete($devTeam);
