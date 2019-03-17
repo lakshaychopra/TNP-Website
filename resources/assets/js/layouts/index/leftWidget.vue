@@ -13,7 +13,7 @@
                                     target="_blank" rel="noopener">Alumni Assistance Form</a>
                             </li>
                             <li class="list-group-item">
-                                <router-link to="/page/placement-broucher">Placement Broucher</router-link>
+                                <router-link to="/page/placement-broucher">Placement Brochure</router-link>
                             </li>
                         </ul>
                     </div>
