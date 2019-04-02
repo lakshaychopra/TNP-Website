@@ -65,7 +65,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <a href="../../files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">Placement
-                                    Broucher</a>
+                                    Brochure</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="../../files/Evaluation.pdf" download="Evaluation.pdf">Evaluation Performa</a>

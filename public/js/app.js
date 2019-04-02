@@ -26446,7 +26446,7 @@ var staticRenderFns = [
                     },
                     [
                       _vm._v(
-                        "Placement\n                                Broucher"
+                        "Placement\n                                Brochure"
                       )
                     ]
                   )
