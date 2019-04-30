@@ -101,6 +101,17 @@ class PreviousEducationsController extends Controller
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
+            
+            $certificate = $request->file('previous_edu_certificate');
+
+        // if ($certificate->getClientMimeType() !== 'application/pdf'){
+
+            $extension = strtolower($certificate->getClientOriginalExtension());
+            $filename = 'previous_edu_cerificate_'.$request->univ_roll_no.'.'.$extension;
+            $path =  public_path('images/certificates/twelfth');
+            $imageLocation = $certificate->move($path, $filename);
+            $pe->previous_edu_certificate = $filename;
+         //}
             // $data = $request->all();
             $pe->univ_roll_no = $request->univ_roll_no;
             $pe->board = $request->board;

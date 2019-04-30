@@ -16,7 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 Route::post('/send-notification', 'PostController@pushNotification');
 
 Route::get('/aaaa', 'StudentFilterController@filterStudents');
@@ -42,11 +41,10 @@ Route::get('/home/page/view/pinned', 'HomeController@viewPinned');
 Route::get('/home/page/view/widgets', 'HomeController@viewWidgets');
 //AboutWidget Controller
 Route::get('/home/page/view/about/widgets', 'AboutWidgetController@aboutWidgets');
-
 //Protected routes
 Route::group(['middleware' => 'jwt.auth'], function() {
     // Login Controller
-    // Route::post('/security', 'LoginController@verifyTwoFactor');
+    // Route::post('/security', 'LoginController@verifyTwoFactor'); 
     Route::get('/auth/user','LoginController@getAuthUser');
     // Register Controller
     Route::post('/register/password', 'RegisterController@setPassword');
@@ -63,7 +61,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::get('/post/view/pinned', 'PostController@viewPinned');
         Route::post('/post/getpostid', 'PostController@getFirstID');
         Route::post('/post/notifyme', 'PostController@pushNotification');
-
+        
         // Users Controller
         Route::resource('/user', 'UsersController');
         Route::get('/user/excelfile', 'UsersController@userExcelFile');
@@ -76,6 +74,8 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::resource('/student', 'StudentsController');
         //MetricsEducation
         Route::resource('/student/me', 'MetricsEducationController');
+        //Displayprofile
+        Route::resource('/student/profile','ProfileViewController');
         //PreviousEducation
         Route::resource('/student/pe', 'PreviousEducationsController');
         //SemesterMarks
@@ -88,13 +88,16 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::resource('/about', 'AboutController');
         //About Widget Controller
         Route::resource('/widget/about', 'AboutWidgetController');
-        //DetTeams Controller
-        Route::resource('/dev/teams', 'DevTeamsController');
-        //TODO Admin Controller
+                //DetTeams Controller
+                Route::resource('/dev/teams', 'DevTeamsController');
+
+        //TODO Admin Controller 
         Route::post('todo','TodoController@store');
         Route::get('/todo','TodoController@index');
         Route::delete('/todo/{id}','TodoController@destroy');
         Route::post('/todo/status','TodoController@toggleStatus');
+        // SearchController
+       // Route::post('/filter','SearchController@store');
     });
 });
 

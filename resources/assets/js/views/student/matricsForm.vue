@@ -6,11 +6,20 @@
           <div class="card-body">
             <h2 class="card-title mt-3 text-primary">Matriculation Education Details</h2>
 
-            <form method="post" @submit.prevent="validateForm">
+            <form method="post" @submit.prevent="validateForm" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <input v-validate="'required'" type="text" name="board" v-model="student.board" placeholder="Board" class="form-control text-uppercase">
+                    <select name="board" :class="{'form-control': true, 'error': errors.has('board')}" v-model="student.board"
+                      v-validate="'required'">
+                      <!-- <option disabled value="">HOSTELER / DAY SCHOLAR</option> -->
+                      <option value="CBSE">CBSE</option>
+                      <option value="ICSE"> ICSE </option>
+                      <option value="PSEB">PSEB</option>
+                      <option value="BSEB">BSEB</option>
+
+                    </select>
+                    <!-- <input v-validate="'required'" type="text" name="board" v-model="student.board" placeholder="Board" class="form-control text-uppercase"> -->
                     <small class="form-text text-primary text-uppercase">Board
                       <span class="text-danger pull-right">{{errors.first('board')}}</span>
                     </small>
@@ -41,7 +50,7 @@
                   <div class="form-group">
                     <label for="" class="col-md-2 col-form-label">Marks Type : </label>
                     <div class="col-md-2 md-radio md-radio-inline">
-                      <input v-validate="'required'" type="radio" name="marks type" id="CGPA" v-model="student.marks_type" value="CGPA"
+                      <input v-validate="'required'" type="radio" name="marks_type" id="CGPA" v-model="student.marks_type" value="CGPA"
                         v-on:change="resetmarks()">
                       <label for="CGPA">CGPA</label>
                     </div>
@@ -79,9 +88,24 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
+                   <div class="form-group files">
+                    <input type="file" v-validate="'required'" accept="application/pdf" class="form-control" ref="file" name="file" id="imageUrl">
+                      <small class="form-text text-primary text-uppercase">Upload Certificate (.pdf) 
+                         <span class="text-danger pull-right">{{errors.first('File')}}</span>
+                      </small>
+
+                </div>
+                </div>
+                <div class="col-md-8">
                   <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-info pull-right">
+                    <button class="btn btn-info btn-lg btn-primary pull-right" type="submit" value="I Agree">
+                    <span v-if="!load">Submit
+                      </span> 
+                      <span v-else>
+                        <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                      </span> 
+                    </button>
                   </div>
                 </div>
               </div>
@@ -100,7 +124,7 @@
   } from "../../config.js";
   export default {
     data() {
-      return {
+      return {        
         student: {
           marks_type: 'CGPA',
         },
@@ -116,7 +140,11 @@
           'student_form_step': 'METRICS_EDUCATION',
           'id': this.$parent.id,
         },
-      }
+        files: {},
+        certificate: '',
+        load:false
+      };
+    
     },
     created() {
       axios.get('/api/dashboard/student/me/' + this.$parent.username + '/edit').then(response => {
@@ -174,7 +202,16 @@
         this.student.month = monthYear.split('-')[1];
         this.student.year = monthYear.split('-')[0];
       },
+        //  handleChange(e) {
+        //     imagefile = document.querySelector('#file');
+        //         this.certificate = e.files[0];
+        //         //this.img_preview = URL.createObjectURL(this.post.imageUrl);
+
+        //         console.log(this.certificate);
+        //     },
+
       submit() {
+        this.load=true;
         let formData = new FormData();
         formData.append('univ_roll_no', this.student.univ_roll_no);
         formData.append('board', this.student.board.toUpperCase());
@@ -185,12 +222,17 @@
         formData.append('max_marks', this.student.max_marks);
         formData.append('marks_type', this.student.marks_type);
         formData.append('percentage', this.percent);
+        var imagefile = document.querySelector('#imageUrl');
+        console.log(imagefile.files[0]);
+        formData.append('tenth_certificate', imagefile.files[0]);
+        //formData.append('tenth_certificate', this.certificate);
         formData.append('_method', 'PUT');
         console.log(this.student.month);
         console.log(this.student.year);
         // console.log(this.$store.state.auth.username);
         // console.log('1');
-        axios.post(storeStudentMeURL + this.student.id, formData).then(response => {
+        axios.post(storeStudentMeURL + this.student.id, formData,{headers: {'Content-Type': 'multipart/form-data'}}
+        ).then(response => {
           console.log(response);
           axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
             if (statusresponse.status == 200) {

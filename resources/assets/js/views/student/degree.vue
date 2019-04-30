@@ -9,16 +9,16 @@
                         <!-- <post-form :id="id"></post-form> -->
                         <form method="post" @submit.prevent="submit">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                     <div class="form-group">
                                         <input type="number" name="semester" v-model="student.semester_status"
                                             placeholder="Semester" class="form-control" disabled>
                                         <small class="form-text text-primary text-uppercase">Semester</small>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                     <div class="form-group">
-                                        <label for="Marks Type" class="col-md-2 col-form-label">Marks Type : </label>
+                                        <label for="Marks Type" class="col-md-3 col-form-label">Marks Type : </label>
                                         <div class="col-md-2 md-radio md-radio-inline">
                                             <input type="radio" name="marks_type" id="CGPA" v-model="student.marks_type"
                                                 value="CGPA" v-on:change="resetmarks()">
@@ -35,7 +35,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" name="obtained" min="0" max="10" step="0.1" v-model="update_marks.obtained_marks"
+                                        <input type="number" name="obtained" min="5.0" max="10" step="0.1" v-model="update_marks.obtained_marks"
                                             placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
                                             v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="obtained" v-model="update_marks.obtained_marks"
@@ -81,7 +81,13 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="submit" value="Submit" class="btn btn-info pull-right">
+                                        <button type="submit" value="I Agree" class="btn btn-info btn-lg pull-right">
+                                        <span v-if="!load">Submit
+                                        </span> 
+                                        <span v-else>
+                                         <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                                        </span> 
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +108,6 @@
         data() {
             return {
                 student: {},
-
                 update_marks: {
                     obtained_marks: 0,
                     max_marks: 0,
@@ -119,16 +124,23 @@
                     'univ_roll_no': this.$parent.username,
                 },
                 statusChange: {
-                    'student_form_step': 'AGGREGATE',
+                    'student_form_step': 'PREVIOUS_EDUCATION',
                     'id': this.$parent.id,
                 },
+                statusChange1: {
+                    'student_form_step': 'DEGREE',
+                    'id': this.$parent.id,
+                }
             }
         },
         created() {
+
             axios.get('/api/dashboard/student/sem/' + this.$parent.username + '/edit').then(response => {
                 console.log(response.data.data[0]);
+                console.log('sem_limit');
+                console.log('hello '+this.$parent.sem_limit);
                 this.student = response.data.data[0];
-
+                
                 this.update_marks.obtained_marks = this.splitarray(this.student.obtained_marks, this.student.semester_status);
                 this.update_marks.max_marks = this.splitarray(this.student.max_marks, this.student.semester_status);
                 this.update_marks.credits = this.splitarray(this.student.credits, this.student.semester_status);
@@ -181,7 +193,7 @@
             getAuthUser(name) {
                 return this.$store.getters.getAuthUser(name);
             },
-            submit() {
+             submit() {
                 this.student.obtained_marks = this.changeValue(this.student.obtained_marks, this.update_marks.obtained_marks,
                     this.student.semester_status);
                 this.student.max_marks = this.changeValue(this.student.max_marks, this.update_marks.max_marks, this.student
@@ -193,8 +205,24 @@
                     this.student.semester_status);
                 this.student.percentage = this.changeValue(this.student.percentage, this.update_marks.percent, this.student
                     .semester_status);
-                this.student.semester_status = parseInt(this.student.semester_status) + 1;
+                    
+                if(this.student.semester_status<8){
+                    this.student.semester_status = parseInt(this.student.semester_status) + 1;
+                    axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {  
+                            console.log(statusresponse+' testing');
+                             }).catch(errors => {
+                            console.log(errors);
+                            });
 
+                }
+                else{
+                    axios.post(formstepChangeURL, this.statusChange1).then(statusresponse => { 
+                            console.log(statusresponse+' hello parul');
+                             this.$parent.step = 6;
+                             }).catch(errors => {
+                            console.log(errors);
+                            });
+                }
                 let formData = new FormData();
                 formData.append('univ_roll_no', this.student.univ_roll_no);
                 formData.append('semester', this.student.semester);
@@ -206,29 +234,16 @@
                 formData.append('marks_type', this.student.marks_type);
                 formData.append('percentage', this.student.percentage);
                 formData.append('semester_status', this.student.semester_status);
-                formData.append('_method', 'PUT');
                 console.log(this.student);
+                formData.append('_method', 'PUT');
                 axios.post(storeStudentDegreeURL + this.student.id, formData).then(response => {
-                    console.log(response);
-                    axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
-                        if (statusresponse.status == 200 && this.student.semester_status == 9) {
-                            // toastr['success']("User Added!!");
-                            this.$parent.step = 6;
-                            // this.$router.push('/req');
-                        }
-                    }).catch(errors => {
-                        console.log(errors);
-                    });
-                    console.log(response);
-                    // if (response.status == 200) {
-                    // }
-                }).catch(error => {
-                    console.log(error);
-                });
-            }
+                    
+                        console.log(this.student.semester_status);
+                                   });
+             }
         }
     }
-</script>
+    </script>
 <style scoped>
     .text-primary {
         color: #0185c2 !important;

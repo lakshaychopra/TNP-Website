@@ -42,7 +42,7 @@ class MetricsEducationController extends Controller
      */
     public function store(CreateMetricsEducationRequest $request)
     {
-
+        
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -97,13 +97,21 @@ class MetricsEducationController extends Controller
      */
     public function update(UpdateMetricsEducationRequest $request, MetricsEducation $me)
     {
+
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
             if(!$auth){
-                return $this->respondError('Failed', 401);
+                return $this->respondError('Failed', 401); 
             }
-            // $data = $request->all();
+             $certificate = $request->file('tenth_certificate');
+
+               $extension = strtolower($certificate->getClientOriginalExtension());
+               $filename = 'tenth_cerificate_'.$request->univ_roll_no.'.'.$extension;
+		       $path =  public_path('images/certificates/tenth');
+		       $imageLocation = $certificate->move($path, $filename);
+		       $me->tenth_certificate = $filename;
+           
             $me->univ_roll_no = $request->univ_roll_no;
             $me->board = $request->board;
             $me->institute = $request->institute;
@@ -113,7 +121,7 @@ class MetricsEducationController extends Controller
             $me->max_marks = $request->max_marks;
             $me->marks_type = $request->marks_type;
             $me->percentage = $request->percentage;
-            $me->save();
+            $me->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$me);
         } catch (Exception $e) {
@@ -135,4 +143,5 @@ class MetricsEducationController extends Controller
         $index= MetricsEducation::orderBy('created_at', 'desc')->get();
         return $this->respondSuccess('Deleted', $index);
     }
+   
 }

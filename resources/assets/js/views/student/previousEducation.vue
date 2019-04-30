@@ -9,9 +9,20 @@
             <form method="post" @submit.prevent="submit">
               <div class="row">
                 <div class="col-md-4">
-                  <div class="form-group">
-                    <input type="text" name="board" v-model="student.board" placeholder="Board" class="form-control">
-                    <small id="percent" class="form-text text-primary text-uppercase">Board</small>
+                   <div class="form-group">
+                    <select name="board" :class="{'form-control': true, 'error': errors.has('board')}" v-model="student.board"
+                      v-validate="'required'">
+                      <!-- <option disabled value="">HOSTELER / DAY SCHOLAR</option> -->
+                      <option value="CBSE">CBSE</option>
+                      <option value="ICSE"> ICSE </option>
+                      <option value="PSEB">PSEB</option>
+                      <option value="BSEB">BSEB</option>
+
+                    </select>
+                    <!-- <input v-validate="'required'" type="text" name="board" v-model="student.board" placeholder="Board" class="form-control text-uppercase"> -->
+                    <small class="form-text text-primary text-uppercase">Board
+                      <span class="text-danger pull-right">{{errors.first('board')}}</span>
+                    </small>
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -48,14 +59,14 @@
 
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="number" name="obtained" min="0" v-model="student.obtained_marks" placeholder="Obtained Marks"
+                    <input type="number" name="obtained" min="0" v-model="student.obtained_marks"  v-validate="'required'" placeholder="Obtained Marks"
                       class="form-control" v-on:input="percentCalculate()">
                     <small class="form-text text-primary text-uppercase">Obtained Marks</small>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="number" name="max" v-model="student.max_marks" class="form-control" placeholder="Max Marks"
+                    <input type="number" name="max" v-model="student.max_marks" class="form-control"  v-validate="'required'" placeholder="Max Marks"
                       v-on:input="percentCalculate()">
                     <span class="small text-primary text-uppercase">Max Marks</span>
                     <span id="percent" class="small text-muted pull-right">Percent = {{ percent }}%
@@ -79,9 +90,23 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12">
+                 <div class="col-md-4">
+                   <div class="form-group files">
+                    <input type="file" v-validate="'required'" accept="application/pdf" class="form-control" ref="file" name="file" id="imageUrl">
+                      <small class="form-text text-primary text-uppercase">Upload Certificate (.pdf) 
+                         <span class="text-danger pull-right">{{errors.first('File')}}</span>
+                      </small>
+                </div>
+                 </div>
+                <div class="col-md-8">
                   <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-info pull-right">
+                    <button type="submit" value="Submit" class="btn btn-info btn-lg pull-right">
+                    <span v-if="!load">Submit
+                      </span> 
+                      <span v-else>
+                        <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                      </span>
+                    </button> 
                   </div>
                 </div>
               </div>
@@ -107,6 +132,7 @@
         monthYear: '',
         month: '',
         year: '',
+        certificate: '',
         profile: {
           'univ_roll_no': this.$parent.username,
         },
@@ -114,11 +140,14 @@
           'student_form_step': 'PREVIOUS_EDUCATION',
           'id': this.$parent.id,
         },
-      }
+        load:false
+      };
+    
     },
     created() {
       axios.get('/api/dashboard/student/pe/' + this.$parent.username + '/edit').then(response => {
         console.log(response.data.data[0]);
+        // console.log(1);
         this.student = response.data.data[0];
         this.monthYear = response.data.data[0].year + '-' + response.data.data[0].month;
         this.percent = response.data.data[0].percentage;
@@ -148,6 +177,7 @@
         this.student.year = monthYear.split('-')[0];
       },
       submit() {
+        this.load=true;
         let formData = new FormData();
         formData.append('univ_roll_no', this.student.univ_roll_no);
         formData.append('board', this.student.board);
@@ -160,12 +190,16 @@
         formData.append('jee_rank', this.student.jee_rank);
         formData.append('year_gap', this.student.year_gap);
         formData.append('percentage', this.percent);
+        var imagefile = document.querySelector('#imageUrl');
+       // console.log(imagefile.files[0]);
+        formData.append('previous_edu_certificate', imagefile.files[0]);
         formData.append('_method', 'PUT');
         console.log(this.student.month);
         console.log(this.student.year);
         // console.log(this.$store.state.auth.username);
         // console.log('1');
-        axios.post(storeStudentPeURL + this.student.id, formData).then(response => {
+        axios.post(storeStudentPeURL + this.student.id, formData,{headers: {'Content-Type': 'multipart/form-data'}}
+         ).then(response => {
           axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
             if (statusresponse.status == 200) {
               // toastr['success']("User Added!!");

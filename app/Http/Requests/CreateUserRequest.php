@@ -29,6 +29,7 @@ class CreateUserRequest extends FormRequest
             'phone_number'  =>'required|min:10|max:10',
             'type'          =>'required',
             'password'      =>'required',
+           // 'sem_limit'      =>'required',
         ];
     }
 }

@@ -62,7 +62,14 @@
                   </label>
 
                   <div class="text-center">
-                    <input type="submit" class="btn btn-lg btn-primary" value="I Agree">
+                    <!-- <input type="submit" class="btn btn-lg btn-primary" value="I Agree"> -->
+                    <button class="btn btn-info btn-lg btn-primary" type="submit" value="I Agree">
+                      <span v-if="!load">I Agree
+                      </span> 
+                      <span v-else>
+                        <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                      </span>  
+                    </button>
                   </div>
                 </div>
               </div>
@@ -118,7 +125,8 @@
           passive_backlog: "0-0-0-0-0-0-0-0",
           percentage: "0-0-0-0-0-0-0-0",
           semester_status: "1"
-        }
+        },
+        load:false
       };
     },
 
@@ -137,6 +145,7 @@
       },
 
       submit() {
+        this.load=true;
         axios
           .post(firstLoginURL, this.id)
           .then(response => {
@@ -155,8 +164,8 @@
                               if (resp.status == 200) {
                                 axios
                                   .post(storeStudentMeURL, this.username)
-
                                   .then(meresponse => {
+                                    if (meresponse.status == 200) {
                                     axios
                                       .post(
                                         storeStudentPeURL,
@@ -202,6 +211,7 @@
                                       .catch(peerrors => {
                                         console.log(peerrors);
                                       });
+                                  }
                                   })
                                   .catch(errors => {
                                     console.log(errors);

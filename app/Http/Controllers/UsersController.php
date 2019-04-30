@@ -64,6 +64,7 @@ class UsersController extends Controller
                         $data[] = [
                             'username'     =>  $value->rollno,
                             'email'        =>  $value->email,
+                           // 'sem_limit'        =>  $value->sem_limit,
                             'phone_number' =>  $value->phone,
                             'password'     =>  bcrypt($value->dob),
                             'type'         =>  $type,
@@ -131,6 +132,7 @@ class UsersController extends Controller
             $data = $request->all();
             $post->username = $request->username;
             $post->email = $request->email;
+            $post->sem_limit = $request->sem_limit;
             $post->phone_number = $request->phone_number;
             $post->type = $request->type;
             $post->save(); 

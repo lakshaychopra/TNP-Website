@@ -96,14 +96,15 @@ class SemesterMarksController extends Controller
     */
     public function update(UpdateSemesterMarksRequest $request,SemesterMarks $semesterMarks)
     {
+        // \Log::info("1");
         $auth = JWTAuth::parseToken()->authenticate();
         try {
+            DB::beginTransaction();
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            DB::beginTransaction();
-            $uid = SemesterMarks::pluck('id');
-            $updateData = DB::table('semester_marks')->where('id', $uid)
+            // $uid = SemesterMarks::pluck('id');
+            $updateData = DB::table('semester_marks')->where('univ_roll_no', $request->univ_roll_no)
             ->update([
                 'semester'  => $request->semester,
                 'obtained_marks'  => $request->obtained_marks,
@@ -113,10 +114,11 @@ class SemesterMarksController extends Controller
                 'passive_backlog'  => $request->passive_backlog,
                 'marks_type'  => $request->marks_type,
                 'percentage'  => $request->percentage,
-                'semester_status'  => $request->semester_status,
-                ]);
+                 'semester_status'  => $request->semester_status,
+                 ]);
                 DB::commit();
                 return $this->respondSuccess('Updated',$updateData);
+             
             } catch (Exception $e) {
                 DB::rollback();
                 return $this->respondException($e);

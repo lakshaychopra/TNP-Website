@@ -58,7 +58,8 @@ class UserRepository
 			'password'	     	 => $payload['password'],
 			'email'	 	         => $payload['email'],
 			'phone_number'       => $payload['phone_number'],
-			'type'   	 	     => $payload['type'],
+            'type'   	 	     => $payload['type'],
+            //'sem_limit'   	     => $payload['sem_limit'],
         ];
 	}
 }

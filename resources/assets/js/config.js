@@ -36,6 +36,8 @@ export const storeStudentMeURL = '/api/dashboard/student/me/';
 export const storeStudentPeURL = '/api/dashboard/student/pe/';
 export const storeStudentDegreeURL = '/api/dashboard/student/sem/';
 export const storeStudentAggregateURL = '/api/dashboard/student/aggregate/';
+export const viewStudentProfileURL = '/api/dashboard/student/profile/';
+
 
 export const viewPost = '/view/';
 export const addPageURL = '/api/dashboard/about';

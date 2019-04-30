@@ -5,7 +5,9 @@
         <matrics-form v-else-if="step == 3"></matrics-form>
         <previous-education v-else-if="step == 4"></previous-education>
         <degree-education v-else-if="step == 5"></degree-education>
-        <aggregate-education v-else-if="step == 6"></aggregate-education>
+        <!-- <aggregate-education v-else-if="step == 6"></aggregate-education> -->
+       <display-profile v-else-if="step == 6"></display-profile>
+
     </div>
 </template>
 <script>
@@ -14,7 +16,8 @@
     import MatricsForm from './matricsForm.vue'
     import PreviousEducation from './previousEducation.vue'
     import DegreeEducation from './degree.vue'
-    import AggregateEducation from './aggregate.vue'
+   // import AggregateEducation from './aggregate.vue'
+   import DisplayProfile from './display_profile.vue'
     import helper from './../../services/helper'
 
     export default {
@@ -23,6 +26,7 @@
                 step: null,
                 id:'',
                 username:'',
+                sem_limit:''
             }
         },
         components: {
@@ -31,7 +35,8 @@
             MatricsForm,
             PreviousEducation,
             DegreeEducation,
-            AggregateEducation
+            //AggregateEducation
+            DisplayProfile
         },
         methods: {
             getAuthUser(name) {
@@ -43,6 +48,8 @@
             return helper.authUser().then(res => {
                this.id = res.id;
                this.username = res.username;
+                console.log(res.sem_limit);
+                this.sem_limit = res.sem_limit;
                 if (res.type == "STUDENT") {
                     switch (res.student_form_step) {
                         case "N.A.":
@@ -63,9 +70,12 @@
                         case "DEGREE":
                             this.step = 6;
                             break;    
-                        case "Aggregate":
-                            this.step = 7;
-                            break;
+                        // case "Aggregate":
+                        //     this.step = 7;
+                        //     break;
+                        //case "DISPLAY_PROFILE":
+                          //    this.step=7;
+                            //  break;
                         default:
                             break;
                     }
@@ -95,9 +105,12 @@
                         case "DEGREE":
                             this.step = 6;
                             break;
-                        case "Aggregate":
-                            this.step = 7;
-                            break;
+                        // case "Aggregate":
+                        //     this.step = 7;
+                        //     break;
+                        // case "DISPLAY_PROFILE":
+                        //       this.step=7;
+                        //       break;
                         default:
                             break;
                     }

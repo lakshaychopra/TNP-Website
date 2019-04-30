@@ -1,103 +1,100 @@
 <?php
 
 namespace App\Http\Controllers;
+//namespace App\Models;
 
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Student;
+use App\Models\DisplayStudent;
 use App\Http\Requests\CreateStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use DB;
 use Exception;
 use Notification;
 use JWTAuth;
-use App\Services\StudentService;
-use App\Repositories\StudentRepository;
+use App\Services\ProfileViewService;
+use App\Repositories\ProfileViewRepository;
 
-class StudentsController extends Controller
+
+class ProfileViewController extends Controller
 {
-    public function __construct(StudentService $service, StudentRepository $repository)
+    public function __construct(ProfileViewService $service, ProfileViewRepository $repository)
     {
         $this->repository = $repository;
         $this->service = $service;
     }
-    
     /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function index(Request $request)
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         $auth = JWTAuth::parseToken()->authenticate();
         $limit  = $request->input('limit') ?? 6;
         $students = $this->repository->list($limit);
         return $this->respondData($students);
     }
-    
+
     /**
-    * Store a newly created resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function store(CreateStudentRequest $request)
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $auth = JWTAuth::parseToken()->authenticate();
-        try {
-            DB::beginTransaction();
-            if (!$auth) {
-                return $this->respondUnauthorized('Failed');
-            }
-            $data = $request->only('univ_roll_no');
-            $student = new Student;
-            $student->create($data);
-            DB::commit();
-            return $this->respondSuccess('Inserted',$student);
-        }
-        catch (Exception $e) {
-            DB::rollback();
-            return $this->respondException($e);
-        }
+        //
     }
-    
+
     /**
-    * Display the specified resource.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function show(Student $student)
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        $auth = JWTAuth::parseToken()->authenticate();
-        return $this->respondData($student);
+        //
     }
-    
+
     /**
-    * Show the form for editing the specified resource.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function edit($student = null)
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Student $pe)
+    {
+       \ Log::info("1");
+        $auth = JWTAuth::parseToken()->authenticate();
+        
+        return $this->respondData($pe);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($pe = null)
     {
         $auth = JWTAuth::parseToken()->authenticate();
-        if ($student != null) {
-            $data = Student::where('univ_roll_no', '=' , $student)->get();
+        if ($pe != null) {
+            $data = DisplayStudent::where('univ_roll_no', '=' , $pe)->get();
             return $this->respondData($data);
         }
     }
-    
-    
+
     /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    
-    public function update(UpdateStudentRequest $request, Student $student)
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdateStudentRequest $request,Student $id)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
@@ -139,18 +136,15 @@ class StudentsController extends Controller
             return $this->respondException($e);
         }
     }
-    
+
     /**
-    * Remove the specified resource from storage.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
-    public function destroy(Student $student)
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
     {
-        $auth = JWTAuth::parseToken()->authenticate();
-        $delete = $this->repository->delete($student);
-        $index= Student::orderBy('created_at', 'desc')->get();
-        return $this->respondSuccess('Deleted', $index);
+        //
     }
 }

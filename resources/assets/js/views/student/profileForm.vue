@@ -8,10 +8,10 @@
 
             <form method="post" @submit.prevent="validateForm">
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label for="username">
-                      <em id="tusername" class="tooltip">Enter your complete name. Don't use any prefixes i.e.
+                      <em id="tusername" class="tooltip">Enter your full name. Don't use any prefixes i.e.
                         Mr./Ms./Miss etc.</em>
                     </label>
                     <input type="text" id="username" v-validate="'required'" name="name" v-model="student.name"
@@ -20,6 +20,15 @@
                       <span class="text-danger pull-right">{{errors.first('name')}}</span>
                     </small>
                   </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                     <label for="dob"></label>
+                    <input type="date" v-validate="'required'" name="dob" v-model="student.dob"
+                      placeholder="D.O.B." class="form-control" >
+                    <small class="form-text text-primary text-uppercase">Date of Birth
+                      <span class="text-danger pull-right">{{errors.first('dob')}}</span>
+                    </small>                </div>
                 </div>
               </div>
               <div class="row">
@@ -106,7 +115,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <input type="number" min="0" maxlength="7" name="Class Roll No" v-model="student.class_roll_no"
-                      placeholder="Class Roll No." class="form-control" v-validate="'required|numeric|length:6'">
+                      placeholder="Class Roll No." class="form-control" v-validate="'required|numeric|length:7'">
                     <small class="form-text text-primary text-uppercase">Class Roll No.
                       <span class="text-danger pull-right">{{errors.first('Class Roll No')}}</span>
                     </small>
@@ -164,6 +173,7 @@
                       <option value="INFORMATION TECHNOLOGY">INFORMATION TECHNOLOGY</option>
                       <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
                       <option value="PRODUCTION ENGINEERING">PRODUCTION ENGINEERING</option>
+                      <option value="N.A.">N.A.</option>
                     </select>
                     <small class="form-text text-primary text-uppercase">Stream
                       <span class="text-danger pull-right">{{errors.first('stream')}}</span>
@@ -175,8 +185,13 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <input type="text" name="section" v-model="student.section" placeholder="Section" class="form-control text-capitalize"
-                      maxlength="4" v-validate="'required'">
+                      <select name="section" v-validate="'required'" :class="{'form-control': true, 'error': errors.has('section')}"
+                      v-model="student.section">
+                      <option disabled value="">Section</option>
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="E">E</option>
+                    </select>
                     <small class="form-text text-primary text-uppercase">Section
                       <span class="text-danger pull-right">{{errors.first('section')}}</span>
                     </small>
@@ -200,6 +215,7 @@
                       <option value="" disabled>Training Semester</option>
                       <option value="7">7th Semester</option>
                       <option value="8">8th Semester</option>
+                      <option value="0">N.A.</option>
                     </select>
                     <small class="form-text text-primary text-uppercase">Training Semester
                       <span class="text-danger pull-right">{{errors.first('training_semester')}}</span>
@@ -213,8 +229,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" name="father name" v-validate="'required'" v-model="student.father_name"
-                      placeholder="Father's Name" class="form-control text-capitalize">
+                    <label for="fathername">
+                      <em id="tusername" class="tooltip">Enter full name. Don't use any prefixes i.e.
+                        Mr./Sr. </em>
+                    </label>
+                    <input type="text" id="fathername" name="father name" v-validate="'required'" v-model="student.father_name"
+                      placeholder="Father's Name" class="form-control text-capitalize"  @focus="tooltip()" @focusout="removetooltip()">
                     <small class="form-text text-primary text-uppercase">Father's Name
                       <span class="text-danger pull-right">{{errors.first('father name')}}</span>
                     </small>
@@ -222,7 +242,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="tel" v-validate="'required|numeric|max:10'" name="father phone" v-model="student.father_phone"
+                    <input type="tel" v-validate="'required|numeric|length:10'" name="father phone" v-model="student.father_phone"
                       placeholder="Father's Phone" class="form-control" maxlength="10" min="0">
                     <small class="form-text text-primary text-uppercase">Father's Phone Number
                       <span class="text-danger pull-right">{{errors.first('father phone')}}</span>
@@ -233,8 +253,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" v-validate="'required'" name="mother name" v-model="student.mother_name"
-                      placeholder="Mother's Name" class="form-control text-capitalize">
+                    <label for="mothername">
+                      <em id="tusername" class="tooltip">Enter full name. Don't use any prefix i.e.
+                        Mrs. </em>
+                    </label>
+                    <input type="text" id="mothername" v-validate="'required'" name="mother name" v-model="student.mother_name"
+                      placeholder="Mother's Name" class="form-control text-capitalize"  @focus="tooltip()" @focusout="removetooltip()">
                     <small class="form-text text-primary text-uppercase">Mother's Name
                       <span class="text-danger pull-right">{{errors.first('mother name')}}</span>
                     </small>
@@ -242,7 +266,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="tel" v-validate="'required|numeric|max:10'" name="mother phone" v-model="student.mother_phone"
+                    <input type="tel" v-validate="'required|numeric|length:10'" name="mother phone" v-model="student.mother_phone"
                       placeholder="Mother's Phone" class="form-control" maxlength="10" min="0 ">
                     <small class="form-text text-primary text-uppercase">Mother's Phone Number
                       <span class="text-danger pull-right">{{errors.first('mother phone')}}</span>
@@ -305,7 +329,13 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-primary btn-lg pull-right">
+                    <button type="submit" class="btn btn-primary btn-lg pull-right">
+                    <span v-if="!load">Submit
+                      </span> 
+                      <span v-else>
+                        <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                      </span>
+                    </button> 
                   </div>
                 </div>
               </div>
@@ -317,6 +347,8 @@
   </div>
 </template>
 <script>
+
+
   import {
     storeStudentURL,
     formstepChangeURL
@@ -338,7 +370,8 @@
           'student_form_step': 'PROFILE',
           'id': this.$parent.id,
         },
-      }
+        load:false
+      };
     },
     beforeCreate() {
       axios.get('/api/dashboard/student/' + this.$parent.username + '/edit').then(response => {
@@ -374,9 +407,11 @@
         return this.$store.getters.getAuthUser(name);
       },
       submit() {
+        this.load=true
         let formData = new FormData();
         formData.append('name', this.student.name.toUpperCase());
         formData.append('gender', this.student.gender);
+        formData.append('dob', this.student.dob);
         formData.append('category', this.student.category);
         formData.append('height', this.student.height);
         formData.append('weight', this.student.weight);
