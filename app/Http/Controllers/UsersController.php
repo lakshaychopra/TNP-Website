@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Student;
+use App\Models\PreviousEducation;
+use App\Models\MetricsEducation;
+use App\Models\SemesterMarks;
+use App\Models\DisplayStudent;
+
 use Illuminate\Http\Request;
 use App\Events\UserCreatedEvent;
 use App\Events\UserSingleCreateEvent;
@@ -54,33 +60,53 @@ class UsersController extends Controller
                 DB::beginTransaction();
                 $type = $request->only('type');
                 $path = $request->file('excel')->getRealPath();
-                $user = Excel::load($path)->get();
+
+                $users = Excel::load($path)->get();
                 
-                if(!empty($user) && $user->count())
+                if(!empty($users) && $users->count())
                 {
-                    foreach ($user as $key => $value)
-                    {
+                    foreach($users[1] as $key => $value)
+                    {                        
                         $type= implode(' ',$input);
                         $data[] = [
                             'username'     =>  $value->rollno,
                             'email'        =>  $value->email,
-                           // 'sem_limit'        =>  $value->sem_limit,
+                         // 'sem_limit'    =>  5,
                             'phone_number' =>  $value->phone,
-                            'password'     =>  bcrypt($value->dob),
+                            'password'     =>  bcrypt($value->crn),
                             'type'         =>  $type,
                             'is_verified'  =>  true,
                             'is_active'    =>  true,
                             'created_at'   =>  Carbon::now(),
                             'updated_at'   =>  Carbon::now(),
                         ];
+                        //Log::info($data);
+                        \Log::info($value);
+
+                        $dataStudent[] = [
+                            'univ_roll_no' =>  $value->rollno,
+                            'created_at'   =>  Carbon::now(),
+                            'updated_at'   =>  Carbon::now(),
+                        ];
+                        //\Log::info($dataStudent);
+                       
+                        
                     }
+
+
                     if(empty($data)){
                         return $this->respondError('Failed', 401);
                     }
                     $inserted = DB::table('users')->insert($data);
+                    $a=$this->createStudent($dataStudent);
+                    $b=$this->createMetricsEducation($dataStudent);
+                    $c=$this->createPreviousEducation($dataStudent);
+                    $d=$this->createSemesterMarks($dataStudent);
+                    // \Log::info($a);
                     DB::commit();  
-                    $this->userCreateMail();  
-                    return $this->respondSuccess('Inserted',$data);
+                    
+                // $this->userCreateMail();  
+                    return $this->respondSuccess('User Inserted',$dataStudent);
                 }
             }   
             catch(Exception $e){
@@ -89,6 +115,95 @@ class UsersController extends Controller
             }
         }
     }
+
+    public function createStudent($request){
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if (!$auth) {
+                return $this->respondUnauthorized('Failed');
+            }
+            $data = $request;
+
+        //    \Log::info($data);
+           // \Log::info("1");
+          $student = DB::table('students')->insert($data);
+
+            // $student = new Student;
+            // $student->create($data);
+            DB::commit();
+            return $this->respondSuccess('Student Inserted',$student);
+        }
+        catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
+    }
+                                        
+    public function createMetricsEducation($request){
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if (!$auth) {
+                return $this->respondUnauthorized('Failed');
+            }
+            $data = $request;
+            $me = DB::table('metrics_education')->insert($data);
+
+
+            // $me = new MetricsEducation;
+            // $me->create($data);
+            DB::commit();
+            return $this->respondSuccess('Inserted',$me);
+        }
+        catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
+    }
+
+    public function createPreviousEducation($request){
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if (!$auth) {
+                return $this->respondUnauthorized('Failed');
+            }
+            $data = $request;
+            $pe = DB::table('previous_education')->insert($data);
+
+            // $pe = new PreviousEducation;
+            // $pe->create($data);
+            DB::commit();
+            return $this->respondSuccess('Inserted',$pe);
+        }
+        catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
+    }
+
+    public function createSemesterMarks($request){
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if (!$auth) {
+                return $this->respondUnauthorized('Failed');
+            }
+            $data = $request;
+            $semesterMarks = DB::table('semester_marks')->insert($data);
+
+            // $semesterMarks = new SemesterMarks;
+            // $semesterMarks->create($data);
+            DB::commit();
+            return $this->respondSuccess('Inserted',$semesterMarks);
+        }
+        catch (Exception $e) {
+            DB::rollback();
+            return $this->respondException($e);
+        }
+    }
+
     
     /**
     * Display the specified resource.
@@ -159,13 +274,15 @@ class UsersController extends Controller
     
     
     public function userExcelFile(){
-        $user = User::where('is_active',0)->get()->toArray();
-        return \Excel::create('user', function($excel) use ($user) {
-            $excel->sheet('User data', function($sheet) use ($user)
+        $user = DB::table('display_student');
+        $data=json_decode(json_encode($user),true); 
+
+        return \Excel::create('user', function($excel) use ($data) {
+            $excel->sheet('Users data', function($sheet) use ($data)
             {
-                $sheet->fromArray($user);
+                $sheet->fromArray($data);
             });
-        })->export('xlsx');
+        })->download('xlsx');
     }      
     
     public function userCreateMail(){

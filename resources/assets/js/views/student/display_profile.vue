@@ -9,20 +9,21 @@
     <div class="form-group">
  <fieldset disabled="">
   <div class="row">
-    <div class="col-md-6">
-        
+    <div class="col-md-5">
       <input type="text" class="form-control" v-model="student.name">
       <label for="id_username"  > Name </label>
     </div>
-     <div class="col-md-3">
-         
+     <div class="col-md-2">
       <input type="text" class="form-control" v-model="student.dob">
        <label for="id_username"   > DOB </label>
     </div>
-    <div class="col-md-3">
-          
+    <div class="col-md-2">
       <input type="text" class="form-control" v-model="student.category">
       <label for="id_username"   > Category </label>
+    </div>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.whatsapp_cont">
+      <label for="id_username"   > Whatsapp Contact </label>
     </div>
 </div>
 
@@ -338,6 +339,7 @@
        <label for="id_username"  > Passive Backlog </label>
     </div>
 </div>
+<!--
    <h2 class="card-title mt-3 text-primary">Semester-6</h2>
     <hr class="style3">
   <div class="row">
@@ -394,7 +396,8 @@
        <label for="id_username"  > Passive Backlog </label>
     </div>
 </div>
-   <h2 class="card-title mt-3 text-primary">Semester-8 </h2>
+  
+     <h2 class="card-title mt-3 text-primary">Semester-8 </h2>
     <hr class="style3">
    <div class="row">
     <div class="col-md-2">
@@ -422,7 +425,7 @@
        <label for="id_username"  > Passive Backlog </label>
     </div>
 </div>
-  
+  -->
 <h2 class="card-title mt-3 text-primary">Aggregate</h2>
     <hr class="style3">
   <div class="row">
@@ -485,7 +488,7 @@
                 this.student = response.data.data[0];
                 console.log(this.student );
                 var i;
-                 for( i=1;i<=8;i++){
+                 for( i=1;i<=this.$parent.sem_limit;i++){
                 this.sem_obt_marks[i-1] = this.splitarray(this.student.sem_obt_marks, i);
                 this.sem_max_marks[i-1] = this.splitarray(this.student.sem_max_marks, i);
                 this.sem_credits[i-1] = this.splitarray(this.student.sem_credits, i);
@@ -496,7 +499,7 @@
 
                   var i , sum=0, product=0, sum_credits = 0, sum_active = 0, sum_passive=0, sum_max = 0;
               
-                    for(i =0;i<8;i++){
+                    for(i =0;i<this.$parent.sem_limit;i++){
                         product = parseInt(this.sem_obt_marks[i]) * parseInt(this.sem_credits[i]);
                         console.log(product);
                         sum = sum + product;   

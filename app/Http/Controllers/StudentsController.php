@@ -109,6 +109,7 @@ class StudentsController extends Controller
             $student->univ_roll_no=$request->univ_roll_no;
             $student->class_roll_no=$request->class_roll_no;
             $student->name=$request->name;
+            $student->whatsapp_cont=$request->whatsapp_cont;
             $student->batch=$request->batch;
             $student->dob=$request->dob;
             $student->branch_type=$request->branch_type;

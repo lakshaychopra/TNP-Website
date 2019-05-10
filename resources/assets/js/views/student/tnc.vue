@@ -146,85 +146,26 @@
 
       submit() {
         this.load=true;
-        axios
-          .post(firstLoginURL, this.id)
+        axios.post(firstLoginURL, this.id)
           .then(response => {
             if (response.status == 200) {
-              axios
-                .post(statusChangeURL, this.tnc)
+              axios.post(statusChangeURL, this.tnc)
                 .then(res => {
                   if (res.status == 200) {
-                    axios
-                      .post(formstepChangeURL, this.form_step)
+                    axios.post(formstepChangeURL, this.form_step)
                       .then(stat => {
                         if (stat.status == 200) {
-                          axios
-                            .post(storeStudentURL, this.username)
-                            .then(resp => {
-                              if (resp.status == 200) {
-                                axios
-                                  .post(storeStudentMeURL, this.username)
-                                  .then(meresponse => {
-                                    if (meresponse.status == 200) {
-                                    axios
-                                      .post(
-                                        storeStudentPeURL,
+                      // this.$router.push('req');
+        this.load=false;
+              this.$parent.step = 2;
 
-                                        this.username
-                                      )
-                                      .then(peresponse => {
-                                        if (peresponse.status == 200) {
-                                          axios
-                                            .post(
-                                              storeStudentDegreeURL,
-
-                                              this.sem_create
-                                            )
-                                            .then(deresponse => {
-                                              if (deresponse.status == 200) {
-                                                axios
-
-                                                  .post(
-                                                    storeStudentAggregateURL,
-
-                                                    this.username
-                                                  )
-
-                                                  .then(aggresponse => {
-                                                    toastr["success"](
-                                                      "User Added!!"
-                                                    );
-
-                                                    this.$parent.step = 2;
-                                                  })
-
-                                                  .catch(aggerrors => {
-                                                    console.log(aggerrors);
-                                                  });
-                                              }
-                                            })
-                                            .catch(deerrors => {
-                                              console.log(deerrors);
-                                            });
-                                        }
-                                      })
-                                      .catch(peerrors => {
-                                        console.log(peerrors);
-                                      });
-                                  }
-                                  })
-                                  .catch(errors => {
-                                    console.log(errors);
-                                  });
-                              }
-                            })
-                            .catch(er => {
-                              console.log(er);
-                            });
+ 
                         }
                       })
                       .catch(erro => {
                         console.log(erro);
+        this.load=false;
+
                       });
                   }
                 })

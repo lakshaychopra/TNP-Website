@@ -107,7 +107,7 @@ class MetricsEducationController extends Controller
              $certificate = $request->file('tenth_certificate');
 
                $extension = strtolower($certificate->getClientOriginalExtension());
-               $filename = 'tenth_cerificate_'.$request->univ_roll_no.'.'.$extension;
+               $filename = $request->univ_roll_no.'_tenth_certificate.'.$extension;
 		       $path =  public_path('images/certificates/tenth');
 		       $imageLocation = $certificate->move($path, $filename);
 		       $me->tenth_certificate = $filename;

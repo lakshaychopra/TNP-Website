@@ -45,7 +45,11 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">
-                                <span>Save</span>
+                               <span v-if="!load">Save
+                      </span> 
+                      <span v-else>
+                        <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                      </span>
                             </button>
                         </form>
                     </div>
@@ -68,7 +72,8 @@
                 user:{
                     'file' : '',
                     'type' : '',
-                }
+                },
+                load:false
             };
         },
         methods: {
@@ -113,21 +118,24 @@
              storeTask(){
                 this.$validator.validateAll().then((result) => {
                 if(result){
-                    // this.loading = true;
                     let formData = new FormData();
                     formData.append('excel', this.user.file);
                     formData.append('type', this.user.type);
+                    this.load = true;
+
                     axios.post('/api/dashboard/user',formData, {headers: {'Content-Type': 'multipart/form-data'}})
                         .then(function(response) {
                         toastr['success'](response.message);
                         // this.$emit('completed',response.task)
-                        // this.loading = false;
+                        this.load = false;
                         this.excel_added=true;
                         // console.log(this.loading);
                         console.log(response);
                     })
                     .catch(response => {
                         // this.loading = false;
+                        this.load = false;
+
                         this.excel_added=true;
                         console.log(this.loading);
                         toastr['error'](response.message);

@@ -40706,6 +40706,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -40719,7 +40723,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             user: {
                 'file': '',
                 'type': ''
-            }
+            },
+            load: false
         };
     },
 
@@ -40765,19 +40770,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$validator.validateAll().then(function (result) {
                 if (result) {
-                    // this.loading = true;
                     var formData = new FormData();
                     formData.append('excel', _this.user.file);
                     formData.append('type', _this.user.type);
+                    _this.load = true;
+
                     axios.post('/api/dashboard/user', formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
                         toastr['success'](response.message);
                         // this.$emit('completed',response.task)
-                        // this.loading = false;
+                        this.load = false;
                         this.excel_added = true;
                         // console.log(this.loading);
                         console.log(response);
                     }).catch(function (response) {
                         // this.loading = false;
+                        _this.load = false;
+
                         _this.excel_added = true;
                         console.log(_this.loading);
                         toastr['error'](response.message);
@@ -40967,7 +40975,24 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(2)
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn btn-info waves-effect waves-light m-t-10",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        !_vm.load
+                          ? _c("span", [_vm._v("Save\n                      ")])
+                          : _c("span", [
+                              _c("i", {
+                                staticClass: "fa fa-circle-o-notch fa-spin",
+                                attrs: { "aria-hidden": "true" }
+                              })
+                            ])
+                      ]
+                    )
                   ]
                 )
           ])
@@ -40994,19 +41019,6 @@ var staticRenderFns = [
       _vm._v("Excel"),
       _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn btn-info waves-effect waves-light m-t-10",
-        attrs: { type: "submit" }
-      },
-      [_c("span", [_vm._v("Save")])]
-    )
   }
 ]
 render._withStripped = true
@@ -54553,7 +54565,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -54713,40 +54725,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (res.status == 200) {
               axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this2.form_step).then(function (stat) {
                 if (stat.status == 200) {
-                  axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["C" /* storeStudentURL */], _this2.username).then(function (resp) {
-                    if (resp.status == 200) {
-                      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["A" /* storeStudentMeURL */], _this2.username).then(function (meresponse) {
-                        if (meresponse.status == 200) {
-                          axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["B" /* storeStudentPeURL */], _this2.username).then(function (peresponse) {
-                            if (peresponse.status == 200) {
-                              axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["z" /* storeStudentDegreeURL */], _this2.sem_create).then(function (deresponse) {
-                                if (deresponse.status == 200) {
-                                  axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["y" /* storeStudentAggregateURL */], _this2.username).then(function (aggresponse) {
-                                    toastr["success"]("User Added!!");
-
-                                    _this2.$parent.step = 2;
-                                  }).catch(function (aggerrors) {
-                                    console.log(aggerrors);
-                                  });
-                                }
-                              }).catch(function (deerrors) {
-                                console.log(deerrors);
-                              });
-                            }
-                          }).catch(function (peerrors) {
-                            console.log(peerrors);
-                          });
-                        }
-                      }).catch(function (errors) {
-                        console.log(errors);
-                      });
-                    }
-                  }).catch(function (er) {
-                    console.log(er);
-                  });
+                  // this.$router.push('req');
+                  _this2.load = false;
+                  _this2.$parent.step = 2;
                 }
               }).catch(function (erro) {
                 console.log(erro);
+                _this2.load = false;
               });
             }
           }).catch(function (err) {
@@ -55459,6 +55444,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -55524,6 +55518,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var formData = new FormData();
       formData.append('name', this.student.name.toUpperCase());
       formData.append('gender', this.student.gender);
+      formData.append('whatsapp_cont', this.student.whatsapp_cont);
       formData.append('dob', this.student.dob);
       formData.append('category', this.student.category);
       formData.append('height', this.student.height);
@@ -55661,7 +55656,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "col-md-3" }, [
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", { attrs: { for: "dob" } }),
                       _vm._v(" "),
@@ -55708,6 +55703,59 @@ var render = function() {
                             "span",
                             { staticClass: "text-danger pull-right" },
                             [_vm._v(_vm._s(_vm.errors.first("dob")))]
+                          )
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "whatsapp_cont" } }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required|numeric|length:10",
+                            expression: "'required|numeric|length:10'"
+                          },
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.student.whatsapp_cont,
+                            expression: "student.whatsapp_cont"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", name: "whatsapp_cont" },
+                        domProps: { value: _vm.student.whatsapp_cont },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.student,
+                              "whatsapp_cont",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [
+                          _vm._v("Whatsapp Contact\n                    "),
+                          _c(
+                            "span",
+                            { staticClass: "text-danger pull-right" },
+                            [_vm._v(_vm._s(_vm.errors.first("whatsapp_cont")))]
                           )
                         ]
                       )
@@ -56826,7 +56874,15 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _vm._m(1),
+                      _c(
+                        "em",
+                        { staticClass: "tooltip", attrs: { id: "tusername" } },
+                        [
+                          _vm._v(
+                            "Enter full name. Don't use any prefixes i.e.\n                      Mr./Sr. "
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -56949,7 +57005,15 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _vm._m(2),
+                      _c(
+                        "em",
+                        { staticClass: "tooltip", attrs: { id: "tusername" } },
+                        [
+                          _vm._v(
+                            "Enter full name. Don't use any prefix i.e.\n                      Mrs. "
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -57388,30 +57452,6 @@ var staticRenderFns = [
       _c("em", { staticClass: "tooltip", attrs: { id: "tusername" } }, [
         _vm._v(
           "Enter your full name. Don't use any prefixes i.e.\n                      Mr./Ms./Miss etc."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "fathername" } }, [
-      _c("em", { staticClass: "tooltip", attrs: { id: "tusername" } }, [
-        _vm._v(
-          "Enter full name. Don't use any prefixes i.e.\n                      Mr./Sr. "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "mothername" } }, [
-      _c("em", { staticClass: "tooltip", attrs: { id: "tusername" } }, [
-        _vm._v(
-          "Enter full name. Don't use any prefix i.e.\n                      Mrs. "
         )
       ])
     ])
@@ -59732,7 +59772,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.student.passive_backlog = this.changeValue(this.student.passive_backlog, this.update_marks.passive_backlog, this.student.semester_status);
             this.student.percentage = this.changeValue(this.student.percentage, this.update_marks.percent, this.student.semester_status);
 
-            if (this.student.semester_status < 8) {
+            if (this.student.semester_status < this.$parent.sem_limit) {
                 this.student.semester_status = parseInt(this.student.semester_status) + 1;
                 axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], this.statusChange).then(function (statusresponse) {
                     console.log(statusresponse + ' testing');
@@ -59741,7 +59781,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 });
             } else {
                 axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], this.statusChange1).then(function (statusresponse) {
-                    console.log(statusresponse + ' hello parul');
+                    console.log(statusresponse);
                     _this2.$parent.step = 6;
                 }).catch(function (errors) {
                     console.log(errors);
@@ -60392,7 +60432,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* html {\n  /* for demo purposes only \n  margin: 2em;\n} */\ninput[type=\"text\"],\nselect.form-control{\n  background: transparent;\n  border: none;\n  border-bottom: 1px solid #000000;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  border-radius: 0;\n}\ninput[type=\"text\"]:focus,\nselect.form-control:focus {\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\n/* body\n{\n    margin-left: 10%;\n    margin-right: 10%;\n} */\ninput[type=\"text\"]:disabled{background-color:transparent;\n}\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* html {\n  /* for demo purposes only \n  margin: 2em;\n} */\ninput[type=\"text\"],\nselect.form-control{\n  background: transparent;\n  border: none;\n  border-bottom: 1px solid #000000;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  border-radius: 0;\n}\ninput[type=\"text\"]:focus,\nselect.form-control:focus {\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\n/* body\n{\n    margin-left: 10%;\n    margin-right: 10%;\n} */\ninput[type=\"text\"]:disabled{background-color:transparent;\n}\n\n", ""]);
 
 // exports
 
@@ -60404,6 +60444,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_js__ = __webpack_require__(3);
+//
+//
+//
 //
 //
 //
@@ -60886,7 +60929,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             _this.student = response.data.data[0];
             console.log(_this.student);
             var i;
-            for (i = 1; i <= 8; i++) {
+            for (i = 1; i <= _this.$parent.sem_limit; i++) {
                 _this.sem_obt_marks[i - 1] = _this.splitarray(_this.student.sem_obt_marks, i);
                 _this.sem_max_marks[i - 1] = _this.splitarray(_this.student.sem_max_marks, i);
                 _this.sem_credits[i - 1] = _this.splitarray(_this.student.sem_credits, i);
@@ -60903,7 +60946,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 sum_passive = 0,
                 sum_max = 0;
 
-            for (i = 0; i < 8; i++) {
+            for (i = 0; i < _this.$parent.sem_limit; i++) {
                 product = parseInt(_this.sem_obt_marks[i]) * parseInt(_this.sem_credits[i]);
                 console.log(product);
                 sum = sum + product;
@@ -60947,7 +60990,7 @@ var render = function() {
     _c("div", { staticClass: "form-group" }, [
       _c("fieldset", { attrs: { disabled: "" } }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6" }, [
+          _c("div", { staticClass: "col-md-5" }, [
             _c("input", {
               directives: [
                 {
@@ -60973,7 +61016,7 @@ var render = function() {
             _c("label", { attrs: { for: "id_username" } }, [_vm._v(" Name ")])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3" }, [
+          _c("div", { staticClass: "col-md-2" }, [
             _c("input", {
               directives: [
                 {
@@ -60999,7 +61042,7 @@ var render = function() {
             _c("label", { attrs: { for: "id_username" } }, [_vm._v(" DOB ")])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3" }, [
+          _c("div", { staticClass: "col-md-2" }, [
             _c("input", {
               directives: [
                 {
@@ -61024,6 +61067,34 @@ var render = function() {
             _vm._v(" "),
             _c("label", { attrs: { for: "id_username" } }, [
               _vm._v(" Category ")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.student.whatsapp_cont,
+                  expression: "student.whatsapp_cont"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.student.whatsapp_cont },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.student, "whatsapp_cont", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "id_username" } }, [
+              _vm._v(" Whatsapp Contact ")
             ])
           ])
         ]),
@@ -62686,534 +62757,6 @@ var render = function() {
                     return
                   }
                   _vm.$set(this.sem_passive_backlog, 4, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Passive Backlog ")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
-          _vm._v("Semester-6")
-        ]),
-        _vm._v(" "),
-        _c("hr", { staticClass: "style3" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_obt_marks[5],
-                  expression: "this.sem_obt_marks[5]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_obt_marks[5] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_obt_marks, 5, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Obtained Marks")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_max_marks[5],
-                  expression: "this.sem_max_marks[5]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_max_marks[5] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_max_marks, 5, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Max Marks")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_credits[5],
-                  expression: "this.sem_credits[5]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_credits[5] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_credits, 5, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Credits ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_percent[5],
-                  expression: "this.sem_percent[5]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_percent[5] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_percent, 5, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Percentage ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_active_backlog[5],
-                  expression: "this.sem_active_backlog[5]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_active_backlog[5] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_active_backlog, 5, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Active Backlog")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_passive_backlog[5],
-                  expression: "this.sem_passive_backlog[5]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_passive_backlog[5] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_passive_backlog, 5, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Passive Backlog ")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
-          _vm._v("Semester-7 ")
-        ]),
-        _vm._v(" "),
-        _c("hr", { staticClass: "style3" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_obt_marks[6],
-                  expression: "this.sem_obt_marks[6]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_obt_marks[6] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_obt_marks, 6, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Obtained Marks")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_max_marks[6],
-                  expression: "this.sem_max_marks[6]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_max_marks[6] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_max_marks, 6, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Max Marks")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_credits[6],
-                  expression: "this.sem_credits[6]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_credits[6] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_credits, 6, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Credits ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_percent[6],
-                  expression: "this.sem_percent[6]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_percent[6] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_percent, 6, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Percentage ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_active_backlog[6],
-                  expression: "this.sem_active_backlog[6]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_active_backlog[6] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_active_backlog, 6, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Active Backlog")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_passive_backlog[6],
-                  expression: "this.sem_passive_backlog[6]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_passive_backlog[6] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_passive_backlog, 6, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Passive Backlog ")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
-          _vm._v("Semester-8 ")
-        ]),
-        _vm._v(" "),
-        _c("hr", { staticClass: "style3" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_obt_marks[7],
-                  expression: "this.sem_obt_marks[7]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_obt_marks[7] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_obt_marks, 7, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Obtained Marks")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_max_marks[7],
-                  expression: "this.sem_max_marks[7]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_max_marks[7] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_max_marks, 7, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Max Marks")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_credits[7],
-                  expression: "this.sem_credits[7]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_credits[7] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_credits, 7, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Credits ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_percent[7],
-                  expression: "this.sem_percent[7]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_percent[7] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_percent, 7, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Percentage ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_active_backlog[7],
-                  expression: "this.sem_active_backlog[7]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_active_backlog[7] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_active_backlog, 7, $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "id_username" } }, [
-              _vm._v(" Active Backlog")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: this.sem_passive_backlog[7],
-                  expression: "this.sem_passive_backlog[7]"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: this.sem_passive_backlog[7] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(this.sem_passive_backlog, 7, $event.target.value)
                 }
               }
             }),

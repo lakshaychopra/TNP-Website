@@ -107,7 +107,7 @@ class PreviousEducationsController extends Controller
         // if ($certificate->getClientMimeType() !== 'application/pdf'){
 
             $extension = strtolower($certificate->getClientOriginalExtension());
-            $filename = 'previous_edu_cerificate_'.$request->univ_roll_no.'.'.$extension;
+            $filename = $request->univ_roll_no.'_previous_edu_cerificate.'.$extension;
             $path =  public_path('images/certificates/twelfth');
             $imageLocation = $certificate->move($path, $filename);
             $pe->previous_edu_certificate = $filename;

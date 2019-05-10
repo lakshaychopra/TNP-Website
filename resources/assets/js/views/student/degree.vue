@@ -206,7 +206,7 @@
                 this.student.percentage = this.changeValue(this.student.percentage, this.update_marks.percent, this.student
                     .semester_status);
                     
-                if(this.student.semester_status<8){
+                if(this.student.semester_status<this.$parent.sem_limit){
                     this.student.semester_status = parseInt(this.student.semester_status) + 1;
                     axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {  
                             console.log(statusresponse+' testing');
@@ -217,7 +217,7 @@
                 }
                 else{
                     axios.post(formstepChangeURL, this.statusChange1).then(statusresponse => { 
-                            console.log(statusresponse+' hello parul');
+                            console.log(statusresponse);
                              this.$parent.step = 6;
                              }).catch(errors => {
                             console.log(errors);

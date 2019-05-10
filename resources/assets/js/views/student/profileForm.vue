@@ -21,13 +21,22 @@
                     </small>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <div class="form-group">
                      <label for="dob"></label>
                     <input type="date" v-validate="'required'" name="dob" v-model="student.dob"
                       placeholder="D.O.B." class="form-control" >
                     <small class="form-text text-primary text-uppercase">Date of Birth
                       <span class="text-danger pull-right">{{errors.first('dob')}}</span>
+                    </small>                </div>
+                </div>
+                 <div class="col-md-3">
+                  <div class="form-group">
+                     <label for="whatsapp_cont"></label>
+                    <input type="text" v-validate="'required|numeric|length:10'" name="whatsapp_cont" v-model="student.whatsapp_cont"
+                       class="form-control" >
+                    <small class="form-text text-primary text-uppercase">Whatsapp Contact
+                      <span class="text-danger pull-right">{{errors.first('whatsapp_cont')}}</span>
                     </small>                </div>
                 </div>
               </div>
@@ -229,10 +238,10 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="fathername">
+                   
                       <em id="tusername" class="tooltip">Enter full name. Don't use any prefixes i.e.
                         Mr./Sr. </em>
-                    </label>
+                   
                     <input type="text" id="fathername" name="father name" v-validate="'required'" v-model="student.father_name"
                       placeholder="Father's Name" class="form-control text-capitalize"  @focus="tooltip()" @focusout="removetooltip()">
                     <small class="form-text text-primary text-uppercase">Father's Name
@@ -253,10 +262,10 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="mothername">
+                   
                       <em id="tusername" class="tooltip">Enter full name. Don't use any prefix i.e.
                         Mrs. </em>
-                    </label>
+                   
                     <input type="text" id="mothername" v-validate="'required'" name="mother name" v-model="student.mother_name"
                       placeholder="Mother's Name" class="form-control text-capitalize"  @focus="tooltip()" @focusout="removetooltip()">
                     <small class="form-text text-primary text-uppercase">Mother's Name
@@ -411,7 +420,8 @@
         let formData = new FormData();
         formData.append('name', this.student.name.toUpperCase());
         formData.append('gender', this.student.gender);
-        formData.append('dob', this.student.dob);
+        formData.append('whatsapp_cont', this.student.whatsapp_cont);
+         formData.append('dob', this.student.dob);
         formData.append('category', this.student.category);
         formData.append('height', this.student.height);
         formData.append('weight', this.student.weight);

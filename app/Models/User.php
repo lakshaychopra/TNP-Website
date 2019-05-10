@@ -33,6 +33,13 @@ class User extends Authenticatable implements JWTSubject
         return $this->is_active && $this->is_verified;
     }
 
+    protected $attributes = [
+        'is_mailed'    => 1,
+        'is_active'    => 1,
+        'is_verified'  => 1,
+        'sem_limit'    => 5
+     ];
+ 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
