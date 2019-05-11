@@ -130,7 +130,8 @@
                 statusChange1: {
                     'student_form_step': 'DEGREE',
                     'id': this.$parent.id,
-                }
+                },
+                load:false
             }
         },
         created() {
@@ -194,6 +195,7 @@
                 return this.$store.getters.getAuthUser(name);
             },
              submit() {
+                 this.load=true;
                 this.student.obtained_marks = this.changeValue(this.student.obtained_marks, this.update_marks.obtained_marks,
                     this.student.semester_status);
                 this.student.max_marks = this.changeValue(this.student.max_marks, this.update_marks.max_marks, this.student

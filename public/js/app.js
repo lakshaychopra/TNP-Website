@@ -59701,7 +59701,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             statusChange1: {
                 'student_form_step': 'DEGREE',
                 'id': this.$parent.id
-            }
+            },
+            load: false
         };
     },
     created: function created() {
@@ -59765,6 +59766,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submit: function submit() {
             var _this2 = this;
 
+            this.load = true;
             this.student.obtained_marks = this.changeValue(this.student.obtained_marks, this.update_marks.obtained_marks, this.student.semester_status);
             this.student.max_marks = this.changeValue(this.student.max_marks, this.update_marks.max_marks, this.student.semester_status);
             this.student.credits = this.changeValue(this.student.credits, this.update_marks.credits, this.student.semester_status);

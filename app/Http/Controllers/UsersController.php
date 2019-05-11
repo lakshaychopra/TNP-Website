@@ -102,8 +102,12 @@ class UsersController extends Controller
                     $b=$this->createMetricsEducation($dataStudent);
                     $c=$this->createPreviousEducation($dataStudent);
                     $d=$this->createSemesterMarks($dataStudent);
-                    // \Log::info($a);
                     DB::commit();  
+                    \Log::info($inserted);
+                    \Log::info($a);
+                    \Log::info($b);
+                    \Log::info($c);
+                    \Log::info($d);
                     
                 // $this->userCreateMail();  
                     return $this->respondSuccess('User Inserted',$dataStudent);
