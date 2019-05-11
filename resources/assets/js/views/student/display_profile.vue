@@ -482,7 +482,7 @@
             }
         },
         created() {
-            axios.get('/api/dashboard/student/profile/' + this.$parent.username + '/edit').then(response => {
+            axios.get('/api/dashboard/student/profile/' + this.$parent.username + '/edit/').then(response => {
                 console.log('Hello'+response.data.data[0]);
 
                 this.student = response.data.data[0];
