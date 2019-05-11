@@ -278,7 +278,7 @@ class UsersController extends Controller
     
     
     public function userExcelFile(){
-        $user = DB::table('display_student');
+        $user = DB::view('display_student');
         $data=json_decode(json_encode($user),true); 
 
         return \Excel::create('user', function($excel) use ($data) {

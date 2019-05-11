@@ -426,7 +426,7 @@
     </div>
 </div>
   -->
-<h2 class="card-title mt-3 text-primary">Aggregate</h2>
+<!-- <h2 class="card-title mt-3 text-primary">Aggregate</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
@@ -440,7 +440,7 @@
       <label for="id_username" > CGPA</label>
     </div>
    
-  </div>
+  </div> -->
   </fieldset>
   </div>
     

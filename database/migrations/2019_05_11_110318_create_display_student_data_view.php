@@ -20,6 +20,7 @@ class CreateDisplayStudentDataView extends Migration
         students.univ_roll_no,
         students.class_roll_no,
         students.name,
+        students.whatsapp_cont,
         students.dob,
         students.batch,
         students.branch_type,
@@ -69,19 +70,15 @@ class CreateDisplayStudentDataView extends Migration
         semester_marks.marks_type AS sem_marks_type,
         semester_marks.obtained_marks  AS sem_obt_marks,
         semester_marks.max_marks  AS sem_max_marks,
-        semester_marks.credits  AS sem_credits, 
-        aggregate.percentage AS aggregate_percentage,
-        aggregate.marks_type AS aggregate_cgpa
+        semester_marks.credits  AS sem_credits
 
           FROM
           students
           JOIN users ON students.univ_roll_no = users.username AND users.type='STUDENT'
           JOIN previous_education ON students.univ_roll_no = previous_education.univ_roll_no
           JOIN semester_marks ON students.univ_roll_no = semester_marks.univ_roll_no
-          JOIN metrics_education  ON students.univ_roll_no = metrics_education.univ_roll_no
-          JOIN aggregate  ON students.univ_roll_no = aggregate.univ_roll_no;"
+          JOIN metrics_education  ON students.univ_roll_no = metrics_education.univ_roll_no;"
         );
-
 
 
     }
