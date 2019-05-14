@@ -46,7 +46,7 @@
                   <div class="form-group">
                     <label for="" class="col-md-4 col-form-label">Education Type : </label>
                     <div class="col-md-2 md-radio md-radio-inline">
-                      <input type="radio" name="education" id="XII" v-model="student.education" value="XII" v-on:change="resetmarks()">
+                      <input v-validate="'required'" type="radio" name="education" id="XII" v-model="student.education" value="XII" v-on:change="resetmarks()">
                       <label for="XII">XII</label>
                     </div>
                     <div class="col-md-2 md-radio md-radio-inline">
@@ -93,7 +93,7 @@
                  <div class="col-md-4">
                    <div class="form-group files">
                     <input type="file" v-validate="'required'" accept="application/pdf" class="form-control" ref="file" name="file" id="imageUrl">
-                      <small class="form-text text-primary text-uppercase">Upload Certificate (.pdf) 
+                      <small class="form-text text-primary text-uppercase">Upload Scanned Certificate (.pdf) 
                          <span class="text-danger pull-right">{{errors.first('File')}}</span>
                       </small>
                 </div>

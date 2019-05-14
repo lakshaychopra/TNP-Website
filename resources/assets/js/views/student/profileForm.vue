@@ -72,7 +72,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2">
                   <div class="form-group">
                     <input type="number" maxlength="4" v-validate="'required|numeric|length:3|max:4'" max="9999" id="height"
                       min="0" name="height" v-model="student.height" placeholder="Height" class="form-control">
@@ -81,13 +81,22 @@
                     </small>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                   <div class="form-group">
                     <input type="number" maxlength="4" min="0" v-validate="'required|numeric|max:4'" max="9999" name="weight"
                       v-model="student.weight" placeholder="Weight" class="form-control">
                     <small class="form-text text-primary text-uppercase">Weight
                       <span class="text-danger pull-right">{{errors.first('weight')}}</span>
                     </small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="email" v-validate="'required'" id="mail_id" name="mail_id" v-model="student.mail_id" placeholder="Email" class="form-control">
+                    <small class="form-text text-primary text-uppercase">Email
+                      <span class="text-danger pull-right">{{errors.first('email')}}</span>
+                    </small>
+                    
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -444,6 +453,7 @@
         formData.append('district', this.student.district.toUpperCase());
         formData.append('state', this.student.state.toUpperCase());
         formData.append('pincode', this.student.pincode);
+        formData.append('mail_id', this.student.mail_id);      
         formData.append('_method', 'PUT');
         // console.log(this.id.id);
         // console.log('1');

@@ -91,7 +91,7 @@
                 <div class="col-md-4">
                    <div class="form-group files">
                     <input type="file" v-validate="'required'" accept="application/pdf" class="form-control" ref="file" name="file" id="imageUrl">
-                      <small class="form-text text-primary text-uppercase">Upload Certificate (.pdf) 
+                      <small class="form-text text-primary text-uppercase">Upload Scanned Tenth Certificate (.pdf) 
                          <span class="text-danger pull-right">{{errors.first('File')}}</span>
                       </small>
 

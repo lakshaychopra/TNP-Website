@@ -22,13 +22,13 @@
                                         <div class="col-md-2 md-radio md-radio-inline">
                                             <input type="radio" name="marks_type" id="CGPA" v-model="student.marks_type"
                                                 value="CGPA" v-on:change="resetmarks()">
-                                            <label for="CGPA">CGPA</label>
+                                            <label for="CGPA">SGPA</label>
                                         </div>
-                                        <div class="col-md-2 md-radio md-radio-inline">
+                                        <!-- <div class="col-md-2 md-radio md-radio-inline">
                                             <input type="radio" name="marks_type" id="PERCENTAGE" v-model="student.marks_type"
                                                 value="PERCENTAGE" v-on:change="resetmarks()">
                                             <label for="PERCENTAGE">PERCENTAGE</label>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -82,11 +82,12 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <button type="submit" value="I Agree" class="btn btn-info btn-lg pull-right">
-                                        <span v-if="!load">Submit
+                                        Submit
+                                        <!-- <span v-if="!load">Submit
                                         </span> 
                                         <span v-else>
                                          <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
-                                        </span> 
+                                        </span>  -->
                                         </button>
                                     </div>
                                 </div>
@@ -116,6 +117,7 @@
                     passive_backlog: 0,
                     percent: 0,
                 },
+                            marks_type:"CGPA",
                 id: this.$parent.id,
                 monthYear: '',
                 month: '',

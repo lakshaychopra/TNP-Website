@@ -132,6 +132,7 @@ class StudentsController extends Controller
             $student->state=$request->state;
             $student->district=$request->district;
             $student->pincode=$request->pincode;
+            $student->mail_id=$request->mail_id;
             $student->save();
             DB::commit();
             return $this->respondSuccess('Updated',$student);

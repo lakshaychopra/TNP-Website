@@ -1,9 +1,10 @@
 
 <template>
-    
+    <div class="container">    
+            <h2 class="card-title mt-3 text-primary">Thank You for submitting the form!!</h2>
+      </div>
 
-
-<div class="container">    
+<!-- <div class="container">    
             <h2 class="card-title mt-3 text-primary">Profile Details</h2>
     <hr class="style3">
     <div class="form-group">
@@ -339,7 +340,7 @@
        <label for="id_username"  > Passive Backlog </label>
     </div>
 </div>
-<!--
+
    <h2 class="card-title mt-3 text-primary">Semester-6</h2>
     <hr class="style3">
   <div class="row">
@@ -440,11 +441,11 @@
       <label for="id_username" > CGPA</label>
     </div>
    
-  </div> -->
+  </div> 
   </fieldset>
   </div>
     
-</div>
+</div> -->
 </template>     
 <script>
   import {
