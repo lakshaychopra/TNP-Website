@@ -43,7 +43,7 @@ class CreateDisplayStudentDataView extends Migration
         students.district,
         students.state,
         students.pincode,
-        users.email,
+        students.mail_id,
         users.phone_number,
         users.sem_limit,
         metrics_education.board AS tenth_board,
