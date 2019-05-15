@@ -56,7 +56,17 @@
                     <small class="text-danger text-uppercase">{{ errors.first('gender') }}</small>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
+                  <div class="form-group">
+                     <label for="phone_number"></label>
+                    <input type="text" v-validate="'required|numeric|length:10'" name="phone_number" v-model="student.phone_number"
+                       class="form-control" >
+                    <small class="form-text text-primary text-uppercase">Phone Number
+                      <span class="text-danger pull-right">{{errors.first('phone_number')}}</span>
+                    </small>               
+                     </div>
+                  </div>
+                <div class="col-md-3">
                   <div class="form-group">
                     <select id="category" name="category" v-validate="'required'" v-model="student.category" :class="{'form-control': true, 'error': errors.has('category')}">
                       <option disabled selected value="">Category</option>
@@ -453,7 +463,8 @@
         formData.append('district', this.student.district.toUpperCase());
         formData.append('state', this.student.state.toUpperCase());
         formData.append('pincode', this.student.pincode);
-        formData.append('mail_id', this.student.mail_id);      
+        formData.append('mail_id', this.student.mail_id); 
+        formData.append('phone_number', this.student.phone_number);           
         formData.append('_method', 'PUT');
         // console.log(this.id.id);
         // console.log('1');

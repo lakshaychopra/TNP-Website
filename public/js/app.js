@@ -55462,6 +55462,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -55552,6 +55562,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       formData.append('state', this.student.state.toUpperCase());
       formData.append('pincode', this.student.pincode);
       formData.append('mail_id', this.student.mail_id);
+      formData.append('phone_number', this.student.phone_number);
       formData.append('_method', 'PUT');
       // console.log(this.id.id);
       // console.log('1');
@@ -55869,7 +55880,60 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "phone_number" } }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required|numeric|length:10",
+                            expression: "'required|numeric|length:10'"
+                          },
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.student.phone_number,
+                            expression: "student.phone_number"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", name: "phone_number" },
+                        domProps: { value: _vm.student.phone_number },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.student,
+                              "phone_number",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "form-text text-primary text-uppercase"
+                        },
+                        [
+                          _vm._v("Phone Number\n                    "),
+                          _c(
+                            "span",
+                            { staticClass: "text-danger pull-right" },
+                            [_vm._v(_vm._s(_vm.errors.first("phone_number")))]
+                          )
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-3" }, [
                     _c("div", { staticClass: "form-group" }, [
                       _c(
                         "select",
@@ -60028,9 +60092,9 @@ var render = function() {
                             attrs: {
                               type: "number",
                               name: "obtained",
-                              min: "5.0",
+                              min: "3.00",
                               max: "10",
-                              step: "0.1",
+                              step: "0.01",
                               placeholder: "Obtained Marks"
                             },
                             domProps: {

@@ -35,7 +35,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" name="obtained" min="5.0" max="10" step="0.1" v-model="update_marks.obtained_marks"
+                                        <input type="number" name="obtained" min="3.00" max="10" step="0.01" v-model="update_marks.obtained_marks"
                                             placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
                                             v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="obtained" v-model="update_marks.obtained_marks"
