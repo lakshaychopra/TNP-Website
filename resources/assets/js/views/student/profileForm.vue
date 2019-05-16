@@ -85,7 +85,7 @@
                 <div class="col-md-2">
                   <div class="form-group">
                     <input type="number" maxlength="4" v-validate="'required|numeric|length:3|max:4'" max="9999" id="height"
-                      min="0" name="height" v-model="student.height" placeholder="Height" class="form-control">
+                      min="0" name="height" v-model="student.height" placeholder="Height(cm)" class="form-control">
                     <small class="form-text text-primary text-uppercase">Height
                       <span class="text-danger pull-right">{{errors.first('height')}}</span>
                     </small>
@@ -94,7 +94,7 @@
                 <div class="col-md-2">
                   <div class="form-group">
                     <input type="number" maxlength="4" min="0" v-validate="'required|numeric|max:4'" max="9999" name="weight"
-                      v-model="student.weight" placeholder="Weight" class="form-control">
+                      v-model="student.weight" placeholder="Weight(kg)" class="form-control">
                     <small class="form-text text-primary text-uppercase">Weight
                       <span class="text-danger pull-right">{{errors.first('weight')}}</span>
                     </small>
@@ -167,7 +167,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <input type="text" name="batch" v-model="student.batch" placeholder="Batch" v-validate="'required'"
-                      class="form-control">
+                      class="form-control" value="2016-2020" disabled>
                     <small class="form-text text-primary text-uppercase">Batch
                       <span class="text-danger pull-right">{{errors.first('batch')}}</span>
                     </small>

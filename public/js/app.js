@@ -56058,7 +56058,7 @@ var render = function() {
                           id: "height",
                           min: "0",
                           name: "height",
-                          placeholder: "Height"
+                          placeholder: "Height(cm)"
                         },
                         domProps: { value: _vm.student.height },
                         on: {
@@ -56112,7 +56112,7 @@ var render = function() {
                           min: "0",
                           max: "9999",
                           name: "weight",
-                          placeholder: "Weight"
+                          placeholder: "Weight(kg)"
                         },
                         domProps: { value: _vm.student.weight },
                         on: {
@@ -56515,7 +56515,9 @@ var render = function() {
                         attrs: {
                           type: "text",
                           name: "batch",
-                          placeholder: "Batch"
+                          placeholder: "Batch",
+                          value: "2016-2020",
+                          disabled: ""
                         },
                         domProps: { value: _vm.student.batch },
                         on: {
@@ -58348,9 +58350,6 @@ var render = function() {
                             attrs: {
                               type: "number",
                               name: "obtained marks",
-                              min: "0",
-                              max: "10",
-                              step: "0.1",
                               placeholder: "Obtained Marks"
                             },
                             domProps: { value: _vm.student.obtained_marks },
