@@ -58469,7 +58469,8 @@ var render = function() {
                               name: "max marks",
                               placeholder: "10",
                               value: "10",
-                              disabled: ""
+                              disabled: "",
+                              step: "any"
                             },
                             domProps: { value: _vm.student.max_marks },
                             on: {
