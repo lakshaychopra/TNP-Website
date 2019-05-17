@@ -55472,6 +55472,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -56496,39 +56497,54 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-4" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.student.batch,
-                            expression: "student.batch"
-                          },
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required",
-                            expression: "'required'"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          name: "batch",
-                          placeholder: "Batch",
-                          value: "2016-2020",
-                          disabled: ""
-                        },
-                        domProps: { value: _vm.student.batch },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "validate",
+                              rawName: "v-validate",
+                              value: "required",
+                              expression: "'required'"
+                            },
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.student.batch,
+                              expression: "student.batch"
                             }
-                            _vm.$set(_vm.student, "batch", $event.target.value)
+                          ],
+                          class: {
+                            "form-control": true,
+                            error: _vm.errors.has("batch")
+                          },
+                          attrs: { name: "batch" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.student,
+                                "batch",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
                           }
-                        }
-                      }),
+                        },
+                        [
+                          _c("option", { attrs: { value: "2016-2020" } }, [
+                            _vm._v("2016-2020")
+                          ])
+                        ]
+                      ),
                       _vm._v(" "),
                       _c(
                         "small",

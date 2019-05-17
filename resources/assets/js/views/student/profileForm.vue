@@ -166,8 +166,9 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <input type="text" name="batch" v-model="student.batch" placeholder="Batch" v-validate="'required'"
-                      class="form-control" value="2016-2020" disabled>
+                     <select name="batch" v-validate="'required'" v-model="student.batch" :class="{'form-control': true, 'error': errors.has('batch')}">
+                      <option value="2016-2020">2016-2020</option>
+                    </select>
                     <small class="form-text text-primary text-uppercase">Batch
                       <span class="text-danger pull-right">{{errors.first('batch')}}</span>
                     </small>
