@@ -66,7 +66,7 @@
                 <div class="col-md-3">
                   <div class="form-group">
                     <input v-validate="'required'" type="number" name="obtained marks" v-model="student.obtained_marks"
-                      placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()" v-if="this.student.marks_type=='CGPA'">
+                      placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()" v-if="this.student.marks_type=='CGPA'"  step="any">
                     <input v-validate="'required'" type="text" name="obtained marks" v-model="student.obtained_marks" placeholder="Obtained Marks"
                       class="form-control" v-on:input="percentCalculate()" v-else>
                     <small class="form-text text-primary text-uppercase">Obtained Marks

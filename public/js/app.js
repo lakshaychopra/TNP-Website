@@ -58366,7 +58366,8 @@ var render = function() {
                             attrs: {
                               type: "number",
                               name: "obtained marks",
-                              placeholder: "Obtained Marks"
+                              placeholder: "Obtained Marks",
+                              step: "any"
                             },
                             domProps: { value: _vm.student.obtained_marks },
                             on: {
