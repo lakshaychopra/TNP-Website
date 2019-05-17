@@ -58094,6 +58094,10 @@ var render = function() {
                           _vm._v(" "),
                           _c("option", { attrs: { value: "BSEB" } }, [
                             _vm._v("BSEB")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "Others" } }, [
+                            _vm._v("Others")
                           ])
                         ]
                       ),
@@ -59089,6 +59093,10 @@ var render = function() {
                           _vm._v(" "),
                           _c("option", { attrs: { value: "BSEB" } }, [
                             _vm._v("BSEB")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "Others" } }, [
+                            _vm._v("Others")
                           ])
                         ]
                       ),
