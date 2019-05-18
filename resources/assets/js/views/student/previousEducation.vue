@@ -6,7 +6,7 @@
           <div class="card-body">
             <h2 class="card-title mt-3 text-primary">XII/Diploma Details</h2>
 
-            <form method="post" @submit.prevent="submit">
+            <form method="post" @submit.prevent="validateForm">
               <div class="row">
                 <div class="col-md-4">
                    <div class="form-group">
@@ -77,13 +77,13 @@
               <div class="row">
                 <div class="col-md-3 ml-auto">
                   <div class="form-group">
-                    <input type="number" name="jee" v-model="student.jee_rank" class="form-control" placeholder="Jee Rank">
+                    <input type="number"  v-validate="'required'" name="jee" v-model="student.jee_rank" class="form-control" placeholder="Jee Rank">
                     <small class="form-text text-primary text-uppercase">Jee Rank</small>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="number" name="gap" step="1" min="0" value="0" v-model="student.year_gap" class="form-control"
+                    <input type="number"  v-validate="'required'" name="gap" step="1" min="0" value="0" v-model="student.year_gap" class="form-control"
                       placeholder="Year Gap">
                     <small class="form-text text-primary text-uppercase">Year Gap</small>
                   </div>
@@ -175,6 +175,16 @@
       splitMonthYear(monthYear) {
         this.student.month = monthYear.split('-')[1];
         this.student.year = monthYear.split('-')[0];
+      },
+      validateForm() {
+          this.$validator.validateAll().then((result) => {
+            if (result) {
+              this.submit();
+            }
+            else{
+                 alert('Please enter missing details.');
+            }
+         });
       },
       submit() {
         this.load=true;
