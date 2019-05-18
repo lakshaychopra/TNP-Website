@@ -44,7 +44,7 @@
                     <li style="text-align: justify;">Students must fill their 10th CGPA or Percentage depending upon
                       their examination boards.</li>
 
-                    <li style="text-align: justify;">Don&rsquo;t forge the documents else strict action will be taken
+                    <li style="text-align: justify;">Don&rsquo;t forget the documents else strict action will be taken
                       against you.</li>
                   </ol>
                 </div>

@@ -10,7 +10,7 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <select name="board" :class="{'form-control': true, 'error': errors.has('board')}" v-model="student.board"
+                    <select name="board" :class="[{'form-control': true, 'error': errors.has('board')}]" v-model="student.board"
                       v-validate="'required'">
                       <!-- <option disabled value="">HOSTELER / DAY SCHOLAR</option> -->
                       <option value="CBSE">CBSE</option>
@@ -94,7 +94,6 @@
                       <small class="form-text text-primary text-uppercase">Upload Scanned Tenth Certificate (.pdf) 
                          <span class="text-danger pull-right">{{errors.first('File')}}</span>
                       </small>
-
                 </div>
                 </div>
                 <div class="col-md-8">

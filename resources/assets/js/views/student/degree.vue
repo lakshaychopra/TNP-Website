@@ -35,7 +35,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" name="obtained" min="3.00" max="10" step="0.01" v-model="update_marks.obtained_marks"
+                                        <input type="number"  id="clear" name="obtained" min="0" max="10" step="0.01" v-model="update_marks.obtained_marks"
                                             placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
                                             v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="obtained" v-model="update_marks.obtained_marks"
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" name="max" v-model="update_marks.max_marks" class="form-control"
+                                        <input type="number" name="max" min="10" max="10" v-model="update_marks.max_marks" class="form-control"
                                             placeholder="10" value="10" v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="max" v-model="update_marks.max_marks" placeholder="Max Marks"
                                             class="form-control" v-on:input="percentCalculate()" v-else>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" step="1" min="0" value="0" name="credits" v-model="update_marks.credits"
+                                        <input type="number" id="clear" step="1" min="0" value="0" name="credits" v-model="update_marks.credits"
                                             class="form-control" placeholder="Credits">
                                         <small class="form-text text-primary text-uppercase">Credits</small>
                                     </div>
@@ -65,14 +65,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="number" name="active_backlog" v-model="update_marks.active_backlog"
+                                        <input type="number" id="clear" name="active_backlog" v-model="update_marks.active_backlog"
                                             class="form-control" step="1" min="0" value="0" placeholder="Active Backlog">
                                         <small class="form-text text-primary text-uppercase">Active Backlog</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="number" name="passive_backlog" step="1" min="0" value="0" v-model="update_marks.passive_backlog"
+                                        <input type="number" id="clear" name="passive_backlog" step="1" min="0" value="0" v-model="update_marks.passive_backlog"
                                             class="form-control" placeholder="Passive Backlog">
                                         <small class="form-text text-primary text-uppercase">Passive Backlog</small>
                                     </div>
@@ -81,7 +81,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <button type="submit" value="I Agree" class="btn btn-info btn-lg pull-right">
+                                        <button type="submit" value="I Agree" class="btn btn-info btn-lg pull-right" >
                                         Submit
                                         <!-- <span v-if="!load">Submit
                                         </span> 
@@ -117,7 +117,7 @@
                     passive_backlog: 0,
                     percent: 0,
                 },
-                            marks_type:"CGPA",
+                marks_type:"CGPA",
                 id: this.$parent.id,
                 monthYear: '',
                 month: '',
@@ -167,6 +167,9 @@
             resetmarks() {
                 this.percent = 0;
                 this.update_marks.obtained_marks = undefined;
+                this.update_marks.credits = undefined;
+                this.update_marks.passive_backlog = undefined;
+                this.update_marks.active_backlog = undefined;
                 if (this.student.marks_type == 'CGPA') {
                     this.update_marks.max_marks = 10;
                 } else {
@@ -242,9 +245,11 @@
                 formData.append('_method', 'PUT');
                 axios.post(storeStudentDegreeURL + this.student.id, formData).then(response => {
                     
-                        console.log(this.student.semester_status);
+                console.log(this.student.semester_status);
                                    });
+                this.resetmarks();
              }
+
         }
     }
     </script>

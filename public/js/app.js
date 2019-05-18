@@ -54941,7 +54941,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("li", { staticStyle: { "text-align": "justify" } }, [
           _vm._v(
-            "Don’t forge the documents else strict action will be taken\n                    against you."
+            "Don’t forget the documents else strict action will be taken\n                    against you."
           )
         ])
       ])
@@ -57870,7 +57870,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -58054,10 +58053,12 @@ var render = function() {
                               expression: "'required'"
                             }
                           ],
-                          class: {
-                            "form-control": true,
-                            error: _vm.errors.has("board")
-                          },
+                          class: [
+                            {
+                              "form-control": true,
+                              error: _vm.errors.has("board")
+                            }
+                          ],
                           attrs: { name: "board" },
                           on: {
                             change: function($event) {
@@ -59901,6 +59902,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         resetmarks: function resetmarks() {
             this.percent = 0;
             this.update_marks.obtained_marks = undefined;
+            this.update_marks.credits = undefined;
+            this.update_marks.passive_backlog = undefined;
+            this.update_marks.active_backlog = undefined;
             if (this.student.marks_type == 'CGPA') {
                 this.update_marks.max_marks = 10;
             } else {
@@ -59969,6 +59973,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 console.log(_this2.student.semester_status);
             });
+            this.resetmarks();
         }
     }
 });
@@ -60116,8 +60121,9 @@ var render = function() {
                             staticClass: "form-control",
                             attrs: {
                               type: "number",
+                              id: "clear",
                               name: "obtained",
-                              min: "3.00",
+                              min: "0",
                               max: "10",
                               step: "0.01",
                               placeholder: "Obtained Marks"
@@ -60206,6 +60212,8 @@ var render = function() {
                             attrs: {
                               type: "number",
                               name: "max",
+                              min: "10",
+                              max: "10",
                               placeholder: "10",
                               value: "10"
                             },
@@ -60295,6 +60303,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "number",
+                          id: "clear",
                           step: "1",
                           min: "0",
                           value: "0",
@@ -60342,6 +60351,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "number",
+                          id: "clear",
                           name: "active_backlog",
                           step: "1",
                           min: "0",
@@ -60387,6 +60397,7 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "number",
+                          id: "clear",
                           name: "passive_backlog",
                           step: "1",
                           min: "0",
