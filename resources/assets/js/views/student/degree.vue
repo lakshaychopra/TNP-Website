@@ -7,7 +7,7 @@
                         <h2 class="card-title mt-3 text-primary">Degree Details</h2>
 
                         <!-- <post-form :id="id"></post-form> -->
-                        <form method="post" @submit.prevent="submit">
+                        <form method="post" @submit.prevent="validateForm">
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
@@ -35,18 +35,20 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number"  id="clear" name="obtained" min="0" max="10" step="0.01" v-model="update_marks.obtained_marks"
+                                        <input  v-validate="'required'" type="number" name="obtained" min="0" max="10" step="0.01" v-model="update_marks.obtained_marks"
                                             placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
                                             v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="obtained" v-model="update_marks.obtained_marks"
                                             placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
                                             v-else>
-                                        <small class="form-text text-primary text-uppercase">Obtained Marks</small>
+                                        <small class="form-text text-primary text-uppercase">Obtained Marks
+                                            <span class="text-danger pull-right">{{errors.first('obtained marks')}}</span>
+                                        </small>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" name="max" min="10" max="10" v-model="update_marks.max_marks" class="form-control"
+                                        <input  v-validate="'required'" type="number" name="max" min="10" max="10" v-model="update_marks.max_marks" class="form-control"
                                             placeholder="10" value="10" v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="max" v-model="update_marks.max_marks" placeholder="Max Marks"
                                             class="form-control" v-on:input="percentCalculate()" v-else>
@@ -56,25 +58,31 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" id="clear" step="1" min="0" value="0" name="credits" v-model="update_marks.credits"
+                                        <input  v-validate="'required'"  type="number" step="1" min="0" value="0" name="credits" v-model="update_marks.credits"
                                             class="form-control" placeholder="Credits">
-                                        <small class="form-text text-primary text-uppercase">Credits</small>
+                                        <small class="form-text text-primary text-uppercase">Credits
+                                            <span class="text-danger pull-right">{{errors.first('credits')}}</span>
+                                        </small>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="number" id="clear" name="active_backlog" v-model="update_marks.active_backlog"
+                                        <input   v-validate="'required'" type="number" name="active_backlog" v-model="update_marks.active_backlog"
                                             class="form-control" step="1" min="0" value="0" placeholder="Active Backlog">
-                                        <small class="form-text text-primary text-uppercase">Active Backlog</small>
+                                        <small class="form-text text-primary text-uppercase">Active Backlog
+                                            <span class="text-danger pull-right">{{errors.first('active backlog')}}</span>
+                                        </small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="number" id="clear" name="passive_backlog" step="1" min="0" value="0" v-model="update_marks.passive_backlog"
+                                        <input  v-validate="'required'" type="number" name="passive_backlog" step="1" min="0" value="0" v-model="update_marks.passive_backlog"
                                             class="form-control" placeholder="Passive Backlog">
-                                        <small class="form-text text-primary text-uppercase">Passive Backlog</small>
+                                        <small class="form-text text-primary text-uppercase">Passive Backlog
+                                            <span class="text-danger pull-right">{{errors.first('passive backlog')}}</span>
+                                        </small>
                                     </div>
                                 </div>
                             </div>
@@ -176,6 +184,17 @@
                     this.update_marks.max_marks = undefined;
                 }
             },
+            validateForm() {
+               this.$validator.validateAll().then((result) => {
+               if (result) {
+                 this.submit();
+               }
+               else{
+                 alert('Please enter missing details.');
+               }
+             });
+          },
+
             percentCalculate() {
                 if (this.student.marks_type == 'CGPA') {
                     // console.log(this.student.max_marks);

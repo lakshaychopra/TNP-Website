@@ -59836,6 +59836,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -59911,6 +59919,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.update_marks.max_marks = undefined;
             }
         },
+        validateForm: function validateForm() {
+            var _this2 = this;
+
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    _this2.submit();
+                } else {
+                    alert('Please enter missing details.');
+                }
+            });
+        },
         percentCalculate: function percentCalculate() {
             if (this.student.marks_type == 'CGPA') {
                 // console.log(this.student.max_marks);
@@ -59931,7 +59950,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.$store.getters.getAuthUser(name);
         },
         submit: function submit() {
-            var _this2 = this;
+            var _this3 = this;
 
             this.load = true;
             this.student.obtained_marks = this.changeValue(this.student.obtained_marks, this.update_marks.obtained_marks, this.student.semester_status);
@@ -59951,7 +59970,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else {
                 axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], this.statusChange1).then(function (statusresponse) {
                     console.log(statusresponse);
-                    _this2.$parent.step = 6;
+                    _this3.$parent.step = 6;
                 }).catch(function (errors) {
                     console.log(errors);
                 });
@@ -59971,7 +59990,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             formData.append('_method', 'PUT');
             axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["z" /* storeStudentDegreeURL */] + this.student.id, formData).then(function (response) {
 
-                console.log(_this2.student.semester_status);
+                console.log(_this3.student.semester_status);
             });
             this.resetmarks();
         }
@@ -60002,7 +60021,7 @@ var render = function() {
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
-                    return _vm.submit($event)
+                    return _vm.validateForm($event)
                   }
                 }
               },
@@ -60112,6 +60131,12 @@ var render = function() {
                         ? _c("input", {
                             directives: [
                               {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value: "required",
+                                expression: "'required'"
+                              },
+                              {
                                 name: "model",
                                 rawName: "v-model",
                                 value: _vm.update_marks.obtained_marks,
@@ -60121,7 +60146,6 @@ var render = function() {
                             staticClass: "form-control",
                             attrs: {
                               type: "number",
-                              id: "clear",
                               name: "obtained",
                               min: "0",
                               max: "10",
@@ -60191,7 +60215,16 @@ var render = function() {
                         {
                           staticClass: "form-text text-primary text-uppercase"
                         },
-                        [_vm._v("Obtained Marks")]
+                        [
+                          _vm._v(
+                            "Obtained Marks\n                                        "
+                          ),
+                          _c(
+                            "span",
+                            { staticClass: "text-danger pull-right" },
+                            [_vm._v(_vm._s(_vm.errors.first("obtained marks")))]
+                          )
+                        ]
                       )
                     ])
                   ]),
@@ -60201,6 +60234,12 @@ var render = function() {
                       this.student.marks_type == "CGPA"
                         ? _c("input", {
                             directives: [
+                              {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value: "required",
+                                expression: "'required'"
+                              },
                               {
                                 name: "model",
                                 rawName: "v-model",
@@ -60294,6 +60333,12 @@ var render = function() {
                       _c("input", {
                         directives: [
                           {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required",
+                            expression: "'required'"
+                          },
+                          {
                             name: "model",
                             rawName: "v-model",
                             value: _vm.update_marks.credits,
@@ -60303,7 +60348,6 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "number",
-                          id: "clear",
                           step: "1",
                           min: "0",
                           value: "0",
@@ -60330,7 +60374,16 @@ var render = function() {
                         {
                           staticClass: "form-text text-primary text-uppercase"
                         },
-                        [_vm._v("Credits")]
+                        [
+                          _vm._v(
+                            "Credits\n                                        "
+                          ),
+                          _c(
+                            "span",
+                            { staticClass: "text-danger pull-right" },
+                            [_vm._v(_vm._s(_vm.errors.first("credits")))]
+                          )
+                        ]
                       )
                     ])
                   ])
@@ -60342,6 +60395,12 @@ var render = function() {
                       _c("input", {
                         directives: [
                           {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required",
+                            expression: "'required'"
+                          },
+                          {
                             name: "model",
                             rawName: "v-model",
                             value: _vm.update_marks.active_backlog,
@@ -60351,7 +60410,6 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "number",
-                          id: "clear",
                           name: "active_backlog",
                           step: "1",
                           min: "0",
@@ -60378,7 +60436,16 @@ var render = function() {
                         {
                           staticClass: "form-text text-primary text-uppercase"
                         },
-                        [_vm._v("Active Backlog")]
+                        [
+                          _vm._v(
+                            "Active Backlog\n                                        "
+                          ),
+                          _c(
+                            "span",
+                            { staticClass: "text-danger pull-right" },
+                            [_vm._v(_vm._s(_vm.errors.first("active backlog")))]
+                          )
+                        ]
                       )
                     ])
                   ]),
@@ -60387,6 +60454,12 @@ var render = function() {
                     _c("div", { staticClass: "form-group" }, [
                       _c("input", {
                         directives: [
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required",
+                            expression: "'required'"
+                          },
                           {
                             name: "model",
                             rawName: "v-model",
@@ -60397,7 +60470,6 @@ var render = function() {
                         staticClass: "form-control",
                         attrs: {
                           type: "number",
-                          id: "clear",
                           name: "passive_backlog",
                           step: "1",
                           min: "0",
@@ -60424,7 +60496,20 @@ var render = function() {
                         {
                           staticClass: "form-text text-primary text-uppercase"
                         },
-                        [_vm._v("Passive Backlog")]
+                        [
+                          _vm._v(
+                            "Passive Backlog\n                                        "
+                          ),
+                          _c(
+                            "span",
+                            { staticClass: "text-danger pull-right" },
+                            [
+                              _vm._v(
+                                _vm._s(_vm.errors.first("passive backlog"))
+                              )
+                            ]
+                          )
+                        ]
                       )
                     ])
                   ])
