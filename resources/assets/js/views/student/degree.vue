@@ -49,7 +49,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input  v-validate="'required'" type="number" name="max" min="10" max="10" v-model="update_marks.max_marks" class="form-control"
-                                            placeholder="10" value="10" v-if="this.student.marks_type=='CGPA'">
+                                            placeholder="0" value="10" v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="max" v-model="update_marks.max_marks" placeholder="Max Marks"
                                             class="form-control" v-on:input="percentCalculate()" v-else>
                                         <span class="small text-primary text-uppercase">Max Marks</span>
