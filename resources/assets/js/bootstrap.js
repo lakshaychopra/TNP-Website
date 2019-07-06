@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 import axios from 'axios'
 import Form from './services/Form'
 
+import DatatableFactory from 'vuejs-datatable/dist/vuejs-datatable.esm.js';
+
+Vue.use(DatatableFactory);
+       
 window.Vue = Vue;
 Vue.use(VueRouter);
 window.axios = axios;

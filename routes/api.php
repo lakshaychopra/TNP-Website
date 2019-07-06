@@ -97,7 +97,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::delete('/todo/{id}','TodoController@destroy');
         Route::post('/todo/status','TodoController@toggleStatus');
         // SearchController
-       // Route::post('/filter','SearchController@store');
+       Route::post('/filter','SearchController@downloadExcelFile');
     });
 });
 

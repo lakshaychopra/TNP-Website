@@ -16,6 +16,22 @@
               <span class="hide-menu">Home</span>
             </router-link>
           </li>
+           <li class="dropdown">
+            <a href="javascript:void(0)" data-toggle="dropdown">
+              <i class="fa fa-file fa-fw" aria-hidden="true"></i>
+              <span class="hide-menu">Filter
+                <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <router-link to="/exec/filter" exact>
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Filter
+                </router-link>
+              </li>
+            </ul>
+          </li>
+        
           <li class="dropdown">
             <a href="javascript:void(0)" data-toggle="dropdown">
               <i class="fa fa-file fa-fw" aria-hidden="true"></i>

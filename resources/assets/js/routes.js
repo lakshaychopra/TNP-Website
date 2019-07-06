@@ -177,6 +177,10 @@ let routes = [{
                 component: require('./views/post/exec/pinned')
             },
             {
+                path: '/exec/filter',
+                component: require('./views/filter/datatable')
+            },
+            {
                 path: '/exec/post/:id',
                 component: require('./views/post/exec/show')
             },
@@ -250,6 +254,10 @@ let routes = [{
             {
                 path: '/aggregate',
                 component: require('./views/student/aggregate')
+            },
+            {
+                path: '/profile',
+                component: require('./views/student/profile')
             },
         ]
     },

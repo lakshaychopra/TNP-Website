@@ -36,13 +36,13 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input  v-validate="'required'" type="number" name="obtained" min="0" max="10" step="0.01" v-model="update_marks.obtained_marks"
-                                            placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
+                                            placeholder="Obtained SGPA" class="form-control" v-on:input="percentCalculate()"
                                             v-if="this.student.marks_type=='CGPA'">
                                         <input type="text" name="obtained" v-model="update_marks.obtained_marks"
-                                            placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()"
+                                            placeholder="Obtained SGPA" class="form-control" v-on:input="percentCalculate()"
                                             v-else>
-                                        <small class="form-text text-primary text-uppercase">Obtained Marks
-                                            <span class="text-danger pull-right">{{errors.first('obtained marks')}}</span>
+                                        <small class="form-text text-primary text-uppercase">Obtained SGPA
+                                            <span class="text-danger pull-right">{{errors.first('obtained SGPA')}}</span>
                                         </small>
                                     </div>
                                 </div>
@@ -50,9 +50,9 @@
                                     <div class="form-group">
                                         <input  v-validate="'required'" type="number" name="max" min="10" max="10" v-model="update_marks.max_marks" class="form-control"
                                             placeholder="0" value="10" v-if="this.student.marks_type=='CGPA'">
-                                        <input type="text" name="max" v-model="update_marks.max_marks" placeholder="Max Marks"
+                                        <input type="text" name="max" v-model="update_marks.max_marks" placeholder="Max SGPA"
                                             class="form-control" v-on:input="percentCalculate()" v-else>
-                                        <span class="small text-primary text-uppercase">Max Marks</span>
+                                        <span class="small text-primary text-uppercase">Max SGPA</span>
                                         <span id="percent" class="small text-muted pull-right">Percent = {{update_marks.percent }}% </span>
                                     </div>
                                 </div>

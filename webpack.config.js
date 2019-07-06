@@ -27,3 +27,11 @@ Mix.dispatch('init', Mix);
 let WebpackConfig = require('../src/builder/WebpackConfig');
 
 module.exports = new WebpackConfig().build();
+
+module.exports = {
+    resolve: {
+        alias: {
+            'vuejs-datatable': 'vuejs-datatable/dist/vuejs-datatable.esm.js',
+        }
+    },
+}
