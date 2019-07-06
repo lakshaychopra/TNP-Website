@@ -15,7 +15,7 @@ class CreateGoogleFormTable extends Migration
     {
         Schema::create('student_entries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('univ_roll_no')->primary();
+            $table->string('univ_roll_no');
             $table->string('name');
             $table->string('branch_type');
             $table->timestamps();
