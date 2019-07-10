@@ -5,6 +5,10 @@ let routes = [{
         component: require('./layouts/index/pages.vue'),
         name: 'index',
     },
+    
+    {  path: '/registration_form',
+        component: require('./views/registration/form.vue')
+    },
     {
         path: '/about',
         component: require('./views/about/index.vue'),
@@ -178,7 +182,7 @@ let routes = [{
             },
             {
                 path: '/exec/filter',
-                component: require('./views/filter/datatable')
+                component: require('./views/filter/all_students')
             },
             {
                 path: '/exec/post/:id',
