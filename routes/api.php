@@ -88,7 +88,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::resource('/about', 'AboutController');
         //About Widget Controller
         Route::resource('/widget/about', 'AboutWidgetController');
-        //DetTeams Controller
+        //DevTeams Controller
         Route::resource('/dev/teams', 'DevTeamsController');
 
         //TODO Admin Controller 
@@ -99,6 +99,10 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         // SearchController
         Route::get('/filter','FilterController@getUsers');
         Route::delete('/filter/{user}/delete', 'FilterController@deleteUser');
+        //ExcelDataController
+        Route::post('/data_excel','ExcelDataController@store');
+        //CompanyRegistrationForm
+        Route::post('/company_registration','CompanyRegistrationController@store');
 
     });
 });

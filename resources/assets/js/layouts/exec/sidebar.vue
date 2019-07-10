@@ -16,6 +16,14 @@
               <span class="hide-menu">Home</span>
             </router-link>
           </li>
+
+           <li>
+            <router-link to="/excel_data" exact>
+              <i class="fa fa-home fa-fw" aria-hidden="true"></i>
+              <span class="hide-menu">Data Using Excel</span>
+            </router-link>
+          </li>
+          
            <li class="dropdown">
             <a href="javascript:void(0)" data-toggle="dropdown">
               <i class="fa fa-file fa-fw" aria-hidden="true"></i>

@@ -156,6 +156,10 @@ let routes = [{
                 path: '/blank',
                 component: require('./views/pages/blank')
             },
+            {
+                path: '/excel_data',
+               component: require('./views/excelData/index')
+            },
             // {
             //     path: '/excel',
             //     component: require('./views/excel')

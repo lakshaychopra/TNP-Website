@@ -46,7 +46,7 @@ class CreateDisplayStudentDataView extends Migration
         students.pincode,
         students.mail_id,
         students.phone_number,
-        users.sem_limit,
+        
         metrics_education.board AS tenth_board,
         metrics_education.institute AS tenth_institue,
         metrics_education.month AS tenth_month,
@@ -121,7 +121,6 @@ class CreateDisplayStudentDataView extends Migration
 
           FROM
           students
-          JOIN users ON students.univ_roll_no = users.username AND users.type='STUDENT'
           JOIN previous_education ON students.univ_roll_no = previous_education.univ_roll_no
           JOIN detailed_semester_marks ON students.univ_roll_no = detailed_semester_marks.univ_roll_no
           JOIN metrics_education  ON students.univ_roll_no = metrics_education.univ_roll_no;"

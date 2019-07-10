@@ -79,6 +79,10 @@ class StudentRepository
             'state'                   =>    $payload['state'],
             'district'                =>    $payload['district'],
             'pincode'                 =>    $payload['pincode'],
+            'dob'                     =>    $payload['dob'],
+            'whatsapp_cont'           =>    $payload['whatsapp_cont'],
+            'mail_id'                 =>    $payload['mail_id'],
+            'phone_number'            =>    $payload['phone_number'],
         ];
 	}
 }
