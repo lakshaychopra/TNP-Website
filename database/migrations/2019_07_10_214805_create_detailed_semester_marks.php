@@ -57,7 +57,6 @@ class CreateDetailedSemesterMarks extends Migration
             $table->string('active_backlog_8')->nullable();
             $table->string('passive_backlog_8')->nullable();
 
-            $table->string('obtained_marks_aggregate')->nullable();
             $table->string('sgpa_aggregate')->nullable();
             $table->string('percentage_aggregate')->nullable();
 
@@ -65,8 +64,7 @@ class CreateDetailedSemesterMarks extends Migration
             $table->string('active_backlog_aggregate')->nullable();
             $table->string('passive_backlog_aggregate')->nullable();
             
-            $table->string('semester_status')->nullable();
-            $table->string('verify_status')->nullable();
+            $table->string('verify_status')->default('0');
             $table->timestamps();
         });
     

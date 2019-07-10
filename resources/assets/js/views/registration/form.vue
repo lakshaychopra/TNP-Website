@@ -161,10 +161,9 @@ $('.mdb-select').materialSelect();
    
    }
 
-   input{
+   /* input{
    	/* border-radius:0 15px 15px 0 !important; */
 
-   }
    input:focus{
        outline: none;
 box-shadow:none !important;
