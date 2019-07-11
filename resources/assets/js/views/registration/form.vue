@@ -8,90 +8,126 @@
 				<h4>Students Contact Details</h4>
 			</div>
 			<div class="card-body">
-				<form>
+				<form method="post" @submit.prevent="validateForm">
 					<div id="dynamic_container">
-						 <label>
-    <p class="label-txt">ENTER YOUR EMAIL</p>
-    <input type="text" class="input">
-    <div class="line-box">
-      <div class="line"></div>
+    
+<div class="form-group" v-validate="'required'" :class="{error: validation.hasError('password')}">
+      
+      <div class="content"><input type="password" class="form-control" v-model="password"/></div>
+      <div class="message">{{ validation.firstError('password') }}</div>
+	  <label for="id_username"  > University Roll no</label>
     </div>
-  </label>
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></span>
-							</div>
-							<input type="text" v-validate="'required'" placeholder="University Roll no" class="form-control"/>
-						</div>
-						<div class="input-group mt-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text br-15"><i class="fas fa-phone-square"></i></span>
-							</div>
-							<input type="text" v-validate="'required|confirmed:password'"  class="form-control"
-							placeholder="University Roll no, Again" data-vv-as="password"/>
-						</div>
-
-						<!-- ERRORS -->
-    <div class="alert alert-danger" v-show="errors.any()">
-      <div v-if="errors.has('password')">
-        {{ errors.first('password') }}
-      </div>
-      <div v-if="errors.has('password_confirmation')">
-        {{ errors.first('password_confirmation') }}
-      </div>
+    <div class="form-group" v-validate="'required'" :class="{error: validation.hasError('repeat')}">
+      
+      <div class="content"><input type="password" class="form-control" v-model="repeat"/></div>
+      <div class="message">{{ validation.firstError('repeat') }}</div>
+	   <label for="id_username"  > University Roll no</label>
     </div>
 
+	
+	
+<div>
+      <input type="text" class="form-control">
+      <label for="id_username"  >Class Roll no</label>
+    </div>
+
+	<div>
+      <input type="text" class="form-control">
+      <label for="id_username"  > Name</label>
+    </div>
+	
+
+						
+    
+
 						<div class="input-group mt-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text br-15"><i class="fas fa-at"></i></span>
-							</div>
-							<input type="email" placeholder="Student Name" class="form-control"/>
+							
+						
 						</div>
 					</div>
-					<select class="mdb-select colorful-select dropdown-primary md-form" >
-      <option value="" disabled selected>Choose your branch</option>
-      <option>CSE</option>
-      <option>ECE</option>
-      <option>IT</option>
-	  <option>Civil</option>
-	  <option>Mechanical</option>
-	  <option>Production</option>
-	  <option>Electrical</option>
-     
+					
+
+
+
+ <select class="mdb-select colorful-select dropdown-primary md-form form-control">
+      <option value="" disabled selected>  Choose your branch</option>
+      <option value="">CSE</option>
+      <option value="">ECE</option>
+      <option value="">IT</option>
+	  <option value="">Civil</option>
+	  <option value="">Electrical</option>
+	  <option value="">Mechanical</option>
+	  <option value="">Production</option>
+	  
+
     </select>
+
 
 				</form>
 			</div>
+			
             <div class="row">
   
 
-    <select class="mdb-select colorful-select dropdown-primary md-form" v-model="message">
+    <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="message">
       <option value="" disabled selected>Choose company</option>
       <option value="TCS">TCS</option>
       <option value="Accenture">Accenture</option>
       <option value="Infoyses">Infoyses</option>
-     
+
     </select>
 
  
 </div>
+
+
+
 			<div class="card-footer">
 				<!-- <a class="btn btn-secondary btn-sm" id="add_more"><i class="fas fa-plus-circle"></i> Add</a>
 				<a class="btn btn-secondary btn-sm" id="remove_more"><i class="fas fa-trash-alt"></i> Remove</a> -->
-				<button class="btn btn-success btn-sm float-right submit_btn"><i class="fas fa-arrow-alt-circle-right"></i> Submit</button>
+				<div class="actions">
+				<button type="button" class="btn btn-success float-right" on-click="submit">Submit</button>
+			</div>
 			</div>
 		</div>
 	</div>
 	</div>
 </template>
 <script>
+import SimpleVueValidation from 'simple-vue-validator';
+
+const Validator = SimpleVueValidation.Validator;
 
 export default {
 data(){
 	return{
 	 message:' ',
+	 password: '',
+        repeat: '',
+        submitted: false
 	}
 },
+validators: {
+      password: function (value) {
+        return Validator.value(value).required().minLength(6);
+      },
+      'repeat, password': function (repeat, password) {
+        if (this.submitted || this.validation.isTouched('repeat')) {
+          return Validator.value(repeat).required().match(password);
+        }
+      }
+	},
+	 methods: {
+      submit: function () {
+        this.submitted = true;
+        this.$validate()
+          .then(function(success) {
+            if (success) {
+              alert('Validation succeeded!');
+			}
+		  });
+		  },
+	
 created(){
 $(document).ready(function() {
 $('.mdb-select').materialSelect();
@@ -149,12 +185,33 @@ $('.mdb-select').materialSelect();
    
      });
 	});
-    }
+	},
+	 validateForm() {
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            this.submit();
+          }
+          else{
+            alert('Please enter missing details.');
+          }
+        });
+      },
+	submit(){
+		this.submitted = true;
+		
+
+	},
+	'repeat, password': function (repeat, password) {
+  if (this.submitted || this.validation.isTouched('repeat')) {
+    return Validator.value(repeat).required().match(password);
+  }
+}
+	 }
 }
 </script>
 <style>
  .myForm{
-   	background-color: rgba(0,0,0,0.5) !important;
+   	background-color: grey !important;
    	padding: 15px !important;
    border-radius: 15px !important;
    color: white;
@@ -200,33 +257,26 @@ box-shadow:none !important;
 
 
    /*try*/
-   .line-box {
-  position: relative;
-  width: 100%;
-  height: 2px;
-  background: #BCBCBC;
+ input[type="text,password"]
+select.form-control{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
-.line {
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #8BC34A;
-  transition: ease .6s;
+input[type="text,password"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-.label-txt {
-  position: absolute;
-
-  top: -1.6em;
-  padding: 10px;
-  font-family: sans-serif;
-  font-size: .8em;
-  letter-spacing: 1px;
-  color: rgb(120,120,120);
-  transition: ease .3s;
-}
+/* body
+{
+    margin-left: 10%;
+    margin-right: 10%;
+} */
+input[type="text,password"]:disabled{background-color:transparent;}
 </style>
 

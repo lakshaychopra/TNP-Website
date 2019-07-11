@@ -28,6 +28,7 @@
         "js-cookie": "^2.1.4",
         "laravel-vue-pagination": "^1.2.0",
         "owl.carousel2": "^2.2.1",
+        "simple-vue-validator": "^0.16.0",
         "sweetalert2": "^8.13.1",
         "vee-validate": "^2.1.0-beta.7",
         "vue": "^2.5.16",

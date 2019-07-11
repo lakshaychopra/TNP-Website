@@ -32,6 +32,9 @@ Vue.use(VueContentPlaceholders);
 import SocialSharing from 'vue-social-sharing';
 Vue.use(SocialSharing);
 
+import SimpleVueValidation from 'simple-vue-validator';
+Vue.use(SimpleVueValidation);
+
 const app = new Vue({
     el: '#root',
     store,

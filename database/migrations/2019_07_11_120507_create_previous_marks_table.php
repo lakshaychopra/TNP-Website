@@ -23,6 +23,7 @@ class CreatePreviousMarksTable extends Migration
             $table->string('obtained_marks_XII')->nullable();
             $table->string('max_marks_XII')->nullable();
             $table->string('percentage_XII')->nullable();
+            $table->string('board_Diploma')->nullable();
             $table->string('institute_Diploma')->nullable();
             $table->string('month_Diploma')->nullable();
             $table->string('year_Diploma')->nullable();
