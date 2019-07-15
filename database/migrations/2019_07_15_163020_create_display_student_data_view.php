@@ -64,6 +64,7 @@ class CreateDisplayStudentDataView extends Migration
         previous_education.max_marks_XII,
         previous_education.percentage_XII,
         previous_education.jee_rank_XII,
+        previous_education.board_Diploma,
         previous_education.institute_Diploma,
         previous_education.month_Diploma,
         previous_education.year_Diploma,

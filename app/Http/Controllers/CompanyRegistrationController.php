@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\CompanyRegistration;
+use DB;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateCompanyRegistrationRequest;
+
 
 use JWTAuth;
 use App\Services\CompanyRegistrationService;
@@ -18,21 +21,15 @@ class CompanyRegistrationController extends Controller
     
     public function store(CreateCompanyRegistrationRequest $request)
     {
-        $auth = JWTAuth::parseToken()->authenticate();
-        try {
-            DB::beginTransaction();
-            if (!$auth) {
-                return $this->respondUnauthorized('Failed');
-            }
+        \Log::info($request);
+        \Log::info('1');
+
+        //$auth = JWTAuth::parseToken()->authenticate();
             $register = $request->all();
             $registrationCreate = $this->service->createRegistration($register);
             DB::commit();
             return $this->respondSuccess('Inserted', $registrationCreate);
-        }
-        catch (Exception $e) {
-            DB::rollback();
-            return $this->respondException($e);
-        }
+       
     }
 
    

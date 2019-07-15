@@ -436,12 +436,12 @@
         return this.$store.getters.getAuthUser(name);
       },
       submit() {
-        this.load=true
+        this.load=true;
         let formData = new FormData();
         formData.append('name', this.student.name.toUpperCase());
         formData.append('gender', this.student.gender);
         formData.append('whatsapp_cont', this.student.whatsapp_cont);
-         formData.append('dob', this.student.dob);
+        formData.append('dob', this.student.dob);
         formData.append('category', this.student.category);
         formData.append('height', this.student.height);
         formData.append('weight', this.student.weight);

@@ -4,14 +4,14 @@ namespace App\Repositories;
 
 use App\Models\CompanyRegistration;
 
-class PostRepository
+class CompanyRegistrationRepository
 {
     /**
     * create new instance
     *
     * @param Post $model
     */
-    public function __construct(Post $model)
+    public function __construct(CompanyRegistration $model)
     {
         $this->model = $model;         
     }

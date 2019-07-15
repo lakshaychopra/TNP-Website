@@ -262,10 +262,9 @@
                 formData.append('semester_status', this.student.semester_status);
                 console.log(this.student);
                 formData.append('_method', 'PUT');
-                axios.post(storeStudentDegreeURL + this.student.id, formData).then(response => {
-                    
-                console.log(this.student.semester_status);
-                                   });
+                axios.post(storeStudentDegreeURL + this.student.id, formData).then(response => {     
+                     console.log(this.student.semester_status);
+                });
                 this.resetmarks();
              }
 

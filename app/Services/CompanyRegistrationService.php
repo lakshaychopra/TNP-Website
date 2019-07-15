@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Models\CompanyRegistration;
 use App\Repositories\CompanyRegistrationRepository;
 
-class PostService
+class CompanyRegistrationService
 {	
 	public function __construct(CompanyRegistrationRepository $repository)
 	{

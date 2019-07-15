@@ -1,255 +1,212 @@
 <template>
     <div class="container h-100">
-	<div class="d-flex justify-content-center">
-      <span><h4>Registration form:{{message}}</h4></span>
-		<div class="card mt-5 col-md-4 animated bounceInDown myForm">
-			<div class="card-header">
-			
-				<h4>Students Contact Details</h4>
-			</div>
-			<div class="card-body">
-				<form method="post" @submit.prevent="validateForm">
-					<div id="dynamic_container">
-    
-<div class="form-group" v-validate="'required'" :class="{error: validation.hasError('password')}">
+    <div class="d-flex justify-content-center">
+      <preview></preview>
+    <span><h4>{{company_name}} Registration form</h4></span>
+    <div class="card mt-5 col-md-4 animated bounceInDown myForm">
+      <div class="card-header">
+        <h4>Student Details</h4>
+      </div>
+      <div class="card-body">
+        <form method="post" @submit.prevent="storePost">
+        <div id="dynamic_container">
+		<div class="form-group" v-validate="'required'" :class="{error: validation.hasError('univ_roll_no')}">
       
-      <div class="content"><input type="password" class="form-control" v-model="password"/></div>
-      <div class="message">{{ validation.firstError('password') }}</div>
-	  <label for="id_username"  > University Roll no</label>
+      <div class="content"><input type="text" class="form-control" v-model="univ_roll_no"/></div>
+      <div class="message">{{ validation.firstError('univ_roll_no') }}</div>
+    <label for="id_username"  > University Roll no</label>
     </div>
     <div class="form-group" v-validate="'required'" :class="{error: validation.hasError('repeat')}">
       
       <div class="content"><input type="password" class="form-control" v-model="repeat"/></div>
       <div class="message">{{ validation.firstError('repeat') }}</div>
-	   <label for="id_username"  > University Roll no</label>
+     <label for="id_username"  >Again University Roll no</label>
     </div>
 
-	
-	
+  
+  
 <div>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" v-model="class_roll_no">
       <label for="id_username"  >Class Roll no</label>
     </div>
 
-	<div>
-      <input type="text" class="form-control">
+  <div>
+      <input type="text" class="form-control" v-model="name">
       <label for="id_username"  > Name</label>
     </div>
-	
-
-						
-    
-
-						<div class="input-group mt-3">
-							
-						
-						</div>
-					</div>
-					
-
-
-
- <select class="mdb-select colorful-select dropdown-primary md-form form-control">
-      <option value="" disabled selected>  Choose your branch</option>
-      <option value="">CSE</option>
-      <option value="">ECE</option>
-      <option value="">IT</option>
-	  <option value="">Civil</option>
-	  <option value="">Electrical</option>
-	  <option value="">Mechanical</option>
-	  <option value="">Production</option>
-	  
-
-    </select>
-
-
-				</form>
-			</div>
-			
-            <div class="row">
   
 
-    <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="message">
+            
+    
+
+            <div class="input-group mt-3">
+              
+            
+            </div>
+
+ <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="branch">
+      <option value="" disabled selected>  Choose your branch</option>
+      <option value="CSE">CSE</option>
+      <option value="ECE">ECE</option>
+      <option value="IT">IT</option>
+      <option value="Civil">Civil</option>
+      <option value="Electrical">Electrical</option>
+      <option value="Mechanical">Mechanical</option>
+      <option value="Production">Production</option>
+  </select>
+  </div>
+      
+  <div class="row">
+    <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="company_name">
       <option value="" disabled selected>Choose company</option>
       <option value="TCS">TCS</option>
       <option value="Accenture">Accenture</option>
       <option value="Infoyses">Infoyses</option>
-
     </select>
-
- 
 </div>
 
 
 
-			<div class="card-footer">
-				<!-- <a class="btn btn-secondary btn-sm" id="add_more"><i class="fas fa-plus-circle"></i> Add</a>
-				<a class="btn btn-secondary btn-sm" id="remove_more"><i class="fas fa-trash-alt"></i> Remove</a> -->
-				<div class="actions">
-				<button type="button" class="btn btn-success float-right" on-click="submit">Submit</button>
-			</div>
-			</div>
-		</div>
-	</div>
-	</div>
+        <!-- <a class="btn btn-secondary btn-sm" id="add_more"><i class="fas fa-plus-circle"></i> Add</a>
+        <a class="btn btn-secondary btn-sm" id="remove_more"><i class="fas fa-trash-alt"></i> Remove</a> -->
+        
+              <div class="row">
+				<button type="submit" class="btn btn-primary btn-lg" >
+					<span v-if="!load">Submit
+                      </span> 
+                      <span v-else>
+                        <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                      </span>
+				</button>
+              </div>
+	    </form>
+	  </div>
+
+    </div>
+  </div>
+  </div>
 </template>
 <script>
 import SimpleVueValidation from 'simple-vue-validator';
-
+//import Preview from "../../components/Navigation/Navigation.vue";
 const Validator = SimpleVueValidation.Validator;
+
 
 export default {
 data(){
-	return{
-	 message:' ',
-	 password: '',
+  return{
+     
         repeat: '',
-        submitted: false
-	}
+        submitted: false,
+        name: '',
+        company_name:'',
+        univ_roll_no:'',
+        class_roll_no:'',
+        branch:'',
+	      load:false,
+  }
 },
 validators: {
-      password: function (value) {
+      univ_roll_no: function (value) {
         return Validator.value(value).required().minLength(6);
       },
-      'repeat, password': function (repeat, password) {
+      'repeat, univ_roll_no': function (repeat, univ_roll_no) {
         if (this.submitted || this.validation.isTouched('repeat')) {
-          return Validator.value(repeat).required().match(password);
+          return Validator.value(repeat).required().match(univ_roll_no);
         }
       }
-	},
-	 methods: {
-      submit: function () {
-        this.submitted = true;
-        this.$validate()
-          .then(function(success) {
-            if (success) {
-              alert('Validation succeeded!');
-			}
-		  });
-		  },
-	
-created(){
-$(document).ready(function() {
-$('.mdb-select').materialSelect();
-});
-
-
-        	var i=0;
-	$(document).ready(function(){
-     $('#add_more').on('click', function(){
-      var colorR = Math.floor((Math.random() * 256));
-      var colorG = Math.floor((Math.random() * 256));
-      var colorB = Math.floor((Math.random() * 256));
-      i++;
-      var html ='<div id="append_no_'+i+'" class="animated bounceInLeft">'+
-          '<div class="input-group mt-3">'+
-		  '<div class="input-group-prepend">'+
-		  '<span class="input-group-text br-15" style="color:rgb('+colorR+','+colorG+','+colorB+'">'+
-		  '<i class="fas fa-user-graduate"></i></span>'+
-		  '</div>'+
-		  '<input type="text" placeholder="Student Name"  class="form-control"/>'+
-		  '</div>'+
-		  '<div class="input-group mt-3">'+
-		  '<div class="input-group-prepend">'+
-		  '<span class="input-group-text br-15" style="color:rgb('+colorR+','+colorG+','+colorB+'">'+
-		  '<i class="fas fa-phone-square"></i></span>'+
-		  '</div>'+
-		  '<input type="text" placeholder="Student Phone" class="form-control"/>'+
-		  '</div>'+
-		  '<div class="input-group mt-3">'+
-		  '<div class="input-group-prepend">'+
-		  '<span class="input-group-text br-15" style="color:rgb('+colorR+','+colorG+','+colorB+'">'+
-		  '<i class="fas fa-at"></i></span>'+
-		  '</div>'+
-		  '<input type="email" placeholder="Student Email" class="form-control"/>'+
-		  '</div></div>';
-
-	  $('#dynamic_container').append(html);
-	  $('#remove_more').fadeIn(function(){
-	  	 $(this).show();
-	  });
-     });
-
-     $('#remove_more').on('click', function(){
-         
-         $('#append_no_'+i).removeClass('bounceInLeft').addClass('bounceOutRight')
-            .fadeOut(function(){
-            	$(this).remove();
-            });
-            i--;
-            if(i==0){
-            	$('#remove_more').fadeOut(function(){
-            		$(this).hide()
-            	});;
-            }
-   
-     });
-	});
-	},
-	 validateForm() {
-        this.$validator.validateAll().then((result) => {
-          if (result) {
-            this.submit();
-          }
-          else{
-            alert('Please enter missing details.');
-          }
-        });
+  },
+   methods: {
+      validateForm() {
+	   console.log("Test validations");
+         this.$validator.validateAll().then((result) => {
+                    if (result) {
+                      this.storePost();
+			          		}
+					          else{
+                      alert('Please enter missing details.');
+                    }
+                });
       },
-	submit(){
-		this.submitted = true;
-		
-
-	},
-	'repeat, password': function (repeat, password) {
+     storePost() {
+		 console.log("hello");
+		         this.load=true;
+                let formData = new FormData();
+                formData.append('univ_roll_no', this.univ_roll_no);
+                formData.append('class_roll_no', this.class_roll_no);
+                formData.append('name', this.name);
+                formData.append('branch', this.branch);
+                formData.append('company_name', this.company_name);
+                formData.append('_method', 'POST');
+                    console.log('hi');    
+                    for (var key of formData.entries()) {
+			console.log(key[0] + ', ' + key[1])
+		}           
+               axios.post('api/company_registration', formData)
+                    .then(response=>{
+                      console.log(response.data.data[0]);
+                       if (response.status == 200) {
+                         this.submitted=true;
+                         this.load=false;
+                          toastr['success']("User Added!!");
+                        }
+                    }) 
+                            .catch(function (err) {
+                                console.log(err);
+                            });
+            },
+        
+   
+  
+  'repeat, univ_roll_no': function (repeat, univ_roll_no) {
   if (this.submitted || this.validation.isTouched('repeat')) {
-    return Validator.value(repeat).required().match(password);
+    return Validator.value(repeat).required().match(univ_roll_no);
   }
 }
-	 }
+   }
 }
 </script>
 <style>
  .myForm{
-   	background-color: grey !important;
-   	padding: 15px !important;
+    background-color: grey !important;
+    padding: 15px !important;
    border-radius: 15px !important;
    color: white;
    
    }
 
    /* input{
-   	/* border-radius:0 15px 15px 0 !important; */
+    /* border-radius:0 15px 15px 0 !important; */
 
    input:focus{
        outline: none;
-box-shadow:none !important;
+       box-shadow:none !important;
     /* border:1px solid #ccc !important; */
 
    }
 
    .br-15{
-   	border-radius: 15px 0 0 15px !important;
+    border-radius: 15px 0 0 15px !important;
    }
 
    #add_more{
-   	color: white !important;
-   	background-color: #fa8231 !important;
-   	border-radius: 15px !important;
-   	border: 0 !important;
+    color: white !important;
+    background-color: #fa8231 !important;
+    border-radius: 15px !important;
+    border: 0 !important;
 
    }
    #remove_more{
-   	color: white !important;
-   	background-color: #fc5c65 !important;
-   	border-radius: 15px !important;
-   	border: 0 !important;
-   	display: none;
+    color: white !important;
+    background-color: #fc5c65 !important;
+    border-radius: 15px !important;
+    border: 0 !important;
+    display: none;
 
    }
-   	
+    
    .submit_btn{
-   	border-radius: 15px !important;
+    border-radius: 15px !important;
     background-color: #95c714 !important;
     border: 0 !important;
    }
@@ -279,4 +236,5 @@ select.form-control:focus {
 } */
 input[type="text,password"]:disabled{background-color:transparent;}
 </style>
+
 

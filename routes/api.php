@@ -39,6 +39,10 @@ Route::get('/home/post/search/{term?}', 'HomeController@HomePostSearch');
 Route::get('/home/post/view/{category?}', 'HomeController@HomeCategoryView');
 Route::get('/home/page/view/pinned', 'HomeController@viewPinned');
 Route::get('/home/page/view/widgets', 'HomeController@viewWidgets');
+
+//CompanyRegistrationForm
+Route::post('/company_registration','CompanyRegistrationController@store');
+
 //AboutWidget Controller
 Route::get('/home/page/view/about/widgets', 'AboutWidgetController@aboutWidgets');
 //Protected routes
@@ -101,9 +105,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::delete('/filter/{user}/delete', 'FilterController@deleteUser');
         //ExcelDataController
         Route::post('/data_excel','ExcelDataController@store');
-        //CompanyRegistrationForm
-        Route::post('/company_registration','CompanyRegistrationController@store');
-
+        
     });
 });
 
