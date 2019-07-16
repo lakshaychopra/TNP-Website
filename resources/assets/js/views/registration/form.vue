@@ -1,101 +1,81 @@
 <template>
     <div class="container h-100">
-    <div class="d-flex justify-content-center">
-      <preview></preview>
-    <span><h4>{{company_name}} Registration form</h4></span>
-    <div class="card mt-5 col-md-4 animated bounceInDown myForm">
-      <div class="card-header">
-        <h4>Student Details</h4>
+      <div v-if="this.submitted">
+        <preview :urn="univ_roll_no" :crn="class_roll_no" :branch="branch" :company="company_name"></preview>
       </div>
-      <div class="card-body">
+      <div v-else>
+        <div class="d-flex justify-content-center">
+        <span>
+          <h4>{{company_name}} Registration form</h4>
+        </span>
+        <div class="card mt-5 col-md-4 animated bounceInDown myForm">
+          <div class="card-header">
+            <h4>Student Details</h4>
+          </div>
+        <div class="card-body">
         <form method="post" @submit.prevent="storePost">
         <div id="dynamic_container">
-		<div class="form-group" v-validate="'required'" :class="{error: validation.hasError('univ_roll_no')}">
-      
-      <div class="content"><input type="text" class="form-control" v-model="univ_roll_no"/></div>
-      <div class="message">{{ validation.firstError('univ_roll_no') }}</div>
-    <label for="id_username"  > University Roll no</label>
-    </div>
-    <div class="form-group" v-validate="'required'" :class="{error: validation.hasError('repeat')}">
-      
-      <div class="content"><input type="password" class="form-control" v-model="repeat"/></div>
-      <div class="message">{{ validation.firstError('repeat') }}</div>
-     <label for="id_username"  >Again University Roll no</label>
-    </div>
-
-  
-  
-<div>
-      <input type="text" class="form-control" v-model="class_roll_no">
-      <label for="id_username"  >Class Roll no</label>
-    </div>
-
-  <div>
-      <input type="text" class="form-control" v-model="name">
-      <label for="id_username"  > Name</label>
-    </div>
-  
-
-            
-    
-
-            <div class="input-group mt-3">
-              
-            
-            </div>
-
- <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="branch">
-      <option value="" disabled selected>  Choose your branch</option>
-      <option value="CSE">CSE</option>
-      <option value="ECE">ECE</option>
-      <option value="IT">IT</option>
-      <option value="Civil">Civil</option>
-      <option value="Electrical">Electrical</option>
-      <option value="Mechanical">Mechanical</option>
-      <option value="Production">Production</option>
-  </select>
-  </div>
-      
-  <div class="row">
-    <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="company_name">
-      <option value="" disabled selected>Choose company</option>
-      <option value="TCS">TCS</option>
-      <option value="Accenture">Accenture</option>
-      <option value="Infoyses">Infoyses</option>
-    </select>
-</div>
-
-
-
-        <!-- <a class="btn btn-secondary btn-sm" id="add_more"><i class="fas fa-plus-circle"></i> Add</a>
-        <a class="btn btn-secondary btn-sm" id="remove_more"><i class="fas fa-trash-alt"></i> Remove</a> -->
-        
-              <div class="row">
-				<button type="submit" class="btn btn-primary btn-lg" >
-					<span v-if="!load">Submit
-                      </span> 
-                      <span v-else>
-                        <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
-                      </span>
-				</button>
-              </div>
+		    <div class="form-group" v-validate="'required'" :class="{error: validation.hasError('univ_roll_no')}">
+            <div class="content"><input type="text" class="form-control" v-model="univ_roll_no"/></div>
+            <div class="message">{{ validation.firstError('univ_roll_no') }}</div>
+            <label for="id_username"  > University Roll no</label>
+        </div>
+        <div class="form-group" v-validate="'required'" :class="{error: validation.hasError('repeat')}">
+            <div class="content"><input type="password" class="form-control" v-model="repeat"/></div>
+            <div class="message">{{ validation.firstError('repeat') }}</div>
+            <label for="id_username"  >Again University Roll no</label>
+        </div>
+        <div>
+            <input type="text" class="form-control" v-model="class_roll_no">
+            <label for="id_username"  >Class Roll no</label>
+        </div>
+        <div>
+          <input type="text" class="form-control" v-model="name">
+          <label for="id_username"  > Name</label>
+        </div>
+          <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="branch">
+            <option value="" disabled selected>  Choose your branch</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="IT">IT</option>
+            <option value="Civil">Civil</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Production">Production</option>
+          </select>
+        </div>
+        <div class="row">
+          <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="company_name">
+            <option value="" disabled selected>Choose company</option>
+            <option value="TCS">TCS</option>
+            <option value="Accenture">Accenture</option>
+            <option value="Infoyses">Infoyses</option>
+          </select>
+        </div>
+        <div class="row">
+				  <button type="submit" class="btn btn-primary btn-lg" >
+					    <span v-if="!load">Submit</span> 
+              <span v-else>
+                  <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+              </span>
+				  </button>
+        </div>
 	    </form>
 	  </div>
-
+    </div>
     </div>
   </div>
   </div>
 </template>
 <script>
 import SimpleVueValidation from 'simple-vue-validator';
-//import Preview from "../../components/Navigation/Navigation.vue";
+import Preview from "../../views/registration/preview.vue";
 const Validator = SimpleVueValidation.Validator;
 
 
 export default {
 data(){
   return{
-     
         repeat: '',
         submitted: false,
         name: '',
@@ -106,6 +86,9 @@ data(){
 	      load:false,
   }
 },
+components:{
+        Preview
+    },
 validators: {
       univ_roll_no: function (value) {
         return Validator.value(value).required().minLength(6);
