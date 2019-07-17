@@ -42,6 +42,8 @@ Route::get('/home/page/view/widgets', 'HomeController@viewWidgets');
 
 //CompanyRegistrationForm
 Route::post('/company_registration','CompanyRegistrationController@store');
+//AddCompanyController
+Route::get('/add_company','AddCompanyController@index');
 
 //AboutWidget Controller
 Route::get('/home/page/view/about/widgets', 'AboutWidgetController@aboutWidgets');
@@ -106,6 +108,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         //ExcelDataController
         Route::post('/data_excel','ExcelDataController@store');
         
+        Route::post('/add_company','AddCompanyController@store');
     });
 });
 

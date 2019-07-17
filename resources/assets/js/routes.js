@@ -189,6 +189,10 @@ let routes = [{
                 component: require('./views/filter/all_students')
             },
             {
+                path: '/exec/add_company',
+                component: require('./views/post/exec/add_company')
+            },
+            {
                 path: '/exec/post/:id',
                 component: require('./views/post/exec/show')
             },

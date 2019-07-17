@@ -37,9 +37,15 @@
                   <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Filter
                 </router-link>
               </li>
+              
             </ul>
           </li>
-        
+             <li>
+                <router-link to="/exec/add_company" exact>
+                  <i class="fa fa-briefcase fa-fw" aria-hidden="true"></i> 
+                  <span class="hide-menu">Add Company</span>
+                </router-link>
+              </li>
           <li class="dropdown">
             <a href="javascript:void(0)" data-toggle="dropdown">
               <i class="fa fa-file fa-fw" aria-hidden="true"></i>

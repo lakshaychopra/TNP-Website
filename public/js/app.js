@@ -26362,6 +26362,9 @@ var routes = [{
         path: '/exec/filter',
         component: __webpack_require__(292)
     }, {
+        path: '/exec/add_company',
+        component: __webpack_require__(438)
+    }, {
         path: '/exec/post/:id',
         component: __webpack_require__(295)
     }, {
@@ -30876,7 +30879,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.myForm{\n    background-color: grey !important;\n    padding: 15px !important;\n   border-radius: 15px !important;\n   color: white;\n}\n\n   /* input{\n    /* border-radius:0 15px 15px 0 !important; */\ninput:focus{\n       outline: none;\n       -webkit-box-shadow:none !important;\n               box-shadow:none !important;\n    /* border:1px solid #ccc !important; */\n}\n.br-15{\n    border-radius: 15px 0 0 15px !important;\n}\n#add_more{\n    color: white !important;\n    background-color: #fa8231 !important;\n    border-radius: 15px !important;\n    border: 0 !important;\n}\n#remove_more{\n    color: white !important;\n    background-color: #fc5c65 !important;\n    border-radius: 15px !important;\n    border: 0 !important;\n    display: none;\n}\n.submit_btn{\n    border-radius: 15px !important;\n    background-color: #95c714 !important;\n    border: 0 !important;\n}\n\n\n\n   /*try*/\ninput[type=\"text,password\"]\nselect.form-control{\n  background: transparent;\n  border: none;\n  border-bottom: 1px solid #000000;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  border-radius: 0;\n}\ninput[type=\"text,password\"]:focus,\nselect.form-control:focus {\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\n/* body\n{\n    margin-left: 10%;\n    margin-right: 10%;\n} */\ninput[type=\"text,password\"]:disabled{background-color:transparent;\n}\n", ""]);
+exports.push([module.i, "\nlabel{\r\n  color: black;\n}\n.body{\r\nbackground-color:whitesmoke;\n}\n.card\r\n{\r\n  margin-top:20%;\r\n  position: -webkit-sticky;\r\n  position: sticky;\n}\n.myForm{\r\n    background-color:powderblue!important;\r\n    padding: 15px !important;\r\n  border-radius: 15px !important;\r\n  color: black;\r\n  position: relative;\n}\ninput:focus{\r\n    outline: none;\r\n    -webkit-box-shadow:none !important;\r\n            box-shadow:none !important;\n}\n.br-15{\r\n    border-radius: 15px 0 0 15px !important;\n}\n.btn{\r\n    border-radius: 15px !important;\r\n    background-color:midnightblue !important;\r\n    border: 0 !important;\n}\ninput[type=\"text,password\"]\r\nselect.form-control{\r\n  background: transparent;\r\n  border: none;\r\n  border-bottom: 1px solid #000000;\r\n  -webkit-box-shadow: none;\r\n  box-shadow: none;\r\n  border-radius: 0;\n}\ninput[type=\"text,password\"]:focus,\r\nselect.form-control:focus {\r\n  -webkit-box-shadow: none;\r\n  box-shadow: none;\n}\ninput[type=\"text,password\"]:disabled{background-color:transparent;\n}\nh1\r\n{\r\n  font-family: 'Times New Roman', Times, serif;\r\n  color: rgb(8, 8, 12);\r\n  text-align: center;\r\n  font-weight: bold;\n}\r\n", ""]);
 
 // exports
 
@@ -30891,6 +30894,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_simple_vue_validator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_registration_preview_vue__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_registration_preview_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__views_registration_preview_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -30975,8 +30996,22 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
       univ_roll_no: '',
       class_roll_no: '',
       branch: '',
-      load: false
+      load: false,
+      companies: []
+      //companies:{"select1":"Select 1","select2":"Select 2","select3":"Select 3"}
     };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/api/add_company').then(function (response) {
+      console.log('Hello' + response.data.data[0]);
+      console.log(response.data.data);
+      _this.companies = response.data.data;
+      console.log(arr);
+    }).catch(function (error) {
+      console.log(error.response);
+    });
   },
 
   components: {
@@ -30994,22 +31029,31 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
   },
   methods: {
     validateForm: function validateForm() {
-      var _this = this;
+      var _this2 = this;
 
       console.log("Test validations");
       this.$validator.validateAll().then(function (result) {
         if (result) {
-          _this.storePost();
+          _this2.preview();
         } else {
           alert('Please enter missing details.');
         }
       });
     },
-    storePost: function storePost() {
-      var _this2 = this;
+    preview: function preview() {
+      var txt;
+      var s = "Verify Details !!";
+      var s2 = "\nUniversity Roll No:" + this.univ_roll_no + "\nClass Roll No:" + this.class_roll_no + "\nName:" + this.name + "\nBranch:" + this.branch + "\nCompany:" + this.company_name;
+      if (confirm(s + s2)) {
+        this.submit();
+      } else {}
+    },
+    submit: function submit() {
+      var _this3 = this;
 
       console.log("hello");
       this.load = true;
+      this.submitted = true;
       var formData = new FormData();
       formData.append('univ_roll_no', this.univ_roll_no);
       formData.append('class_roll_no', this.class_roll_no);
@@ -31046,9 +31090,9 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
       axios.post('api/company_registration', formData).then(function (response) {
         console.log(response.data.data[0]);
         if (response.status == 200) {
-          _this2.submitted = true;
-          _this2.load = false;
-          toastr['success']("User Added!!");
+          //  this.submitted=true;
+          _this3.load = false;
+          toastr['success']("Student registered!!");
         }
       }).catch(function (err) {
         console.log(err);
@@ -31539,347 +31583,563 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container h-100" }, [
-    this.submitted
-      ? _c(
-          "div",
-          [
-            _c("preview", {
-              attrs: {
-                urn: _vm.univ_roll_no,
-                crn: _vm.class_roll_no,
-                branch: _vm.branch,
-                company: _vm.company_name
-              }
-            })
-          ],
-          1
-        )
-      : _c("div", [
-          _c("div", { staticClass: "d-flex justify-content-center" }, [
-            _c("span", [
-              _c("h4", [
-                _vm._v(_vm._s(_vm.company_name) + " Registration form")
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "card mt-5 col-md-4 animated bounceInDown myForm"
-              },
-              [
-                _vm._m(0),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c(
-                    "form",
-                    {
-                      attrs: { method: "post" },
-                      on: {
-                        submit: function($event) {
-                          $event.preventDefault()
-                          return _vm.storePost($event)
+  return _c("div", { staticClass: "body" }, [
+    _c("div", { staticClass: "container h-100" }, [
+      this.submitted
+        ? _c(
+            "div",
+            [
+              _c("preview", {
+                attrs: {
+                  urn: _vm.univ_roll_no,
+                  crn: _vm.class_roll_no,
+                  branch: _vm.branch,
+                  company: _vm.company_name,
+                  submit: _vm.submitted
+                }
+              })
+            ],
+            1
+          )
+        : _c("div", [
+            _c("div", { staticClass: "d-flex justify-content-center" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "card mt-5 col-md-6 animated bounceInDown myForm"
+                },
+                [
+                  _c("span", [
+                    _c("h1", [
+                      _vm._v(_vm._s(_vm.company_name) + " REGISTRATION FORM")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c(
+                      "form",
+                      {
+                        attrs: { method: "post" },
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return _vm.validateForm($event)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c("div", { attrs: { id: "dynamic_container" } }, [
-                        _c(
-                          "div",
-                          {
-                            directives: [
-                              {
-                                name: "validate",
-                                rawName: "v-validate",
-                                value: "required",
-                                expression: "'required'"
+                      },
+                      [
+                        _c("div", { attrs: { id: "dynamic_container" } }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "form-group",
+                              class: {
+                                error: _vm.validation.hasError("univ_roll_no")
                               }
-                            ],
-                            staticClass: "form-group",
-                            class: {
-                              error: _vm.validation.hasError("univ_roll_no")
-                            }
-                          },
-                          [
-                            _c("div", { staticClass: "content" }, [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.univ_roll_no,
-                                    expression: "univ_roll_no"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: { type: "text" },
-                                domProps: { value: _vm.univ_roll_no },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
+                            },
+                            [
+                              _c("label", [_vm._v(" University Roll no")]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "content" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "validate",
+                                      rawName: "v-validate",
+                                      value: "required|numeric|length:7",
+                                      expression: "'required|numeric|length:7'"
+                                    },
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.univ_roll_no,
+                                      expression: "univ_roll_no"
                                     }
-                                    _vm.univ_roll_no = $event.target.value
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    placeholder: "Enter University Roll No",
+                                    type: "text"
+                                  },
+                                  domProps: { value: _vm.univ_roll_no },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.univ_roll_no = $event.target.value
+                                    }
                                   }
-                                }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "message" }, [
-                              _vm._v(
-                                _vm._s(
-                                  _vm.validation.firstError("univ_roll_no")
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "message" }, [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.validation.firstError("univ_roll_no")
+                                  )
                                 )
-                              )
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "form-group",
+                              class: {
+                                error: _vm.validation.hasError("repeat")
+                              }
+                            },
+                            [
+                              _c("label", [
+                                _vm._v("Re-enter University Roll no")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "content" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "validate",
+                                      rawName: "v-validate",
+                                      value: "required|numeric|length:7",
+                                      expression: "'required|numeric|length:7'"
+                                    },
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.repeat,
+                                      expression: "repeat"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    placeholder: "Re-enter University Roll No",
+                                    type: "password"
+                                  },
+                                  domProps: { value: _vm.repeat },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.repeat = $event.target.value
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "message" }, [
+                                _vm._v(
+                                  _vm._s(_vm.validation.firstError("repeat"))
+                                )
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("label", { attrs: { for: "id_username" } }, [
+                              _vm._v("Class Roll no")
                             ]),
                             _vm._v(" "),
-                            _c("label", { attrs: { for: "id_username" } }, [
-                              _vm._v(" University Roll no")
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            directives: [
-                              {
-                                name: "validate",
-                                rawName: "v-validate",
-                                value: "required",
-                                expression: "'required'"
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "validate",
+                                  rawName: "v-validate",
+                                  value: "required|numeric|length:7",
+                                  expression: "'required|numeric|length:7'"
+                                },
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.class_roll_no,
+                                  expression: "class_roll_no"
+                                }
+                              ],
+                              staticClass: "form-control ",
+                              attrs: {
+                                type: "numeric",
+                                placeholder: "Enter Class Roll No"
+                              },
+                              domProps: { value: _vm.class_roll_no },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.class_roll_no = $event.target.value
+                                }
                               }
-                            ],
-                            staticClass: "form-group",
-                            class: { error: _vm.validation.hasError("repeat") }
-                          },
-                          [
-                            _c("div", { staticClass: "content" }, [
-                              _c("input", {
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("label", [_vm._v(" Name")]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.name,
+                                  expression: "name"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                placeholder: "Enter Name"
+                              },
+                              domProps: { value: _vm.name },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.name = $event.target.value
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("label", [_vm._v(" Company")]),
+                            _vm._v(" "),
+                            _c(
+                              "select",
+                              {
                                 directives: [
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: _vm.repeat,
-                                    expression: "repeat"
+                                    value: _vm.company_name,
+                                    expression: "company_name"
                                   }
                                 ],
-                                staticClass: "form-control",
-                                attrs: { type: "password" },
-                                domProps: { value: _vm.repeat },
+                                staticClass:
+                                  "mdb-select colorful-select dropdown-primary md-form form-control",
                                 on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.repeat = $event.target.value
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.company_name = $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
                                   }
                                 }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "message" }, [
-                              _vm._v(
-                                _vm._s(_vm.validation.firstError("repeat"))
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("label", { attrs: { for: "id_username" } }, [
-                              _vm._v("Again University Roll no")
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.class_roll_no,
-                                expression: "class_roll_no"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { type: "text" },
-                            domProps: { value: _vm.class_roll_no },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.class_roll_no = $event.target.value
-                              }
-                            }
-                          }),
+                              },
+                              [
+                                _c(
+                                  "option",
+                                  {
+                                    attrs: {
+                                      value: "",
+                                      disabled: "",
+                                      selected: ""
+                                    }
+                                  },
+                                  [_vm._v("Choose Company")]
+                                ),
+                                _vm._v(" "),
+                                _vm._l(_vm.companies, function(company) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: company.company_name,
+                                      domProps: { value: company.company_name }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\r\n                " +
+                                          _vm._s(company.company_name) +
+                                          "\r\n            "
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            )
+                          ]),
                           _vm._v(" "),
-                          _c("label", { attrs: { for: "id_username" } }, [
-                            _vm._v("Class Roll no")
-                          ])
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("label", [_vm._v(" Branch")]),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.branch,
+                                  expression: "branch"
+                                }
+                              ],
+                              staticClass:
+                                "mdb-select colorful-select dropdown-primary md-form form-control",
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.branch = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "",
+                                    disabled: "",
+                                    selected: ""
+                                  }
+                                },
+                                [_vm._v("Choose branch")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "B.Tech Computer Science And Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "B.Tech Computer Science And Engineering"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "B.Tech Electronics And Communication Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "B.Tech Electronics And Communication Engineering"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "B.Tech Information Technology"
+                                  }
+                                },
+                                [_vm._v("B.Tech Information Technology")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: { value: "B.Tech Civil Engineering" }
+                                },
+                                [_vm._v("B.Tech Civil Engineering")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "B.Tech Electrical Engineering"
+                                  }
+                                },
+                                [_vm._v("B.Tech Electrical Engineering")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "B.Tech Mechanical Engineering"
+                                  }
+                                },
+                                [_vm._v("B.Tech Mechanical Engineering")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "B.Tech Production Engineering"
+                                  }
+                                },
+                                [_vm._v("B.Tech Production Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Production Engineering"
+                                  }
+                                },
+                                [_vm._v("M.Tech Production Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Industrial Engineering"
+                                  }
+                                },
+                                [_vm._v("M.Tech Industrial Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: { value: "M.Tech Power Engineering" }
+                                },
+                                [_vm._v("M.Tech Power Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Structural Engineering "
+                                  }
+                                },
+                                [_vm._v("M.Tech Structural Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "M.Tech Computer Science And Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "M.Tech Computer Science And Engineering "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Geo-Technical Engineering"
+                                  }
+                                },
+                                [_vm._v("M.Tech Geo-Technical Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "M.Tech Environmental Science And Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "M.Tech Environmental Science And Engineering "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "M.Tech Electronics And Communication Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "M.Tech Electronics And Communication Engineering "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Electrical Engineering"
+                                  }
+                                },
+                                [_vm._v("M.Tech Electrical Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "M.Tech Soil Mechanics And Foundation Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "M.Tech Soil Mechanics And Foundation Engineering "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "MBA" } }, [
+                                _vm._v("MBA ")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "MCA" } }, [
+                                _vm._v("MCA ")
+                              ])
+                            ]
+                          )
                         ]),
                         _vm._v(" "),
-                        _c("div", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.name,
-                                expression: "name"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { type: "text" },
-                            domProps: { value: _vm.name },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.name = $event.target.value
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("label", { attrs: { for: "id_username" } }, [
-                            _vm._v(" Name")
-                          ])
-                        ]),
+                        _c("br"),
                         _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.branch,
-                                expression: "branch"
-                              }
-                            ],
-                            staticClass:
-                              "mdb-select colorful-select dropdown-primary md-form form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.branch = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c(
-                              "option",
-                              {
-                                attrs: { value: "", disabled: "", selected: "" }
-                              },
-                              [_vm._v("  Choose your branch")]
-                            ),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "CSE" } }, [
-                              _vm._v("CSE")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "ECE" } }, [
-                              _vm._v("ECE")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "IT" } }, [
-                              _vm._v("IT")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "Civil" } }, [
-                              _vm._v("Civil")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "Electrical" } }, [
-                              _vm._v("Electrical")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "Mechanical" } }, [
-                              _vm._v("Mechanical")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "Production" } }, [
-                              _vm._v("Production")
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.company_name,
-                                expression: "company_name"
-                              }
-                            ],
-                            staticClass:
-                              "mdb-select colorful-select dropdown-primary md-form form-control",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.company_name = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c(
-                              "option",
-                              {
-                                attrs: { value: "", disabled: "", selected: "" }
-                              },
-                              [_vm._v("Choose company")]
-                            ),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "TCS" } }, [
-                              _vm._v("TCS")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "Accenture" } }, [
-                              _vm._v("Accenture")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "Infoyses" } }, [
-                              _vm._v("Infoyses")
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
                         _c(
                           "button",
                           {
-                            staticClass: "btn btn-primary btn-lg",
+                            staticClass:
+                              "btn btn-success btn-block card-footer",
                             attrs: { type: "submit" }
                           },
                           [
                             !_vm.load
-                              ? _c("span", [_vm._v("Submit")])
+                              ? _c("span", [_vm._v("Verify")])
                               : _c("span", [
                                   _c("i", {
                                     staticClass: "fa fa-circle-o-notch fa-spin",
@@ -31888,26 +32148,17 @@ var render = function() {
                                 ])
                           ]
                         )
-                      ])
-                    ]
-                  )
-                ])
-              ]
-            )
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
           ])
-        ])
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h4", [_vm._v("Student Details")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -53028,6 +53279,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -53133,6 +53390,27 @@ var render = function() {
               ]
             )
           ]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c(
+                "router-link",
+                { attrs: { to: "/exec/add_company", exact: "" } },
+                [
+                  _c("i", {
+                    staticClass: "fa fa-briefcase fa-fw",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "hide-menu" }, [
+                    _vm._v("Add Company")
+                  ])
+                ]
+              )
+            ],
+            1
+          ),
           _vm._v(" "),
           _c("li", { staticClass: "dropdown" }, [
             _vm._m(2),
@@ -85949,6 +86227,10 @@ module.exports = SocialSharing;
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(436)
+}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(434)
@@ -85957,7 +86239,7 @@ var __vue_template__ = __webpack_require__(435)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -86011,10 +86293,62 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'Preview',
-    props: ['urn', 'crn', 'branch', 'company']
+    props: ['urn', 'crn', 'branch', 'company', 'submit'],
+    load: false
+    //     methods:{
+    //         edit(){
+    //            this.submit=false;
+    //         },
+    //         submit(){
+    //                 let formData = new FormData();
+    //                 formData.append('univ_roll_no', this.univ_roll_no);
+    //                 formData.append('class_roll_no', this.class_roll_no);
+    //                 formData.append('name', this.name);
+    //                 formData.append('branch', this.branch);
+    //                 formData.append('company_name', this.company_name);
+    //                 formData.append('_method', 'POST');
+    //                     console.log('hi');    
+    //                     for (var key of formData.entries()) {
+    // 			        console.log(key[0] + ', ' + key[1])
+    // 		            }           
+    //                     axios.post('api/company_registration', formData)
+    //                     .then(response=>{
+    //                     console.log(response.data.data[0]);
+    //                        if (response.status == 200) {
+    //                         //  this.submitted=true;
+    //                          this.load=false;
+    //                           toastr['success']("Student registered!!");
+    //                         }
+    //                     }) 
+    //                             .catch(function (err) {
+    //                                 console.log(err);
+    //                             });
+
+    // }
+    // }
 });
 
 /***/ }),
@@ -86025,39 +86359,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h2", [_vm._v("You have been registered Successfully!!")]),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("form", [
-      _c("h5", [_vm._v("Preview Data")]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v("\r\n        University Roll No:"),
-      _c("input", {
-        attrs: { type: "text", disabled: "" },
-        domProps: { value: _vm.urn }
-      }),
-      _c("br"),
-      _vm._v("\r\n        Class Roll No:"),
-      _c("input", {
-        attrs: { type: "text", disabled: "" },
-        domProps: { value: _vm.crn }
-      }),
-      _c("br"),
-      _vm._v("\r\n        Branch:"),
-      _c("input", {
-        attrs: { type: "text", disabled: "" },
-        domProps: { value: _vm.branch }
-      }),
-      _c("br"),
-      _vm._v("\r\n        Company:"),
-      _c("input", {
-        attrs: { type: "text", disabled: "" },
-        domProps: { value: _vm.company }
-      }),
-      _c("br")
+  return _c("div", { staticClass: "body col-md-6" }, [
+    _c("h1", [
+      _c("b", [_vm._v("You have been registered for " + _vm._s(_vm.company))])
     ])
   ])
 }
@@ -86068,6 +86372,265 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-19645a92", module.exports)
+  }
+}
+
+/***/ }),
+/* 436 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(437);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("21ad5114", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-19645a92\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./preview.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-19645a92\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./preview.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.body\r\n{\r\n   background-color:lightblue;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-attachment: fixed;\n}\n.form\r\n{\r\n    background-color: lightblue;\r\n    margin: 10%;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 438 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(439)
+/* template */
+var __vue_template__ = __webpack_require__(440)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\views\\post\\exec\\add_company.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4d2aca33", Component.options)
+  } else {
+    hotAPI.reload("data-v-4d2aca33", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 439 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            company_name: '',
+            load: false
+        };
+    },
+
+    methods: {
+        validate: function validate() {
+            var _this = this;
+
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    _this.submit();
+                } else {
+                    alert('Please enter missing details.');
+                }
+            });
+        },
+        submit: function submit() {
+            var _this2 = this;
+
+            var navigate = this;
+            this.load = true;
+            var formData = new FormData();
+            formData.append('company_name', this.company_name);
+            formData.append('_method', 'POST');
+            console.log(this.company_name);
+            axios.post('/api/dashboard/add_company', formData).then(function (response) {
+                console.log(response.data.data[0]);
+                if (response.status == 200) {
+                    _this2.load = false;
+                    toastr['success']("Company Added!!");
+                    navigate.$router.push({
+                        path: '/home'
+                    });
+                }
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 440 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "form",
+    {
+      attrs: { method: "post" },
+      on: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.validate($event)
+        }
+      }
+    },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required",
+                  expression: "'required'"
+                },
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.company_name,
+                  expression: "company_name"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                value: "",
+                name: "title",
+                autofocus: "",
+                maxlength: "50"
+              },
+              domProps: { value: _vm.company_name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.company_name = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.errors.first("title")))
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _vm._v("Company Name"),
+      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-info waves-effect waves-light m-t-10",
+        attrs: { type: "submit" }
+      },
+      [_c("span", [_vm._v("Submit")])]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4d2aca33", module.exports)
   }
 }
 
