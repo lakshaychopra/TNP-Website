@@ -82,6 +82,8 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::resource('/student/me', 'MetricsEducationController');
         //Displayprofile
         Route::resource('/student/profile','ProfileViewController');
+        //QueriesController
+        Route::post('/queries','QueryController@store');
         //PreviousEducation
         Route::resource('/student/pe', 'PreviousEducationsController');
         //SemesterMarks

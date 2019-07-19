@@ -18,6 +18,7 @@ class DetailedSemesterMarks extends Model
         'obtained_marks_6','credits_6','active_backlog_6','passive_backlog_6', 
         'obtained_marks_7','credits_7','active_backlog_7','passive_backlog_7', 
         'obtained_marks_8','credits_8','active_backlog_8','passive_backlog_8', 
-        'percentage_aggregate','sgpa_aggregate','credits_aggregate','active_backlog_aggregate','passive_backlog_aggregate'
+        'percentage_aggregate','sgpa_aggregate','credits_aggregate',
+        'active_backlog_aggregate','passive_backlog_aggregate','verify_status'
     ];
 }

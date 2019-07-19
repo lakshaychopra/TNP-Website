@@ -1,50 +1,46 @@
 <template>
 <div class="container">    
-            <h2 class="card-title mt-3 text-primary">Profile Details</h2>
+    <h2 class="card-title mt-3 text-primary">Profile Details</h2>
     <hr class="style3">
+    <form method="post" @submit.prevent="submit">
     <div class="form-group">
- <fieldset disabled="">
-  <div class="row">
-    <div class="col-md-5">
-      <input type="text" class="form-control" v-model="student.name">
-      <label for="id_username"  > Name </label>
-    </div>
-     <div class="col-md-2">
-      <input type="text" class="form-control" v-model="student.dob">
-       <label for="id_username"   > DOB </label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="student.category">
-      <label for="id_username"   > Category </label>
-    </div>
-    <div class="col-md-3">
-      <input type="text" class="form-control" v-model="student.whatsapp_cont">
-      <label for="id_username"   > Whatsapp Contact </label>
-    </div>
-</div>
-
+      <fieldset disabled="">
+      <div class="row">
+        <div class="col-md-5">
+          <input type="text" class="form-control" v-model="student.name">
+          <label for="id_username"  > Name </label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" v-model="student.dob">
+            <label for="id_username"   > DOB </label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" v-model="student.category">
+            <label for="id_username"> Category </label>
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" v-model="student.whatsapp_cont">
+            <label for="id_username"   > Whatsapp Contact </label>
+        </div>
+      </div>
      <div class="row">
-   <div class="col-md-3">
-          
-      <input type="text" class="form-control" v-model="student.gender">
-      <label for="id_username"   > Gender </label>
-    </div>
-    <div class="col-md-3">
-         
-      <input type="text" class="form-control" v-model="student.height">
-       <label for="id_username"   > Height </label>
-    </div>
-     <div class="col-md-3">
-          
-      <input type="text" class="form-control" v-model="student.weight">
-      <label for="id_username"  > Weight </label>
-    </div>
-    <div class="col-md-3">
-          
-      <input type="text" class="form-control" v-model="student.blood_group" >
-      <label for="id_username"   > Blood Group</label>
-    </div>
-  </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" v-model="student.gender">
+          <label for="id_username"   > Gender </label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" v-model="student.height">
+          <label for="id_username"   > Height </label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" v-model="student.weight">
+          <label for="id_username"  > Weight </label>
+        </div>
+        <div class="col-md-3">  
+          <input type="text" class="form-control" v-model="student.blood_group" >
+          <label for="id_username"   > Blood Group</label>
+        </div>
+      </div>
 
   <h2 class="card-title mt-3 text-primary">College Details</h2>
    <hr class="style3">
@@ -70,6 +66,7 @@
        <label for="id_username"   > Hostler/Day Scholar</label>
     </div>
   </div>
+
    <div class="row">
     
     <div class="col-md-3">
@@ -82,19 +79,22 @@
       <input type="text" class="form-control" v-model="student.shift" >
        <label for="id_username"  > Shift </label>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
          
       <input type="text" class="form-control" v-model="student.training_semester">
        <label for="id_username"  > Training Semester </label>
     </div>
-     <div class="col-md-3">
+     <div class="col-md-2">
           
       <input type="text" class="form-control" v-model="student.section" >
       <label for="id_username"  > Section </label>
     </div>
+    <div class="col-md-2">
+          
+      <input type="text" class="form-control" v-model="student.branch_type" >
+      <label for="id_username"  > Branch Type </label>
+    </div>
   </div>
-
-
   <h2 class="card-title mt-3 text-primary">Personal & Address Details</h2>
    <hr class="style3">
   <div class="row">
@@ -132,6 +132,24 @@
     </div>
     <div class="col-md-4">
          
+      <input type="text" class="form-control" v-model="student.city">
+       <label for="id_username"  > City</label>
+    </div>
+     
+  </div>
+   <div class="row">
+    <div class="col-md-4">
+         
+      <input type="text" class="form-control" v-model="student.state" >
+       <label for="id_username"  > State</label>
+    </div>
+    <div class="col-md-4">
+         
+      <input type="text" class="form-control" v-model="student.district">
+       <label for="id_username"  > District</label>
+    </div>
+    <div class="col-md-4">
+         
       <input type="text" class="form-control" v-model="student.pincode">
        <label for="id_username"  > Pincode</label>
     </div>
@@ -163,29 +181,30 @@
        <label for="id_username"  >  Year of Passing</label>
     </div>
   </div>
-    <h2 class="card-title mt-3 text-primary">12th/Diploma Details</h2>
+  <div v-if="student.institute_XII!==null">
+    <h2 class="card-title mt-3 text-primary">12th Details</h2>
      <hr class="style3">
      <div class="row">
        <div class="col-md-8">
           
-      <input type="text" class="form-control" v-model="student.pre_edu_institue">
+      <input type="text" class="form-control" v-model="student.institute_XII">
       <label for="id_username"> Institute Name </label>
     </div>
     <div class="col-md-4">
           
-      <input type="text" class="form-control" v-model="student.pre_edu_board">
+      <input type="text" class="form-control" v-model="student.board_XII">
       <label for="id_username"> Board </label>
     </div>
    </div>
    <div class="row">
     <div class="col-md-4">
           
-      <input type="text" class="form-control" v-model="student.pre_edu_percentage">
+      <input type="text" class="form-control" v-model="student.percentage_XII">
       <label for="id_username"> CGPA/Percentage</label>
     </div>
     <div class="col-md-5">
          
-      <input type="text" class="form-control" v-model="student.pre_edu_year">
+      <input type="text" class="form-control" v-model="student.year_XII">
        <label for="id_username"  > Year of Passing</label>
     </div>
      <div class="col-md-3">
@@ -194,251 +213,269 @@
        <label for="id_username"  > Year Gap</label>
     </div>
   </div>
+  </div>
+  <div v-if="student.institute_Diploma!==null">
+  <h2 class="card-title mt-3 text-primary">Diploma Details</h2>
+     <hr class="style3">
+     <div class="row">
+       <div class="col-md-6">
+          
+      <input type="text" class="form-control" v-model="student.institute_Diploma">
+      <label for="id_username"> Institute Name </label>
+    </div>
+    <div class="col-md-2">
+          
+      <input type="text" class="form-control" v-model="student.board_Diploma">
+      <label for="id_username"> Board </label>
+    </div>
+    <div class="col-md-2">
+          
+      <input type="text" class="form-control" v-model="student.obtained_marks_Diploma">
+      <label for="id_username"> Obtained Marks </label>
+    </div>
+    <div class="col-md-2">
+          
+      <input type="text" class="form-control" v-model="student.max_marks_Diploma">
+      <label for="id_username"> Max Marks </label>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-4">
+          
+      <input type="text" class="form-control" v-model="student.percentage_Diploma">
+      <label for="id_username"> CGPA/Percentage</label>
+    </div>
+    <div class="col-md-5">
+         
+      <input type="text" class="form-control" v-model="student.year_Diploma">
+       <label for="id_username"  > Year of Passing</label>
+    </div>
+     
+  </div>
+  </div>
+
   <h2 class="card-title mt-3 text-primary">Semester-1 </h2>
    <hr class="style3">
   <div class="row">
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_obt_marks[0]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.sem_obt_marks_1">
       <label for="id_username"  > Obtained Marks</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_max_marks[0]" >
-      <label for="id_username"  > Max Marks</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_credits[0]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.credits_1">
       <label for="id_username"  > Credits </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_percent[0]">
-      <label for="id_username"  > Percentage </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.active_backlog_1">
+       <label for="id_username"> Active Backlog</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_active_backlog[0]">
-       <label for="id_username"  > Active Backlog</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_passive_backlog[0]">
-       <label for="id_username"  > Passive Backlog </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.passive_backlog_1">
+       <label for="id_username"> Passive Backlog </label>
     </div>
 </div>
 
    <h2 class="card-title mt-3 text-primary">Semester-2</h2>
     <hr class="style3">
   <div class="row">
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_obt_marks[1]" >
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.sem_obt_marks_2">
       <label for="id_username"  > Obtained Marks</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_max_marks[1]">
-      <label for="id_username"  > Max Marks</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_credits[1]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.credits_2">
       <label for="id_username"  > Credits </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_percent[1]" >
-      <label for="id_username"  > Percentage </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.active_backlog_2">
+       <label for="id_username"> Active Backlog</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_active_backlog[1]">
-       <label for="id_username"  > Active Backlog</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_passive_backlog[1]">
-       <label for="id_username"  > Passive Backlog </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.passive_backlog_2">
+       <label for="id_username"> Passive Backlog </label>
     </div>
 </div>
    <h2 class="card-title mt-3 text-primary">Semester-3</h2>
     <hr class="style3">
     <div class="row">
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_obt_marks[2]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.sem_obt_marks_3">
       <label for="id_username"  > Obtained Marks</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_max_marks[2]">
-      <label for="id_username"  > Max Marks</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_credits[2]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.credits_3">
       <label for="id_username"  > Credits </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_percent[2]">
-      <label for="id_username"  > Percentage </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.active_backlog_3">
+       <label for="id_username"> Active Backlog</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_active_backlog[2]">
-       <label for="id_username"  > Active Backlog</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_passive_backlog[2]">
-       <label for="id_username"  > Passive Backlog </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.passive_backlog_3">
+       <label for="id_username"> Passive Backlog </label>
     </div>
 </div>
    <h2 class="card-title mt-3 text-primary">Semester-4</h2>
     <hr class="style3">
    <div class="row">
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_obt_marks[3]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.sem_obt_marks_4">
       <label for="id_username"  > Obtained Marks</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_max_marks[3]">
-      <label for="id_username"  > Max Marks</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_credits[3]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.credits_4">
       <label for="id_username"  > Credits </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_percent[3]">
-      <label for="id_username"  > Percentage </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.active_backlog_4">
+       <label for="id_username"> Active Backlog</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_active_backlog[3]">
-       <label for="id_username"  > Active Backlog</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_passive_backlog[3]">
-       <label for="id_username"  > Passive Backlog </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.passive_backlog_4">
+       <label for="id_username"> Passive Backlog </label>
     </div>
 </div>
    <h2 class="card-title mt-3 text-primary">Semester-5</h2>
     <hr class="style3">
     <div class="row">
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_obt_marks[4]" >
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.sem_obt_marks_5">
       <label for="id_username"  > Obtained Marks</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_max_marks[4]" >
-      <label for="id_username"  > Max Marks</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_credits[4]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.credits_5">
       <label for="id_username"  > Credits </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_percent[4]">
-      <label for="id_username"  > Percentage </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.active_backlog_5">
+       <label for="id_username"> Active Backlog</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_active_backlog[4]" >
-       <label for="id_username"  > Active Backlog</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_passive_backlog[4]">
-       <label for="id_username"  > Passive Backlog </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.passive_backlog_5">
+       <label for="id_username"> Passive Backlog </label>
     </div>
 </div>
 
-   <!-- <h2 class="card-title mt-3 text-primary">Semester-6</h2>
+   <h2 class="card-title mt-3 text-primary">Semester-6</h2>
     <hr class="style3">
   <div class="row">
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_obt_marks[5]" >
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.sem_obt_marks_6">
       <label for="id_username"  > Obtained Marks</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_max_marks[5]">
-      <label for="id_username"  > Max Marks</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_credits[5]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.credits_6">
       <label for="id_username"  > Credits </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_percent[5]">
-      <label for="id_username"  > Percentage </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.active_backlog_6">
+       <label for="id_username"> Active Backlog</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_active_backlog[5]">
-       <label for="id_username"  > Active Backlog</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_passive_backlog[5]">
-       <label for="id_username"  > Passive Backlog </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.passive_backlog_6">
+       <label for="id_username"> Passive Backlog </label>
     </div>
 </div>
-   <h2 class="card-title mt-3 text-primary">Semester-7 </h2>
+   <!-- <h2 class="card-title mt-3 text-primary">Semester-7 </h2>
     <hr class="style3">
     <div class="row">
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_obt_marks[6]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.sem_obt_marks_7">
       <label for="id_username"  > Obtained Marks</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_max_marks[6]">
-      <label for="id_username"  > Max Marks</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_credits[6]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.credits_7">
       <label for="id_username"  > Credits </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_percent[6]">
-      <label for="id_username"  > Percentage </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.active_backlog_7">
+       <label for="id_username"> Active Backlog</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_active_backlog[6]">
-       <label for="id_username"  > Active Backlog</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_passive_backlog[6]">
-       <label for="id_username"  > Passive Backlog </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.passive_backlog_7">
+       <label for="id_username"> Passive Backlog </label>
     </div>
 </div>
   
      <h2 class="card-title mt-3 text-primary">Semester-8 </h2>
     <hr class="style3">
    <div class="row">
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_obt_marks[7]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.sem_obt_marks_8">
       <label for="id_username"  > Obtained Marks</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_max_marks[7]">
-      <label for="id_username"  > Max Marks</label>
-    </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_credits[7]">
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.credits_8">
       <label for="id_username"  > Credits </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_percent[7]">
-      <label for="id_username"  > Percentage </label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.active_backlog_8">
+       <label for="id_username"> Active Backlog</label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_active_backlog[7]">
-       <label for="id_username"  > Active Backlog</label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" v-model="student.passive_backlog_8">
+       <label for="id_username"> Passive Backlog </label>
     </div>
-    <div class="col-md-2">
-      <input type="text" class="form-control" v-model="this.sem_passive_backlog[7]">
-       <label for="id_username"  > Passive Backlog </label>
-    </div>
-</div>
+</div> -->
   
 <h2 class="card-title mt-3 text-primary">Aggregate</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
           
-      <input type="text" class="form-control" v-model="this.aggregate_percentage">
+      <input type="text" class="form-control" v-model="student.percentage_aggregate">
       <label for="id_username" > Percentage</label>
     </div>
     <div class="col-md-3">
           
-      <input type="text" class="form-control" v-model="this.aggregate_cgpa">
-      <label for="id_username" > CGPA</label>
+      <input type="text" class="form-control" v-model="student.sgpa_aggregate">
+      <label for="id_username" >SGPA </label>
     </div>
-   
-  </div>  -->
-  </fieldset>
+     <div class="col-md-2">
+          
+      <input type="text" class="form-control" v-model="student.passive_backlog_aggregate">
+      <label for="id_username" >Passive Backlog </label>
+    </div>
+    <div class="col-md-2">
+          
+      <input type="text" class="form-control" v-model="student.active_backlog_aggregate">
+      <label for="id_username" >Active Backlog </label>
+    </div> 
+    
+    <div class="col-md-2">
+          
+      <input type="text" class="form-control" v-model="student.credits_aggregate">
+      <label for="id_username" >Credits </label>
+    </div>
+  
   </div>
+    </fieldset>
+
+  <div class="row" v-if="student.verify_status==0">
+    <h2 class="card-title mt-3 text-primary">Comment</h2>
+    <hr class="style3">
+    <textarea v-model="comment" class="form-control" rows="5" id="comment"  
+    placeholder="For any kind of discrepancy, kindly mention here"></textarea>
+    </div>
+  <br><br>
+  
+  <div class="text-center" v-if="student.verify_status==0">
+  				  <button type="submit" class="btn btn-primary card-footer col-md-6"  >
+              <span v-if="!load">Verify</span> 
+              <span v-else>
+                <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+              </span>
+          </button>
+  </div>
+  <div class="text-center" v-else>
+  				  <button  type="submit" title='You have already verified this data !!' class="btn btn-success card-footer col-md-6" disabled >
+             Already Verified :)
+          </button>
+  </div>
+
+
+  </div>
+    </form>
     
 </div>
 </template>
@@ -456,21 +493,13 @@
         data() {
             return {
                 userid: this.$store.state.auth.userid,
+                username: this.$store.state.auth.username,
                 student: {},
-                sem_obt_marks:[],
-                sem_max_marks:[],
-                sem_credits:[],
-                sem_active_backlog:[],
-                sem_passive_backlog:[],
-                sem_percent:[],
-                aggregate_percentage:0,
-                aggreagate_cgpa:0,
                 profile: {
                     'univ_roll_no': this.$parent.username,
                 },
-                monthYear: '',
-                month: '',
-                year: '',
+                comment:'',
+                load:false,
                 form_step: {
                    student_form_step: "DEGREE",
                    id: this.$parent.id
@@ -478,46 +507,44 @@
             }
         },
         created() {
-            axios.get('/api/dashboard/student/profile/' + this.userid + '/edit').then(response => {
+            axios.get('/api/dashboard/student/profile/' + this.username + '/edit').then(response => {
                 console.log('Hello'+response.data.data[0]);
                // console.log('test'+student.username);
+               console.log(this.username);
                 this.student = response.data.data[0];
-                console.log(this.student );
-                var i;
-                 for( i=1;i<=5;i++){
-                this.sem_obt_marks[i-1] = this.splitarray(this.student.sem_obt_marks, i);
-                this.sem_max_marks[i-1] = this.splitarray(this.student.sem_max_marks, i);
-                this.sem_credits[i-1] = this.splitarray(this.student.sem_credits, i);
-                this.sem_active_backlog[i-1] = this.splitarray(this.student.sem_active_backlog, i);
-                this.sem_passive_backlog[i-1] = this.splitarray(this.student.sem_passive_backlog, i);
-                this.sem_percent[i-1] = this.splitarray(this.student.sem_percent, i);
-                 }
-
-                  var i , sum=0, product=0, sum_credits = 0, sum_active = 0, sum_passive=0, sum_max = 0;
-              
-                    for(i =0;i<5;i++){
-                        product = parseInt(this.sem_obt_marks[i]) * parseInt(this.sem_credits[i]);
-                        console.log(product);
-                        sum = sum + product;   
-                         sum_credits = sum_credits + parseInt(this.sem_credits);
-                    }
-                        this.aggregate_cgpa = (sum / sum_credits ) ;
-                        this.aggregate_percentage=(sum / sum_credits ) * 9.5 ;
-                        consle.log(this.aggregate_percentage);
-
-                    
-
-
+                console.log(this.student.verify_status);
+                
               }).catch(error => {
                 console.log(error.response);
               });
-               // console.log(this.id.student);
-
-              
-                },
+              },
         methods: {
-            splitarray(arr, index) {
-                return arr.split('-')[index - 1];
+            submit(){
+              console.log(this.comment);
+              this.load=true;
+              let formData = new FormData();
+                formData.append('univ_roll_no', this.username);
+                formData.append('comment', this.comment);
+                formData.append('verify_status', '1');
+                formData.append('_method', 'POST');
+                    axios.post('/api/dashboard/queries', formData)
+                    .then(response=>{
+                    console.log(response.data.data[0]);
+                       if (response.status == 200) {
+                          this.load=false;
+                          this.student.verify_status=1;
+                          toastr['success']("Details Verified !!");
+                        }
+                        else{
+                          this.load=false;
+                          toastr['success']("Details already Verified !!");
+
+                        }
+                    }) 
+                    .catch(function (err) {
+                       console.log(err);
+                   });
+
             },
       
           getAuthUser(name) {
@@ -547,6 +574,10 @@ input[type="text"]:focus,
 select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+button:disabled
+{
+  cursor:not-allowed;
 }
 /* body
 {
