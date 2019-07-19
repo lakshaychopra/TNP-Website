@@ -79,17 +79,17 @@
       <input type="text" class="form-control" v-model="student.shift" >
        <label for="id_username"  > Shift </label>
     </div>
-    <div class="col-md-2">
+    <!-- <div class="col-md-2">
          
       <input type="text" class="form-control" v-model="student.training_semester">
        <label for="id_username"  > Training Semester </label>
-    </div>
-     <div class="col-md-2">
+    </div> -->
+     <div class="col-md-1">
           
       <input type="text" class="form-control" v-model="student.section" >
       <label for="id_username"  > Section </label>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-5">
           
       <input type="text" class="form-control" v-model="student.branch_type" >
       <label for="id_username"  > Branch Type </label>
@@ -181,7 +181,7 @@
        <label for="id_username"  >  Year of Passing</label>
     </div>
   </div>
-  <div v-if="student.institute_XII!==null">
+  <div v-if="student.institute_XII.length!==0">
     <h2 class="card-title mt-3 text-primary">12th Details</h2>
      <hr class="style3">
      <div class="row">
@@ -214,7 +214,7 @@
     </div>
   </div>
   </div>
-  <div v-if="student.institute_Diploma!==null">
+  <div v-if="student.institute_Diploma.length!==0">
   <h2 class="card-title mt-3 text-primary">Diploma Details</h2>
      <hr class="style3">
      <div class="row">
@@ -513,6 +513,7 @@
                console.log(this.username);
                 this.student = response.data.data[0];
                 console.log(this.student.verify_status);
+                console.log(this.student.institute_XII.length);
                 
               }).catch(error => {
                 console.log(error.response);
