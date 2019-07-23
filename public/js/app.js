@@ -68177,7 +68177,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("label", { attrs: { for: "id_username" } }, [
-                  _vm._v("Stream ")
+                  _vm._v("Course ")
                 ])
               ]),
               _vm._v(" "),
@@ -68629,7 +68629,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("label", { attrs: { for: "id_username" } }, [
-                  _vm._v(" CGPA/Percentage")
+                  _vm._v(" Percentage")
                 ])
               ]),
               _vm._v(" "),
@@ -68765,7 +68765,7 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("label", { attrs: { for: "id_username" } }, [
-                        _vm._v(" CGPA/Percentage")
+                        _vm._v(" Percentage")
                       ])
                     ]),
                     _vm._v(" "),

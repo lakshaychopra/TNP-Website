@@ -72,7 +72,7 @@
     <div class="col-md-3">
          
       <input type="text" class="form-control" v-model="student.stream" >
-       <label for="id_username"   >Stream </label>
+       <label for="id_username"   >Course </label>
     </div>
     <div class="col-md-3">
          
@@ -173,7 +173,7 @@
     <div class="col-md-4">
           
       <input type="text" class="form-control" v-model="student.tenth_percentage">
-      <label for="id_username"  > CGPA/Percentage</label>
+      <label for="id_username"> Percentage</label>
     </div>
     <div class="col-md-6">
          
@@ -200,7 +200,7 @@
     <div class="col-md-4">
           
       <input type="text" class="form-control" v-model="student.percentage_XII">
-      <label for="id_username"> CGPA/Percentage</label>
+      <label for="id_username"> Percentage</label>
     </div>
     <div class="col-md-5">
          
