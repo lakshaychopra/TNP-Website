@@ -360,7 +360,7 @@
     </div>
 </div>
 
-   <h2 class="card-title mt-3 text-primary">Semester-6</h2>
+   <!-- <h2 class="card-title mt-3 text-primary">Semester-6</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
@@ -379,7 +379,7 @@
       <input type="text" class="form-control" v-model="student.passive_backlog_6">
        <label for="id_username"> Passive Backlog </label>
     </div>
-</div>
+</div> -->
    <!-- <h2 class="card-title mt-3 text-primary">Semester-7 </h2>
     <hr class="style3">
     <div class="row">
@@ -422,7 +422,7 @@
     </div>
 </div> -->
   
-<h2 class="card-title mt-3 text-primary">Aggregate</h2>
+<!-- <h2 class="card-title mt-3 text-primary">Aggregate</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
@@ -452,7 +452,7 @@
       <label for="id_username" >Credits </label>
     </div>
   
-  </div>
+  </div> -->
     </fieldset>
 
   <div class="row" v-if="student.verify_status==0">

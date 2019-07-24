@@ -1,7 +1,9 @@
 
 <template>
     <div class="container">    
-            <h2 class="card-title mt-3 text-primary">Thank You for submitting the form!!</h2>
+            <h2 class="card-title mt-3 text-primary">Welcome {{student.name}} :)</h2>
+            <h3>Check your profile by clicking on View Profile link</h3>
+            <h4>Note: You can verify the profile only once</h4>
       </div>
 
 <!-- <div class="container">    
