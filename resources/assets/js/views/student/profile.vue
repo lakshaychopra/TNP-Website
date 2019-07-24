@@ -10,13 +10,9 @@
           <input type="text" class="form-control" v-model="student.name">
           <label for="id_username"  > Name </label>
         </div>
-        <div class="col-md-2">
-            <input type="text" class="form-control" v-model="student.dob">
-            <label for="id_username"   > DOB </label>
-        </div>
-        <div class="col-md-2">
-            <input type="text" class="form-control" v-model="student.category">
-            <label for="id_username"> Category </label>
+        <div class="col-md-4">  
+          <input type="text" class="form-control" v-model="student.mail_id" >
+          <label for="id_username"   > Email</label>
         </div>
         <div class="col-md-3">
             <input type="text" class="form-control" v-model="student.whatsapp_cont">
@@ -24,22 +20,30 @@
         </div>
       </div>
      <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
           <input type="text" class="form-control" v-model="student.gender">
           <label for="id_username"   > Gender </label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <input type="text" class="form-control" v-model="student.height">
           <label for="id_username"   > Height </label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <input type="text" class="form-control" v-model="student.weight">
           <label for="id_username"  > Weight </label>
         </div>
-        <div class="col-md-3">  
+        <div class="col-md-2">  
           <input type="text" class="form-control" v-model="student.blood_group" >
           <label for="id_username"   > Blood Group</label>
         </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" v-model="student.dob">
+            <label for="id_username"   > DOB </label>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" v-model="student.category">
+            <label for="id_username"> Category </label>
+        </div> 
       </div>
 
   <h2 class="card-title mt-3 text-primary">College Details</h2>

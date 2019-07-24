@@ -402,7 +402,8 @@ router.beforeEach((to, from, next) => {
                             return next()
                         } else {
                             return next({
-                                path: '/req'
+                                 path: '/req'
+                                //path: '/profile'
                             })
                         }
                     } else if (res.type == "ADMIN") {
