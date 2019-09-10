@@ -110,7 +110,14 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         //ExcelDataController
         Route::post('/data_excel','ExcelDataController@store');
         
+        //Companies Controller
         Route::post('/add_company','AddCompanyController@store');
+        Route::post('/company_list','AddCompanyController@download');
+        Route::delete('/delete/{id}', 'AddCompanyController@destroy');
+
+        
+        //FilterController
+        Route::post('/filter_students','SearchController@downloadExcelFile');
     });
 });
 

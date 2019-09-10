@@ -1,18 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+use Maatwebsite\Excel\Concerns\FromCollection;
 
 use Illuminate\Http\Request;
-use App\Models\SemesterMarks;
-use App\Models\PreviousEducation;
-use App\Models\MetricsEducation;    
+use App\Http\Requests\CreateSearchRequest;   
 use JWTAuth;
 use Exception;
+use Excel;
 use App\Services\SearchService;
 use App\Repositories\SearchRepository;
-use DB;
-
-
+//use DB;
 
 class SearchController extends Controller
 {
@@ -21,19 +19,27 @@ class SearchController extends Controller
          $this->service = $service;
          $this->repository = $repository;
      }
-     public function downloadExcelFile(){
-        
-        $studentSearch = $this->service->searchStudent();
-        $data=json_decode(json_encode($studentSearch),true); 
+     public function downloadExcelFile(Request $request){
+        $auth = JWTAuth::parseToken()->authenticate();
+       
+            
+        $studentSearch = $this->service->searchStudent($request)->toArray();
 
-             return \Excel::create('filtered_data', function($excel)  use ($data) 
+        //$data=json_decode(json_encode($studentSearch),true); 
+        $data=$studentSearch;
+
+             return Excel::create('filtered_data', function($excel)  use ($data) 
              {
                  $excel->sheet('sheet name', function($sheet) use ($data)
                  {
                      $sheet->fromArray($data);
+                     \Log::info('method2');
                  });
 
             })->download('xlsx');
+              
+    
     }
+    
    
 }

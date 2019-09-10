@@ -14,10 +14,10 @@
                       v-validate="'required'">
                       <!-- <option disabled value="">HOSTELER / DAY SCHOLAR</option> -->
                       <option value="CBSE">CBSE</option>
-                      <option value="ICSE"> ICSE </option>
+                      <option value="ICSE">ICSE </option>
                       <option value="PSEB">PSEB</option>
                       <option value="BSEB">BSEB</option>
-                      <option value="Others">Others</option>
+                      <option value="Others">State Board</option>
                     </select>
                     <!-- <input v-validate="'required'" type="text" name="board" v-model="student.board" placeholder="Board" class="form-control text-uppercase"> -->
                     <small class="form-text text-primary text-uppercase">Board

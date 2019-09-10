@@ -41,7 +41,7 @@
                         <router-link to="/genconian">Genconians</router-link>
                         <router-link to="/page/final-year-members">Final Year Members</router-link>
                         <router-link to="/page/executive-members">Executive Members</router-link>
-                        <router-link to="/page/placement-broucher">Placement Broucher</router-link>
+                        <router-link to="/page/placement-brochure">Placement Brochure</router-link>
                         <router-link to="/page/placement-record">Placement Record</router-link>
                         <router-link to="/login">Login</router-link>
                     </div>

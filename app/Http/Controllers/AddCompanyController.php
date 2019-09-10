@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateCompanyListRequest;   
+use JWTAuth;
+//use Exception;
+use Excel;
 
 use App\Models\CompanyList;
+use App\Models\CompanyRegistration;
 use DB;
-use JWTAuth;
-
 
 
 class AddCompanyController extends Controller
@@ -59,6 +62,25 @@ class AddCompanyController extends Controller
             return $this->respondException($e);
         }
     }
+    public function download(CreateCompanyListRequest $request){
+        $auth = JWTAuth::parseToken()->authenticate();
+        $student=CompanyRegistration::select('univ_roll_no')->where('company_name',$request->input('company_name'))->get()->toArray();
+        //$data=json_decode(json_encode($student),true); 
+        $data=$student;
+        //\Log::info($data);
+
+             return Excel::create('registration_list', function($excel)  use ($data) 
+             {
+                 $excel->sheet('sheet name', function($sheet) use ($data)
+                 {
+                     $sheet->fromArray($data);
+                 });
+
+            })->download('xlsx');
+           // return $this->respondSuccess('Inserted',$pe);
+              
+
+    }
 
     /**
      * Display the specified resource.
@@ -102,6 +124,8 @@ class AddCompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $auth = JWTAuth::parseToken()->authenticate();
+        $company = CompanyList::where('company_name',$id)->delete();        
+        return response()->json(['message' => 'Company deleted!']);
     }
 }

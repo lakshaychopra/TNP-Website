@@ -181,7 +181,7 @@
       /* Force Hardware Acceleration in WebKit */
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
-      -webkit-backface-visibility: hidden;
+      /* -webkit-backface-visibility: hidden; */
     }
 
     #mainNav.is-fixed {

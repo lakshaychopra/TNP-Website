@@ -2,13 +2,7 @@
 
 namespace App\Services;
 
-use App\Models\Student;
-use App\Models\SemesterMarks;
-use App\Models\PreviousEducation;
-use App\Models\MetricsEducation;
-
 use App\Repositories\SearchRepository;
-use File;
 
 class SearchService
 {	
@@ -16,8 +10,8 @@ class SearchService
 	{
 		$this->repository = $repository;
     }
-    public function searchStudent()
+	public function searchStudent($request)
 	{
-		return $this->repository->search();
+		return $this->repository->search($request);
 	}
 }

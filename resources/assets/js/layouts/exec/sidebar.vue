@@ -40,12 +40,28 @@
               
             </ul>
           </li>
-             <li>
+           
+           <li class="dropdown">
+            <a href="javascript:void(0)" data-toggle="dropdown">
+              <i class="fa fa-file fa-fw" aria-hidden="true"></i>
+              <span class="hide-menu">Company
+                <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
                 <router-link to="/exec/add_company" exact>
-                  <i class="fa fa-briefcase fa-fw" aria-hidden="true"></i> 
-                  <span class="hide-menu">Add Company</span>
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add/Delete
                 </router-link>
               </li>
+              <li>
+                <router-link to="/exec/download_list" exact>
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i>Download List
+                </router-link>
+              </li>
+              
+            </ul>
+          </li>
           <li class="dropdown">
             <a href="javascript:void(0)" data-toggle="dropdown">
               <i class="fa fa-file fa-fw" aria-hidden="true"></i>
