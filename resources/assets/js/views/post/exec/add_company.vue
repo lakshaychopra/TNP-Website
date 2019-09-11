@@ -4,7 +4,7 @@
   <button type="button" class="btn btn-secondary" v-on:click="action('add')">Add</button>
 ] <button type="button" class="btn btn-secondary" v-on:click="action('delete')">Delete</button>
 </div> -->
-   <form @submit.prevent="validate" method="post">
+   <form @submit.prevent="submit" method="post">
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
@@ -60,23 +60,23 @@ created() {
               });
 },
     methods:{
-         validate() {
-                this.$validator.validateAll().then((result) => {
-                    if (result) {
-                      this.submit();
-			        }
-				    else{
-                      alert('Please enter missing details.');
-                    }
-            });
-         },
+        //  validate() {
+        //         this.$validator.validateAll().then((result) => {
+        //             if (result) {
+        //               this.submit();
+			  //       }
+				//     else{
+        //               alert('Please enter missing details.');
+        //             }
+        //     });
+        //  },
         submit(){
              var navigate = this;
              this.load=true;
                 let formData = new FormData();
                 formData.append('company_name', this.company_name2);
                 formData.append('_method', 'POST');  
-                console.log(this.company_name);  
+                console.log(this.company_name2);  
                     axios.post('/api/dashboard/add_company', formData)
                     .then(response=>{
                     console.log(response.data.data[0]);
