@@ -215,22 +215,21 @@
         <!-- END OF Thanks Faculty -->
 
         <!-- Team  blue-->
-        <section id="team" class="mb-5">
+               <section id="team" class="mb-5">
             <div class="container">
                 <h5 class="section-title h1">THE TEAM</h5>
-                <div class="row">
+                  <div class="row">
                     <!-- Team member -->
                     <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="/images/genconian/sanjam.jpeg" alt="card image"></p>
-                                    <h4 class="card-title">Sanjampreet Singh</h4>
+                                    <h4 class="card-title">Sanjampreet singh</h4>
                                     <p class="card-subtitle">Developer</p>
-                                    <p class="card-text">He is a Genconian. He is a B.Tech student in Information
+                                    <p class="card-text"> He is a B.Tech student in Information
                                         Technology of 2015-19 batch. He is Co-Cordinator of Training and Placement
-                                        Cell. He has been working day-night on T&amp;P Cell's website for college
-                                        students. He has worked as Developer on the PWA and Restful APIs of <a href="https://www.tnpgndec.com">T&amp;P
+                                        Cell. He has worked as Developer on the PWA and Restful APIs of <a href="https://www.tnpgndec.com">T&amp;P
                                             Cell's website.</a></p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
@@ -272,11 +271,10 @@
                                     <p><img class=" img-fluid" src="/images/genconian/karamveer.jpg" alt="card image"></p>
                                     <h4 class="card-title">Karamveer Singh</h4>
                                     <p class="card-subtitle">Developer</p>
-                                    <p class="card-text">He is a Genconian. He is a B.Tech student in Computer Science
-                                        and Engineering of 2015-19 batch. He has worked day-night on Cell's website. He
+                                    <p class="card-text"> He is a B.Tech student in Computer Science
+                                        and Engineering of 2015-19 batch. He
                                         has worked as Developer on the SPA and Vue.js part of <a href="https://www.tnpgndec.com">T&amp;P
-                                            Cell's website</a>. He is not even T&amp;P member and still contributed to
-                                        the cell.</p>
+                                            Cell's website</a></p>
                                     <ul class="list-inline" id="list-link">
                                         <li class="list-inline-item">
                                             <a class="social-icon" target="_blank" href="https://www.facebook.com/loveforeverKM">
@@ -309,9 +307,191 @@
                         </div>
                     </div>
                     <!-- ./Team member -->
+                        <!-- Team member -->
+                    <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/images/genconian/sukhmandeep.jpeg" alt="card image"></p>
+                                    <h4 class="card-title">Sukhmandeep Kaur</h4>
+                                    <p class="card-subtitle">Developer</p>
+                                    <p class="card-text"> She is a B.Tech student in Computer Science
+                                        and Engineering of 2016-20 batch. </p>
+                                    <ul class="list-inline" id="list-link">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/sukhman.kaur.5686">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/sukhman_2807/">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="mailto:sukhman2807@gmail.com ">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./Team member -->
+                     <!-- Team member -->
+                    <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/images/genconian/saksham.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Saksham Bhatia</h4>
+                                    <p class="card-subtitle">Developer</p>
+                                    <p class="card-text">He is a Genconian. He is a B.Tech student in Information Technology
+                                        of 2016-20 batch. </p>
+                                    <ul class="list-inline" id="list-link">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/saksham.bhatia.7545">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                       
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/saksham-bhatia-1b9b99162/">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/saksham1422/">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="mailto:sakshambhatia06@gmail.com ">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/images/genconian/parul.jpeg" alt="card image"></p>
+                                    <h4 class="card-title">Parul Singla</h4>
+                                    <p class="card-subtitle">Developer</p>
+                                    <p class="card-text"> She is a B.Tech student in Computer Science
+                                        and Engineering of 2016-20 batch. </p>
+                                    <ul class="list-inline" id="list-link">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/parul.singla.585">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/parul-singla-51886a139/">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://instagram.com/parulsingla13?igshid=18wi3nluqg9z3">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="mailto:singlaparul2222@gmail.com">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./Team member -->
                 </div>
+                <div class="row">
+                    <!-- Team member -->
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/images/genconian/gagandeep.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Gagandeep Kaur</h4>
+                                    <p class="card-subtitle">Developer</p>
+                                    <p class="card-text"> She is a B.Tech student in Computer Science and Engineering of 2016-20 batch. She has 
+                                        worked mainly as a frontend Designer.
+                                       </p>
+                                    <ul class="list-inline" id="list-link">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/ashi.bansal.587">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://twitter.com/Gagande42822637">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/gagan-deep-b81a8315a/">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/gagan_kaur20/">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="mailto:gaganbansal113@gmail.com">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./Team member -->
+                    <!-- Team member -->
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/images/genconian/amandeep.jpeg" alt="card image"></p>
+                                    <h4 class="card-title">Amandeep Singh</h4>
+                                    <p class="card-subtitle">Developer</p>
+                                    <p class="card-text"> He is a B.Tech student in Information Technology of 2016-20 batch. He has mainly
+                                        worked on back-end and image processing module.  </p>
+                                    <ul class="list-inline" id="list-link">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/profile.php?id=100008014935724">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon" target="_blank" href="">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                       </ul>
+                                       </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
-        </section>
+            </div></section>
+
         <!-- Team -->
 
         <!-- Contributions white -->

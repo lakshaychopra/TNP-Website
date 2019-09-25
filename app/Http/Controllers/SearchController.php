@@ -27,6 +27,8 @@ class SearchController extends Controller
 
         //$data=json_decode(json_encode($studentSearch),true); 
         $data=$studentSearch;
+        // \Log::info("hi test");
+        // \Log::info($studentSearch);
 
              return Excel::create('filtered_data', function($excel)  use ($data) 
              {

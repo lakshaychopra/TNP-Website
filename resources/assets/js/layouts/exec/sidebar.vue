@@ -106,6 +106,11 @@
                 </router-link>
               </li>
               <li>
+                <router-link to="/exec/alumni" exact>
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Alumni Posts
+                </router-link>
+              </li>
+              <li>
                 <router-link to="/exec/all" exact>
                   <i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Manage Posts
                 </router-link>

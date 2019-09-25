@@ -1,5 +1,30 @@
 <template>
 <div class=body>
+  <!-- Just an image -->
+      <div class="fixed-top">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark">
+            <!-- Brand -->
+            <router-link to="/" class="navbar-brand d-none d-md-block">
+                <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
+            </router-link>
+            <router-link to="/" class="navbar-brand d-md-none">
+                <img src="/logo.png" alt="logo" height="55px" width="55px">
+            </router-link>
+            <div class="navbar-header">
+            </div>
+        </nav>
+        <form action="/" method="GET" v-on:submit.prevent v-if="search_input" class="d-xl-none">
+            <div class="col-md-12 BGWhite">
+                <div class="row px-3 py-2">
+                    <input class="form-control" type="text" v-model="search" @keyup="searchPost" autocomplete="on"
+                        placeholder="Search" id="search-med">
+                </div>
+            </div>
+        </form>
+       </div>
+    <br>
+    <br>
+    <br>
     <div class="container h-100">
       <div v-if="this.submitted">
         <preview :urn="univ_roll_no" :crn="class_roll_no" :branch="branch" :company="company_name" :submit="submitted"></preview>
@@ -111,7 +136,7 @@ created() {
                 console.log('Hello' + response.data.data[0]);
                 console.log(response.data.data);
                 this.companies = response.data.data;                
-                console.log(arr);
+                //console.log(arr);
                 }).catch(error => {
                 console.log(error.response);
               })
@@ -249,6 +274,9 @@ h1
   font-weight: bold;
   
 }
+.bg-dark {
+        background-color: #038ed4 !important;
+    }
 </style>
 
 

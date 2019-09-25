@@ -21,8 +21,6 @@ class CompanyRegistrationController extends Controller
     
     public function store(CreateCompanyRegistrationRequest $request)
     {
-        \Log::info($request);
-        \Log::info('1');
 
         //$auth = JWTAuth::parseToken()->authenticate();
             $register = $request->all();
@@ -31,6 +29,7 @@ class CompanyRegistrationController extends Controller
             return $this->respondSuccess('Inserted', $registrationCreate);
        
     }
+    
 
    
 }

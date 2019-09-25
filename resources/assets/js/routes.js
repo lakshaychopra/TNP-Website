@@ -25,11 +25,16 @@ let routes = [{
         name: 'privacy',
     },
     {
+        path: '/page/alumni_form',
+        component: require('./views/alumni/form.vue'),
+    },
+    {
         path: '/page/:url',
         name: 'about',
         props: true,
         component: require('./views/about/subPages.vue'),
     },
+    
     {
         path: '/view/:id',
         name: 'view',
@@ -203,6 +208,10 @@ let routes = [{
             {
                 path: '/exec/all',
                 component: require('./views/post/exec/viewPosts')
+            },
+            {
+                path: '/exec/alumni',
+                component: require('./views/post/exec/alumni_posts')
             },
             {
                 path: '/task',

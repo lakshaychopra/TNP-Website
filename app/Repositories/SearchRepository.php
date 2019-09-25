@@ -12,7 +12,6 @@ class SearchRepository
 {
     public function __construct(DisplayStudent $model)
     {
-        \Log::info('Repository const');
         $this->model = $model;         
     }
 
@@ -38,7 +37,8 @@ class SearchRepository
         $fields=explode(',', $request->input('selected_fields'));
 
 
-        $student=DisplayStudent::select($fields)->where([
+        $student=DisplayStudent::select($fields)
+        ->where([
         ['tenth_percentage','>=',$request->input('tenth_percentage')],
         ['percentage_XII','>=',$request->input('percentage_XII')],
         ['percentage_Diploma','>=',$request->input('percentage_Diploma')],
@@ -48,6 +48,34 @@ class SearchRepository
         ['active_backlog_aggregate','<=',$request->input('active_backlog_aggregate')]
         ])->whereIn('gender',$genders)
         ->whereIn('stream',$streams);   
+
+        // if ( !empty( $request->has( 'univ_roll_no' ) )) {
+        //     $result = $student->where( 'univ_roll_no', '=', $request->univ_roll_no);
+        // }
+        // if ( !empty($request->has( 'tenth_percentage' ) )) {
+        //     $result = $student->where( 'tenth_percentage', '>=', $request->tenth_percentage );
+        // }
+        // if ( $request->has( 'percentage_XII' ) ) {
+        //     $result = $student->where( ['percentage_XII', '>=', $request->percentage_XII] );
+        // }
+        // if ( $request->has( 'percentage_Diploma' ) ) {
+        //     $result = $student->where( ['percentage_Diploma', '>=', $request->percentage_Diploma] );
+        // }
+        // if ( $request->has( 'sgpa_aggregate' ) ) {
+        //     $result = $student->where( ['sgpa_aggregate', '>=', $request->sgpa_aggregate] );
+        // }
+        // if ( $request->has( 'year_gap' ) ) {
+        //     $result = $student->where( ['year_gap', '<=', $request->year_gap] );
+        // }
+        // if ( $request->has( 'active_backlog_aggregate' ) ) {
+        //     $result = $student->where( ['active_backlog_aggregate', '<=', $request->active_backlog_aggregate] );
+        // }
+        // if ( $request->has( 'gender' ) ) {
+        //     $result = $student->whereIn( 'gender', $genders );
+        // }
+        // if ( $request->has( 'stream' ) ) {
+        //     $result = $student->whereIn( 'stream', $streams );
+        // }
        
        }
        catch(Exception $e){

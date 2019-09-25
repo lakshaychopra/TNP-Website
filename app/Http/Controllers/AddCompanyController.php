@@ -128,4 +128,10 @@ class AddCompanyController extends Controller
         $company = CompanyList::where('company_name',$id)->delete();        
         return response()->json(['message' => 'Company deleted!']);
     }
+    public function count(Request $request){
+        $auth = JWTAuth::parseToken()->authenticate();
+        $company = DB::table('registration_details')->where('company_name',$request->input('company_name'))->get()->count();
+        //\Log::info($company);       
+        return $company;
+    }
 }

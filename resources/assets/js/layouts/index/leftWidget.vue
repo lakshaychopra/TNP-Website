@@ -9,11 +9,10 @@
                     <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8BNPvcl-IU4IGn64sN3qDnwaXpHDcDrqrRks6qhbncdhAiQ/viewform"
-                                    target="_blank" rel="noopener">Alumni Assistance Form</a>
+                                <router-link to="/page/alumni_form">Alumni Assistance Form</router-link>
                             </li>
                             <li class="list-group-item">
-                                <router-link to="/page/placement-broucher">Placement Brochure</router-link>
+                                <router-link to="/page/placement-brochure">Placement Brochure</router-link>
                             </li>
                         </ul>
                     </div>

@@ -30,6 +30,7 @@
         "owl.carousel2": "^2.2.1",
         "simple-vue-validator": "^0.16.0",
         "sweetalert2": "^8.13.1",
+        "tinymce": "^5.0.16",
         "vee-validate": "^2.1.0-beta.7",
         "vue": "^2.5.16",
         "vue-content-placeholder": "^1.1.1",

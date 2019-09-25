@@ -13,18 +13,20 @@
    
       <div >
        <form  method="post" v-on:submit.prevent="submit">
-        <div class="main">     
- <h3>Select Required Fields</h3>
- 
-    <br>
-    <div class="row form-check">
-      <div class="col-md-12">
-    <input class="form-check-input selectall" type="checkbox" id="defaultCheck1" @change="selectAll">
-        <label class="form-check-label" for="defaultCheck1">
-         Select All
+        <div class="main">  
+          <div class="row">
+            <div class="col-md-9">   
+ <h2>Select Required Fields</h2>
+            </div>
+  
+      <div class="col-md-3 form-check">
+    <input class="form-check-input selectall largerCheckbox" type="checkbox" id="defaultCheck1" @change="selectAll">
+       <label class="form-check-label" for="defaultCheck1" style="padding-left:20px; padding-bottom:10px;">
+        <font size="5">Select All</font>
         </label>
         </div>
-        </div>
+          </div>
+          <br>
   <div class="form-check">
      <div class="row">
       <div class="col-md-3">
@@ -85,12 +87,12 @@
           Section
         </label>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="shift" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
           Shift
         </label>
-      </div>
+      </div> -->
       <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="training_semester" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
@@ -101,6 +103,12 @@
         <input class="form-check-input individual" type="checkbox" value="gender" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
           Gender
+        </label>
+      </div>
+       <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="mail_id" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+          Mail id
         </label>
       </div>
   </div>
@@ -118,32 +126,14 @@
         </label>
       </div>
       <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="weight" id="defaultCheck1" v-model="selected">
+        <input class="form-check-input individual" type="checkbox" value="phone_number" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
-          Weight
-        </label>
-      </div>
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="height" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Height
+          Phone number
         </label>
       </div>
   </div>
-  
+  <br>
    <div class="row">
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="mother_name" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Mother Name
-        </label>
-      </div>
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="mother_phone" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Mother Contact
-        </label>
-      </div>
       <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="address" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
@@ -156,8 +146,6 @@
           City
         </label>
       </div>
-  </div>
-   <div class="row">
       <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="district" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
@@ -170,26 +158,8 @@
           State
         </label>
       </div>
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="pincode" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Pincode
-        </label>
-      </div>
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="mail_id" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Mail id
-        </label>
-      </div>
   </div>
    <div class="row">
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="phone_number" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Phone number
-        </label>
-      </div>
       <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="tenth_board" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
@@ -202,39 +172,20 @@
           Tenth Institute
         </label>
       </div>
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="tenth_month" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Tenth Month
-        </label>
-      </div>
-  </div>
-   <div class="row">
-      <div class="col-md-3">
+       <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="tenth_year" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
           Tenth Year
         </label>
       </div>
       <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="tenth_obt_marks" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Tenth Obtained Marks
-        </label>
-      </div>
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="" id="defaultCheck1" v-model="selected">
+        <input class="form-check-input individual" type="checkbox" value="tenth_percentage" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
           Tenth Percentage
         </label>
       </div>
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="tenth_percentage" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Twelfth Board
-        </label>
-      </div>
   </div>
+  <br>
    <div class="row">
       <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="institute_XII" id="defaultCheck1" v-model="selected">
@@ -263,15 +214,9 @@
   </div>
    <div class="row">
       <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="jee_rank_XII" id="defaultCheck1" v-model="selected">
+        <input class="form-check-input individual" type="checkbox" value="board_XII" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
-          JEE Rank
-        </label>
-      </div>
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="tenth_obt_marks" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Tenth Obtained Marks
+          Twelfth Board
         </label>
       </div>
       <div class="col-md-3">
@@ -286,34 +231,74 @@
           Diploma Institute
         </label>
       </div>
-  </div>
-   <div class="row">
-      <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="tenth_year" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-          Tenth Year
-        </label>
-      </div>
       <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="year_gap" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
           Year Gap
         </label>
       </div>
+  </div>
+  <br>
+   <div class="row">
       <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="" id="defaultCheck1" v-model="selected">
+        <input class="form-check-input individual" type="checkbox" value="sem_obt_marks_1" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
-          Tenth Percentage
+          Sem Marks-1
         </label>
       </div>
       <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="sem_obt_marks_2" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+          Sem Marks-2
+        </label>
+      </div>
+      <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="sem_obt_marks_3" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+          Sem Marks-3
+        </label>
+      </div>
+      <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="sem_obt_marks_4" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+         Sem Marks-4
+        </label>
+      </div>
+  </div>
+   <div class="row">
+      <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="sem_obt_marks_5" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+          Sem Marks-5
+        </label>
+      </div>
+      <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="sem_obt_marks_6" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+          Sem Marks-6
+        </label>
+      </div>
+      <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="sem_obt_marks_7" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+          Sem Marks-7
+        </label>
+      </div>
+      <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="sem_obt_marks_8" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+          Sem Marks-8
+        </label>
+      </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="sgpa_aggregate" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
           Sgpa Aggregate
         </label>
       </div>
-  </div>
-  <div class="row">
       <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="percentage_aggregate" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
@@ -332,12 +317,12 @@
           Active backlog aggregate
         </label>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <input class="form-check-input individual" type="checkbox" value="passive_backlog_aggregate" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
          Passive backlog aggregate
         </label>
-      </div>
+      </div> -->
   </div>
   
  
@@ -345,7 +330,7 @@
   </div>
 <br>
 <br>
- <h3>Conditions on Required Fields</h3>
+ <h2>Conditions on Required Fields</h2>
  <br>
     <div class="row">
         <div class="col-md-12">
@@ -627,6 +612,10 @@ export default {
 </script>
 
 <style>
+input.largerCheckbox { 
+            width: 20px; 
+            height: 20px; 
+        } 
 .main{
   background-color: white;
   padding: 1%;

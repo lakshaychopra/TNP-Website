@@ -61,6 +61,25 @@
                 </div>
             </div>
         </div>
+        <marquee behavior="scroll" direction="left" style="margin-top:-70px;">
+<img src="/images/companies/jio.jpg" width="125" height="52" alt="Flying Bat">
+  <img src="/images/companies/accenture.jpg" width="125" height="52" alt="Flying Bat">
+ <img src="/images/companies/tcs.jpg" width="125" height="52" alt="Flying Bat">
+<img src="/images/companies/just.png" width="125" height="52" alt="Flying Bat">
+<img src="/images/companies/infoyses.png" width="125" height="52" alt="Flying Bat">
+ <img src="/images/companies/wipro.jpg" width="125" height="52" alt="Flying Bat">
+<img src="/images/companies/nestle.png" width="125" height="52" alt="Flying Bat">
+ <img src="/images/companies/cummins.png" width="125" height="52" alt="Flying Bat">
+<img src="/images/companies/hero.png" width="125" height="52" alt="Flying Bat">
+ <img src="/images/companies/byjus.png" width="125" height="52" alt="Flying Bat">
+ <img src="/images/companies/icic.png" width="125" height="52" alt="Flying Bat">
+ <img src="/images/companies/jaro.png" width="125" height="52" alt="Flying Bat">
+ <img src="/images/companies/saint.png" width="125" height="52" alt="Flying Bat">
+<img src="/images/companies/semens.png" width="125" height="52" alt="Flying Bat">
+<img src="/images/companies/rdc.jpg" width="125" height="52" alt="Flying Bat">
+<img src="/images/companies/mahindra.png" width="125" height="52" alt="Flying Bat">
+<img src="/images/companies/indian.png" width="125" height="52" alt="Flying Bat">
+</marquee>
 
         <!-- about -->
         <section id="about" class="container">
