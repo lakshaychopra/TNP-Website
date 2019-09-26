@@ -42207,6 +42207,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        validateForm: function validateForm() {
+            var _this = this;
+
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+                    _this.submit();
+                } else {
+                    alert('Please enter missing details.');
+                }
+            });
+        },
         submit: function submit() {
             var navigate = this;
             var formData = new FormData();
@@ -42368,7 +42379,7 @@ var render = function() {
         on: {
           submit: function($event) {
             $event.preventDefault()
-            return _vm.submit($event)
+            return _vm.validateForm($event)
           }
         }
       },
@@ -42404,7 +42415,10 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", [_vm._v(" Name ")])
+              _c("label", [_vm._v(" Name ")]),
+              _c("span", { staticClass: "input-required text-danger" }, [
+                _vm._v("*")
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-4" }, [
@@ -42436,7 +42450,10 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", [_vm._v(" Email ")])
+              _c("label", [_vm._v(" Email ")]),
+              _c("span", { staticClass: "input-required text-danger" }, [
+                _vm._v("*")
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-3" }, [
@@ -42468,7 +42485,10 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", [_vm._v(" Phone Number ")])
+              _c("label", [_vm._v(" Phone Number ")]),
+              _c("span", { staticClass: "input-required text-danger" }, [
+                _vm._v("*")
+              ])
             ])
           ]),
           _vm._v(" "),
@@ -42502,7 +42522,10 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", [_vm._v(" Whatsapp Contact ")])
+              _c("label", [_vm._v(" Whatsapp Contact ")]),
+              _c("span", { staticClass: "input-required text-danger" }, [
+                _vm._v("*")
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-3" }, [
@@ -42534,7 +42557,10 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", [_vm._v(" Passing out year ")])
+              _c("label", [_vm._v(" Passing out year ")]),
+              _c("span", { staticClass: "input-required text-danger" }, [
+                _vm._v("*")
+              ])
             ])
           ]),
           _vm._v(" "),
@@ -42542,6 +42568,12 @@ var render = function() {
             _c("div", { staticClass: "col-md-6" }, [
               _c("input", {
                 directives: [
+                  {
+                    name: "validate",
+                    rawName: "v-validate",
+                    value: "required",
+                    expression: "'required'"
+                  },
                   {
                     name: "model",
                     rawName: "v-model",
@@ -42562,7 +42594,10 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", [_vm._v(" Current Organisation ")])
+              _c("label", [_vm._v(" Current Organisation ")]),
+              _c("span", { staticClass: "input-required text-danger" }, [
+                _vm._v("*")
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-6" }, [
@@ -42594,7 +42629,10 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", [_vm._v(" Current Position ")])
+              _c("label", [_vm._v(" Current Position ")]),
+              _c("span", { staticClass: "input-required text-danger" }, [
+                _vm._v("*")
+              ])
             ])
           ]),
           _vm._v(" "),
@@ -42603,6 +42641,9 @@ var render = function() {
           _c("div", { staticClass: "form-group " }, [
             _c("label", { attrs: { for: "course" } }, [
               _vm._v("Select Branch")
+            ]),
+            _c("span", { staticClass: "input-required text-danger" }, [
+              _vm._v("*")
             ]),
             _vm._v(" "),
             _c(
@@ -43393,12 +43434,6 @@ var render = function() {
                     _c("input", {
                       directives: [
                         {
-                          name: "validate",
-                          rawName: "v-validate",
-                          value: "required",
-                          expression: "'required'"
-                        },
-                        {
                           name: "model",
                           rawName: "v-model",
                           value: _vm.job_loc,
@@ -43427,7 +43462,9 @@ var render = function() {
                       _vm._v(_vm._s(_vm.errors.first("location")))
                     ]),
                     _vm._v(" "),
-                    _vm._m(4)
+                    _c("label", { attrs: { for: "" } }, [
+                      _vm._v("Job Location")
+                    ])
                   ])
                 ])
               ]),
@@ -43437,12 +43474,6 @@ var render = function() {
                   _c("div", { staticClass: "form-group" }, [
                     _c("input", {
                       directives: [
-                        {
-                          name: "validate",
-                          rawName: "v-validate",
-                          value: "required",
-                          expression: "'required'"
-                        },
                         {
                           name: "model",
                           rawName: "v-model",
@@ -43467,7 +43498,7 @@ var render = function() {
                       _vm._v(_vm._s(_vm.errors.first("salary")))
                     ]),
                     _vm._v(" "),
-                    _vm._m(5)
+                    _c("label", { attrs: { for: "" } }, [_vm._v("Salary")])
                   ])
                 ]),
                 _vm._v(" "),
@@ -43475,12 +43506,6 @@ var render = function() {
                   _c("div", { staticClass: "form-group" }, [
                     _c("input", {
                       directives: [
-                        {
-                          name: "validate",
-                          rawName: "v-validate",
-                          value: "required",
-                          expression: "'required'"
-                        },
                         {
                           name: "model",
                           rawName: "v-model",
@@ -43505,7 +43530,9 @@ var render = function() {
                       _vm._v(_vm._s(_vm.errors.first("vacancy")))
                     ]),
                     _vm._v(" "),
-                    _vm._m(6)
+                    _c("label", { attrs: { for: "" } }, [
+                      _vm._v("No. of vacancies")
+                    ])
                   ])
                 ])
               ]),
@@ -43519,12 +43546,6 @@ var render = function() {
                       "select",
                       {
                         directives: [
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required",
-                            expression: "'required'"
-                          },
                           {
                             name: "model",
                             rawName: "v-model",
@@ -43603,7 +43624,7 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-md-12" }, [
                   _c("div", { staticClass: "form-group" }, [
-                    _vm._m(7),
+                    _vm._m(4),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
@@ -43642,7 +43663,7 @@ var render = function() {
             ])
           : _vm._e(),
         _vm._v(" "),
-        _vm._m(8)
+        _vm._m(5)
       ]
     )
   ])
@@ -43692,33 +43713,6 @@ var staticRenderFns = [
           ])
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "" } }, [
-      _vm._v("Job Location"),
-      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "" } }, [
-      _vm._v("Salary"),
-      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "" } }, [
-      _vm._v("No. of vacancies"),
-      _c("span", { staticClass: "input-required text-danger" }, [_vm._v("*")])
     ])
   },
   function() {
@@ -59146,26 +59140,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -59183,7 +59157,7 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
         TenthPercentage: "",
         Diplomaor12thPercentage: "",
         year_gap: "",
-        percentage: "",
+        percentage_aggregate: "",
         active_backlog: "",
         sgpa_aggregate: ""
       }
@@ -59230,7 +59204,7 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
         DiplomaOr12thPercentage: this.filter.Diplomaor12thPercentage,
         TenthPercentage: this.filter.TenthPercentage,
         year_gap: this.filter.year_gap,
-        percentage: this.filter.percentage,
+        percentage_aggregate: this.filter.percentage_aggregate,
         active_backlog: this.filter.active_backlog,
         sgpa_aggregate: this.filter.sgpa_aggregate
       };
@@ -59243,33 +59217,12 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
       formData.append("percentage_XIIorDiploma", filterData.DiplomaOr12thPercentage);
       formData.append("year_gap", filterData.year_gap);
       formData.append("sgpa_aggregate", filterData.sgpa_aggregate);
+      formData.append("percentage_aggregate", filterData.percentage_aggregate);
       formData.append("active_backlog_aggregate", filterData.active_backlog);
       formData.append("selected_fields", this.selected);
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = formData.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var key = _step.value;
-
-          console.log(key[0] + ', ' + key[1]);
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
-      }
-
+      // for (var key of formData.entries()) {
+      //         console.log(key[0] + ', ' + key[1])
+      //           }        
       formData.append("_method", "POST");
 
       var options = {
@@ -60192,6 +60145,60 @@ var render = function() {
                     },
                     [_vm._v("\r\n          Phone number\r\n        ")]
                   )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.selected,
+                        expression: "selected"
+                      }
+                    ],
+                    staticClass: "form-check-input individual",
+                    attrs: {
+                      type: "checkbox",
+                      value: "year_gap",
+                      id: "defaultCheck1"
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.selected)
+                        ? _vm._i(_vm.selected, "year_gap") > -1
+                        : _vm.selected
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.selected,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "year_gap",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.selected = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.selected = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.selected = $$c
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "label",
+                    {
+                      staticClass: "form-check-label",
+                      attrs: { for: "defaultCheck1" }
+                    },
+                    [_vm._v("\r\n          Year Gap\r\n        ")]
+                  )
                 ])
               ]),
               _vm._v(" "),
@@ -61029,12 +61036,12 @@ var render = function() {
                     staticClass: "form-check-input individual",
                     attrs: {
                       type: "checkbox",
-                      value: "year_gap",
+                      value: "percentage_Diploma",
                       id: "defaultCheck1"
                     },
                     domProps: {
                       checked: Array.isArray(_vm.selected)
-                        ? _vm._i(_vm.selected, "year_gap") > -1
+                        ? _vm._i(_vm.selected, "percentage_Diploma") > -1
                         : _vm.selected
                     },
                     on: {
@@ -61043,7 +61050,7 @@ var render = function() {
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
-                          var $$v = "year_gap",
+                          var $$v = "percentage_Diploma",
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
                             $$i < 0 && (_vm.selected = $$a.concat([$$v]))
@@ -61066,7 +61073,7 @@ var render = function() {
                       staticClass: "form-check-label",
                       attrs: { for: "defaultCheck1" }
                     },
-                    [_vm._v("\r\n          Year Gap\r\n        ")]
+                    [_vm._v("\r\n          Diploma Percentage\r\n        ")]
                   )
                 ])
               ]),
@@ -61845,6 +61852,38 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "form-group col-md-4" }, [
+                _c("label", { attrs: { for: "CGPA" } }, [
+                  _vm._v(" Aggregate Percentage")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.filter.percentage_aggregate,
+                      expression: "filter.percentage_aggregate"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "number", min: "0", max: "100", step: "0.01" },
+                  domProps: { value: _vm.filter.percentage_aggregate },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.filter,
+                        "percentage_aggregate",
+                        $event.target.value
+                      )
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "form-group col-md-4" }, [
                 _c("label", { attrs: { for: "gap" } }, [_vm._v("Year gap")]),
                 _vm._v(" "),

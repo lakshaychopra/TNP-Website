@@ -131,6 +131,12 @@
           Phone number
         </label>
       </div>
+      <div class="col-md-3">
+        <input class="form-check-input individual" type="checkbox" value="year_gap" id="defaultCheck1" v-model="selected">
+        <label class="form-check-label" for="defaultCheck1">
+          Year Gap
+        </label>
+      </div>
   </div>
   <br>
    <div class="row">
@@ -232,9 +238,9 @@
         </label>
       </div>
       <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="year_gap" id="defaultCheck1" v-model="selected">
+        <input class="form-check-input individual" type="checkbox" value="percentage_Diploma" id="defaultCheck1" v-model="selected">
         <label class="form-check-label" for="defaultCheck1">
-          Year Gap
+          Diploma Percentage
         </label>
       </div>
   </div>
@@ -317,16 +323,7 @@
           Active backlog aggregate
         </label>
       </div>
-      <!-- <div class="col-md-3">
-        <input class="form-check-input individual" type="checkbox" value="passive_backlog_aggregate" id="defaultCheck1" v-model="selected">
-        <label class="form-check-label" for="defaultCheck1">
-         Passive backlog aggregate
-        </label>
-      </div> -->
   </div>
-  
- 
-  
   </div>
 <br>
 <br>
@@ -378,7 +375,12 @@
               </div>
 </div>
 <div class="row">
-            
+            <div class="form-group col-md-4">
+                <label for="CGPA"> Aggregate Percentage</label>
+    <input type="number" min="0" max="100" step="0.01" class="form-control"
+     v-model="filter.percentage_aggregate">
+    
+              </div>
               <div class="form-group col-md-4">
                 <label for="gap">Year gap</label>
                 <input
@@ -401,28 +403,6 @@
                 >
               </div>
 </div>
-<!-- <div class="row">
-              <div class="form-group col-md-6">
-                <label for="active">Active Backlog</label>
-                <input
-              
-                  type="number"
-                  class="form-control"
-                                    min="0"
-                  v-model="filter.active_backlog"
-                >
-              </div>
-              <div class="form-group col-md-6">
-                <label for="passive">Passive Backlog</label>
-                <input
-              
-                  type="number"
-                  class="form-control"
-                  v-model="filter.passive_backlog"
-                  min="0"
-                >
-              </div>
-</div> -->
 <div class="row">
   <div class="form-group col-md-3">
     <label for="gender">Gender</label>
@@ -500,7 +480,7 @@ export default {
         TenthPercentage: "",
         Diplomaor12thPercentage: "",
         year_gap: "",
-        percentage: "",
+        percentage_aggregate: "",
         active_backlog: "",
         sgpa_aggregate:""
       },
@@ -545,7 +525,7 @@ export default {
         DiplomaOr12thPercentage: this.filter.Diplomaor12thPercentage,
         TenthPercentage: this.filter.TenthPercentage,
         year_gap: this.filter.year_gap,
-        percentage: this.filter.percentage,
+        percentage_aggregate: this.filter.percentage_aggregate,
         active_backlog: this.filter.active_backlog,
         sgpa_aggregate:this.filter.sgpa_aggregate
       };
@@ -558,11 +538,12 @@ export default {
       formData.append("percentage_XIIorDiploma", filterData.DiplomaOr12thPercentage);
       formData.append("year_gap", filterData.year_gap);
       formData.append("sgpa_aggregate", filterData.sgpa_aggregate);
+      formData.append("percentage_aggregate", filterData.percentage_aggregate);
       formData.append("active_backlog_aggregate", filterData.active_backlog);
       formData.append("selected_fields",this.selected);
-      for (var key of formData.entries()) {
-              console.log(key[0] + ', ' + key[1])
-                }        
+      // for (var key of formData.entries()) {
+      //         console.log(key[0] + ', ' + key[1])
+      //           }        
       formData.append("_method", "POST");
       
     let options = {

@@ -27,45 +27,45 @@
     <br>
     <br>
         <h2 class="card-title mt-3 text-primary" style="margin-top: 25px">Alumni Assistance Form</h2> 
-               <form @submit.prevent="submit" method="post">
+               <form @submit.prevent="validateForm" method="post">
     <div class="form-group">
   <div class="row">
     <div class="col-md-5">
       <input type="text"  v-validate="'required'" class="form-control" v-model="name">
-      <label> Name </label>
+      <label> Name </label><span class="input-required text-danger">*</span>
     </div>
      <div class="col-md-4">
       <input type="text"  v-validate="'required'" class="form-control" v-model="email">
-      <label> Email </label>
+      <label> Email </label><span class="input-required text-danger">*</span>
     </div>
      <div class="col-md-3">
       <input type="text" v-validate="'required'" class="form-control" v-model="phone_number">
-      <label> Phone Number </label>
+      <label> Phone Number </label><span class="input-required text-danger">*</span>
     </div>
   </div>
   <div class="row">
     <div class="col-md-3">
       <input type="text" v-validate="'required'" class="form-control" v-model="whatsapp_cont">
-      <label> Whatsapp Contact </label>
+      <label> Whatsapp Contact </label><span class="input-required text-danger">*</span>
     </div>
      <div class="col-md-3"> 
       <input type="text" v-validate="'required'" class="form-control" v-model="pass_year">
-      <label> Passing out year </label>
+      <label> Passing out year </label><span class="input-required text-danger">*</span>
     </div>
 </div>
   <div class="row">
     <div class="col-md-6">
-      <input type="text" class="form-control" v-model="current_org">
-       <label> Current Organisation </label>
+      <input type="text"  v-validate="'required'" class="form-control" v-model="current_org">
+       <label> Current Organisation </label><span class="input-required text-danger">*</span>
     </div>
     <div class="col-md-6">
       <input type="text" v-validate="'required'" class="form-control" v-model="current_pos">
-      <label> Current Position </label>
+      <label> Current Position </label><span class="input-required text-danger">*</span>
     </div>
   </div>
   <br>
     <div class="form-group ">
-                <label for="course">Select Branch</label>
+                <label for="course">Select Branch</label><span class="input-required text-danger">*</span>
                 <select class="form-control branch" id="course" name="branch_type" v-validate="'required'" v-model="branch_type">
                   <option>Computer Science & Engineering</option>
                   <option>Information Technology</option>
@@ -181,10 +181,10 @@
     <div class="col-md-12">
         <div class="form-group">
            
-                <input v-validate="'required'" class="form-control" type="text" value=""
+                <input class="form-control" type="text" value=""
                         autofocus maxlength="50" v-model="job_loc">
             <small class="text-danger">{{ errors.first('location') }}</small>
-             <label for="">Job Location<span class="input-required text-danger">*</span></label>
+             <label for="">Job Location</label>
         </div>
     </div>
 </div>
@@ -192,19 +192,19 @@
     <div class="col-md-6">
         <div class="form-group">
             
-                    <input v-validate="'required'" class="form-control" type="text" 
+                    <input class="form-control" type="text" 
                         autofocus maxlength="50" v-model="salary">
             <small class="text-danger">{{ errors.first('salary') }}</small>
-            <label for="">Salary<span class="input-required text-danger">*</span></label>
+            <label for="">Salary</label>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
           
-                    <input v-validate="'required'" class="form-control" type="text" 
+                    <input class="form-control" type="text" 
                         autofocus maxlength="50" v-model="vacancy">
             <small class="text-danger">{{ errors.first('vacancy') }}</small>
-              <label for="">No. of vacancies<span class="input-required text-danger">*</span></label>
+              <label for="">No. of vacancies</label>
         </div>
     </div>
 </div>
@@ -212,7 +212,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="">Category</label>
-                <select class="form-control" v-validate="'required'" name="category" v-model="category">
+                <select class="form-control" name="category" v-model="category">
                     <option value="Internship">Internship</option>
                     <option value="Placement">Placement</option>
                     <option value="Announcement">Announcement</option>
@@ -273,6 +273,16 @@ export default {
             };
         },
         methods:{
+            validateForm() {
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            this.submit();
+          }
+          else{
+            alert('Please enter missing details.');
+          }
+        });
+      },
             submit() {
                 var navigate = this;
                 let formData = new FormData();
