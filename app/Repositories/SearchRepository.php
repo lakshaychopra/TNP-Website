@@ -41,12 +41,11 @@ class SearchRepository
         ->where([
         ['tenth_percentage','>=',$request->input('tenth_percentage')],
         ['percentage_XII','>=',$request->input('percentage_XII')],
-        ['percentage_Diploma','>=',$request->input('percentage_Diploma')],
         ['sgpa_aggregate','>=',$request->input('sgpa_aggregate')],
         ['year_gap','<=',$request->input('year_gap')],
         ['active_backlog_aggregate','<=',$request->input('active_backlog_aggregate')]
         ])->whereIn('gender',$genders)
-        ->whereIn('stream',$streams);   
+        ->whereIn('stream',$streams)->orWhere(['percentage_Diploma','>=',$request->input('percentage_Diploma')]);   
 
         // if ( !empty( $request->has( 'univ_roll_no' ) )) {
         //     $result = $student->where( 'univ_roll_no', '=', $request->univ_roll_no);
