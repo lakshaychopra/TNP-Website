@@ -35,7 +35,6 @@ class SearchController extends Controller
                  $excel->sheet('sheet name', function($sheet) use ($data)
                  {
                      $sheet->fromArray($data);
-                     \Log::info('method2');
                  });
 
             })->download('xlsx');

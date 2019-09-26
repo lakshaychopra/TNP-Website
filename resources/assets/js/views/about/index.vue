@@ -697,7 +697,9 @@
     .w-100 {
         width: 100%;
     }
-
+    marquee img{
+        margin: 30px;
+    }
     h1.intro-header {
         text-align: center;
     }

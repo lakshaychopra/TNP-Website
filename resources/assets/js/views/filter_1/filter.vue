@@ -366,28 +366,19 @@
 
         <div class="col-md-4">
           <div class="form-group">
-            <label for="12th">Twelfth Percentage</label>
-              <input type="number" class="form-control" step="0.01"  v-model="filter.TwelthPercentage">
+            <label for="12th">Twelfth/Diploma Percentage</label>
+              <input type="number" class="form-control" step="0.01"  v-model="filter.Diplomaor12thPercentage">
           </div>
         </div>
-
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="Diploma">Diploma Percentage</label>
-                  <input type="number"
-                    class="form-control"
-                    step="0.01"
-                    v-model="filter.DiplomaPercentage">
-                </div>
-              </div>
-</div>
-<div class="row">
-              <div class="form-group col-md-4">
+          <div class="form-group col-md-4">
                 <label for="CGPA">SGPA</label>
     <input type="number" min="1" max="10" step="0.01" class="form-control"
      v-model="filter.sgpa_aggregate">
     
               </div>
+</div>
+<div class="row">
+            
               <div class="form-group col-md-4">
                 <label for="gap">Year gap</label>
                 <input
@@ -507,9 +498,8 @@ export default {
         univ_roll_no:'',
         branch_type: [],
         TenthPercentage: "",
-        TwelthPercentage: "",
+        Diplomaor12thPercentage: "",
         year_gap: "",
-        DiplomaPercentage:"",
         percentage: "",
         active_backlog: "",
         sgpa_aggregate:""
@@ -552,9 +542,8 @@ export default {
         gender:this.filter.gender,
         univ_roll_no:this.filter.univ_roll_no,
         branch_type: this.filter.branch_type,
+        DiplomaOr12thPercentage: this.filter.Diplomaor12thPercentage,
         TenthPercentage: this.filter.TenthPercentage,
-        DiplomaPercentage: this.filter.DiplomaPercentage,
-        TwelthPercentage: this.filter.TwelthPercentage,
         year_gap: this.filter.year_gap,
         percentage: this.filter.percentage,
         active_backlog: this.filter.active_backlog,
@@ -566,9 +555,8 @@ export default {
       formData.append("branch_type", filterData.branch_type);
       formData.append("gender", filterData.gender);
       formData.append("tenth_percentage", filterData.TenthPercentage);
-      formData.append("percentage_XII", filterData.TwelthPercentage);
+      formData.append("percentage_XIIorDiploma", filterData.DiplomaOr12thPercentage);
       formData.append("year_gap", filterData.year_gap);
-      formData.append("percentage_Diploma", filterData.DiplomaPercentage);
       formData.append("sgpa_aggregate", filterData.sgpa_aggregate);
       formData.append("active_backlog_aggregate", filterData.active_backlog);
       formData.append("selected_fields",this.selected);

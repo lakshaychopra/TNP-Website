@@ -36,16 +36,19 @@ class SearchRepository
         $genders=explode(',',$request->input('gender'));
         $fields=explode(',', $request->input('selected_fields'));
 
-
+        $percentage=$request->input('percentage_XIIorDiploma');
         $student=DisplayStudent::select($fields)
         ->where([
         ['tenth_percentage','>=',$request->input('tenth_percentage')],
-        ['percentage_XII','>=',$request->input('percentage_XII')],
         ['sgpa_aggregate','>=',$request->input('sgpa_aggregate')],
         ['year_gap','<=',$request->input('year_gap')],
         ['active_backlog_aggregate','<=',$request->input('active_backlog_aggregate')]
         ])->whereIn('gender',$genders)
-        ->whereIn('stream',$streams)->orWhere(['percentage_Diploma','>=',$request->input('percentage_Diploma')]);   
+        ->whereIn('stream',$streams)
+        ->where(function ($query)  use ($percentage) {
+            $query->where('percentage_XII','>=',$percentage)
+                  ->orWhere('percentage_Diploma','>=',$percentage);
+        }); 
 
         // if ( !empty( $request->has( 'univ_roll_no' ) )) {
         //     $result = $student->where( 'univ_roll_no', '=', $request->univ_roll_no);
@@ -79,6 +82,7 @@ class SearchRepository
        catch(Exception $e){
            
        } 
+      // \Log::info($student->get());
      return $student->get();       
     }
 }
