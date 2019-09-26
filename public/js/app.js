@@ -59245,7 +59245,7 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
       };
       console.log(this.selected);
       var formData = new FormData();
-      formData.append("univ_roll_no", filterData.univ_roll_no);
+      //formData.append("univ_roll_no", filterData.univ_roll_no);      
       formData.append("branch_type", filterData.branch_type);
       formData.append("gender", filterData.gender);
       formData.append("tenth_percentage", filterData.TenthPercentage);
@@ -61751,42 +61751,6 @@ var render = function() {
             _c("h2", [_vm._v("Conditions on Required Fields")]),
             _vm._v(" "),
             _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "URN" } }, [
-                    _vm._v("University Roll No")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.filter.univ_roll_no,
-                        expression: "filter.univ_roll_no"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "number" },
-                    domProps: { value: _vm.filter.univ_roll_no },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.filter,
-                          "univ_roll_no",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ])
-            ]),
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
@@ -64518,7 +64482,7 @@ __webpack_require__(17);
                 _this2.show_form = true;
                 _this2.alumni = response.data[0];
                 _this2.title = _this2.alumni.job_title;
-                _this2.body = "Job Description : " + _this2.alumni.job_des + '\n' + "Technical Requirment : " + _this2.alumni.tech_req + '\n' + "Job Location : " + _this2.alumni.job_location + '\n' + "Salary : " + _this2.alumni.salary + '\n' + "Vacancy : " + _this2.alumni.vacancy;
+                _this2.body = "Job Description : " + _this2.alumni.job_des + "\nTechnical Requirment : " + _this2.alumni.tech_req + "\nJob Location : " + _this2.alumni.job_location + "\nSalary : " + _this2.alumni.salary + "\nVacancy : " + _this2.alumni.vacancy;
                 _this2.category = _this2.alumni.category;
                 _this2.post_link = _this2.alumni.post_link;
             }).catch(function (error) {

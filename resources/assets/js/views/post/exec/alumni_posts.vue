@@ -166,11 +166,11 @@ export default {
                      this.show_form=true;
                      this.alumni=response.data[0];
                      this.title=this.alumni.job_title;
-                     this.body="Job Description : "+this.alumni.job_des+'\n'+ 
-                               "Technical Requirment : "+this.alumni.tech_req+'\n'+
-                               "Job Location : "+this.alumni.job_location+'\n'+
-                               "Salary : "+this.alumni.salary+'\n'+
-                               "Vacancy : "+this.alumni.vacancy;
+                     this.body="Job Description : "+this.alumni.job_des+ 
+                               "\nTechnical Requirment : "+this.alumni.tech_req+
+                               "\nJob Location : "+this.alumni.job_location+
+                               "\nSalary : "+this.alumni.salary+
+                               "\nVacancy : "+this.alumni.vacancy;
                      this.category=this.alumni.category;
                      this.post_link=this.alumni.post_link;
                 }).catch(error => {

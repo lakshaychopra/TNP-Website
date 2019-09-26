@@ -44,7 +44,6 @@ class SearchRepository
         ['percentage_Diploma','>=',$request->input('percentage_Diploma')],
         ['sgpa_aggregate','>=',$request->input('sgpa_aggregate')],
         ['year_gap','<=',$request->input('year_gap')],
-        ['univ_roll_no','=',$request->input('univ_roll_no')],
         ['active_backlog_aggregate','<=',$request->input('active_backlog_aggregate')]
         ])->whereIn('gender',$genders)
         ->whereIn('stream',$streams);   

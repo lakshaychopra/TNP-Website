@@ -332,14 +332,14 @@
 <br>
  <h2>Conditions on Required Fields</h2>
  <br>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12">
             <div class="form-group">
               <label for="URN">University Roll No</label>
                 <input type="number" class="form-control"  v-model="filter.univ_roll_no">
             </div>
         </div>
-              </div>
+              </div> -->
     <!-- <br>
                     <label for="URN">University Roll No</label>
     <div class="input-group">
@@ -562,7 +562,7 @@ export default {
       };
       console.log(this.selected);
       let formData = new FormData();
-      formData.append("univ_roll_no", filterData.univ_roll_no);      
+      //formData.append("univ_roll_no", filterData.univ_roll_no);      
       formData.append("branch_type", filterData.branch_type);
       formData.append("gender", filterData.gender);
       formData.append("tenth_percentage", filterData.TenthPercentage);
