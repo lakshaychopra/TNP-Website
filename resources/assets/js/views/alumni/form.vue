@@ -288,7 +288,6 @@ export default {
                 let formData = new FormData();
                 formData.append('name', this.name);
                 formData.append('category',this.category);
-                formData.append('category',this.category);
                 formData.append('email', this.email);
                 formData.append('pass_year', this.pass_year);
                 formData.append('branch_type', this.branch_type);

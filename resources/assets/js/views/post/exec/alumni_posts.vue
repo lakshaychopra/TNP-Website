@@ -113,7 +113,8 @@ export default {
    
   data() {
     return {
-        posts: [],
+        posts_data: [],
+        posts:[],
         show_form:false,
         alumni_post:'',
         alumni:'',
@@ -152,7 +153,12 @@ export default {
   },
   created() {
             axios.get('/api/alumni_posts').then(response => {
-                this.posts = response.data.data;  
+                this.posts = response.data.data; 
+                // for(var $i=0;$i<this.posts_data.length;$i++){
+                //  this.posts[$i]=this.posts_data[$i].name;
+                // } 
+               // this.posts=each(this.posts);
+               //console.log(this.posts);
                 }).catch(error => {
                 console.log(error.response);
               });

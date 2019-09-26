@@ -14,7 +14,7 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        $company = DB::select('select name from alumni');
+        $company = DB::select('select * from alumni');
        // \Log::info($company);
 
         return $this->respondData($company);

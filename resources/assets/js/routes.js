@@ -29,6 +29,10 @@ let routes = [{
         component: require('./views/alumni/form.vue'),
     },
     {
+        path: '/alumni_list',
+        component: require('./views/alumni/index.vue'),
+    },
+    {
         path: '/page/:url',
         name: 'about',
         props: true,
