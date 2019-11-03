@@ -1,6 +1,11 @@
 <template>
-<div class="body col-md-6">
-    <h1><b>You have been registered for {{company}}</b></h1>
+<div class="body">
+  <br>
+  <br>
+    <!-- <h1><b>You have been registered for {{company}}</b></h1> -->
+    <h1><b>Thank you for registering, your response is recorded.</b></h1>
+    <!-- <h3>Your domain is {{company}}</h3> -->
+    <br>
     <!-- <br>
     <form-group>
         <div class="form">
@@ -74,13 +79,13 @@ export default {
 .body
 {
    background-color:lightblue;
-    width: 100%;
-    height: 100%;
-    background-attachment: fixed;
+    /* width: 100%;
+    height: 100%; */
+    /* background-attachment: fixed; */
 }
 .form
 {
     background-color: lightblue;
-    margin: 10%;
+    
 }
 </style>

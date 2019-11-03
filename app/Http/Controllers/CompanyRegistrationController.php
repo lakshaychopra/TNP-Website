@@ -18,7 +18,16 @@ class CompanyRegistrationController extends Controller
         $this->service = $service;
         $this->repository = $repository;
     }
-    
+    public function index()
+    {
+        $company = DB::table('registration_details')->distinct()->get(['company_name']);
+        return $this->respondData($company);
+    }
+    public function show()
+    {
+        $company = DB::select('select * from registration_details');
+        return $this->respondData($company);
+    }
     public function store(CreateCompanyRegistrationRequest $request)
     {
 

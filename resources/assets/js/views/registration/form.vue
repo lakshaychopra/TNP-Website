@@ -60,9 +60,10 @@
         </div>
         <br>
         <div>
-          <label> Company</label>
+          <!-- <label> Company</label> -->
+          <label> Domain</label>
           <select class="mdb-select colorful-select dropdown-primary md-form form-control" v-model="company_name">
-            <option value="" disabled selected>Choose Company</option>
+            <option value="" disabled selected>Choose Domain</option>
             <option v-for="company in companies" v-bind:value="company.company_name" :key="company.company_name">
                 {{ company.company_name }}
             </option>
@@ -75,7 +76,7 @@
             <option value="B.Tech Computer Science And Engineering">B.Tech Computer Science And Engineering</option>
             <option value="B.Tech Electronics And Communication Engineering">B.Tech Electronics And Communication Engineering</option>
             <option value="B.Tech Information Technology">B.Tech Information Technology</option>
-            <option value="B.Tech Civil Engineering">B.Tech Civil Engineering</option>
+            <!-- <option value="B.Tech Civil Engineering">B.Tech Civil Engineering</option>
             <option value="B.Tech Electrical Engineering">B.Tech Electrical Engineering</option>
             <option value="B.Tech Mechanical Engineering">B.Tech Mechanical Engineering</option>
             <option value="B.Tech Production Engineering">B.Tech Production Engineering </option>
@@ -90,7 +91,7 @@
             <option value="M.Tech Electrical Engineering">M.Tech Electrical Engineering </option>
             <option value="M.Tech Soil Mechanics And Foundation Engineering">M.Tech Soil Mechanics And Foundation Engineering </option>
             <option value="MBA">MBA </option>
-            <option value="MCA">MCA </option>
+            <option value="MCA">MCA </option> -->
         </select>
       
         </div>
@@ -170,7 +171,7 @@ validators: {
         var txt;
         var s="Verify Details !!";
         var s2="\nUniversity Roll No:"+this.univ_roll_no+"\nClass Roll No:"+
-        this.class_roll_no+"\nName:"+this.name+"\nBranch:"+this.branch+"\nCompany:"+this.company_name;
+        this.class_roll_no+"\nName:"+this.name+"\nBranch:"+this.branch+"\nDomain:"+this.company_name;
         if(confirm(s+s2)){
           this.submit();
 

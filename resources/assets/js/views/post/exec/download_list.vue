@@ -58,8 +58,8 @@ export default {
   }
 },
 created() {
-            axios.get('/api/add_company').then(response => {
-                // console.log(response.data.data);
+            axios.get('/api/company_name').then(response => {
+                console.log(response.data.data);
                 this.companies = response.data.data;                
                 }).catch(error => {
                 console.log(error.response);

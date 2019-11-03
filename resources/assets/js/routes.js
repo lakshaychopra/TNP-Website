@@ -198,12 +198,20 @@ let routes = [{
                 component: require('./views/filter_1/filter')
             },
             {
+                path: '/exec/display_student',
+                component: require('./views/filter_1/display')
+            },
+            {
                 path: '/exec/add_company',
                 component: require('./views/post/exec/add_company')
             },
             {
                 path: '/exec/download_list',
                 component: require('./views/post/exec/download_list')
+            },
+            {
+                path: '/exec/show_list',
+                component: require('./views/post/exec/show_list')
             },
             {
                 path: '/exec/post/:id',

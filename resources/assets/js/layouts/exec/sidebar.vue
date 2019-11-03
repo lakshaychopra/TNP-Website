@@ -27,7 +27,7 @@
            <li class="dropdown">
             <a href="javascript:void(0)" data-toggle="dropdown">
               <i class="fa fa-file fa-fw" aria-hidden="true"></i>
-              <span class="hide-menu">Filter
+              <span class="hide-menu">Students
                 <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
               </span>
             </a>
@@ -37,8 +37,13 @@
                   <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Filter
                 </router-link>
               </li>
-              
+              <li>
+                <router-link to="/exec/display_student" exact>
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Display
+                </router-link>
+              </li>
             </ul>
+            
           </li>
            
            <li class="dropdown">
@@ -56,10 +61,14 @@
               </li>
               <li>
                 <router-link to="/exec/download_list" exact>
-                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i>Download List
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i>Download 
                 </router-link>
               </li>
-              
+              <li>
+                <router-link to="/exec/show_list" exact>
+                  <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Show List
+                </router-link>
+              </li>
             </ul>
           </li>
           <li class="dropdown">

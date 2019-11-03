@@ -44,6 +44,11 @@ Route::get('/home/page/view/widgets', 'HomeController@viewWidgets');
 Route::post('/company_registration','CompanyRegistrationController@store');
 //AddCompanyController
 Route::get('/add_company','AddCompanyController@index');
+//CompanyRegistrationController
+Route::get('/company_name','CompanyRegistrationController@index');
+
+//SearchController
+Route::get('/display_student','SearchController@index');
 
 //Alumni Controller
 Route::post('/alumni','AlumniController@store');
@@ -121,6 +126,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::post('/company_list','AddCompanyController@download');
         Route::delete('/delete/{id}', 'AddCompanyController@destroy');
 
+        Route::get('/show','CompanyRegistrationController@show');
         //FilterController
         Route::post('/filter_students','SearchController@downloadExcelFile');
     });

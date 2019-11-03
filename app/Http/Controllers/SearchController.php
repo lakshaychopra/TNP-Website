@@ -10,7 +10,7 @@ use Exception;
 use Excel;
 use App\Services\SearchService;
 use App\Repositories\SearchRepository;
-//use DB;
+use DB;
 
 class SearchController extends Controller
 {
@@ -19,7 +19,13 @@ class SearchController extends Controller
          $this->service = $service;
          $this->repository = $repository;
      }
-     public function downloadExcelFile(Request $request){
+    public function index()
+    {
+        $student = DB::select('select * from display_student');
+        return $this->respondData($student);
+    }
+
+    public function downloadExcelFile(Request $request){
         $auth = JWTAuth::parseToken()->authenticate();
        
             
