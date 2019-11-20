@@ -17,7 +17,7 @@
       <th scope="col">Name</th>
       <th scope="col">URN</th>
       <th scope="col">Branch</th>
-      <th scope="col">Domain</th>
+      <th scope="col">Company</th>
     </tr>
   </thead>
   <tbody>

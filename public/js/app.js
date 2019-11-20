@@ -31065,7 +31065,7 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
     validateForm: function validateForm() {
       var _this2 = this;
 
-      console.log("Test validations");
+      //console.log("Test validations");
       this.$validator.validateAll().then(function (result) {
         if (result) {
           _this2.preview();
@@ -31077,7 +31077,7 @@ var Validator = __WEBPACK_IMPORTED_MODULE_0_simple_vue_validator___default.a.Val
     preview: function preview() {
       var txt;
       var s = "Verify Details !!";
-      var s2 = "\nUniversity Roll No:" + this.univ_roll_no + "\nClass Roll No:" + this.class_roll_no + "\nName:" + this.name + "\nBranch:" + this.branch + "\nDomain:" + this.company_name;
+      var s2 = "\nUniversity Roll No:" + this.univ_roll_no + "\nClass Roll No:" + this.class_roll_no + "\nName:" + this.name + "\nBranch:" + this.branch + "\nCompany Name:" + this.company_name;
       if (confirm(s + s2)) {
         this.submit();
       } else {}
@@ -31791,28 +31791,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "body" }, [
+    _c("br"),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("h1", [
+      _c("b", [_vm._v("You have been registered for " + _vm._s(_vm.company))])
+    ]),
+    _vm._v(" "),
+    _c("br")
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "body" }, [
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("h1", [
-        _c("b", [
-          _vm._v("Thank you for registering, your response is recorded.")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("br")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -32155,7 +32146,7 @@ var render = function() {
                           _c("br"),
                           _vm._v(" "),
                           _c("div", [
-                            _c("label", [_vm._v(" Domain")]),
+                            _c("label", [_vm._v(" Company ")]),
                             _vm._v(" "),
                             _c(
                               "select",
@@ -32197,7 +32188,7 @@ var render = function() {
                                       selected: ""
                                     }
                                   },
-                                  [_vm._v("Choose Domain")]
+                                  [_vm._v("Choose Company")]
                                 ),
                                 _vm._v(" "),
                                 _vm._l(_vm.companies, function(company) {
@@ -32306,7 +32297,171 @@ var render = function() {
                                   }
                                 },
                                 [_vm._v("B.Tech Information Technology")]
-                              )
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: { value: "B.Tech Civil Engineering" }
+                                },
+                                [_vm._v("B.Tech Civil Engineering")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "B.Tech Electrical Engineering"
+                                  }
+                                },
+                                [_vm._v("B.Tech Electrical Engineering")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "B.Tech Mechanical Engineering"
+                                  }
+                                },
+                                [_vm._v("B.Tech Mechanical Engineering")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "B.Tech Production Engineering"
+                                  }
+                                },
+                                [_vm._v("B.Tech Production Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Production Engineering"
+                                  }
+                                },
+                                [_vm._v("M.Tech Production Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Industrial Engineering"
+                                  }
+                                },
+                                [_vm._v("M.Tech Industrial Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: { value: "M.Tech Power Engineering" }
+                                },
+                                [_vm._v("M.Tech Power Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Structural Engineering "
+                                  }
+                                },
+                                [_vm._v("M.Tech Structural Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "M.Tech Computer Science And Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "M.Tech Computer Science And Engineering "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Geo-Technical Engineering"
+                                  }
+                                },
+                                [_vm._v("M.Tech Geo-Technical Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "M.Tech Environmental Science And Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "M.Tech Environmental Science And Engineering "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "M.Tech Electronics And Communication Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "M.Tech Electronics And Communication Engineering "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value: "M.Tech Electrical Engineering"
+                                  }
+                                },
+                                [_vm._v("M.Tech Electrical Engineering ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "option",
+                                {
+                                  attrs: {
+                                    value:
+                                      "M.Tech Soil Mechanics And Foundation Engineering"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "M.Tech Soil Mechanics And Foundation Engineering "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "MBA" } }, [
+                                _vm._v("MBA ")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "MCA" } }, [
+                                _vm._v("MCA ")
+                              ])
                             ]
                           )
                         ]),
@@ -63611,7 +63766,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Branch")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Domain")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Company")])
       ])
     ])
   }
