@@ -12,8 +12,12 @@
                                 <router-link to="/page/alumni_form">Alumni Assistance Form</router-link>
                             </li>
                             <li class="list-group-item">
+                                <a href="https://forms.gle/SqfAoAbCB71sRgnt8" target="_blank" rel="noopener">Survey on Future Planning</a>
+                            </li>
+                            <li class="list-group-item">
                                 <router-link to="/page/placement-brochure">Placement Brochure</router-link>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>
