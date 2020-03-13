@@ -164,7 +164,8 @@ return [
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        
+        Elibyy\TCPDF\ServiceProvider::class,
+
         
     ],
     
@@ -219,6 +220,7 @@ return [
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Fractal' => Cyvelnet\Laravel5Fractal\Facades\Fractal::class,
         'OneSignal' => Berkayk\OneSignal\OneSignalFacade::class,
+        'PDF' => Elibyy\TCPDF\Facades\TCPDF::class,
     ],
     
 ];

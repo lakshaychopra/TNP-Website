@@ -16,6 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('form/pdf', 'TrainingFormController@index');
+
 Route::post('/send-notification', 'PostController@pushNotification');
 
 Route::get('/aaaa', 'StudentFilterController@filterStudents');

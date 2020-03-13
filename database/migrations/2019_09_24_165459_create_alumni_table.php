@@ -21,12 +21,9 @@ class CreateAlumniTable extends Migration
             $table->string('phone_number');
             $table->string('whatsapp_cont');
             $table->string('pass_year');
-            $table->string('current_org');
             $table->string('current_position'); 
             $table->string('current_organisation');
-            $table->string('branch_type')->nullable();
-            $table->string('branchies')->nullable();
-            $table->string('job_title')->nullable();
+            $table->string('branches')->nullable();
             $table->string('job_des')->nullable();
             $table->string('job_location')->nullable();
             $table->string('salary')->nullable();

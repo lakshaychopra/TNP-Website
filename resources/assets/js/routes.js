@@ -5,6 +5,11 @@ let routes = [{
         component: require('./layouts/index/pages.vue'),
         name: 'index',
     },
+    {
+        path: '/training-form',
+        component: require('./views/training_form/form.vue'),
+        name: 'TrainingForm',
+    },
     
     {  path: '/registration_form',
         component: require('./views/registration/form.vue')

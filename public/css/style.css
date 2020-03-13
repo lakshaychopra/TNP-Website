@@ -3335,7 +3335,7 @@ pre code {
   opacity: 1;
 }
 
-.form-control:-ms-input-placeholder {
+.form-control::-moz-placeholder {
   color: #6c757d;
   opacity: 1;
 }
@@ -6426,8 +6426,10 @@ input[type="button"].btn-block {
 @media (min-width: 576px) {
   .card-columns {
     -webkit-column-count: 3;
+       -moz-column-count: 3;
             column-count: 3;
     -webkit-column-gap: 1.25rem;
+       -moz-column-gap: 1.25rem;
             column-gap: 1.25rem;
     orphans: 1;
     widows: 1;
@@ -19935,6 +19937,7 @@ File: scss
 @media (min-width: 1650px) {
   .widget-app-columns {
     -webkit-column-count: 3;
+       -moz-column-count: 3;
             column-count: 3;
   }
 }
@@ -19946,6 +19949,7 @@ File: scss
 @media (max-width: 1370px) {
   .widget-app-columns {
     -webkit-column-count: 2;
+       -moz-column-count: 2;
             column-count: 2;
   }
 }
@@ -19977,6 +19981,7 @@ File: scss
 
   .widget-app-columns {
     -webkit-column-count: 1;
+       -moz-column-count: 1;
             column-count: 1;
   }
 
@@ -20238,7 +20243,7 @@ File: scss
 @font-face {
   font-family: 'FontAwesome';
   src: url(/fonts/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713);
-  src: url(/fonts/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713) format("embedded-opentype"), url(/fonts/fontawesome-webfont.woff2?af7ae505a9eed503f8b8e6982036873e) format("woff2"), url(/fonts/fontawesome-webfont.woff?fee66e712a8a08eef5805a46892932ad) format("woff"), url(/fonts/fontawesome-webfont.ttf?b06871f281fee6b241d60582ae9369b9) format("truetype"), url(/fonts/fontawesome-webfont.svg?acf3dcb7ff752b5296ca23ba2c7c2606) format("svg");
+  src: url(/fonts/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713) format("embedded-opentype"), url(/fonts/fontawesome-webfont.woff2?af7ae505a9eed503f8b8e6982036873e) format("woff2"), url(/fonts/fontawesome-webfont.woff?fee66e712a8a08eef5805a46892932ad) format("woff"), url(/fonts/fontawesome-webfont.ttf?b06871f281fee6b241d60582ae9369b9) format("truetype"), url(/fonts/fontawesome-webfont.svg?912ec66d7572ff821749319396470bde) format("svg");
   font-weight: normal;
   font-style: normal;
 }

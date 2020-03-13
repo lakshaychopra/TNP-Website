@@ -74,7 +74,7 @@
                                 <a href="../../files/Evaluation.pdf" download="Evaluation.pdf">Evaluation Performa</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="../../files/Training.pdf" download="Training.pdf">6 Months Training Form</a>
+                                <router-link to="/training-form">6 Months Training Form</router-link>
                             </li>
                             <li class="list-group-item">
                                 <a href="../../files/6WeeksTraining.pdf" download="Training.pdf">6 Weeks Training Form</a>

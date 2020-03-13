@@ -14,7 +14,7 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        $company = DB::select('select * from alumni');
+        $company = DB::table('alumni')->orderByRaw('id DESC')->get();
        // \Log::info($company);
 
         return $this->respondData($company);
