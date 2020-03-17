@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class User extends Authenticatable implements JWTSubject
+
+class User extends Authenticatable implements JWTSubject, MustVerifyEmail
 {
     use  Notifiable;
     
@@ -28,6 +30,7 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden =[
         'password','remember_token'
     ];
+
 
     public function isActiveAndVerified(){
         return $this->is_active && $this->is_verified;

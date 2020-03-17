@@ -11,6 +11,10 @@ use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\Services\RegisterService;
 use App\Events\UserRegisterEvent;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
 
 class RegisterController extends Controller
 {
@@ -49,6 +53,12 @@ class RegisterController extends Controller
                 return $this->respondException($e);
             }   
         }  
+        
+        public function email_verify(Request $request){
+            $mail_id = $request->input('mail');
+            
+
+        }
         
         public function setPassword(SetPasswordRequest $request){
             $auth = JWTAuth::parseToken()->authenticate();

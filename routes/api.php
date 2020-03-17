@@ -67,6 +67,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
     Route::get('/auth/user','LoginController@getAuthUser');
     // Register Controller
     Route::post('/register/password', 'RegisterController@setPassword');
+    Route::post('/email_verify', 'RegisterController@email_verify');
     //Dashboard
     Route::group(['prefix' => 'dashboard'], function () {
         // Post Controller
