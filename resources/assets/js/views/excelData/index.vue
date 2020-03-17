@@ -44,7 +44,7 @@
                 </div>
               </div>
               <button type="submit" class="btn btn-info waves-effect waves-light m-t-10">
-                <span v-if="!load">Save</span>
+                <span v-if="!load">Upload</span>
                 <span v-else>
                   <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
                 </span>

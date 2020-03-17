@@ -284,10 +284,10 @@ label {
 }
 
 select {
+  box-sizing: content-box;
   outline: none;
   border: none;
   background: transparent;
-  margin-bottom: 2%;
   border-bottom: 2px solid #480048;
 }
 
