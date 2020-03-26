@@ -12,12 +12,12 @@ class TrainingFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function index(Request $request)
     {
-
-        $input = (($request->all() == null) ? json_decode($request->getContent(), true) : $request->all());
-        $pdf= new PDF;
+        $input = $request->all();
+        // (($request->all() == null) ? json_decode($request->getContent(), true) : $request->all());
+        $pdf = new PDF();
         //Add page
         $pdf::SetTitle('Training Form');
         $pdf::AddPage();
@@ -115,6 +115,5 @@ class TrainingFormController extends Controller
             'Content-Type' => 'application/pdf',
         ];
         return response()->download($pdf::Output(), 'Training.pdf', $headers);
-
     }
 }

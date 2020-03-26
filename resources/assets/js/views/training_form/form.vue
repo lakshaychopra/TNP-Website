@@ -191,13 +191,21 @@ export default {
     },
     generate() {
       var u = this;
-      $("#succc").show();
+      let formdata = new FormData();
+      formdata.append("name", this.user.name);
+      formdata.append("urn", this.user.urn);
+      formdata.append("email", this.user.email);
+      formdata.append("number", this.user.number);
+      formdata.append("branch", this.user.branch);
+      formdata.append("company", this.user.company);
+      formdata.append("_method", "POST");
       axios({
         method: "post",
         url: "api/form/pdf",
         responseType: "arraybuffer",
-        data: this.user,
+        data: formdata
       }).then(function(response) {
+        console.log(response);
         u.user.name = "";
         u.user.urn = "";
         u.user.vurn = "";
@@ -205,7 +213,8 @@ export default {
         u.user.number = "";
         u.user.branch = "";
         u.user.company = "";
-        $("#succc").hide("slow");
+        toastr["success"]("Form Downloaded!!");
+        $("#succc").show();
         let blob = new Blob([response.data], { type: "application/pdf" });
         let link = document.createElement("a");
         link.href = window.URL.createObjectURL(blob);

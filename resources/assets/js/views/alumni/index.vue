@@ -108,6 +108,11 @@ export default {
 };
 </script>
 <style scoped>
+@media (max-width: 768px) {
+  .container{
+    margin-left: 3%;
+  }
+}
 .jumbo {
   background: transparent;
 }
@@ -147,7 +152,7 @@ th {
   background-color: #0275d8 !important;
 }
 
-.footer{
+.footer {
   left: 0 !important;
 }
 </style>
