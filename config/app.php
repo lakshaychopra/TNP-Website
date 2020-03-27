@@ -155,6 +155,7 @@ return [
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class, 
         Cyvelnet\Laravel5Fractal\Laravel5FractalServiceProvider::class,    
         Berkayk\OneSignal\OneSignalServiceProvider::class,
+        // Elibyy\TCPDF\ServiceProvider::class,
         
         /*
         * Application Service Providers...
@@ -164,7 +165,6 @@ return [
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        // Elibyy\TCPDF\ServiceProvider::class,
 
         
     ],
