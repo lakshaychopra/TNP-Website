@@ -14,64 +14,62 @@ use App\Events\UserCreatedEvent;
 use App\Events\UserSingleCreateEvent;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\CreateUserExcelRequest;
+use App\Mail\TwoFactorEmail;
 use Exception;
 use Excel;
 use JWTAuth;
 use DB;
+use Mail;
 use Carbon\Carbon;
 use App\Services\UserService;
 use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
-    
-    public function __construct(UserService $service,UserRepository $repository)
+
+    public function __construct(UserService $service, UserRepository $repository)
     {
         $this->service = $service;
         $this->repository = $repository;
     }
-    
+
     /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
         $limit  = $request->input('limit') ?? 20;
         $user = $this->repository->list($limit);
         return $this->respondData($user);
     }
-    
+
     /**
-    * Store a newly created resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(CreateUserExcelRequest $request)
-    {  
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         $input = $request->only('type');
-        if($request->hasFile('excel'))
-        {
-            try
-            {
+        if ($request->hasFile('excel')) {
+            try {
                 DB::beginTransaction();
                 $type = $request->only('type');
                 $path = $request->file('excel')->getRealPath();
 
                 $users = Excel::load($path)->get();
-                
-                if(!empty($users) && $users->count())
-                {
-                    foreach($users[1] as $key => $value)
-                    {                        
-                        $type= implode(' ',$input);
+
+                if (!empty($users) && $users->count()) {
+                    foreach ($users[1] as $key => $value) {
+                        $type = implode(' ', $input);
                         $data[] = [
                             'username'     =>  $value->rollno,
                             'email'        =>  $value->email,
-                         // 'sem_limit'    =>  5,
+                            // 'sem_limit'    =>  5,
                             'phone_number' =>  $value->phone,
                             'password'     =>  bcrypt($value->crn),
                             'type'         =>  $type,
@@ -89,38 +87,38 @@ class UsersController extends Controller
                             'updated_at'   =>  Carbon::now(),
                         ];
                         //\Log::info($dataStudent);
-                       
-                        
+
+
                     }
 
 
-                    if(empty($data)){
+                    if (empty($data)) {
                         return $this->respondError('Failed', 401);
                     }
                     $inserted = DB::table('users')->insert($data);
-                    $a=$this->createStudent($dataStudent);
-                    $b=$this->createMetricsEducation($dataStudent);
-                    $c=$this->createPreviousEducation($dataStudent);
-                    $d=$this->createSemesterMarks($dataStudent);
-                    DB::commit();  
+                    $a = $this->createStudent($dataStudent);
+                    $b = $this->createMetricsEducation($dataStudent);
+                    $c = $this->createPreviousEducation($dataStudent);
+                    $d = $this->createSemesterMarks($dataStudent);
+                    DB::commit();
                     \Log::info($inserted);
                     \Log::info($a);
                     \Log::info($b);
                     \Log::info($c);
                     \Log::info($d);
-                    
-                // $this->userCreateMail();  
-                    return $this->respondSuccess('User Inserted',$dataStudent);
+
+                    // $this->userCreateMail();  
+                    return $this->respondSuccess('User Inserted', $dataStudent);
                 }
-            }   
-            catch(Exception $e){
+            } catch (Exception $e) {
                 DB::rollback();
                 return $this->respondException($e);
             }
         }
     }
 
-    public function createStudent($request){
+    public function createStudent($request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -129,22 +127,22 @@ class UsersController extends Controller
             }
             $data = $request;
 
-        //    \Log::info($data);
-           // \Log::info("1");
-          $student = DB::table('students')->insert($data);
+            //    \Log::info($data);
+            // \Log::info("1");
+            $student = DB::table('students')->insert($data);
 
             // $student = new Student;
             // $student->create($data);
             DB::commit();
-            return $this->respondSuccess('Student Inserted',$student);
-        }
-        catch (Exception $e) {
+            return $this->respondSuccess('Student Inserted', $student);
+        } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
-                                        
-    public function createMetricsEducation($request){
+
+    public function createMetricsEducation($request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -158,15 +156,15 @@ class UsersController extends Controller
             // $me = new MetricsEducation;
             // $me->create($data);
             DB::commit();
-            return $this->respondSuccess('Inserted',$me);
-        }
-        catch (Exception $e) {
+            return $this->respondSuccess('Inserted', $me);
+        } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
 
-    public function createPreviousEducation($request){
+    public function createPreviousEducation($request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -179,15 +177,15 @@ class UsersController extends Controller
             // $pe = new PreviousEducation;
             // $pe->create($data);
             DB::commit();
-            return $this->respondSuccess('Inserted',$pe);
-        }
-        catch (Exception $e) {
+            return $this->respondSuccess('Inserted', $pe);
+        } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
 
-    public function createSemesterMarks($request){
+    public function createSemesterMarks($request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -200,53 +198,52 @@ class UsersController extends Controller
             // $semesterMarks = new SemesterMarks;
             // $semesterMarks->create($data);
             DB::commit();
-            return $this->respondSuccess('Inserted',$semesterMarks);
-        }
-        catch (Exception $e) {
+            return $this->respondSuccess('Inserted', $semesterMarks);
+        } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
 
-    
+
     /**
-    * Display the specified resource.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show(User $user)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         return $this->respondData($user);
     }
-    
+
     /**
-    * Show the form for editing the specified resource.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit(User $user)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         return $this->respondData($user);
     }
-    
+
     /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(CreateUserRequest $request, User $user)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
-            if(!$auth){
-                return $this->respondError('Failed', 401); 
+            if (!$auth) {
+                return $this->respondError('Failed', 401);
             }
             $data = $request->all();
             $post->username = $request->username;
@@ -254,62 +251,83 @@ class UsersController extends Controller
             $post->sem_limit = $request->sem_limit;
             $post->phone_number = $request->phone_number;
             $post->type = $request->type;
-            $post->save(); 
+            $post->save();
             DB::commit();
-            return $this->respondSuccess('Updated',$post);
+            return $this->respondSuccess('Updated', $post);
         } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
-    
+
     /**
-    * Remove the specified resource from storage.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
-    */
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(User $user)
     {
         $auth = JWTAuth::parseToken()->authenticate();
         $delete = $this->repository->delete($user);
         return $this->respondSuccess('Deleted', $delete);
     }
-    
-    
-    public function userExcelFile(){
-        $user = DB::view('display_student');
-        $data=json_decode(json_encode($user),true); 
 
-        return \Excel::create('user', function($excel) use ($data) {
-            $excel->sheet('Users data', function($sheet) use ($data)
-            {
+
+    public function userExcelFile()
+    {
+        $user = DB::view('display_student');
+        $data = json_decode(json_encode($user), true);
+
+        return \Excel::create('user', function ($excel) use ($data) {
+            $excel->sheet('Users data', function ($sheet) use ($data) {
                 $sheet->fromArray($data);
             });
         })->download('xlsx');
-    }      
-    
-    public function userCreateMail(){
+    }
+
+    public function userCreateMail()
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         if (!$auth) {
             return $this->respondUnauthorized('Failed');
         }
-        $user = User::where([['is_mailed','=',false]])->get()->toArray();
+        $user = User::where([['is_mailed', '=', false]])->get()->toArray();
         event(new UserCreatedEvent($user));
         $this->respondSuccess('Mailed');
     }
-    
-    public function userSingleCreateMail(){
+
+    public function emailVerify(Request $request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         if (!$auth) {
             return $this->respondUnauthorized('Failed');
         }
-        $user = User::where([['is_mailed','=',false]])->latest()->limit(1)->get()->toArray();
+        try {
+            $user = User::find($request->id);
+            $user->remember_token = rand(1111, 9999);
+            $user->email= $request->mail;
+            $user->save();
+            // Mail::to($user->email)->send(new TwoFactorEmail($user));
+        } catch (Exception $e) {
+            return $this->respondException($e);
+        }
+        return $this->respondData(array('mail'=> $request->mail, 'OTP'=> $user->remember_token));
+    }
+
+    public function userSingleCreateMail()
+    {
+        $auth = JWTAuth::parseToken()->authenticate();
+        if (!$auth) {
+            return $this->respondUnauthorized('Failed');
+        }
+        $user = User::where([['is_mailed', '=', false]])->latest()->limit(1)->get()->toArray();
         event(new UserSingleCreateEvent($user));
         $this->respondSuccess('Mailed');
     }
-    
-    public function UserCreateForm(CreateUserRequest $request){
+
+    public function UserCreateForm(CreateUserRequest $request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -321,16 +339,16 @@ class UsersController extends Controller
             $user['password'] = bcrypt(str_random(6));
             $userCreate = $this->service->createUser($user);
             DB::commit();
-            $this->userSingleCreateMail();  
+            $this->userSingleCreateMail();
             return $this->respondSuccess('User Created Successfully', $userCreate);
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
-    
-    public function UpdateFormStatus(Request $request){
+
+    public function UpdateFormStatus(Request $request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -343,14 +361,14 @@ class UsersController extends Controller
             $user->save();
             DB::commit();
             return $this->respondData($user);
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
-    
-    public function FirstLogin(Request $request){
+
+    public function FirstLogin(Request $request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -363,14 +381,14 @@ class UsersController extends Controller
             $user->save();
             DB::commit();
             return $this->respondData($user);
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }
     }
-    
-    public function UpdateFormSteps(Request $request){
+
+    public function UpdateFormSteps(Request $request)
+    {
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
@@ -383,8 +401,7 @@ class UsersController extends Controller
             $user->save();
             DB::commit();
             return $this->respondData($user);
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             DB::rollback();
             return $this->respondException($e);
         }

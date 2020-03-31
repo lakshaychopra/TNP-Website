@@ -115,7 +115,6 @@ class MetricsEducationController extends Controller
             $me->univ_roll_no = $request->univ_roll_no;
             $me->board = $request->board;
             $me->institute = $request->institute;
-            $me->month = $request->month;
             $me->year = $request->year;
             $me->obtained_marks = $request->obtained_marks;
             $me->max_marks = $request->max_marks;

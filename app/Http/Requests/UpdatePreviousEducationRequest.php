@@ -24,17 +24,24 @@ class UpdatePreviousEducationRequest extends FormRequest
     public function rules()
     {
         return [
-            'univ_roll_no'    =>  "bail|required|numeric|min:6|exists:previous_education,univ_roll_no",
-            'board'           =>  "required",
-            'institute'       =>  "required",
-            'month'           =>  "required",
-            'year'            =>  "required",
-            'obtained_marks'  =>  "required",
-            'max_marks'       =>  "required",
-            'year_gap'        =>  "required",
-            'percentage'      =>  "required",
-            'jee_rank'        =>  "required",
-            'education'       =>  "required",
+            'univ_roll_no'                     =>  "bail|required|numeric|min:6|exists:previous_education,univ_roll_no",
+            'education'                        =>  "nullable",
+            'XII_board'                        =>  "nullable",
+            'XII_institute'                    =>  "nullable",
+            'XII_year'                         =>  "nullable",
+            'XII_obtained_marks'               =>  "nullable",
+            'XII_max_marks'                    =>  "nullable",
+            'jee_rank'                         =>  "nullable",                         
+            'XII_percentage'                   =>  "nullable",
+            'diploma_board'                    =>  "nullable",
+            'diploma_institute'                =>  "nullable",
+            'diploma_year'                     =>  "nullable",
+            'diploma_obtained_marks'           =>  "nullable",
+            'diploma_max_marks'                =>  "nullable",
+            'diploma_percentage'               =>  "nullable",
+            'year_gap'                         =>  "nullable",
+            'diploma_previous_edu_certificate' =>  "nullable",
+            'XII_previous_edu_certificate'     =>  "nullable"
         ];
     }
 }

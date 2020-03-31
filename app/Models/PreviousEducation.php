@@ -9,10 +9,9 @@ class PreviousEducation extends Model
     protected $table = 'previous_education';
     
     protected $fillable = [
-        'univ_roll_no','board_XII','month_XII','year_XII','obtained_marks_XII',
-        'max_marks_XII','percentage_XII','institute_XII',
-        'month_Diploma','year_Diploma','obtained_marks_Diploma',
-        'max_marks_Diploma','percentage_Diploma','institute_Diploma',
-        'year_gap','jee_rank_XII'
+        'univ_roll_no','education','year_gap','jee_rank',
+        'XII_board','XII_institute','XII_year','XII_obtained_marks','XII_max_marks','XII_percentage',
+        'diploma_previous_edu_certificate','XII_previous_edu_certificate',
+        'diploma_board','diploma_institute','diploma_year','diploma_obtained_marks','diploma_max_marks','diploma_percentage'
     ];
 }

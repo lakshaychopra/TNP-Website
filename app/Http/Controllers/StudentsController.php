@@ -99,41 +99,63 @@ class StudentsController extends Controller
     
     public function update(UpdateStudentRequest $request, Student $student)
     {
+        //console.log($request->session()->all());
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
-            $data = $request->all();
-            $student->univ_roll_no=$request->univ_roll_no;
-            $student->class_roll_no=$request->class_roll_no;
-            $student->name=$request->name;
-            $student->whatsapp_cont=$request->whatsapp_cont;
-            $student->batch=$request->batch;
-            $student->dob=$request->dob;
-            $student->branch_type=$request->branch_type;
-            $student->stream=$request->stream;
-            $student->section=$request->section;
-            $student->shift=$request->shift;
-            $student->training_semester=$request->training_semester;
-            $student->gender=$request->gender;
-            $student->blood_group=$request->blood_group;
-            $student->category=$request->category;
-            $student->height=$request->height;
-            $student->weight=$request->weight;
-            $student->living=$request->living;
-            $student->father_name=$request->father_name;
-            $student->father_phone=$request->father_phone;
-            $student->mother_name=$request->mother_name;
-            $student->mother_phone=$request->mother_phone;
-            $student->address=$request->address;
-            $student->city=$request->city;
-            $student->state=$request->state;
-            $student->district=$request->district;
-            $student->pincode=$request->pincode;
-            $student->mail_id=$request->mail_id;
-            $student->phone_number=$request->phone_number;
+            $certificate;
+            if($request->branch_type == 'M.B.A.' || $request->branch_type =='M.TECH.' || $request->branch_type =='M.C.A.' ){
+                $data = $request->all();
+                $certificate = $request->file('Graduation_certificate');
+                $extension = strtolower($certificate->getClientOriginalExtension());
+                $filename = $request->univ_roll_no.'_cerificate.'.$extension;
+                $path =  public_path('images/certificates/Graduation');
+                $imageLocation = $certificate->move($path, $filename);
+                $student->Graduation_certificate = $filename;
+            }
+            $student->univ_roll_no       = $request->univ_roll_no;
+            $student->class_roll_no      = $request->class_roll_no;
+            $student->first_name         = $request->first_name;
+            $student->last_name          = $request->last_name;
+            $student->dob                = $request->dob;
+            $student->batch              = $request->batch;
+            $student->branch_type        = $request->branch_type;
+            $student->stream             = $request->stream;
+            $student->section            = $request->section;
+            $student->shift              = $request->shift;
+            $student->training_semester  = $request->training_semester;
+            $student->gender             = $request->gender;
+            $student->blood_group        = $request->blood_group;
+            $student->category           = $request->category;
+            $student->height             = $request->height;
+            $student->weight             = $request->weight;
+            $student->living             = $request->living;
+            $student->father_name        = $request->father_name;
+            $student->father_phone       = $request->father_phone;
+            $student->mother_name        = $request->mother_name;
+            $student->mother_phone       = $request->mother_phone;
+            $student->father_occupation  = $request->father_occupation;
+            $student->farming_background = $request->farming_background;
+            $student->address            = $request->address;
+            $student->city               = $request->city;
+            $student->state              = $request->state;
+            $student->district           = $request->district;
+            $student->pincode            = $request->pincode;
+            $student->whatsapp_cont      = $request->whatsapp_cont;
+            $student->phone_number       = $request->phone_number;
+            $student->graduation         = $request->graduation;
+            $student->spec_mba           = $request->spec_mba;
+            $student->spec_mtech         = $request->spec_mtech;
+            $student->specialization     = $request->specialization;
+            $student->work_experience    = $request->work_experience;
+            $student->passing_year       = $request->passing_year;
+            $student->marks_type         = $request->mark_type;
+            $student->CGPA               = $request->CGPA;
+            $student->percentage         = $request->percentage;
+
             $student->save();
             DB::commit();
             return $this->respondSuccess('Updated',$student);

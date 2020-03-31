@@ -96,34 +96,72 @@ class PreviousEducationsController extends Controller
     public function update(UpdatePreviousEducationRequest $request, PreviousEducation $pe)
     {
         $auth = JWTAuth::parseToken()->authenticate();
+        $certificate;
+        $certificate1;
         try {
             DB::beginTransaction();
             if(!$auth){
                 return $this->respondError('Failed', 401); 
             }
+            if($request->education == 'XII'){
+                $certificate = $request->file('XII_previous_edu_certificate');
+                $extension = strtolower($certificate->getClientOriginalExtension());
+                $filename = $request->univ_roll_no.'_previous_edu_cerificate.'.$extension;
+                $path =  public_path('images/certificates/twelfth');
+                $imageLocation = $certificate->move($path, $filename);
+                $pe->XII_previous_edu_certificate = $filename;   
+                $pe->diploma_previous_edu_certificate = null;  
+            }
+
+            if($request->education == 'Diploma'){
+                $certificate = $request->file('diploma_previous_edu_certificate');
+                $extension = strtolower($certificate->getClientOriginalExtension());
+                $filename = $request->univ_roll_no.'_previous_edu_cerificate.'.$extension;
+                $path =  public_path('images/certificates/twelfth');
+                $imageLocation = $certificate->move($path, $filename);
+                $pe->XII_previous_edu_certificate = null;   
+                $pe->diploma_previous_edu_certificate = $filename;  
+
+            }
+            if($request->education == 'BOTH'){
+                $certificate = $request->file('XII_previous_edu_certificate');
+                $certificate1 = $request->file('diploma_previous_edu_certificate');
+
+            // CERTIFICATE-1
+                $extension = strtolower($certificate->getClientOriginalExtension());
+                $filename = $request->univ_roll_no.'_previous_edu_cerificate.'.$extension;
+                $path =  public_path('images/certificates/twelfth');
+                $imageLocation = $certificate->move($path, $filename);
+                $pe->XII_previous_edu_certificate = $filename;   
+                
+             // certificate-2   
+                $extension = strtolower($certificate1->getClientOriginalExtension());
+                $filename = $request->univ_roll_no.'_previous_edu_cerificate.'.$extension;
+                $path =  public_path('images/certificates/diploma');
+                $imageLocation = $certificate1->move($path, $filename);
+                $pe->diploma_previous_edu_certificate = $filename;
+            }      
             
-            $certificate = $request->file('previous_edu_certificate');
-
-        // if ($certificate->getClientMimeType() !== 'application/pdf'){
-
-            $extension = strtolower($certificate->getClientOriginalExtension());
-            $filename = $request->univ_roll_no.'_previous_edu_cerificate.'.$extension;
-            $path =  public_path('images/certificates/twelfth');
-            $imageLocation = $certificate->move($path, $filename);
-            $pe->previous_edu_certificate = $filename;
-         //}
-            // $data = $request->all();
+        //store_data
             $pe->univ_roll_no = $request->univ_roll_no;
-            $pe->board = $request->board;
-            $pe->institute = $request->institute;
-            $pe->month = $request->month;
-            $pe->year = $request->year;
-            $pe->obtained_marks = $request->obtained_marks;
-            $pe->max_marks = $request->max_marks;
             $pe->education = $request->education;
+        //XII
+            $pe->jee_rank= $request->jee_rank;
+            $pe->XII_board = $request->XII_board;
+            $pe->XII_institute = $request->XII_institute;
+            $pe->XII_year = $request->XII_year;
+            $pe->XII_obtained_marks = $request->XII_obtained_marks;
+            $pe->XII_max_marks = $request->XII_max_marks;
+            $pe->XII_percentage = $request->XII_percentage;
+        //diploma
+            $pe->diploma_board = $request->diploma_board;
+            $pe->diploma_institute = $request->diploma_institute;
+            $pe->diploma_year = $request->diploma_year;
+            $pe->diploma_obtained_marks = $request->diploma_obtained_marks;
+            $pe->diploma_max_marks = $request->diploma_max_marks;
+            $pe->diploma_percentage = $request->diploma_percentage;
             $pe->year_gap = $request->year_gap;
-            $pe->jee_rank = $request->jee_rank;
-            $pe->percentage = $request->percentage;
+            \Log::info($pe);
             $pe->save(); 
             DB::commit();
             return $this->respondSuccess('Updated',$pe);

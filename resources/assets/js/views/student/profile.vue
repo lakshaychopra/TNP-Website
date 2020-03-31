@@ -1,30 +1,39 @@
 <template>
-  <div class="container-fluid">
-      <h2 class="card-title mt-3 display-5 text-primary">PROFILE DETAILS</h2>
-      <form method="post" @submit.prevent="submit">
-        <fieldset disabled="disabled">
+  <div>
+    <!-- <h3 class="card-title mt-3 display-5 text-primary">PROFILE DETAILS</h3> -->
+    <form method="post" @submit.prevent="submit">
+      <fieldset disabled="disabled">
+        <h3
+          class="card-title mt-3 display-6 text-primary"
+          style="text-align: center;"
+        >PROFILE DETAILS</h3>
+        <br />
         <div class="row">
           <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">Personal & Address Details</h2>
                 <div class="row">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" v-model="student.name" />
-                    <label for="id_username">Name</label>
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" v-model="student.first_name" />
+                    <label for="id_username">First Name</label>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" v-model="student.last_name" />
+                    <label for="id_username">Last Name</label>
+                  </div>
+                  <div class="col-md-3">
                     <input type="text" class="form-control" v-model="student.mail_id" />
                     <label for="id_username">Email</label>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <input type="text" class="form-control" v-model="student.whatsapp_cont" />
                     <label for="id_username">Whatsapp Contact</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" v-model="student.phone_number" />
                     <label for="id_username">Contact Number</label>
                   </div>
                   <div class="col-md-4">
@@ -66,15 +75,14 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" v-model="student.father_occupation" />
                     <label for="id_occupation">Father's Occupation</label>
                   </div>
                   <div class="col-md-6">
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" v-model="student.farming_background" />
                     <label for="id_farming">Farming Background</label>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-md-6">
                     <input type="text" class="form-control" v-model="student.mother_name" />
@@ -118,7 +126,6 @@
             <div class="form-material card">
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">College Details</h2>
-
                 <div class="row">
                   <div class="col-md-3">
                     <input type="text" class="form-control" v-model="student.univ_roll_no" />
@@ -137,169 +144,22 @@
                     <label for="id_username">Hostler/Day Scholar</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <!-- <fieldset disabled=""> </fieldset> -->
-
-                  <div class="row">
-                    <div class="col-md-3">
-                      <input type="text" class="form-control" v-model="student.stream" />
-                      <label for="id_username">Course</label>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" class="form-control" v-model="student.shift" />
-                      <label for="id_username">Shift</label>
-                    </div>
-                    <!-- <div class="col-md-2">
-
-                   <input type="text" class="form-control" v-model="student.training_semester">
-                    <label for="id_username"  > Training Semester </label>
-                    </div>-->
-                    <div class="col-md-3">
-                      <input type="text" class="form-control" v-model="student.section" />
-                      <label for="id_username">Section</label>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" class="form-control" v-model="student.branch_type" />
-                      <label for="id_username">Branch Type</label>
-                    </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" v-model="student.stream" />
+                    <label for="id_username">Course</label>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="form-material card">
-                <div class="card-body">
-                  <h2 class="card-title mt-3 text-primary">10th Details</h2>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <input type="text" class="form-control" v-model="student.tenth_institue" />
-                      <label for="id_username">Institute Name</label>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" class="form-control" v-model="student.tenth_board" />
-                      <label for="id_username">Board</label>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" class="form-control" v-model="student.tenth_percentage" />
-                      <label for="id_username">Percentage</label>
-                    </div>
-                    <div class="col-md-2">
-                      <input type="text" class="form-control" v-model="student.tenth_year" />
-                      <label for="id_username">Year of Passing</label>
-                    </div>
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" v-model="student.shift" />
+                    <label for="id_username">Shift</label>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="form-material card">
-                <div class="card-body">
-                  <div v-if="student.education == 'XII'">
-                    <h2 class="card-title mt-3 text-primary">12th Details</h2>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.institute_XII" />
-                        <label for="id_username">Institute Name</label>
-                      </div>
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.board_XII" />
-                        <label for="id_username">Board</label>
-                      </div>
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.percentage_XII" />
-                        <label for="id_username">Percentage</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.year_XII" />
-                        <label for="id_username">Year of Passing</label>
-                      </div>
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.year_gap" />
-                        <label for="id_username">Year Gap</label>
-                      </div>
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" />
-                        <label for="id_username">JEE Rank</label>
-                      </div>
-                    </div>
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" v-model="student.section" />
+                    <label for="id_username">Section</label>
                   </div>
-                  <div v-if="student.education == 'Diploma'">
-                    <h2 class="card-title mt-3 text-primary">Diploma Details</h2>
-
-                    <div class="row">
-                      <div class="col-md-6">
-                        <input type="text" class="form-control" v-model="student.institute_Diploma" />
-                        <label for="id_username">Institute Name</label>
-                      </div>
-                      <div class="col-md-2">
-                        <input type="text" class="form-control" v-model="student.board_Diploma" />
-                        <label for="id_username">Board</label>
-                      </div>
-                      <div class="col-md-2">
-                        <input
-                          type="text"
-                          class="form-control"
-                          v-model="student.obtained_marks_Diploma"
-                        />
-                        <label for="id_username">Obtained Marks</label>
-                      </div>
-                      <div class="col-md-2">
-                        <input type="text" class="form-control" v-model="student.max_marks_Diploma" />
-                        <label for="id_username">Max Marks</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input
-                          type="text"
-                          class="form-control"
-                          v-model="student.percentage_Diploma"
-                        />
-                        <label for="id_username">CGPA/Percentage</label>
-                      </div>
-                      <div class="col-md-5">
-                        <input type="text" class="form-control" v-model="student.year_Diploma" />
-                        <label for="id_username">Year of Passing</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div v-if="student.education='BOTH'">
-                    <h2 class="card-title mt-3 text-primary">12th Details</h2>
-
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.institute_XII" />
-                        <label for="id_username">Institute Name</label>
-                      </div>
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.board_XII" />
-                        <label for="id_username">Board</label>
-                      </div>
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.percentage_XII" />
-                        <label for="id_username">Percentage</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.year_XII" />
-                        <label for="id_username">Year of Passing</label>
-                      </div>
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" v-model="student.year_gap" />
-                        <label for="id_username">Year Gap</label>
-                      </div>
-                      <div class="col-md-4">
-                        <input type="text" class="form-control" />
-                        <label for="id_username">JEE Rank</label>
-                      </div>
-                    </div>
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" v-model="student.branch_type" />
+                    <label for="id_username">Branch Type</label>
                   </div>
                 </div>
               </div>
@@ -310,25 +170,22 @@
           <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
-                <h2 class="card-title mt-3 text-primary">Diploma Details</h2>
-
+                <h2 class="card-title mt-3 text-primary">10th Details</h2>
                 <div class="row">
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" v-model="student.institute_Diploma" />
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" v-model="student.tenth_institue" />
                     <label for="id_username">Institute Name</label>
                   </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" v-model="student.board_Diploma" />
-                    <label for="id_username">Course</label>
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" v-model="student.tenth_board" />
+                    <label for="id_username">Board</label>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" v-model="student.percentage_Diploma" />
-                    <label for="id_username">CGPA/Percentage</label>
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" v-model="student.tenth_percentage" />
+                    <label for="id_username">Percentage</label>
                   </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" v-model="student.year_Diploma" />
+                  <div class="col-md-2">
+                    <input type="text" class="form-control" v-model="student.tenth_year" />
                     <label for="id_username">Year of Passing</label>
                   </div>
                 </div>
@@ -340,76 +197,176 @@
           <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
-                <h2 class="card-title mt-3 text-primary">Graduation</h2>
-                <div class="row">
-                  <div class="col-md-6 input-control">
-                    <input type="text" name="crs" id="crs" class="form-control" />
-                    <label for="crs">Course</label>
+                <div v-if="student.education == 'XII' || student.education == 'BOTH'">
+                  <h2 class="card-title mt-3 text-primary">12th Details</h2>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" v-model="student.XII_institute" />
+                      <label for="id_username">Institute Name</label>
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" v-model="student.XII_board" />
+                      <label for="id_username">Board</label>
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" v-model="student.XII_percentage" />
+                      <label for="id_username">Percentage</label>
+                    </div>
                   </div>
-                  <div class="col-md-6 input-control">
-                    <input type="text" name="spec" id="spec" class="form-control" />
-                    <label for="spec">Specialization</label>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" v-model="student.XII_year" />
+                      <label for="id_username">Year of Passing</label>
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" v-model="student.year_gap" />
+                      <label for="id_username">Year Gap</label>
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" v-model="student.jee_rank"/>
+                      <label for="id_username">JEE Rank</label>
+                    </div>
                   </div>
-                  <div class="col-md-4 input-control">
-                    <input type="text" name="work" id="work" class="form-control" />
-                    <label for="work">Work Experience (in months)</label>
+                </div>
+                <div v-if="student.education == 'Diploma' || student.education == 'BOTH'">
+                  <h2 class="card-title mt-3 text-primary">Diploma Details</h2>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" v-model="student.diploma_institute" />
+                      <label for="id_username">Institute Name</label>
+                    </div>
+                    <div class="col-md-2">
+                      <input type="text" class="form-control" v-model="student.diploma_board" />
+                      <label for="id_username">Board</label>
+                    </div>
+                    <div class="col-md-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        v-model="student.diploma_obtained_marks"
+                      />
+                      <label for="id_username">Obtained Marks</label>
+                    </div>
+                    <div class="col-md-2">
+                      <input type="text" class="form-control" v-model="student.diploma_max_marks" />
+                      <label for="id_username">Max Marks</label>
+                    </div>
                   </div>
-                  <div class="col-md-4 input-control">
-                    <input type="text" name="pass" id="pass" class="form-control" />
-                    <label for="pass">Passing Year</label>
-                  </div>
-                  <div class="col-md-4 input-control">
-                    <input type="text" name="cgpa" id="cgpa" class="form-control" />
-                    <label for="cgpa">Percentage/CGPA</label>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" v-model="student.diploma_percentage" />
+                      <label for="id_username">CGPA/Percentage</label>
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" class="form-control" v-model="student.diploma_year" />
+                      <label for="id_username">Year of Passing</label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        </fieldset>
-        <div class="row">
+        <div
+          class="row"
+          v-if="student.branch_type == 'M.B.A.' || student.branch_type == 'M.C.A.' || student.branch_type == 'M.TECH.'"
+        >
           <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
-                <h2 class="card-title mt-3 text-primary">Comment</h2>
-                <div class="row" v-if="student.verify_status==0">
-                  <div class="col-12">
-                    <textarea
-                      v-model="comment"
-                      class="form-control p-3"
-                      rows="4"
-                      id="comment"
-                      placeholder="For any kind of discrepancy, kindly mention here"
-                    ></textarea>
+                <h2 class="card-title mt-3 text-primary">Graduation</h2>
+                <div class="row">
+                  <div class="col-md-6 input-control">
+                    <input type="text" class="form-control" v-model="student.branch_type" />
+                    <label for="crs">Course</label>
                   </div>
-                </div>
-                <br />
-                <br />
-                <div class="text-center" v-if="student.verify_status==0">
-                  <button type="submit" class="btn btn-primary card-footer col-md-6">
-                    <span v-if="!load">Verify</span>
-                    <span v-else>
-                      <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
-                    </span>
-                  </button>
-                </div>
-                <div class="text-center" v-else>
-                  <button
-                    type="submit"
-                    title="You have already verified this data !!"
-                    class="btn btn-success card-footer col-md-6"
-                    disabled
-                  >Already Verified :)</button>
+                  <div class="col-md-6 input-control" v-if="student.spec_mba != null">
+                    <input type="text" class="form-control" v-model="student.spec_mba" />
+                    <label for="spec">Specialization(Post-Graduation)</label>
+                  </div>
+                  <div class="col-md-6 input-control" v-if="student.spec_mtech != null">
+                    <input type="text" class="form-control" v-model="student.spec_mba" />
+                    <label for="spec">Specialization(Post-Graduation)</label>
+                  </div>
+
+                  <div class="col-md-4 input-control">
+                    <input type="text" class="form-control" v-model="student.work_experience" />
+                    <label for="work">Work Experience (in months)</label>
+                  </div>
+                  <div class="col-md-4 input-control">
+                    <input type="text" class="form-control" v-model="student.graduation" />
+                    <label for="pass">Graduation</label>
+                  </div>
+                  <div class="col-md-4 input-control">
+                    <input type="text" class="form-control" v-model="student.specialization" />
+                    <label for="pass">Specialization(Graduation)</label>
+                  </div>
+                  <div class="col-md-4 input-control">
+                    <input type="text" class="form-control" v-model="student.passing_year" />
+                    <label for="pass">Passing Year</label>
+                  </div>
+                  <div class="col-md-4 input-control" v-if="student.marks_type == 'PERCENTAGE'">
+                    <input type="text" class="form-control" v-model="student.percentage"/>
+                    <label for="cgpa">Percentage</label>
+                  </div>
+                  <div class="col-md-4 input-control" v-else-if="student.marks_type == 'CGPA'">
+                    <input type="text" name="cgpa" class="form-control" v-model="CGPA"/>
+                    <label for="cgpa">CGPA</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </form>
-  </div>
-
-  <!-- <h2 class="card-title mt-3 text-primary">Semester-6</h2>
+      </fieldset>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-material card">
+            <div class="card-body">
+              <h2 class="card-title mt-3 text-primary">Comment</h2>
+              <div class="row" v-if="student.verify_status==0">
+                <div class="col-12">
+                  <textarea
+                    v-model="comment"
+                    class="form-control p-3"
+                    rows="4"
+                    id="comment"
+                    placeholder="For any kind of discrepancy, kindly mention here"
+                  ></textarea>
+                </div>
+              </div>
+              <br />
+              <br />
+              <div class="text-center" v-if="student.verify_status==0">
+                <button type="submit" class="btn btn-primary card-footer col-md-6">
+                  <span v-if="!load">Verify</span>
+                  <span v-else>
+                    <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="text-center" v-else>
+                <button
+                  type="submit"
+                  title="You have already verified this data !!"
+                  class="btn btn-success card-footer col-md-6"
+                  disabled
+                >Already Verified :)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-12">
+          <div class="form-material card">
+            <div class="card-body">
+              
+            </div>
+          </div>
+        </div>
+      </div>-->
+      <!-- <h2 class="card-title mt-3 text-primary">Semester-6</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
@@ -428,8 +385,8 @@
       <input type="text" class="form-control" v-model="student.passive_backlog_6">
        <label for="id_username"> Passive Backlog </label>
     </div>
-  </div>-->
-  <!-- <h2 class="card-title mt-3 text-primary">Semester-7 </h2>
+      </div>-->
+      <!-- <h2 class="card-title mt-3 text-primary">Semester-7 </h2>
     <hr class="style3">
     <div class="row">
     <div class="col-md-3">
@@ -469,9 +426,9 @@
       <input type="text" class="form-control" v-model="student.passive_backlog_8">
        <label for="id_username"> Passive Backlog </label>
     </div>
-  </div>-->
+      </div>-->
 
-  <!-- <h2 class="card-title mt-3 text-primary">Aggregate</h2>
+      <!-- <h2 class="card-title mt-3 text-primary">Aggregate</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
@@ -501,7 +458,9 @@
       <label for="id_username" >Credits </label>
     </div>
   
-  </div>-->
+      </div>-->
+    </form>
+  </div>
 </template>
 <script>
 import {
@@ -535,9 +494,10 @@ export default {
         console.log("Hello" + response.data.data[0]);
         // console.log('test'+student.username);
         console.log(this.username);
+        console.log(response.data.data[0]);
         this.student = response.data.data[0];
-        console.log(this.student.verify_status);
-        console.log(this.student.institute_XII.length);
+        //console.log(this.student.verify_status);
+        //console.log(this.student.institute_XII.length);
       })
       .catch(error => {
         console.log(error.response);
@@ -618,7 +578,7 @@ textarea {
   border: 1px solid black !important;
 }
 
-label{
+label {
   color: #5bc0de;
 }
 </style>

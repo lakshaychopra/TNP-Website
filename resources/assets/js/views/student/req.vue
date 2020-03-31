@@ -1,25 +1,19 @@
 <template>
     <div>
         <tnc v-if="step == 1"></tnc>
-        <email v-else-if="step == 2"></email>
+        <email-form v-else-if="step == 2"></email-form>
         <profile-form v-else-if="step == 3"></profile-form>
-        
         <matrics-form v-else-if="step == 4"></matrics-form>
         <previous-education v-else-if="step == 5"></previous-education>
-        <graduation v-else-if="step == 6"> </graduation>
-        <display-profile v-else-if="step == 7"></display-profile>
-        <!-- <degree-education v-else-if="step == 6"></degree-education> -->
-        <!-- <aggregate-education v-else-if="step == 6"></aggregate-education> -->
+        <display-profile v-else-if="step == 6"></display-profile>
     </div>
 </template>
 <script>
     import Tnc from './tnc.vue'
+    import emailForm from './email.vue'
     import ProfileForm from './profileForm.vue'
     import MatricsForm from './matricsForm.vue'
     import PreviousEducation from './previousEducation.vue'
-    import email from './email.vue'
-    // import AggregateEducation from './aggregate.vue'
-    import Graduation from './graduation.vue'
     import DisplayProfile from './display_profile.vue'
     import helper from './../../services/helper'
 
@@ -34,13 +28,11 @@
         },
         components: {
             Tnc,
+            emailForm,
             ProfileForm,
             MatricsForm,
             PreviousEducation,
-            email,
-            //AggregateEducation
             DisplayProfile,
-            Graduation
         },
         methods: {
             getAuthUser(name) {
@@ -59,11 +51,11 @@
                         case "N.A.":
                             this.step = 1;
                             break;
+                        case "Email":
+                            this.step = 2;
+                            break;
                         case "TC":
                             this.step = 3;
-                            break;
-                       case "Email":
-                            this.step = 2;
                             break;
                         case "PROFILE":
                             this.step = 4;
@@ -73,9 +65,6 @@
                             break;
                         case "PREVIOUS_EDUCATION":
                             this.step = 6;
-                            break;
-                        case "GRADUATION":
-                            this.step = 7;
                             break;
                         default:
                             break;
@@ -91,11 +80,11 @@
                         case "N.A.":
                             this.step = 1;
                             break;
-                        case "TC":
-                            this.step = 3;
-                            break;
                         case "Email":
                             this.step = 2;
+                            break;
+                        case "TC":
+                            this.step = 3;
                             break;
                         case "PROFILE":
                             this.step = 4;
@@ -105,9 +94,6 @@
                             break;
                         case "PREVIOUS_EDUCATION":
                             this.step = 6;
-                            break;
-                        case "GRADUATION":
-                            this.step = 7;
                             break;
                         default:
                             break;

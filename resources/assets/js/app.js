@@ -35,6 +35,11 @@ Vue.use(SocialSharing);
 import SimpleVueValidation from 'simple-vue-validator';
 Vue.use(SimpleVueValidation);
 
+import Vue from 'vue'
+import vSelect from 'vue-select'
+
+Vue.component('v-select', vSelect)
+
 const app = new Vue({
     el: '#root',
     store,

@@ -18,12 +18,12 @@ class CreateMetricsMarksTable extends Migration
             $table->string('univ_roll_no')->unique();
             $table->string('board')->nullable();
             $table->string('institute')->nullable();
-            $table->string('month')->nullable();
             $table->string('year')->nullable();
             $table->string('obtained_marks')->nullable();
             $table->string('max_marks')->nullable();
             $table->enum('marks_type',['CGPA','PERCENTAGE'])->nullable();
             $table->string('percentage')->nullable();
+            $table->string('tenth_certificate');
             $table->timestamps();
         });
     }

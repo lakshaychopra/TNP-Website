@@ -24,16 +24,24 @@ class CreatePreviousEducationRequest extends FormRequest
     public function rules()
     {
         return [
-            'univ_roll_no'    =>  "nullable",
-            'board'           =>  "nullable",
-            'institute'       =>  "nullable",
-            'month'           =>  "nullable",
-            'year'            =>  "nullable",
-            'obtained_marks'  =>  "nullable",
-            'max_marks'       =>  "nullable",
-            'year_gap'        =>  "nullable",
-            'percentage'      =>  "nullable",
-            'jee_rank'        =>  "nullable",
+            'univ_roll_no'                     =>  "nullable",
+            'education'                        =>  "nullable",
+            'XII_board'                        =>  "nullable",
+            'XII_institute'                    =>  "nullable",
+            'XII_year'                         =>  "nullable",
+            'XII_obtained_marks'               =>  "nullable",
+            'XII_max_marks'                    =>  "nullable",
+            'XII_percentage'                   =>  "nullable",
+            'jee_rank'                         =>  "nullable",
+            'diploma_board'                    =>  "nullable",
+            'diploma_institute'                =>  "nullable",
+            'diploma_year'                     =>  "nullable",
+            'diploma_obtained_marks'           =>  "nullable",
+            'diploma_max_marks'                =>  "nullable",
+            'diploma_percentage'               =>  "nullable",
+            'year_gap'                         =>  "nullable",
+            'diploma_previous_edu_certificate' =>  "nullable",
+            'XII_previous_edu_certificate'     =>  "nullable"
         ];
     }
 }

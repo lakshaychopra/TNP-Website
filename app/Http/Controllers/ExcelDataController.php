@@ -38,27 +38,11 @@ class ExcelDataController extends Controller
                 $previous =
                     [
                         'univ_roll_no' => $value['URN'],
-                        'board_XII' => '',
-                        'month_XII' => '',
-                        'year_XII' => '',
-                        'obtained_marks_XII' => '',
-                        'max_marks_XII' => '',
-                        'percentage_XII' => '',
-                        'institute_XII' => '',
-                        'month_Diploma' => '',
-                        'year_Diploma' => '',
-                        'obtained_marks_Diploma' => '',
-                        'max_marks_Diploma' => '',
-                        'percentage_Diploma' => '',
-                        'institute_Diploma' => '',
-                        'year_gap' => '',
-                        'jee_rank_XII' => ''
                     ];
                 $metrics = [
                     'univ_roll_no' => $value['URN'],
                     'board' => '',
                     'institute' => '',
-                    'month' => '',
                     'year' => '',
                     'obtained_marks' => '',
                     'max_marks' => '',
@@ -70,7 +54,8 @@ class ExcelDataController extends Controller
                 $student = [
                     'univ_roll_no' => $value['URN'],
                     'class_roll_no' => $value['CRN'],
-                    'name' => '',
+                    'first_name' => '',
+                    'last_name' => '',
                     'batch' => '',
                     'branch_type' => '',
                     'stream' => '',

@@ -138,7 +138,7 @@ export default {
       },
 
       form_step: {
-        student_form_step: "EMAIL",
+        student_form_step: "Email",
 
         id: this.$parent.id
       },

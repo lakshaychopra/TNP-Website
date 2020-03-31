@@ -18,6 +18,10 @@
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon-16x16.png')}}">
+    <!--Font-Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     {{-- OG Tags --}}
     <script type='application/ld+json'>
         {

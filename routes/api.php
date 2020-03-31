@@ -16,10 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/send-notification', 'PostController@pushNotification');
 
 Route::post('/form/pdf', 'TrainingFormController@index');
-
-Route::post('/send-notification', 'PostController@pushNotification');
 
 Route::get('/aaaa', 'StudentFilterController@filterStudents');
 Route::get('/bbbb', 'DashboardController@adminDashboard');
@@ -67,7 +66,6 @@ Route::group(['middleware' => 'jwt.auth'], function() {
     Route::get('/auth/user','LoginController@getAuthUser');
     // Register Controller
     Route::post('/register/password', 'RegisterController@setPassword');
-    Route::post('/email_verify', 'RegisterController@email_verify');
     //Dashboard
     Route::group(['prefix' => 'dashboard'], function () {
         // Post Controller
@@ -90,6 +88,10 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::post('/user/status/update', 'UsersController@UpdateFormStatus');
         Route::post('/user/step/update', 'UsersController@UpdateFormSteps');
         Route::post('/user/first/login', 'UsersController@FirstLogin');
+        Route::post('/user/email_verify', 'UsersController@emailVerify');
+
+        //SMS service
+        Route::resource('otp','SmServiceController');
         //Student Controller
         Route::resource('/student', 'StudentsController');
         //MetricsEducation

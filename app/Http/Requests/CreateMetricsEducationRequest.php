@@ -27,7 +27,6 @@ class CreateMetricsEducationRequest extends FormRequest
             'univ_roll_no'    =>  "nullable",
             'board'           =>  "nullable",
             'institute'       =>  "nullable",
-            'month'           =>  "nullable",
             'year'            =>  "nullable",
             'obtained_marks'  =>  "nullable",
             'max_marks'       =>  "nullable",

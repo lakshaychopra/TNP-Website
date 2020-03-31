@@ -10,6 +10,7 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
+                    <small class="form-text text-primary text-uppercase">Board</small>
                     <select name="board" :class="[{'form-control': true, 'error': errors.has('board')}]" v-model="student.board"
                       v-validate="'required'">
                       <!-- <option disabled value="">HOSTELER / DAY SCHOLAR</option> -->
@@ -20,28 +21,25 @@
                       <option value="Others">Others</option>
                     </select>
                     <!-- <input v-validate="'required'" type="text" name="board" v-model="student.board" placeholder="Board" class="form-control text-uppercase"> -->
-                    <small class="form-text text-primary text-uppercase">Board
-                      <span class="text-danger pull-right">{{errors.first('board')}}</span>
-                    </small>
+                    <span class="text-danger pull-right">{{errors.first('board')}}</span>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <input v-validate="'required'" type="text" name="institute name" v-model="student.institute" placeholder="Institute Name"
+                    <small class="form-text text-primary text-uppercase">Institute Name</small>
+                    <input v-validate="'required'" type="text" name="institute name" v-model="student.institute"
                       class="form-control text-capitalize">
-                    <small class="form-text text-primary text-uppercase">Institute Name
-                      <span class="text-danger pull-right">{{errors.first('institute name')}}</span>
-                    </small>
+                    <span class="text-danger pull-right">{{errors.first('institute name')}}</span>
                   </div>
                 </div>
 
                 <div class="col-md-4">
                   <div class="form-group">
-                    <input v-validate="'required'" type="month" name="Month and Year of Passing" v-model="monthYear" placeholder="Month" class="form-control"
-                      v-on:change="splitMonthYear(monthYear)">
-                    <small class="form-text text-primary text-uppercase">Month and Year of Passing
-                      <span class="text-danger pull-right">{{errors.first('Month and Year of Passing')}}</span>
-                    </small>
+                    <small class="form-text text-primary text-uppercase">Year of Passing</small>
+                    <!--<input v-validate="'required'" type="month" name="Month and Year of Passing" v-model="monthYear" placeholder="Month" class="form-control"
+                      v-on:change="splitMonthYear(monthYear)">-->   
+                    <input v-validate="'required'" type="numeric" name="Year of Passing" v-model="student.year" class="form-control"> 
+                    <span class="text-danger pull-right">{{errors.first('Year of Passing')}}</span>
                   </div>
                 </div>
               </div>
@@ -65,26 +63,25 @@
 
                 <div class="col-md-3">
                   <div class="form-group">
+                    <small class="form-text text-primary text-uppercase">Obtained Marks</small>
                     <input v-validate="'required'" type="number" name="obtained marks" v-model="student.obtained_marks"
-                      placeholder="Obtained Marks" class="form-control" v-on:input="percentCalculate()" v-if="this.student.marks_type=='CGPA'"  step="any">
-                    <input v-validate="'required'" type="text" name="obtained marks" v-model="student.obtained_marks" placeholder="Obtained Marks"
+                       class="form-control" v-on:input="percentCalculate()" v-if="this.student.marks_type=='CGPA'"  step="any">
+                    <input v-validate="'required'" type="text" name="obtained marks" v-model="student.obtained_marks" 
                       class="form-control" v-on:input="percentCalculate()" v-else>
-                    <small class="form-text text-primary text-uppercase">Obtained Marks
-                      <span class="text-danger pull-right">{{errors.first('obtained marks')}}</span>
-                    </small>
+                    <span class="text-danger pull-right">{{errors.first('obtained marks')}}</span>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
+                    <span class="small text-primary text-uppercase">Max Marks</span>
                     <input v-validate="'required'" type="number" name="max marks" v-model="student.max_marks" class="form-control" placeholder="10"
                       value="10" disabled v-if="this.student.marks_type=='CGPA'" step="any">
-                    <input v-validate="'required'" type="text" name="max marks" v-model="student.max_marks" placeholder="Max Marks" class="form-control"
+                    <input v-validate="'required'" type="text" name="max marks" v-model="student.max_marks" class="form-control"
                       v-on:input="percentCalculate()" v-else>
-                    <span class="small text-primary text-uppercase">Max Marks</span>
-                    <span id="percent" class="small text-muted pull-right">Percent = {{ percent }}%
+                    <span class="small text-danger pull-right">{{errors.first('max marks')}}
+                      <span id="percent" class="small text-muted pull-right">Percent = {{ percent }}%</span>
                     </span>
                   </div>
-                      <span class="text-danger pull-right">{{errors.first('max marks')}}</span>
                 </div>
               </div>
               <div class="row">
@@ -92,9 +89,9 @@
                    <div class="form-group files">
                     <input type="file" v-validate="'required'" accept="application/pdf" class="form-control" ref="file" name="file" id="imageUrl">
                       <small class="form-text text-primary text-uppercase">Upload Scanned Tenth Certificate (.pdf) 
-                         <span class="text-danger pull-right">{{errors.first('File')}}</span>
+                         <span class="small text-danger pull-right">{{errors.first('File')}}</span>
                       </small>
-                </div>
+                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="form-group">
@@ -129,9 +126,6 @@
         },
         percent: 0,
         id: this.$parent.id,
-        monthYear: '',
-        month: '',
-        year: '',
         profile: {
           'univ_roll_no': this.$parent.username,
         },
@@ -147,9 +141,9 @@
     },
     created() {
       axios.get('/api/dashboard/student/me/' + this.$parent.username + '/edit').then(response => {
-        console.log(response.data.data[0]);
+        console.log(response);
         this.student = response.data.data[0];
-        this.monthYear = response.data.data[0].year + '-' + response.data.data[0].month;
+        //this.Year = response.data.data[0].year;
         this.percent = response.data.data[0].percentage;
       }).catch(error => {
         console.log(error);
@@ -157,6 +151,7 @@
     },
     methods: {
       resetmarks() {
+        console.log(this.student.marks_type);
         this.percent = 0;
         this.student.obtained_marks = undefined;
         if (this.student.marks_type == 'CGPA') {
@@ -177,7 +172,7 @@
       },
       percentCalculate() {
         if (this.student.marks_type == 'CGPA') {
-          console.log(this.student.max_marks);
+          //console.log(this.student.max_marks);
           if (this.student.obtained_marks != undefined && (this.student.max_marks != undefined || this.student
               .max_marks != '')) {
             this.percent = parseFloat(this.student.obtained_marks * 9.5).toFixed(3);
@@ -197,10 +192,11 @@
       getAuthUser(name) {
         return this.$store.getters.getAuthUser(name);
       },
-      splitMonthYear(monthYear) {
-        this.student.month = monthYear.split('-')[1];
-        this.student.year = monthYear.split('-')[0];
-      },
+
+      //splitMonthYear(monthYear) {
+      //  this.student.month = monthYear.split('-')[1];
+      //  this.student.year = monthYear.split('-')[0];
+      //},
         //  handleChange(e) {
         //     imagefile = document.querySelector('#file');
         //         this.certificate = e.files[0];
@@ -210,12 +206,13 @@
         //     },
 
       submit() {
+        console.log(this.percent);
         this.load=true;
         let formData = new FormData();
         formData.append('univ_roll_no', this.student.univ_roll_no);
         formData.append('board', this.student.board.toUpperCase());
         formData.append('institute', this.student.institute.toUpperCase());
-        formData.append('month', this.student.month);
+        //formData.append('month', this.student.month);
         formData.append('year', this.student.year);
         formData.append('obtained_marks', this.student.obtained_marks);
         formData.append('max_marks', this.student.max_marks);
@@ -226,10 +223,9 @@
         formData.append('tenth_certificate', imagefile.files[0]);
         //formData.append('tenth_certificate', this.certificate);
         formData.append('_method', 'PUT');
-        console.log(this.student.month);
-        console.log(this.student.year);
+        //console.log(this.student.year);
         // console.log(this.$store.state.auth.username);
-        // console.log('1');
+        //console.log('1');
         axios.post(storeStudentMeURL + this.student.id, formData,{headers: {'Content-Type': 'multipart/form-data'}}
         ).then(response => {
           console.log(response);

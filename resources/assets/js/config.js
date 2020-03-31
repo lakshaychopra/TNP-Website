@@ -38,7 +38,7 @@ export const storeStudentDegreeURL = '/api/dashboard/student/sem/';
 export const storeStudentAggregateURL = '/api/dashboard/student/aggregate/';
 export const viewStudentProfileURL = '/api/dashboard/student/profile/';
 
-
+export const verifyEmail = '/api/dashboard/user/email_verify';
 export const viewPost = '/view/';
 export const addPageURL = '/api/dashboard/about';
 export const aboutWidgetURL = '/api/dashboard/about/widget';
