@@ -18,12 +18,12 @@
             </div>
             <div class="form-group">
               <center>
-                <button
-                  type="submit"
-                  value="Submit"
-                  id="sendotp"
-                  class="btn btn-info btn-lg"
-                >Send OTP</button>
+                <button type="submit" value="Submit" id="sendotp" class="btn btn-info btn-lg">
+                  <span v-if="!load">Send OTP</span>
+                  <span v-else>
+                    <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                  </span>
+                </button>
               </center>
             </div>
           </form>
@@ -60,6 +60,7 @@ import { formstepChangeURL, verifyEmail } from "../../config.js";
 export default {
   data() {
     return {
+      load: false,
       OTP: "",
       confirmail: "",
       id: this.$parent.id,
@@ -81,17 +82,18 @@ export default {
     },
     veri() {
       if (this.OTP == this.confirmail) {
-        alert("Verified");
+        toastr["success"]("Verified !!");
         axios.post(formstepChangeURL, this.form_step).then(stat => {
           if (stat.status == 200) {
             this.$parent.step = 3;
           }
         });
       } else {
-        alert("Invalid OTP");
+        toastr["error"]("Invalid OTP!!");
       }
     },
     emai() {
+      this.load = true;
       console.log(this.mail_id);
       let formData = new FormData();
       formData.append("mail", this.mail_id);
@@ -100,10 +102,12 @@ export default {
         .post("api/dashboard/user/email_verify", formData)
         .then(response => {
           if (response.status == 200) {
+            toastr["success"]("OTP Sent !!");
             let data = response.data.data;
             this.confirmail = data.OTP;
-            console.log('Testing OTP :' + this.confirmail);
+            console.log("Testing OTP :" + this.confirmail);
             this.enterOTP = true;
+            this.load = false;
             $("#sendotp").attr("disabled", true);
           }
         })

@@ -73262,6 +73262,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      load: false,
       OTP: "",
       confirmail: "",
       id: this.$parent.id,
@@ -73286,29 +73287,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       if (this.OTP == this.confirmail) {
-        alert("Verified");
+        toastr["success"]("Verified !!");
         axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], this.form_step).then(function (stat) {
           if (stat.status == 200) {
             _this.$parent.step = 3;
           }
         });
       } else {
-        alert("Invalid OTP");
+        toastr["error"]("Invalid OTP!!");
       }
     },
     emai: function emai() {
       var _this2 = this;
 
+      this.load = true;
       console.log(this.mail_id);
       var formData = new FormData();
       formData.append("mail", this.mail_id);
       formData.append("id", this.id);
       axios.post("api/dashboard/user/email_verify", formData).then(function (response) {
         if (response.status == 200) {
+          toastr["success"]("OTP Sent !!");
           var data = response.data.data;
           _this2.confirmail = data.OTP;
-          console.log('Testing OTP :' + _this2.confirmail);
+          console.log("Testing OTP :" + _this2.confirmail);
           _this2.enterOTP = true;
+          _this2.load = false;
           $("#sendotp").attr("disabled", true);
         }
       }).catch(function (err) {
@@ -73396,7 +73400,16 @@ var render = function() {
                             id: "sendotp"
                           }
                         },
-                        [_vm._v("Send OTP")]
+                        [
+                          !_vm.load
+                            ? _c("span", [_vm._v("Send OTP")])
+                            : _c("span", [
+                                _c("i", {
+                                  staticClass: "fa fa-circle-o-notch fa-spin",
+                                  attrs: { "aria-hidden": "true" }
+                                })
+                              ])
+                        ]
                       )
                     ])
                   ],
@@ -74853,7 +74866,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this3.statusChange).then(function (statusresponse) {
           if (statusresponse.status == 200) {
             // toastr['success']("User Added!!");
-            _this3.$parent.step = 3;
+            _this3.$parent.step = 4;
             // this.$router.push('/req');
           }
         }).catch(function (errors) {
@@ -78519,7 +78532,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this3.statusChange).then(function (statusresponse) {
           if (statusresponse.status == 200) {
             // toastr['success']("User Added!!");
-            _this3.$parent.step = 4;
+            _this3.$parent.step = 5;
             // this.$router.push('/req');
           }
         }).catch(function (errors) {
@@ -79655,7 +79668,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this3.statusChange).then(function (statusresponse) {
           if (statusresponse.status == 200) {
             // toastr['success']("User Added!!");
-            _this3.$parent.step = 5;
+            _this3.$parent.step = 6;
             // this.$router.push('/req');
           }
         }).catch(function (errors) {

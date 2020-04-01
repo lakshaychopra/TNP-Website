@@ -1210,7 +1210,7 @@ export default {
             .then(statusresponse => {
               if (statusresponse.status == 200) {
                 // toastr['success']("User Added!!");
-                this.$parent.step = 3;
+                this.$parent.step = 4;
                 // this.$router.push('/req');
               }
             })

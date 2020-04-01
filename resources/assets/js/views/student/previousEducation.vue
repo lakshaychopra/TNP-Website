@@ -382,7 +382,7 @@
           axios.post(formstepChangeURL, this.statusChange).then(statusresponse => {
             if (statusresponse.status == 200) {
               // toastr['success']("User Added!!");
-              this.$parent.step = 5;
+              this.$parent.step = 6;
               // this.$router.push('/req');
 
             }
