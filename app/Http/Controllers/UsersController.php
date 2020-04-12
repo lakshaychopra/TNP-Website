@@ -273,6 +273,18 @@ class UsersController extends Controller
         return $this->respondSuccess('Deleted', $delete);
     }
 
+    public function changePass(Request $request)
+    {
+        $auth = JWTAuth::parseToken()->authenticate();
+        if (!$auth) {
+            return $this->respondUnauthorized('Failed');
+        }
+        $user = User::find($request->id);
+        $user->password = bcrypt($request->new_password);
+        $user->save();
+        return $this->respondSuccess('Changed Successfully');
+    }
+
 
     public function userExcelFile()
     {
@@ -306,13 +318,13 @@ class UsersController extends Controller
         try {
             $user = User::find($request->id);
             $user->remember_token = rand(1111, 9999);
-            $user->email= $request->mail;
+            $user->email = $request->mail;
             $user->save();
             // Mail::to($user->email)->send(new TwoFactorEmail($user));
         } catch (Exception $e) {
             return $this->respondException($e);
         }
-        return $this->respondData(array('mail'=> $request->mail, 'OTP'=> $user->remember_token));
+        return $this->respondData(array('mail' => $request->mail, 'OTP' => $user->remember_token));
     }
 
     public function userSingleCreateMail()

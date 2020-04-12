@@ -89,6 +89,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::post('/user/step/update', 'UsersController@UpdateFormSteps');
         Route::post('/user/first/login', 'UsersController@FirstLogin');
         Route::post('/user/email_verify', 'UsersController@emailVerify');
+        Route::post('/user/change-password', 'UsersController@changePass');
 
         //SMS service
         Route::resource('otp','SmServiceController');

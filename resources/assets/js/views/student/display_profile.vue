@@ -1,12 +1,72 @@
 
 <template>
-    <div class="container">    
-            <h2 class="card-title mt-3 text-primary">Welcome {{student.name}} :)</h2>
-            <h3>Check your profile by clicking on View Profile link</h3>
-            <h4>Note: You can verify the profile only once</h4>
+  <div class="container">
+    <h2 class="card-title mt-3 text-primary">Welcome {{student.name}} :)</h2>
+    <h3>Check your profile by clicking on View Profile link</h3>
+    <h4>Note: You can verify the profile only once</h4>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      id="gucci"
+      data-target="#pass"
+    >
+      Change
+      Password
+    </button>
+    <div id="pass" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title">Change Password</h1>
+            <button type="button" id='close' class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <form @submit.prevent="valid">
+            <div class="modal-body">
+              <div class="input-group">
+                <label for="pre" class="col-6 mt-2 mb-2">Current Password</label>
+                <input
+                  type="password"
+                  name="pre"
+                  id="pre"
+                  class="col-6 mt-2 mb-2"
+                  required
+                  v-model="passwordForm.current_password"
+                />
+              </div>
+              <div class="input-group">
+                <label for="new" class="col-6 mt-2 mb-2">New Password</label>
+                <input
+                  type="password"
+                  name="new"
+                  id="new"
+                  class="col-6 mt-2 mb-2"
+                  required
+                  v-model="passwordForm.new_password"
+                />
+              </div>
+              <div class="input-group">
+                <label for="renew" class="col-6 mt-2 mb-2">Re-enter New Password</label>
+                <input
+                  type="password"
+                  name="renew"
+                  id="renew"
+                  class="col-6 mt-2 mb-2"
+                  required
+                  v-model="passwordForm.new_password_confirmation"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" id="change" class="btn btn-danger">Change Password</button>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
+  </div>
 
-<!-- <div class="container">    
+  <!-- <div class="container">    
             <h2 class="card-title mt-3 text-primary">Profile Details</h2>
     <hr class="style3">
     <div class="form-group">
@@ -429,7 +489,7 @@
     </div>
 </div>
   -->
-<!-- <h2 class="card-title mt-3 text-primary">Aggregate</h2>
+  <!-- <h2 class="card-title mt-3 text-primary">Aggregate</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
@@ -447,101 +507,161 @@
   </fieldset>
   </div>
     
-</div> -->
+  </div>-->
 </template>     
 <script>
-  import {
-    storeStudentURL,
-    formstepChangeURL,
-    firstLoginviewStudentProfileURL,
-    viewStudentProfileURL
-    } from "../../config.js";
-    import {
-    fetchProfileURL
-  } from "../../config.js";
-    export default {
-        data() {
-            return {
-                userid: this.$store.state.auth.userid,
-                student: {},
-                sem_obt_marks:[],
-                sem_max_marks:[],
-                sem_credits:[],
-                sem_active_backlog:[],
-                sem_passive_backlog:[],
-                sem_percent:[],
-                aggregate_percentage:0,
-                aggreagate_cgpa:0,
-                profile: {
-                    'univ_roll_no': this.$parent.username,
-                },
-                monthYear: '',
-                month: '',
-                year: '',
-                form_step: {
-                   student_form_step: "DEGREE",
-                   id: this.$parent.id
-                }
-            }
-        },
-        created() {
-            axios.get('/api/dashboard/student/profile/' + this.$parent.username + '/edit').then(response => {
-                console.log('Hello'+response.data.data[0]);
+import {
+  storeStudentURL,
+  formstepChangeURL,
+  firstLoginviewStudentProfileURL,
+  viewStudentProfileURL
+} from "../../config.js";
+import { fetchProfileURL } from "../../config.js";
+export default {
+  data() {
+    return {
+      passwordForm: new Form({
+        id: this.$store.state.auth.userid,
+        current_password: "",
+        new_password: "",
+        new_password_confirmation: ""
+      }),
+      userid: this.$store.state.auth.userid,
+      student: {},
+      sem_obt_marks: [],
+      sem_max_marks: [],
+      sem_credits: [],
+      sem_active_backlog: [],
+      sem_passive_backlog: [],
+      sem_percent: [],
+      aggregate_percentage: 0,
+      aggreagate_cgpa: 0,
+      profile: {
+        univ_roll_no: this.$parent.username
+      },
+      monthYear: "",
+      month: "",
+      year: "",
+      form_step: {
+        student_form_step: "DEGREE",
+        id: this.$parent.id
+      }
+    };
+  },
+  created() {
+    axios
+      .get("/api/dashboard/student/profile/" + this.$parent.username + "/edit")
+      .then(response => {
+        console.log("Hello" + response.data.data[0]);
 
-                this.student = response.data.data[0];
-                console.log(this.student );
-                var i;
-                 for( i=1;i<=this.$parent.sem_limit;i++){
-                this.sem_obt_marks[i-1] = this.splitarray(this.student.sem_obt_marks, i);
-                this.sem_max_marks[i-1] = this.splitarray(this.student.sem_max_marks, i);
-                this.sem_credits[i-1] = this.splitarray(this.student.sem_credits, i);
-                this.sem_active_backlog[i-1] = this.splitarray(this.student.sem_active_backlog, i);
-                this.sem_passive_backlog[i-1] = this.splitarray(this.student.sem_passive_backlog, i);
-                this.sem_percent[i-1] = this.splitarray(this.student.sem_percent, i);
-                 }
-
-                  var i , sum=0, product=0, sum_credits = 0, sum_active = 0, sum_passive=0, sum_max = 0;
-              
-                    for(i =0;i<this.$parent.sem_limit;i++){
-                        product = parseInt(this.sem_obt_marks[i]) * parseInt(this.sem_credits[i]);
-                        console.log(product);
-                        sum = sum + product;   
-                         sum_credits = sum_credits + parseInt(this.sem_credits);
-                    }
-                        this.aggregate_cgpa = (sum / sum_credits ) ;
-                        this.aggregate_percentage=(sum / sum_credits ) * 9.5 ;
-                        consle.log(this.aggregate_percentage);
-
-                    
-
-
-              }).catch(error => {
-                console.log(error.response);
-              });
-               // console.log(this.id.student);
-
-              
-                },
-        methods: {
-            splitarray(arr, index) {
-                return arr.split('-')[index - 1];
-            },
-      
-          getAuthUser(name) {
-             return this.$store.getters.getAuthUser(name);
-          }
+        this.student = response.data.data[0];
+        console.log(this.student);
+        var i;
+        for (i = 1; i <= this.$parent.sem_limit; i++) {
+          this.sem_obt_marks[i - 1] = this.splitarray(
+            this.student.sem_obt_marks,
+            i
+          );
+          this.sem_max_marks[i - 1] = this.splitarray(
+            this.student.sem_max_marks,
+            i
+          );
+          this.sem_credits[i - 1] = this.splitarray(
+            this.student.sem_credits,
+            i
+          );
+          this.sem_active_backlog[i - 1] = this.splitarray(
+            this.student.sem_active_backlog,
+            i
+          );
+          this.sem_passive_backlog[i - 1] = this.splitarray(
+            this.student.sem_passive_backlog,
+            i
+          );
+          this.sem_percent[i - 1] = this.splitarray(
+            this.student.sem_percent,
+            i
+          );
         }
+
+        var i,
+          sum = 0,
+          product = 0,
+          sum_credits = 0,
+          sum_active = 0,
+          sum_passive = 0,
+          sum_max = 0;
+
+        for (i = 0; i < this.$parent.sem_limit; i++) {
+          product =
+            parseInt(this.sem_obt_marks[i]) * parseInt(this.sem_credits[i]);
+          console.log(product);
+          sum = sum + product;
+          sum_credits = sum_credits + parseInt(this.sem_credits);
+        }
+        this.aggregate_cgpa = sum / sum_credits;
+        this.aggregate_percentage = (sum / sum_credits) * 9.5;
+        consle.log(this.aggregate_percentage);
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
+    // console.log(this.id.student);
+  },
+  methods: {
+    valid() {
+      if (
+        this.passwordForm.new_password_confirmation == "" ||
+        this.passwordForm.new_password == "" ||
+        this.passwordForm.current_password == ""
+      ) {
+        toastr["error"]('Please Fill all values');
+        return;
+      } else if (this.passwordForm.new_password.length < 8) {
+        toastr["error"]("Passwords cannot be shorter than 8 characters");
+        return;
+      } else if (this.passwordForm.new_password == this.passwordForm.current_password) {
+        toastr["error"]("New Password cannot be same as current");
+        return;
+      } else if (this.passwordForm.new_password != this.passwordForm.new_password_confirmation) {
+        toastr["error"]("Passwords don't match");
+        return;
+      }
+      this.submit();
+    },
+    submit() {
+      axios
+        .post("api/dashboard/user/change-password", this.passwordForm)
+        .then(response => {
+          console.log(response);
+          toastr["success"](response.data.message);
+          this.passwordForm.current_password='';
+          this.passwordForm.new_password='';
+          this.passwordForm.new_password_confirmation='';
+          $( "#close" ).trigger( "click" );
+        })
+        .catch(response => {
+          toastr["error"](response.message);
+        });
+    },
+    splitarray(arr, index) {
+      return arr.split("-")[index - 1];
+    },
+
+    getAuthUser(name) {
+      return this.$store.getters.getAuthUser(name);
     }
-        
+  }
+};
 </script>       
 <style>
-    /* html {
+/* html {
   /* for demo purposes only 
   margin: 2em;
 } */
 
 input[type="text"],
-select.form-control{
+select.form-control {
   background: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -560,6 +680,7 @@ select.form-control:focus {
     margin-left: 10%;
     margin-right: 10%;
 } */
-input[type="text"]:disabled{background-color:transparent;}
-
+input[type="text"]:disabled {
+  background-color: transparent;
+}
 </style>
