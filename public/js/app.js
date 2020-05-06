@@ -50832,7 +50832,7 @@ var render = function() {
                   _c(
                     "li",
                     [
-                      _c("router-link", { attrs: { to: "/configuration" } }, [
+                      _c("router-link", { attrs: { to: "#" } }, [
                         _c("i", { staticClass: "fa fa-cogs" }),
                         _vm._v(" Configuration")
                       ])
@@ -61228,7 +61228,7 @@ var render = function() {
                   _c(
                     "li",
                     [
-                      _c("router-link", { attrs: { to: "/configuration" } }, [
+                      _c("router-link", { attrs: { to: "/" } }, [
                         _c("i", { staticClass: "fa fa-cogs" }),
                         _vm._v(" Configuration")
                       ])
@@ -73614,7 +73614,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.instruction {\n  background: none;\n  border: none;\n  outline: none;\n}\n.vs__dropdown-toggle {\n  border-style: none none solid none !important;\n}\n.text-primary {\n  color: #0185c2 !important;\n}\n.col-form-label {\n  padding-left: 0;\n}\noption:nth-child(1) {\n  background-color: #0099ff;\n  color: black;\n}\n.vdpComponent.vdpWithInput > input {\n  font-size: 15px;\n  width: 100%;\n  height: 30px;\n  margin-top: 5px;\n  border: none;\n}\n.instruction {\n  margin-top: 5px;\n}\n.fa-question-circle {\n  size: 20px;\n}\n#education,\n#stream {\n  display: none;\n}\n", ""]);
+exports.push([module.i, "\n.instruction {\r\n  background: none;\r\n  border: none;\r\n  outline: none;\n}\n.vs__dropdown-toggle {\r\n  border-style: none none solid none !important;\n}\n.text-primary {\r\n  color: #0185c2 !important;\n}\n.col-form-label {\r\n  padding-left: 0;\n}\noption:nth-child(1) {\r\n  background-color: #0099ff;\r\n  color: black;\n}\n.vdpComponent.vdpWithInput > input {\r\n  font-size: 15px;\r\n  width: 100%;\r\n  height: 30px;\r\n  margin-top: 5px;\r\n  border: none;\n}\n.instruction {\r\n  margin-top: 5px;\n}\n.fa-question-circle {\r\n  size: 20px;\n}\n#education,\r\n#stream {\r\n  display: none;\n}\r\n", ""]);
 
 // exports
 
@@ -73654,7 +73654,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n@-webkit-keyframes ripple-data-v-00b465e2 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n@keyframes ripple-data-v-00b465e2 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n.md-radio[data-v-00b465e2] {\n  margin: 16px 0;\n}\n.md-radio.md-radio-inline[data-v-00b465e2] {\n    display: inline-block;\n}\n.md-radio input[type=\"radio\"][data-v-00b465e2] {\n    display: none;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-00b465e2]:before {\n      border-color: #337ab7;\n      -webkit-animation: ripple-data-v-00b465e2 0.2s linear forwards;\n              animation: ripple-data-v-00b465e2 0.2s linear forwards;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-00b465e2]:after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n}\n.md-radio label[data-v-00b465e2] {\n    display: inline-block;\n    height: 20px;\n    position: relative;\n    padding: 0 30px;\n    margin-bottom: 0;\n    cursor: pointer;\n    vertical-align: bottom;\n}\n.md-radio label[data-v-00b465e2]:before, .md-radio label[data-v-00b465e2]:after {\n      position: absolute;\n      content: \"\";\n      border-radius: 50%;\n      -webkit-transition: all 0.3s ease;\n      transition: all 0.3s ease;\n      -webkit-transition-property: border-color, -webkit-transform;\n      transition-property: border-color, -webkit-transform;\n      transition-property: transform, border-color;\n      transition-property: transform, border-color, -webkit-transform;\n}\n.md-radio label[data-v-00b465e2]:before {\n      left: 0;\n      top: 0;\n      width: 20px;\n      height: 20px;\n      border: 2px solid rgba(0, 0, 0, 0.54);\n}\n.md-radio label[data-v-00b465e2]:after {\n      top: 5px;\n      left: 5px;\n      width: 10px;\n      height: 10px;\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      background: #337ab7;\n}\nlabel[data-v-00b465e2] {\n  position: relative;\n}\n.tooltip[data-v-00b465e2] {\n  position: absolute;\n  top: -50px;\n  left: 0;\n  padding: 0.75rem 1rem;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n}\n.tooltip--active[data-v-00b465e2] {\n  font-size: 0.83333rem;\n  line-height: 1.2;\n  color: #323232;\n  background-color: #e5e5e5;\n}\n.tooltip--active[data-v-00b465e2]:after {\n    content: \"\";\n    position: absolute;\n    bottom: -10px;\n    left: 15px;\n    display: block;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 10px 10px 0 10px;\n    border-color: #e5e5e5 transparent transparent transparent;\n}\n", ""]);
+exports.push([module.i, "\n@-webkit-keyframes ripple-data-v-00b465e2 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n@keyframes ripple-data-v-00b465e2 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n.md-radio[data-v-00b465e2] {\n  margin: 16px 0;\n}\n.md-radio.md-radio-inline[data-v-00b465e2] {\n    display: inline-block;\n}\n.md-radio input[type=\"radio\"][data-v-00b465e2] {\n    display: none;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-00b465e2]:before {\n      border-color: #337ab7;\n      -webkit-animation: ripple-data-v-00b465e2 0.2s linear forwards;\n              animation: ripple-data-v-00b465e2 0.2s linear forwards;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-00b465e2]:after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n}\n.md-radio label[data-v-00b465e2] {\n    display: inline-block;\n    height: 20px;\n    position: relative;\n    padding: 0 30px;\n    margin-bottom: 0;\n    cursor: pointer;\n    vertical-align: bottom;\n}\n.md-radio label[data-v-00b465e2]:before, .md-radio label[data-v-00b465e2]:after {\n      position: absolute;\n      content: \"\";\n      border-radius: 50%;\n      -webkit-transition: all 0.3s ease;\n      transition: all 0.3s ease;\n      -webkit-transition-property: border-color, -webkit-transform;\n      transition-property: border-color, -webkit-transform;\n      transition-property: transform, border-color;\n      transition-property: transform, border-color, -webkit-transform;\n}\n.md-radio label[data-v-00b465e2]:before {\n      left: 0;\n      top: 0;\n      width: 20px;\n      height: 20px;\n      border: 2px solid rgba(0, 0, 0, 0.54);\n}\n.md-radio label[data-v-00b465e2]:after {\n      top: 5px;\n      left: 5px;\n      width: 10px;\n      height: 10px;\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      background: #337ab7;\n}\nlabel[data-v-00b465e2] {\n  position: relative;\n}\n.tooltip[data-v-00b465e2] {\n  position: absolute;\n  top: -50px;\n  left: 0;\n  padding: 0.75rem 1rem;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n}\n.tooltip--active[data-v-00b465e2] {\n  font-size: 0.83333rem;\n  line-height: 1.2;\n  color: #323232;\n  background-color: #e5e5e5;\n}\n.tooltip--active[data-v-00b465e2]:after {\n    content: \"\";\n    position: absolute;\n    bottom: -10px;\n    left: 15px;\n    display: block;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 10px 10px 0 10px;\n    border-color: #e5e5e5 transparent transparent transparent;\n}\n.form-group .btn-primary[data-v-00b465e2] {\n  background-color: #0275d8;\n}\n", ""]);
 
 // exports
 
@@ -73672,6 +73672,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_date_pick___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_date_pick__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_date_pick_dist_vueDatePick_css__ = __webpack_require__(401);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_date_pick_dist_vueDatePick_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_date_pick_dist_vueDatePick_css__);
+//
+//
+//
 //
 //
 //
@@ -74988,7 +74991,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-sm-12" }, [
+    _c("div", { staticClass: "col-12" }, [
       _c(
         "form",
         {
@@ -75002,7 +75005,7 @@ var render = function() {
         },
         [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c("div", { staticClass: "form-material card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
@@ -75010,72 +75013,14 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-3" }, [
-                      _c("div", { staticClass: "form-group" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "validate",
-                              rawName: "v-validate",
-                              value: "required",
-                              expression: "'required'"
-                            },
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.student.first_name,
-                              expression: "student.first_name"
-                            }
-                          ],
-                          staticClass: "form-control text-capitalize",
-                          attrs: {
-                            type: "text",
-                            id: "username",
-                            name: "first_name"
-                          },
-                          domProps: { value: _vm.student.first_name },
-                          on: {
-                            focus: function($event) {
-                              return _vm.tooltip()
-                            },
-                            focusout: function($event) {
-                              return _vm.removetooltip()
-                            },
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.student,
-                                "first_name",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "small",
-                          {
-                            staticClass: "form-text text-primary text-uppercase"
-                          },
-                          [
-                            _vm._v(
-                              "\n                      First Name\n                      "
-                            ),
-                            _c(
-                              "span",
-                              { staticClass: "text-danger pull-right" },
-                              [_vm._v(_vm._s(_vm.errors.first("first_name")))]
-                            )
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-10" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "col-lg-3 col-lg-3 col-md-3 col-sm-12 col-sm-12"
+                      },
+                      [
+                        _c("div", { staticClass: "form-group" }, [
                           _c("input", {
                             directives: [
                               {
@@ -75087,13 +75032,17 @@ var render = function() {
                               {
                                 name: "model",
                                 rawName: "v-model",
-                                value: _vm.student.last_name,
-                                expression: "student.last_name"
+                                value: _vm.student.first_name,
+                                expression: "student.first_name"
                               }
                             ],
                             staticClass: "form-control text-capitalize",
-                            attrs: { type: "text", name: "last_name" },
-                            domProps: { value: _vm.student.last_name },
+                            attrs: {
+                              type: "text",
+                              id: "username",
+                              name: "first_name"
+                            },
+                            domProps: { value: _vm.student.first_name },
                             on: {
                               focus: function($event) {
                                 return _vm.tooltip()
@@ -75107,7 +75056,7 @@ var render = function() {
                                 }
                                 _vm.$set(
                                   _vm.student,
-                                  "last_name",
+                                  "first_name",
                                   $event.target.value
                                 )
                               }
@@ -75122,45 +75071,122 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                        Last Name\n                        "
+                                "\n                      First Name\n                      "
                               ),
                               _c(
                                 "span",
                                 { staticClass: "text-danger pull-right" },
-                                [_vm._v(_vm._s(_vm.errors.first("last_name")))]
+                                [_vm._v(_vm._s(_vm.errors.first("first_name")))]
                               )
                             ]
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sl-1" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "instruction",
-                              attrs: {
-                                type: "button",
-                                "data-toggle": "popover",
-                                "data-trigger": "focus",
-                                title: "Instruction",
-                                "data-content":
-                                  "\n                                1. The Last name is Mandatory and if not mention the last name of father."
-                              },
-                              on: {
-                                mouseup: function($event) {
-                                  return _vm.popscreen()
-                                }
-                              }
-                            },
-                            [_c("i", { staticClass: "far fa-question-circle" })]
-                          )
                         ])
-                      ])
-                    ]),
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "col-md-3" },
+                      {
+                        staticClass:
+                          "col-lg-3 col-lg-3 col-md-3 col-sm-12 col-sm-12"
+                      },
+                      [
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-md-10" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "validate",
+                                  rawName: "v-validate",
+                                  value: "required",
+                                  expression: "'required'"
+                                },
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.student.last_name,
+                                  expression: "student.last_name"
+                                }
+                              ],
+                              staticClass: "form-control text-capitalize",
+                              attrs: { type: "text", name: "last_name" },
+                              domProps: { value: _vm.student.last_name },
+                              on: {
+                                focus: function($event) {
+                                  return _vm.tooltip()
+                                },
+                                focusout: function($event) {
+                                  return _vm.removetooltip()
+                                },
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.student,
+                                    "last_name",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "small",
+                              {
+                                staticClass:
+                                  "form-text text-primary text-uppercase"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                        Last Name\n                        "
+                                ),
+                                _c(
+                                  "span",
+                                  { staticClass: "text-danger pull-right" },
+                                  [
+                                    _vm._v(
+                                      _vm._s(_vm.errors.first("last_name"))
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sl-1" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "instruction",
+                                attrs: {
+                                  type: "button",
+                                  "data-toggle": "popover",
+                                  "data-trigger": "focus",
+                                  title: "Instruction",
+                                  "data-content":
+                                    "\n                                1. The Last name is Mandatory and if not mention the last name of father."
+                                },
+                                on: {
+                                  mouseup: function($event) {
+                                    return _vm.popscreen()
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "far fa-question-circle"
+                                })
+                              ]
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-lg-3 col-md-3 col-sm-12" },
                       [
                         _c("DatePick", {
                           directives: [
@@ -75202,7 +75228,7 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3" }, [
+                    _c("div", { staticClass: "col-lg-3 col-md-3 col-sm-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c(
                           "select",
@@ -75304,12 +75330,13 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c(
                           "label",
                           {
-                            staticClass: "col-md-2 col-form-label",
+                            staticClass:
+                              "col-lg-4 col-md-4 col-sm-12 col-form-label text-primary text-uppercase",
                             attrs: { for: "gender" }
                           },
                           [_vm._v("Gender :")]
@@ -75317,7 +75344,10 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "col-md-2 md-radio md-radio-inline" },
+                          {
+                            staticClass:
+                              "col-lg-3 col-md-3 col-sm-12 md-radio md-radio-inline"
+                          },
                           [
                             _c("input", {
                               directives: [
@@ -75358,7 +75388,10 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "col-md-2 md-radio md-radio-inline" },
+                          {
+                            staticClass:
+                              "col-lg-3 col-md-3 col-sm-12 md-radio md-radio-inline"
+                          },
                           [
                             _c("input", {
                               directives: [
@@ -75643,7 +75676,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c("div", { staticClass: "form-material card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
@@ -76401,7 +76434,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row", attrs: { id: "education" } }, [
-            _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
                 _vm._v("Graduation Details")
               ]),
@@ -77018,7 +77051,7 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass: "col-md-3",
+                        staticClass: "col-lg-3 col-md-3 col-sm-12",
                         staticStyle: { display: "none" },
                         attrs: { id: "CGPA" }
                       },
@@ -77080,7 +77113,7 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass: "col-md-3",
+                        staticClass: "col-lg-3 col-md-3 col-sm-12",
                         staticStyle: { display: "none" },
                         attrs: { id: "percentage" }
                       },
@@ -77178,7 +77211,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c("div", { staticClass: "form-material card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
@@ -77186,7 +77219,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c(
                           "em",
@@ -77262,7 +77295,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c("input", {
                           directives: [
@@ -77322,7 +77355,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c(
                           "em",
@@ -77398,7 +77431,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c("input", {
                           directives: [
@@ -77458,7 +77491,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c("input", {
                           directives: [
@@ -77519,20 +77552,24 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c(
                           "label",
                           {
-                            staticClass: "col-md-4 col-form-label",
+                            staticClass:
+                              "col-lg-5 col-md-5 col-sm-12 col-form-label text-primary text-uppercase",
                             attrs: { for: "farming_background" }
                           },
-                          [_vm._v("Farming Background :")]
+                          [_vm._v("Farming Background:")]
                         ),
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "col-md-2 md-radio md-radio-inline" },
+                          {
+                            staticClass:
+                              "col-lg-3 col-md-3 col-sm-12 md-radio md-radio-inline"
+                          },
                           [
                             _c("input", {
                               directives: [
@@ -77580,7 +77617,10 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "col-md-2 md-radio md-radio-inline" },
+                          {
+                            staticClass:
+                              "col-lg-3 col-md-3 col-sm-12 md-radio md-radio-inline"
+                          },
                           [
                             _c("input", {
                               directives: [
@@ -77638,7 +77678,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c("div", { staticClass: "form-material card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
@@ -77920,7 +77960,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c("div", { staticClass: "form-material card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c("h2", { staticClass: "card-title mt-3 text-primary" }, [
@@ -78038,7 +78078,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-1" }, [
+                    _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-12" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c(
                           "button",
@@ -78123,8 +78163,8 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "row mb-3" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c("div", { staticClass: "form-group" }, [
                 _c(
                   "button",
@@ -78248,7 +78288,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.text-primary[data-v-7c6523ad] {\n  color: #0185c2 !important;\n}\n.col-form-label[data-v-7c6523ad] {\n  padding-left: 0;\n}\n\n", ""]);
+exports.push([module.i, "\n.text-primary[data-v-7c6523ad] {\r\n  color: #0185c2 !important;\n}\n.col-form-label[data-v-7c6523ad] {\r\n  padding-left: 0;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -78288,7 +78328,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n@-webkit-keyframes ripple-data-v-7c6523ad {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n@keyframes ripple-data-v-7c6523ad {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n.md-radio[data-v-7c6523ad] {\n  margin: 16px 0;\n}\n.md-radio.md-radio-inline[data-v-7c6523ad] {\n    display: inline-block;\n}\n.md-radio input[type=\"radio\"][data-v-7c6523ad] {\n    display: none;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-7c6523ad]:before {\n      border-color: #337ab7;\n      -webkit-animation: ripple-data-v-7c6523ad 0.2s linear forwards;\n              animation: ripple-data-v-7c6523ad 0.2s linear forwards;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-7c6523ad]:after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n}\n.md-radio label[data-v-7c6523ad] {\n    display: inline-block;\n    height: 20px;\n    position: relative;\n    padding: 0 30px;\n    margin-bottom: 0;\n    cursor: pointer;\n    vertical-align: bottom;\n}\n.md-radio label[data-v-7c6523ad]:before, .md-radio label[data-v-7c6523ad]:after {\n      position: absolute;\n      content: '';\n      border-radius: 50%;\n      -webkit-transition: all .3s ease;\n      transition: all .3s ease;\n      -webkit-transition-property: border-color, -webkit-transform;\n      transition-property: border-color, -webkit-transform;\n      transition-property: transform, border-color;\n      transition-property: transform, border-color, -webkit-transform;\n}\n.md-radio label[data-v-7c6523ad]:before {\n      left: 0;\n      top: 0;\n      width: 20px;\n      height: 20px;\n      border: 2px solid rgba(0, 0, 0, 0.54);\n}\n.md-radio label[data-v-7c6523ad]:after {\n      top: 5px;\n      left: 5px;\n      width: 10px;\n      height: 10px;\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      background: #337ab7;\n}\n", ""]);
+exports.push([module.i, "\n@-webkit-keyframes ripple-data-v-7c6523ad {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n@keyframes ripple-data-v-7c6523ad {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n.md-radio[data-v-7c6523ad] {\n  margin: 16px 0;\n}\n.md-radio.md-radio-inline[data-v-7c6523ad] {\n    display: inline-block;\n}\n.md-radio input[type=\"radio\"][data-v-7c6523ad] {\n    display: none;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-7c6523ad]:before {\n      border-color: #337ab7;\n      -webkit-animation: ripple-data-v-7c6523ad 0.2s linear forwards;\n              animation: ripple-data-v-7c6523ad 0.2s linear forwards;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-7c6523ad]:after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n}\n.md-radio label[data-v-7c6523ad] {\n    display: inline-block;\n    height: 20px;\n    position: relative;\n    padding: 0 30px;\n    margin-bottom: 0;\n    cursor: pointer;\n    vertical-align: bottom;\n}\n.md-radio label[data-v-7c6523ad]:before, .md-radio label[data-v-7c6523ad]:after {\n      position: absolute;\n      content: \"\";\n      border-radius: 50%;\n      -webkit-transition: all 0.3s ease;\n      transition: all 0.3s ease;\n      -webkit-transition-property: border-color, -webkit-transform;\n      transition-property: border-color, -webkit-transform;\n      transition-property: transform, border-color;\n      transition-property: transform, border-color, -webkit-transform;\n}\n.md-radio label[data-v-7c6523ad]:before {\n      left: 0;\n      top: 0;\n      width: 20px;\n      height: 20px;\n      border: 2px solid rgba(0, 0, 0, 0.54);\n}\n.md-radio label[data-v-7c6523ad]:after {\n      top: 5px;\n      left: 5px;\n      width: 10px;\n      height: 10px;\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      background: #337ab7;\n}\n", ""]);
 
 // exports
 
@@ -78414,32 +78454,106 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       student: {
-        marks_type: 'CGPA'
+        marks_type: "CGPA"
       },
       percent: 0,
       id: this.$parent.id,
       profile: {
-        'univ_roll_no': this.$parent.username
+        univ_roll_no: this.$parent.username
       },
       statusChange: {
-        'student_form_step': 'METRICS_EDUCATION',
-        'id': this.$parent.id
+        student_form_step: "METRICS_EDUCATION",
+        id: this.$parent.id
       },
       files: {},
-      certificate: '',
+      certificate: "",
       load: false
     };
   },
   created: function created() {
     var _this = this;
 
-    axios.get('/api/dashboard/student/me/' + this.$parent.username + '/edit').then(function (response) {
+    axios.get("/api/dashboard/student/me/" + this.$parent.username + "/edit").then(function (response) {
       console.log(response);
       _this.student = response.data.data[0];
       //this.Year = response.data.data[0].year;
@@ -78454,7 +78568,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log(this.student.marks_type);
       this.percent = 0;
       this.student.obtained_marks = undefined;
-      if (this.student.marks_type == 'CGPA') {
+      if (this.student.marks_type == "CGPA") {
         this.student.max_marks = 10;
       } else {
         this.student.max_marks = undefined;
@@ -78467,14 +78581,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (result) {
           _this2.submit();
         } else {
-          alert('Please enter missing details.');
+          alert("Please enter missing details.");
         }
       });
     },
     percentCalculate: function percentCalculate() {
-      if (this.student.marks_type == 'CGPA') {
+      if (this.student.marks_type == "CGPA") {
         //console.log(this.student.max_marks);
-        if (this.student.obtained_marks != undefined && (this.student.max_marks != undefined || this.student.max_marks != '')) {
+        if (this.student.obtained_marks != undefined && (this.student.max_marks != undefined || this.student.max_marks != "")) {
           this.percent = parseFloat(this.student.obtained_marks * 9.5).toFixed(3);
         } else {
           this.percent = 0;
@@ -78510,24 +78624,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log(this.percent);
       this.load = true;
       var formData = new FormData();
-      formData.append('univ_roll_no', this.student.univ_roll_no);
-      formData.append('board', this.student.board.toUpperCase());
-      formData.append('institute', this.student.institute.toUpperCase());
+      formData.append("univ_roll_no", this.student.univ_roll_no);
+      formData.append("board", this.student.board.toUpperCase());
+      formData.append("institute", this.student.institute.toUpperCase());
       //formData.append('month', this.student.month);
-      formData.append('year', this.student.year);
-      formData.append('obtained_marks', this.student.obtained_marks);
-      formData.append('max_marks', this.student.max_marks);
-      formData.append('marks_type', this.student.marks_type);
-      formData.append('percentage', this.percent);
-      var imagefile = document.querySelector('#imageUrl');
+      formData.append("year", this.student.year);
+      formData.append("obtained_marks", this.student.obtained_marks);
+      formData.append("max_marks", this.student.max_marks);
+      formData.append("marks_type", this.student.marks_type);
+      formData.append("percentage", this.percent);
+      var imagefile = document.querySelector("#imageUrl");
       console.log(imagefile.files[0]);
-      formData.append('tenth_certificate', imagefile.files[0]);
+      formData.append("tenth_certificate", imagefile.files[0]);
       //formData.append('tenth_certificate', this.certificate);
-      formData.append('_method', 'PUT');
+      formData.append("_method", "PUT");
       //console.log(this.student.year);
       // console.log(this.$store.state.auth.username);
       //console.log('1');
-      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["A" /* storeStudentMeURL */] + this.student.id, formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
+      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["A" /* storeStudentMeURL */] + this.student.id, formData, {
+        headers: { "Content-Type": "multipart/form-data" }
+      }).then(function (response) {
         console.log(response);
         axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this3.statusChange).then(function (statusresponse) {
           if (statusresponse.status == 200) {
@@ -78637,7 +78753,7 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "ICSE" } }, [
-                            _vm._v(" ICSE ")
+                            _vm._v("ICSE")
                           ]),
                           _vm._v(" "),
                           _c("option", { attrs: { value: "PSEB" } }, [
@@ -78762,7 +78878,7 @@ var render = function() {
                           staticClass: "col-md-2 col-form-label",
                           attrs: { for: "" }
                         },
-                        [_vm._v("Marks Type : ")]
+                        [_vm._v("Marks Type :")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -79051,7 +79167,8 @@ var render = function() {
                         { staticClass: "small text-danger pull-right" },
                         [
                           _vm._v(
-                            _vm._s(_vm.errors.first("max marks")) +
+                            "\n                    " +
+                              _vm._s(_vm.errors.first("max marks")) +
                               "\n                    "
                           ),
                           _c(
@@ -79097,7 +79214,7 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "Upload Scanned Tenth Certificate (.pdf) \n                       "
+                            "\n                    Upload Scanned Tenth Certificate (.pdf)\n                    "
                           ),
                           _c(
                             "span",
@@ -79109,8 +79226,8 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-8" }, [
-                    _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "col-md-8 mb-5" }, [
+                    _c("div", { staticClass: "form-group " }, [
                       _c(
                         "button",
                         {
@@ -79120,9 +79237,7 @@ var render = function() {
                         },
                         [
                           !_vm.load
-                            ? _c("span", [
-                                _vm._v("Submit\n                    ")
-                              ])
+                            ? _c("span", [_vm._v("Submit")])
                             : _c("span", [
                                 _c("i", {
                                   staticClass: "fa fa-circle-o-notch fa-spin",
@@ -79239,7 +79354,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.text-primary {\n  color: #0185c2 !important;\n}\n.col-form-label {\n  padding-left: 0;\n}\n#select_option{\n  margin-bottom: 0px !important;\n}\n#Diploma,#twelth,#submit{\n  display: none;\n}\n", ""]);
+exports.push([module.i, "\n.text-primary {\r\n  color: #0185c2 !important;\n}\n.col-form-label {\r\n  padding-left: 0;\n}\n#select_option {\r\n  margin-bottom: 0px !important;\n}\n#Diploma,\r\n#twelth,\r\n#submit {\r\n  display: none;\n}\r\n", ""]);
 
 // exports
 
@@ -79279,7 +79394,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n@-webkit-keyframes ripple-data-v-5081c7f3 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n@keyframes ripple-data-v-5081c7f3 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n.md-radio[data-v-5081c7f3] {\n  margin: 16px 0;\n}\n.md-radio.md-radio-inline[data-v-5081c7f3] {\n    display: inline-block;\n}\n.md-radio input[type=\"radio\"][data-v-5081c7f3] {\n    display: none;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-5081c7f3]:before {\n      border-color: #337ab7;\n      -webkit-animation: ripple-data-v-5081c7f3 0.2s linear forwards;\n              animation: ripple-data-v-5081c7f3 0.2s linear forwards;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-5081c7f3]:after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n}\n.md-radio label[data-v-5081c7f3] {\n    display: inline-block;\n    height: 20px;\n    position: relative;\n    padding: 0 30px;\n    margin-bottom: 0;\n    cursor: pointer;\n    vertical-align: bottom;\n}\n.md-radio label[data-v-5081c7f3]:before, .md-radio label[data-v-5081c7f3]:after {\n      position: absolute;\n      content: '';\n      border-radius: 50%;\n      -webkit-transition: all .3s ease;\n      transition: all .3s ease;\n      -webkit-transition-property: border-color, -webkit-transform;\n      transition-property: border-color, -webkit-transform;\n      transition-property: transform, border-color;\n      transition-property: transform, border-color, -webkit-transform;\n}\n.md-radio label[data-v-5081c7f3]:before {\n      left: 0;\n      top: 0;\n      width: 20px;\n      height: 20px;\n      border: 2px solid rgba(0, 0, 0, 0.54);\n}\n.md-radio label[data-v-5081c7f3]:after {\n      top: 5px;\n      left: 5px;\n      width: 10px;\n      height: 10px;\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      background: #337ab7;\n}\n", ""]);
+exports.push([module.i, "\n@-webkit-keyframes ripple-data-v-5081c7f3 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n@keyframes ripple-data-v-5081c7f3 {\n0% {\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);\n}\n50% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);\n}\n100% {\n    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n            box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);\n}\n}\n.md-radio[data-v-5081c7f3] {\n  margin: 16px 0;\n}\n.md-radio.md-radio-inline[data-v-5081c7f3] {\n    display: inline-block;\n}\n.md-radio input[type=\"radio\"][data-v-5081c7f3] {\n    display: none;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-5081c7f3]:before {\n      border-color: #337ab7;\n      -webkit-animation: ripple-data-v-5081c7f3 0.2s linear forwards;\n              animation: ripple-data-v-5081c7f3 0.2s linear forwards;\n}\n.md-radio input[type=\"radio\"]:checked + label[data-v-5081c7f3]:after {\n      -webkit-transform: scale(1);\n              transform: scale(1);\n}\n.md-radio label[data-v-5081c7f3] {\n    display: inline-block;\n    height: 20px;\n    position: relative;\n    padding: 0 30px;\n    margin-bottom: 0;\n    cursor: pointer;\n    vertical-align: bottom;\n}\n.md-radio label[data-v-5081c7f3]:before, .md-radio label[data-v-5081c7f3]:after {\n      position: absolute;\n      content: \"\";\n      border-radius: 50%;\n      -webkit-transition: all 0.3s ease;\n      transition: all 0.3s ease;\n      -webkit-transition-property: border-color, -webkit-transform;\n      transition-property: border-color, -webkit-transform;\n      transition-property: transform, border-color;\n      transition-property: transform, border-color, -webkit-transform;\n}\n.md-radio label[data-v-5081c7f3]:before {\n      left: 0;\n      top: 0;\n      width: 20px;\n      height: 20px;\n      border: 2px solid rgba(0, 0, 0, 0.54);\n}\n.md-radio label[data-v-5081c7f3]:after {\n      top: 5px;\n      left: 5px;\n      width: 10px;\n      height: 10px;\n      -webkit-transform: scale(0);\n              transform: scale(0);\n      background: #337ab7;\n}\n.form-group .btn-lg[data-v-5081c7f3] {\n  margin-bottom: 10px;\n}\n", ""]);
 
 // exports
 
@@ -79481,22 +79596,138 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       student: {
-        education: '',
-        year_gap: '',
-        XII_institute: '',
-        XII_year: '',
-        XII_obtained_marks: '',
-        XII_max_marks: '',
-        diploma_institute: '',
-        diploma_obtained_marks: '',
-        diploma_max_marks: '',
-        jee_rank: ''
+        education: "",
+        year_gap: "",
+        XII_institute: "",
+        XII_year: "",
+        XII_obtained_marks: "",
+        XII_max_marks: "",
+        diploma_institute: "",
+        diploma_obtained_marks: "",
+        diploma_max_marks: "",
+        jee_rank: ""
       },
       diploma_percent: 0,
       imageUrl1: null,
@@ -79507,11 +79738,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       year_joining: 2017,
       year: 0,
       profile: {
-        'univ_roll_no': this.$parent.username
+        univ_roll_no: this.$parent.username
       },
       statusChange: {
-        'student_form_step': 'PREVIOUS_EDUCATION',
-        'id': this.$parent.id
+        student_form_step: "PREVIOUS_EDUCATION",
+        id: this.$parent.id
       },
       load: false
     };
@@ -79519,14 +79750,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     var _this = this;
 
-    axios.get('/api/dashboard/student/me/' + this.$parent.username + '/edit').then(function (response) {
+    axios.get("/api/dashboard/student/me/" + this.$parent.username + "/edit").then(function (response) {
       // console.log(response.data.data[0].year);
       _this.year = response.data.data[0].year;
     }).catch(function (error) {
       console.log(error);
     });
 
-    axios.get('/api/dashboard/student/pe/' + this.$parent.username + '/edit').then(function (response) {
+    axios.get("/api/dashboard/student/pe/" + this.$parent.username + "/edit").then(function (response) {
       //console.log(response.data.data[0]);
       // console.log(1);
       _this.student = response.data.data[0];
@@ -79539,12 +79770,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     selection: function selection() {
-      if (this.student.education == 'XII') {
+      if (this.student.education == "XII") {
         $("#Diploma").hide();
         $("#twelth").show();
         $("#Diploma :input").attr("disabled", true);
         $("#twelth :input").attr("disabled", false);
-      } else if (this.student.education == 'DIPLOMA') {
+      } else if (this.student.education == "DIPLOMA") {
         $("#twelth").hide();
         $("#Diploma").show();
         $("#twelth :input").attr("disabled", true);
@@ -79556,7 +79787,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         $("#Diploma :input").attr("disabled", false);
       }
       this.student.year_gap = undefined;
-      $('#submit').show();
+      $("#submit").show();
     },
 
     // resetmarks() {
@@ -79589,8 +79820,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // var gap = this.student.year_gap;
       // console.log(document.getElementById('XII_year').value.length);
       if (this.student.XII_year <= this.year_joining || this.student.diploma_year <= this.year_joining) {
-        if (document.getElementById('XII_year').value.length == 4 || document.getElementById('diploma_year').value.length == 4) {
-          if (this.student.education == 'XII' || this.student.education == 'BOTH') {
+        if (document.getElementById("XII_year").value.length == 4 || document.getElementById("diploma_year").value.length == 4) {
+          if (this.student.education == "XII" || this.student.education == "BOTH") {
             // console.log('1111');
             // console.log(this.student.year);
             this.student.year_gap = this.year_joining - this.student.XII_year;
@@ -79599,7 +79830,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else {
               this.student.year_gap = 0 + this.tt_gap;
             }
-          } else if (this.student.education == 'DIPLOMA') {
+          } else if (this.student.education == "DIPLOMA") {
             // console.log(this.student.diploma_year);
             this.student.year_gap = this.year_joining - this.student.diploma_year;
             if (this.student.year_gap > 0) {
@@ -79630,7 +79861,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (result) {
           _this2.submit();
         } else {
-          alert('Please enter missing details.');
+          alert("Please enter missing details.");
         }
       });
     },
@@ -79641,30 +79872,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       //console.log(this.diploma_percent);
       this.load = true;
       var formData = new FormData();
-      formData.append('univ_roll_no', this.student.univ_roll_no);
-      formData.append('education', this.student.education);
-      formData.append('year_gap', this.student.year_gap);
-      formData.append('XII_board', this.student.XII_board);
-      formData.append('XII_institute', this.student.XII_institute);
-      formData.append('XII_year', this.student.XII_year);
-      formData.append('XII_obtained_marks', this.student.XII_obtained_marks);
-      formData.append('XII_max_marks', this.student.XII_max_marks);
-      formData.append('XII_percentage', this.XII_percent);
-      formData.append('jee_rank', this.student.jee_rank);
-      var imagefile = document.querySelector('#imageUrl1');
-      formData.append('XII_previous_edu_certificate', imagefile.files[0]);
-      formData.append('diploma_board', this.student.diploma_board);
-      formData.append('diploma_institute', this.student.diploma_institute);
-      formData.append('diploma_year', this.student.diploma_year);
-      formData.append('diploma_obtained_marks', this.student.diploma_obtained_marks);
-      formData.append('diploma_max_marks', this.student.diploma_max_marks);
-      formData.append('diploma_percentage', this.diploma_percent);
+      formData.append("univ_roll_no", this.student.univ_roll_no);
+      formData.append("education", this.student.education);
+      formData.append("year_gap", this.student.year_gap);
+      formData.append("XII_board", this.student.XII_board);
+      formData.append("XII_institute", this.student.XII_institute);
+      formData.append("XII_year", this.student.XII_year);
+      formData.append("XII_obtained_marks", this.student.XII_obtained_marks);
+      formData.append("XII_max_marks", this.student.XII_max_marks);
+      formData.append("XII_percentage", this.XII_percent);
+      formData.append("jee_rank", this.student.jee_rank);
+      var imagefile = document.querySelector("#imageUrl1");
+      formData.append("XII_previous_edu_certificate", imagefile.files[0]);
+      formData.append("diploma_board", this.student.diploma_board);
+      formData.append("diploma_institute", this.student.diploma_institute);
+      formData.append("diploma_year", this.student.diploma_year);
+      formData.append("diploma_obtained_marks", this.student.diploma_obtained_marks);
+      formData.append("diploma_max_marks", this.student.diploma_max_marks);
+      formData.append("diploma_percentage", this.diploma_percent);
 
-      var imagefile = document.querySelector('#imageUrl2');
-      formData.append('diploma_previous_edu_certificate', imagefile.files[0]);
-      formData.append('_method', 'PUT');
+      var imagefile = document.querySelector("#imageUrl2");
+      formData.append("diploma_previous_edu_certificate", imagefile.files[0]);
+      formData.append("_method", "PUT");
       //console.log(this.student);
-      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["B" /* storeStudentPeURL */] + this.student.id, formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (response) {
+      axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["B" /* storeStudentPeURL */] + this.student.id, formData, {
+        headers: { "Content-Type": "multipart/form-data" }
+      }).then(function (response) {
         axios.post(__WEBPACK_IMPORTED_MODULE_0__config_js__["j" /* formstepChangeURL */], _this3.statusChange).then(function (statusresponse) {
           if (statusresponse.status == 200) {
             // toastr['success']("User Added!!");
@@ -79704,7 +79937,7 @@ var render = function() {
         },
         [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c("div", { staticClass: "form-material card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
@@ -79728,16 +79961,18 @@ var render = function() {
                           _c(
                             "label",
                             {
-                              staticClass: "col-md-2 col-form-label",
+                              staticClass:
+                                "col-lg-3 col-md-3 col-sm-12 col-form-label text-primary text-uppercase",
                               attrs: { for: "" }
                             },
-                            [_vm._v("Education Type : ")]
+                            [_vm._v("Education Type :")]
                           ),
                           _vm._v(" "),
                           _c(
                             "div",
                             {
-                              staticClass: "col-md-1 md-radio md-radio-inline"
+                              staticClass:
+                                "col-lg-2 col-md-2 col-sm-12 md-radio md-radio-inline"
                             },
                             [
                               _c("input", {
@@ -79784,7 +80019,8 @@ var render = function() {
                           _c(
                             "div",
                             {
-                              staticClass: "col-md-1 md-radio md-radio-inline"
+                              staticClass:
+                                "col-lg-2 col-md-2 col-sm-12 md-radio md-radio-inline"
                             },
                             [
                               _c("input", {
@@ -79828,7 +80064,8 @@ var render = function() {
                           _c(
                             "div",
                             {
-                              staticClass: "col-md-2 md-radio md-radio-inline"
+                              staticClass:
+                                "col-lg-2 col-md-2 col-sm-12 md-radio md-radio-inline"
                             },
                             [
                               _c("input", {
@@ -79941,7 +80178,7 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("option", { attrs: { value: "ICSE" } }, [
-                              _vm._v("ICSE ")
+                              _vm._v("ICSE")
                             ]),
                             _vm._v(" "),
                             _c("option", { attrs: { value: "PSEB" } }, [
@@ -80223,11 +80460,7 @@ var render = function() {
                           {
                             staticClass: "form-text text-primary text-uppercase"
                           },
-                          [
-                            _vm._v(
-                              "Upload Scanned Certificate (.pdf) \n                      "
-                            )
-                          ]
+                          [_vm._v("Upload Scanned Certificate (.pdf)")]
                         )
                       ])
                     ])
@@ -80294,7 +80527,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "col-md-8" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c(
                           "small",
@@ -80480,7 +80713,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "Percent = " + _vm._s(_vm.diploma_percent) + "% "
+                              "Percent = " + _vm._s(_vm.diploma_percent) + "%"
                             )
                           ]
                         )
@@ -80515,11 +80748,7 @@ var render = function() {
                           {
                             staticClass: "form-text text-primary text-uppercase"
                           },
-                          [
-                            _vm._v(
-                              "Upload Scanned Certificate (.pdf) \n                      "
-                            )
-                          ]
+                          [_vm._v("Upload Scanned Certificate (.pdf)")]
                         )
                       ])
                     ])
@@ -80700,7 +80929,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* html {\n  /* for demo purposes only \n  margin: 2em;\n} */\ninput[type=\"text\"],\nselect.form-control {\n  background: transparent;\n  border: none;\n  border-bottom: 1px solid #000000;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  border-radius: 0;\n}\ninput[type=\"text\"]:focus,\nselect.form-control:focus {\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\n/* body\n{\n    margin-left: 10%;\n    margin-right: 10%;\n} */\ninput[type=\"text\"]:disabled {\n  background-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n  /* for demo purposes only \r\n  margin: 2em;\r\n} */\ninput[type=\"text\"],\r\nselect.form-control {\r\n  background: transparent;\r\n  border: none;\r\n  border-bottom: 1px solid #000000;\r\n  -webkit-box-shadow: none;\r\n  box-shadow: none;\r\n  border-radius: 0;\n}\ninput[type=\"text\"]:focus,\r\nselect.form-control:focus {\r\n  -webkit-box-shadow: none;\r\n  box-shadow: none;\n}\r\n/* body\r\n{\r\n    margin-left: 10%;\r\n    margin-right: 10%;\r\n} */\ninput[type=\"text\"]:disabled {\r\n  background-color: transparent;\n}\n.container .btn-primary{\r\n  background-color: #0275d8;\n}\n.container .text-primary{\r\n  color: #0275d8 !important;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -81373,7 +81602,7 @@ var render = function() {
       "div",
       { staticClass: "modal fade", attrs: { id: "pass", role: "dialog" } },
       [
-        _c("div", { staticClass: "modal-dialog" }, [
+        _c("div", { staticClass: "modal-dialog modal-lg" }, [
           _c("div", { staticClass: "modal-content" }, [
             _vm._m(0),
             _vm._v(" "),
@@ -82482,7 +82711,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* html {\n  /* for demo purposes only \n  margin: 2em;\n} */\n.row {\n  width: 100%;\n}\ninput[type=\"text\"],\nselect.form-control {\n  background: transparent;\n  border: none;\n  border-bottom: 1px solid #000000;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  border-radius: 0;\n  color: black;\n}\ninput[type=\"text\"]:focus,\nselect.form-control:focus {\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\nbutton:disabled {\n  cursor: not-allowed;\n}\n/* body\n{\n    margin-left: 10%;\n    margin-right: 10%;\n} */\ninput[type=\"text\"]:disabled {\n  background-color: transparent;\n}\ntextarea {\n  border: 1px solid black !important;\n}\nlabel {\n  color: #5bc0de;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n  /* for demo purposes only \r\n  margin: 2em;\r\n} */\n.row {\r\n  width: 100%;\n}\ninput[type=\"text\"],\r\nselect.form-control {\r\n  background: transparent;\r\n  border: none;\r\n  border-bottom: 1px solid #000000;\r\n  -webkit-box-shadow: none;\r\n  box-shadow: none;\r\n  border-radius: 0;\r\n  color: black;\n}\ninput[type=\"text\"]:focus,\r\nselect.form-control:focus {\r\n  -webkit-box-shadow: none;\r\n  box-shadow: none;\n}\nbutton:disabled {\r\n  cursor: not-allowed;\n}\r\n/* body\r\n{\r\n    margin-left: 10%;\r\n    margin-right: 10%;\r\n} */\ninput[type=\"text\"]:disabled {\r\n  background-color: transparent;\n}\ntextarea {\r\n  border: 1px solid black !important;\n}\nlabel {\r\n  color: #5bc0de;\n}\r\n", ""]);
 
 // exports
 

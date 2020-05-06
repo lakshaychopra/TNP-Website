@@ -15,7 +15,7 @@
       Password
     </button>
     <div id="pass" class="modal fade" role="dialog">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title">Change Password</h1>
@@ -683,4 +683,12 @@ select.form-control:focus {
 input[type="text"]:disabled {
   background-color: transparent;
 }
+
+.container .btn-primary{
+  background-color: #0275d8;
+}
+.container .text-primary{
+  color: #0275d8 !important;
+}
+
 </style>
