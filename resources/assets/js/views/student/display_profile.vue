@@ -3,67 +3,7 @@
   <div class="container">
     <h2 class="card-title mt-3 text-primary">Welcome {{student.name}} :)</h2>
     <h3>Check your profile by clicking on View Profile link</h3>
-    <h4>Note: You can verify the profile only once</h4>
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      id="gucci"
-      data-target="#pass"
-    >
-      Change
-      Password
-    </button>
-    <div id="pass" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title">Change Password</h1>
-            <button type="button" id='close' class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <form @submit.prevent="valid">
-            <div class="modal-body">
-              <div class="input-group">
-                <label for="pre" class="col-6 mt-2 mb-2">Current Password</label>
-                <input
-                  type="password"
-                  name="pre"
-                  id="pre"
-                  class="col-6 mt-2 mb-2"
-                  required
-                  v-model="passwordForm.current_password"
-                />
-              </div>
-              <div class="input-group">
-                <label for="new" class="col-6 mt-2 mb-2">New Password</label>
-                <input
-                  type="password"
-                  name="new"
-                  id="new"
-                  class="col-6 mt-2 mb-2"
-                  required
-                  v-model="passwordForm.new_password"
-                />
-              </div>
-              <div class="input-group">
-                <label for="renew" class="col-6 mt-2 mb-2">Re-enter New Password</label>
-                <input
-                  type="password"
-                  name="renew"
-                  id="renew"
-                  class="col-6 mt-2 mb-2"
-                  required
-                  v-model="passwordForm.new_password_confirmation"
-                />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" id="change" class="btn btn-danger">Change Password</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+    <h4>Note: You can verify the profile only once</h4>    
   </div>
 
   <!-- <div class="container">    
@@ -609,41 +549,6 @@ export default {
     // console.log(this.id.student);
   },
   methods: {
-    valid() {
-      if (
-        this.passwordForm.new_password_confirmation == "" ||
-        this.passwordForm.new_password == "" ||
-        this.passwordForm.current_password == ""
-      ) {
-        toastr["error"]('Please Fill all values');
-        return;
-      } else if (this.passwordForm.new_password.length < 8) {
-        toastr["error"]("Passwords cannot be shorter than 8 characters");
-        return;
-      } else if (this.passwordForm.new_password == this.passwordForm.current_password) {
-        toastr["error"]("New Password cannot be same as current");
-        return;
-      } else if (this.passwordForm.new_password != this.passwordForm.new_password_confirmation) {
-        toastr["error"]("Passwords don't match");
-        return;
-      }
-      this.submit();
-    },
-    submit() {
-      axios
-        .post("api/dashboard/user/change-password", this.passwordForm)
-        .then(response => {
-          console.log(response);
-          toastr["success"](response.data.message);
-          this.passwordForm.current_password='';
-          this.passwordForm.new_password='';
-          this.passwordForm.new_password_confirmation='';
-          $( "#close" ).trigger( "click" );
-        })
-        .catch(response => {
-          toastr["error"](response.message);
-        });
-    },
     splitarray(arr, index) {
       return arr.split("-")[index - 1];
     },

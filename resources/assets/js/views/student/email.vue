@@ -13,7 +13,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text lab">Email</span>
                 </div>
-                <input type="email" name="email" id="email" class="form-control" v-model="mail_id" />
+                <input type="email" name="email" id="email" class="form-control" v-model="mail_id" required>
               </div>
             </div>
             <div class="form-group">
@@ -27,7 +27,7 @@
               </center>
             </div>
           </form>
-          <form method="post" @submit.prevent="veri" v-show="enterOTP">
+          <form method="post" @submit.prevent="veri" v-show="enterOTP" id="otpform">
             <div class="d-flex center-content-center mt-5 mb-3">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -51,6 +51,55 @@
         </div>
       </div>
     </div>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      id="gucci"
+      style="display:none;"
+      data-target="#pass"
+    >
+      Change
+      Password
+    </button>
+    <div id="pass" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title">Change Password</h1>
+          </div>
+          <form @submit.prevent="valid">
+            <div class="modal-body">
+              <div class="input-group">
+                <label for="new" class="col-6 mt-2 mb-2">New Password</label>
+                <input
+                  type="password"
+                  name="new"
+                  id="new"
+                  class="col-6 mt-2 mb-2"
+                  required
+                  v-model="passwordForm.new_password"
+                />
+              </div>
+              <div class="input-group">
+                <label for="renew" class="col-6 mt-2 mb-2">Re-enter New Password</label>
+                <input
+                  type="password"
+                  name="renew"
+                  id="renew"
+                  class="col-6 mt-2 mb-2"
+                  required
+                  v-model="passwordForm.new_password_confirmation"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" id="change" class="btn btn-danger">Change Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -60,6 +109,11 @@ import { formstepChangeURL, verifyEmail } from "../../config.js";
 export default {
   data() {
     return {
+      passwordForm: new Form({
+        id: this.$store.state.auth.userid,
+        new_password: "",
+        new_password_confirmation: ""
+      }),
       load: false,
       OTP: "",
       confirmail: "",
@@ -77,17 +131,52 @@ export default {
     };
   },
   methods: {
+    valid() {
+      if (
+        this.passwordForm.new_password_confirmation == "" ||
+        this.passwordForm.new_password == "" 
+      ) {
+        toastr["error"]("Please Fill all values");
+        return;
+      } else if (this.passwordForm.new_password.length < 8) {
+        toastr["error"]("Passwords cannot be shorter than 8 characters");
+        return;
+      } else if (
+        this.passwordForm.new_password !=
+        this.passwordForm.new_password_confirmation
+      ) {
+        toastr["error"]("Passwords don't match");
+        return;
+      }
+      this.submit();
+    },
+    submit() {
+      axios
+        .post("api/dashboard/user/change-password", this.passwordForm)
+        .then(response => {
+          console.log(response);
+          toastr["success"](response.data.message);
+          this.passwordForm.new_password = "";
+          this.passwordForm.new_password_confirmation = "";
+          $('#pass').modal('hide');
+          axios.post(formstepChangeURL, this.form_step).then(stat => {
+            if (stat.status == 200) {
+              this.$parent.step = 3;
+            }
+          });
+        })
+        .catch(response => {
+          toastr["error"](response.message);
+        });
+    },
     getAuthUser(name) {
       return this.$store.getters.getAuthUser(name);
     },
     veri() {
       if (this.OTP == this.confirmail) {
         toastr["success"]("Verified !!");
-        axios.post(formstepChangeURL, this.form_step).then(stat => {
-          if (stat.status == 200) {
-            this.$parent.step = 3;
-          }
-        });
+        $("#otpform").hide();
+        $('#pass').modal({backdrop: 'static', keyboard: false})  
       } else {
         toastr["error"]("Invalid OTP!!");
       }

@@ -17,7 +17,7 @@ let mix = require('laravel-mix');
 var plugin = 'resources/assets/plugins/';
 
 mix.js('resources/assets/js/app.js', 'public/js/app.js')
-    .combine([
+    .babel([
         plugin + 'jquery/jquery.min.js',
         plugin + 'popper/popper.min.js',
         plugin + 'bootstrap/bootstrap.min.js',

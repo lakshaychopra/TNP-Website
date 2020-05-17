@@ -1155,10 +1155,14 @@ export default {
       } else {
         this.spec = null;
       }
+      for (let x in this.student) {
+        if(typeof(this.student[x]) == "string" && this.student[x] != null )
+          this.student[x] = this.$parent.titleCase(this.student[x]);
+      }
       this.load = true;
       let formData = new FormData();
-      formData.append("first_name", this.student.first_name.toUpperCase());
-      formData.append("last_name", this.student.last_name.toUpperCase());
+      formData.append("first_name", this.student.first_name);
+      formData.append("last_name", this.student.last_name);
       formData.append("gender", this.student.gender);
       formData.append("whatsapp_cont", this.student.whatsapp_cont);
       formData.append("dob", this.student.dob);
@@ -1175,16 +1179,16 @@ export default {
       formData.append("section", this.student.section);
       formData.append("shift", this.student.shift);
       formData.append("training_semester", this.student.training_semester);
-      formData.append("father_name", this.student.father_name.toUpperCase());
+      formData.append("father_name", this.student.father_name);
       formData.append("father_phone", this.student.father_phone);
-      formData.append("mother_name", this.student.mother_name.toUpperCase());
+      formData.append("mother_name", this.student.mother_name);
       formData.append("mother_phone", this.student.mother_phone);
       formData.append("father_occupation", this.student.father_occupation);
       formData.append("farming_background", this.student.farming_background);
-      formData.append("address", this.student.address.toUpperCase());
-      formData.append("city", this.student.city.toUpperCase());
-      formData.append("district", this.student.district.toUpperCase());
-      formData.append("state", this.student.state.toUpperCase());
+      formData.append("address", this.student.address);
+      formData.append("city", this.student.city);
+      formData.append("district", this.student.district);
+      formData.append("state", this.student.state);
       formData.append("pincode", this.student.pincode);
       formData.append("phone_number", this.student.phone_number);
       formData.append("spec_mba", this.spec);
@@ -1197,11 +1201,8 @@ export default {
       formData.append("CGPA", this.student.CGPA);
       formData.append("percentage", this.student.percentage);
       var imagefile = document.querySelector("#imageUrl");
-      //console.log(imagefile.files[0]);
       formData.append("Graduation_certificate", imagefile.files[0]);
       formData.append("_method", "PUT");
-      // console.log(this.id.id);
-      // console.log('1');
       axios
         .post(storeStudentURL + this.student.id, formData)
         .then(response => {
@@ -1209,18 +1210,13 @@ export default {
             .post(formstepChangeURL, this.statusChange)
             .then(statusresponse => {
               if (statusresponse.status == 200) {
-                // toastr['success']("User Added!!");
+                toastr['success']("Profile Updated!!");
                 this.$parent.step = 4;
-                // this.$router.push('/req');
               }
             })
             .catch(errors => {
               console.log(errors);
             });
-          // console.log(response);
-          // if (response.status == 200) {
-
-          // }
         })
         .catch(error => {
           console.log(error);
