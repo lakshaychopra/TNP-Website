@@ -317,9 +317,13 @@ class UsersController extends Controller
         }
         try {
             $user = User::find($request->id);
+            $student = DB::table('students')->where('univ_roll_no', $user->username)->update([
+                'mail_id' => $request->mail
+            ]);
             $user->remember_token = rand(1111, 9999);
             $user->email = $request->mail;
             $user->save();
+            DB::commit();
             Mail::to($user->email)->send(new TwoFactorEmail($user));
         } catch (Exception $e) {
             return $this->respondException($e);
