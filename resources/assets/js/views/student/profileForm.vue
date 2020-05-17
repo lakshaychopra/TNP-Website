@@ -1,16 +1,16 @@
 <template>
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-12">
       <form method="post" @submit.prevent="validateForm">
         <!-- student section -->
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">Profile Details</h2>
                 <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-lg-3 col-lg-3 col-md-3 col-sm-12 col-sm-12">
                     <div class="form-group">
                       <input
                         type="text"
@@ -30,7 +30,7 @@
                       </small>
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-lg-3 col-lg-3 col-md-3 col-sm-12 col-sm-12">
                     <div class="row">
                       <div class="col-md-10">
                         <input
@@ -65,7 +65,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-lg-3 col-md-3 col-sm-12">
                     <DatePick
                       v-model="student.dob"
                       :format="'DD/MM/YYYY'"
@@ -77,7 +77,7 @@
                       <span class="text-danger pull-right">{{errors.first('dob')}}</span>
                     </small>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-lg-3 col-md-3 col-sm-12">
                     <div class="form-group">
                       <select
                         id="category"
@@ -103,10 +103,13 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-12">
                     <div class="form-group">
-                      <label for="gender" class="col-md-2 col-form-label">Gender :</label>
-                      <div class="col-md-2 md-radio md-radio-inline">
+                      <label
+                        for="gender"
+                        class="col-lg-4 col-md-4 col-sm-12 col-form-label text-primary text-uppercase"
+                      >Gender :</label>
+                      <div class="col-lg-3 col-md-3 col-sm-12 md-radio md-radio-inline">
                         <input
                           type="radio"
                           v-validate="'required'"
@@ -117,7 +120,7 @@
                         />
                         <label for="male">MALE</label>
                       </div>
-                      <div class="col-md-2 md-radio md-radio-inline">
+                      <div class="col-lg-3 col-md-3 col-sm-12 md-radio md-radio-inline">
                         <input
                           type="radio"
                           name="gender"
@@ -206,7 +209,7 @@
         <!-- Academic Section -->
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">Academic Details</h2>
@@ -400,7 +403,7 @@
         <!-- Graduation Section -->
 
         <div class="row" id="education">
-          <div class="col-sm-12">
+          <div class="col-12">
             <h2 class="card-title mt-3 text-primary">Graduation Details</h2>
             <div class="form-material card">
               <div class="card-body">
@@ -577,7 +580,7 @@
                       <span class="text-danger pull-right">{{errors.first('marks type')}}</span>
                     </div>
                   </div>
-                  <div class="col-md-3" style="display: none;" id="CGPA">
+                  <div class="col-lg-3 col-md-3 col-sm-12" style="display: none;" id="CGPA">
                     <div class="form-group">
                       <input
                         type="numeric"
@@ -592,7 +595,7 @@
                       </small>
                     </div>
                   </div>
-                  <div class="col-md-3" style="display: none;" id="percentage">
+                  <div class="col-lg-3 col-md-3 col-sm-12" style="display: none;" id="percentage">
                     <div class="form-group">
                       <input
                         type="numeric"
@@ -636,12 +639,12 @@
         <!-- Parent Section -->
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">Parent Details</h2>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group">
                       <em id="tusername" class="tooltip">
                         Enter full name. Don't use any prefixes i.e.
@@ -666,7 +669,7 @@
                       </small>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group">
                       <input
                         type="tel"
@@ -687,7 +690,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group">
                       <em id="tusername" class="tooltip">
                         Enter full name. Don't use any prefix i.e.
@@ -711,7 +714,7 @@
                       </small>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group">
                       <input
                         type="tel"
@@ -732,7 +735,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group">
                       <input
                         type="text"
@@ -750,13 +753,13 @@
                       </small>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group">
                       <label
                         for="farming_background"
-                        class="col-md-4 col-form-label"
-                      >Farming Background :</label>
-                      <div class="col-md-2 md-radio md-radio-inline">
+                        class="col-lg-5 col-md-5 col-sm-12 col-form-label text-primary text-uppercase"
+                      >Farming Background:</label>
+                      <div class="col-lg-3 col-md-3 col-sm-12 md-radio md-radio-inline">
                         <input
                           type="radio"
                           v-validate="'required'"
@@ -767,7 +770,7 @@
                         />
                         <label for="option1">Yes</label>
                       </div>
-                      <div class="col-md-2 md-radio md-radio-inline">
+                      <div class="col-lg-3 col-md-3 col-sm-12 md-radio md-radio-inline">
                         <input
                           type="radio"
                           name="farming background"
@@ -791,7 +794,7 @@
         <!-- Address Section -->
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">Address Details</h2>
@@ -884,7 +887,7 @@
         <!-- Contact Details -->
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">Contact Details</h2>
@@ -923,7 +926,7 @@
                       </small>
                     </div>
                   </div>
-                  <div class="col-md-1">
+                  <div class="col-lg-2 col-md-4 col-sm-12">
                     <div class="form-group">
                       <button
                         type="button"
@@ -957,8 +960,8 @@
 
         <!-- Submit -->
 
-        <div class="row">
-          <div class="col-md-12">
+        <div class="row mb-3">
+          <div class="col-12">
             <div class="form-group">
               <button type="submit" class="btn btn-primary btn-lg pull-right">
                 <span v-if="!load">Submit</span>
@@ -1374,5 +1377,8 @@ label {
     border-width: 10px 10px 0 10px;
     border-color: #e5e5e5 transparent transparent transparent;
   }
+}
+.form-group .btn-primary {
+  background-color: #0275d8;
 }
 </style>

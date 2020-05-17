@@ -168,13 +168,9 @@
                     </small>
                   </div>
                 </div>
-                <div class="col-md-8">
-                  <div class="form-group">
-                    <button
-                      class="btn btn-info btn-lg btn-primary pull-right"
-                      type="submit"
-                      value="I Agree"
-                    >
+                <div class="col-md-8 mb-5">
+                  <div class="form-group ">
+                    <button class="btn btn-info btn-lg btn-primary pull-right" type="submit" value="I Agree">
                       <span v-if="!load">Submit</span>
                       <span v-else>
                         <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
@@ -321,6 +317,10 @@ export default {
 <style scoped>
 .text-primary {
   color: #0185c2 !important;
+}
+
+.col-form-label {
+  padding-left: 0;
 }
 
 .col-form-label {

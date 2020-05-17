@@ -1,4 +1,3 @@
-
 <template>
   <div class="container">
     <h2 class="card-title mt-3 text-primary">Welcome {{student.name}} :)</h2>
@@ -588,4 +587,12 @@ select.form-control:focus {
 input[type="text"]:disabled {
   background-color: transparent;
 }
+
+.container .btn-primary{
+  background-color: #0275d8;
+}
+.container .text-primary{
+  color: #0275d8 !important;
+}
+
 </style>

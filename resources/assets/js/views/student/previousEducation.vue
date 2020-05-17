@@ -5,13 +5,13 @@
         <!-- Diploma/XII selector-->
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
                 <div class="text-center" v-on:change="selection()">
                   <div class="form-group" id="select_option">
-                    <label class="col-md-2 col-form-label">Education Type :</label>
-                    <div class="col-md-1 md-radio md-radio-inline">
+                    <label for class="col-lg-3 col-md-3 col-sm-12 col-form-label text-primary text-uppercase">Education Type :</label>
+                    <div class="col-lg-2 col-md-2 col-sm-12 md-radio md-radio-inline">
                       <input
                         v-validate="'required'"
                         type="radio"
@@ -22,7 +22,7 @@
                       />
                       <label for="XII">XII</label>
                     </div>
-                    <div class="col-md-1 md-radio md-radio-inline">
+                    <div class="col-lg-2 col-md-2 col-sm-12 md-radio md-radio-inline">
                       <input
                         type="radio"
                         name="education"
@@ -32,7 +32,7 @@
                       />
                       <label for="DIPLOMA">DIPLOMA</label>
                     </div>
-                    <div class="col-md-2 md-radio md-radio-inline">
+                    <div class="col-lg-2 col-md-2 col-sm-12 md-radio md-radio-inline">
                       <input
                         type="radio"
                         name="education"
@@ -66,6 +66,7 @@
                         v-model="student.XII_board"
                         v-validate="'required'"
                       >
+                        <!-- <option disabled value="">HOSTELER / DAY SCHOLAR</option> -->
                         <option value="CBSE">CBSE</option>
                         <option value="ICSE">ICSE</option>
                         <option value="PSEB">PSEB</option>
@@ -111,7 +112,6 @@
                         class="form-control"
                         v-on:input="gap_calculator()"
                       />
-                      <span class="text-danger pull-right GE"></span>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -189,7 +189,7 @@
                       <span class="text-danger pull-right">{{errors.first('course')}}</span>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-8">
                     <div class="form-group">
                       <small class="form-text text-primary text-uppercase">Institute Name</small>
                       <input
@@ -213,7 +213,6 @@
                         class="form-control"
                         v-on:input="gap_calculator()"
                       />
-                      <span class="text-danger pull-right GE"></span>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -638,5 +637,10 @@ $md-radio-ripple-size: 15px;
     }
   }
 }
+
+.form-group .btn-lg{
+  margin-bottom: 10px;
+}
+
 </style>
 
