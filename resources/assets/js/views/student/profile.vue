@@ -3,7 +3,11 @@
     <!-- <h3 class="card-title mt-3 display-5 text-primary">PROFILE DETAILS</h3> -->
     <form method="post" @submit.prevent="submit">
       <fieldset disabled="disabled">
-        <h3 class="card-title mt-3 display-6 text-primary" style="text-align: center;">PROFILE DETAILS</h3><br /> 
+        <h3
+          class="card-title mt-3 display-6 text-primary"
+          style="text-align: center;"
+        >PROFILE DETAILS</h3>
+        <br />
         <div class="row">
           <div class="col-12">
             <div class="form-material card">
@@ -71,11 +75,11 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <input type="text" class="form-control" v-model="student.father_occupation"/>
+                    <input type="text" class="form-control" v-model="student.father_occupation" />
                     <label for="id_occupation">Father's Occupation</label>
                   </div>
                   <div class="col-md-6">
-                    <input type="text" class="form-control" v-model="student.farming_background"/>
+                    <input type="text" class="form-control" v-model="student.farming_background" />
                     <label for="id_farming">Farming Background</label>
                   </div>
                 </div>
@@ -219,7 +223,7 @@
                       <label for="id_username">Year Gap</label>
                     </div>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" v-model="student.jee_rank"/>
+                      <input type="text" class="form-control" v-model="student.jee_rank" />
                       <label for="id_username">JEE Rank</label>
                     </div>
                   </div>
@@ -250,11 +254,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-4">
-                      <input
-                        type="text"
-                        class="form-control"
-                        v-model="student.diploma_percentage"
-                      />
+                      <input type="text" class="form-control" v-model="student.diploma_percentage" />
                       <label for="id_username">CGPA/Percentage</label>
                     </div>
                     <div class="col-md-5">
@@ -263,31 +263,36 @@
                     </div>
                   </div>
                 </div>
-		</div>
-	</div>
-	  </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row" v-if="student.branch_type == 'M.B.A.' || student.branch_type == 'M.C.A.' || student.branch_type == 'M.TECH.'">
+      </fieldset>
+      <fieldset>
+        <div
+          class="row"
+          v-if="student.branch_type == 'M.B.A.' || student.branch_type == 'M.C.A.' || student.branch_type == 'M.TECH.'"
+        >
           <div class="col-12">
             <div class="form-material card">
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">Graduation</h2>
                 <div class="row">
                   <div class="col-md-6 input-control">
-                    <input type="text" class="form-control" v-model="student.branch_type"/>
+                    <input type="text" class="form-control" v-model="student.branch_type" />
                     <label for="crs">Course</label>
                   </div>
                   <div class="col-md-6 input-control" v-if="student.spec_mba != null">
-                    <input type="text" class="form-control" v-model="student.spec_mba"/>
+                    <input type="text" class="form-control" v-model="student.spec_mba" />
                     <label for="spec">Specialization(Post-Graduation)</label>
                   </div>
                   <div class="col-md-6 input-control" v-if="student.spec_mtech != null">
-                    <input type="text" class="form-control" v-model="student.spec_mba"/>
+                    <input type="text" class="form-control" v-model="student.spec_mba" />
                     <label for="spec">Specialization(Post-Graduation)</label>
                   </div>
 
                   <div class="col-md-4 input-control">
-                    <input type="text" class="form-control" v-model="student.work_experience"/>
+                    <input type="text" class="form-control" v-model="student.work_experience" />
                     <label for="work">Work Experience (in months)</label>
                   </div>
                   <div class="col-md-4 input-control">
@@ -310,50 +315,31 @@
                     <input type="text" name="cgpa" class="form-control" />
                     <label for="cgpa">CGPA</label>
                   </div>
-                </div>              
+                </div>
               </div>
             </div>
           </div>
         </div>
       </fieldset>
-
       <div class="row">
-            
         <div class="col-12">
           <div class="form-material card">
-<!--
-             
-            <div class="card-body">
-              <h2 class="card-title mt-3 text-primary">Comment</h2>
-              <div class="row" v-if="student.verify_status==0">
-                <div class="col-12">
-                  <textarea
-                    v-model="comment"
-                    class="form-control p-3"
-                    rows="4"
-                    id="comment"
-                    placeholder="For any kind of discrepancy, kindly mention here"
-                  ></textarea>
-                </div>
-              </div><br /><br />
-              -->
-              <div class="text-center" v-if="student.verify_status==0">
-                <button type="submit" class="btn btn-primary card-footer col-md-6">
-                  <span v-if="!load">Verify</span>
-                  <span v-else>
-                    <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              
-              <div class="text-center" v-else>
-                <button
-                  type="submit"
-                  title="You have already verified this data !!"
-                  class="btn btn-success card-footer col-md-6"
-                  disabled
-                >Already Verified :)</button>
-              </div>
+            <div class="text-center" v-if="student.verify_status==0">
+              <button type="submit" class="btn btn-primary card-footer col-md-6">
+                <span v-if="!load">Verify</span>
+                <span v-else>
+                  <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+
+            <div class="text-center" v-else>
+              <button
+                type="submit"
+                title="You have already verified this data !!"
+                class="btn btn-success card-footer col-md-6"
+                disabled
+              >Already Verified :)</button>
             </div>
           </div>
         </div>
@@ -366,8 +352,8 @@
             </div>
           </div>
         </div>
-      </div> -->
-  <!-- <h2 class="card-title mt-3 text-primary">Semester-6</h2>
+      </div>-->
+      <!-- <h2 class="card-title mt-3 text-primary">Semester-6</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
@@ -386,8 +372,8 @@
       <input type="text" class="form-control" v-model="student.passive_backlog_6">
        <label for="id_username"> Passive Backlog </label>
     </div>
-  </div>-->
-  <!-- <h2 class="card-title mt-3 text-primary">Semester-7 </h2>
+      </div>-->
+      <!-- <h2 class="card-title mt-3 text-primary">Semester-7 </h2>
     <hr class="style3">
     <div class="row">
     <div class="col-md-3">
@@ -427,9 +413,9 @@
       <input type="text" class="form-control" v-model="student.passive_backlog_8">
        <label for="id_username"> Passive Backlog </label>
     </div>
-  </div>-->
+      </div>-->
 
-  <!-- <h2 class="card-title mt-3 text-primary">Aggregate</h2>
+      <!-- <h2 class="card-title mt-3 text-primary">Aggregate</h2>
     <hr class="style3">
   <div class="row">
     <div class="col-md-3">
@@ -459,7 +445,7 @@
       <label for="id_username" >Credits </label>
     </div>
   
-  </div>-->
+      </div>-->
     </form>
   </div>
 </template>
@@ -489,7 +475,9 @@ export default {
     };
   },
   created() {
-    axios.get("/api/dashboard/student/profile/" + this.username + "/edit").then(response => {
+    axios
+      .get("/api/dashboard/student/profile/" + this.username + "/edit")
+      .then(response => {
         console.log("Hello" + response.data.data[0]);
         // console.log('test'+student.username);
         console.log(this.username);
@@ -577,7 +565,7 @@ textarea {
   border: 1px solid black !important;
 }
 
-label{
+label {
   color: #5bc0de;
 }
 </style>

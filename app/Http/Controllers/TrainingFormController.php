@@ -86,7 +86,8 @@ class TrainingFormController extends Controller
         $pdf::Write(4.6,  $input['urn']);
 
         $pdf::SetFont('Helvetica', 'B', 10);
-        $pdf::Write(4.5, " of B.Tech (Branch) ");
+        $branch = ($input['branch'] == 'Master of Computer Applications') ? " of " : " of B.Tech (Branch) ";
+        $pdf::Write(4.5, $branch);
 
         $pdf::SetFont('HelveticaB', 'U', 10);
         $pdf::Write(4.6, $input['branch']);

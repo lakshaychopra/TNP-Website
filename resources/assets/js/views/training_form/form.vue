@@ -29,7 +29,7 @@
       <h1 class="text-center m pnt">TRAINING FORM</h1>
       <form @submit.prevent="valida" class="form" enctype="multipart/form-data">
         <div class="input-group">
-          <label for="name" class="col-lg-6 m pnt">Full Name</label>
+          <label for="name" class="col-lg-6 m pnt">Student Full Name</label>
           <input
             type="text"
             class="col-lg-6 form-control inp m"
@@ -77,6 +77,7 @@
             <option value="Computer Science & Engineering">Computer Science & Engineering</option>
             <option value="Information Technology">Information Technology</option>
             <option value="Production Engineering">Production Engineering</option>
+            <option value="Master of Computer Applications">MCA</option>
           </select>
         </div>
         <div class="input-group">
@@ -91,7 +92,7 @@
           />
         </div>
         <div class="input-group">
-          <label for="mobile" class="col-lg-6 m pnt">Mobile Number</label>
+          <label for="mobile" class="col-lg-6 m pnt">Student Mobile Number</label>
           <input
             type="tel"
             class="col-lg-6 form-control inp m"
@@ -102,7 +103,7 @@
           />
         </div>
         <div class="input-group">
-          <label for="email" class="col-lg-6 m pnt">E-Mail ID</label>
+          <label for="email" class="col-lg-6 m pnt">Student E-Mail ID</label>
           <input
             type="email"
             class="col-lg-6 form-control inp m"
