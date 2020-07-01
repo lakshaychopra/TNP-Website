@@ -150,7 +150,7 @@
                         class="form-control"
                       />
                       <small class="form-text text-primary text-uppercase">
-                        Height
+                        Height(In cms)
                         <span class="text-danger pull-right">{{errors.first('height')}}</span>
                       </small>
                     </div>
@@ -168,7 +168,7 @@
                         class="form-control"
                       />
                       <small class="form-text text-primary text-uppercase">
-                        Weight
+                        Weight(In kg)
                         <span class="text-danger pull-right">{{errors.first('weight')}}</span>
                       </small>
                     </div>
@@ -294,14 +294,14 @@
                         :class="{'form-control': true, 'error': errors.has('branch')}"
                         v-on:change="display_courses()"
                       >
-                        <option disabled value>Branch</option>
+                        <option disabled value>Course</option>
                         <option value="B.TECH.">B.Tech.</option>
                         <option value="M.TECH.">M.Tech.</option>
                         <option value="M.B.A.">M.B.A.</option>
                         <option value="M.C.A.">M.C.A.</option>
                       </select>
                       <small class="form-text text-primary text-uppercase">
-                        Branch
+                        Course
                         <span class="text-danger pull-right">{{errors.first('branch')}}</span>
                       </small>
                     </div>
@@ -892,6 +892,7 @@
               <div class="card-body">
                 <h2 class="card-title mt-3 text-primary">Contact Details</h2>
                 <div class="row">
+
                   <div class="col-md-4">
                     <div class="form-group">
                       <input
@@ -926,17 +927,27 @@
                       </small>
                     </div>
                   </div>
-                  <div class="col-lg-2 col-md-4 col-sm-12">
+
+
+                  <div class="col-md-4" id="re_enter_contact">
                     <div class="form-group">
-                      <button
-                        type="button"
-                        id="verify_button"
-                        class="btn btn-info"
-                        v-on:click="phoneverify()"
-                      >Get OTP</button>
+                      <input
+                        type="text"
+                        name="re_enter_contact"
+                        id="re_enter_contact"
+                        v-validate="'required|numeric|length:10'"
+                        class="form-control"
+                        v-model="student.re_enter_contact"
+                      />
+                      <small class="form-text text-primary text-uppercase">
+                        Re-Enter Mobile No
+                        <span class="text-danger pull-right">{{errors.first('re_enter_contact')}}</span>
+                      </small>
                     </div>
                   </div>
-                  <div class="col-md-2" id="PIN" style="display: none;">
+   
+
+                  <!-- <div class="col-md-2" id="PIN" style="display: none;">
                     <div class="form-group">
                       <input
                         type="text"
@@ -951,7 +962,31 @@
                         <span class="text-danger pull-right">{{errors.first('PIN')}}</span>
                       </small>
                     </div>
+                  </div> -->
+
+                  <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                      <button
+                        type="button"
+                        id="verify_button"
+                        class="btn btn-info"
+                        v-on:click="phoneverify()"
+                      >Get OTP</button>
+                    </div>
                   </div>
+                  
+                  <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                    <div class="form-group">
+                      <button
+                        type="button"
+                        id="resend_button"
+                        v-show="toggle"
+                        class="btn btn-info"
+                        v-on:click="resend()"
+                      >Resend</button>
+                    </div>
+                  </div> -->
+
                 </div>
               </div>
             </div>
@@ -995,7 +1030,9 @@ export default {
         dob: ""
       },
       inputid: "",
-      send_otp: 0,
+      // send_otp: 0,
+      //  toggle: false,
+      // temp: 0,
       spec_mba: [],
       spec: "",
       profile: {
@@ -1023,7 +1060,7 @@ export default {
       .catch(error => {
         console.log(error);
       });
-    // console.log(this.id.student);
+   
   },
   methods: {
     // graduation function #appear and disappearance
@@ -1069,41 +1106,82 @@ export default {
       }
       //console.log(document.getElementById('spec_mba'));
     },
-    // otp related
-    phoneverify() {
-      var self = this;
-      if ($("#verify_button").html() == "Get OTP") {
-        let data = new FormData();
-        data.append("phone_no", this.student.phone_number);
-        axios
-          .post("/api/dashboard/otp", data)
-          .then(function(response) {
-            //console.log(response.data);
-            $("#verify_button").html("Verify");
-            $("#PIN").show();
-            self.send_otp = response.data.send_otp;
-            //console.log(self.send_otp);
-            toastr["success"]("OTP Sent");
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-      }
-      if ($("#verify_button").html() == "Verify") {
-        if (this.student.otp == self.send_otp) {
-          $("#verify_button").html(
-            '<i class="fa fa-check" aria-hidden="true"></i>'
-          );
-          toastr["success"]("OTP verified");
-          $("#PIN").hide();
-        } else {
-          ////console.log('Invalid Otp, Try resending otp');
-          toastr["error"]("Invalid OTP");
-          $("#verify_button").html("Get OTP");
-          $("#PIN").hide();
-        }
-      }
-    },
+  
+  
+  // otp related
+// resend() {
+//       var self = this;
+//       if ($("#resend_button").html() == "Resend") {
+//         let data = new FormData();
+//         data.append("phone_no", this.student.phone_number);
+//         axios
+//           .post("/api/dashboard/otp", data)
+//           .then(function(response) {
+//             // console.log(response.data);
+//              $("#verify_button").html("Verify");
+//             $("#PIN").show();
+//             self.send_otp = response.data.send_otp;
+//              document.getElementById('otp').value = '';
+//             // console.log(self.send_otp);
+//             toastr["success"]("OTP Sent ,Wait for a minute");
+           
+//           })
+//           .catch(function(error) {
+//             console.log(error);
+//           });
+//       }
+     
+//     },
+
+
+
+    // phoneverify() {
+    //   var self = this;
+    //   if ($("#verify_button").html() == "Get OTP") {
+    //     let data = new FormData();
+    //     data.append("phone_no", this.student.phone_number);
+    //     axios
+    //       .post("/api/dashboard/otp", data)
+    //       .then(function(response) {
+    //         // console.log(response.data);
+    //         self.toggle='true';
+    //         $("#verify_button").html("Verify");
+    //         $("#PIN").show();
+            
+    //         self.send_otp = response.data.send_otp;
+    //          document.getElementById('otp').value = '';
+             
+    //         // console.log(self.send_otp);
+            
+            
+
+    //         toastr["success"]("OTP Sent ,Wait for a minute");
+    //       })
+    //       .catch(function(error) {
+    //         console.log(error);
+    //       });
+    //   }
+    //   if ($("#verify_button").html() == "Verify") {
+    //     if (this.student.otp == self.send_otp) {
+
+    //       this.temp =1;
+    //       $("#verify_button").html(
+    //         '<i class="fa fa-check" aria-hidden="true"></i>'
+    //       );
+    //       toastr["success"]("OTP verified");
+    //       $("#PIN").hide();
+    //       $("#resend_button").hide();
+    //       // console.log(this.temp);
+    //     } else {
+    //       ////console.log('Invalid Otp, Try resending otp');
+    //       toastr["error"]("Invalid OTP, Resend and fill it correctly");
+
+    //       console.log(this.temp);
+    //     }
+    //   }
+    // },
+
+
     popscreen() {
       $(document).ready(function() {
         $('[data-toggle="popover"]').popover();
@@ -1137,11 +1215,27 @@ export default {
         .removeClass("tooltip--active");
     },
     validateForm() {
+      
       this.$validator.validateAll().then(result => {
-        if (result) {
+        if (result && this.student.phone_number==this.student.re_enter_contact ) {
+
           this.submit();
-        } else {
-          alert("Please enter missing details.");
+        } 
+
+       else if(this.student.phone_number!==this.student.re_enter_contact){
+         
+         toastr["error"]("OOPS, Mobile No does not match"); 
+       
+       }
+
+
+        // else if( this.temp==0){
+        //  toastr["error"]("OOPS, Verify Mob no with OTP first");
+        // }
+        else {
+         
+          toastr["error"]("OOPS, Please enter missing details."); 
+       
         }
       });
     },

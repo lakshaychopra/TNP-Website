@@ -48,7 +48,7 @@
                     <!--<input v-validate="'required'" type="month" name="Month and Year of Passing" v-model="monthYear" placeholder="Month" class="form-control"
                     v-on:change="splitMonthYear(monthYear)">-->
                     <input
-                      v-validate="'required'"
+                      v-validate="'required|numeric|length:4'"
                       type="numeric"
                       name="Year of Passing"
                       v-model="student.year"
@@ -227,7 +227,7 @@ export default {
   },
   methods: {
     resetmarks() {
-      console.log(this.student.marks_type);
+      // console.log(this.student.marks_type);
       this.percent = 0;
       this.student.obtained_marks = undefined;
       if (this.student.marks_type == "CGPA") {
@@ -238,10 +238,15 @@ export default {
     },
     validateForm() {
       this.$validator.validateAll().then(result => {
-        if (result) {
+        if (result && this.student.obtained_marks<=this.student.max_marks ) {
           this.submit();
-        } else {
-          alert("Please enter missing details.");
+        }
+        else if(this.student.obtained_marks>this.student.max_marks){
+            toastr["error"]("Obtained Marks Cann't be more then Max Marks");
+        }
+        
+        else {
+          toastr["error"]("Please enter missing details.");
         }
       });
     },
@@ -269,7 +274,7 @@ export default {
           this.percent = 0;
         }
       }
-    },
+  },
     getAuthUser(name) {
       return this.$store.getters.getAuthUser(name);
     },
