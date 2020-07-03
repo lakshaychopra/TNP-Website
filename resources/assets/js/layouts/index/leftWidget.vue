@@ -9,6 +9,10 @@
                     <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
+                                <a href="https://api.whatsapp.com/send?phone=919915794339"
+                                    target="_blank" rel="noopener">Connect with the TPO</a>
+                            </li>
+                            <li class="list-group-item">
                                 <router-link to="/page/alumni_form">Alumni Assistance Form</router-link>
                             </li>
                             <li class="list-group-item">
