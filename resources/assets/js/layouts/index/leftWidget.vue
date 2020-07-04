@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header" id="about">
+                    <!-- <div class="card-header" id="about">
                         <h4 class="mb-1"> Alumni</h4>
-                    </div>
+                    </div> -->
                     <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
