@@ -3,14 +3,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <!-- <div class="card-header" id="about">
-                        <h4 class="mb-1"> Alumni</h4>
-                    </div> -->
+                    <div class="card-header" id="about">
+                        <h4 class="mb-1"> Connect</h4>
+                    </div>
                     <div class="card-body py-1" style="padding-left: 10px;padding-right: 10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
+                                 
                                 <a href="https://api.whatsapp.com/send?phone=919915794339"
                                     target="_blank" rel="noopener">Connect with the TPO</a>
+                                <i class="fa fa-whatsapp" aria-hidden="true" style="color:green;font-size:18px"></i>   
+
                             </li>
                             <li class="list-group-item">
                                 <router-link to="/page/alumni_form">Alumni Assistance Form</router-link>
