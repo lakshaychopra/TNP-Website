@@ -311,7 +311,7 @@
                   <div class="form-group">
                     <select
                       name="stream"
-                     // v-validate="'required'"
+                      v-validate="'required'"
                       :class="{'form-control': true, 'error': errors.has('branch')}"
                       v-model="student.stream"
                     >
