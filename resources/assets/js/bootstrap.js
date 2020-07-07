@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
-import Form from './services/Form'
+import Form from './services/form'
 
 import DatatableFactory from 'vuejs-datatable/dist/vuejs-datatable.esm.js';
 
