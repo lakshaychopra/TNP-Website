@@ -1245,7 +1245,7 @@ methods: {
     return this.$store.getters.getAuthUser(name);
   },
   submit() {
-    if(this.student.stream == null){
+    if(!this.student.stream){
       this.student.stream = "N/A";
     }// Setting stream N/A for mba/mca
     if (document.getElementById("spec_mba").disabled) {
