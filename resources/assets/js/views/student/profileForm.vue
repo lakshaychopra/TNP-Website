@@ -1247,7 +1247,7 @@ methods: {
   submit() {
     if(this.student.stream == null){
       this.student.stream = "N/A";
-    }
+    }// Setting stream N/A for mba/mca
     if (document.getElementById("spec_mba").disabled) {
       for (var i = 0; i < 3; i++) {
         if (this.spec_mba[i] != undefined) {
