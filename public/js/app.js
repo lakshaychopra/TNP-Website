@@ -32697,7 +32697,7 @@ var staticRenderFns = [
         "a",
         {
           attrs: {
-            href: "../../files/Department_Faculty_Coordinator.pdf",
+            href: "../../files/Department_Faculty_Coordinators.pdf",
             download: "Department_Faculty_Coordinator.pdf"
           }
         },

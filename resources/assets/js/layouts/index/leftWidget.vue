@@ -81,7 +81,7 @@
                                 <a href="../../files/Evaluation.pdf" download="Evaluation.pdf">Evaluation Performa</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="../../files/Department_Faculty_Coordinator.pdf" download="Department_Faculty_Coordinator.pdf">Department Faculty Coordinator</a>
+                                <a href="../../files/Department_Faculty_Coordinators.pdf" download="Department_Faculty_Coordinator.pdf">Department Faculty Coordinator</a>
                             </li>
                             <li class="list-group-item">
                                 <router-link to="/training-form">6 Months Training Form</router-link>
