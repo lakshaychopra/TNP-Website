@@ -4,14 +4,14 @@
     <h3>Check your profile by clicking on View Profile link</h3>
     <h4>Note: You can verify the profile only once</h4>
     <div class="row" id="siyaapa">
-      <label for="ok">Need Changes?</label>
-      <select id="ok">
+      <label for="ok" class="text-info m-2">Need Changes?</label>
+      <select id="ok" class="drop m-2">
         <option value>Select option</option>
         <option value="Y">Yes</option>
         <option value="N">No</option>
       </select>
-      <button class="btn btn-danger d-none" v-on:click="changeStep" id="revert">Revert</button>
-      <button class="btn btn-primary d-none" v-on:click="submitform" id="save">Save</button>
+      <button class="btn btn-danger m-1 d-none" v-on:click="changeStep" id="revert">Revert</button>
+      <button class="btn btn-primary m-1 d-none" v-on:click="submitform" id="save">Save</button>
     </div>
   </div>
 
@@ -457,7 +457,21 @@
   </div>
     
   </div>-->
-</template>     
+</template>
+<style scoped>
+.text-info {
+  font-size: 18px;
+}
+
+.drop {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #b3b6b8;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #376baa;
+}
+</style>
+
 <script>
 import {
   storeStudentURL,
