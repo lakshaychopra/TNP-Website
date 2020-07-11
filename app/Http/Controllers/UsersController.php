@@ -422,4 +422,25 @@ class UsersController extends Controller
             return $this->respondException($e);
         }
     }
+
+    public function siyaapa(Request $request)
+    {
+        $auth = JWTAuth::parseToken()->authenticate();
+        try {
+            DB::beginTransaction();
+            if (!$auth){
+                return $this->respondUnauthorised('Failed');
+            }
+            $id = $request->id;
+            $user = User::find($id);
+            $user->form_status = $request->form_status;
+            $user->save();
+            DB::commit();
+            return $this->respondException($e);
+        }
+        catch(Exception $e) {
+            DB::rollback();
+            return $this->responfException($e);
+        }
+    }
 }

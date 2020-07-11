@@ -65,6 +65,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
     // Route::post('/security', 'LoginController@verifyTwoFactor'); 
     Route::get('/auth/user','LoginController@getAuthUser');
     // Register Controller
+    Route::post('user/form-status-change','UserController@siyaapa');
     Route::post('/register/password', 'RegisterController@setPassword');
     //Dashboard
     Route::group(['prefix' => 'dashboard'], function () {
@@ -90,7 +91,7 @@ Route::group(['middleware' => 'jwt.auth'], function() {
         Route::post('/user/first/login', 'UsersController@FirstLogin');
         Route::post('/user/email_verify', 'UsersController@emailVerify');
         Route::post('/user/change-password', 'UsersController@changePass');
-
+        Route::post('/user/form-status-change','UsersController@siyaapa');
         //SMS service
         Route::resource('otp','SmServiceController');
         //Student Controller
