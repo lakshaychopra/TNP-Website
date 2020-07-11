@@ -428,7 +428,7 @@ class UsersController extends Controller
         $auth = JWTAuth::parseToken()->authenticate();
         try {
             DB::beginTransaction();
-            if (!$auth){
+            if (!$auth) {
                 return $this->respondUnauthorised('Failed');
             }
             $id = $request->id;
@@ -436,11 +436,10 @@ class UsersController extends Controller
             $user->form_status = $request->form_status;
             $user->save();
             DB::commit();
-            return $this->respondException($e);
-        }
-        catch(Exception $e) {
+            return $this->respondData($user);
+        } catch (Exception $e) {
             DB::rollback();
-            return $this->responfException($e);
+            return $this->respondException($e);
         }
     }
 }

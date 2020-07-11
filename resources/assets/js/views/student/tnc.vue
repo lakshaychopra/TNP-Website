@@ -10,6 +10,17 @@
               <div class="row">
                 <div class="col-lg-12 mx-auto">
                   <ol>
+                    <li style="text-align:justify;">
+                      Please clear browser cache before filling the form.
+                      <br />For Desktop Browsers: Press
+                      <code>Ctrl + f5</code> or
+                      <code>Clear Browser History</code>
+                      <br />For Mobile Browsers:
+                      <code>Clear Browser History</code>
+                      <br />For TNP Homesreen App:
+                      <code>Delete App and Clear Browser History</code>
+                    </li>
+                    
                     <li style="text-align: justify;">Students must fill all the details accurately.</li>
 
                     <li

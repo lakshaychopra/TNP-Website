@@ -2,7 +2,17 @@
   <div class="container">
     <h2 class="card-title mt-3 text-primary">Welcome {{student.name}} :)</h2>
     <h3>Check your profile by clicking on View Profile link</h3>
-    <h4>Note: You can verify the profile only once</h4>    
+    <h4>Note: You can verify the profile only once</h4>
+    <div class="row" id="siyaapa">
+      <label for="ok">Need Changes?</label>
+      <select id="ok">
+        <option value>Select option</option>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+      <button class="btn btn-danger d-none" v-on:click="changeStep" id="revert">Revert</button>
+      <button class="btn btn-primary d-none" v-on:click="submitform" id="save">Save</button>
+    </div>
   </div>
 
   <!-- <div class="container">    
@@ -459,6 +469,10 @@ import { fetchProfileURL } from "../../config.js";
 export default {
   data() {
     return {
+      statusChange: {
+        student_form_step: "TC",
+        id: this.$parent.id
+      },
       passwordForm: new Form({
         id: this.$store.state.auth.userid,
         current_password: "",
@@ -488,6 +502,27 @@ export default {
     };
   },
   created() {
+    axios.get("/api/dashboard/user/" + this.userid).then(response => {
+      if (response.data.data.form_status == "SUBMITTED") {
+        $("#siyaapa").addClass("d-none");
+      }
+    });
+    $(function() {
+      $("#ok").change(function() {
+        if (!this.value) {
+          alert("Choose any one option");
+          return;
+        } else if (this.value == "Y") {
+          $("#revert").removeClass("d-none");
+          $("#save").addClass("d-none");
+          return;
+        } else {
+          $("#revert").addClass("d-none");
+          $("#save").removeClass("d-none");
+          return;
+        }
+      });
+    });
     axios
       .get("/api/dashboard/student/profile/" + this.$parent.username + "/edit")
       .then(response => {
@@ -548,6 +583,33 @@ export default {
     // console.log(this.id.student);
   },
   methods: {
+    changeStep() {
+      axios
+        .post(formstepChangeURL, this.statusChange)
+        .then(statusresponse => {
+          if (statusresponse.status == 200) {
+            this.$parent.step = 3;
+          }
+        })
+        .catch(errors => {
+          console.log(errors);
+        });
+    },
+    submitform() {
+      axios
+        .post("/api/dashboard/user/form-status-change", {
+          id: this.userid,
+          form_status: "SUBMITTED"
+        })
+        .then(statusresponse => {
+          if (statusresponse.status == 200) {
+            $("#siyaapa").addClass("d-none");
+          }
+        })
+        .catch(errors => {
+          console.log(errors);
+        });
+    },
     splitarray(arr, index) {
       return arr.split("-")[index - 1];
     },
@@ -588,11 +650,10 @@ input[type="text"]:disabled {
   background-color: transparent;
 }
 
-.container .btn-primary{
+.container .btn-primary {
   background-color: #0275d8;
 }
-.container .text-primary{
+.container .text-primary {
   color: #0275d8 !important;
 }
-
 </style>
