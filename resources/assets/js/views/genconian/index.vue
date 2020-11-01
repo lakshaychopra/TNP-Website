@@ -1,192 +1,249 @@
 <template>
-    <div class="bg-white">
-        <div class="sticky-top">
-            <nav class="navbar bg-dark navbar-dark">
-                <!-- Brand -->
-                <router-link to="/" class="navbar-brand d-none d-md-block">
-                    <img src="/logo.png" alt="logo" height="55px" width="55px"> <strong>Training & Placement Cell</strong>
-                </router-link>
-                <router-link to="/" class="navbar-brand d-md-none">
-                    <img src="/logo.png" alt="logo" height="55px" width="55px">
-                </router-link>
+  <div class="bg-white">
+    <div class="sticky-top">
+      <nav class="navbar bg-dark navbar-dark">
+        <!-- Brand -->
+        <router-link to="/" class="navbar-brand d-none d-md-block">
+          <img src="/logo.png" alt="logo" height="55px" width="55px" />
+          <strong>Training & Placement Cell</strong>
+        </router-link>
+        <router-link to="/" class="navbar-brand d-md-none">
+          <img src="/logo.png" alt="logo" height="55px" width="55px" />
+        </router-link>
 
-                <ul class="nav navbar-nav" id="list-menu">
-                    <li class="nav-item">
-                        <router-link to="/" class="pull-right nav-link">
-                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back
-                        </router-link>
-                    </li>
-                </ul>
-            </nav>
+        <ul class="nav navbar-nav" id="list-menu">
+          <li class="nav-item">
+            <router-link to="/" class="pull-right nav-link">
+              <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back
+            </router-link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Contact us blue -->
+    <section class="testimonials">
+      <div class="container">
+        <h5 class="thanks-title h1" style="margin-bottom: 15px">
+          Alumni Connect
+        </h5>
+        <p class="thanks-subtitle h3">
+          Join Your Family<br />Alumni are the basic constituent and important
+          stakeholders of any higher educational institute.
+        </p>
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="alumni" class="owl-carousel">
+              <!-- contact info -->
+              <div class="item">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a
+                      href="https://www.linkedin.com/in/training-placement-cell-gndec-ludhiana-723967147/"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <i
+                        class="fa fa-linkedin fa-5x mb-3"
+                        aria-hidden="true"
+                      ></i>
+                      <h4 class="text-uppercase mb-2">connect</h4>
+                      <p>Connect with Linkedin</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSf8BNPvcl-IU4IGn64sN3qDnwaXpHDcDrqrRks6qhbncdhAiQ/viewform"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <i
+                        class="fa fa-graduation-cap fa-5x mb-3"
+                        aria-hidden="true"
+                      ></i>
+                      <h4 class="text-uppercase mb-2">Contact US</h4>
+                      <address>Alumni Assistance Form</address>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a
+                      href="/files/PlacementBroucher.pdf"
+                      download="PlacementBroucher.pdf"
+                    >
+                      <i
+                        class="fa fa-file-pdf-o fa-5x mb-3"
+                        aria-hidden="true"
+                      ></i>
+                      <h4 class="text-uppercase mb-2">Download</h4>
+                      <address>Placement Broucher</address>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- ./contact info -->
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+    <!-- end Contact us -->
 
-        <!-- Contact us blue -->
-        <section class="testimonials">
-            <div class="container">
-                <h5 class="thanks-title h1" style="margin-bottom: 15px;">Alumni Connect</h5>
-                <p class="thanks-subtitle h3">Join Your Family<br>Alumni are the basic constituent and important
-                    stakeholders of any higher educational institute.</p>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="alumni" class="owl-carousel">
-                            <!-- contact info -->
-                            <div class="item">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <a href="https://www.linkedin.com/in/training-placement-cell-gndec-ludhiana-723967147/"
-                                            target="_blank" rel="noopener">
-                                            <i class="fa fa-linkedin fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">connect</h4>
-                                            <p>Connect with Linkedin</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8BNPvcl-IU4IGn64sN3qDnwaXpHDcDrqrRks6qhbncdhAiQ/viewform"
-                                            target="_blank" rel="noopener">
-                                            <i class="fa fa-graduation-cap fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">Contact US</h4>
-                                            <address>Alumni Assistance Form</address>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <a href="/files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">
-                                            <i class="fa fa-file-pdf-o fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">Download</h4>
-                                            <address>Placement Broucher</address>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ./contact info -->
-                        </div>
-                    </div>
+    <!-- Contact us blue -->
+    <section id="team" class="testimonials">
+      <div class="container">
+        <h5 class="section-title h1" style="margin-bottom: 15px">CONTACT US</h5>
+        <p class="section-subtitle h3">
+          Get in Touch<br />We're always standing by and eager to help.
+        </p>
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="contact" class="owl-carousel">
+              <!-- contact info -->
+              <div class="item">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a href="tel:+91-81980-77793">
+                      <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                      <h4 class="text-uppercase mb-2">call us</h4>
+                      <p>+91-81980-77793</p>
+                    </a>
+                  </div>
                 </div>
-            </div>
-        </section>
-        <!-- end Contact us -->
-
-        <!-- Contact us blue -->
-        <section id="team" class="testimonials">
-            <div class="container">
-                <h5 class="section-title h1" style="margin-bottom: 15px;">CONTACT US</h5>
-                <p class="section-subtitle h3">Get in Touch<br>We're always standing by and eager to help.</p>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="contact" class="owl-carousel">
-                            <!-- contact info -->
-                            <div class="item">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <a href="tel:+91-81980-77793">
-                                            <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">call us</h4>
-                                            <p>+91-81980-77793</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <a href="https://goo.gl/maps/B61b8nR1svs" target="_blank" rel="noopener">
-                                            <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">office location</h4>
-                                            <address>GNDEC Gill Park 141006 Ludhiana</address>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <a href="https://gndec.ac.in/" target="_blank" rel="noopener">
-                                            <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">College Website</h4>
-                                            <address>https://gndec.ac.in/</address>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <a href="mailto:tpo@gndec.ac.in">
-                                            <i class="fa fa-envelope fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">email</h4>
-                                            <p>tpo@gndec.ac.in</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <a href="/files/PlacementBroucher.pdf" download="PlacementBroucher.pdf">
-                                            <i class="fa fa-file-pdf-o fa-5x mb-3" aria-hidden="true"></i>
-                                            <h4 class="text-uppercase mb-2">Download</h4>
-                                            <address>Placement Broucher</address>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ./contact info -->
-                        </div>
-                    </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a
+                      href="https://goo.gl/maps/B61b8nR1svs"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <i
+                        class="fa fa-map-marker fa-5x mb-3"
+                        aria-hidden="true"
+                      ></i>
+                      <h4 class="text-uppercase mb-2">office location</h4>
+                      <address>GNDEC Gill Park 141006 Ludhiana</address>
+                    </a>
+                  </div>
                 </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a
+                      href="https://gndec.ac.in/"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                      <h4 class="text-uppercase mb-2">College Website</h4>
+                      <address>https://gndec.ac.in/</address>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a href="mailto:tpo@gndec.ac.in">
+                      <i
+                        class="fa fa-envelope fa-5x mb-3"
+                        aria-hidden="true"
+                      ></i>
+                      <h4 class="text-uppercase mb-2">email</h4>
+                      <p>tpo@gndec.ac.in</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <a
+                      href="/files/PlacementBroucher.pdf"
+                      download="PlacementBroucher.pdf"
+                    >
+                      <i
+                        class="fa fa-file-pdf-o fa-5x mb-3"
+                        aria-hidden="true"
+                      ></i>
+                      <h4 class="text-uppercase mb-2">Download</h4>
+                      <address>Placement Broucher</address>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- ./contact info -->
             </div>
-        </section>
-        <!-- end Contact us -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end Contact us -->
 
-        <!-- Thanks Faculty white-->
-        <section class="testimonials pb-0">
-            <div class="container">
-                <h5 class="thanks-title h1">THANKS TO FACULTY MEMBERS</h5>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="customers-testimonials" class="owl-carousel">
-                            <!--TESTIMONIAL 1 -->
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/genconian/sodhi.jpg" alt="faculty member">
-                                    <div class="item-details">
-                                        <h5>Prof. G.S. Sodhi</h5>
-                                        <p class="thanks-subtitle">T&amp;P Officer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--END OF TESTIMONIAL 1 -->
-                            <!--TESTIMONIAL 2 -->
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
-                                    <div class="item-details">
-                                        <h5>Dr. Sehijpal Singh</h5>
-                                        <p class="thanks-subtitle">Principal, GNDEC</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--END OF TESTIMONIAL 2 -->
-                            <!--TESTIMONIAL 3 -->
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
-                                    <div class="item-details">
-                                        <h5>Dr. K.S. Mann</h5>
-                                        <p class="thanks-subtitle">T&amp;P Advisor</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--END OF TESTIMONIAL 3 -->
-                            <!--TESTIMONIAL 4 -->
-                            <!-- <div class="item">
+    <!-- Thanks Faculty white-->
+    <section class="testimonials pb-0">
+      <div class="container">
+        <h5 class="thanks-title h1">THANKS TO FACULTY MEMBERS</h5>
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="customers-testimonials" class="owl-carousel">
+              <!--TESTIMONIAL 1 -->
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    class="img-responsive"
+                    src="/images/genconian/sodhi.jpg"
+                    alt="faculty member"
+                  />
+                  <div class="item-details">
+                    <h5>Prof. G.S. Sodhi</h5>
+                    <p class="thanks-subtitle">T&amp;P Officer</p>
+                  </div>
+                </div>
+              </div>
+              <!--END OF TESTIMONIAL 1 -->
+              <!--TESTIMONIAL 2 -->
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    class="img-responsive"
+                    src="/images/genconian/principal.jpg"
+                    alt="faculty member"
+                  />
+                  <div class="item-details">
+                    <h5>Dr. Sehijpal Singh</h5>
+                    <p class="thanks-subtitle">Principal, GNDEC</p>
+                  </div>
+                </div>
+              </div>
+              <!--END OF TESTIMONIAL 2 -->
+              <!--TESTIMONIAL 3 -->
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    class="img-responsive"
+                    src="/images/genconian/advisor.png"
+                    alt="faculty member"
+                  />
+                  <div class="item-details">
+                    <h5>Dr. K.S. Mann</h5>
+                    <p class="thanks-subtitle">T&amp;P Advisor</p>
+                  </div>
+                </div>
+              </div>
+              <!--END OF TESTIMONIAL 3 -->
+              <!--TESTIMONIAL 4 -->
+              <!-- <div class="item">
                                 <div class="shadow-effect">
                                     <img class="img-responsive" src="/images/genconian/350x350.png" alt="faculty member">
                                     <div class="item-details">
@@ -195,858 +252,1431 @@
                                     </div>
                                 </div>
                             </div> -->
-                            <!--END OF TESTIMONIAL 4 -->
-                            <!--TESTIMONIAL 5 -->
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-responsive" src="/images/genconian/bagga.jpeg" alt="faculty member">
-                                    <div class="item-details">
-                                        <h5>Prof. Sachin Bagga</h5>
-                                        <p class="thanks-subtitle">T&amp;P Faculty Co Cordinator</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--END OF TESTIMONIAL 5 -->
-                        </div>
-                    </div>
+              <!--END OF TESTIMONIAL 4 -->
+              <!--TESTIMONIAL 5 -->
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    class="img-responsive"
+                    src="/images/genconian/bagga.jpeg"
+                    alt="faculty member"
+                  />
+                  <div class="item-details">
+                    <h5>Prof. Sachin Bagga</h5>
+                    <p class="thanks-subtitle">T&amp;P Faculty Co Cordinator</p>
+                  </div>
                 </div>
+              </div>
+              <!--END OF TESTIMONIAL 5 -->
             </div>
-        </section>
-        <!-- END OF Thanks Faculty -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END OF Thanks Faculty -->
 
-        <!-- Team  blue-->
-               <section id="team" class="mb-5">
-            <div class="container">
-                <h5 class="section-title h1">THE TEAM</h5>
-                  <div class="row">
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/sanjam.jpeg" alt="card image"></p>
-                                    <h4 class="card-title">Sanjampreet singh</h4>
-                                    <p class="card-subtitle">Developer</p>
-                                    <p class="card-text"> He is a B.Tech student in Information
-                                        Technology of 2015-19 batch. He is Co-Cordinator of Training and Placement
-                                        Cell. He has worked as Developer on the PWA and Restful APIs of <a href="https://www.tnpgndec.com">T&amp;P
-                                            Cell's website.</a></p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/sanjampreet.singh1">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://twitter.com/Itzrealsanjam">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/sanjampreetsingh/">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/sanjampreetsingh_/">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto:sanjam531@gmail.com">
-                                                <i class="fa fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/karamveer.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Karamveer Singh</h4>
-                                    <p class="card-subtitle">Developer</p>
-                                    <p class="card-text"> He is a B.Tech student in Computer Science
-                                        and Engineering of 2015-19 batch. He
-                                        has worked as Developer on the SPA and Vue.js part of <a href="https://www.tnpgndec.com">T&amp;P
-                                            Cell's website</a></p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/loveforeverKM">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.twitter.com/kmvsingh007">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/singh-karamveer/">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/honey_singh008/">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto:kmvsingh007@gmail.com">
-                                                <i class="fa fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                        <!-- Team member -->
-                    <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/sukhmandeep.jpeg" alt="card image"></p>
-                                    <h4 class="card-title">Sukhmandeep Kaur</h4>
-                                    <p class="card-subtitle">Developer</p>
-                                    <p class="card-text"> She is a B.Tech student in Computer Science
-                                        and Engineering of 2016-20 batch. </p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/sukhman.kaur.5686">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/sukhman_2807/">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto:sukhman2807@gmail.com ">
-                                                <i class="fa fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                     <!-- Team member -->
-                    <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/saksham.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Saksham Bhatia</h4>
-                                    <p class="card-subtitle">Developer</p>
-                                    <p class="card-text">He is a Genconian. He is a B.Tech student in Information Technology
-                                        of 2016-20 batch. </p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/saksham.bhatia.7545">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                       
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/saksham-bhatia-1b9b99162/">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/saksham1422/">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto:sakshambhatia06@gmail.com ">
-                                                <i class="fa fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/parul.jpeg" alt="card image"></p>
-                                    <h4 class="card-title">Parul Singla</h4>
-                                    <p class="card-subtitle">Developer</p>
-                                    <p class="card-text"> She is a B.Tech student in Computer Science
-                                        and Engineering of 2016-20 batch. </p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/parul.singla.585">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/parul-singla-51886a139/">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://instagram.com/parulsingla13?igshid=18wi3nluqg9z3">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto:singlaparul2222@gmail.com">
-                                                <i class="fa fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                </div>
-                <div class="row">
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/gagandeep.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Gagandeep Kaur</h4>
-                                    <p class="card-subtitle">Developer</p>
-                                    <p class="card-text"> She is a B.Tech student in Computer Science and Engineering of 2016-20 batch. She has 
-                                        worked mainly as a frontend Designer.
-                                       </p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/ashi.bansal.587">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://twitter.com/Gagande42822637">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/gagan-deep-b81a8315a/">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/gagan_kaur20/">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto:gaganbansal113@gmail.com">
-                                                <i class="fa fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/amandeep.jpeg" alt="card image"></p>
-                                    <h4 class="card-title">Amandeep Singh</h4>
-                                    <p class="card-subtitle">Developer</p>
-                                    <p class="card-text"> He is a B.Tech student in Information Technology of 2016-20 batch. He has mainly
-                                        worked on back-end and image processing module.  </p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/profile.php?id=100008014935724">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                       </ul>
-                                       </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            </div></section>
-
-        <!-- Team -->
-
-        <!-- Contributions white -->
-        <section class="testimonials mb-5">
-            <div class="container">
-                <h5 class="thanks-title h1">CONTRIBUTORS</h5>
-                <div class="row">
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="frontside">
-                            <div class="card con-card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/simranjeet.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Simranjeet Singh</h4>
-                                    <p class="card-subtitle">Media Consultant</p>
-                                    <p class="card-text">He is a Genconian. He is a B.Tech student in IT of 2015-19
-                                        batch. He is founder-chairman of IEEE - GNDEC student branch.He helped in
-                                        development of <a href="https://www.gndec.ac.in" target="blank">college's
-                                            website</a>. He is also a film-maker and photographer, pursuing it from 1st
-                                        years of his college. He contributed as Media Consultant to <a href="https://www.tnpgndec.com">T&amp;P
-                                            Cell's website.</a></p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item mr-0">
-                                            <a class="social-icon" target="_blank" href="https://www.youtube.com/channel/UC7zjCjTbtIahCgRnakNNl0A">
-                                                <i class="fa fa-youtube"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item mr-0">
-                                            <a class="social-icon" target="_blank" href="https://vimeo.com/user89769786">
-                                                <i class="fa fa-vimeo"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/simranjeet-singh-9495b7168/">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.instagram.com/sjsingh1010/">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto:simranjeetsingh@ieee.org">
-                                                <i class="fa fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                    <!-- Team member -->
-                    <div class="col-xs-12 col-sm-12 col-md-6">
-                        <div class="frontside">
-                            <div class="card con-card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="/images/genconian/talwinder.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Talwinder Singh</h4>
-                                    <p class="card-subtitle">Web Designer</p>
-                                    <p class="card-text">He is a Genconian. He is a B.Tech student in CSE of 2015-19
-                                        batch. He is Media Head of Training and Placement
-                                        Cell. He has designed Placement Broucher. He is a freelance Web Developer and
-                                        Photoshop Designer too. He has contributed design of <a href="https://www.tnpgndec.com/about">About
-                                            Page</a> for <a href="https://www.tnpgndec.com">T&amp;P
-                                            Cell's website.</a></p>
-                                    <ul class="list-inline" id="list-link">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.facebook.com/Daman.Gumber">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="javascript:void(0)">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/simranjeet-singh-9495b7168/">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="https://www.linkedin.com/in/talwinder-singh-837130106/">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon" target="_blank" href="mailto: talwindergumber@gmail.com">
-                                                <i class="fa fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ./Team member -->
-                </div>
-            </div>
-        </section>
-        <!-- END OF Contributions -->
-
-        <!--Query Page  -->
-        <section id="team" class="testimonials mb-5">
-            <div class="container">
-                <h5 class="section-title h1">Have a query?</h5>
-                <p class="section-subtitle h3">Feel Free<br>Ask anything?</p>
-                <form action="mailto:gndectpo@gmail.com" method="post" enctype="text/plain" class="mb-5">
-                    <div class="form-group">
-                        <label for="question" style="color:#fff">Query/Suggestion:</label>
-                        <input type="text" class="form-control" placeholder="Ask anything?" name="Suggestion" width="100%"
-                            style="color:#038ed4">
-                    </div>
-                    <input type="submit" value="Send" class="btn btn-primary btn-block">
-                </form>
-            </div>
-        </section>
-        <!-- End Query Page  -->
-
-        <!-- download white -->
-        <section id="download" class="mb-5">
-            <div class="container text-center">
-
-                <h1 class="intro-header text-uppercase">Download Our App Today!</h1>
-
-                <p class="lead">
-                    Training &amp; Placement Cell’s app helps you throughout your placement years. With easy to
-                    use, intuitive features, you can instantly see updates for placement drives, or internship
-                    drives.
-                </p>
-
-                <ul class="download-badges px-auto pt-5">
-                    <li class="my-3">
-                        <a href='//www.microsoft.com/store/apps/9npc7f14c558?ocid=badge' target="_blank" rel="noopener">
-                            <img src='/images/ms-download.png' alt='Download badge for windows store' width='100%' />
-                        </a>
+    <!-- Team  blue-->
+    <section id="team" class="mb-5">
+      <div class="container">
+        <h5 class="section-title h1">THE TEAM</h5>
+        <div class="row">
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/sanjam.jpeg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Sanjampreet singh</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    He is a B.Tech student in Information Technology of 2015-19
+                    batch. He was Co-Cordinator of Training and Placement Cell.
+                    He has worked as Developer on the PWA and Restful APIs of
+                    <a href="https://www.tnpgndec.com"
+                      >T&amp;P Cell's website.</a
+                    >
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.facebook.com/sanjampreet.singh1"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
                     </li>
-                    <li class="my-3">
-                        <a href="javascript:void(0)">
-                            <img src='/images/pwa-download.png' id="pwaPrompt" v-on:click="installed" alt='Download badge for pwa'
-                                width='100%' />
-                        </a>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://twitter.com/Itzrealsanjam"
+                      >
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/sanjampreetsingh/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/sanjampreetsingh_/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:sanjam531@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/karamveer.jpg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Karamveer Singh</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    He is a B.Tech student in Computer Science and Engineering
+                    of 2015-19 batch. He has worked as Developer on the SPA and
+                    Vue.js part of
+                    <a href="https://www.tnpgndec.com"
+                      >T&amp;P Cell's website</a
+                    >
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.facebook.com/loveforeverKM"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.twitter.com/kmvsingh007"
+                      >
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/singh-karamveer/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/honey_singh008/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:kmvsingh007@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/sukhmandeep.jpeg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Sukhmandeep Kaur</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    She is a B.Tech student in Computer Science and Engineering
+                    of 2016-20 batch.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.facebook.com/sukhman.kaur.5686"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon" target="_blank" href="">
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/sukhman_2807/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:sukhman2807@gmail.com "
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/saksham.jpg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Saksham Bhatia</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    He is a Genconian. He is a B.Tech student in Information
+                    Technology of 2016-20 batch.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.facebook.com/saksham.bhatia.7545"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
                     </li>
 
-                </ul>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/saksham-bhatia-1b9b99162/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/saksham1422/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:sakshambhatia06@gmail.com "
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- end download -->
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/parul.jpeg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Parul Singla</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    She is a B.Tech student in Computer Science and Engineering
+                    of 2016-20 batch. She worked as Laravel Developer.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.facebook.com/parul.singla.585"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
 
-        <footer class="container-fluid footer mt-3 color-main" style="left:0">
-            <p class="text-center"><small>Developed with <span class="text-danger"><i class="fa fa-heart" aria-hidden="true"></i></span>
-                    by <router-link to="/genconian">Genconians</router-link>
-                    | © 2018 <a href="https://www.gndec.ac.in/" target="_blank">GNDEC, Ldh</a></small></p>
-        </footer>
-    </div>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/parul-singla-51886a139/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://instagram.com/parulsingla13?igshid=18wi3nluqg9z3"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:singlaparul2222@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+        </div>
+        <div class="row">
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/gagandeep.jpg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Gagandeep Kaur</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    She is a B.Tech student in Computer Science and Engineering
+                    of 2016-20 batch. She has worked mainly as a frontend
+                    Designer.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.facebook.com/ashi.bansal.587"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://twitter.com/Gagande42822637"
+                      >
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/gagan-deep-b81a8315a/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/gagan_kaur20/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:gaganbansal113@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/amandeep.jpeg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Amandeep Singh</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    He is a B.Tech student in Information Technology of 2016-20
+                    batch. He has mainly worked on back-end and image processing
+                    module.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.facebook.com/profile.php?id=100008014935724"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon" target="_blank" href="">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="frontside">
+              <div class="card con-card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/kirti.jpeg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Kirti Gautam</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    He is a B.Tech student in Computer Science &amp; Engineering
+                    of 2017-21 batch.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/kirti-gautam-1706232"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/__.kirti.___/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://github.com/KirtiGautam"
+                      >
+                        <i class="fa fa-github"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:gautamkirti8c@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="frontside">
+              <div class="card con-card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/lakshay.jpeg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Lakshay Chopra</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    He is a B.Tech student in Computer Science &amp; Engineering
+                    of 2017-21 batch. He is administrator of T &amp; P Cell.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/lakshay-chopra/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://github.com/lakshaychopra"
+                      >
+                        <i class="fa fa-github"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:lakshaychopra21@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="frontside">
+              <div class="card con-card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/riya.jpeg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Riya Singh</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    She is a B.Tech student in Computer Science &amp; Engineering
+                    of 2017-21 batch.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/riya-singh-b5a241187/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/___.riya.___/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://github.com/RiyaSingh15"
+                      >
+                        <i class="fa fa-github"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:r.riyasingh.s15@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="frontside">
+              <div class="card con-card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/anurag.png"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Anurag Kumar</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    He is a B.Tech student in Computer Science &amp; Engineering
+                    of 2017-21 batch.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/anuragk539/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/anuragk539/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://github.com/anuragk539"
+                      >
+                        <i class="fa fa-github"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:anuragk539@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="frontside">
+              <div class="card con-card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/arsh.png"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Arsh Gupta</h4>
+                  <p class="card-subtitle">Developer</p>
+                  <p class="card-text">
+                    He is a B.Tech student in Computer Science &amp; Engineering
+                    of 2017-21 batch.
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/arshgu09/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://twitter.com/ArshGupta07"
+                      >
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:arsh.gupta8@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+        </div>
+      </div>
+    </section>
 
+    <!-- Team -->
+
+    <!-- Contributions white -->
+    <section class="testimonials mb-5">
+      <div class="container">
+        <h5 class="thanks-title h1">CONTRIBUTORS</h5>
+        <div class="row">
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="frontside">
+              <div class="card con-card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/simranjeet.jpg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Simranjeet Singh</h4>
+                  <p class="card-subtitle">Media Consultant</p>
+                  <p class="card-text">
+                    He is a Genconian. He is a B.Tech student in IT of 2015-19
+                    batch. He is founder-chairman of IEEE - GNDEC student
+                    branch.He helped in development of
+                    <a href="https://www.gndec.ac.in" target="blank"
+                      >college's website</a
+                    >. He is also a film-maker and photographer, pursuing it
+                    from 1st years of his college. He contributed as Media
+                    Consultant to
+                    <a href="https://www.tnpgndec.com"
+                      >T&amp;P Cell's website.</a
+                    >
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item mr-0">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.youtube.com/channel/UC7zjCjTbtIahCgRnakNNl0A"
+                      >
+                        <i class="fa fa-youtube"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item mr-0">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://vimeo.com/user89769786"
+                      >
+                        <i class="fa fa-vimeo"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/simranjeet-singh-9495b7168/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.instagram.com/sjsingh1010/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto:simranjeetsingh@ieee.org"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+          <!-- Team member -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="frontside">
+              <div class="card con-card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="/images/genconian/talwinder.jpg"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Talwinder Singh</h4>
+                  <p class="card-subtitle">Web Designer</p>
+                  <p class="card-text">
+                    He is a Genconian. He is a B.Tech student in CSE of 2015-19
+                    batch. He is Media Head of Training and Placement Cell. He
+                    has designed Placement Broucher. He is a freelance Web
+                    Developer and Photoshop Designer too. He has contributed
+                    design of
+                    <a href="https://www.tnpgndec.com/about">About Page</a> for
+                    <a href="https://www.tnpgndec.com"
+                      >T&amp;P Cell's website.</a
+                    >
+                  </p>
+                  <ul class="list-inline" id="list-link">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.facebook.com/Daman.Gumber"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="javascript:void(0)"
+                      >
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/simranjeet-singh-9495b7168/"
+                      >
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/talwinder-singh-837130106/"
+                      >
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon"
+                        target="_blank"
+                        href="mailto: talwindergumber@gmail.com"
+                      >
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./Team member -->
+        </div>
+      </div>
+    </section>
+    <!-- END OF Contributions -->
+
+    <!--Query Page  -->
+    <section id="team" class="testimonials mb-5">
+      <div class="container">
+        <h5 class="section-title h1">Have a query?</h5>
+        <p class="section-subtitle h3">Feel Free<br />Ask anything?</p>
+        <form
+          action="mailto:gndectpo@gmail.com"
+          method="post"
+          enctype="text/plain"
+          class="mb-5"
+        >
+          <div class="form-group">
+            <label for="question" style="color: #fff">Query/Suggestion:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ask anything?"
+              name="Suggestion"
+              width="100%"
+              style="color: #038ed4"
+            />
+          </div>
+          <input type="submit" value="Send" class="btn btn-primary btn-block" />
+        </form>
+      </div>
+    </section>
+    <!-- End Query Page  -->
+
+    <!-- download white -->
+    <section id="download" class="mb-5">
+      <div class="container text-center">
+        <h1 class="intro-header text-uppercase">Download Our App Today!</h1>
+
+        <p class="lead">
+          Training &amp; Placement Cell’s app helps you throughout your
+          placement years. With easy to use, intuitive features, you can
+          instantly see updates for placement drives, or internship drives.
+        </p>
+
+        <ul class="download-badges px-auto pt-5">
+          <li class="my-3">
+            <a
+              href="//www.microsoft.com/store/apps/9npc7f14c558?ocid=badge"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="/images/ms-download.png"
+                alt="Download badge for windows store"
+                width="100%"
+              />
+            </a>
+          </li>
+          <li class="my-3">
+            <a href="javascript:void(0)">
+              <img
+                src="/images/pwa-download.png"
+                id="pwaPrompt"
+                v-on:click="installed"
+                alt="Download badge for pwa"
+                width="100%"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- end download -->
+
+    <footer class="container-fluid footer mt-3 color-main" style="left: 0">
+      <p class="text-center">
+        <small
+          >Developed with
+          <span class="text-danger"
+            ><i class="fa fa-heart" aria-hidden="true"></i
+          ></span>
+          by <router-link to="/genconian">Genconians</router-link> | © 2018
+          <a href="https://www.gndec.ac.in/" target="_blank"
+            >GNDEC, Ldh</a
+          ></small
+        >
+      </p>
+    </footer>
+  </div>
 </template>
 <script>
-    export default {
-        beforeCreate() {
-            var vm = this;
-            Vue.nextTick(function () {
-                $('#customers-testimonials').owlCarousel({
-                    loop: false,
-                    center: false,
-                    items: 3,
-                    margin: 30,
-                    autoplay: true,
-                    dots: false,
-                    nav: false,
-                    autoplayTimeout: 8500,
-                    smartSpeed: 600,
-                    lazyLoad: true,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        768: {
-                            items: 2
-                        },
-                        1170: {
-                            items: 3
-                        }
-                    }
-                });
-            }.bind(vm));
-            Vue.nextTick(function () {
-                $('#contact').owlCarousel({
-                    loop: true,
-                    center: false,
-                    items: 3,
-                    margin: 30,
-                    autoplay: true,
-                    dots: false,
-                    nav: false,
-                    autoplayTimeout: 8500,
-                    smartSpeed: 450,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        768: {
-                            items: 2
-                        },
-                        1170: {
-                            items: 3
-                        }
-                    }
-                });
-            }.bind(vm));
-            Vue.nextTick(function () {
-                $('#alumni').owlCarousel({
-                    loop: true,
-                    center: false,
-                    items: 3,
-                    margin: 30,
-                    autoplay: true,
-                    dots: false,
-                    nav: false,
-                    autoplayTimeout: 8500,
-                    smartSpeed: 450,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        768: {
-                            items: 2
-                        },
-                        1170: {
-                            items: 3
-                        }
-                    }
-                });
-            }.bind(vm));
-        },
-        methods: {
-            installed(event) {
-                // if (window.matchMedia('(display-mode: standalone)').matches) {
-                alert('Already installed!!')
-                // }
-                // else{
-                //     this.an();
-                // }
-            }
-        }
-    }
+export default {
+  beforeCreate() {
+    var vm = this;
+    Vue.nextTick(
+      function () {
+        $("#customers-testimonials").owlCarousel({
+          loop: false,
+          center: false,
+          items: 3,
+          margin: 30,
+          autoplay: true,
+          dots: false,
+          nav: false,
+          autoplayTimeout: 8500,
+          smartSpeed: 600,
+          lazyLoad: true,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            768: {
+              items: 2,
+            },
+            1170: {
+              items: 3,
+            },
+          },
+        });
+      }.bind(vm)
+    );
+    Vue.nextTick(
+      function () {
+        $("#contact").owlCarousel({
+          loop: true,
+          center: false,
+          items: 3,
+          margin: 30,
+          autoplay: true,
+          dots: false,
+          nav: false,
+          autoplayTimeout: 8500,
+          smartSpeed: 450,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            768: {
+              items: 2,
+            },
+            1170: {
+              items: 3,
+            },
+          },
+        });
+      }.bind(vm)
+    );
+    Vue.nextTick(
+      function () {
+        $("#alumni").owlCarousel({
+          loop: true,
+          center: false,
+          items: 3,
+          margin: 30,
+          autoplay: true,
+          dots: false,
+          nav: false,
+          autoplayTimeout: 8500,
+          smartSpeed: 450,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            768: {
+              items: 2,
+            },
+            1170: {
+              items: 3,
+            },
+          },
+        });
+      }.bind(vm)
+    );
+  },
+  methods: {
+    installed(event) {
+      // if (window.matchMedia('(display-mode: standalone)').matches) {
+      alert("Already installed!!");
+      // }
+      // else{
+      //     this.an();
+      // }
+    },
+  },
+};
 </script>
 <style scoped>
-    h1.intro-header {
-        text-align: center;
-    }
+h1.intro-header {
+  text-align: center;
+}
 
-    h1.intro-header::before {
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
+h1.intro-header::before {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 
-    ul.list-inline li {
-        padding: 0;
-        list-style: none;
-    }
+ul.list-inline li {
+  padding: 0;
+  list-style: none;
+}
 
-    .bg-white {
-        background-color: #fff;
-    }
+.bg-white {
+  background-color: #fff;
+}
 
-    .color-main {
-        color: #038ed4;
-    }
+.color-main {
+  color: #038ed4;
+}
 
-    .bg-dark {
-        background-color: #038ed4 !important;
-    }
+.bg-dark {
+  background-color: #038ed4 !important;
+}
 
-    #list-menu li a {
-        color: #f1f1f1;
-        padding: 20px;
-        float: left;
-        border-bottom: 4px solid rgba(255, 255, 255, 0);
-    }
+#list-menu li a {
+  color: #f1f1f1;
+  padding: 20px;
+  float: left;
+  border-bottom: 4px solid rgba(255, 255, 255, 0);
+}
 
-    #list-menu li a:hover {
-        background-color: #f1f1f1;
-        color: #038ed4;
-    }
+#list-menu li a:hover {
+  background-color: #f1f1f1;
+  color: #038ed4;
+}
 
-    #list-link li a {
-        color: #038ed4;
-        padding: 20px;
-        float: left;
-        border-bottom: 4px solid rgba(255, 255, 255, 0);
-    }
+#list-link li a {
+  color: #038ed4;
+  padding: 20px;
+  float: left;
+  border-bottom: 4px solid rgba(255, 255, 255, 0);
+}
 
-    #list-link li a:hover {
-        background-color: #038ed4;
-        color: #f1f1f1;
-    }
+#list-link li a:hover {
+  background-color: #038ed4;
+  color: #f1f1f1;
+}
 
-    .navbar {
-        padding: 0 1rem;
-    }
+.navbar {
+  padding: 0 1rem;
+}
 
-    @media (min-width: 768px) {
-        .navbar-header {
-            width: 142px;
-        }
-    }
+.img-responsive {
+  width: 350px;
+  height: 350px;
+}
 
-    .fix {
-        overflow: hidden;
-        top: 90px;
-    }
+.img-fluid {
+  width: 150px;
+  height: 120px;
+}
 
-    /*   Our Team  */
+@media (min-width: 768px) {
+  .navbar-header {
+    width: 142px;
+  }
+}
 
-    #team {
-        background: #038ed4 !important;
-    }
+.fix {
+  overflow: hidden;
+  top: 90px;
+}
 
-    .btn-primary:hover,
-    .btn-primary:focus {
-        background-color: #038ed4;
-        border-color: #ffffff;
-        box-shadow: none;
-        outline: none;
-    }
+/*   Our Team  */
 
-    .btn-primary {
-        color: #fff;
-        background-color: #038ed4;
-        border-color: #038ed4;
-        border: #fff solid;
-    }
+#team {
+  background: #038ed4 !important;
+}
 
-    section {
-        padding: 60px 0;
-    }
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #038ed4;
+  border-color: #ffffff;
+  box-shadow: none;
+  outline: none;
+}
 
-    section .section-title {
-        text-align: justify;
-        color: #ffffff;
-        margin-bottom: 50px;
-        text-transform: uppercase;
-    }
+.btn-primary {
+  color: #fff;
+  background-color: #038ed4;
+  border-color: #038ed4;
+  border: #fff solid;
+}
 
-    section .section-subtitle {
-        text-align: left;
-        color: #ffffff;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-    }
+section {
+  padding: 60px 0;
+}
 
-    #contact .card:hover i,
-    #contact .card:hover h4 {
-        color: #038ed4;
-    }
+section .section-title {
+  text-align: justify;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
 
-    .card-text {
-        text-align: justify;
-    }
+section .section-subtitle {
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
 
-    #alumni .card,
-    #team .card {
-        border: solid #038ed4;
-        border-radius: 20px;
-        background: #ffffff;
-    }
+#contact .card:hover i,
+#contact .card:hover h4 {
+  color: #038ed4;
+}
 
-    .frontside .card {
-        min-height: 312px;
-    }
+.card-text {
+  text-align: justify;
+}
 
-    .frontside .card .card-title {
-        color: #038ed4 !important;
-        font-variant: small-caps;
-        font-size: 25px;
-    }
+#alumni .card,
+#team .card {
+  border: solid #038ed4;
+  border-radius: 20px;
+  background: #ffffff;
+}
 
-    .card-body {
-        padding-bottom: 0px;
-    }
+.frontside .card {
+  min-height: 312px;
+}
 
-    .frontside .card .card-body img {
-        width: 120px;
-        border-radius: 50%;
-    }
+.frontside .card .card-title {
+  color: #038ed4 !important;
+  font-variant: small-caps;
+  font-size: 25px;
+}
 
-    .con-card {
-        border: solid #038ed4;
-        border-radius: 20px;
-        background: #fafafa;
-    }
+.card-body {
+  padding-bottom: 0px;
+}
 
-    .card-subtitle {
-        color: rgb(66, 66, 66);
-    }
+.frontside .card .card-body img {
+  width: 120px;
+  border-radius: 50%;
+}
 
-    .social-icon {
-        font-size: 22px;
-    }
+.con-card {
+  border: solid #038ed4;
+  border-radius: 20px;
+  background: #fafafa;
+}
 
-    /* thanks */
+.card-subtitle {
+  color: rgb(66, 66, 66);
+}
 
-    section .thanks-title {
-        text-align: left;
-        color: #038ed4;
-        margin-bottom: 50px;
-        text-transform: uppercase;
-    }
+.social-icon {
+  font-size: 22px;
+}
 
-    section .thanks-subtitle {
-        text-align: left;
-        color: #038ed4;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-    }
+/* thanks */
 
-    #customers-testimonials .thanks-subtitle {
-        color: #fff;
-        text-transform: uppercase;
-    }
+section .thanks-title {
+  text-align: left;
+  color: #038ed4;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
 
-    #customers-testimonials .testimonials {
-        background-color: #fff;
-        position: relative;
-        padding-top: 60px;
-    }
+section .thanks-subtitle {
+  text-align: left;
+  color: #038ed4;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
 
-    #customers-testimonials .testimonials:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 30%;
-        background-color: #f1f1f1;
-    }
+#customers-testimonials .thanks-subtitle {
+  color: #fff;
+  text-transform: uppercase;
+}
 
-    #customers-testimonials .item-details {
-        background-color: #333333;
-        color: #fff;
-        padding: 20px 10px;
-        text-align: left;
-    }
+#customers-testimonials .testimonials {
+  background-color: #fff;
+  position: relative;
+  padding-top: 60px;
+}
 
-    #customers-testimonials .item-details h5 {
-        margin: 0 0 15px;
-        font-size: 18px;
-        line-height: 18px;
-        color: #fff;
-    }
+#customers-testimonials .testimonials:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30%;
+  background-color: #f1f1f1;
+}
 
-    #customers-testimonials .item-details h5 span p {
-        font-size: 14px;
-    }
+#customers-testimonials .item-details {
+  background-color: #333333;
+  color: #fff;
+  padding: 20px 10px;
+  text-align: left;
+}
 
-    #customers-testimonials .item {
-        text-align: center;
-        /*  padding: 20px; */
-        margin-bottom: 80px;
-    }
+#customers-testimonials .item-details h5 {
+  margin: 0 0 15px;
+  font-size: 18px;
+  line-height: 18px;
+  color: #fff;
+}
 
-    #customers-testimonials .owl-carousel .owl-nav {
-        -webkit-transition: all .3s ease;
-        transition: all .3s ease;
-    }
+#customers-testimonials .item-details h5 span p {
+  font-size: 14px;
+}
 
-    #customers-testimonials .owl-carousel {
-        position: relative;
-    }
+#customers-testimonials .item {
+  text-align: center;
+  /*  padding: 20px; */
+  margin-bottom: 80px;
+}
 
-    #customers-testimonials .owl-carousel .owl-next,
-    #customers-testimonials .owl-carousel .owl-prev {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        border-radius: 50%;
-        position: absolute;
-        top: 30%;
-        font-size: 20px;
-        color: #fff;
-        border: 1px solid #ddd;
-        text-align: center;
-    }
+#customers-testimonials .owl-carousel .owl-nav {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 
-    #customers-testimonials .owl-carousel .owl-prev {
-        left: -70px;
-    }
+#customers-testimonials .owl-carousel {
+  position: relative;
+}
 
-    #customers-testimonials .owl-carousel .owl-next {
-        right: -70px;
-    }
+#customers-testimonials .owl-carousel .owl-next,
+#customers-testimonials .owl-carousel .owl-prev {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 30%;
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #ddd;
+  text-align: center;
+}
 
-    /* download */
+#customers-testimonials .owl-carousel .owl-prev {
+  left: -70px;
+}
 
-    #download {
-        background: #fff;
-        color: #038ed4;
-        text-align: center;
-    }
+#customers-testimonials .owl-carousel .owl-next {
+  right: -70px;
+}
 
-    #download h1 {
-        color: #038ed4;
-    }
+/* download */
 
-    #download h1::before {
-        background-color: #fff;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
+#download {
+  background: #fff;
+  color: #038ed4;
+  text-align: center;
+}
 
-    #download .lead {
-        color: #038ed4;
-        margin-top: 3.5rem;
-    }
+#download h1 {
+  color: #038ed4;
+}
 
-    #download .download-badges {
-        list-style: none;
-        margin: 1px;
-        text-align: center;
-    }
+#download h1::before {
+  background-color: #fff;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 
-    #download .download-badges li {
-        display: inline-block;
-        margin: 0 7.5px;
-        padding-left: 0;
-    }
+#download .lead {
+  color: #038ed4;
+  margin-top: 3.5rem;
+}
 
-    #download .download-badges li a {
-        display: block;
-        font: 0/0 a;
-        text-shadow: none;
-        color: transparent;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+#download .download-badges {
+  list-style: none;
+  margin: 1px;
+  text-align: center;
+}
 
-    #download .download-badges li a.badge-googleplay {
-        background-image: url("/images/genconian/google-play.png");
-    }
+#download .download-badges li {
+  display: inline-block;
+  margin: 0 7.5px;
+  padding-left: 0;
+}
 
-    /*  responsive: download */
+#download .download-badges li a {
+  display: block;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-    @media only screen and (max-width: 768px) {
-        #download .download-badges li a {
-            width: 194px;
-            height: 60px;
-            background-size: 194px 60px;
-        }
-    }
+#download .download-badges li a.badge-googleplay {
+  background-image: url("/images/genconian/google-play.png");
+}
+
+/*  responsive: download */
+
+@media only screen and (max-width: 768px) {
+  #download .download-badges li a {
+    width: 194px;
+    height: 60px;
+    background-size: 194px 60px;
+  }
+}
 </style>
